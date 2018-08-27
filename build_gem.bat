@@ -1,0 +1,1 @@
+gem build asposeemailcloud.gemspec

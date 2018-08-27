@@ -12,7 +12,7 @@ Swagger Codegen version: unset
 
 require "uri"
 
-module SwaggerClient
+module asposeemailcloud
   class EmailApi
     attr_accessor :api_client
 

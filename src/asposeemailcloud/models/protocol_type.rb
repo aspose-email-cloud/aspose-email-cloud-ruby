@@ -12,20 +12,21 @@ Swagger Codegen version: unset
 
 require 'date'
 
-module SwaggerClient
-  class SecurityOptions
+module asposeemailcloud
+  class ProtocolType
     
     0 = 0.freeze
     1 = 1.freeze
     2 = 2.freeze
-    256 = 256.freeze
+    3 = 3.freeze
+    4 = 4.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
     # @return [String] The enum value
     def build_from_hash(value)
-      consantValues = SecurityOptions.constants.select{|c| c.to_s == value}
-      raise "Invalid ENUM value #{value} for class #SecurityOptions" if consantValues.empty?
+      consantValues = ProtocolType.constants.select{|c| c.to_s == value}
+      raise "Invalid ENUM value #{value} for class #ProtocolType" if consantValues.empty?
       value
     end
   end

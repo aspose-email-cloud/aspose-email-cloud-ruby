@@ -10,7 +10,7 @@ Swagger Codegen version: unset
 
 =end
 
-module SwaggerClient
+module asposeemailcloud
   class ApiError < StandardError
     attr_reader :code, :response_headers, :response_body
 

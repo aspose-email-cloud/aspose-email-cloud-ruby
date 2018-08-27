@@ -12,27 +12,39 @@ Swagger Codegen version: unset
 
 require 'date'
 
-module SwaggerClient
-  # The basic SaaSposeResponse response class kept from the old Aspose for Cloud Platform. We keep this base class and use it because most probably users are already using it to get API responses. The plan in future is to get rid of this name, but who knows when ?!
-  class SaaSposeResponse
-    attr_accessor :code
+module asposeemailcloud
+  # Provides information for the object link. This is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7
+  class Link
+    # The \"href\" attribute contains the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference
+    attr_accessor :href
 
-    attr_accessor :status
+    # atom:link elements MAY have a \"rel\" attribute that indicates the link relation type.  If the \"rel\" attribute is not present, the link element MUST be interpreted as if the link relation type is \"alternate\".
+    attr_accessor :rel
+
+    # On the link element, the \"type\" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced.  Note that the type attribute does not override the actual media type returned with the representation.
+    attr_accessor :type
+
+    # The \"title\" attribute conveys human-readable information about the link.  The content of the \"title\" attribute is Language-Sensitive.
+    attr_accessor :title
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'code' => :'Code',
-        :'status' => :'Status'
+        :'href' => :'Href',
+        :'rel' => :'Rel',
+        :'type' => :'Type',
+        :'title' => :'Title'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'code' => :'HttpStatusCode',
-        :'status' => :'String'
+        :'href' => :'String',
+        :'rel' => :'String',
+        :'type' => :'String',
+        :'title' => :'String'
       }
     end
 
@@ -44,12 +56,20 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'Code')
-        self.code = attributes[:'Code']
+      if attributes.has_key?(:'Href')
+        self.href = attributes[:'Href']
       end
 
-      if attributes.has_key?(:'Status')
-        self.status = attributes[:'Status']
+      if attributes.has_key?(:'Rel')
+        self.rel = attributes[:'Rel']
+      end
+
+      if attributes.has_key?(:'Type')
+        self.type = attributes[:'Type']
+      end
+
+      if attributes.has_key?(:'Title')
+        self.title = attributes[:'Title']
       end
 
     end
@@ -58,17 +78,12 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @code.nil?
-        invalid_properties.push("invalid value for 'code', code cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @code.nil?
       return true
     end
 
@@ -77,8 +92,10 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          code == o.code &&
-          status == o.status
+          href == o.href &&
+          rel == o.rel &&
+          type == o.type &&
+          title == o.title
     end
 
     # @see the `==` method
@@ -90,7 +107,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status].hash
+      [href, rel, type, title].hash
     end
 
     # Builds the object from hash
@@ -150,7 +167,7 @@ module SwaggerClient
           end
         end
       else # model
-        temp_model = SwaggerClient.const_get(type).new
+        temp_model = asposeemailcloud.const_get(type).new
         temp_model.build_from_hash(value)
       end
     end

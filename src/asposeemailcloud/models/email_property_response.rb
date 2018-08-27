@@ -12,29 +12,32 @@ Swagger Codegen version: unset
 
 require 'date'
 
-module SwaggerClient
-  # Email property.
-  class EmailProperty
-    # Gets or sets link that originate from this document.
-    attr_accessor :link
+module asposeemailcloud
+  # Email property response.
+  class EmailPropertyResponse
+    attr_accessor :code
 
-    # Gets or sets name of email property.
-    attr_accessor :name
+    attr_accessor :status
+
+    # Gets or sets email property.
+    attr_accessor :email_property
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'Link',
-        :'name' => :'Name'
+        :'code' => :'Code',
+        :'status' => :'Status',
+        :'email_property' => :'EmailProperty'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'Link',
-        :'name' => :'String'
+        :'code' => :'HttpStatusCode',
+        :'status' => :'String',
+        :'email_property' => :'EmailProperty'
       }
     end
 
@@ -46,12 +49,16 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'Link')
-        self.link = attributes[:'Link']
+      if attributes.has_key?(:'Code')
+        self.code = attributes[:'Code']
       end
 
-      if attributes.has_key?(:'Name')
-        self.name = attributes[:'Name']
+      if attributes.has_key?(:'Status')
+        self.status = attributes[:'Status']
+      end
+
+      if attributes.has_key?(:'EmailProperty')
+        self.email_property = attributes[:'EmailProperty']
       end
 
     end
@@ -60,12 +67,17 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @code.nil?
+        invalid_properties.push("invalid value for 'code', code cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @code.nil?
       return true
     end
 
@@ -74,8 +86,9 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          link == o.link &&
-          name == o.name
+          code == o.code &&
+          status == o.status &&
+          email_property == o.email_property
     end
 
     # @see the `==` method
@@ -87,7 +100,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link, name].hash
+      [code, status, email_property].hash
     end
 
     # Builds the object from hash
@@ -147,7 +160,7 @@ module SwaggerClient
           end
         end
       else # model
-        temp_model = SwaggerClient.const_get(type).new
+        temp_model = asposeemailcloud.const_get(type).new
         temp_model.build_from_hash(value)
       end
     end

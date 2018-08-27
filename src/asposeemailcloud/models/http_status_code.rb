@@ -12,7 +12,7 @@ Swagger Codegen version: unset
 
 require 'date'
 
-module SwaggerClient
+module asposeemailcloud
   class HttpStatusCode
     
     100 = 100.freeze

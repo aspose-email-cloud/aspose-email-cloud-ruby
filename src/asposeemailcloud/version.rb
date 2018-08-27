@@ -10,6 +10,6 @@ Swagger Codegen version: unset
 
 =end
 
-module SwaggerClient
-  VERSION = "1.0.0"
+module AsposeEmailCloud
+  VERSION = "18.7.0"
 end

@@ -12,15 +12,15 @@ Swagger Codegen version: unset
 
 require 'date'
 
-module SwaggerClient
+module asposeemailcloud
   # Email document property DTO.
-  class ListResponse
+  class MimeResponse
     attr_accessor :code
 
     attr_accessor :status
 
-    # Gets or sets array of strings.
-    attr_accessor :list
+    # Gets or sets base64 encoded mime content.
+    attr_accessor :mime
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -28,7 +28,7 @@ module SwaggerClient
       {
         :'code' => :'Code',
         :'status' => :'Status',
-        :'list' => :'List'
+        :'mime' => :'Mime'
       }
     end
 
@@ -37,7 +37,7 @@ module SwaggerClient
       {
         :'code' => :'HttpStatusCode',
         :'status' => :'String',
-        :'list' => :'Array<String>'
+        :'mime' => :'String'
       }
     end
 
@@ -57,10 +57,8 @@ module SwaggerClient
         self.status = attributes[:'Status']
       end
 
-      if attributes.has_key?(:'List')
-        if (value = attributes[:'List']).is_a?(Array)
-          self.list = value
-        end
+      if attributes.has_key?(:'Mime')
+        self.mime = attributes[:'Mime']
       end
 
     end
@@ -90,7 +88,7 @@ module SwaggerClient
       self.class == o.class &&
           code == o.code &&
           status == o.status &&
-          list == o.list
+          mime == o.mime
     end
 
     # @see the `==` method
@@ -102,7 +100,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, status, list].hash
+      [code, status, mime].hash
     end
 
     # Builds the object from hash
@@ -162,7 +160,7 @@ module SwaggerClient
           end
         end
       else # model
-        temp_model = SwaggerClient.const_get(type).new
+        temp_model = asposeemailcloud.const_get(type).new
         temp_model.build_from_hash(value)
       end
     end

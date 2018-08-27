@@ -17,7 +17,7 @@ require 'tempfile'
 require 'typhoeus'
 require 'uri'
 
-module SwaggerClient
+module asposeemailcloud
   class ApiClient
     # The Configuration object holding settings to be used in the API client.
     attr_accessor :config
@@ -210,7 +210,7 @@ module SwaggerClient
         end
       else
         # models, e.g. Pet
-        SwaggerClient.const_get(return_type).new.tap do |model|
+        asposeemailcloud.const_get(return_type).new.tap do |model|
           model.build_from_hash data
         end
       end
