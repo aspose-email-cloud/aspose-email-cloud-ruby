@@ -1,5 +1,4 @@
-# AsposeEmailCloud::SendEmailBaseRequest
-
+# models.SendEmailBaseRequest
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -7,5 +6,9 @@ Name | Type | Description | Notes
 **second_account** | **String** |  | [optional] 
 **storage_folder** | [**StorageFolderLocation**](StorageFolderLocation.md) |  | [optional] 
 **email_file** | [**StorageFileLocation**](StorageFileLocation.md) | Email document (*.eml) file location in storage | 
+
+ Parent class: [AccountBaseRequest](AccountBaseRequest.md)
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

@@ -1,10 +1,13 @@
-# AsposeEmailCloud::PrimitiveObject
-
+# models.PrimitiveObject
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | Gets or sets the name of an object. | [optional] 
 **type** | **String** | Property type. Used for deserialization purposes | [optional] 
 **value** | **String** | Property value | [optional] 
+
+ Parent class: [BaseObject](BaseObject.md)
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

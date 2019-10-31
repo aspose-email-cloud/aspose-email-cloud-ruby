@@ -1,5 +1,4 @@
-# AsposeEmailCloud::EmailAccountRequest
-
+# models.EmailAccountRequest
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,5 +9,9 @@ Name | Type | Description | Notes
 **protocol_type** | **Object** | Email account protocol type | 
 **description** | **String** | Email account description | [optional] 
 **storage_file** | [**StorageFileLocation**](StorageFileLocation.md) | A storage file location info to store email account | 
+
+
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

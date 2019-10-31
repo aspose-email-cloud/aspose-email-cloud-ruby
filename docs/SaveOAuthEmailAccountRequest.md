@@ -1,5 +1,4 @@
-# AsposeEmailCloud::SaveOAuthEmailAccountRequest
-
+# models.SaveOAuthEmailAccountRequest
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -13,5 +12,9 @@ Name | Type | Description | Notes
 **client_id** | **String** | OAuth client identifier | 
 **client_secret** | **String** | OAuth client secret | 
 **refresh_token** | **String** | OAuth refresh token | 
+
+ Parent class: [EmailAccountRequest](EmailAccountRequest.md)
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

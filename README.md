@@ -5,16 +5,14 @@ To use these SDKs, you will need App SID and App Key which can be looked up at [
 ## How to use the SDK?
 The complete source code is available in the GIT repository. 
 
-### Install Aspose.Email for Cloud via NPM
-You can either directly use it in your project via source code or get [nmpjs distribution](https://www.npmjs.com/package/@asposecloud/aspose-email-cloud) (recommended for development with Node.JS ).
-From the command line:
-
-	npm install @asposecloud/aspose-email-cloud --save
+### Install Aspose.Email for Cloud
+You can either directly use it in your project via source code or get [gem](https://rubygems.org/gems/asposeemailcloud).
 
 # Licensing
 All Aspose.Email for Cloud SDKs, helper scripts and templates are licensed under [MIT License](LICENSE).
 
 # Resources
++ [**SDK Reference documentation**](docs/README.md)
 + [**Website**](https://www.aspose.cloud)
 + [**Product Home**](https://products.aspose.cloud/Email/cloud)
 + [**Documentation**](https://docs.aspose.cloud/display/Emailcloud/Home)

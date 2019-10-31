@@ -1,5 +1,4 @@
-# AsposeEmailCloud::SaveEmailAccountRequest
-
+# models.SaveEmailAccountRequest
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -11,5 +10,9 @@ Name | Type | Description | Notes
 **description** | **String** | Email account description | [optional] 
 **storage_file** | [**StorageFileLocation**](StorageFileLocation.md) | A storage file location info to store email account | 
 **password** | **String** | Email account password | 
+
+ Parent class: [EmailAccountRequest](EmailAccountRequest.md)
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 
