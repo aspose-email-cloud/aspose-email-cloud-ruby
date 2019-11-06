@@ -12,7 +12,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(name,attachment,request)
+request = AsposeEmailCloud::AddCalendarAttachmentRequestData.new(name, attachment, request)
 ```
 
 Name | Type | Description  | Notes
@@ -35,7 +35,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(format,name,attachment,request)
+request = AsposeEmailCloud::AddContactAttachmentRequestData.new(format, name, attachment, request)
 ```
 
 Name | Type | Description  | Notes
@@ -59,7 +59,7 @@ Adds an attachment to Email document
 
 ### Request Parameters
 ```ruby
-def initialize(attachment_name,file_name,request)
+request = AsposeEmailCloud::AddEmailAttachmentRequestData.new(attachment_name, file_name, request)
 ```
 
 Name | Type | Description  | Notes
@@ -82,7 +82,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(name,attachment,request)
+request = AsposeEmailCloud::AddMapiAttachmentRequestData.new(name, attachment, request)
 ```
 
 Name | Type | Description  | Notes
@@ -105,7 +105,7 @@ Adds an email from *.eml file to specified folder in email account
 
 ### Request Parameters
 ```ruby
-def initialize(request)
+request = AsposeEmailCloud::AppendEmailMessageRequestData.new(request)
 ```
 
 Name | Type | Description  | Notes
@@ -126,7 +126,7 @@ Adds an email from MIME to specified folder in email account
 
 ### Request Parameters
 ```ruby
-def initialize(request)
+request = AsposeEmailCloud::AppendMimeMessageRequestData.new(request)
 ```
 
 Name | Type | Description  | Notes
@@ -147,7 +147,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(src_path,dest_path,src_storage_name=src_storage_name,dest_storage_name=dest_storage_name,version_id=version_id)
+request = AsposeEmailCloud::CopyFileRequestData.new(src_path, dest_path, src_storage_name=src_storage_name, dest_storage_name=dest_storage_name, version_id=version_id)
 ```
 
 Name | Type | Description  | Notes
@@ -172,7 +172,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(src_path,dest_path,src_storage_name=src_storage_name,dest_storage_name=dest_storage_name)
+request = AsposeEmailCloud::CopyFolderRequestData.new(src_path, dest_path, src_storage_name=src_storage_name, dest_storage_name=dest_storage_name)
 ```
 
 Name | Type | Description  | Notes
@@ -196,7 +196,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(name,request)
+request = AsposeEmailCloud::CreateCalendarRequestData.new(name, request)
 ```
 
 Name | Type | Description  | Notes
@@ -218,7 +218,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(format,name,request)
+request = AsposeEmailCloud::CreateContactRequestData.new(format, name, request)
 ```
 
 Name | Type | Description  | Notes
@@ -241,7 +241,7 @@ Create an email document
 
 ### Request Parameters
 ```ruby
-def initialize(file_name,request)
+request = AsposeEmailCloud::CreateEmailRequestData.new(file_name, request)
 ```
 
 Name | Type | Description  | Notes
@@ -263,7 +263,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(request)
+request = AsposeEmailCloud::CreateEmailFolderRequestData.new(request)
 ```
 
 Name | Type | Description  | Notes
@@ -284,7 +284,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(path,storage_name=storage_name)
+request = AsposeEmailCloud::CreateFolderRequestData.new(path, storage_name=storage_name)
 ```
 
 Name | Type | Description  | Notes
@@ -306,7 +306,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(name,request)
+request = AsposeEmailCloud::CreateMapiRequestData.new(name, request)
 ```
 
 Name | Type | Description  | Notes
@@ -328,7 +328,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(name,member_name,index,request)
+request = AsposeEmailCloud::DeleteCalendarPropertyRequestData.new(name, member_name, index, request)
 ```
 
 Name | Type | Description  | Notes
@@ -352,7 +352,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(format,name,member_name,index,folder)
+request = AsposeEmailCloud::DeleteContactPropertyRequestData.new(format, name, member_name, index, folder)
 ```
 
 Name | Type | Description  | Notes
@@ -377,7 +377,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(request)
+request = AsposeEmailCloud::DeleteEmailFolderRequestData.new(request)
 ```
 
 Name | Type | Description  | Notes
@@ -398,7 +398,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(request)
+request = AsposeEmailCloud::DeleteEmailMessageRequestData.new(request)
 ```
 
 Name | Type | Description  | Notes
@@ -419,7 +419,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(path,storage_name=storage_name,version_id=version_id)
+request = AsposeEmailCloud::DeleteFileRequestData.new(path, storage_name=storage_name, version_id=version_id)
 ```
 
 Name | Type | Description  | Notes
@@ -442,7 +442,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(path,storage_name=storage_name,recursive=recursive)
+request = AsposeEmailCloud::DeleteFolderRequestData.new(path, storage_name=storage_name, recursive=recursive)
 ```
 
 Name | Type | Description  | Notes
@@ -465,7 +465,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(name,attachment,storage)
+request = AsposeEmailCloud::DeleteMapiAttachmentRequestData.new(name, attachment, storage)
 ```
 
 Name | Type | Description  | Notes
@@ -488,7 +488,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(name,request)
+request = AsposeEmailCloud::DeleteMapiPropertiesRequestData.new(name, request)
 ```
 
 Name | Type | Description  | Notes
@@ -510,7 +510,7 @@ Download file
 
 ### Request Parameters
 ```ruby
-def initialize(path,storage_name=storage_name,version_id=version_id)
+request = AsposeEmailCloud::DownloadFileRequestData.new(path, storage_name=storage_name, version_id=version_id)
 ```
 
 Name | Type | Description  | Notes
@@ -533,7 +533,7 @@ Fetch message mime from email account
 
 ### Request Parameters
 ```ruby
-def initialize(message_id,first_account,second_account=second_account,storage=storage,storage_folder=storage_folder)
+request = AsposeEmailCloud::FetchEmailMessageRequestData.new(message_id, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder)
 ```
 
 Name | Type | Description  | Notes
@@ -558,7 +558,7 @@ Get calendar file properties
 
 ### Request Parameters
 ```ruby
-def initialize(name,folder=folder,storage=storage)
+request = AsposeEmailCloud::GetCalendarRequestData.new(name, folder=folder, storage=storage)
 ```
 
 Name | Type | Description  | Notes
@@ -581,7 +581,7 @@ Get iCalendar document attachment by name
 
 ### Request Parameters
 ```ruby
-def initialize(name,attachment,folder=folder,storage=storage)
+request = AsposeEmailCloud::GetCalendarAttachmentRequestData.new(name, attachment, folder=folder, storage=storage)
 ```
 
 Name | Type | Description  | Notes
@@ -605,7 +605,7 @@ Get iCalendar files list in folder on storage
 
 ### Request Parameters
 ```ruby
-def initialize(folder,items_per_page,page_number,storage=storage)
+request = AsposeEmailCloud::GetCalendarListRequestData.new(folder, items_per_page, page_number, storage=storage)
 ```
 
 Name | Type | Description  | Notes
@@ -629,7 +629,7 @@ Get attachment file by name
 
 ### Request Parameters
 ```ruby
-def initialize(format,name,attachment,folder=folder,storage=storage)
+request = AsposeEmailCloud::GetContactAttachmentRequestData.new(format, name, attachment, folder=folder, storage=storage)
 ```
 
 Name | Type | Description  | Notes
@@ -654,7 +654,7 @@ Get contact list from storage folder
 
 ### Request Parameters
 ```ruby
-def initialize(format,folder=folder,storage=storage,items_per_page=items_per_page,page_number=page_number)
+request = AsposeEmailCloud::GetContactListRequestData.new(format, folder=folder, storage=storage, items_per_page=items_per_page, page_number=page_number)
 ```
 
 Name | Type | Description  | Notes
@@ -679,7 +679,7 @@ Get contact document properties
 
 ### Request Parameters
 ```ruby
-def initialize(format,name,folder=folder,storage=storage)
+request = AsposeEmailCloud::GetContactPropertiesRequestData.new(format, name, folder=folder, storage=storage)
 ```
 
 Name | Type | Description  | Notes
@@ -703,7 +703,7 @@ Get disc usage
 
 ### Request Parameters
 ```ruby
-def initialize(storage_name=storage_name)
+request = AsposeEmailCloud::GetDiscUsageRequestData.new(storage_name=storage_name)
 ```
 
 Name | Type | Description  | Notes
@@ -724,7 +724,7 @@ Get email document
 
 ### Request Parameters
 ```ruby
-def initialize(file_name,storage=storage,folder=folder)
+request = AsposeEmailCloud::GetEmailRequestData.new(file_name, storage=storage, folder=folder)
 ```
 
 Name | Type | Description  | Notes
@@ -747,7 +747,7 @@ Get email attachment by name
 
 ### Request Parameters
 ```ruby
-def initialize(attachment,file_name,storage=storage,folder=folder)
+request = AsposeEmailCloud::GetEmailAttachmentRequestData.new(attachment, file_name, storage=storage, folder=folder)
 ```
 
 Name | Type | Description  | Notes
@@ -771,7 +771,7 @@ Get an email document property by its name
 
 ### Request Parameters
 ```ruby
-def initialize(property_name,file_name,storage=storage,folder=folder)
+request = AsposeEmailCloud::GetEmailPropertyRequestData.new(property_name, file_name, storage=storage, folder=folder)
 ```
 
 Name | Type | Description  | Notes
@@ -795,7 +795,7 @@ Get file versions
 
 ### Request Parameters
 ```ruby
-def initialize(path,storage_name=storage_name)
+request = AsposeEmailCloud::GetFileVersionsRequestData.new(path, storage_name=storage_name)
 ```
 
 Name | Type | Description  | Notes
@@ -817,7 +817,7 @@ Get all files and folders within a folder
 
 ### Request Parameters
 ```ruby
-def initialize(path,storage_name=storage_name)
+request = AsposeEmailCloud::GetFilesListRequestData.new(path, storage_name=storage_name)
 ```
 
 Name | Type | Description  | Notes
@@ -839,7 +839,7 @@ Get document attachment as file stream
 
 ### Request Parameters
 ```ruby
-def initialize(name,attachment,folder=folder,storage=storage)
+request = AsposeEmailCloud::GetMapiAttachmentRequestData.new(name, attachment, folder=folder, storage=storage)
 ```
 
 Name | Type | Description  | Notes
@@ -863,7 +863,7 @@ Get document attachment list
 
 ### Request Parameters
 ```ruby
-def initialize(name,folder=folder,storage=storage)
+request = AsposeEmailCloud::GetMapiAttachmentsRequestData.new(name, folder=folder, storage=storage)
 ```
 
 Name | Type | Description  | Notes
@@ -886,7 +886,7 @@ Get document list from storage folder
 
 ### Request Parameters
 ```ruby
-def initialize(folder=folder,storage=storage,items_per_page=items_per_page,page_number=page_number)
+request = AsposeEmailCloud::GetMapiListRequestData.new(folder=folder, storage=storage, items_per_page=items_per_page, page_number=page_number)
 ```
 
 Name | Type | Description  | Notes
@@ -910,7 +910,7 @@ Get document properties
 
 ### Request Parameters
 ```ruby
-def initialize(name,folder=folder,storage=storage)
+request = AsposeEmailCloud::GetMapiPropertiesRequestData.new(name, folder=folder, storage=storage)
 ```
 
 Name | Type | Description  | Notes
@@ -933,7 +933,7 @@ Get folders list in email account
 
 ### Request Parameters
 ```ruby
-def initialize(first_account,second_account=second_account,storage=storage,storage_folder=storage_folder,parent_folder=parent_folder)
+request = AsposeEmailCloud::ListEmailFoldersRequestData.new(first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, parent_folder=parent_folder)
 ```
 
 Name | Type | Description  | Notes
@@ -960,7 +960,7 @@ The query string should have the following view.  The example of a simple expres
 
 ### Request Parameters
 ```ruby
-def initialize(folder,query_string,first_account,second_account=second_account,storage=storage,storage_folder=storage_folder,recursive=recursive)
+request = AsposeEmailCloud::ListEmailMessagesRequestData.new(folder, query_string, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, recursive=recursive)
 ```
 
 Name | Type | Description  | Notes
@@ -987,7 +987,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(src_path,dest_path,src_storage_name=src_storage_name,dest_storage_name=dest_storage_name,version_id=version_id)
+request = AsposeEmailCloud::MoveFileRequestData.new(src_path, dest_path, src_storage_name=src_storage_name, dest_storage_name=dest_storage_name, version_id=version_id)
 ```
 
 Name | Type | Description  | Notes
@@ -1012,7 +1012,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(src_path,dest_path,src_storage_name=src_storage_name,dest_storage_name=dest_storage_name)
+request = AsposeEmailCloud::MoveFolderRequestData.new(src_path, dest_path, src_storage_name=src_storage_name, dest_storage_name=dest_storage_name)
 ```
 
 Name | Type | Description  | Notes
@@ -1036,7 +1036,7 @@ Check if file or folder exists
 
 ### Request Parameters
 ```ruby
-def initialize(path,storage_name=storage_name,version_id=version_id)
+request = AsposeEmailCloud::ObjectExistsRequestData.new(path, storage_name=storage_name, version_id=version_id)
 ```
 
 Name | Type | Description  | Notes
@@ -1059,7 +1059,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(request)
+request = AsposeEmailCloud::SaveMailAccountRequestData.new(request)
 ```
 
 Name | Type | Description  | Notes
@@ -1080,7 +1080,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(request)
+request = AsposeEmailCloud::SaveMailOAuthAccountRequestData.new(request)
 ```
 
 Name | Type | Description  | Notes
@@ -1101,7 +1101,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(request)
+request = AsposeEmailCloud::SendEmailRequestData.new(request)
 ```
 
 Name | Type | Description  | Notes
@@ -1122,7 +1122,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(request)
+request = AsposeEmailCloud::SendEmailMimeRequestData.new(request)
 ```
 
 Name | Type | Description  | Notes
@@ -1143,7 +1143,7 @@ Set email document property value
 
 ### Request Parameters
 ```ruby
-def initialize(property_name,file_name,request)
+request = AsposeEmailCloud::SetEmailPropertyRequestData.new(property_name, file_name, request)
 ```
 
 Name | Type | Description  | Notes
@@ -1166,7 +1166,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(request)
+request = AsposeEmailCloud::SetEmailReadFlagRequestData.new(request)
 ```
 
 Name | Type | Description  | Notes
@@ -1187,7 +1187,7 @@ Check if storage exists
 
 ### Request Parameters
 ```ruby
-def initialize(storage_name)
+request = AsposeEmailCloud::StorageExistsRequestData.new(storage_name)
 ```
 
 Name | Type | Description  | Notes
@@ -1208,7 +1208,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(name,request)
+request = AsposeEmailCloud::UpdateCalendarPropertiesRequestData.new(name, request)
 ```
 
 Name | Type | Description  | Notes
@@ -1230,7 +1230,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(format,name,request)
+request = AsposeEmailCloud::UpdateContactPropertiesRequestData.new(format, name, request)
 ```
 
 Name | Type | Description  | Notes
@@ -1253,7 +1253,7 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-def initialize(name,request)
+request = AsposeEmailCloud::UpdateMapiPropertiesRequestData.new(name, request)
 ```
 
 Name | Type | Description  | Notes
@@ -1275,7 +1275,7 @@ Upload file
 
 ### Request Parameters
 ```ruby
-def initialize(path,file,storage_name=storage_name)
+request = AsposeEmailCloud::UploadFileRequestData.new(path, file, storage_name=storage_name)
 ```
 
 Name | Type | Description  | Notes
