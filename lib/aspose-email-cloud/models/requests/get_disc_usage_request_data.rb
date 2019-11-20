@@ -38,7 +38,7 @@ module AsposeEmailCloud
       @storage_name = storage_name
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # resource path
       local_var_path = '/email/storage/disc'
 

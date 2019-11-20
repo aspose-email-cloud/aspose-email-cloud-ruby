@@ -86,6 +86,14 @@ module AsposeEmailCloud
       end
     end
 
+    # Initializes the object
+    def initialize(href=nil, rel=nil, type=nil, title=nil)
+      self.href = href
+      self.rel = rel
+      self.type = type
+      self.title = title
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties

@@ -42,14 +42,14 @@ module AsposeEmailCloud
       @storage_name = storage_name
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'path' is set
-      if config.client_side_validation && @path.nil?
+      if api_client.config.client_side_validation && @path.nil?
         raise ArgumentError, "Missing the required parameter 'path' when calling EmailApi.upload_file"
       end
 
       # verify the required parameter 'file' is set
-      if config.client_side_validation && @file.nil?
+      if api_client.config.client_side_validation && @file.nil?
         raise ArgumentError, "Missing the required parameter 'file' when calling EmailApi.upload_file"
       end
 

@@ -122,6 +122,18 @@ module AsposeEmailCloud
       end
     end
 
+    # Initializes the object
+    def initialize(host=nil, port=nil, login=nil, security_options=nil, protocol_type=nil, description=nil, storage_file=nil, password=nil)
+      self.host = host
+      self.port = port
+      self.login = login
+      self.security_options = security_options
+      self.protocol_type = protocol_type
+      self.description = description
+      self.storage_file = storage_file
+      self.password = password
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties

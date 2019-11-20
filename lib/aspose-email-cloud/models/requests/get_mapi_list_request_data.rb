@@ -44,7 +44,7 @@ module AsposeEmailCloud
       @page_number = page_number
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # resource path
       local_var_path = '/email/Mapi'
 

@@ -42,9 +42,9 @@ module AsposeEmailCloud
       @storage = storage
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'name' is set
-      if config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && @name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.get_mapi_properties"
       end
 

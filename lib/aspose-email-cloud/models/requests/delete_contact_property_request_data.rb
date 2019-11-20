@@ -46,34 +46,34 @@ module AsposeEmailCloud
       @folder = folder
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'format' is set
-      if config.client_side_validation && @format.nil?
+      if api_client.config.client_side_validation && @format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.delete_contact_property"
       end
 
       # verify enum value
-      if config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
+      if api_client.config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
         raise ArgumentError, "invalid value for 'format', must be one of VCard, WebDav, Msg"
       end
 
       # verify the required parameter 'name' is set
-      if config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && @name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.delete_contact_property"
       end
 
       # verify the required parameter 'member_name' is set
-      if config.client_side_validation && @member_name.nil?
+      if api_client.config.client_side_validation && @member_name.nil?
         raise ArgumentError, "Missing the required parameter 'member_name' when calling EmailApi.delete_contact_property"
       end
 
       # verify the required parameter 'index' is set
-      if config.client_side_validation && @index.nil?
+      if api_client.config.client_side_validation && @index.nil?
         raise ArgumentError, "Missing the required parameter 'index' when calling EmailApi.delete_contact_property"
       end
 
       # verify the required parameter 'folder' is set
-      if config.client_side_validation && @folder.nil?
+      if api_client.config.client_side_validation && @folder.nil?
         raise ArgumentError, "Missing the required parameter 'folder' when calling EmailApi.delete_contact_property"
       end
 
@@ -87,7 +87,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(@folder)
+      post_body = api_client.object_to_http_body(@folder)
       auth_names = ['JWT']
 
       # header parameters

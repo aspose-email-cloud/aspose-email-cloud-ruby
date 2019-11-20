@@ -68,6 +68,12 @@ module AsposeEmailCloud
       end
     end
 
+    # Initializes the object
+    def initialize(request_id=nil, date=nil)
+      self.request_id = request_id
+      self.date = date
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties

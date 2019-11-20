@@ -68,6 +68,12 @@ module AsposeEmailCloud
       end
     end
 
+    # Initializes the object
+    def initialize(hierarchical_object=nil, storage_folder=nil)
+      self.hierarchical_object = hierarchical_object
+      self.storage_folder = storage_folder
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties

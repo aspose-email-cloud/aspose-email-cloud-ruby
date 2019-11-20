@@ -68,6 +68,12 @@ module AsposeEmailCloud
       end
     end
 
+    # Initializes the object
+    def initialize(document_folder=nil, attachment_folder=nil)
+      self.document_folder = document_folder
+      self.attachment_folder = attachment_folder
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties

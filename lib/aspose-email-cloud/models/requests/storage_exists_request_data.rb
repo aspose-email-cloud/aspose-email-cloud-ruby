@@ -38,9 +38,9 @@ module AsposeEmailCloud
       @storage_name = storage_name
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'storage_name' is set
-      if config.client_side_validation && @storage_name.nil?
+      if api_client.config.client_side_validation && @storage_name.nil?
         raise ArgumentError, "Missing the required parameter 'storage_name' when calling EmailApi.storage_exists"
       end
 

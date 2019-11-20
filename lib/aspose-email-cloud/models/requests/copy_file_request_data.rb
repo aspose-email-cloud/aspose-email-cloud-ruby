@@ -46,14 +46,14 @@ module AsposeEmailCloud
       @version_id = version_id
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'src_path' is set
-      if config.client_side_validation && @src_path.nil?
+      if api_client.config.client_side_validation && @src_path.nil?
         raise ArgumentError, "Missing the required parameter 'src_path' when calling EmailApi.copy_file"
       end
 
       # verify the required parameter 'dest_path' is set
-      if config.client_side_validation && @dest_path.nil?
+      if api_client.config.client_side_validation && @dest_path.nil?
         raise ArgumentError, "Missing the required parameter 'dest_path' when calling EmailApi.copy_file"
       end
 

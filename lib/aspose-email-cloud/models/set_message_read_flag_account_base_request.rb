@@ -92,6 +92,15 @@ module AsposeEmailCloud
       end
     end
 
+    # Initializes the object
+    def initialize(first_account=nil, second_account=nil, storage_folder=nil, message_id=nil, is_read=nil)
+      self.first_account = first_account
+      self.second_account = second_account
+      self.storage_folder = storage_folder
+      self.message_id = message_id
+      self.is_read = is_read
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties

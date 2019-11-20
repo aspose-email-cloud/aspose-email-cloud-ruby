@@ -46,7 +46,7 @@ module AsposeEmailCloud
     # @param [add_calendar_attachmentRequest] request Request object.
     # @return [nil]
     def add_calendar_attachment(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -55,7 +55,7 @@ module AsposeEmailCloud
     # @param [add_contact_attachmentRequest] request Request object.
     # @return [nil]
     def add_contact_attachment(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -64,7 +64,7 @@ module AsposeEmailCloud
     # @param [add_email_attachmentRequest] request Request object.
     # @return [EmailDocumentResponse]
     def add_email_attachment(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :POST, 'EmailDocumentResponse')
     end
 
@@ -72,7 +72,7 @@ module AsposeEmailCloud
     # @param [add_mapi_attachmentRequest] request Request object.
     # @return [nil]
     def add_mapi_attachment(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -81,7 +81,7 @@ module AsposeEmailCloud
     # @param [append_email_messageRequest] request Request object.
     # @return [EmailPropertyResponse]
     def append_email_message(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, 'EmailPropertyResponse')
     end
 
@@ -89,7 +89,7 @@ module AsposeEmailCloud
     # @param [append_mime_messageRequest] request Request object.
     # @return [ValueResponse]
     def append_mime_message(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, 'ValueResponse')
     end
 
@@ -97,7 +97,7 @@ module AsposeEmailCloud
     # @param [copy_fileRequest] request Request object.
     # @return [nil]
     def copy_file(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -106,7 +106,7 @@ module AsposeEmailCloud
     # @param [copy_folderRequest] request Request object.
     # @return [nil]
     def copy_folder(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -115,7 +115,7 @@ module AsposeEmailCloud
     # @param [create_calendarRequest] request Request object.
     # @return [nil]
     def create_calendar(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -124,7 +124,7 @@ module AsposeEmailCloud
     # @param [create_contactRequest] request Request object.
     # @return [nil]
     def create_contact(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -133,7 +133,7 @@ module AsposeEmailCloud
     # @param [create_emailRequest] request Request object.
     # @return [EmailDocumentResponse]
     def create_email(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, 'EmailDocumentResponse')
     end
 
@@ -141,7 +141,7 @@ module AsposeEmailCloud
     # @param [create_email_folderRequest] request Request object.
     # @return [nil]
     def create_email_folder(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -150,7 +150,7 @@ module AsposeEmailCloud
     # @param [create_folderRequest] request Request object.
     # @return [nil]
     def create_folder(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -159,7 +159,7 @@ module AsposeEmailCloud
     # @param [create_mapiRequest] request Request object.
     # @return [nil]
     def create_mapi(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -168,7 +168,7 @@ module AsposeEmailCloud
     # @param [delete_calendar_propertyRequest] request Request object.
     # @return [nil]
     def delete_calendar_property(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :DELETE, nil)
       nil
     end
@@ -177,7 +177,7 @@ module AsposeEmailCloud
     # @param [delete_contact_propertyRequest] request Request object.
     # @return [nil]
     def delete_contact_property(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :DELETE, nil)
       nil
     end
@@ -186,7 +186,7 @@ module AsposeEmailCloud
     # @param [delete_email_folderRequest] request Request object.
     # @return [nil]
     def delete_email_folder(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :DELETE, nil)
       nil
     end
@@ -195,7 +195,7 @@ module AsposeEmailCloud
     # @param [delete_email_messageRequest] request Request object.
     # @return [nil]
     def delete_email_message(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :DELETE, nil)
       nil
     end
@@ -204,7 +204,7 @@ module AsposeEmailCloud
     # @param [delete_fileRequest] request Request object.
     # @return [nil]
     def delete_file(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :DELETE, nil)
       nil
     end
@@ -213,7 +213,7 @@ module AsposeEmailCloud
     # @param [delete_folderRequest] request Request object.
     # @return [nil]
     def delete_folder(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :DELETE, nil)
       nil
     end
@@ -222,7 +222,7 @@ module AsposeEmailCloud
     # @param [delete_mapi_attachmentRequest] request Request object.
     # @return [nil]
     def delete_mapi_attachment(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :DELETE, nil)
       nil
     end
@@ -231,7 +231,7 @@ module AsposeEmailCloud
     # @param [delete_mapi_propertiesRequest] request Request object.
     # @return [nil]
     def delete_mapi_properties(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :DELETE, nil)
       nil
     end
@@ -240,7 +240,7 @@ module AsposeEmailCloud
     # @param [download_fileRequest] request Request object.
     # @return [File]
     def download_file(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'File')
     end
 
@@ -248,7 +248,7 @@ module AsposeEmailCloud
     # @param [fetch_email_messageRequest] request Request object.
     # @return [MimeResponse]
     def fetch_email_message(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'MimeResponse')
     end
 
@@ -256,7 +256,7 @@ module AsposeEmailCloud
     # @param [get_calendarRequest] request Request object.
     # @return [HierarchicalObject]
     def get_calendar(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'HierarchicalObject')
     end
 
@@ -264,7 +264,7 @@ module AsposeEmailCloud
     # @param [get_calendar_attachmentRequest] request Request object.
     # @return [File]
     def get_calendar_attachment(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'File')
     end
 
@@ -272,7 +272,7 @@ module AsposeEmailCloud
     # @param [get_calendar_listRequest] request Request object.
     # @return [ListResponseOfHierarchicalObjectResponse]
     def get_calendar_list(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ListResponseOfHierarchicalObjectResponse')
     end
 
@@ -280,7 +280,7 @@ module AsposeEmailCloud
     # @param [get_contact_attachmentRequest] request Request object.
     # @return [File]
     def get_contact_attachment(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'File')
     end
 
@@ -288,7 +288,7 @@ module AsposeEmailCloud
     # @param [get_contact_listRequest] request Request object.
     # @return [ListResponseOfHierarchicalObjectResponse]
     def get_contact_list(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ListResponseOfHierarchicalObjectResponse')
     end
 
@@ -296,7 +296,7 @@ module AsposeEmailCloud
     # @param [get_contact_propertiesRequest] request Request object.
     # @return [HierarchicalObject]
     def get_contact_properties(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'HierarchicalObject')
     end
 
@@ -304,7 +304,7 @@ module AsposeEmailCloud
     # @param [get_disc_usageRequest] request Request object.
     # @return [DiscUsage]
     def get_disc_usage(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'DiscUsage')
     end
 
@@ -312,7 +312,7 @@ module AsposeEmailCloud
     # @param [get_emailRequest] request Request object.
     # @return [EmailDocument]
     def get_email(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'EmailDocument')
     end
 
@@ -320,7 +320,7 @@ module AsposeEmailCloud
     # @param [get_email_attachmentRequest] request Request object.
     # @return [File]
     def get_email_attachment(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'File')
     end
 
@@ -328,7 +328,7 @@ module AsposeEmailCloud
     # @param [get_email_propertyRequest] request Request object.
     # @return [EmailPropertyResponse]
     def get_email_property(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'EmailPropertyResponse')
     end
 
@@ -336,7 +336,7 @@ module AsposeEmailCloud
     # @param [get_file_versionsRequest] request Request object.
     # @return [FileVersions]
     def get_file_versions(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'FileVersions')
     end
 
@@ -344,7 +344,7 @@ module AsposeEmailCloud
     # @param [get_files_listRequest] request Request object.
     # @return [FilesList]
     def get_files_list(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'FilesList')
     end
 
@@ -352,7 +352,7 @@ module AsposeEmailCloud
     # @param [get_mapi_attachmentRequest] request Request object.
     # @return [File]
     def get_mapi_attachment(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'File')
     end
 
@@ -360,7 +360,7 @@ module AsposeEmailCloud
     # @param [get_mapi_attachmentsRequest] request Request object.
     # @return [ListResponseOfString]
     def get_mapi_attachments(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ListResponseOfString')
     end
 
@@ -368,7 +368,7 @@ module AsposeEmailCloud
     # @param [get_mapi_listRequest] request Request object.
     # @return [ListResponseOfHierarchicalObjectResponse]
     def get_mapi_list(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ListResponseOfHierarchicalObjectResponse')
     end
 
@@ -376,7 +376,7 @@ module AsposeEmailCloud
     # @param [get_mapi_propertiesRequest] request Request object.
     # @return [HierarchicalObjectResponse]
     def get_mapi_properties(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'HierarchicalObjectResponse')
     end
 
@@ -384,7 +384,7 @@ module AsposeEmailCloud
     # @param [list_email_foldersRequest] request Request object.
     # @return [ListFoldersResponse]
     def list_email_folders(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ListFoldersResponse')
     end
 
@@ -393,7 +393,7 @@ module AsposeEmailCloud
     # @param [list_email_messagesRequest] request Request object.
     # @return [ListMessagesResponse]
     def list_email_messages(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ListMessagesResponse')
     end
 
@@ -401,7 +401,7 @@ module AsposeEmailCloud
     # @param [move_fileRequest] request Request object.
     # @return [nil]
     def move_file(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -410,7 +410,7 @@ module AsposeEmailCloud
     # @param [move_folderRequest] request Request object.
     # @return [nil]
     def move_folder(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -419,7 +419,7 @@ module AsposeEmailCloud
     # @param [object_existsRequest] request Request object.
     # @return [ObjectExist]
     def object_exists(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ObjectExist')
     end
 
@@ -427,7 +427,7 @@ module AsposeEmailCloud
     # @param [save_mail_accountRequest] request Request object.
     # @return [nil]
     def save_mail_account(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :POST, nil)
       nil
     end
@@ -436,7 +436,7 @@ module AsposeEmailCloud
     # @param [save_mail_o_auth_accountRequest] request Request object.
     # @return [nil]
     def save_mail_o_auth_account(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :POST, nil)
       nil
     end
@@ -445,7 +445,7 @@ module AsposeEmailCloud
     # @param [send_emailRequest] request Request object.
     # @return [nil]
     def send_email(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :POST, nil)
       nil
     end
@@ -454,7 +454,7 @@ module AsposeEmailCloud
     # @param [send_email_mimeRequest] request Request object.
     # @return [nil]
     def send_email_mime(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :POST, nil)
       nil
     end
@@ -463,7 +463,7 @@ module AsposeEmailCloud
     # @param [set_email_propertyRequest] request Request object.
     # @return [EmailPropertyResponse]
     def set_email_property(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, 'EmailPropertyResponse')
     end
 
@@ -471,7 +471,7 @@ module AsposeEmailCloud
     # @param [set_email_read_flagRequest] request Request object.
     # @return [nil]
     def set_email_read_flag(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :POST, nil)
       nil
     end
@@ -480,7 +480,7 @@ module AsposeEmailCloud
     # @param [storage_existsRequest] request Request object.
     # @return [StorageExist]
     def storage_exists(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'StorageExist')
     end
 
@@ -488,7 +488,7 @@ module AsposeEmailCloud
     # @param [update_calendar_propertiesRequest] request Request object.
     # @return [nil]
     def update_calendar_properties(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -497,7 +497,7 @@ module AsposeEmailCloud
     # @param [update_contact_propertiesRequest] request Request object.
     # @return [nil]
     def update_contact_properties(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -506,7 +506,7 @@ module AsposeEmailCloud
     # @param [update_mapi_propertiesRequest] request Request object.
     # @return [nil]
     def update_mapi_properties(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil
     end
@@ -515,7 +515,7 @@ module AsposeEmailCloud
     # @param [upload_fileRequest] request Request object.
     # @return [FilesUploadResult]
     def upload_file(request)
-      http_request = request.to_http_info(@api_client.config)
+      http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, 'FilesUploadResult')
     end
 

@@ -40,14 +40,14 @@ module AsposeEmailCloud
       @request = request
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'file_name' is set
-      if config.client_side_validation && @file_name.nil?
+      if api_client.config.client_side_validation && @file_name.nil?
         raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.create_email"
       end
 
       # verify the required parameter 'request' is set
-      if config.client_side_validation && @request.nil?
+      if api_client.config.client_side_validation && @request.nil?
         raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.create_email"
       end
 
@@ -61,7 +61,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(@request)
+      post_body = api_client.object_to_http_body(@request)
       auth_names = ['JWT']
 
       # header parameters

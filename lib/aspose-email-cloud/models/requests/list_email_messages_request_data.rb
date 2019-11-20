@@ -51,19 +51,19 @@ module AsposeEmailCloud
       @recursive = recursive
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'folder' is set
-      if config.client_side_validation && @folder.nil?
+      if api_client.config.client_side_validation && @folder.nil?
         raise ArgumentError, "Missing the required parameter 'folder' when calling EmailApi.list_email_messages"
       end
 
       # verify the required parameter 'query_string' is set
-      if config.client_side_validation && @query_string.nil?
+      if api_client.config.client_side_validation && @query_string.nil?
         raise ArgumentError, "Missing the required parameter 'query_string' when calling EmailApi.list_email_messages"
       end
 
       # verify the required parameter 'first_account' is set
-      if config.client_side_validation && @first_account.nil?
+      if api_client.config.client_side_validation && @first_account.nil?
         raise ArgumentError, "Missing the required parameter 'first_account' when calling EmailApi.list_email_messages"
       end
 

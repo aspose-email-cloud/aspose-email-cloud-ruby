@@ -68,6 +68,12 @@ module AsposeEmailCloud
       end
     end
 
+    # Initializes the object
+    def initialize(used_size=nil, total_size=nil)
+      self.used_size = used_size
+      self.total_size = total_size
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties

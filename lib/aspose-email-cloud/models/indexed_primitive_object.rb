@@ -33,7 +33,13 @@ module AsposeEmailCloud
     attr_accessor :name
 
     # Property type. Used for deserialization purposes
-    attr_accessor :type
+    def type #getter method
+      self.class.name.split('::').last
+    end
+
+    def type=(type) #setter method, parameter ignored
+      @type = self.class.name.split('::').last
+    end
 
     # Index of property in list
     attr_accessor :index
@@ -74,7 +80,7 @@ module AsposeEmailCloud
       end
 
       if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+        @type = self.class.name.split('::').last
       end
 
       if attributes.has_key?(:'index')
@@ -84,6 +90,14 @@ module AsposeEmailCloud
       if attributes.has_key?(:'value')
         self.value = attributes[:'value']
       end
+    end
+
+    # Initializes the object
+    def initialize(name=nil, type=nil, index=nil, value=nil)
+      self.name = name
+      @type = self.class.name.split('::').last
+      self.index = index
+      self.value = value
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

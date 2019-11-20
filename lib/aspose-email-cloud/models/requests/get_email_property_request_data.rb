@@ -44,14 +44,14 @@ module AsposeEmailCloud
       @folder = folder
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'property_name' is set
-      if config.client_side_validation && @property_name.nil?
+      if api_client.config.client_side_validation && @property_name.nil?
         raise ArgumentError, "Missing the required parameter 'property_name' when calling EmailApi.get_email_property"
       end
 
       # verify the required parameter 'file_name' is set
-      if config.client_side_validation && @file_name.nil?
+      if api_client.config.client_side_validation && @file_name.nil?
         raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.get_email_property"
       end
 

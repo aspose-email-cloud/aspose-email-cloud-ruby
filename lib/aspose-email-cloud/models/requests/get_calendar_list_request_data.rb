@@ -44,19 +44,19 @@ module AsposeEmailCloud
       @storage = storage
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'folder' is set
-      if config.client_side_validation && @folder.nil?
+      if api_client.config.client_side_validation && @folder.nil?
         raise ArgumentError, "Missing the required parameter 'folder' when calling EmailApi.get_calendar_list"
       end
 
       # verify the required parameter 'items_per_page' is set
-      if config.client_side_validation && @items_per_page.nil?
+      if api_client.config.client_side_validation && @items_per_page.nil?
         raise ArgumentError, "Missing the required parameter 'items_per_page' when calling EmailApi.get_calendar_list"
       end
 
       # verify the required parameter 'page_number' is set
-      if config.client_side_validation && @page_number.nil?
+      if api_client.config.client_side_validation && @page_number.nil?
         raise ArgumentError, "Missing the required parameter 'page_number' when calling EmailApi.get_calendar_list"
       end
 

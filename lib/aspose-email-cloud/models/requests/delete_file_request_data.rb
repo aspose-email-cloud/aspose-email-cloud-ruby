@@ -42,9 +42,9 @@ module AsposeEmailCloud
       @version_id = version_id
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'path' is set
-      if config.client_side_validation && @path.nil?
+      if api_client.config.client_side_validation && @path.nil?
         raise ArgumentError, "Missing the required parameter 'path' when calling EmailApi.delete_file"
       end
 

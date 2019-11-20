@@ -113,6 +113,17 @@ module AsposeEmailCloud
       end
     end
 
+    # Initializes the object
+    def initialize(name=nil, is_folder=nil, modified_date=nil, size=nil, path=nil, version_id=nil, is_latest=nil)
+      self.name = name
+      self.is_folder = is_folder
+      self.modified_date = modified_date
+      self.size = size
+      self.path = path
+      self.version_id = version_id
+      self.is_latest = is_latest
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties

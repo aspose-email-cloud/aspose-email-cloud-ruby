@@ -46,14 +46,14 @@ module AsposeEmailCloud
       @storage_folder = storage_folder
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'message_id' is set
-      if config.client_side_validation && @message_id.nil?
+      if api_client.config.client_side_validation && @message_id.nil?
         raise ArgumentError, "Missing the required parameter 'message_id' when calling EmailApi.fetch_email_message"
       end
 
       # verify the required parameter 'first_account' is set
-      if config.client_side_validation && @first_account.nil?
+      if api_client.config.client_side_validation && @first_account.nil?
         raise ArgumentError, "Missing the required parameter 'first_account' when calling EmailApi.fetch_email_message"
       end
 

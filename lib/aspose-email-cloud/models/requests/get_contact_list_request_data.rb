@@ -46,14 +46,14 @@ module AsposeEmailCloud
       @page_number = page_number
     end
 
-    def to_http_info(config)
+    def to_http_info(api_client)
       # verify the required parameter 'format' is set
-      if config.client_side_validation && @format.nil?
+      if api_client.config.client_side_validation && @format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.get_contact_list"
       end
 
       # verify enum value
-      if config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
+      if api_client.config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
         raise ArgumentError, "invalid value for 'format', must be one of VCard, WebDav, Msg"
       end
 

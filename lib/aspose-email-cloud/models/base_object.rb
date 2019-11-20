@@ -33,7 +33,13 @@ module AsposeEmailCloud
     attr_accessor :name
 
     # Property type. Used for deserialization purposes
-    attr_accessor :type
+    def type #getter method
+      self.class.name.split('::').last
+    end
+
+    def type=(type) #setter method, parameter ignored
+      @type = self.class.name.split('::').last
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -64,8 +70,14 @@ module AsposeEmailCloud
       end
 
       if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+        @type = self.class.name.split('::').last
       end
+    end
+
+    # Initializes the object
+    def initialize(name=nil, type=nil)
+      self.name = name
+      @type = self.class.name.split('::').last
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
