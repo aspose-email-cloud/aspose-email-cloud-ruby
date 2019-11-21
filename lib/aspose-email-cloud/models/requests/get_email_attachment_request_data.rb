@@ -56,7 +56,7 @@ module AsposeEmailCloud
       end
 
       # resource path
-      local_var_path = '/email/{fileName}/attachments'.sub('{' + 'attachment' + '}', @attachment.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/{fileName}/attachments/{attachment}'.sub('{' + 'attachment' + '}', @attachment.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
 
       # query parameters
       query_params = {}
