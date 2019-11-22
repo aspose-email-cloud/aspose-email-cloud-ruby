@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="set_email_property_request_data.rb">
+#  <copyright company="Aspose" file="list_email_folders_request_data.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,46 +29,45 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for set_email_property operation.
-  class SetEmailPropertyRequestData < EmailRequest
+  # Request model for list_email_folders operation.
+  class ListEmailFoldersRequestData < EmailRequest
 
-    # Set email document property value
-    # @param [String] property_name A property name that should be changed
-    # @param [String] file_name Email document file name
-    # @param [SetEmailPropertyRequest] request A property that should be changed and optional Storage info to specify             where the file located
-    def initialize(property_name, file_name, request)
-      @property_name = property_name
-      @file_name = file_name
-      @request = request
+    # Get folders list in email account
+    # @param [String] first_account Email account
+    # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
+    # @param [String] storage Storage name where account file(s) located
+    # @param [String] storage_folder Folder in storage where account file(s) located
+    # @param [String] parent_folder Folder in which subfolders should be listed
+    def initialize(first_account, second_account = nil, storage = nil, storage_folder = nil, parent_folder = nil)
+      @first_account = first_account
+      @second_account = second_account
+      @storage = storage
+      @storage_folder = storage_folder
+      @parent_folder = parent_folder
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'property_name' is set
-      if api_client.config.client_side_validation && @property_name.nil?
-        raise ArgumentError, "Missing the required parameter 'property_name' when calling EmailApi.set_email_property"
-      end
-
-      # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && @file_name.nil?
-        raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.set_email_property"
-      end
-
-      # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
-        raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.set_email_property"
+      # verify the required parameter 'first_account' is set
+      if api_client.config.client_side_validation && @first_account.nil?
+        raise ArgumentError, "Missing the required parameter 'first_account' when calling EmailApi.list_email_folders"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}/properties/{propertyName}'.sub('{' + 'propertyName' + '}', @property_name.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/client/ListFolders'
 
       # query parameters
       query_params = {}
+      query_params[:firstAccount] = @first_account
+      query_params[:secondAccount] = @second_account unless @second_account.nil?
+      query_params[:storage] = @storage unless @storage.nil?
+      query_params[:storageFolder] = @storage_folder unless @storage_folder.nil?
+      query_params[:parentFolder] = @parent_folder unless @parent_folder.nil?
 
       # form parameters
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = nil
       auth_names = ['JWT']
 
       # header parameters

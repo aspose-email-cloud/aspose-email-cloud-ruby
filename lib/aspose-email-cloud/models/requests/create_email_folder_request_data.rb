@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="set_email_property_request_data.rb">
+#  <copyright company="Aspose" file="create_email_folder_request_data.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,37 +29,23 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for set_email_property operation.
-  class SetEmailPropertyRequestData < EmailRequest
+  # Request model for create_email_folder operation.
+  class CreateEmailFolderRequestData < EmailRequest
 
-    # Set email document property value
-    # @param [String] property_name A property name that should be changed
-    # @param [String] file_name Email document file name
-    # @param [SetEmailPropertyRequest] request A property that should be changed and optional Storage info to specify             where the file located
-    def initialize(property_name, file_name, request)
-      @property_name = property_name
-      @file_name = file_name
+    # Create new folder in email account
+    # @param [CreateFolderBaseRequest] request Create folder request
+    def initialize(request)
       @request = request
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'property_name' is set
-      if api_client.config.client_side_validation && @property_name.nil?
-        raise ArgumentError, "Missing the required parameter 'property_name' when calling EmailApi.set_email_property"
-      end
-
-      # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && @file_name.nil?
-        raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.set_email_property"
-      end
-
       # verify the required parameter 'request' is set
       if api_client.config.client_side_validation && @request.nil?
-        raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.set_email_property"
+        raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.create_email_folder"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}/properties/{propertyName}'.sub('{' + 'propertyName' + '}', @property_name.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/client/CreateFolder'
 
       # query parameters
       query_params = {}

@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="set_email_property_request_data.rb">
+#  <copyright company="Aspose" file="get_contact_properties_request_data.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,46 +29,50 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for set_email_property operation.
-  class SetEmailPropertyRequestData < EmailRequest
+  # Request model for get_contact_properties operation.
+  class GetContactPropertiesRequestData < EmailRequest
 
-    # Set email document property value
-    # @param [String] property_name A property name that should be changed
-    # @param [String] file_name Email document file name
-    # @param [SetEmailPropertyRequest] request A property that should be changed and optional Storage info to specify             where the file located
-    def initialize(property_name, file_name, request)
-      @property_name = property_name
-      @file_name = file_name
-      @request = request
+    # Get contact document properties
+    # @param [String] format Contact document format
+    # @param [String] name Contact document file name
+    # @param [String] folder Path to folder in storage
+    # @param [String] storage Storage name
+    def initialize(format, name, folder = nil, storage = nil)
+      @format = format
+      @name = name
+      @folder = folder
+      @storage = storage
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'property_name' is set
-      if api_client.config.client_side_validation && @property_name.nil?
-        raise ArgumentError, "Missing the required parameter 'property_name' when calling EmailApi.set_email_property"
+      # verify the required parameter 'format' is set
+      if api_client.config.client_side_validation && @format.nil?
+        raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.get_contact_properties"
       end
 
-      # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && @file_name.nil?
-        raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.set_email_property"
+      # verify enum value
+      if api_client.config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
+        raise ArgumentError, "invalid value for 'format', must be one of VCard, WebDav, Msg"
       end
 
-      # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
-        raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.set_email_property"
+      # verify the required parameter 'name' is set
+      if api_client.config.client_side_validation && @name.nil?
+        raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.get_contact_properties"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}/properties/{propertyName}'.sub('{' + 'propertyName' + '}', @property_name.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/Contact/{format}/{name}/properties'.sub('{' + 'format' + '}', @format.to_s).sub('{' + 'name' + '}', @name.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:folder] = @folder unless @folder.nil?
+      query_params[:storage] = @storage unless @storage.nil?
 
       # form parameters
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = nil
       auth_names = ['JWT']
 
       # header parameters

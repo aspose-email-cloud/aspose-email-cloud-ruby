@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="set_email_property_request_data.rb">
+#  <copyright company="Aspose" file="upload_file_request_data.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,46 +29,43 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for set_email_property operation.
-  class SetEmailPropertyRequestData < EmailRequest
+  # Request model for upload_file operation.
+  class UploadFileRequestData < EmailRequest
 
-    # Set email document property value
-    # @param [String] property_name A property name that should be changed
-    # @param [String] file_name Email document file name
-    # @param [SetEmailPropertyRequest] request A property that should be changed and optional Storage info to specify             where the file located
-    def initialize(property_name, file_name, request)
-      @property_name = property_name
-      @file_name = file_name
-      @request = request
+    # Upload file
+    # @param [String] path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
+    # @param [File] file File to upload
+    # @param [String] storage_name Storage name
+    def initialize(path, file, storage_name = nil)
+      @path = path
+      @file = file
+      @storage_name = storage_name
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'property_name' is set
-      if api_client.config.client_side_validation && @property_name.nil?
-        raise ArgumentError, "Missing the required parameter 'property_name' when calling EmailApi.set_email_property"
+      # verify the required parameter 'path' is set
+      if api_client.config.client_side_validation && @path.nil?
+        raise ArgumentError, "Missing the required parameter 'path' when calling EmailApi.upload_file"
       end
 
-      # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && @file_name.nil?
-        raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.set_email_property"
-      end
-
-      # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
-        raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.set_email_property"
+      # verify the required parameter 'file' is set
+      if api_client.config.client_side_validation && @file.nil?
+        raise ArgumentError, "Missing the required parameter 'file' when calling EmailApi.upload_file"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}/properties/{propertyName}'.sub('{' + 'propertyName' + '}', @property_name.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/storage/file/{path}'.sub('{' + 'path' + '}', @path.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:storageName] = @storage_name unless @storage_name.nil?
 
       # form parameters
       form_params = {}
+      form_params['File'] = @file
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = nil
       auth_names = ['JWT']
 
       # header parameters
@@ -76,7 +73,7 @@ module AsposeEmailCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = form_params.any? ? 'multipart/form-data' : select_header_content_type(['application/json'])
+      header_params['Content-Type'] = form_params.any? ? 'multipart/form-data' : select_header_content_type(['multipart/form-data'])
 
       AsposeEmailCloud::HttpRequest.new(local_var_path,
                                       header_params,
@@ -87,3 +84,4 @@ module AsposeEmailCloud
     end
   end
 end
+

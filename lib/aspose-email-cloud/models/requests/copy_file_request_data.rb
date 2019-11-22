@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="set_email_property_request_data.rb">
+#  <copyright company="Aspose" file="copy_file_request_data.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,46 +29,49 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for set_email_property operation.
-  class SetEmailPropertyRequestData < EmailRequest
+  # Request model for copy_file operation.
+  class CopyFileRequestData < EmailRequest
 
-    # Set email document property value
-    # @param [String] property_name A property name that should be changed
-    # @param [String] file_name Email document file name
-    # @param [SetEmailPropertyRequest] request A property that should be changed and optional Storage info to specify             where the file located
-    def initialize(property_name, file_name, request)
-      @property_name = property_name
-      @file_name = file_name
-      @request = request
+    # Copy file
+    # @param [String] src_path Source file path e.g. &#39;/folder/file.ext&#39;
+    # @param [String] dest_path Destination file path
+    # @param [String] src_storage_name Source storage name
+    # @param [String] dest_storage_name Destination storage name
+    # @param [String] version_id File version ID to copy
+    def initialize(src_path, dest_path, src_storage_name = nil, dest_storage_name = nil, version_id = nil)
+      @src_path = src_path
+      @dest_path = dest_path
+      @src_storage_name = src_storage_name
+      @dest_storage_name = dest_storage_name
+      @version_id = version_id
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'property_name' is set
-      if api_client.config.client_side_validation && @property_name.nil?
-        raise ArgumentError, "Missing the required parameter 'property_name' when calling EmailApi.set_email_property"
+      # verify the required parameter 'src_path' is set
+      if api_client.config.client_side_validation && @src_path.nil?
+        raise ArgumentError, "Missing the required parameter 'src_path' when calling EmailApi.copy_file"
       end
 
-      # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && @file_name.nil?
-        raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.set_email_property"
-      end
-
-      # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
-        raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.set_email_property"
+      # verify the required parameter 'dest_path' is set
+      if api_client.config.client_side_validation && @dest_path.nil?
+        raise ArgumentError, "Missing the required parameter 'dest_path' when calling EmailApi.copy_file"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}/properties/{propertyName}'.sub('{' + 'propertyName' + '}', @property_name.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/storage/file/copy/{srcPath}'.sub('{' + 'srcPath' + '}', @src_path.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:destPath] = @dest_path
+      query_params[:srcStorageName] = @src_storage_name unless @src_storage_name.nil?
+      query_params[:destStorageName] = @dest_storage_name unless @dest_storage_name.nil?
+      query_params[:versionId] = @version_id unless @version_id.nil?
 
       # form parameters
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = nil
       auth_names = ['JWT']
 
       # header parameters
