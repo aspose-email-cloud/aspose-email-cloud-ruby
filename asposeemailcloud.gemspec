@@ -27,8 +27,8 @@ Swagger Codegen version: 3.0.0-SNAPSHOT
 
 =end
 
-$:.push File.expand_path("../src", __FILE__)
-require "asposeemailcloud/version"
+$:.push File.expand_path("../lib", __FILE__)
+require_relative "./lib/aspose-email-cloud/version"
 
 Gem::Specification.new do |s|
   s.name        = "aspose_email_cloud"
@@ -53,7 +53,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'autotest-growl', '~> 0.2', '>= 0.2.16'
   s.add_development_dependency 'autotest-fsevent', '~> 0.2', '>= 0.2.12'
 
-  s.files         = Dir['src/**/*.rb']
+  s.files         = Dir['lib/**/*.rb']
   s.executables   = []
-  s.require_paths = ["src"]
+  s.require_paths = ["lib"]
 end
