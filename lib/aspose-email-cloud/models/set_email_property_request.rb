@@ -27,12 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Update email document property request
+  # Update email document property request             
   class SetEmailPropertyRequest
-    # An email property that should be updated
+    # An email property that should be updated             
     attr_accessor :email_property
 
-    # An email document location in storage
+    # An email document location in storage             
     attr_accessor :storage_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

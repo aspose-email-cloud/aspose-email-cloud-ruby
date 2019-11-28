@@ -27,7 +27,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Send email MIME request
+  # Send email MIME request             
   class SendEmailMimeBaseRequest
     attr_accessor :first_account
 
@@ -35,7 +35,7 @@ module AsposeEmailCloud
 
     attr_accessor :storage_folder
 
-    # Email document serialized as MIME
+    # Email document serialized as MIME             
     attr_accessor :base64_mime_message
 
     # Attribute mapping from ruby-style variable name to JSON key.

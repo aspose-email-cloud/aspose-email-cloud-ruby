@@ -27,12 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Base property object
+  # Base property object             
   class BaseObject
-    # Gets or sets the name of an object.
+    # Gets or sets the name of an object.             
     attr_accessor :name
 
-    # Property type. Used for deserialization purposes
+    # Property type. Used for deserialization purposes             
     def type #getter method
       self.class.name.split('::').last
     end

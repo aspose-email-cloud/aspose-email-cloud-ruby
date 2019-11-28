@@ -27,12 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Email account folder
+  # Email account folder             
   class MailServerFolder
-    # Gets or sets mail folder name
+    # Gets or sets mail folder name             
     attr_accessor :name
 
-    # Gets or sets mail folder id
+    # Gets or sets mail folder id             
     attr_accessor :id
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for add_calendar_attachment operation.
   class AddCalendarAttachmentRequestData < EmailRequest
 
-    # Adds an attachment to iCalendar file
+    # Adds an attachment to iCalendar file             
     # @param [String] name Calendar file name in storage
     # @param [String] attachment Attachment file name in storage
     # @param [AddAttachmentRequest] request Storage name and folder path for calendar and attachment files

@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for append_mime_message operation.
   class AppendMimeMessageRequestData < EmailRequest
 
-    # Adds an email from MIME to specified folder in email account
+    # Adds an email from MIME to specified folder in email account             
     # @param [AppendEmailMimeBaseRequest] request Append email request
     def initialize(request)
       @request = request

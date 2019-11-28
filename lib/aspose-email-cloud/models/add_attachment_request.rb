@@ -27,12 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Add attachment request
+  # Add attachment request             
   class AddAttachmentRequest
-    # Storage folder location of document
+    # Storage folder location of document             
     attr_accessor :document_folder
 
-    # Storage folder location of an attachment
+    # Storage folder location of an attachment             
     attr_accessor :attachment_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

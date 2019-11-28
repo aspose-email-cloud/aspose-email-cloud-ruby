@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for delete_email_folder operation.
   class DeleteEmailFolderRequestData < EmailRequest
 
-    # Delete a folder in email account
+    # Delete a folder in email account             
     # @param [DeleteFolderBaseRequest] request Delete folder request
     def initialize(request)
       @request = request

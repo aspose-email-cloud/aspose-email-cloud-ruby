@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for append_email_message operation.
   class AppendEmailMessageRequestData < EmailRequest
 
-    # Adds an email from *.eml file to specified folder in email account
+    # Adds an email from *.eml file to specified folder in email account             
     # @param [AppendEmailBaseRequest] request Append email request
     def initialize(request)
       @request = request

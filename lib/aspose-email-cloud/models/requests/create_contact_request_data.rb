@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for create_contact operation.
   class CreateContactRequestData < EmailRequest
 
-    # Create contact document
+    # Create contact document             
     # @param [String] format Contact document format
     # @param [String] name Contact document file name
     # @param [HierarchicalObjectRequest] request Create contact request

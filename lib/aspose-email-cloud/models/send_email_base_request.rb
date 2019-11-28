@@ -27,7 +27,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Send email file request
+  # Send email file request             
   class SendEmailBaseRequest
     attr_accessor :first_account
 
@@ -35,7 +35,7 @@ module AsposeEmailCloud
 
     attr_accessor :storage_folder
 
-    # Email document (*.eml) file location in storage
+    # Email document (*.eml) file location in storage             
     attr_accessor :email_file
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_calendar_attachment operation.
   class GetCalendarAttachmentRequestData < EmailRequest
 
-    # Get iCalendar document attachment by name
+    # Get iCalendar document attachment by name             
     # @param [String] name iCalendar document file name
     # @param [String] attachment Attachment name or index
     # @param [String] folder Path to folder in storage

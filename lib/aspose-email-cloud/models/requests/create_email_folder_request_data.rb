@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for create_email_folder operation.
   class CreateEmailFolderRequestData < EmailRequest
 
-    # Create new folder in email account
+    # Create new folder in email account             
     # @param [CreateFolderBaseRequest] request Create folder request
     def initialize(request)
       @request = request

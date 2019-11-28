@@ -27,9 +27,9 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Email document property DTO.
+  # Email document property DTO.             
   class ValueResponse
-    # Gets or sets string content.
+    # Gets or sets string content.             
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

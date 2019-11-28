@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_mapi_properties operation.
   class GetMapiPropertiesRequestData < EmailRequest
 
-    # Get document properties
+    # Get document properties             
     # @param [String] name Document file name
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name

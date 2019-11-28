@@ -27,12 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Represents Email document DTO.
+  # Represents Email document DTO.             
   class EmailDocument
-    # Links that originate from this document.
+    # Links that originate from this document.             
     attr_accessor :links
 
-    # List of document properties.
+    # List of document properties.             
     attr_accessor :document_properties
 
     # Attribute mapping from ruby-style variable name to JSON key.

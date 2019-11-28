@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for create_calendar operation.
   class CreateCalendarRequestData < EmailRequest
 
-    # Create calendar file
+    # Create calendar file             
     # @param [String] name Calendar file name in storage
     # @param [HierarchicalObjectRequest] request 
     def initialize(name, request)

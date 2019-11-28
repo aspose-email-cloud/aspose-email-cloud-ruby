@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_calendar_list operation.
   class GetCalendarListRequestData < EmailRequest
 
-    # Get iCalendar files list in folder on storage
+    # Get iCalendar files list in folder on storage             
     # @param [String] folder Path to folder in storage
     # @param [Integer] items_per_page Count of items on page
     # @param [Integer] page_number Page number

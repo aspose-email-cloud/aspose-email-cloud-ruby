@@ -27,9 +27,9 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Email list properties.
+  # Email list properties.             
   class EmailProperties
-    # Gets or sets link that originate from this document.
+    # Gets or sets link that originate from this document.             
     attr_accessor :link
 
     attr_accessor :list

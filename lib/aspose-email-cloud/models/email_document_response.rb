@@ -27,9 +27,9 @@
 require 'date'
 
 module AsposeEmailCloud
-  # An email document response
+  # An email document response             
   class EmailDocumentResponse
-    # An email document requested
+    # An email document requested             
     attr_accessor :document
 
     # Attribute mapping from ruby-style variable name to JSON key.

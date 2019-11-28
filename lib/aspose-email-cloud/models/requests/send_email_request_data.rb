@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for send_email operation.
   class SendEmailRequestData < EmailRequest
 
-    # Send an email from *.eml file located on storage
+    # Send an email from *.eml file located on storage             
     # @param [SendEmailBaseRequest] request Send email request
     def initialize(request)
       @request = request

@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for save_mail_account operation.
   class SaveMailAccountRequestData < EmailRequest
 
-    # Create email account file (*.account) with login/password authentication
+    # Create email account file (*.account) with login/password authentication             
     # @param [SaveEmailAccountRequest] request Email account information
     def initialize(request)
       @request = request

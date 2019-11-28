@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **storage_folder** | [**StorageFolderLocation**](StorageFolderLocation.md) |  | [optional] 
 **folder** | **String** |  | 
 **mark_as_sent** | **BOOLEAN** |  | 
-**email_file** | [**StorageFileLocation**](StorageFileLocation.md) | Email document file location in storage | 
+**email_file** | [**StorageFileLocation**](StorageFileLocation.md) | Email document file location in storage              | 
 
  Parent class: [AppendEmailAccountBaseRequest](AppendEmailAccountBaseRequest.md)
 

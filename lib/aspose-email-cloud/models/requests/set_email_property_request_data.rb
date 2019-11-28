@@ -32,10 +32,10 @@ module AsposeEmailCloud
   # Request model for set_email_property operation.
   class SetEmailPropertyRequestData < EmailRequest
 
-    # Set email document property value
+    # Set email document property value             
     # @param [String] property_name A property name that should be changed
     # @param [String] file_name Email document file name
-    # @param [SetEmailPropertyRequest] request A property that should be changed and optional Storage info to specify             where the file located
+    # @param [SetEmailPropertyRequest] request A property that should be changed and optional Storage info to specify where the file located             
     def initialize(property_name, file_name, request)
       @property_name = property_name
       @file_name = file_name

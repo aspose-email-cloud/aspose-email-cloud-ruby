@@ -27,9 +27,9 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Email property response.
+  # Email property response.             
   class EmailPropertyResponse
-    # Gets or sets email property.
+    # Gets or sets email property.             
     attr_accessor :email_property
 
     # Attribute mapping from ruby-style variable name to JSON key.

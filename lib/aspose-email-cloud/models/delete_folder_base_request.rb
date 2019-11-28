@@ -27,7 +27,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Delete folder request
+  # Delete folder request             
   class DeleteFolderBaseRequest
     attr_accessor :first_account
 
@@ -35,10 +35,10 @@ module AsposeEmailCloud
 
     attr_accessor :storage_folder
 
-    # Folder name
+    # Folder name             
     attr_accessor :folder
 
-    # Specifies that folder should be deleted permanently
+    # Specifies that folder should be deleted permanently             
     attr_accessor :delete_permanently
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for delete_contact_property operation.
   class DeleteContactPropertyRequestData < EmailRequest
 
-    # Delete property from indexed property list
+    # Delete property from indexed property list             
     # @param [String] format Contact document format
     # @param [String] name Contact document file name
     # @param [String] member_name Indexed property name

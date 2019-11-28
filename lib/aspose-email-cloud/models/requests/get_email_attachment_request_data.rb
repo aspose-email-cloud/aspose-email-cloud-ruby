@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_email_attachment operation.
   class GetEmailAttachmentRequestData < EmailRequest
 
-    # Get email attachment by name
+    # Get email attachment by name             
     # @param [String] attachment Attachment name
     # @param [String] file_name Email document file name
     # @param [String] storage Storage name

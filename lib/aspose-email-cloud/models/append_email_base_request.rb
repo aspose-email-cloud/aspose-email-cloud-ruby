@@ -27,7 +27,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Append email from storage file to account request
+  # Append email from storage file to account request             
   class AppendEmailBaseRequest
     attr_accessor :first_account
 
@@ -39,7 +39,7 @@ module AsposeEmailCloud
 
     attr_accessor :mark_as_sent
 
-    # Email document file location in storage
+    # Email document file location in storage             
     attr_accessor :email_file
 
     # Attribute mapping from ruby-style variable name to JSON key.

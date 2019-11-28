@@ -27,9 +27,9 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Email document property DTO.
+  # Email document property DTO.             
   class MimeResponse
-    # Gets or sets base64 encoded mime content.
+    # Gets or sets base64 encoded mime content.             
     attr_accessor :mime
 
     # Attribute mapping from ruby-style variable name to JSON key.

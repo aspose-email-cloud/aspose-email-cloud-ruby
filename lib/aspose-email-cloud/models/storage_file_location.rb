@@ -27,15 +27,15 @@
 require 'date'
 
 module AsposeEmailCloud
-  # A storage file location information
+  # A storage file location information             
   class StorageFileLocation
-    # A storage name
+    # A storage name             
     attr_accessor :storage
 
-    # A path to a folder in specified storage
+    # A path to a folder in specified storage             
     attr_accessor :folder_path
 
-    # A file name in storage
+    # A file name in storage             
     attr_accessor :file_name
 
     # Attribute mapping from ruby-style variable name to JSON key.

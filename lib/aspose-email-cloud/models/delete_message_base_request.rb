@@ -27,7 +27,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Delete message request
+  # Delete message request             
   class DeleteMessageBaseRequest
     attr_accessor :first_account
 
@@ -35,10 +35,10 @@ module AsposeEmailCloud
 
     attr_accessor :storage_folder
 
-    # Message identifier
+    # Message identifier             
     attr_accessor :message_id
 
-    # Specifies that message should be deleted permanently
+    # Specifies that message should be deleted permanently             
     attr_accessor :delete_permanently
 
     # Attribute mapping from ruby-style variable name to JSON key.

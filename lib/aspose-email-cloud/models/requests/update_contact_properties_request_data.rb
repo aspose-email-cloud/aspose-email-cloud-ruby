@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for update_contact_properties operation.
   class UpdateContactPropertiesRequestData < EmailRequest
 
-    # Update contact document properties
+    # Update contact document properties             
     # @param [String] format Contact document format
     # @param [String] name Contact document file name
     # @param [HierarchicalObjectRequest] request Properties that should be updated/added

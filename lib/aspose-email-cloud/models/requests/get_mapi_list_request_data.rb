@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_mapi_list operation.
   class GetMapiListRequestData < EmailRequest
 
-    # Get document list from storage folder
+    # Get document list from storage folder             
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name
     # @param [Integer] items_per_page Count of items on page
