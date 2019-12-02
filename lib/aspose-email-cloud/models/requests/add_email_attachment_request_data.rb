@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for add_email_attachment operation.
   class AddEmailAttachmentRequestData < EmailRequest
 
-    # Adds an attachment to Email document
+    # Adds an attachment to Email document             
     # @param [String] attachment_name Attachment file name
     # @param [String] file_name Email document file name
     # @param [AddAttachmentRequest] request Storage info to specify location of email document and attachment files

@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for update_calendar_properties operation.
   class UpdateCalendarPropertiesRequestData < EmailRequest
 
-    # Update calendar file properties
+    # Update calendar file properties             
     # @param [String] name iCalendar file name in storage
     # @param [HierarchicalObjectRequest] request Calendar properties update request
     def initialize(name, request)

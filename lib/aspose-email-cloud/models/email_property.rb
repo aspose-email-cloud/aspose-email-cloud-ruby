@@ -27,7 +27,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Email property.
+  # Email property.             
   class EmailProperty
     attr_accessor :link
 

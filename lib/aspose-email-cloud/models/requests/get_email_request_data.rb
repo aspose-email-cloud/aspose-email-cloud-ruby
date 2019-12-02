@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_email operation.
   class GetEmailRequestData < EmailRequest
 
-    # Get email document
+    # Get email document             
     # @param [String] file_name Email document file name in storage
     # @param [String] storage Storage name
     # @param [String] folder Path to folder in storage

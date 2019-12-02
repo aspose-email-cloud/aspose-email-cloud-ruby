@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_contact_list operation.
   class GetContactListRequestData < EmailRequest
 
-    # Get contact list from storage folder
+    # Get contact list from storage folder             
     # @param [String] format Contact document format
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name

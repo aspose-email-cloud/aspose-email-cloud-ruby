@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_contact_attachment operation.
   class GetContactAttachmentRequestData < EmailRequest
 
-    # Get attachment file by name
+    # Get attachment file by name             
     # @param [String] format Contact document format
     # @param [String] name Contact document file name
     # @param [String] attachment Attachment name or index

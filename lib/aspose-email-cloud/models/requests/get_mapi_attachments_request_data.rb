@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_mapi_attachments operation.
   class GetMapiAttachmentsRequestData < EmailRequest
 
-    # Get document attachment list
+    # Get document attachment list             
     # @param [String] name Document file name
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name

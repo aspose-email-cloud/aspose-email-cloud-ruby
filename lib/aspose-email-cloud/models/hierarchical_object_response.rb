@@ -27,12 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Document represented as hierarchical set of properties response
+  # Document represented as hierarchical set of properties response             
   class HierarchicalObjectResponse
-    # Document properties
+    # Document properties             
     attr_accessor :hierarchical_object
 
-    # Document location in storage
+    # Document location in storage             
     attr_accessor :storage_file
 
     # Attribute mapping from ruby-style variable name to JSON key.

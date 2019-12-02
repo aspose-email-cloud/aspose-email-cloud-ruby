@@ -32,10 +32,10 @@ module AsposeEmailCloud
   # Request model for fetch_email_message operation.
   class FetchEmailMessageRequestData < EmailRequest
 
-    # Fetch message mime from email account
+    # Fetch message mime from email account             
     # @param [String] message_id Message identifier
     # @param [String] first_account Email account
-    # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
+    # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
     def initialize(message_id, first_account, second_account = nil, storage = nil, storage_folder = nil)

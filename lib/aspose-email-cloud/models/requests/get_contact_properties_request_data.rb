@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_contact_properties operation.
   class GetContactPropertiesRequestData < EmailRequest
 
-    # Get contact document properties
+    # Get contact document properties             
     # @param [String] format Contact document format
     # @param [String] name Contact document file name
     # @param [String] folder Path to folder in storage

@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_email_property operation.
   class GetEmailPropertyRequestData < EmailRequest
 
-    # Get an email document property by its name
+    # Get an email document property by its name             
     # @param [String] property_name A property name
     # @param [String] file_name Email document file name
     # @param [String] storage Storage name

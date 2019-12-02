@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for add_contact_attachment operation.
   class AddContactAttachmentRequestData < EmailRequest
 
-    # Add attachment to contact document
+    # Add attachment to contact document             
     # @param [String] format Contact document format
     # @param [String] name Contact document file name
     # @param [String] attachment Attachment name

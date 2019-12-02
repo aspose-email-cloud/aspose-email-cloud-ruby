@@ -27,7 +27,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Set message is read request
+  # Set message is read request             
   class SetMessageReadFlagAccountBaseRequest
     attr_accessor :first_account
 
@@ -35,10 +35,10 @@ module AsposeEmailCloud
 
     attr_accessor :storage_folder
 
-    # Message identifier
+    # Message identifier             
     attr_accessor :message_id
 
-    # Specifies that message should be marked read or unread
+    # Specifies that message should be marked read or unread             
     attr_accessor :is_read
 
     # Attribute mapping from ruby-style variable name to JSON key.

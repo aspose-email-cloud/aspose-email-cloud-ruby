@@ -32,9 +32,9 @@ module AsposeEmailCloud
   # Request model for list_email_folders operation.
   class ListEmailFoldersRequestData < EmailRequest
 
-    # Get folders list in email account
+    # Get folders list in email account             
     # @param [String] first_account Email account
-    # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
+    # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
     # @param [String] parent_folder Folder in which subfolders should be listed

@@ -27,12 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Create email document request
+  # Create email document request             
   class CreateEmailRequest
-    # An email document that should be created
+    # An email document that should be created             
     attr_accessor :email_document
 
-    # Email document location in storage
+    # Email document location in storage             
     attr_accessor :storage_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

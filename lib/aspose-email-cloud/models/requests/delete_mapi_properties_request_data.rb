@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for delete_mapi_properties operation.
   class DeleteMapiPropertiesRequestData < EmailRequest
 
-    # Delete document properties
+    # Delete document properties             
     # @param [String] name Document file name
     # @param [HierarchicalObjectRequest] request Properties that should be deleted
     def initialize(name, request)

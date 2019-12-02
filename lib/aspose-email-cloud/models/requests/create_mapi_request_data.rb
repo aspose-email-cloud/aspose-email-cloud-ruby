@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for create_mapi operation.
   class CreateMapiRequestData < EmailRequest
 
-    # Create new document
+    # Create new document             
     # @param [String] name Document file name
     # @param [HierarchicalObjectRequest] request Create document request
     def initialize(name, request)

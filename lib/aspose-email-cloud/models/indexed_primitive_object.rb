@@ -27,12 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Simple indexed property
+  # Simple indexed property             
   class IndexedPrimitiveObject
-    # Gets or sets the name of an object.
+    # Gets or sets the name of an object.             
     attr_accessor :name
 
-    # Property type. Used for deserialization purposes
+    # Property type. Used for deserialization purposes             
     def type #getter method
       self.class.name.split('::').last
     end
@@ -41,10 +41,10 @@ module AsposeEmailCloud
       @type = self.class.name.split('::').last
     end
 
-    # Index of property in list
+    # Index of property in list             
     attr_accessor :index
 
-    # Gets or sets the name of a property.
+    # Gets or sets the name of a property.             
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

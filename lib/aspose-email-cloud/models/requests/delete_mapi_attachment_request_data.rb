@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for delete_mapi_attachment operation.
   class DeleteMapiAttachmentRequestData < EmailRequest
 
-    # Remove attachment from document
+    # Remove attachment from document             
     # @param [String] name Document file name
     # @param [String] attachment Attachment name or index
     # @param [StorageFolderLocation] storage Document file storage location info

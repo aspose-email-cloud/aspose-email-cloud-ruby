@@ -27,30 +27,30 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Save email account settings with login/password authentication request
+  # Save email account settings with login/password authentication request             
   class SaveEmailAccountRequest
-    # Email account host
+    # Email account host             
     attr_accessor :host
 
-    # Email account port
+    # Email account port             
     attr_accessor :port
 
-    # Email account login
+    # Email account login             
     attr_accessor :login
 
-    # Email account security options
+    # Email account security options             
     attr_accessor :security_options
 
-    # Email account protocol type
+    # Email account protocol type             
     attr_accessor :protocol_type
 
-    # Email account description
+    # Email account description             
     attr_accessor :description
 
-    # A storage file location info to store email account
+    # A storage file location info to store email account             
     attr_accessor :storage_file
 
-    # Email account password
+    # Email account password             
     attr_accessor :password
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -4,7 +4,7 @@
 # **add_calendar_attachment**
 > add_calendar_attachment(request)
 
-Adds an attachment to iCalendar file
+Adds an attachment to iCalendar file             
 
 ### Return type
 
@@ -27,7 +27,7 @@ Name | Type | Description  | Notes
 # **add_contact_attachment**
 > add_contact_attachment(request)
 
-Add attachment to contact document
+Add attachment to contact document             
 
 ### Return type
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 # **add_email_attachment**
 > add_email_attachment(request)
 
-Adds an attachment to Email document
+Adds an attachment to Email document             
 
 ### Return type
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 # **add_mapi_attachment**
 > add_mapi_attachment(request)
 
-Add attachment to document
+Add attachment to document             
 
 ### Return type
 
@@ -93,11 +93,404 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="ai_bcr_ocr"></a>
+# **ai_bcr_ocr**
+> ai_bcr_ocr(request)
+
+Ocr images             
+
+### Return type
+
+[**ListResponseOfAiBcrOcrData**](ListResponseOfAiBcrOcrData.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiBcrOcrRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AiBcrBase64Request**](AiBcrBase64Request.md)| Request with base64 images data | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_bcr_ocr_storage"></a>
+# **ai_bcr_ocr_storage**
+> ai_bcr_ocr_storage(request)
+
+Ocr images from storage             
+
+### Return type
+
+[**ListResponseOfAiBcrOcrData**](ListResponseOfAiBcrOcrData.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiBcrOcrStorageRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AiBcrStorageImageRequest**](AiBcrStorageImageRequest.md)| Request with images located on storage | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_bcr_parse"></a>
+# **ai_bcr_parse**
+> ai_bcr_parse(request)
+
+Parse images to vCard properties             
+
+### Return type
+
+[**ListResponseOfHierarchicalObject**](ListResponseOfHierarchicalObject.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiBcrParseRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AiBcrBase64Request**](AiBcrBase64Request.md)| Request with base64 images data | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_bcr_parse_ocr_data"></a>
+# **ai_bcr_parse_ocr_data**
+> ai_bcr_parse_ocr_data(request)
+
+Parse OCR data to vCard properties             
+
+### Return type
+
+[**ListResponseOfHierarchicalObject**](ListResponseOfHierarchicalObject.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiBcrParseOcrDataRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AiBcrParseOcrDataRequest**](AiBcrParseOcrDataRequest.md)|  | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_bcr_parse_ocr_data_storage"></a>
+# **ai_bcr_parse_ocr_data_storage**
+> ai_bcr_parse_ocr_data_storage(request)
+
+Parse vCards from OCR data and save them to Storage             
+
+### Return type
+
+[**ListResponseOfStorageFileLocation**](ListResponseOfStorageFileLocation.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiBcrParseOcrDataStorageRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AiBcrParseOcrDataStorageRequest**](AiBcrParseOcrDataStorageRequest.md)|  | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_bcr_parse_storage"></a>
+# **ai_bcr_parse_storage**
+> ai_bcr_parse_storage(request)
+
+Parse images from storage to vCard files             
+
+### Return type
+
+[**ListResponseOfStorageFileLocation**](ListResponseOfStorageFileLocation.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiBcrParseStorageRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AiBcrParseStorageRequest**](AiBcrParseStorageRequest.md)| Request with images located on storage | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_complete"></a>
+# **ai_name_complete**
+> ai_name_complete(request)
+
+The call proposes k most probable names for given starting characters             
+
+### Return type
+
+[**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameCompleteRequestData.new(name, language=language, location=location, encoding=encoding, script=script, style=style)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| A name to complete (required) | 
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **encoding** | **String**| A character encoding name | [optional] [default to ]
+ **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
+ **style** | **String**| Name writing style | [optional] [default to 0]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_expand"></a>
+# **ai_name_expand**
+> ai_name_expand(request)
+
+Expands a person's name into a list of possible alternatives using options for expanding instructions             
+
+### Return type
+
+[**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameExpandRequestData.new(name, language=language, location=location, encoding=encoding, script=script, style=style)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| A name to format (required) | 
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **encoding** | **String**| A character encoding name | [optional] [default to ]
+ **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
+ **style** | **String**| Name writing style | [optional] [default to 0]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_expand_parsed"></a>
+# **ai_name_expand_parsed**
+> ai_name_expand_parsed(request)
+
+Expands a person's parsed name into a list of possible alternatives using options for expanding instructions             
+
+### Return type
+
+[**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameExpandParsedRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AiNameParsedRequest**](AiNameParsedRequest.md)| Parsed name with options | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_format"></a>
+# **ai_name_format**
+> ai_name_format(request)
+
+Formats a person's name in correct case and name order using options for formatting instructions             
+
+### Return type
+
+[**AiNameFormatted**](AiNameFormatted.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameFormatRequestData.new(name, language=language, location=location, encoding=encoding, script=script, style=style)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| A name to format (required) | 
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **encoding** | **String**| A character encoding name | [optional] [default to ]
+ **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
+ **style** | **String**| Name writing style | [optional] [default to 0]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_format_parsed"></a>
+# **ai_name_format_parsed**
+> ai_name_format_parsed(request)
+
+Formats a person's parsed name in correct case and name order using options for formatting instructions             
+
+### Return type
+
+[**AiNameFormatted**](AiNameFormatted.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameFormatParsedRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AiNameParsedRequest**](AiNameParsedRequest.md)| Parsed name with options | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_genderize"></a>
+# **ai_name_genderize**
+> ai_name_genderize(request)
+
+Detect person's gender from name string             
+
+### Return type
+
+[**ListResponseOfAiNameGenderHypothesis**](ListResponseOfAiNameGenderHypothesis.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameGenderizeRequestData.new(name, language=language, location=location, encoding=encoding, script=script, style=style)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| A name to parse (required) | 
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **encoding** | **String**| A character encoding name | [optional] [default to ]
+ **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
+ **style** | **String**| Name writing style | [optional] [default to 0]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_genderize_parsed"></a>
+# **ai_name_genderize_parsed**
+> ai_name_genderize_parsed(request)
+
+Detect person's gender from parsed name             
+
+### Return type
+
+[**ListResponseOfAiNameGenderHypothesis**](ListResponseOfAiNameGenderHypothesis.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameGenderizeParsedRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AiNameParsedRequest**](AiNameParsedRequest.md)| Gender detection request data | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_match"></a>
+# **ai_name_match**
+> ai_name_match(request)
+
+Compare people's names. Uses options for comparing instructions             
+
+### Return type
+
+[**AiNameMatchResult**](AiNameMatchResult.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameMatchRequestData.new(name, other_name, language=language, location=location, encoding=encoding, script=script, style=style)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| A name to match (required) | 
+ **other_name** | **String**| Another name to match (required) | 
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **encoding** | **String**| A character encoding name | [optional] [default to ]
+ **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
+ **style** | **String**| Name writing style | [optional] [default to 0]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_match_parsed"></a>
+# **ai_name_match_parsed**
+> ai_name_match_parsed(request)
+
+Compare people's parsed names and attributes. Uses options for comparing instructions             
+
+### Return type
+
+[**AiNameMatchResult**](AiNameMatchResult.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameMatchParsedRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AiNameParsedMatchRequest**](AiNameParsedMatchRequest.md)| Parsed names to match | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_parse"></a>
+# **ai_name_parse**
+> ai_name_parse(request)
+
+Parse name to components             
+
+### Return type
+
+[**ListResponseOfAiNameComponent**](ListResponseOfAiNameComponent.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameParseRequestData.new(name, language=language, location=location, encoding=encoding, script=script, style=style)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| A name to parse (required) | 
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **encoding** | **String**| A character encoding name | [optional] [default to ]
+ **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
+ **style** | **String**| Name writing style | [optional] [default to 0]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_name_parse_email_address"></a>
+# **ai_name_parse_email_address**
+> ai_name_parse_email_address(request)
+
+Parse person's name out of an email address             
+
+### Return type
+
+[**ListResponseOfAiNameExtracted**](ListResponseOfAiNameExtracted.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiNameParseEmailAddressRequestData.new(email_address, language=language, location=location, encoding=encoding, script=script, style=style)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email_address** | **String**| Email address to parse (required) | 
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **encoding** | **String**| A character encoding name | [optional] [default to ]
+ **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
+ **style** | **String**| Name writing style | [optional] [default to 0]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="append_email_message"></a>
 # **append_email_message**
 > append_email_message(request)
 
-Adds an email from *.eml file to specified folder in email account
+Adds an email from *.eml file to specified folder in email account             
 
 ### Return type
 
@@ -118,7 +511,7 @@ Name | Type | Description  | Notes
 # **append_mime_message**
 > append_mime_message(request)
 
-Adds an email from MIME to specified folder in email account
+Adds an email from MIME to specified folder in email account             
 
 ### Return type
 
@@ -188,7 +581,7 @@ Name | Type | Description  | Notes
 # **create_calendar**
 > create_calendar(request)
 
-Create calendar file
+Create calendar file             
 
 ### Return type
 
@@ -210,7 +603,7 @@ Name | Type | Description  | Notes
 # **create_contact**
 > create_contact(request)
 
-Create contact document
+Create contact document             
 
 ### Return type
 
@@ -233,7 +626,7 @@ Name | Type | Description  | Notes
 # **create_email**
 > create_email(request)
 
-Create an email document
+Create an email document             
 
 ### Return type
 
@@ -255,7 +648,7 @@ Name | Type | Description  | Notes
 # **create_email_folder**
 > create_email_folder(request)
 
-Create new folder in email account
+Create new folder in email account             
 
 ### Return type
 
@@ -298,7 +691,7 @@ Name | Type | Description  | Notes
 # **create_mapi**
 > create_mapi(request)
 
-Create new document
+Create new document             
 
 ### Return type
 
@@ -320,7 +713,7 @@ Name | Type | Description  | Notes
 # **delete_calendar_property**
 > delete_calendar_property(request)
 
-Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
+Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}             
 
 ### Return type
 
@@ -344,7 +737,7 @@ Name | Type | Description  | Notes
 # **delete_contact_property**
 > delete_contact_property(request)
 
-Delete property from indexed property list
+Delete property from indexed property list             
 
 ### Return type
 
@@ -369,7 +762,7 @@ Name | Type | Description  | Notes
 # **delete_email_folder**
 > delete_email_folder(request)
 
-Delete a folder in email account
+Delete a folder in email account             
 
 ### Return type
 
@@ -390,7 +783,7 @@ Name | Type | Description  | Notes
 # **delete_email_message**
 > delete_email_message(request)
 
-Delete message from email account by id
+Delete message from email account by id             
 
 ### Return type
 
@@ -457,7 +850,7 @@ Name | Type | Description  | Notes
 # **delete_mapi_attachment**
 > delete_mapi_attachment(request)
 
-Remove attachment from document
+Remove attachment from document             
 
 ### Return type
 
@@ -480,7 +873,7 @@ Name | Type | Description  | Notes
 # **delete_mapi_properties**
 > delete_mapi_properties(request)
 
-Delete document properties
+Delete document properties             
 
 ### Return type
 
@@ -525,7 +918,7 @@ Name | Type | Description  | Notes
 # **fetch_email_message**
 > fetch_email_message(request)
 
-Fetch message mime from email account
+Fetch message mime from email account             
 
 ### Return type
 
@@ -540,7 +933,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **String**| Message identifier | 
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional] 
+ **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
 
@@ -550,7 +943,7 @@ Name | Type | Description  | Notes
 # **get_calendar**
 > get_calendar(request)
 
-Get calendar file properties
+Get calendar file properties             
 
 ### Return type
 
@@ -573,7 +966,7 @@ Name | Type | Description  | Notes
 # **get_calendar_attachment**
 > get_calendar_attachment(request)
 
-Get iCalendar document attachment by name
+Get iCalendar document attachment by name             
 
 ### Return type
 
@@ -597,7 +990,7 @@ Name | Type | Description  | Notes
 # **get_calendar_list**
 > get_calendar_list(request)
 
-Get iCalendar files list in folder on storage
+Get iCalendar files list in folder on storage             
 
 ### Return type
 
@@ -621,7 +1014,7 @@ Name | Type | Description  | Notes
 # **get_contact_attachment**
 > get_contact_attachment(request)
 
-Get attachment file by name
+Get attachment file by name             
 
 ### Return type
 
@@ -646,7 +1039,7 @@ Name | Type | Description  | Notes
 # **get_contact_list**
 > get_contact_list(request)
 
-Get contact list from storage folder
+Get contact list from storage folder             
 
 ### Return type
 
@@ -671,7 +1064,7 @@ Name | Type | Description  | Notes
 # **get_contact_properties**
 > get_contact_properties(request)
 
-Get contact document properties
+Get contact document properties             
 
 ### Return type
 
@@ -716,7 +1109,7 @@ Name | Type | Description  | Notes
 # **get_email**
 > get_email(request)
 
-Get email document
+Get email document             
 
 ### Return type
 
@@ -739,7 +1132,7 @@ Name | Type | Description  | Notes
 # **get_email_attachment**
 > get_email_attachment(request)
 
-Get email attachment by name
+Get email attachment by name             
 
 ### Return type
 
@@ -763,7 +1156,7 @@ Name | Type | Description  | Notes
 # **get_email_property**
 > get_email_property(request)
 
-Get an email document property by its name
+Get an email document property by its name             
 
 ### Return type
 
@@ -831,7 +1224,7 @@ Name | Type | Description  | Notes
 # **get_mapi_attachment**
 > get_mapi_attachment(request)
 
-Get document attachment as file stream
+Get document attachment as file stream             
 
 ### Return type
 
@@ -855,7 +1248,7 @@ Name | Type | Description  | Notes
 # **get_mapi_attachments**
 > get_mapi_attachments(request)
 
-Get document attachment list
+Get document attachment list             
 
 ### Return type
 
@@ -878,7 +1271,7 @@ Name | Type | Description  | Notes
 # **get_mapi_list**
 > get_mapi_list(request)
 
-Get document list from storage folder
+Get document list from storage folder             
 
 ### Return type
 
@@ -902,7 +1295,7 @@ Name | Type | Description  | Notes
 # **get_mapi_properties**
 > get_mapi_properties(request)
 
-Get document properties
+Get document properties             
 
 ### Return type
 
@@ -925,7 +1318,7 @@ Name | Type | Description  | Notes
 # **list_email_folders**
 > list_email_folders(request)
 
-Get folders list in email account
+Get folders list in email account             
 
 ### Return type
 
@@ -939,7 +1332,7 @@ request = AsposeEmailCloud::ListEmailFoldersRequestData.new(first_account, secon
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional] 
+ **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
  **parent_folder** | **String**| Folder in which subfolders should be listed | [optional] 
@@ -950,9 +1343,9 @@ Name | Type | Description  | Notes
 # **list_email_messages**
 > list_email_messages(request)
 
-Get messages from folder, filtered by query
+Get messages from folder, filtered by query             
 
-The query string should have the following view.  The example of a simple expression:   '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.  The number of simple expressions can make a compound one, ex.: (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3>,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator  At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message  Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message  Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item  Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once  The field value (<Field value>) can take the following values: For text fields - any string, For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\", For flags (fields of boolean type) - either \"True\", or \"False\"
+The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3>,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"              
 
 ### Return type
 
@@ -968,7 +1361,7 @@ Name | Type | Description  | Notes
  **folder** | **String**| A folder in email account | 
  **query_string** | **String**| A MailQuery search string | 
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional] 
+ **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
  **recursive** | **BOOLEAN**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
@@ -1051,7 +1444,7 @@ Name | Type | Description  | Notes
 # **save_mail_account**
 > save_mail_account(request)
 
-Create email account file (*.account) with login/password authentication
+Create email account file (*.account) with login/password authentication             
 
 ### Return type
 
@@ -1072,7 +1465,7 @@ Name | Type | Description  | Notes
 # **save_mail_o_auth_account**
 > save_mail_o_auth_account(request)
 
-Create email account file (*.account) with OAuth
+Create email account file (*.account) with OAuth             
 
 ### Return type
 
@@ -1093,7 +1486,7 @@ Name | Type | Description  | Notes
 # **send_email**
 > send_email(request)
 
-Send an email from *.eml file located on storage
+Send an email from *.eml file located on storage             
 
 ### Return type
 
@@ -1114,7 +1507,7 @@ Name | Type | Description  | Notes
 # **send_email_mime**
 > send_email_mime(request)
 
-Send an email specified by MIME in request
+Send an email specified by MIME in request             
 
 ### Return type
 
@@ -1135,7 +1528,7 @@ Name | Type | Description  | Notes
 # **set_email_property**
 > set_email_property(request)
 
-Set email document property value
+Set email document property value             
 
 ### Return type
 
@@ -1150,7 +1543,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **property_name** | **String**| A property name that should be changed | 
  **file_name** | **String**| Email document file name | 
- **request** | [**SetEmailPropertyRequest**](SetEmailPropertyRequest.md)| A property that should be changed and optional Storage info to specify             where the file located | 
+ **request** | [**SetEmailPropertyRequest**](SetEmailPropertyRequest.md)| A property that should be changed and optional Storage info to specify where the file located              | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1158,7 +1551,7 @@ Name | Type | Description  | Notes
 # **set_email_read_flag**
 > set_email_read_flag(request)
 
-Sets \"Message is read\" flag
+Sets \"Message is read\" flag             
 
 ### Return type
 
@@ -1200,7 +1593,7 @@ Name | Type | Description  | Notes
 # **update_calendar_properties**
 > update_calendar_properties(request)
 
-Update calendar file properties
+Update calendar file properties             
 
 ### Return type
 
@@ -1222,7 +1615,7 @@ Name | Type | Description  | Notes
 # **update_contact_properties**
 > update_contact_properties(request)
 
-Update contact document properties
+Update contact document properties             
 
 ### Return type
 
@@ -1245,7 +1638,7 @@ Name | Type | Description  | Notes
 # **update_mapi_properties**
 > update_mapi_properties(request)
 
-Update document properties
+Update document properties             
 
 ### Return type
 

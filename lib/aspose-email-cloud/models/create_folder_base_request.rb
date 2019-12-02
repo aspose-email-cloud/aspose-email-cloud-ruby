@@ -27,7 +27,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Create folder request
+  # Create folder request             
   class CreateFolderBaseRequest
     attr_accessor :first_account
 
@@ -35,10 +35,10 @@ module AsposeEmailCloud
 
     attr_accessor :storage_folder
 
-    # Folder name
+    # Folder name             
     attr_accessor :folder
 
-    # Parent folder path
+    # Parent folder path             
     attr_accessor :parent_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

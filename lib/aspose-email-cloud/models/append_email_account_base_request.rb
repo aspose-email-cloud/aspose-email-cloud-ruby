@@ -27,7 +27,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Append email to account request
+  # Append email to account request             
   class AppendEmailAccountBaseRequest
     attr_accessor :first_account
 

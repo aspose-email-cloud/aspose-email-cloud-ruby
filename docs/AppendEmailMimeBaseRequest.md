@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **storage_folder** | [**StorageFolderLocation**](StorageFolderLocation.md) |  | [optional] 
 **folder** | **String** |  | 
 **mark_as_sent** | **BOOLEAN** |  | 
-**base64_mime_message** | **String** | Email document serialized as MIME string | 
+**base64_mime_message** | **String** | Email document serialized as MIME string              | 
 
  Parent class: [AppendEmailAccountBaseRequest](AppendEmailAccountBaseRequest.md)
 
