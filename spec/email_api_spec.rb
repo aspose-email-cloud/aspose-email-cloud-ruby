@@ -26,6 +26,9 @@ describe EmailApi do
     fileName = create_calendar()
     calendar = @api.get_calendar(GetCalendarRequestData.new(fileName, @folder, @storage))
     expect(calendar.internal_properties.count { |item| item.type == 'PrimitiveObject' }).to be >= 3
+    primitive = calendar.internal_properties.find { |item| item.type == 'PrimitiveObject' }
+    expect(primitive).to be_a(PrimitiveObject)
+    expect(primitive.value).not_to be_nil
   end
 
   # Files support test. 'File' field should be a File object, this is the only way for SDK to recognize that it is the file to upload
