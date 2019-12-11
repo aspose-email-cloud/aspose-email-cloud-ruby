@@ -9,6 +9,9 @@ describe EmailApi do
   # Api setup uses environment variables 'appKey', 'appSid', 'apiBaseUrl'
   before(:all) do
     @api = EmailApi.new(ENV['appKey'], ENV['appSid'], ENV['apiBaseUrl'])
+    @api.api_client.config.scheme = "http"
+    auth_url = ENV['authUrl']
+    @api.api_client.config.auth_url = auth_url if auth_url
     @folder = SecureRandom.uuid().to_s()
     @storage = 'First Storage'
     @api.create_folder(CreateFolderRequestData.new(@folder, @storage))
@@ -70,12 +73,11 @@ describe EmailApi do
     startDate = DateTime.now + 2
     # remove microseconds
     startDate = startDate - startDate.sec_fraction / (24 * 60 * 60)
+    startDate = startDate.new_offset(0) #offset will be lost anyway
     calendarFile = create_calendar(startDate)
     calendar = @api.get_calendar(GetCalendarRequestData.new(calendarFile, @folder, @storage))
     startDateProperty = calendar.internal_properties.find { |item| item.name == 'STARTDATE' }
-    factStartDate = DateTime
-                        .strptime(startDateProperty.value, '%Y-%m-%d %H:%M:%SZ')
-                        .new_offset(startDate.offset) #DateTime is in UTS, so offset should be restored
+    factStartDate = DateTime.strptime(startDateProperty.value, '%Y-%m-%d %H:%M:%SZ')
     expect(factStartDate).to eq(startDate)
   end
 
@@ -86,8 +88,8 @@ describe EmailApi do
     @api.create_calendar(CreateCalendarRequestData.new(fileName, HierarchicalObjectRequest.new(
         HierarchicalObject.new('CALENDAR', nil, [
             PrimitiveObject.new('LOCATION', nil, 'location'),
-            PrimitiveObject.new('STARTDATE', nil, startDate.to_s()),
-            PrimitiveObject.new('ENDDATE', nil, endDate.to_s()),
+            PrimitiveObject.new('STARTDATE', nil, startDate.strftime('%Y-%m-%d %H:%M:%SZ')),
+            PrimitiveObject.new('ENDDATE', nil, endDate.strftime('%Y-%m-%d %H:%M:%SZ')),
             HierarchicalObject.new('ORGANIZER', nil, [
                 PrimitiveObject.new('ADDRESS', nil, 'address@am.ru'),
                 PrimitiveObject.new('DISPLAYNAME', nil, 'Piu Man')

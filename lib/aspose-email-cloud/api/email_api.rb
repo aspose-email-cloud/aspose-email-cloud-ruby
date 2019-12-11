@@ -38,9 +38,8 @@ module AsposeEmailCloud
     # @param [String] base_url Server URL.
     # @param [String] api_version Api version.
     # @param [Object] debug Debug switch [true, false].
-    # @param [String] auth_url should not be used
-    def initialize(app_key = nil, app_sid = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v3.0', debug = false, auth_url = nil)
-      @api_client = ApiClient.new(app_key, app_sid, base_url, api_version, debug, auth_url)
+    def initialize(app_key = nil, app_sid = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v3.0', debug = false)
+      @api_client = ApiClient.new(app_key, app_sid, base_url, api_version, debug)
     end
 
     # Adds an attachment to iCalendar file             
