@@ -38,6 +38,9 @@ module AsposeEmailCloud
     # Defines url host
     attr_accessor :host
 
+    # Defines auth url
+    attr_accessor :auth_url
+
     # Defines url base path
     attr_accessor :base_path
 
@@ -154,9 +157,11 @@ module AsposeEmailCloud
     # @param [String] base_url Server URL.
     # @param [String] api_version Api version.
     # @param [Object] debug Debug switch [true, false].
-    def initialize(app_key = nil, app_sid = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v3.0', debug = false)
+    # @param [String] auth_url Should not be used
+    def initialize(app_key = nil, app_sid = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v3.0', debug = false, auth_url = nil)
       @scheme = 'https'
       self.host = base_url
+      self.auth_url = auth_url || base_url
       @api_version = api_version
       self.base_path = @api_version
       @api_key = { 'api_key': app_key || '',

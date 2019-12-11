@@ -50,8 +50,9 @@ module AsposeEmailCloud
     # @param [String] base_url Server URL.
     # @param [String] api_version Api version.
     # @param [Object] debug Debug switch [true, false].
-    def initialize(app_key = nil, app_sid = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v3.0', debug = false)
-      @config = Configuration.new(app_key, app_sid, base_url, api_version, debug)
+    # @param [String] auth_url Should not be used
+    def initialize(app_key = nil, app_sid = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v3.0', debug = false, auth_url = nil)
+      @config = Configuration.new(app_key, app_sid, base_url, api_version, debug, auth_url)
       @default_headers = {
         'x-aspose-client' => 'ruby sdk',
         'x-aspose-version' => '19.7'
@@ -96,9 +97,10 @@ module AsposeEmailCloud
     # @option opts [Hash] :query_params Query parameters
     # @option opts [Hash] :form_params Query parameters
     # @option opts [Object] :body HTTP body (JSON/XML)
+    # @option opts [String] :host Should not be used
     # @return [Faraday::Response] A Faraday Response
     def build_request(http_method, path, opts = {})
-      url = build_request_url(path)
+      url = build_request_url(path, opts[:host])
       http_method = http_method.to_sym.downcase
 
       header_params = @default_headers.merge(opts[:header_params] || {})
@@ -274,10 +276,10 @@ module AsposeEmailCloud
       filename.gsub(%r{.*[/\\]}, '')
     end
 
-    def build_request_url(path)
+    def build_request_url(path, host = nil)
       # Add leading and trailing slashes to path
       path = "/#{path}".gsub(%r{/+}, '/')
-      URI.encode(@config.base_url + path)
+      URI.encode(host || @config.base_url + path)
     end
 
     # Builds the HTTP request body

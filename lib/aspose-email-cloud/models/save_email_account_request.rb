@@ -38,7 +38,7 @@ module AsposeEmailCloud
     # Email account login             
     attr_accessor :login
 
-    # Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     attr_accessor :security_options
 
     # Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
