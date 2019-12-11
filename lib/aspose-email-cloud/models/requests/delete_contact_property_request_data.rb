@@ -33,7 +33,7 @@ module AsposeEmailCloud
   class DeleteContactPropertyRequestData < EmailRequest
 
     # Delete property from indexed property list             
-    # @param [String] format Contact document format
+    # @param [String] format Contact document format Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name
     # @param [String] member_name Indexed property name
     # @param [Integer] index Property index
@@ -50,11 +50,6 @@ module AsposeEmailCloud
       # verify the required parameter 'format' is set
       if api_client.config.client_side_validation && @format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.delete_contact_property"
-      end
-
-      # verify enum value
-      if api_client.config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
-        raise ArgumentError, "invalid value for 'format', must be one of VCard, WebDav, Msg"
       end
 
       # verify the required parameter 'name' is set

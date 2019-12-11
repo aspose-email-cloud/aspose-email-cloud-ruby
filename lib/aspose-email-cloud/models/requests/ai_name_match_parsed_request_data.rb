@@ -33,15 +33,15 @@ module AsposeEmailCloud
   class AiNameMatchParsedRequestData < EmailRequest
 
     # Compare people&#39;s parsed names and attributes. Uses options for comparing instructions             
-    # @param [AiNameParsedMatchRequest] request Parsed names to match
-    def initialize(request)
-      @request = request
+    # @param [AiNameParsedMatchRq] rq Parsed names to match
+    def initialize(rq)
+      @rq = rq
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
-        raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.ai_name_match_parsed"
+      # verify the required parameter 'rq' is set
+      if api_client.config.client_side_validation && @rq.nil?
+        raise ArgumentError, "Missing the required parameter 'rq' when calling EmailApi.ai_name_match_parsed"
       end
 
       # resource path
@@ -54,7 +54,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = api_client.object_to_http_body(@rq)
       auth_names = ['JWT']
 
       # header parameters

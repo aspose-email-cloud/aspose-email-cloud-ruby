@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="AiNameOptions.rb">
+#  <copyright company="Aspose" file="AiNameCulturalContext.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,8 +27,8 @@
 require 'date'
 
 module AsposeEmailCloud
-  # AiName parser options             
-  class AiNameOptions
+  # AiName cultural context             
+  class AiNameCulturalContext
     # An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)             
     attr_accessor :language
 
@@ -41,7 +41,7 @@ module AsposeEmailCloud
     # A character encoding name             
     attr_accessor :encoding
 
-    # Name writing style. Allowed values are: \"Formal\", \"Informal\", \"Legal\", \"Academic\"             
+    # Name writing style. Enum, available values: Formal, Informal, Legal, Academic
     attr_accessor :style
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -108,12 +108,17 @@ module AsposeEmailCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @style.nil?
+        invalid_properties.push('invalid value for "style", style cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @style.nil?
       true
     end
 

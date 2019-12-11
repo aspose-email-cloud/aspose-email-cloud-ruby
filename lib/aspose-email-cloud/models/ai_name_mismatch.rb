@@ -29,7 +29,7 @@ require 'date'
 module AsposeEmailCloud
   # Names mismatch detailed description             
   class AiNameMismatch
-    # Mismatch type             
+    # Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
     attr_accessor :category
 
     # Similarity score             
@@ -50,7 +50,7 @@ module AsposeEmailCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'category' => :'Object',
+        :'category' => :'String',
         :'similarity' => :'Float',
         :'explanation' => :'String'
       }

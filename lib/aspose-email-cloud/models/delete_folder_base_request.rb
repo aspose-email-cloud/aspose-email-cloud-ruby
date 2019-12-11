@@ -29,10 +29,13 @@ require 'date'
 module AsposeEmailCloud
   # Delete folder request             
   class DeleteFolderBaseRequest
+    # First account storage file name for receiving emails (or universal one)             
     attr_accessor :first_account
 
+    # Second account storage file name for sending emails (ignored if first is universal)             
     attr_accessor :second_account
 
+    # Storage folder location of account files             
     attr_accessor :storage_folder
 
     # Folder name             

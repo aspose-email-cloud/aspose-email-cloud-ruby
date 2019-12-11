@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="AiNameParsedRequest.rb">
+#  <copyright company="Aspose" file="AiNameParsedMatchRq.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,27 +27,37 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Parsed name request model             
-  class AiNameParsedRequest
-    # AiName parser options             
-    attr_accessor :options
+  # Two parsed names to match request             
+  class AiNameParsedMatchRq
+    # AiName parser cultural context             
+    attr_accessor :cultural_context
+
+    # Format of the name. Predefined format can be used by ID, or custom format can be specified. Predefined formats:      /format/default/ (= '%t%F%m%N%L%p')     /format/FN+LN/ (= '%F%L')     /format/title+FN+LN/ (= '%t%F%L')     /format/FN+MN+LN/ (= '%F%M%N%L')     /format/title+FN+MN+LN/ (= '%t%F%M%N%L')     /format/FN+MI+LN/ (= '%F%m%N%L')     /format/title+FN+MI+LN/ (= '%t%F%m%N%L')     /format/LN/ (= '%L')     /format/title+LN/ (= '%t%L')     /format/LN+FN+MN/ (= '%L,%F%M%N')     /format/LN+title+FN+MN/ (= '%L,%t%F%M%N')     /format/LN+FN+MI/ (= '%L,%F%m%N')     /format/LN+title+FN+MI/ (= '%L,%t%F%m%N')  Custom format string - custom combination of characters and the next term placeholders:      '%t' - Title (prefix)     '%F' - First name     '%f' - First initial     '%M' - Middle name(s)     '%m' - Middle initial(s)     '%N' - Nickname     '%L' - Last name     '%l' - Last initial     '%p' - Postfix  If no value for format option was provided, its default value is '%t%F%m%N%L%p'             
+    attr_accessor :format
 
     # Parsed name             
     attr_accessor :parsed_name
 
+    # Other parsed name to match             
+    attr_accessor :other_parsed_name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'options' => :'options',
-        :'parsed_name' => :'parsedName'
+        :'cultural_context' => :'culturalContext',
+        :'format' => :'format',
+        :'parsed_name' => :'parsedName',
+        :'other_parsed_name' => :'otherParsedName'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'options' => :'AiNameOptions',
-        :'parsed_name' => :'Array<AiNameComponent>'
+        :'cultural_context' => :'AiNameCulturalContext',
+        :'format' => :'String',
+        :'parsed_name' => :'Array<AiNameComponent>',
+        :'other_parsed_name' => :'Array<AiNameComponent>'
       }
     end
 
@@ -59,8 +69,12 @@ module AsposeEmailCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'options')
-        self.options = attributes[:'options']
+      if attributes.has_key?(:'culturalContext')
+        self.cultural_context = attributes[:'culturalContext']
+      end
+
+      if attributes.has_key?(:'format')
+        self.format = attributes[:'format']
       end
 
       if attributes.has_key?(:'parsedName')
@@ -68,12 +82,20 @@ module AsposeEmailCloud
           self.parsed_name = value
         end
       end
+
+      if attributes.has_key?(:'otherParsedName')
+        if (value = attributes[:'otherParsedName']).is_a?(Array)
+          self.other_parsed_name = value
+        end
+      end
     end
 
     # Initializes the object
-    def initialize(options=nil, parsed_name=nil)
-      self.options = options
+    def initialize(cultural_context=nil, format=nil, parsed_name=nil, other_parsed_name=nil)
+      self.cultural_context = cultural_context
+      self.format = format
       self.parsed_name = parsed_name
+      self.other_parsed_name = other_parsed_name
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -84,6 +106,10 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "parsed_name", parsed_name cannot be nil.')
       end
 
+      if @other_parsed_name.nil?
+        invalid_properties.push('invalid value for "other_parsed_name", other_parsed_name cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -91,6 +117,7 @@ module AsposeEmailCloud
     # @return true if the model is valid
     def valid?
       return false if @parsed_name.nil?
+      return false if @other_parsed_name.nil?
       true
     end
 
@@ -99,8 +126,10 @@ module AsposeEmailCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          options == o.options &&
-          parsed_name == o.parsed_name
+          cultural_context == o.cultural_context &&
+          format == o.format &&
+          parsed_name == o.parsed_name &&
+          other_parsed_name == o.other_parsed_name
     end
 
     # @see the `==` method
@@ -112,7 +141,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [options, parsed_name].hash
+      [cultural_context, format, parsed_name, other_parsed_name].hash
     end
 
     # Builds the object from hash

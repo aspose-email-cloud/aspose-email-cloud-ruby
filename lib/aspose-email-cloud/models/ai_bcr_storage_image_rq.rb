@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="AiBcrRequest.rb">
+#  <copyright company="Aspose" file="AiBcrStorageImageRq.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,22 +27,27 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Business card recognition request             
-  class AiBcrRequest
+  # Business card images from storage for recognition             
+  class AiBcrStorageImageRq
     # Recognition options             
     attr_accessor :options
+
+    # List of images with business cards             
+    attr_accessor :images
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'options' => :'options'
+        :'options' => :'options',
+        :'images' => :'images'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'options' => :'AiBcrOptions'
+        :'options' => :'AiBcrOptions',
+        :'images' => :'Array<AiBcrImageStorageFile>'
       }
     end
 
@@ -57,23 +62,35 @@ module AsposeEmailCloud
       if attributes.has_key?(:'options')
         self.options = attributes[:'options']
       end
+
+      if attributes.has_key?(:'images')
+        if (value = attributes[:'images']).is_a?(Array)
+          self.images = value
+        end
+      end
     end
 
     # Initializes the object
-    def initialize(options=nil)
+    def initialize(options=nil, images=nil)
       self.options = options
+      self.images = images
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @images.nil?
+        invalid_properties.push('invalid value for "images", images cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @images.nil?
       true
     end
 
@@ -82,7 +99,8 @@ module AsposeEmailCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          options == o.options
+          options == o.options &&
+          images == o.images
     end
 
     # @see the `==` method
@@ -94,7 +112,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [options].hash
+      [options, images].hash
     end
 
     # Builds the object from hash

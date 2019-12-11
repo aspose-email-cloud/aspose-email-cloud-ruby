@@ -38,10 +38,10 @@ module AsposeEmailCloud
     # Email account login             
     attr_accessor :login
 
-    # Email account security options             
+    # Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     attr_accessor :security_options
 
-    # Email account protocol type             
+    # Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     attr_accessor :protocol_type
 
     # Email account description             
@@ -69,8 +69,8 @@ module AsposeEmailCloud
         :'host' => :'String',
         :'port' => :'Integer',
         :'login' => :'String',
-        :'security_options' => :'Object',
-        :'protocol_type' => :'Object',
+        :'security_options' => :'String',
+        :'protocol_type' => :'String',
         :'description' => :'String',
         :'storage_file' => :'StorageFileLocation'
       }
@@ -152,8 +152,16 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "security_options", security_options cannot be nil.')
       end
 
+      if @security_options.to_s.length < 1
+        invalid_properties.push('invalid value for "security_options", the character length must be great than or equal to 1.')
+      end
+
       if @protocol_type.nil?
         invalid_properties.push('invalid value for "protocol_type", protocol_type cannot be nil.')
+      end
+
+      if @protocol_type.to_s.length < 1
+        invalid_properties.push('invalid value for "protocol_type", the character length must be great than or equal to 1.')
       end
 
       if @storage_file.nil?
@@ -172,7 +180,9 @@ module AsposeEmailCloud
       return false if @login.nil?
       return false if @login.to_s.length < 1
       return false if @security_options.nil?
+      return false if @security_options.to_s.length < 1
       return false if @protocol_type.nil?
+      return false if @protocol_type.to_s.length < 1
       return false if @storage_file.nil?
       true
     end
@@ -203,6 +213,34 @@ module AsposeEmailCloud
       end
 
       @login = login
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] security_options Value to be assigned
+    def security_options=(security_options)
+      if security_options.nil?
+        fail ArgumentError, 'security_options cannot be nil'
+      end
+
+      if security_options.to_s.length < 1
+        fail ArgumentError, 'invalid value for "security_options", the character length must be great than or equal to 1.'
+      end
+
+      @security_options = security_options
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] protocol_type Value to be assigned
+    def protocol_type=(protocol_type)
+      if protocol_type.nil?
+        fail ArgumentError, 'protocol_type cannot be nil'
+      end
+
+      if protocol_type.to_s.length < 1
+        fail ArgumentError, 'invalid value for "protocol_type", the character length must be great than or equal to 1.'
+      end
+
+      @protocol_type = protocol_type
     end
 
     # Checks equality by comparing each attribute.

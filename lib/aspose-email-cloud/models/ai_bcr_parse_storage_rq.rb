@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="AiBcrStorageImageRequest.rb">
+#  <copyright company="Aspose" file="AiBcrParseStorageRq.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,19 +27,23 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Business card images from storage for recognition             
-  class AiBcrStorageImageRequest
+  # Parse business card images from Storage request             
+  class AiBcrParseStorageRq
     # Recognition options             
     attr_accessor :options
 
     # List of images with business cards             
     attr_accessor :images
 
+    # Parse output folder location on storage             
+    attr_accessor :out_folder
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'options' => :'options',
-        :'images' => :'images'
+        :'images' => :'images',
+        :'out_folder' => :'outFolder'
       }
     end
 
@@ -47,7 +51,8 @@ module AsposeEmailCloud
     def self.swagger_types
       {
         :'options' => :'AiBcrOptions',
-        :'images' => :'Array<AiBcrImageStorageFile>'
+        :'images' => :'Array<AiBcrImageStorageFile>',
+        :'out_folder' => :'StorageFolderLocation'
       }
     end
 
@@ -68,12 +73,17 @@ module AsposeEmailCloud
           self.images = value
         end
       end
+
+      if attributes.has_key?(:'outFolder')
+        self.out_folder = attributes[:'outFolder']
+      end
     end
 
     # Initializes the object
-    def initialize(options=nil, images=nil)
+    def initialize(options=nil, images=nil, out_folder=nil)
       self.options = options
       self.images = images
+      self.out_folder = out_folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -84,6 +94,10 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "images", images cannot be nil.')
       end
 
+      if @out_folder.nil?
+        invalid_properties.push('invalid value for "out_folder", out_folder cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -91,6 +105,7 @@ module AsposeEmailCloud
     # @return true if the model is valid
     def valid?
       return false if @images.nil?
+      return false if @out_folder.nil?
       true
     end
 
@@ -100,7 +115,8 @@ module AsposeEmailCloud
       return true if self.equal?(o)
       self.class == o.class &&
           options == o.options &&
-          images == o.images
+          images == o.images &&
+          out_folder == o.out_folder
     end
 
     # @see the `==` method
@@ -112,7 +128,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [options, images].hash
+      [options, images, out_folder].hash
     end
 
     # Builds the object from hash

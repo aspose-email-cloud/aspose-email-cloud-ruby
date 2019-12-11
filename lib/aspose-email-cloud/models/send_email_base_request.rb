@@ -29,10 +29,13 @@ require 'date'
 module AsposeEmailCloud
   # Send email file request             
   class SendEmailBaseRequest
+    # First account storage file name for receiving emails (or universal one)             
     attr_accessor :first_account
 
+    # Second account storage file name for sending emails (ignored if first is universal)             
     attr_accessor :second_account
 
+    # Storage folder location of account files             
     attr_accessor :storage_folder
 
     # Email document (*.eml) file location in storage             

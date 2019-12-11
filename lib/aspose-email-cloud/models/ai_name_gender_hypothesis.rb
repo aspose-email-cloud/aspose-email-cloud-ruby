@@ -29,7 +29,7 @@ require 'date'
 module AsposeEmailCloud
   # Name gender hypothesis             
   class AiNameGenderHypothesis
-    # Name's possible gender             
+    # Recognized name gender. Enum, available values: Male, Female, Unknown
     attr_accessor :gender
 
     # Hypothesis score             
@@ -46,7 +46,7 @@ module AsposeEmailCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'gender' => :'Object',
+        :'gender' => :'String',
         :'score' => :'Float'
       }
     end

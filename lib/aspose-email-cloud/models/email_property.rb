@@ -29,10 +29,13 @@ require 'date'
 module AsposeEmailCloud
   # Email property.             
   class EmailProperty
+    # Link to property             
     attr_accessor :link
 
+    # Property name             
     attr_accessor :name
 
+    # Property value             
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="AiBcrParseOcrDataRequest.rb">
+#  <copyright company="Aspose" file="AiBcrBase64Rq.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,19 +27,19 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Parse ocr data request             
-  class AiBcrParseOcrDataRequest
+  # Parse business card image request             
+  class AiBcrBase64Rq
     # Recognition options             
     attr_accessor :options
 
-    # OCR data             
-    attr_accessor :data
+    # Images to recognize             
+    attr_accessor :images
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'options' => :'options',
-        :'data' => :'data'
+        :'images' => :'images'
       }
     end
 
@@ -47,7 +47,7 @@ module AsposeEmailCloud
     def self.swagger_types
       {
         :'options' => :'AiBcrOptions',
-        :'data' => :'Array<AiBcrOcrData>'
+        :'images' => :'Array<AiBcrBase64Image>'
       }
     end
 
@@ -63,34 +63,29 @@ module AsposeEmailCloud
         self.options = attributes[:'options']
       end
 
-      if attributes.has_key?(:'data')
-        if (value = attributes[:'data']).is_a?(Array)
-          self.data = value
+      if attributes.has_key?(:'images')
+        if (value = attributes[:'images']).is_a?(Array)
+          self.images = value
         end
       end
     end
 
     # Initializes the object
-    def initialize(options=nil, data=nil)
+    def initialize(options=nil, images=nil)
       self.options = options
-      self.data = data
+      self.images = images
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @data.nil?
-        invalid_properties.push('invalid value for "data", data cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @data.nil?
       true
     end
 
@@ -100,7 +95,7 @@ module AsposeEmailCloud
       return true if self.equal?(o)
       self.class == o.class &&
           options == o.options &&
-          data == o.data
+          images == o.images
     end
 
     # @see the `==` method
@@ -112,7 +107,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [options, data].hash
+      [options, images].hash
     end
 
     # Builds the object from hash

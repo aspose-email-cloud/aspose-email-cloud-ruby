@@ -2,7 +2,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gender** | **Object** | Name&#39;s possible gender              | 
+**gender** | **String** | Recognized name gender. Enum, available values: Male, Female, Unknown | 
 **score** | **Float** | Hypothesis score              | 
 
 

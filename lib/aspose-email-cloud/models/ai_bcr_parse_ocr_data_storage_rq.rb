@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="AiBcrParseStorageRequest.rb">
+#  <copyright company="Aspose" file="AiBcrParseOcrDataStorageRq.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,22 +27,22 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Parse business card images from Storage request             
-  class AiBcrParseStorageRequest
+  # Parse ocr data request with storage output location             
+  class AiBcrParseOcrDataStorageRq
     # Recognition options             
     attr_accessor :options
 
-    # List of images with business cards             
-    attr_accessor :images
+    # OCR data             
+    attr_accessor :data
 
-    # Parse output folder location on storage             
+    # Output folder location on storage             
     attr_accessor :out_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'options' => :'options',
-        :'images' => :'images',
+        :'data' => :'data',
         :'out_folder' => :'outFolder'
       }
     end
@@ -51,7 +51,7 @@ module AsposeEmailCloud
     def self.swagger_types
       {
         :'options' => :'AiBcrOptions',
-        :'images' => :'Array<AiBcrImageStorageFile>',
+        :'data' => :'Array<AiBcrOcrData>',
         :'out_folder' => :'StorageFolderLocation'
       }
     end
@@ -68,9 +68,9 @@ module AsposeEmailCloud
         self.options = attributes[:'options']
       end
 
-      if attributes.has_key?(:'images')
-        if (value = attributes[:'images']).is_a?(Array)
-          self.images = value
+      if attributes.has_key?(:'data')
+        if (value = attributes[:'data']).is_a?(Array)
+          self.data = value
         end
       end
 
@@ -80,9 +80,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    def initialize(options=nil, images=nil, out_folder=nil)
+    def initialize(options=nil, data=nil, out_folder=nil)
       self.options = options
-      self.images = images
+      self.data = data
       self.out_folder = out_folder
     end
 
@@ -90,8 +90,8 @@ module AsposeEmailCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @images.nil?
-        invalid_properties.push('invalid value for "images", images cannot be nil.')
+      if @data.nil?
+        invalid_properties.push('invalid value for "data", data cannot be nil.')
       end
 
       if @out_folder.nil?
@@ -104,7 +104,7 @@ module AsposeEmailCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @images.nil?
+      return false if @data.nil?
       return false if @out_folder.nil?
       true
     end
@@ -115,7 +115,7 @@ module AsposeEmailCloud
       return true if self.equal?(o)
       self.class == o.class &&
           options == o.options &&
-          images == o.images &&
+          data == o.data &&
           out_folder == o.out_folder
     end
 
@@ -128,7 +128,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [options, images, out_folder].hash
+      [options, data, out_folder].hash
     end
 
     # Builds the object from hash

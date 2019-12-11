@@ -29,14 +29,19 @@ require 'date'
 module AsposeEmailCloud
   # Append email to account request             
   class AppendEmailAccountBaseRequest
+    # First account storage file name for receiving emails (or universal one)             
     attr_accessor :first_account
 
+    # Second account storage file name for sending emails (ignored if first is universal)             
     attr_accessor :second_account
 
+    # Storage folder location of account files             
     attr_accessor :storage_folder
 
+    # Email account folder to store a message             
     attr_accessor :folder
 
+    # Mark message as sent             
     attr_accessor :mark_as_sent
 
     # Attribute mapping from ruby-style variable name to JSON key.

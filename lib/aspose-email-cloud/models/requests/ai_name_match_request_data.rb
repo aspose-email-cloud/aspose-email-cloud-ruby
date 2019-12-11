@@ -39,7 +39,7 @@ module AsposeEmailCloud
     # @param [String] location A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France
     # @param [String] encoding A character encoding name
     # @param [String] script A writing system code; starts with the ISO-15924 script name
-    # @param [String] style Name writing style
+    # @param [String] style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
     def initialize(name, other_name, language = nil, location = nil, encoding = nil, script = nil, style = nil)
       @name = name
       @other_name = other_name
@@ -59,10 +59,6 @@ module AsposeEmailCloud
       # verify the required parameter 'other_name' is set
       if api_client.config.client_side_validation && @other_name.nil?
         raise ArgumentError, "Missing the required parameter 'other_name' when calling EmailApi.ai_name_match"
-      end
-
-      if api_client.config.client_side_validation && @style && !['Formal', 'Informal', 'Legal', 'Academic'].include?(@style)
-        fail ArgumentError, 'invalid value for "style", must be one of Formal, Informal, Legal, Academic'
       end
 
       # resource path

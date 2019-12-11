@@ -32,7 +32,7 @@ module AsposeEmailCloud
     # Component value             
     attr_accessor :value
 
-    # Component category             
+    # Name component category. Enum, available values: Unknown, Mononym, Score, Format, FirstInitial, FirstName, MiddleInitial, MiddleName, MiddleNickname, MiddleSobriquet, MiddleMaidenName, MiddlePatronym, MiddleMatronym, LastInitial, LastName, LastNobiliaryParticle, LastNominalConjunction, LastPaternalSurname, LastMaternalSurname, PrefixTitle, PostfixGenerationalTitle, PostfixPostnominalLetters, ArabicIsm, ArabicKunya, ArabicNasab, ArabicSlaqab, ArabicNisbah
     attr_accessor :category
 
     # Score from 0.0 to 1.0             
@@ -55,7 +55,7 @@ module AsposeEmailCloud
     def self.swagger_types
       {
         :'value' => :'String',
-        :'category' => :'Object',
+        :'category' => :'String',
         :'score' => :'Float',
         :'position' => :'Integer'
       }

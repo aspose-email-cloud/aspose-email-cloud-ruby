@@ -1,11 +1,12 @@
-# models.AiBcrBase64Request
+# models.AiBcrParseOcrDataStorageRq
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **options** | [**AiBcrOptions**](AiBcrOptions.md) | Recognition options              | [optional] 
-**images** | [**Array&lt;AiBcrBase64Image&gt;**](AiBcrBase64Image.md) | Images to recognize              | [optional] 
+**data** | [**Array&lt;AiBcrOcrData&gt;**](AiBcrOcrData.md) | OCR data              | 
+**out_folder** | [**StorageFolderLocation**](StorageFolderLocation.md) | Output folder location on storage              | 
 
- Parent class: [AiBcrRequest](AiBcrRequest.md)
+ Parent class: [AiBcrParseOcrDataRq](AiBcrParseOcrDataRq.md)
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

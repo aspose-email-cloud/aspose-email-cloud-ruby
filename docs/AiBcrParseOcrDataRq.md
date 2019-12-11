@@ -1,11 +1,11 @@
-# models.AiNameParsedRequest
+# models.AiBcrParseOcrDataRq
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**options** | [**AiNameOptions**](AiNameOptions.md) | AiName parser options              | [optional] 
-**parsed_name** | [**Array&lt;AiNameComponent&gt;**](AiNameComponent.md) | Parsed name              | 
+**options** | [**AiBcrOptions**](AiBcrOptions.md) | Recognition options              | [optional] 
+**data** | [**Array&lt;AiBcrOcrData&gt;**](AiBcrOcrData.md) | OCR data              | 
 
-
+ Parent class: [AiBcrRq](AiBcrRq.md)
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

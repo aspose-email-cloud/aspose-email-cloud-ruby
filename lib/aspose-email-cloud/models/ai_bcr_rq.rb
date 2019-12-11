@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="AiBcrParseOcrDataStorageRequest.rb">
+#  <copyright company="Aspose" file="AiBcrRq.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,32 +27,22 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Parse ocr data request with storage output location             
-  class AiBcrParseOcrDataStorageRequest
+  # Business card recognition request             
+  class AiBcrRq
     # Recognition options             
     attr_accessor :options
-
-    # OCR data             
-    attr_accessor :data
-
-    # Output folder location on storage             
-    attr_accessor :out_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'options' => :'options',
-        :'data' => :'data',
-        :'out_folder' => :'outFolder'
+        :'options' => :'options'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'options' => :'AiBcrOptions',
-        :'data' => :'Array<AiBcrOcrData>',
-        :'out_folder' => :'StorageFolderLocation'
+        :'options' => :'AiBcrOptions'
       }
     end
 
@@ -67,45 +57,23 @@ module AsposeEmailCloud
       if attributes.has_key?(:'options')
         self.options = attributes[:'options']
       end
-
-      if attributes.has_key?(:'data')
-        if (value = attributes[:'data']).is_a?(Array)
-          self.data = value
-        end
-      end
-
-      if attributes.has_key?(:'outFolder')
-        self.out_folder = attributes[:'outFolder']
-      end
     end
 
     # Initializes the object
-    def initialize(options=nil, data=nil, out_folder=nil)
+    def initialize(options=nil)
       self.options = options
-      self.data = data
-      self.out_folder = out_folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @data.nil?
-        invalid_properties.push('invalid value for "data", data cannot be nil.')
-      end
-
-      if @out_folder.nil?
-        invalid_properties.push('invalid value for "out_folder", out_folder cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @data.nil?
-      return false if @out_folder.nil?
       true
     end
 
@@ -114,9 +82,7 @@ module AsposeEmailCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          options == o.options &&
-          data == o.data &&
-          out_folder == o.out_folder
+          options == o.options
     end
 
     # @see the `==` method
@@ -128,7 +94,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [options, data, out_folder].hash
+      [options].hash
     end
 
     # Builds the object from hash

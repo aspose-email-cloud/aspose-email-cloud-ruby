@@ -40,7 +40,7 @@ request = AsposeEmailCloud::AddContactAttachmentRequestData.new(format, name, at
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Contact document format | 
+ **format** | **String**| Contact document format Enum, available values: VCard, WebDav, Msg | 
  **name** | **String**| Contact document file name | 
  **attachment** | **String**| Attachment name | 
  **request** | [**AddAttachmentRequest**](AddAttachmentRequest.md)| Add attachment request | 
@@ -105,12 +105,12 @@ Ocr images
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiBcrOcrRequestData.new(request)
+request = AsposeEmailCloud::AiBcrOcrRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AiBcrBase64Request**](AiBcrBase64Request.md)| Request with base64 images data | 
+ **rq** | [**AiBcrBase64Rq**](AiBcrBase64Rq.md)| Request with base64 images data | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -126,12 +126,12 @@ Ocr images from storage
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiBcrOcrStorageRequestData.new(request)
+request = AsposeEmailCloud::AiBcrOcrStorageRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AiBcrStorageImageRequest**](AiBcrStorageImageRequest.md)| Request with images located on storage | 
+ **rq** | [**AiBcrStorageImageRq**](AiBcrStorageImageRq.md)| Request with images located on storage | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -147,12 +147,12 @@ Parse images to vCard properties
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiBcrParseRequestData.new(request)
+request = AsposeEmailCloud::AiBcrParseRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AiBcrBase64Request**](AiBcrBase64Request.md)| Request with base64 images data | 
+ **rq** | [**AiBcrBase64Rq**](AiBcrBase64Rq.md)| Request with base64 images data | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -168,12 +168,12 @@ Parse OCR data to vCard properties
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiBcrParseOcrDataRequestData.new(request)
+request = AsposeEmailCloud::AiBcrParseOcrDataRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AiBcrParseOcrDataRequest**](AiBcrParseOcrDataRequest.md)|  | 
+ **rq** | [**AiBcrParseOcrDataRq**](AiBcrParseOcrDataRq.md)|  | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -189,12 +189,12 @@ Parse vCards from OCR data and save them to Storage
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiBcrParseOcrDataStorageRequestData.new(request)
+request = AsposeEmailCloud::AiBcrParseOcrDataStorageRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AiBcrParseOcrDataStorageRequest**](AiBcrParseOcrDataStorageRequest.md)|  | 
+ **rq** | [**AiBcrParseOcrDataStorageRq**](AiBcrParseOcrDataStorageRq.md)|  | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -210,12 +210,12 @@ Parse images from storage to vCard files
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiBcrParseStorageRequestData.new(request)
+request = AsposeEmailCloud::AiBcrParseStorageRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AiBcrParseStorageRequest**](AiBcrParseStorageRequest.md)| Request with images located on storage | 
+ **rq** | [**AiBcrParseStorageRq**](AiBcrParseStorageRq.md)| Request with images located on storage | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
  **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
- **style** | **String**| Name writing style | [optional] [default to 0]
+ **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
  **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
- **style** | **String**| Name writing style | [optional] [default to 0]
+ **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -283,12 +283,12 @@ Expands a person's parsed name into a list of possible alternatives using option
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiNameExpandParsedRequestData.new(request)
+request = AsposeEmailCloud::AiNameExpandParsedRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AiNameParsedRequest**](AiNameParsedRequest.md)| Parsed name with options | 
+ **rq** | [**AiNameParsedRq**](AiNameParsedRq.md)| Parsed name with options | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -304,7 +304,7 @@ Formats a person's name in correct case and name order using options for formatt
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiNameFormatRequestData.new(name, language=language, location=location, encoding=encoding, script=script, style=style)
+request = AsposeEmailCloud::AiNameFormatRequestData.new(name, language=language, location=location, encoding=encoding, script=script, format=format, style=style)
 ```
 
 Name | Type | Description  | Notes
@@ -314,7 +314,8 @@ Name | Type | Description  | Notes
  **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
- **style** | **String**| Name writing style | [optional] [default to 0]
+ **format** | **String**| Format of the name. Predefined format can be used by ID, or custom format can be specified. Predefined formats:      /format/default/ (&#x3D; &#39;%t%F%m%N%L%p&#39;)     /format/FN+LN/ (&#x3D; &#39;%F%L&#39;)     /format/title+FN+LN/ (&#x3D; &#39;%t%F%L&#39;)     /format/FN+MN+LN/ (&#x3D; &#39;%F%M%N%L&#39;)     /format/title+FN+MN+LN/ (&#x3D; &#39;%t%F%M%N%L&#39;)     /format/FN+MI+LN/ (&#x3D; &#39;%F%m%N%L&#39;)     /format/title+FN+MI+LN/ (&#x3D; &#39;%t%F%m%N%L&#39;)     /format/LN/ (&#x3D; &#39;%L&#39;)     /format/title+LN/ (&#x3D; &#39;%t%L&#39;)     /format/LN+FN+MN/ (&#x3D; &#39;%L,%F%M%N&#39;)     /format/LN+title+FN+MN/ (&#x3D; &#39;%L,%t%F%M%N&#39;)     /format/LN+FN+MI/ (&#x3D; &#39;%L,%F%m%N&#39;)     /format/LN+title+FN+MI/ (&#x3D; &#39;%L,%t%F%m%N&#39;)  Custom format string - custom combination of characters and the next term placeholders:      &#39;%t&#39; - Title (prefix)     &#39;%F&#39; - First name     &#39;%f&#39; - First initial     &#39;%M&#39; - Middle name(s)     &#39;%m&#39; - Middle initial(s)     &#39;%N&#39; - Nickname     &#39;%L&#39; - Last name     &#39;%l&#39; - Last initial     &#39;%p&#39; - Postfix  If no value for format option was provided, its default value is &#39;%t%F%m%N%L%p&#39;              | [optional] [default to ]
+ **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -330,12 +331,12 @@ Formats a person's parsed name in correct case and name order using options for 
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiNameFormatParsedRequestData.new(request)
+request = AsposeEmailCloud::AiNameFormatParsedRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AiNameParsedRequest**](AiNameParsedRequest.md)| Parsed name with options | 
+ **rq** | [**AiNameParsedRq**](AiNameParsedRq.md)| Parsed name with options | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -361,7 +362,7 @@ Name | Type | Description  | Notes
  **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
- **style** | **String**| Name writing style | [optional] [default to 0]
+ **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -377,12 +378,12 @@ Detect person's gender from parsed name
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiNameGenderizeParsedRequestData.new(request)
+request = AsposeEmailCloud::AiNameGenderizeParsedRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AiNameParsedRequest**](AiNameParsedRequest.md)| Gender detection request data | 
+ **rq** | [**AiNameParsedRq**](AiNameParsedRq.md)| Gender detection request data | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -409,7 +410,7 @@ Name | Type | Description  | Notes
  **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
- **style** | **String**| Name writing style | [optional] [default to 0]
+ **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -425,12 +426,12 @@ Compare people's parsed names and attributes. Uses options for comparing instruc
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AiNameMatchParsedRequestData.new(request)
+request = AsposeEmailCloud::AiNameMatchParsedRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AiNameParsedMatchRequest**](AiNameParsedMatchRequest.md)| Parsed names to match | 
+ **rq** | [**AiNameParsedMatchRq**](AiNameParsedMatchRq.md)| Parsed names to match | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -456,7 +457,7 @@ Name | Type | Description  | Notes
  **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
- **style** | **String**| Name writing style | [optional] [default to 0]
+ **style** | **String**| Name writing style Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -482,7 +483,7 @@ Name | Type | Description  | Notes
  **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
- **style** | **String**| Name writing style | [optional] [default to 0]
+ **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -616,7 +617,7 @@ request = AsposeEmailCloud::CreateContactRequestData.new(format, name, request)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Contact document format | 
+ **format** | **String**| Contact document format Enum, available values: VCard, WebDav, Msg | 
  **name** | **String**| Contact document file name | 
  **request** | [**HierarchicalObjectRequest**](HierarchicalObjectRequest.md)| Create contact request | 
 
@@ -750,7 +751,7 @@ request = AsposeEmailCloud::DeleteContactPropertyRequestData.new(format, name, m
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Contact document format | 
+ **format** | **String**| Contact document format Enum, available values: VCard, WebDav, Msg | 
  **name** | **String**| Contact document file name | 
  **member_name** | **String**| Indexed property name | 
  **index** | **Integer**| Property index | 
@@ -1027,7 +1028,7 @@ request = AsposeEmailCloud::GetContactAttachmentRequestData.new(format, name, at
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Contact document format | 
+ **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
  **name** | **String**| Contact document file name | 
  **attachment** | **String**| Attachment name or index | 
  **folder** | **String**| Path to folder in storage | [optional] 
@@ -1052,7 +1053,7 @@ request = AsposeEmailCloud::GetContactListRequestData.new(format, folder=folder,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Contact document format | 
+ **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
  **folder** | **String**| Path to folder in storage | [optional] 
  **storage** | **String**| Storage name | [optional] 
  **items_per_page** | **Integer**| Count of items on page | [optional] [default to 10]
@@ -1077,7 +1078,7 @@ request = AsposeEmailCloud::GetContactPropertiesRequestData.new(format, name, fo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Contact document format | 
+ **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
  **name** | **String**| Contact document file name | 
  **folder** | **String**| Path to folder in storage | [optional] 
  **storage** | **String**| Storage name | [optional] 
@@ -1628,7 +1629,7 @@ request = AsposeEmailCloud::UpdateContactPropertiesRequestData.new(format, name,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Contact document format | 
+ **format** | **String**| Contact document format Enum, available values: VCard, WebDav, Msg | 
  **name** | **String**| Contact document file name | 
  **request** | [**HierarchicalObjectRequest**](HierarchicalObjectRequest.md)| Properties that should be updated/added | 
 

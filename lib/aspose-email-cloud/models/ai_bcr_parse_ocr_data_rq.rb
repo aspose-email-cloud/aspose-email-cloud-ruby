@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="AiNameParsedMatchRequest.rb">
+#  <copyright company="Aspose" file="AiBcrParseOcrDataRq.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,32 +27,27 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Two parsed names to match request             
-  class AiNameParsedMatchRequest
-    # AiName parser options             
+  # Parse ocr data request             
+  class AiBcrParseOcrDataRq
+    # Recognition options             
     attr_accessor :options
 
-    # Parsed name             
-    attr_accessor :parsed_name
-
-    # Other parsed name to match             
-    attr_accessor :other_parsed_name
+    # OCR data             
+    attr_accessor :data
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'options' => :'options',
-        :'parsed_name' => :'parsedName',
-        :'other_parsed_name' => :'otherParsedName'
+        :'data' => :'data'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'options' => :'AiNameOptions',
-        :'parsed_name' => :'Array<AiNameComponent>',
-        :'other_parsed_name' => :'Array<AiNameComponent>'
+        :'options' => :'AiBcrOptions',
+        :'data' => :'Array<AiBcrOcrData>'
       }
     end
 
@@ -68,36 +63,25 @@ module AsposeEmailCloud
         self.options = attributes[:'options']
       end
 
-      if attributes.has_key?(:'parsedName')
-        if (value = attributes[:'parsedName']).is_a?(Array)
-          self.parsed_name = value
-        end
-      end
-
-      if attributes.has_key?(:'otherParsedName')
-        if (value = attributes[:'otherParsedName']).is_a?(Array)
-          self.other_parsed_name = value
+      if attributes.has_key?(:'data')
+        if (value = attributes[:'data']).is_a?(Array)
+          self.data = value
         end
       end
     end
 
     # Initializes the object
-    def initialize(options=nil, parsed_name=nil, other_parsed_name=nil)
+    def initialize(options=nil, data=nil)
       self.options = options
-      self.parsed_name = parsed_name
-      self.other_parsed_name = other_parsed_name
+      self.data = data
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @parsed_name.nil?
-        invalid_properties.push('invalid value for "parsed_name", parsed_name cannot be nil.')
-      end
-
-      if @other_parsed_name.nil?
-        invalid_properties.push('invalid value for "other_parsed_name", other_parsed_name cannot be nil.')
+      if @data.nil?
+        invalid_properties.push('invalid value for "data", data cannot be nil.')
       end
 
       invalid_properties
@@ -106,8 +90,7 @@ module AsposeEmailCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @parsed_name.nil?
-      return false if @other_parsed_name.nil?
+      return false if @data.nil?
       true
     end
 
@@ -117,8 +100,7 @@ module AsposeEmailCloud
       return true if self.equal?(o)
       self.class == o.class &&
           options == o.options &&
-          parsed_name == o.parsed_name &&
-          other_parsed_name == o.other_parsed_name
+          data == o.data
     end
 
     # @see the `==` method
@@ -130,7 +112,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [options, parsed_name, other_parsed_name].hash
+      [options, data].hash
     end
 
     # Builds the object from hash

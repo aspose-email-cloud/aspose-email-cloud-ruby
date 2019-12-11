@@ -29,7 +29,7 @@ require 'date'
 module AsposeEmailCloud
   # Extracted name component             
   class AiNameExtractedComponent
-    # Component category             
+    # Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
     attr_accessor :category
 
     # Extracted value             
@@ -46,7 +46,7 @@ module AsposeEmailCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'category' => :'Object',
+        :'category' => :'String',
         :'value' => :'String'
       }
     end
