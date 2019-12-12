@@ -78,10 +78,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] storage A storage name             
+    # @param [String] folder_path A path to a folder in specified storage             
+    # @param [String] file_name A file name in storage             
     def initialize(storage=nil, folder_path=nil, file_name=nil)
-      self.storage = storage
-      self.folder_path = folder_path
-      self.file_name = file_name
+      self.storage = storage if storage
+      self.folder_path = folder_path if folder_path
+      self.file_name = file_name if file_name
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

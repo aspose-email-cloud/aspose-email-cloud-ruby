@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Detect person&#39;s gender from parsed name             
     # @param [AiNameParsedRq] rq Gender detection request data
     def initialize(rq)
-      @rq = rq
+      @rq = rq if rq
     end
 
     def to_http_info(api_client)

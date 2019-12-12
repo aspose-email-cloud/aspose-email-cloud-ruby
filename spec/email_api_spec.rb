@@ -81,6 +81,37 @@ describe EmailApi do
     expect(factStartDate).to eq(startDate)
   end
 
+  # Test business card recognition with storage
+  it 'AiBcr Parse using storage' do
+    image = File.new(File.join(File.expand_path(File.dirname(__FILE__)), 'data', 'test_single_0001.png'))
+    fileName = SecureRandom.uuid().to_s() + '.png'
+    path = "#{@folder}/#{fileName}"
+    # 1) Upload business card image to storage
+    @api.upload_file(UploadFileRequestData.new(path, image, @storage))
+    outFolder = SecureRandom.uuid().to_s()
+    outFolderPath = "#{@folder}/#{outFolder}"
+    @api.create_folder(CreateFolderRequestData.new(outFolderPath, @storage))
+    # 2) Call business card recognition action
+    result = @api.ai_bcr_parse_storage(AiBcrParseStorageRequestData.new(
+      AiBcrParseStorageRq.new(
+        nil,
+        [AiBcrImageStorageFile.new(true, StorageFileLocation.new(@storage, @folder, fileName))],
+        StorageFolderLocation.new(@storage, outFolderPath))))
+    # Check that only one file produced
+    expect(result.value.count).to be == 1
+    # 3) Get file name from recognition result
+    contact_file = result.value[0]
+    # 4) Download VCard file, produced by recognition method, check it contains text 'Thomas'
+    downloaded = @api.download_file(DownloadFileRequestData.new(
+      "#{contact_file.folder_path}/#{contact_file.file_name}", contact_file.storage))
+    content = IO.read(downloaded)
+    expect(content).to include('Thomas')
+    # 5) Get VCard object properties list, check that there are 3 properties or more
+    contact_properties = @api.get_contact_properties(
+      GetContactPropertiesRequestData.new('vcard', contact_file.file_name, contact_file.folder_path, contact_file.storage))
+    expect(contact_properties.internal_properties.count).to be >= 3
+  end
+
   def create_calendar(startDate = nil)
     fileName = SecureRandom.uuid().to_s() + '.ics'
     startDate = startDate.nil? ? DateTime.now + 1 : startDate

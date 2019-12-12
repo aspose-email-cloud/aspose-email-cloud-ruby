@@ -60,8 +60,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] mime Gets or sets base64 encoded mime content.             
     def initialize(mime=nil)
-      self.mime = mime
+      self.mime = mime if mime
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

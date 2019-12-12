@@ -60,8 +60,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [AiBcrOptions] options Recognition options             
     def initialize(options=nil)
-      self.options = options
+      self.options = options if options
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

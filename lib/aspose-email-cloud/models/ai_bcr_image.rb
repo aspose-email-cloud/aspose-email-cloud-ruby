@@ -60,8 +60,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [BOOLEAN] is_single Determines that image contains single VCard or more             
     def initialize(is_single=nil)
-      self.is_single = is_single
+      self.is_single = is_single if is_single
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

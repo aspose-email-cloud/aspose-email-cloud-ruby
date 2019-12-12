@@ -71,9 +71,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Array<AiNameExtractedComponent>] name Extracted name components             
+    # @param [Float] score Extracted name score             
     def initialize(name=nil, score=nil)
-      self.name = name
-      self.score = score
+      self.name = name if name
+      self.score = score if score
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

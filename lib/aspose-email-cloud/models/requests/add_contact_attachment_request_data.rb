@@ -38,10 +38,10 @@ module AsposeEmailCloud
     # @param [String] attachment Attachment name
     # @param [AddAttachmentRequest] request Add attachment request
     def initialize(format, name, attachment, request)
-      @format = format
-      @name = name
-      @attachment = attachment
-      @request = request
+      @format = format if format
+      @name = name if name
+      @attachment = attachment if attachment
+      @request = request if request
     end
 
     def to_http_info(api_client)

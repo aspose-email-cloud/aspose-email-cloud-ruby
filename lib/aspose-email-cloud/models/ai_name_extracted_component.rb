@@ -69,9 +69,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] category Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
+    # @param [String] value Extracted value             
     def initialize(category=nil, value=nil)
-      self.category = category
-      self.value = value
+      self.category = category if category
+      self.value = value if value
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

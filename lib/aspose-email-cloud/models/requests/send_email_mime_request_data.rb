@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Send an email specified by MIME in request             
     # @param [SendEmailMimeBaseRequest] request Send email request
     def initialize(request)
-      @request = request
+      @request = request if request
     end
 
     def to_http_info(api_client)

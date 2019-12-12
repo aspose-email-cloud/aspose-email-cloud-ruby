@@ -36,8 +36,8 @@ module AsposeEmailCloud
     # @param [String] name Document file name
     # @param [HierarchicalObjectRequest] request Properties that should be deleted
     def initialize(name, request)
-      @name = name
-      @request = request
+      @name = name if name
+      @request = request if request
     end
 
     def to_http_info(api_client)

@@ -73,9 +73,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Array<String>] uploaded List of uploaded file names
+    # @param [Array<Error>] errors List of errors.
     def initialize(uploaded=nil, errors=nil)
-      self.uploaded = uploaded
-      self.errors = errors
+      self.uploaded = uploaded if uploaded
+      self.errors = errors if errors
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

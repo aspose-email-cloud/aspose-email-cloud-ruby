@@ -36,8 +36,8 @@ module AsposeEmailCloud
     # @param [String] name Calendar file name in storage
     # @param [HierarchicalObjectRequest] request 
     def initialize(name, request)
-      @name = name
-      @request = request
+      @name = name if name
+      @request = request if request
     end
 
     def to_http_info(api_client)

@@ -41,13 +41,13 @@ module AsposeEmailCloud
     # @param [String] script A writing system code; starts with the ISO-15924 script name
     # @param [String] style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
     def initialize(name, other_name, language = nil, location = nil, encoding = nil, script = nil, style = nil)
-      @name = name
-      @other_name = other_name
-      @language = language
-      @location = location
-      @encoding = encoding
-      @script = script
-      @style = style
+      @name = name if name
+      @other_name = other_name if other_name
+      @language = language if language
+      @location = location if location
+      @encoding = encoding if encoding
+      @script = script if script
+      @style = style if style
     end
 
     def to_http_info(api_client)

@@ -71,9 +71,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Array<Link>] links Links that originate from this document.             
+    # @param [EmailProperties] document_properties List of document properties.             
     def initialize(links=nil, document_properties=nil)
-      self.links = links
-      self.document_properties = document_properties
+      self.links = links if links
+      self.document_properties = document_properties if document_properties
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

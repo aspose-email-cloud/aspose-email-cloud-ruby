@@ -69,9 +69,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [StorageFolderLocation] document_folder Storage folder location of document             
+    # @param [StorageFolderLocation] attachment_folder Storage folder location of an attachment             
     def initialize(document_folder=nil, attachment_folder=nil)
-      self.document_folder = document_folder
-      self.attachment_folder = attachment_folder
+      self.document_folder = document_folder if document_folder
+      self.attachment_folder = attachment_folder if attachment_folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

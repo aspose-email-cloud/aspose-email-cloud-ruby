@@ -91,11 +91,15 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] id Image identifier             
+    # @param [String] image Image with possible pre-processing in Base64             
+    # @param [Hash<String, String>] details Additional details from OCR engine             
+    # @param [Array<AiBcrOcrDataPart>] data OCR results             
     def initialize(id=nil, image=nil, details=nil, data=nil)
-      self.id = id
-      self.image = image
-      self.details = details
-      self.data = data
+      self.id = id if id
+      self.image = image if image
+      self.details = details if details
+      self.data = data if data
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

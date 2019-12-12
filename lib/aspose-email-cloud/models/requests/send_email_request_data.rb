@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Send an email from *.eml file located on storage             
     # @param [SendEmailBaseRequest] request Send email request
     def initialize(request)
-      @request = request
+      @request = request if request
     end
 
     def to_http_info(api_client)

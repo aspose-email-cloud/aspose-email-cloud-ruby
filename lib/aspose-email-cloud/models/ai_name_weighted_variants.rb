@@ -71,9 +71,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Array<AiNameWeighted>] names List of name variations             
+    # @param [String] comments Usually empty; can contain extra message describing some issue occurred during processing             
     def initialize(names=nil, comments=nil)
-      self.names = names
-      self.comments = comments
+      self.names = names if names
+      self.comments = comments if comments
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

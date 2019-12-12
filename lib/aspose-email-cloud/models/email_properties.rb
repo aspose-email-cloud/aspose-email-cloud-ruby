@@ -71,9 +71,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Link] link Gets or sets link that originate from this document.             
+    # @param [Array<EmailProperty>] list List of properties             
     def initialize(link=nil, list=nil)
-      self.link = link
-      self.list = list
+      self.link = link if link
+      self.list = list if list
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

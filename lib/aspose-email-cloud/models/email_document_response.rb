@@ -60,8 +60,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [EmailDocument] document An email document requested             
     def initialize(document=nil)
-      self.document = document
+      self.document = document if document
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

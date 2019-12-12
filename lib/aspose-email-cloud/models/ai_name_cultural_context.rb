@@ -96,12 +96,17 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)             
+    # @param [String] location A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France             
+    # @param [String] script A writing system code; starts with the ISO-15924 script name             
+    # @param [String] encoding A character encoding name             
+    # @param [String] style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
     def initialize(language=nil, location=nil, script=nil, encoding=nil, style=nil)
-      self.language = language
-      self.location = location
-      self.script = script
-      self.encoding = encoding
-      self.style = style
+      self.language = language if language
+      self.location = location if location
+      self.script = script if script
+      self.encoding = encoding if encoding
+      self.style = style if style
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

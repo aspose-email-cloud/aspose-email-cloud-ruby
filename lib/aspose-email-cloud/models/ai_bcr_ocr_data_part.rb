@@ -107,13 +107,19 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Float] x X position of text block             
+    # @param [Float] y Y position of text block             
+    # @param [Float] width Width of text block             
+    # @param [Float] height Height of text block             
+    # @param [String] text Recognized text             
+    # @param [Hash<String, String>] details Additional recognition result details             
     def initialize(x=nil, y=nil, width=nil, height=nil, text=nil, details=nil)
-      self.x = x
-      self.y = y
-      self.width = width
-      self.height = height
-      self.text = text
-      self.details = details
+      self.x = x if x
+      self.y = y if y
+      self.width = width if width
+      self.height = height if height
+      self.text = text if text
+      self.details = details if details
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

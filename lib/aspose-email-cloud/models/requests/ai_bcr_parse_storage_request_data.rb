@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Parse images from storage to vCard files             
     # @param [AiBcrParseStorageRq] rq Request with images located on storage
     def initialize(rq)
-      @rq = rq
+      @rq = rq if rq
     end
 
     def to_http_info(api_client)

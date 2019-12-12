@@ -37,9 +37,9 @@ module AsposeEmailCloud
     # @param [String] attachment Attachment name or index
     # @param [StorageFolderLocation] storage Document file storage location info
     def initialize(name, attachment, storage)
-      @name = name
-      @attachment = attachment
-      @storage = storage
+      @name = name if name
+      @attachment = attachment if attachment
+      @storage = storage if storage
     end
 
     def to_http_info(api_client)

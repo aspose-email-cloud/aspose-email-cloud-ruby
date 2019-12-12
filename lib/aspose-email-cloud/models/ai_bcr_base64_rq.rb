@@ -71,9 +71,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [AiBcrOptions] options Recognition options             
+    # @param [Array<AiBcrBase64Image>] images Images to recognize             
     def initialize(options=nil, images=nil)
-      self.options = options
-      self.images = images
+      self.options = options if options
+      self.images = images if images
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

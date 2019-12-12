@@ -78,10 +78,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] category Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
+    # @param [Float] similarity Similarity score             
+    # @param [String] explanation Explanation or mismatch subtype             
     def initialize(category=nil, similarity=nil, explanation=nil)
-      self.category = category
-      self.similarity = similarity
-      self.explanation = explanation
+      self.category = category if category
+      self.similarity = similarity if similarity
+      self.explanation = explanation if explanation
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

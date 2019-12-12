@@ -95,11 +95,15 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] name Gets or sets the name of an object.             
+    # @param [String] type Property type. Used for deserialization purposes             
+    # @param [Integer] index Index of property in list             
+    # @param [Array<BaseObject>] internal_properties List of internal properties             
     def initialize(name=nil, type=nil, index=nil, internal_properties=nil)
-      self.name = name
-      @type = self.class.name.split('::').last
-      self.index = index
-      self.internal_properties = internal_properties
+      self.name = name if name
+      @type = self.class.name.split('::').last if type
+      self.index = index if index
+      self.internal_properties = internal_properties if internal_properties
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

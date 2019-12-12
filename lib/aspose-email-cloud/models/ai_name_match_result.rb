@@ -71,9 +71,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Float] similarity Similarity score             
+    # @param [Array<AiNameMismatch>] mismatches Detailed description of mismatches             
     def initialize(similarity=nil, mismatches=nil)
-      self.similarity = similarity
-      self.mismatches = mismatches
+      self.similarity = similarity if similarity
+      self.mismatches = mismatches if mismatches
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

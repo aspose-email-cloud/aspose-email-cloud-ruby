@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Compare people&#39;s parsed names and attributes. Uses options for comparing instructions             
     # @param [AiNameParsedMatchRq] rq Parsed names to match
     def initialize(rq)
-      @rq = rq
+      @rq = rq if rq
     end
 
     def to_http_info(api_client)

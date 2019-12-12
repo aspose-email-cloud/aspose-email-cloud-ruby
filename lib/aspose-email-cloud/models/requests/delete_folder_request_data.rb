@@ -37,9 +37,9 @@ module AsposeEmailCloud
     # @param [String] storage_name Storage name
     # @param [BOOLEAN] recursive Enable to delete folders, subfolders and files
     def initialize(path, storage_name = nil, recursive = nil)
-      @path = path
-      @storage_name = storage_name
-      @recursive = recursive
+      @path = path if path
+      @storage_name = storage_name if storage_name
+      @recursive = recursive if recursive
     end
 
     def to_http_info(api_client)

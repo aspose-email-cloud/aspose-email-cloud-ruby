@@ -37,9 +37,9 @@ module AsposeEmailCloud
     # @param [String] attachment Attachment file name in storage
     # @param [AddAttachmentRequest] request Storage name and folder path for calendar and attachment files
     def initialize(name, attachment, request)
-      @name = name
-      @attachment = attachment
-      @request = request
+      @name = name if name
+      @attachment = attachment if attachment
+      @request = request if request
     end
 
     def to_http_info(api_client)

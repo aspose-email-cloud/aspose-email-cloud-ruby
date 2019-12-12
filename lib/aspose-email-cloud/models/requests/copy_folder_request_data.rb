@@ -38,10 +38,10 @@ module AsposeEmailCloud
     # @param [String] src_storage_name Source storage name
     # @param [String] dest_storage_name Destination storage name
     def initialize(src_path, dest_path, src_storage_name = nil, dest_storage_name = nil)
-      @src_path = src_path
-      @dest_path = dest_path
-      @src_storage_name = src_storage_name
-      @dest_storage_name = dest_storage_name
+      @src_path = src_path if src_path
+      @dest_path = dest_path if dest_path
+      @src_storage_name = src_storage_name if src_storage_name
+      @dest_storage_name = dest_storage_name if dest_storage_name
     end
 
     def to_http_info(api_client)

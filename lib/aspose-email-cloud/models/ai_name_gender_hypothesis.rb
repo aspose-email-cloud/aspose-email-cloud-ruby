@@ -69,9 +69,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] gender Recognized name gender. Enum, available values: Male, Female, Unknown
+    # @param [Float] score Hypothesis score             
     def initialize(gender=nil, score=nil)
-      self.gender = gender
-      self.score = score
+      self.gender = gender if gender
+      self.score = score if score
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

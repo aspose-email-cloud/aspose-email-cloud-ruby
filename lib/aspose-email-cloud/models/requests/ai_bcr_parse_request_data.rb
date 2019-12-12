@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Parse images to vCard properties             
     # @param [AiBcrBase64Rq] rq Request with base64 images data
     def initialize(rq)
-      @rq = rq
+      @rq = rq if rq
     end
 
     def to_http_info(api_client)

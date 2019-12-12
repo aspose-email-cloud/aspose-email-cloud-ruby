@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Create email account file (*.account) with login/password authentication             
     # @param [SaveEmailAccountRequest] request Email account information
     def initialize(request)
-      @request = request
+      @request = request if request
     end
 
     def to_http_info(api_client)

@@ -37,9 +37,9 @@ module AsposeEmailCloud
     # @param [String] name Contact document file name
     # @param [HierarchicalObjectRequest] request Properties that should be updated/added
     def initialize(format, name, request)
-      @format = format
-      @name = name
-      @request = request
+      @format = format if format
+      @name = name if name
+      @request = request if request
     end
 
     def to_http_info(api_client)

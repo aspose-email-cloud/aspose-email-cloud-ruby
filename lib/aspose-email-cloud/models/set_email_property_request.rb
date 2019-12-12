@@ -69,9 +69,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [EmailProperty] email_property An email property that should be updated             
+    # @param [StorageFolderLocation] storage_folder An email document location in storage             
     def initialize(email_property=nil, storage_folder=nil)
-      self.email_property = email_property
-      self.storage_folder = storage_folder
+      self.email_property = email_property if email_property
+      self.storage_folder = storage_folder if storage_folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

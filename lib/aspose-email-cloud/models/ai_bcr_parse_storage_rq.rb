@@ -80,10 +80,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [AiBcrOptions] options Recognition options             
+    # @param [Array<AiBcrImageStorageFile>] images List of images with business cards             
+    # @param [StorageFolderLocation] out_folder Parse output folder location on storage             
     def initialize(options=nil, images=nil, out_folder=nil)
-      self.options = options
-      self.images = images
-      self.out_folder = out_folder
+      self.options = options if options
+      self.images = images if images
+      self.out_folder = out_folder if out_folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

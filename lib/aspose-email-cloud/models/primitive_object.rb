@@ -84,10 +84,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] name Gets or sets the name of an object.             
+    # @param [String] type Property type. Used for deserialization purposes             
+    # @param [String] value Property value             
     def initialize(name=nil, type=nil, value=nil)
-      self.name = name
-      @type = self.class.name.split('::').last
-      self.value = value
+      self.name = name if name
+      @type = self.class.name.split('::').last if type
+      self.value = value if value
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

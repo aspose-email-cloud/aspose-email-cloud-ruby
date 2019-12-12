@@ -114,14 +114,21 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] host Email account host             
+    # @param [Integer] port Email account port             
+    # @param [String] login Email account login             
+    # @param [String] security_options Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+    # @param [String] description Email account description             
+    # @param [StorageFileLocation] storage_file A storage file location info to store email account             
     def initialize(host=nil, port=nil, login=nil, security_options=nil, protocol_type=nil, description=nil, storage_file=nil)
-      self.host = host
-      self.port = port
-      self.login = login
-      self.security_options = security_options
-      self.protocol_type = protocol_type
-      self.description = description
-      self.storage_file = storage_file
+      self.host = host if host
+      self.port = port if port
+      self.login = login if login
+      self.security_options = security_options if security_options
+      self.protocol_type = protocol_type if protocol_type
+      self.description = description if description
+      self.storage_file = storage_file if storage_file
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

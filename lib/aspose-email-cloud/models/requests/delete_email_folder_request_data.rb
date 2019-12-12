@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Delete a folder in email account             
     # @param [DeleteFolderBaseRequest] request Delete folder request
     def initialize(request)
-      @request = request
+      @request = request if request
     end
 
     def to_http_info(api_client)

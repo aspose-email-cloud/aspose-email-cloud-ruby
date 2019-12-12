@@ -69,9 +69,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [BOOLEAN] is_single Determines that image contains single VCard or more             
+    # @param [String] base64_data Image data in base64             
     def initialize(is_single=nil, base64_data=nil)
-      self.is_single = is_single
-      self.base64_data = base64_data
+      self.is_single = is_single if is_single
+      self.base64_data = base64_data if base64_data
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

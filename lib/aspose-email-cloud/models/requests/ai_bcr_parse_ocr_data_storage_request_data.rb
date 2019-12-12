@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Parse vCards from OCR data and save them to Storage             
     # @param [AiBcrParseOcrDataStorageRq] rq 
     def initialize(rq)
-      @rq = rq
+      @rq = rq if rq
     end
 
     def to_http_info(api_client)

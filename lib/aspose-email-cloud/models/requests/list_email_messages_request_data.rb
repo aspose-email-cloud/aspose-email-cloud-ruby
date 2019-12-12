@@ -42,13 +42,13 @@ module AsposeEmailCloud
     # @param [String] storage_folder Folder in storage where account file(s) located
     # @param [BOOLEAN] recursive Specifies that should message be searched in subfolders recursively
     def initialize(folder, query_string, first_account, second_account = nil, storage = nil, storage_folder = nil, recursive = nil)
-      @folder = folder
-      @query_string = query_string
-      @first_account = first_account
-      @second_account = second_account
-      @storage = storage
-      @storage_folder = storage_folder
-      @recursive = recursive
+      @folder = folder if folder
+      @query_string = query_string if query_string
+      @first_account = first_account if first_account
+      @second_account = second_account if second_account
+      @storage = storage if storage
+      @storage_folder = storage_folder if storage_folder
+      @recursive = recursive if recursive
     end
 
     def to_http_info(api_client)

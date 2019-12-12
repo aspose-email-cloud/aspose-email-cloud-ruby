@@ -69,9 +69,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] languages Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default             
+    # @param [String] countries Comma-separated codes of countries             
     def initialize(languages=nil, countries=nil)
-      self.languages = languages
-      self.countries = countries
+      self.languages = languages if languages
+      self.countries = countries if countries
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

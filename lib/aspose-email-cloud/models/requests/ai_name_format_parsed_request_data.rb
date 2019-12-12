@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Formats a person&#39;s parsed name in correct case and name order using options for formatting instructions             
     # @param [AiNameParsedRq] rq Parsed name with options
     def initialize(rq)
-      @rq = rq
+      @rq = rq if rq
     end
 
     def to_http_info(api_client)

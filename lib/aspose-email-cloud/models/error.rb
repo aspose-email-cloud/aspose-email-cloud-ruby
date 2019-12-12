@@ -87,11 +87,15 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] code Code             
+    # @param [String] message Message             
+    # @param [String] description Description             
+    # @param [ErrorDetails] inner_error Inner Error             
     def initialize(code=nil, message=nil, description=nil, inner_error=nil)
-      self.code = code
-      self.message = message
-      self.description = description
-      self.inner_error = inner_error
+      self.code = code if code
+      self.message = message if message
+      self.description = description if description
+      self.inner_error = inner_error if inner_error
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

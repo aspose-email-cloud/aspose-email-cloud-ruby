@@ -60,8 +60,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] value Gets or sets string content.             
     def initialize(value=nil)
-      self.value = value
+      self.value = value if value
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

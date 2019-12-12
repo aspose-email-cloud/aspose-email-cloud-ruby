@@ -96,12 +96,17 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] first_account First account storage file name for receiving emails (or universal one)             
+    # @param [String] second_account Second account storage file name for sending emails (ignored if first is universal)             
+    # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
+    # @param [String] folder Folder name             
+    # @param [String] parent_folder Parent folder path             
     def initialize(first_account=nil, second_account=nil, storage_folder=nil, folder=nil, parent_folder=nil)
-      self.first_account = first_account
-      self.second_account = second_account
-      self.storage_folder = storage_folder
-      self.folder = folder
-      self.parent_folder = parent_folder
+      self.first_account = first_account if first_account
+      self.second_account = second_account if second_account
+      self.storage_folder = storage_folder if storage_folder
+      self.folder = folder if folder
+      self.parent_folder = parent_folder if parent_folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Check if storage exists
     # @param [String] storage_name Storage name
     def initialize(storage_name)
-      @storage_name = storage_name
+      @storage_name = storage_name if storage_name
     end
 
     def to_http_info(api_client)

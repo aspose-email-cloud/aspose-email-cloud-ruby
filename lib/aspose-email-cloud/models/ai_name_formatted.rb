@@ -69,9 +69,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] name Formatted name value             
+    # @param [String] comments Usually empty; can contain extra message describing some issue occurred during the formatting             
     def initialize(name=nil, comments=nil)
-      self.name = name
-      self.comments = comments
+      self.name = name if name
+      self.comments = comments if comments
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Expands a person&#39;s parsed name into a list of possible alternatives using options for expanding instructions             
     # @param [AiNameParsedRq] rq Parsed name with options
     def initialize(rq)
-      @rq = rq
+      @rq = rq if rq
     end
 
     def to_http_info(api_client)

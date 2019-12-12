@@ -62,8 +62,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Array<FileVersion>] value File versions FileVersion.
     def initialize(value=nil)
-      self.value = value
+      self.value = value if value
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

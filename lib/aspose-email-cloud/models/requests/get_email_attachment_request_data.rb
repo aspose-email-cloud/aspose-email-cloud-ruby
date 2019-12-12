@@ -38,10 +38,10 @@ module AsposeEmailCloud
     # @param [String] storage Storage name
     # @param [String] folder Path to folder in storage
     def initialize(attachment, file_name, storage = nil, folder = nil)
-      @attachment = attachment
-      @file_name = file_name
-      @storage = storage
-      @folder = folder
+      @attachment = attachment if attachment
+      @file_name = file_name if file_name
+      @storage = storage if storage
+      @folder = folder if folder
     end
 
     def to_http_info(api_client)

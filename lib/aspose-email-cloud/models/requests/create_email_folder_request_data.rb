@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Create new folder in email account             
     # @param [CreateFolderBaseRequest] request Create folder request
     def initialize(request)
-      @request = request
+      @request = request if request
     end
 
     def to_http_info(api_client)

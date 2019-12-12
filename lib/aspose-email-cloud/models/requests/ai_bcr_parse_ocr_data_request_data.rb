@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Parse OCR data to vCard properties             
     # @param [AiBcrParseOcrDataRq] rq 
     def initialize(rq)
-      @rq = rq
+      @rq = rq if rq
     end
 
     def to_http_info(api_client)

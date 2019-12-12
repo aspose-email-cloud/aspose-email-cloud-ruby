@@ -36,8 +36,8 @@ module AsposeEmailCloud
     # @param [String] path Folder path to create e.g. &#39;folder_1/folder_2/&#39;
     # @param [String] storage_name Storage name
     def initialize(path, storage_name = nil)
-      @path = path
-      @storage_name = storage_name
+      @path = path if path
+      @storage_name = storage_name if storage_name
     end
 
     def to_http_info(api_client)

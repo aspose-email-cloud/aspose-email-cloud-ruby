@@ -105,13 +105,19 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] first_account First account storage file name for receiving emails (or universal one)             
+    # @param [String] second_account Second account storage file name for sending emails (ignored if first is universal)             
+    # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
+    # @param [String] folder Email account folder to store a message             
+    # @param [BOOLEAN] mark_as_sent Mark message as sent             
+    # @param [String] base64_mime_message Email document serialized as MIME string             
     def initialize(first_account=nil, second_account=nil, storage_folder=nil, folder=nil, mark_as_sent=nil, base64_mime_message=nil)
-      self.first_account = first_account
-      self.second_account = second_account
-      self.storage_folder = storage_folder
-      self.folder = folder
-      self.mark_as_sent = mark_as_sent
-      self.base64_mime_message = base64_mime_message
+      self.first_account = first_account if first_account
+      self.second_account = second_account if second_account
+      self.storage_folder = storage_folder if storage_folder
+      self.folder = folder if folder
+      self.mark_as_sent = mark_as_sent if mark_as_sent
+      self.base64_mime_message = base64_mime_message if base64_mime_message
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

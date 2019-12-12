@@ -69,9 +69,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [HierarchicalObject] hierarchical_object Hierarchical properties of document             
+    # @param [StorageFolderLocation] storage_folder Document location in storage             
     def initialize(hierarchical_object=nil, storage_folder=nil)
-      self.hierarchical_object = hierarchical_object
-      self.storage_folder = storage_folder
+      self.hierarchical_object = hierarchical_object if hierarchical_object
+      self.storage_folder = storage_folder if storage_folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

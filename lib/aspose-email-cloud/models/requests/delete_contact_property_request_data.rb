@@ -39,11 +39,11 @@ module AsposeEmailCloud
     # @param [Integer] index Property index
     # @param [StorageFolderLocation] folder Calendar document location in storage information
     def initialize(format, name, member_name, index, folder)
-      @format = format
-      @name = name
-      @member_name = member_name
-      @index = index
-      @folder = folder
+      @format = format if format
+      @name = name if name
+      @member_name = member_name if member_name
+      @index = index if index
+      @folder = folder if folder
     end
 
     def to_http_info(api_client)
