@@ -1,15 +1,28 @@
-﻿Aspose.Email Cloud is a REST API for creating email applications that work with standard email file formats. This SDK:
+﻿# Aspose.Email Cloud SDK for Ruby [![Gem](https://img.shields.io/gem/v/aspose_email_cloud)](https://rubygems.org/gems/aspose_email_cloud) [![License](https://img.shields.io/github/license/aspose-email-cloud/aspose-email-cloud-ruby)](https://rubygems.org/gems/aspose_email_cloud)
+This repository contains Aspose.Email Cloud SDK for Ruby source code. This SDK allows you to work with Aspose.Email Cloud REST APIs in your Ruby applications quickly and easily, with zero initial cost.
+
+[Aspose.Email Cloud home](https://products.aspose.cloud/email/family "Aspose.Email Cloud")  
+[API Reference](https://apireference.aspose.cloud/email/)  
+
+# Key features
+
+Aspose.Email Cloud is a REST API for creating email applications that work with standard email file formats. This SDK:
 - Lets developers manipulate different emails’ formats such as Outlook MSG, EML, VCard, and iCalendar files
 - Has a built-in email client
 - Supports AI functionalities:
     - The Business card recognition
     - The Name API for parsing and handling personal names
 
-To use this SDK, you need an App SID and an App Key; they can be looked up at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) (it requires free registration in Aspose Cloud for this).
-
 ## How to use the SDK?
 The complete source code is available in the GIT repository. 
 Use reference documentation, available [**here**](docs/README.md)
+
+### Prerequisites
+
+To use this SDK, you need an App SID and an App Key; they can be looked up at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) (it requires free registration in Aspose Cloud for this).
+
+### Installation
+You can either directly use it in your project via source code or get [gem](https://rubygems.org/gems/aspose_email_cloud).
 
 ### Usage examples
 To use the API, you should create an EmailApi object:
@@ -158,9 +171,6 @@ puts given_name.value # prints 'John'
 puts surname.value # prints 'Cane'
 ```
 </details>
-
-### Install Aspose.Email Cloud
-You can either directly use it in your project via source code or get [gem](https://rubygems.org/gems/asposeemailcloud).
 
 # Licensing
 All Aspose.Email Cloud SDKs, helper scripts and templates are licensed under [MIT License](LICENSE).
