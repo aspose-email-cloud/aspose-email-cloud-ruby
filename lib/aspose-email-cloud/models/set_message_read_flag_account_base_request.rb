@@ -30,18 +30,23 @@ module AsposeEmailCloud
   # Set message is read request             
   class SetMessageReadFlagAccountBaseRequest
     # First account storage file name for receiving emails (or universal one)             
+    # @return [String]
     attr_accessor :first_account
 
     # Second account storage file name for sending emails (ignored if first is universal)             
+    # @return [String]
     attr_accessor :second_account
 
     # Storage folder location of account files             
+    # @return [StorageFolderLocation]
     attr_accessor :storage_folder
 
     # Message identifier             
+    # @return [String]
     attr_accessor :message_id
 
     # Specifies that message should be marked read or unread             
+    # @return [BOOLEAN]
     attr_accessor :is_read
 
     # Attribute mapping from ruby-style variable name to JSON key.

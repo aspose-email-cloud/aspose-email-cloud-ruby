@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # The error details
   class ErrorDetails
     # The request id
+    # @return [String]
     attr_accessor :request_id
 
     # Date
+    # @return [DateTime]
     attr_accessor :date
 
     # Attribute mapping from ruby-style variable name to JSON key.

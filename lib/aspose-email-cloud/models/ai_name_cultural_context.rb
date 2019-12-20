@@ -30,18 +30,23 @@ module AsposeEmailCloud
   # AiName cultural context             
   class AiNameCulturalContext
     # An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)             
+    # @return [String]
     attr_accessor :language
 
     # A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France             
+    # @return [String]
     attr_accessor :location
 
     # A writing system code; starts with the ISO-15924 script name             
+    # @return [String]
     attr_accessor :script
 
     # A character encoding name             
+    # @return [String]
     attr_accessor :encoding
 
     # Name writing style. Enum, available values: Formal, Informal, Legal, Academic
+    # @return [String]
     attr_accessor :style
 
     # Attribute mapping from ruby-style variable name to JSON key.

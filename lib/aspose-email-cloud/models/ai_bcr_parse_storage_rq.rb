@@ -30,12 +30,15 @@ module AsposeEmailCloud
   # Parse business card images from Storage request             
   class AiBcrParseStorageRq
     # Recognition options             
+    # @return [AiBcrOptions]
     attr_accessor :options
 
     # List of images with business cards             
+    # @return [Array<AiBcrImageStorageFile>]
     attr_accessor :images
 
     # Parse output folder location on storage             
+    # @return [StorageFolderLocation]
     attr_accessor :out_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -30,18 +30,23 @@ module AsposeEmailCloud
   # File or folder information
   class StorageFile
     # File or folder name.
+    # @return [String]
     attr_accessor :name
 
     # True if it is a folder.
+    # @return [BOOLEAN]
     attr_accessor :is_folder
 
     # File or folder last modified DateTime.
+    # @return [DateTime]
     attr_accessor :modified_date
 
     # File or folder size.
+    # @return [Integer]
     attr_accessor :size
 
     # File or folder path.
+    # @return [String]
     attr_accessor :path
 
     # Attribute mapping from ruby-style variable name to JSON key.

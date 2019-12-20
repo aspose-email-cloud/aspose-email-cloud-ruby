@@ -43,7 +43,7 @@ module AsposeEmailCloud
     end
 
     # Adds an attachment to iCalendar file             
-    # @param [add_calendar_attachmentRequest] request Request object.
+    # @param [cakePrefix_add_calendar_attachmentRequestData_cakeCodePostProcessor] request Request object.
     # @return [nil]
     def add_calendar_attachment(request)
       http_request = request.to_http_info(@api_client)
@@ -52,7 +52,7 @@ module AsposeEmailCloud
     end
 
     # Add attachment to contact document             
-    # @param [add_contact_attachmentRequest] request Request object.
+    # @param [AddContactAttachmentRequestData] request Request object.
     # @return [nil]
     def add_contact_attachment(request)
       http_request = request.to_http_info(@api_client)
@@ -61,7 +61,7 @@ module AsposeEmailCloud
     end
 
     # Adds an attachment to Email document             
-    # @param [add_email_attachmentRequest] request Request object.
+    # @param [AddEmailAttachmentRequestData] request Request object.
     # @return [EmailDocumentResponse]
     def add_email_attachment(request)
       http_request = request.to_http_info(@api_client)
@@ -69,7 +69,7 @@ module AsposeEmailCloud
     end
 
     # Add attachment to document             
-    # @param [add_mapi_attachmentRequest] request Request object.
+    # @param [AddMapiAttachmentRequestData] request Request object.
     # @return [nil]
     def add_mapi_attachment(request)
       http_request = request.to_http_info(@api_client)
@@ -78,7 +78,7 @@ module AsposeEmailCloud
     end
 
     # Ocr images             
-    # @param [ai_bcr_ocrRequest] request Request object.
+    # @param [AiBcrOcrRequestData] request Request object.
     # @return [ListResponseOfAiBcrOcrData]
     def ai_bcr_ocr(request)
       http_request = request.to_http_info(@api_client)
@@ -86,7 +86,7 @@ module AsposeEmailCloud
     end
 
     # Ocr images from storage             
-    # @param [ai_bcr_ocr_storageRequest] request Request object.
+    # @param [AiBcrOcrStorageRequestData] request Request object.
     # @return [ListResponseOfAiBcrOcrData]
     def ai_bcr_ocr_storage(request)
       http_request = request.to_http_info(@api_client)
@@ -94,7 +94,7 @@ module AsposeEmailCloud
     end
 
     # Parse images to vCard properties             
-    # @param [ai_bcr_parseRequest] request Request object.
+    # @param [AiBcrParseRequestData] request Request object.
     # @return [ListResponseOfHierarchicalObject]
     def ai_bcr_parse(request)
       http_request = request.to_http_info(@api_client)
@@ -102,7 +102,7 @@ module AsposeEmailCloud
     end
 
     # Parse OCR data to vCard properties             
-    # @param [ai_bcr_parse_ocr_dataRequest] request Request object.
+    # @param [AiBcrParseOcrDataRequestData] request Request object.
     # @return [ListResponseOfHierarchicalObject]
     def ai_bcr_parse_ocr_data(request)
       http_request = request.to_http_info(@api_client)
@@ -110,7 +110,7 @@ module AsposeEmailCloud
     end
 
     # Parse vCards from OCR data and save them to Storage             
-    # @param [ai_bcr_parse_ocr_data_storageRequest] request Request object.
+    # @param [AiBcrParseOcrDataStorageRequestData] request Request object.
     # @return [ListResponseOfStorageFileLocation]
     def ai_bcr_parse_ocr_data_storage(request)
       http_request = request.to_http_info(@api_client)
@@ -118,7 +118,7 @@ module AsposeEmailCloud
     end
 
     # Parse images from storage to vCard files             
-    # @param [ai_bcr_parse_storageRequest] request Request object.
+    # @param [AiBcrParseStorageRequestData] request Request object.
     # @return [ListResponseOfStorageFileLocation]
     def ai_bcr_parse_storage(request)
       http_request = request.to_http_info(@api_client)
@@ -126,7 +126,7 @@ module AsposeEmailCloud
     end
 
     # The call proposes k most probable names for given starting characters             
-    # @param [ai_name_completeRequest] request Request object.
+    # @param [AiNameCompleteRequestData] request Request object.
     # @return [AiNameWeightedVariants]
     def ai_name_complete(request)
       http_request = request.to_http_info(@api_client)
@@ -134,7 +134,7 @@ module AsposeEmailCloud
     end
 
     # Expands a person's name into a list of possible alternatives using options for expanding instructions             
-    # @param [ai_name_expandRequest] request Request object.
+    # @param [AiNameExpandRequestData] request Request object.
     # @return [AiNameWeightedVariants]
     def ai_name_expand(request)
       http_request = request.to_http_info(@api_client)
@@ -142,7 +142,7 @@ module AsposeEmailCloud
     end
 
     # Expands a person's parsed name into a list of possible alternatives using options for expanding instructions             
-    # @param [ai_name_expand_parsedRequest] request Request object.
+    # @param [AiNameExpandParsedRequestData] request Request object.
     # @return [AiNameWeightedVariants]
     def ai_name_expand_parsed(request)
       http_request = request.to_http_info(@api_client)
@@ -150,7 +150,7 @@ module AsposeEmailCloud
     end
 
     # Formats a person's name in correct case and name order using options for formatting instructions             
-    # @param [ai_name_formatRequest] request Request object.
+    # @param [AiNameFormatRequestData] request Request object.
     # @return [AiNameFormatted]
     def ai_name_format(request)
       http_request = request.to_http_info(@api_client)
@@ -158,7 +158,7 @@ module AsposeEmailCloud
     end
 
     # Formats a person's parsed name in correct case and name order using options for formatting instructions             
-    # @param [ai_name_format_parsedRequest] request Request object.
+    # @param [AiNameFormatParsedRequestData] request Request object.
     # @return [AiNameFormatted]
     def ai_name_format_parsed(request)
       http_request = request.to_http_info(@api_client)
@@ -166,7 +166,7 @@ module AsposeEmailCloud
     end
 
     # Detect person's gender from name string             
-    # @param [ai_name_genderizeRequest] request Request object.
+    # @param [AiNameGenderizeRequestData] request Request object.
     # @return [ListResponseOfAiNameGenderHypothesis]
     def ai_name_genderize(request)
       http_request = request.to_http_info(@api_client)
@@ -174,7 +174,7 @@ module AsposeEmailCloud
     end
 
     # Detect person's gender from parsed name             
-    # @param [ai_name_genderize_parsedRequest] request Request object.
+    # @param [AiNameGenderizeParsedRequestData] request Request object.
     # @return [ListResponseOfAiNameGenderHypothesis]
     def ai_name_genderize_parsed(request)
       http_request = request.to_http_info(@api_client)
@@ -182,7 +182,7 @@ module AsposeEmailCloud
     end
 
     # Compare people's names. Uses options for comparing instructions             
-    # @param [ai_name_matchRequest] request Request object.
+    # @param [AiNameMatchRequestData] request Request object.
     # @return [AiNameMatchResult]
     def ai_name_match(request)
       http_request = request.to_http_info(@api_client)
@@ -190,7 +190,7 @@ module AsposeEmailCloud
     end
 
     # Compare people's parsed names and attributes. Uses options for comparing instructions             
-    # @param [ai_name_match_parsedRequest] request Request object.
+    # @param [AiNameMatchParsedRequestData] request Request object.
     # @return [AiNameMatchResult]
     def ai_name_match_parsed(request)
       http_request = request.to_http_info(@api_client)
@@ -198,7 +198,7 @@ module AsposeEmailCloud
     end
 
     # Parse name to components             
-    # @param [ai_name_parseRequest] request Request object.
+    # @param [AiNameParseRequestData] request Request object.
     # @return [ListResponseOfAiNameComponent]
     def ai_name_parse(request)
       http_request = request.to_http_info(@api_client)
@@ -206,7 +206,7 @@ module AsposeEmailCloud
     end
 
     # Parse person's name out of an email address             
-    # @param [ai_name_parse_email_addressRequest] request Request object.
+    # @param [AiNameParseEmailAddressRequestData] request Request object.
     # @return [ListResponseOfAiNameExtracted]
     def ai_name_parse_email_address(request)
       http_request = request.to_http_info(@api_client)
@@ -214,7 +214,7 @@ module AsposeEmailCloud
     end
 
     # Adds an email from *.eml file to specified folder in email account             
-    # @param [append_email_messageRequest] request Request object.
+    # @param [AppendEmailMessageRequestData] request Request object.
     # @return [EmailPropertyResponse]
     def append_email_message(request)
       http_request = request.to_http_info(@api_client)
@@ -222,7 +222,7 @@ module AsposeEmailCloud
     end
 
     # Adds an email from MIME to specified folder in email account             
-    # @param [append_mime_messageRequest] request Request object.
+    # @param [AppendMimeMessageRequestData] request Request object.
     # @return [ValueResponse]
     def append_mime_message(request)
       http_request = request.to_http_info(@api_client)
@@ -230,7 +230,7 @@ module AsposeEmailCloud
     end
 
     # Copy file
-    # @param [copy_fileRequest] request Request object.
+    # @param [CopyFileRequestData] request Request object.
     # @return [nil]
     def copy_file(request)
       http_request = request.to_http_info(@api_client)
@@ -239,7 +239,7 @@ module AsposeEmailCloud
     end
 
     # Copy folder
-    # @param [copy_folderRequest] request Request object.
+    # @param [CopyFolderRequestData] request Request object.
     # @return [nil]
     def copy_folder(request)
       http_request = request.to_http_info(@api_client)
@@ -248,7 +248,7 @@ module AsposeEmailCloud
     end
 
     # Create calendar file             
-    # @param [create_calendarRequest] request Request object.
+    # @param [CreateCalendarRequestData] request Request object.
     # @return [nil]
     def create_calendar(request)
       http_request = request.to_http_info(@api_client)
@@ -257,7 +257,7 @@ module AsposeEmailCloud
     end
 
     # Create contact document             
-    # @param [create_contactRequest] request Request object.
+    # @param [CreateContactRequestData] request Request object.
     # @return [nil]
     def create_contact(request)
       http_request = request.to_http_info(@api_client)
@@ -266,7 +266,7 @@ module AsposeEmailCloud
     end
 
     # Create an email document             
-    # @param [create_emailRequest] request Request object.
+    # @param [CreateEmailRequestData] request Request object.
     # @return [EmailDocumentResponse]
     def create_email(request)
       http_request = request.to_http_info(@api_client)
@@ -274,7 +274,7 @@ module AsposeEmailCloud
     end
 
     # Create new folder in email account             
-    # @param [create_email_folderRequest] request Request object.
+    # @param [CreateEmailFolderRequestData] request Request object.
     # @return [nil]
     def create_email_folder(request)
       http_request = request.to_http_info(@api_client)
@@ -283,7 +283,7 @@ module AsposeEmailCloud
     end
 
     # Create the folder
-    # @param [create_folderRequest] request Request object.
+    # @param [CreateFolderRequestData] request Request object.
     # @return [nil]
     def create_folder(request)
       http_request = request.to_http_info(@api_client)
@@ -292,7 +292,7 @@ module AsposeEmailCloud
     end
 
     # Create new document             
-    # @param [create_mapiRequest] request Request object.
+    # @param [CreateMapiRequestData] request Request object.
     # @return [nil]
     def create_mapi(request)
       http_request = request.to_http_info(@api_client)
@@ -301,7 +301,7 @@ module AsposeEmailCloud
     end
 
     # Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}             
-    # @param [delete_calendar_propertyRequest] request Request object.
+    # @param [DeleteCalendarPropertyRequestData] request Request object.
     # @return [nil]
     def delete_calendar_property(request)
       http_request = request.to_http_info(@api_client)
@@ -310,7 +310,7 @@ module AsposeEmailCloud
     end
 
     # Delete property from indexed property list             
-    # @param [delete_contact_propertyRequest] request Request object.
+    # @param [DeleteContactPropertyRequestData] request Request object.
     # @return [nil]
     def delete_contact_property(request)
       http_request = request.to_http_info(@api_client)
@@ -319,7 +319,7 @@ module AsposeEmailCloud
     end
 
     # Delete a folder in email account             
-    # @param [delete_email_folderRequest] request Request object.
+    # @param [DeleteEmailFolderRequestData] request Request object.
     # @return [nil]
     def delete_email_folder(request)
       http_request = request.to_http_info(@api_client)
@@ -328,7 +328,7 @@ module AsposeEmailCloud
     end
 
     # Delete message from email account by id             
-    # @param [delete_email_messageRequest] request Request object.
+    # @param [DeleteEmailMessageRequestData] request Request object.
     # @return [nil]
     def delete_email_message(request)
       http_request = request.to_http_info(@api_client)
@@ -337,7 +337,7 @@ module AsposeEmailCloud
     end
 
     # Delete file
-    # @param [delete_fileRequest] request Request object.
+    # @param [DeleteFileRequestData] request Request object.
     # @return [nil]
     def delete_file(request)
       http_request = request.to_http_info(@api_client)
@@ -346,7 +346,7 @@ module AsposeEmailCloud
     end
 
     # Delete folder
-    # @param [delete_folderRequest] request Request object.
+    # @param [DeleteFolderRequestData] request Request object.
     # @return [nil]
     def delete_folder(request)
       http_request = request.to_http_info(@api_client)
@@ -355,7 +355,7 @@ module AsposeEmailCloud
     end
 
     # Remove attachment from document             
-    # @param [delete_mapi_attachmentRequest] request Request object.
+    # @param [DeleteMapiAttachmentRequestData] request Request object.
     # @return [nil]
     def delete_mapi_attachment(request)
       http_request = request.to_http_info(@api_client)
@@ -364,7 +364,7 @@ module AsposeEmailCloud
     end
 
     # Delete document properties             
-    # @param [delete_mapi_propertiesRequest] request Request object.
+    # @param [DeleteMapiPropertiesRequestData] request Request object.
     # @return [nil]
     def delete_mapi_properties(request)
       http_request = request.to_http_info(@api_client)
@@ -373,7 +373,7 @@ module AsposeEmailCloud
     end
 
     # Download file
-    # @param [download_fileRequest] request Request object.
+    # @param [DownloadFileRequestData] request Request object.
     # @return [File]
     def download_file(request)
       http_request = request.to_http_info(@api_client)
@@ -381,7 +381,7 @@ module AsposeEmailCloud
     end
 
     # Fetch message mime from email account             
-    # @param [fetch_email_messageRequest] request Request object.
+    # @param [FetchEmailMessageRequestData] request Request object.
     # @return [MimeResponse]
     def fetch_email_message(request)
       http_request = request.to_http_info(@api_client)
@@ -389,7 +389,7 @@ module AsposeEmailCloud
     end
 
     # Get calendar file properties             
-    # @param [get_calendarRequest] request Request object.
+    # @param [GetCalendarRequestData] request Request object.
     # @return [HierarchicalObject]
     def get_calendar(request)
       http_request = request.to_http_info(@api_client)
@@ -397,7 +397,7 @@ module AsposeEmailCloud
     end
 
     # Get iCalendar document attachment by name             
-    # @param [get_calendar_attachmentRequest] request Request object.
+    # @param [GetCalendarAttachmentRequestData] request Request object.
     # @return [File]
     def get_calendar_attachment(request)
       http_request = request.to_http_info(@api_client)
@@ -405,7 +405,7 @@ module AsposeEmailCloud
     end
 
     # Get iCalendar files list in folder on storage             
-    # @param [get_calendar_listRequest] request Request object.
+    # @param [GetCalendarListRequestData] request Request object.
     # @return [ListResponseOfHierarchicalObjectResponse]
     def get_calendar_list(request)
       http_request = request.to_http_info(@api_client)
@@ -413,7 +413,7 @@ module AsposeEmailCloud
     end
 
     # Get attachment file by name             
-    # @param [get_contact_attachmentRequest] request Request object.
+    # @param [GetContactAttachmentRequestData] request Request object.
     # @return [File]
     def get_contact_attachment(request)
       http_request = request.to_http_info(@api_client)
@@ -421,7 +421,7 @@ module AsposeEmailCloud
     end
 
     # Get contact list from storage folder             
-    # @param [get_contact_listRequest] request Request object.
+    # @param [GetContactListRequestData] request Request object.
     # @return [ListResponseOfHierarchicalObjectResponse]
     def get_contact_list(request)
       http_request = request.to_http_info(@api_client)
@@ -429,7 +429,7 @@ module AsposeEmailCloud
     end
 
     # Get contact document properties             
-    # @param [get_contact_propertiesRequest] request Request object.
+    # @param [GetContactPropertiesRequestData] request Request object.
     # @return [HierarchicalObject]
     def get_contact_properties(request)
       http_request = request.to_http_info(@api_client)
@@ -437,7 +437,7 @@ module AsposeEmailCloud
     end
 
     # Get disc usage
-    # @param [get_disc_usageRequest] request Request object.
+    # @param [GetDiscUsageRequestData] request Request object.
     # @return [DiscUsage]
     def get_disc_usage(request)
       http_request = request.to_http_info(@api_client)
@@ -445,7 +445,7 @@ module AsposeEmailCloud
     end
 
     # Get email document             
-    # @param [get_emailRequest] request Request object.
+    # @param [GetEmailRequestData] request Request object.
     # @return [EmailDocument]
     def get_email(request)
       http_request = request.to_http_info(@api_client)
@@ -453,7 +453,7 @@ module AsposeEmailCloud
     end
 
     # Get email attachment by name             
-    # @param [get_email_attachmentRequest] request Request object.
+    # @param [GetEmailAttachmentRequestData] request Request object.
     # @return [File]
     def get_email_attachment(request)
       http_request = request.to_http_info(@api_client)
@@ -461,7 +461,7 @@ module AsposeEmailCloud
     end
 
     # Get an email document property by its name             
-    # @param [get_email_propertyRequest] request Request object.
+    # @param [GetEmailPropertyRequestData] request Request object.
     # @return [EmailPropertyResponse]
     def get_email_property(request)
       http_request = request.to_http_info(@api_client)
@@ -469,7 +469,7 @@ module AsposeEmailCloud
     end
 
     # Get file versions
-    # @param [get_file_versionsRequest] request Request object.
+    # @param [GetFileVersionsRequestData] request Request object.
     # @return [FileVersions]
     def get_file_versions(request)
       http_request = request.to_http_info(@api_client)
@@ -477,7 +477,7 @@ module AsposeEmailCloud
     end
 
     # Get all files and folders within a folder
-    # @param [get_files_listRequest] request Request object.
+    # @param [GetFilesListRequestData] request Request object.
     # @return [FilesList]
     def get_files_list(request)
       http_request = request.to_http_info(@api_client)
@@ -485,7 +485,7 @@ module AsposeEmailCloud
     end
 
     # Get document attachment as file stream             
-    # @param [get_mapi_attachmentRequest] request Request object.
+    # @param [GetMapiAttachmentRequestData] request Request object.
     # @return [File]
     def get_mapi_attachment(request)
       http_request = request.to_http_info(@api_client)
@@ -493,7 +493,7 @@ module AsposeEmailCloud
     end
 
     # Get document attachment list             
-    # @param [get_mapi_attachmentsRequest] request Request object.
+    # @param [GetMapiAttachmentsRequestData] request Request object.
     # @return [ListResponseOfString]
     def get_mapi_attachments(request)
       http_request = request.to_http_info(@api_client)
@@ -501,7 +501,7 @@ module AsposeEmailCloud
     end
 
     # Get document list from storage folder             
-    # @param [get_mapi_listRequest] request Request object.
+    # @param [GetMapiListRequestData] request Request object.
     # @return [ListResponseOfHierarchicalObjectResponse]
     def get_mapi_list(request)
       http_request = request.to_http_info(@api_client)
@@ -509,7 +509,7 @@ module AsposeEmailCloud
     end
 
     # Get document properties             
-    # @param [get_mapi_propertiesRequest] request Request object.
+    # @param [GetMapiPropertiesRequestData] request Request object.
     # @return [HierarchicalObjectResponse]
     def get_mapi_properties(request)
       http_request = request.to_http_info(@api_client)
@@ -517,7 +517,7 @@ module AsposeEmailCloud
     end
 
     # Get folders list in email account             
-    # @param [list_email_foldersRequest] request Request object.
+    # @param [ListEmailFoldersRequestData] request Request object.
     # @return [ListResponseOfMailServerFolder]
     def list_email_folders(request)
       http_request = request.to_http_info(@api_client)
@@ -526,7 +526,7 @@ module AsposeEmailCloud
 
     # Get messages from folder, filtered by query             
     # The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3>,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"              
-    # @param [list_email_messagesRequest] request Request object.
+    # @param [ListEmailMessagesRequestData] request Request object.
     # @return [ListResponseOfString]
     def list_email_messages(request)
       http_request = request.to_http_info(@api_client)
@@ -534,7 +534,7 @@ module AsposeEmailCloud
     end
 
     # Move file
-    # @param [move_fileRequest] request Request object.
+    # @param [MoveFileRequestData] request Request object.
     # @return [nil]
     def move_file(request)
       http_request = request.to_http_info(@api_client)
@@ -543,7 +543,7 @@ module AsposeEmailCloud
     end
 
     # Move folder
-    # @param [move_folderRequest] request Request object.
+    # @param [MoveFolderRequestData] request Request object.
     # @return [nil]
     def move_folder(request)
       http_request = request.to_http_info(@api_client)
@@ -552,7 +552,7 @@ module AsposeEmailCloud
     end
 
     # Check if file or folder exists
-    # @param [object_existsRequest] request Request object.
+    # @param [ObjectExistsRequestData] request Request object.
     # @return [ObjectExist]
     def object_exists(request)
       http_request = request.to_http_info(@api_client)
@@ -560,7 +560,7 @@ module AsposeEmailCloud
     end
 
     # Create email account file (*.account) with login/password authentication             
-    # @param [save_mail_accountRequest] request Request object.
+    # @param [SaveMailAccountRequestData] request Request object.
     # @return [nil]
     def save_mail_account(request)
       http_request = request.to_http_info(@api_client)
@@ -569,7 +569,7 @@ module AsposeEmailCloud
     end
 
     # Create email account file (*.account) with OAuth             
-    # @param [save_mail_o_auth_accountRequest] request Request object.
+    # @param [SaveMailOAuthAccountRequestData] request Request object.
     # @return [nil]
     def save_mail_o_auth_account(request)
       http_request = request.to_http_info(@api_client)
@@ -578,7 +578,7 @@ module AsposeEmailCloud
     end
 
     # Send an email from *.eml file located on storage             
-    # @param [send_emailRequest] request Request object.
+    # @param [SendEmailRequestData] request Request object.
     # @return [nil]
     def send_email(request)
       http_request = request.to_http_info(@api_client)
@@ -587,7 +587,7 @@ module AsposeEmailCloud
     end
 
     # Send an email specified by MIME in request             
-    # @param [send_email_mimeRequest] request Request object.
+    # @param [SendEmailMimeRequestData] request Request object.
     # @return [nil]
     def send_email_mime(request)
       http_request = request.to_http_info(@api_client)
@@ -596,7 +596,7 @@ module AsposeEmailCloud
     end
 
     # Set email document property value             
-    # @param [set_email_propertyRequest] request Request object.
+    # @param [SetEmailPropertyRequestData] request Request object.
     # @return [EmailPropertyResponse]
     def set_email_property(request)
       http_request = request.to_http_info(@api_client)
@@ -604,7 +604,7 @@ module AsposeEmailCloud
     end
 
     # Sets \"Message is read\" flag             
-    # @param [set_email_read_flagRequest] request Request object.
+    # @param [SetEmailReadFlagRequestData] request Request object.
     # @return [nil]
     def set_email_read_flag(request)
       http_request = request.to_http_info(@api_client)
@@ -613,7 +613,7 @@ module AsposeEmailCloud
     end
 
     # Check if storage exists
-    # @param [storage_existsRequest] request Request object.
+    # @param [StorageExistsRequestData] request Request object.
     # @return [StorageExist]
     def storage_exists(request)
       http_request = request.to_http_info(@api_client)
@@ -621,7 +621,7 @@ module AsposeEmailCloud
     end
 
     # Update calendar file properties             
-    # @param [update_calendar_propertiesRequest] request Request object.
+    # @param [UpdateCalendarPropertiesRequestData] request Request object.
     # @return [nil]
     def update_calendar_properties(request)
       http_request = request.to_http_info(@api_client)
@@ -630,7 +630,7 @@ module AsposeEmailCloud
     end
 
     # Update contact document properties             
-    # @param [update_contact_propertiesRequest] request Request object.
+    # @param [UpdateContactPropertiesRequestData] request Request object.
     # @return [nil]
     def update_contact_properties(request)
       http_request = request.to_http_info(@api_client)
@@ -639,7 +639,7 @@ module AsposeEmailCloud
     end
 
     # Update document properties             
-    # @param [update_mapi_propertiesRequest] request Request object.
+    # @param [UpdateMapiPropertiesRequestData] request Request object.
     # @return [nil]
     def update_mapi_properties(request)
       http_request = request.to_http_info(@api_client)
@@ -648,7 +648,7 @@ module AsposeEmailCloud
     end
 
     # Upload file
-    # @param [upload_fileRequest] request Request object.
+    # @param [UploadFileRequestData] request Request object.
     # @return [FilesUploadResult]
     def upload_file(request)
       http_request = request.to_http_info(@api_client)

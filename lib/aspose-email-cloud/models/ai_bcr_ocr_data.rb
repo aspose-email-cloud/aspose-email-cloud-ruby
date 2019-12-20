@@ -30,15 +30,19 @@ module AsposeEmailCloud
   # Image OCR results             
   class AiBcrOcrData
     # Image identifier             
+    # @return [String]
     attr_accessor :id
 
     # Image with possible pre-processing in Base64             
+    # @return [String]
     attr_accessor :image
 
     # Additional details from OCR engine             
+    # @return [Hash<String, String>]
     attr_accessor :details
 
     # OCR results             
+    # @return [Array<AiBcrOcrDataPart>]
     attr_accessor :data
 
     # Attribute mapping from ruby-style variable name to JSON key.

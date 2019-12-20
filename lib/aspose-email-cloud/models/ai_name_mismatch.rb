@@ -30,12 +30,15 @@ module AsposeEmailCloud
   # Names mismatch detailed description             
   class AiNameMismatch
     # Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
+    # @return [String]
     attr_accessor :category
 
     # Similarity score             
+    # @return [Float]
     attr_accessor :similarity
 
     # Explanation or mismatch subtype             
+    # @return [String]
     attr_accessor :explanation
 
     # Attribute mapping from ruby-style variable name to JSON key.

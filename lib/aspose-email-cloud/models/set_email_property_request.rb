@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Update email document property request             
   class SetEmailPropertyRequest
     # An email property that should be updated             
+    # @return [EmailProperty]
     attr_accessor :email_property
 
     # An email document location in storage             
+    # @return [StorageFolderLocation]
     attr_accessor :storage_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

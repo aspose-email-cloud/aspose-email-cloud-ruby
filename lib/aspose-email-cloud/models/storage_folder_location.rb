@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # A storage folder location information             
   class StorageFolderLocation
     # A storage name             
+    # @return [String]
     attr_accessor :storage
 
     # A path to a folder in specified storage             
+    # @return [String]
     attr_accessor :folder_path
 
     # Attribute mapping from ruby-style variable name to JSON key.

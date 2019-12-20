@@ -30,15 +30,19 @@ module AsposeEmailCloud
   # Error
   class Error
     # Code             
+    # @return [String]
     attr_accessor :code
 
     # Message             
+    # @return [String]
     attr_accessor :message
 
     # Description             
+    # @return [String]
     attr_accessor :description
 
     # Inner Error             
+    # @return [ErrorDetails]
     attr_accessor :inner_error
 
     # Attribute mapping from ruby-style variable name to JSON key.

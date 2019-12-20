@@ -30,21 +30,27 @@ module AsposeEmailCloud
   # Recognized text block             
   class AiBcrOcrDataPart
     # X position of text block             
+    # @return [Float]
     attr_accessor :x
 
     # Y position of text block             
+    # @return [Float]
     attr_accessor :y
 
     # Width of text block             
+    # @return [Float]
     attr_accessor :width
 
     # Height of text block             
+    # @return [Float]
     attr_accessor :height
 
     # Recognized text             
+    # @return [String]
     attr_accessor :text
 
     # Additional recognition result details             
+    # @return [Hash<String, String>]
     attr_accessor :details
 
     # Attribute mapping from ruby-style variable name to JSON key.

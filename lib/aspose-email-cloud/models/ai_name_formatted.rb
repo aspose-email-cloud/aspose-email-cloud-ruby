@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Formatted name             
   class AiNameFormatted
     # Formatted name value             
+    # @return [String]
     attr_accessor :name
 
     # Usually empty; can contain extra message describing some issue occurred during the formatting             
+    # @return [String]
     attr_accessor :comments
 
     # Attribute mapping from ruby-style variable name to JSON key.

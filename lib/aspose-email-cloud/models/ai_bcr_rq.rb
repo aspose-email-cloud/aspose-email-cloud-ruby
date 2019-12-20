@@ -30,6 +30,7 @@ module AsposeEmailCloud
   # Business card recognition request             
   class AiBcrRq
     # Recognition options             
+    # @return [AiBcrOptions]
     attr_accessor :options
 
     # Attribute mapping from ruby-style variable name to JSON key.

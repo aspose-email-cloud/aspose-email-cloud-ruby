@@ -30,6 +30,7 @@ module AsposeEmailCloud
   # Email property response.             
   class EmailPropertyResponse
     # Gets or sets email property.             
+    # @return [EmailProperty]
     attr_accessor :email_property
 
     # Attribute mapping from ruby-style variable name to JSON key.

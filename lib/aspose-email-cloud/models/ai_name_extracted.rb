@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Extracted name             
   class AiNameExtracted
     # Extracted name components             
+    # @return [Array<AiNameExtractedComponent>]
     attr_accessor :name
 
     # Extracted name score             
+    # @return [Float]
     attr_accessor :score
 
     # Attribute mapping from ruby-style variable name to JSON key.

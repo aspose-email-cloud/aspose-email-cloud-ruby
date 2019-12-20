@@ -30,6 +30,7 @@ module AsposeEmailCloud
   # An email document response             
   class EmailDocumentResponse
     # An email document requested             
+    # @return [EmailDocument]
     attr_accessor :document
 
     # Attribute mapping from ruby-style variable name to JSON key.

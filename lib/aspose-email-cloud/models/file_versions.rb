@@ -30,6 +30,7 @@ module AsposeEmailCloud
   # File versions FileVersion.
   class FileVersions
     # File versions FileVersion.
+    # @return [Array<FileVersion>]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

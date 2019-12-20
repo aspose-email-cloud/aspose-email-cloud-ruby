@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Represents Email document DTO.             
   class EmailDocument
     # Links that originate from this document.             
+    # @return [Array<Link>]
     attr_accessor :links
 
     # List of document properties.             
+    # @return [EmailProperties]
     attr_accessor :document_properties
 
     # Attribute mapping from ruby-style variable name to JSON key.

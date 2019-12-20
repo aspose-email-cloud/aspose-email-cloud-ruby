@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Recognition options             
   class AiBcrOptions
     # Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default             
+    # @return [String]
     attr_accessor :languages
 
     # Comma-separated codes of countries             
+    # @return [String]
     attr_accessor :countries
 
     # Attribute mapping from ruby-style variable name to JSON key.

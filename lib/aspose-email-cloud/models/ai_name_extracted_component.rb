@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Extracted name component             
   class AiNameExtractedComponent
     # Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
+    # @return [String]
     attr_accessor :category
 
     # Extracted value             
+    # @return [String]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

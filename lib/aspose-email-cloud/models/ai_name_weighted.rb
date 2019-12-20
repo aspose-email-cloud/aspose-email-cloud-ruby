@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Name with score             
   class AiNameWeighted
     # Name             
+    # @return [String]
     attr_accessor :name
 
     # Score of name             
+    # @return [Float]
     attr_accessor :score
 
     # Attribute mapping from ruby-style variable name to JSON key.

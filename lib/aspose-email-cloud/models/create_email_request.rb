@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Create email document request             
   class CreateEmailRequest
     # An email document that should be created             
+    # @return [EmailDocument]
     attr_accessor :email_document
 
     # Email document location in storage             
+    # @return [StorageFolderLocation]
     attr_accessor :storage_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

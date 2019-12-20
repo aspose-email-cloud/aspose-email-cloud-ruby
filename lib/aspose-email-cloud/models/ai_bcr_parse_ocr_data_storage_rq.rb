@@ -30,12 +30,15 @@ module AsposeEmailCloud
   # Parse ocr data request with storage output location             
   class AiBcrParseOcrDataStorageRq
     # Recognition options             
+    # @return [AiBcrOptions]
     attr_accessor :options
 
     # OCR data             
+    # @return [Array<AiBcrOcrData>]
     attr_accessor :data
 
     # Output folder location on storage             
+    # @return [StorageFolderLocation]
     attr_accessor :out_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

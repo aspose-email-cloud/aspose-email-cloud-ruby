@@ -30,6 +30,7 @@ module AsposeEmailCloud
   # Files list
   class FilesList
     # Files and folders contained by folder StorageFile.
+    # @return [Array<StorageFile>]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

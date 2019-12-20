@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Image from storage for recognition             
   class AiBcrImageStorageFile
     # Determines that image contains single VCard or more             
+    # @return [BOOLEAN]
     attr_accessor :is_single
 
     # Image location             
+    # @return [StorageFileLocation]
     attr_accessor :file
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Add attachment request             
   class AddAttachmentRequest
     # Storage folder location of document             
+    # @return [StorageFolderLocation]
     attr_accessor :document_folder
 
     # Storage folder location of an attachment             
+    # @return [StorageFolderLocation]
     attr_accessor :attachment_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

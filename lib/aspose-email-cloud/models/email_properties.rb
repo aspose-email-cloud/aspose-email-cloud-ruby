@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Email list properties.             
   class EmailProperties
     # Gets or sets link that originate from this document.             
+    # @return [Link]
     attr_accessor :link
 
     # List of properties             
+    # @return [Array<EmailProperty>]
     attr_accessor :list
 
     # Attribute mapping from ruby-style variable name to JSON key.

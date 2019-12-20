@@ -30,12 +30,15 @@ module AsposeEmailCloud
   # Email property.             
   class EmailProperty
     # Link to property             
+    # @return [Link]
     attr_accessor :link
 
     # Property name             
+    # @return [String]
     attr_accessor :name
 
     # Property value             
+    # @return [Object]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Document represented as hierarchical set of properties response             
   class HierarchicalObjectResponse
     # Document properties             
+    # @return [HierarchicalObject]
     attr_accessor :hierarchical_object
 
     # Document location in storage             
+    # @return [StorageFileLocation]
     attr_accessor :storage_file
 
     # Attribute mapping from ruby-style variable name to JSON key.

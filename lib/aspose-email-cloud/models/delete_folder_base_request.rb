@@ -30,18 +30,23 @@ module AsposeEmailCloud
   # Delete folder request             
   class DeleteFolderBaseRequest
     # First account storage file name for receiving emails (or universal one)             
+    # @return [String]
     attr_accessor :first_account
 
     # Second account storage file name for sending emails (ignored if first is universal)             
+    # @return [String]
     attr_accessor :second_account
 
     # Storage folder location of account files             
+    # @return [StorageFolderLocation]
     attr_accessor :storage_folder
 
     # Folder name             
+    # @return [String]
     attr_accessor :folder
 
     # Specifies that folder should be deleted permanently             
+    # @return [BOOLEAN]
     attr_accessor :delete_permanently
 
     # Attribute mapping from ruby-style variable name to JSON key.

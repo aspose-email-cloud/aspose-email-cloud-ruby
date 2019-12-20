@@ -30,6 +30,7 @@ module AsposeEmailCloud
   # Storage exists
   class StorageExist
     # Shows that the storage exists.             
+    # @return [BOOLEAN]
     attr_accessor :exists
 
     # Attribute mapping from ruby-style variable name to JSON key.

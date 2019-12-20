@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Two names match result             
   class AiNameMatchResult
     # Similarity score             
+    # @return [Float]
     attr_accessor :similarity
 
     # Detailed description of mismatches             
+    # @return [Array<AiNameMismatch>]
     attr_accessor :mismatches
 
     # Attribute mapping from ruby-style variable name to JSON key.

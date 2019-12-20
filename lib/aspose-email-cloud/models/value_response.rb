@@ -30,6 +30,7 @@ module AsposeEmailCloud
   # Email document property DTO.             
   class ValueResponse
     # Gets or sets string content.             
+    # @return [String]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

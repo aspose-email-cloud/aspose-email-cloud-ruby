@@ -30,15 +30,19 @@ module AsposeEmailCloud
   # Send email file request             
   class SendEmailBaseRequest
     # First account storage file name for receiving emails (or universal one)             
+    # @return [String]
     attr_accessor :first_account
 
     # Second account storage file name for sending emails (ignored if first is universal)             
+    # @return [String]
     attr_accessor :second_account
 
     # Storage folder location of account files             
+    # @return [StorageFolderLocation]
     attr_accessor :storage_folder
 
     # Email document (*.eml) file location in storage             
+    # @return [StorageFileLocation]
     attr_accessor :email_file
 
     # Attribute mapping from ruby-style variable name to JSON key.

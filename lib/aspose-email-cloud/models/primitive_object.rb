@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Simple property object             
   class PrimitiveObject
     # Gets or sets the name of an object.             
+    # @return [String]
     attr_accessor :name
 
     # Property type. Used for deserialization purposes             
+    # @return [String]
     def type #getter method
       self.class.name.split('::').last
     end
@@ -42,6 +44,7 @@ module AsposeEmailCloud
     end
 
     # Property value             
+    # @return [String]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

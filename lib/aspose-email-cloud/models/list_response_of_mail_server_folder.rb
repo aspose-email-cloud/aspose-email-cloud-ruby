@@ -28,6 +28,8 @@ require 'date'
 
 module AsposeEmailCloud
   class ListResponseOfMailServerFolder
+    
+    # @return [Array<MailServerFolder>]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

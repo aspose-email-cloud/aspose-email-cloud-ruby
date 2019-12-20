@@ -30,33 +30,43 @@ module AsposeEmailCloud
   # Save email account settings with OAuth request             
   class SaveOAuthEmailAccountRequest
     # Email account host             
+    # @return [String]
     attr_accessor :host
 
     # Email account port             
+    # @return [Integer]
     attr_accessor :port
 
     # Email account login             
+    # @return [String]
     attr_accessor :login
 
     # Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @return [String]
     attr_accessor :security_options
 
     # Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+    # @return [String]
     attr_accessor :protocol_type
 
     # Email account description             
+    # @return [String]
     attr_accessor :description
 
     # A storage file location info to store email account             
+    # @return [StorageFileLocation]
     attr_accessor :storage_file
 
     # OAuth client identifier             
+    # @return [String]
     attr_accessor :client_id
 
     # OAuth client secret             
+    # @return [String]
     attr_accessor :client_secret
 
     # OAuth refresh token             
+    # @return [String]
     attr_accessor :refresh_token
 
     # Attribute mapping from ruby-style variable name to JSON key.

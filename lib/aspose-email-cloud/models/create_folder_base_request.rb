@@ -30,18 +30,23 @@ module AsposeEmailCloud
   # Create folder request             
   class CreateFolderBaseRequest
     # First account storage file name for receiving emails (or universal one)             
+    # @return [String]
     attr_accessor :first_account
 
     # Second account storage file name for sending emails (ignored if first is universal)             
+    # @return [String]
     attr_accessor :second_account
 
     # Storage folder location of account files             
+    # @return [StorageFolderLocation]
     attr_accessor :storage_folder
 
     # Folder name             
+    # @return [String]
     attr_accessor :folder
 
     # Parent folder path             
+    # @return [String]
     attr_accessor :parent_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

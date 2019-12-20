@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # File upload result
   class FilesUploadResult
     # List of uploaded file names
+    # @return [Array<String>]
     attr_accessor :uploaded
 
     # List of errors.
+    # @return [Array<Error>]
     attr_accessor :errors
 
     # Attribute mapping from ruby-style variable name to JSON key.

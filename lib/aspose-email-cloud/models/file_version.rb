@@ -30,24 +30,31 @@ module AsposeEmailCloud
   # File Version
   class FileVersion
     # File or folder name.
+    # @return [String]
     attr_accessor :name
 
     # True if it is a folder.
+    # @return [BOOLEAN]
     attr_accessor :is_folder
 
     # File or folder last modified DateTime.
+    # @return [DateTime]
     attr_accessor :modified_date
 
     # File or folder size.
+    # @return [Integer]
     attr_accessor :size
 
     # File or folder path.
+    # @return [String]
     attr_accessor :path
 
     # File Version ID.
+    # @return [String]
     attr_accessor :version_id
 
     # Specifies whether the file is (true) or is not (false) the latest version of an file.
+    # @return [BOOLEAN]
     attr_accessor :is_latest
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -30,6 +30,7 @@ module AsposeEmailCloud
   # Image for recognition             
   class AiBcrImage
     # Determines that image contains single VCard or more             
+    # @return [BOOLEAN]
     attr_accessor :is_single
 
     # Attribute mapping from ruby-style variable name to JSON key.

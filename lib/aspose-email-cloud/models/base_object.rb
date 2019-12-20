@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Base property object             
   class BaseObject
     # Gets or sets the name of an object.             
+    # @return [String]
     attr_accessor :name
 
     # Property type. Used for deserialization purposes             
+    # @return [String]
     def type #getter method
       self.class.name.split('::').last
     end

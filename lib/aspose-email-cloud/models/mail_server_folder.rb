@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Email account folder             
   class MailServerFolder
     # Gets or sets mail folder name             
+    # @return [String]
     attr_accessor :name
 
     # Gets or sets mail folder id             
+    # @return [String]
     attr_accessor :id
 
     # Attribute mapping from ruby-style variable name to JSON key.

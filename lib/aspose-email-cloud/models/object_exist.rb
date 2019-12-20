@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Object exists
   class ObjectExist
     # Indicates that the file or folder exists.
+    # @return [BOOLEAN]
     attr_accessor :exists
 
     # True if it is a folder, false if it is a file.
+    # @return [BOOLEAN]
     attr_accessor :is_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.

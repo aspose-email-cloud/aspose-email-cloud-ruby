@@ -28,6 +28,8 @@ require 'date'
 
 module AsposeEmailCloud
   class ListResponseOfAiNameExtracted
+    
+    # @return [Array<AiNameExtracted>]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

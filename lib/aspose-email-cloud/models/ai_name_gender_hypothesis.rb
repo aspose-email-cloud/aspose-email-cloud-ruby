@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Name gender hypothesis             
   class AiNameGenderHypothesis
     # Recognized name gender. Enum, available values: Male, Female, Unknown
+    # @return [String]
     attr_accessor :gender
 
     # Hypothesis score             
+    # @return [Float]
     attr_accessor :score
 
     # Attribute mapping from ruby-style variable name to JSON key.

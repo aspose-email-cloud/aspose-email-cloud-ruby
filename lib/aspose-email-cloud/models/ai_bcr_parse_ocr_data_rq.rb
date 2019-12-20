@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Parse ocr data request             
   class AiBcrParseOcrDataRq
     # Recognition options             
+    # @return [AiBcrOptions]
     attr_accessor :options
 
     # OCR data             
+    # @return [Array<AiBcrOcrData>]
     attr_accessor :data
 
     # Attribute mapping from ruby-style variable name to JSON key.

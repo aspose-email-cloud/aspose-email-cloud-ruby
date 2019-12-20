@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Class for disc space information.
   class DiscUsage
     # Application used disc space.
+    # @return [Integer]
     attr_accessor :used_size
 
     # Total disc space.
+    # @return [Integer]
     attr_accessor :total_size
 
     # Attribute mapping from ruby-style variable name to JSON key.

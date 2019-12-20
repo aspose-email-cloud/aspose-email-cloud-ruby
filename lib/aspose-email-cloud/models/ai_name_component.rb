@@ -30,15 +30,19 @@ module AsposeEmailCloud
   # Parsed name component             
   class AiNameComponent
     # Component value             
+    # @return [String]
     attr_accessor :value
 
     # Name component category. Enum, available values: Unknown, Mononym, Score, Format, FirstInitial, FirstName, MiddleInitial, MiddleName, MiddleNickname, MiddleSobriquet, MiddleMaidenName, MiddlePatronym, MiddleMatronym, LastInitial, LastName, LastNobiliaryParticle, LastNominalConjunction, LastPaternalSurname, LastMaternalSurname, PrefixTitle, PostfixGenerationalTitle, PostfixPostnominalLetters, ArabicIsm, ArabicKunya, ArabicNasab, ArabicSlaqab, ArabicNisbah
+    # @return [String]
     attr_accessor :category
 
     # Score from 0.0 to 1.0             
+    # @return [Float]
     attr_accessor :score
 
     # Component position from 0             
+    # @return [Integer]
     attr_accessor :position
 
     # Attribute mapping from ruby-style variable name to JSON key.

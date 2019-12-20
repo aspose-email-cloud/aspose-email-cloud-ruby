@@ -30,9 +30,11 @@ module AsposeEmailCloud
   # Name variants             
   class AiNameWeightedVariants
     # List of name variations             
+    # @return [Array<AiNameWeighted>]
     attr_accessor :names
 
     # Usually empty; can contain extra message describing some issue occurred during processing             
+    # @return [String]
     attr_accessor :comments
 
     # Attribute mapping from ruby-style variable name to JSON key.
