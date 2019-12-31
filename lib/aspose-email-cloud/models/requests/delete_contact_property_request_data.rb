@@ -32,29 +32,24 @@ module AsposeEmailCloud
   # Request model for delete_contact_property operation.
   class DeleteContactPropertyRequestData < EmailRequest
 
-    # Delete property from indexed property list
-    # @param [String] format Contact document format
+    # Delete property from indexed property list             
+    # @param [String] format Contact document format Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name
     # @param [String] member_name Indexed property name
     # @param [Integer] index Property index
     # @param [StorageFolderLocation] folder Calendar document location in storage information
     def initialize(format, name, member_name, index, folder)
-      @format = format
-      @name = name
-      @member_name = member_name
-      @index = index
-      @folder = folder
+      @format = format if format
+      @name = name if name
+      @member_name = member_name if member_name
+      @index = index if index
+      @folder = folder if folder
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'format' is set
       if api_client.config.client_side_validation && @format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.delete_contact_property"
-      end
-
-      # verify enum value
-      if api_client.config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
-        raise ArgumentError, "invalid value for 'format', must be one of VCard, WebDav, Msg"
       end
 
       # verify the required parameter 'name' is set

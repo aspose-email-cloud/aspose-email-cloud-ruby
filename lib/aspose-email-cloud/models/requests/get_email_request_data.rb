@@ -32,14 +32,14 @@ module AsposeEmailCloud
   # Request model for get_email operation.
   class GetEmailRequestData < EmailRequest
 
-    # Get email document
+    # Get email document             
     # @param [String] file_name Email document file name in storage
     # @param [String] storage Storage name
     # @param [String] folder Path to folder in storage
     def initialize(file_name, storage = nil, folder = nil)
-      @file_name = file_name
-      @storage = storage
-      @folder = folder
+      @file_name = file_name if file_name
+      @storage = storage if storage
+      @folder = folder if folder
     end
 
     def to_http_info(api_client)

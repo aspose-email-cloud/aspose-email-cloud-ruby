@@ -27,11 +27,14 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Email list properties.
+  # Email list properties.             
   class EmailProperties
-    # Gets or sets link that originate from this document.
+    # Gets or sets link that originate from this document.             
+    # @return [Link]
     attr_accessor :link
 
+    # List of properties             
+    # @return [Array<EmailProperty>]
     attr_accessor :list
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -70,9 +73,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Link] link Gets or sets link that originate from this document.             
+    # @param [Array<EmailProperty>] list List of properties             
     def initialize(link=nil, list=nil)
-      self.link = link
-      self.list = list
+      self.link = link if link
+      self.list = list if list
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

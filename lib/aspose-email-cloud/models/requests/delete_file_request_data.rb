@@ -37,9 +37,9 @@ module AsposeEmailCloud
     # @param [String] storage_name Storage name
     # @param [String] version_id File version ID to delete
     def initialize(path, storage_name = nil, version_id = nil)
-      @path = path
-      @storage_name = storage_name
-      @version_id = version_id
+      @path = path if path
+      @storage_name = storage_name if storage_name
+      @version_id = version_id if version_id
     end
 
     def to_http_info(api_client)

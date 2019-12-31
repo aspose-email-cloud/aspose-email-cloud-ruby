@@ -27,12 +27,14 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Simple property object
+  # Simple property object             
   class PrimitiveObject
-    # Gets or sets the name of an object.
+    # Gets or sets the name of an object.             
+    # @return [String]
     attr_accessor :name
 
-    # Property type. Used for deserialization purposes
+    # Property type. Used for deserialization purposes             
+    # @return [String]
     def type #getter method
       self.class.name.split('::').last
     end
@@ -41,7 +43,8 @@ module AsposeEmailCloud
       @type = self.class.name.split('::').last
     end
 
-    # Property value
+    # Property value             
+    # @return [String]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -84,10 +87,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] name Gets or sets the name of an object.             
+    # @param [String] type Property type. Used for deserialization purposes             
+    # @param [String] value Property value             
     def initialize(name=nil, type=nil, value=nil)
-      self.name = name
-      @type = self.class.name.split('::').last
-      self.value = value
+      self.name = name if name
+      @type = self.class.name.split('::').last if type
+      self.value = value if value
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

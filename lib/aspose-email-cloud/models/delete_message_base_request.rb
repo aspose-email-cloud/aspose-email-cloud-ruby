@@ -27,18 +27,26 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Delete message request
+  # Delete message request             
   class DeleteMessageBaseRequest
+    # First account storage file name for receiving emails (or universal one)             
+    # @return [String]
     attr_accessor :first_account
 
+    # Second account storage file name for sending emails (ignored if first is universal)             
+    # @return [String]
     attr_accessor :second_account
 
+    # Storage folder location of account files             
+    # @return [StorageFolderLocation]
     attr_accessor :storage_folder
 
-    # Message identifier
+    # Message identifier             
+    # @return [String]
     attr_accessor :message_id
 
-    # Specifies that message should be deleted permanently
+    # Specifies that message should be deleted permanently             
+    # @return [BOOLEAN]
     attr_accessor :delete_permanently
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -93,12 +101,17 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] first_account First account storage file name for receiving emails (or universal one)             
+    # @param [String] second_account Second account storage file name for sending emails (ignored if first is universal)             
+    # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
+    # @param [String] message_id Message identifier             
+    # @param [BOOLEAN] delete_permanently Specifies that message should be deleted permanently             
     def initialize(first_account=nil, second_account=nil, storage_folder=nil, message_id=nil, delete_permanently=nil)
-      self.first_account = first_account
-      self.second_account = second_account
-      self.storage_folder = storage_folder
-      self.message_id = message_id
-      self.delete_permanently = delete_permanently
+      self.first_account = first_account if first_account
+      self.second_account = second_account if second_account
+      self.storage_folder = storage_folder if storage_folder
+      self.message_id = message_id if message_id
+      self.delete_permanently = delete_permanently if delete_permanently
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

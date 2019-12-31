@@ -32,25 +32,20 @@ module AsposeEmailCloud
   # Request model for update_contact_properties operation.
   class UpdateContactPropertiesRequestData < EmailRequest
 
-    # Update contact document properties
-    # @param [String] format Contact document format
+    # Update contact document properties             
+    # @param [String] format Contact document format Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name
     # @param [HierarchicalObjectRequest] request Properties that should be updated/added
     def initialize(format, name, request)
-      @format = format
-      @name = name
-      @request = request
+      @format = format if format
+      @name = name if name
+      @request = request if request
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'format' is set
       if api_client.config.client_side_validation && @format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.update_contact_properties"
-      end
-
-      # verify enum value
-      if api_client.config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
-        raise ArgumentError, "invalid value for 'format', must be one of VCard, WebDav, Msg"
       end
 
       # verify the required parameter 'name' is set

@@ -27,12 +27,14 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Document represented as hierarchical set of properties response
+  # Document represented as hierarchical set of properties response             
   class HierarchicalObjectResponse
-    # Document properties
+    # Document properties             
+    # @return [HierarchicalObject]
     attr_accessor :hierarchical_object
 
-    # Document location in storage
+    # Document location in storage             
+    # @return [StorageFileLocation]
     attr_accessor :storage_file
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -69,9 +71,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [HierarchicalObject] hierarchical_object Document properties             
+    # @param [StorageFileLocation] storage_file Document location in storage             
     def initialize(hierarchical_object=nil, storage_file=nil)
-      self.hierarchical_object = hierarchical_object
-      self.storage_file = storage_file
+      self.hierarchical_object = hierarchical_object if hierarchical_object
+      self.storage_file = storage_file if storage_file
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

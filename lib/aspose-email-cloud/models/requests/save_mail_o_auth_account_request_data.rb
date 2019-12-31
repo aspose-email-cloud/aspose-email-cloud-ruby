@@ -32,10 +32,10 @@ module AsposeEmailCloud
   # Request model for save_mail_o_auth_account operation.
   class SaveMailOAuthAccountRequestData < EmailRequest
 
-    # Create email account file (*.account) with OAuth
+    # Create email account file (*.account) with OAuth             
     # @param [SaveOAuthEmailAccountRequest] request Email account information
     def initialize(request)
-      @request = request
+      @request = request if request
     end
 
     def to_http_info(api_client)

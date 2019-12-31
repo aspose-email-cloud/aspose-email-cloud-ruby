@@ -32,16 +32,16 @@ module AsposeEmailCloud
   # Request model for get_mapi_attachment operation.
   class GetMapiAttachmentRequestData < EmailRequest
 
-    # Get document attachment as file stream
+    # Get document attachment as file stream             
     # @param [String] name Document file name
     # @param [String] attachment Attachment name or index
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name
     def initialize(name, attachment, folder = nil, storage = nil)
-      @name = name
-      @attachment = attachment
-      @folder = folder
-      @storage = storage
+      @name = name if name
+      @attachment = attachment if attachment
+      @folder = folder if folder
+      @storage = storage if storage
     end
 
     def to_http_info(api_client)

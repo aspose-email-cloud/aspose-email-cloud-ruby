@@ -32,16 +32,16 @@ module AsposeEmailCloud
   # Request model for delete_calendar_property operation.
   class DeleteCalendarPropertyRequestData < EmailRequest
 
-    # Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
+    # Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}             
     # @param [String] name iCalendar file name in storage
     # @param [String] member_name Indexed property name
     # @param [String] index Property index path
     # @param [StorageFolderLocation] request Storage detail to specify iCalendar file location
     def initialize(name, member_name, index, request)
-      @name = name
-      @member_name = member_name
-      @index = index
-      @request = request
+      @name = name if name
+      @member_name = member_name if member_name
+      @index = index if index
+      @request = request if request
     end
 
     def to_http_info(api_client)

@@ -32,16 +32,16 @@ module AsposeEmailCloud
   # Request model for get_calendar_list operation.
   class GetCalendarListRequestData < EmailRequest
 
-    # Get iCalendar files list in folder on storage
+    # Get iCalendar files list in folder on storage             
     # @param [String] folder Path to folder in storage
     # @param [Integer] items_per_page Count of items on page
     # @param [Integer] page_number Page number
     # @param [String] storage Storage name
     def initialize(folder, items_per_page, page_number, storage = nil)
-      @folder = folder
-      @items_per_page = items_per_page
-      @page_number = page_number
-      @storage = storage
+      @folder = folder if folder
+      @items_per_page = items_per_page if items_per_page
+      @page_number = page_number if page_number
+      @storage = storage if storage
     end
 
     def to_http_info(api_client)

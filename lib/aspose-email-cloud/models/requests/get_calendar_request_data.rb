@@ -32,14 +32,14 @@ module AsposeEmailCloud
   # Request model for get_calendar operation.
   class GetCalendarRequestData < EmailRequest
 
-    # Get calendar file properties
+    # Get calendar file properties             
     # @param [String] name iCalendar file name in storage
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name
     def initialize(name, folder = nil, storage = nil)
-      @name = name
-      @folder = folder
-      @storage = storage
+      @name = name if name
+      @folder = folder if folder
+      @storage = storage if storage
     end
 
     def to_http_info(api_client)

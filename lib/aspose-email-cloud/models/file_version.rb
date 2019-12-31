@@ -30,24 +30,31 @@ module AsposeEmailCloud
   # File Version
   class FileVersion
     # File or folder name.
+    # @return [String]
     attr_accessor :name
 
     # True if it is a folder.
+    # @return [BOOLEAN]
     attr_accessor :is_folder
 
     # File or folder last modified DateTime.
+    # @return [DateTime]
     attr_accessor :modified_date
 
     # File or folder size.
+    # @return [Integer]
     attr_accessor :size
 
     # File or folder path.
+    # @return [String]
     attr_accessor :path
 
     # File Version ID.
+    # @return [String]
     attr_accessor :version_id
 
     # Specifies whether the file is (true) or is not (false) the latest version of an file.
+    # @return [BOOLEAN]
     attr_accessor :is_latest
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -114,14 +121,21 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] name File or folder name.
+    # @param [BOOLEAN] is_folder True if it is a folder.
+    # @param [DateTime] modified_date File or folder last modified DateTime.
+    # @param [Integer] size File or folder size.
+    # @param [String] path File or folder path.
+    # @param [String] version_id File Version ID.
+    # @param [BOOLEAN] is_latest Specifies whether the file is (true) or is not (false) the latest version of an file.
     def initialize(name=nil, is_folder=nil, modified_date=nil, size=nil, path=nil, version_id=nil, is_latest=nil)
-      self.name = name
-      self.is_folder = is_folder
-      self.modified_date = modified_date
-      self.size = size
-      self.path = path
-      self.version_id = version_id
-      self.is_latest = is_latest
+      self.name = name if name
+      self.is_folder = is_folder if is_folder
+      self.modified_date = modified_date if modified_date
+      self.size = size if size
+      self.path = path if path
+      self.version_id = version_id if version_id
+      self.is_latest = is_latest if is_latest
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

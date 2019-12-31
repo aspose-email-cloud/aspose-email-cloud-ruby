@@ -32,10 +32,10 @@ module AsposeEmailCloud
   # Request model for delete_email_message operation.
   class DeleteEmailMessageRequestData < EmailRequest
 
-    # Delete message from email account by id
+    # Delete message from email account by id             
     # @param [DeleteMessageBaseRequest] request Delete message request
     def initialize(request)
-      @request = request
+      @request = request if request
     end
 
     def to_http_info(api_client)

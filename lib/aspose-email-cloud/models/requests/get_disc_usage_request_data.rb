@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Get disc usage
     # @param [String] storage_name Storage name
     def initialize(storage_name = nil)
-      @storage_name = storage_name
+      @storage_name = storage_name if storage_name
     end
 
     def to_http_info(api_client)

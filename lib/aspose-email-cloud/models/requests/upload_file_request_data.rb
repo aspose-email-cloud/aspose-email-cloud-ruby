@@ -37,9 +37,9 @@ module AsposeEmailCloud
     # @param [File] file File to upload
     # @param [String] storage_name Storage name
     def initialize(path, file, storage_name = nil)
-      @path = path
-      @file = file
-      @storage_name = storage_name
+      @path = path if path
+      @file = file if file
+      @storage_name = storage_name if storage_name
     end
 
     def to_http_info(api_client)

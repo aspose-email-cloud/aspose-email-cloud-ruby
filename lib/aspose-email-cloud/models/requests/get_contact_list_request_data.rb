@@ -32,29 +32,24 @@ module AsposeEmailCloud
   # Request model for get_contact_list operation.
   class GetContactListRequestData < EmailRequest
 
-    # Get contact list from storage folder
-    # @param [String] format Contact document format
+    # Get contact list from storage folder             
+    # @param [String] format Contact document format. Enum, available values: VCard, WebDav, Msg
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name
     # @param [Integer] items_per_page Count of items on page
     # @param [Integer] page_number Page number
     def initialize(format, folder = nil, storage = nil, items_per_page = nil, page_number = nil)
-      @format = format
-      @folder = folder
-      @storage = storage
-      @items_per_page = items_per_page
-      @page_number = page_number
+      @format = format if format
+      @folder = folder if folder
+      @storage = storage if storage
+      @items_per_page = items_per_page if items_per_page
+      @page_number = page_number if page_number
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'format' is set
       if api_client.config.client_side_validation && @format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.get_contact_list"
-      end
-
-      # verify enum value
-      if api_client.config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
-        raise ArgumentError, "invalid value for 'format', must be one of VCard, WebDav, Msg"
       end
 
       # resource path

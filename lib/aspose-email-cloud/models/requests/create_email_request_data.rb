@@ -32,12 +32,12 @@ module AsposeEmailCloud
   # Request model for create_email operation.
   class CreateEmailRequestData < EmailRequest
 
-    # Create an email document
+    # Create an email document             
     # @param [String] file_name Email document file name in storage
     # @param [CreateEmailRequest] request An email document and optional Storage info to specify where the file should be located
     def initialize(file_name, request)
-      @file_name = file_name
-      @request = request
+      @file_name = file_name if file_name
+      @request = request if request
     end
 
     def to_http_info(api_client)

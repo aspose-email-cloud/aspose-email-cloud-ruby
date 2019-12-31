@@ -32,12 +32,12 @@ module AsposeEmailCloud
   # Request model for update_mapi_properties operation.
   class UpdateMapiPropertiesRequestData < EmailRequest
 
-    # Update document properties
+    # Update document properties             
     # @param [String] name Document file name
     # @param [HierarchicalObjectRequest] request Properties that should be updated/added
     def initialize(name, request)
-      @name = name
-      @request = request
+      @name = name if name
+      @request = request if request
     end
 
     def to_http_info(api_client)

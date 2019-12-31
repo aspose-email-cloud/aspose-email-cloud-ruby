@@ -27,12 +27,14 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Base property object
+  # Base property object             
   class BaseObject
-    # Gets or sets the name of an object.
+    # Gets or sets the name of an object.             
+    # @return [String]
     attr_accessor :name
 
-    # Property type. Used for deserialization purposes
+    # Property type. Used for deserialization purposes             
+    # @return [String]
     def type #getter method
       self.class.name.split('::').last
     end
@@ -75,9 +77,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] name Gets or sets the name of an object.             
+    # @param [String] type Property type. Used for deserialization purposes             
     def initialize(name=nil, type=nil)
-      self.name = name
-      @type = self.class.name.split('::').last
+      self.name = name if name
+      @type = self.class.name.split('::').last if type
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

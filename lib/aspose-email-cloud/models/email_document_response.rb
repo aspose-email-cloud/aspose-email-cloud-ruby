@@ -27,9 +27,10 @@
 require 'date'
 
 module AsposeEmailCloud
-  # An email document response
+  # An email document response             
   class EmailDocumentResponse
-    # An email document requested
+    # An email document requested             
+    # @return [EmailDocument]
     attr_accessor :document
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -60,8 +61,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [EmailDocument] document An email document requested             
     def initialize(document=nil)
-      self.document = document
+      self.document = document if document
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

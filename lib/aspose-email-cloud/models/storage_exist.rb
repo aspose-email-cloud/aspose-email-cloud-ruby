@@ -30,6 +30,7 @@ module AsposeEmailCloud
   # Storage exists
   class StorageExist
     # Shows that the storage exists.             
+    # @return [BOOLEAN]
     attr_accessor :exists
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -60,8 +61,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [BOOLEAN] exists Shows that the storage exists.             
     def initialize(exists=nil)
-      self.exists = exists
+      self.exists = exists if exists
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

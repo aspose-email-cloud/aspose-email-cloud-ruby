@@ -27,9 +27,10 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Email document property DTO.
+  # Email document property DTO.             
   class ValueResponse
-    # Gets or sets string content.
+    # Gets or sets string content.             
+    # @return [String]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -60,8 +61,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] value Gets or sets string content.             
     def initialize(value=nil)
-      self.value = value
+      self.value = value if value
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

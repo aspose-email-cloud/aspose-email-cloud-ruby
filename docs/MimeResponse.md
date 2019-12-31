@@ -2,7 +2,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mime** | **String** | Gets or sets base64 encoded mime content. | [optional] 
+**mime** | **String** | Gets or sets base64 encoded mime content.              | [optional] 
 
 
 

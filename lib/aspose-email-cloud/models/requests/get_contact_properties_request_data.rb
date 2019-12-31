@@ -32,27 +32,22 @@ module AsposeEmailCloud
   # Request model for get_contact_properties operation.
   class GetContactPropertiesRequestData < EmailRequest
 
-    # Get contact document properties
-    # @param [String] format Contact document format
+    # Get contact document properties             
+    # @param [String] format Contact document format. Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name
     def initialize(format, name, folder = nil, storage = nil)
-      @format = format
-      @name = name
-      @folder = folder
-      @storage = storage
+      @format = format if format
+      @name = name if name
+      @folder = folder if folder
+      @storage = storage if storage
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'format' is set
       if api_client.config.client_side_validation && @format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.get_contact_properties"
-      end
-
-      # verify enum value
-      if api_client.config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
-        raise ArgumentError, "invalid value for 'format', must be one of VCard, WebDav, Msg"
       end
 
       # verify the required parameter 'name' is set

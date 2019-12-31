@@ -28,6 +28,8 @@ require 'date'
 
 module AsposeEmailCloud
   class ListResponseOfString
+    
+    # @return [Array<String>]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -60,8 +62,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Array<String>] value 
     def initialize(value=nil)
-      self.value = value
+      self.value = value if value
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

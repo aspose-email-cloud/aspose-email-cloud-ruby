@@ -27,12 +27,14 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Represents Email document DTO.
+  # Represents Email document DTO.             
   class EmailDocument
-    # Links that originate from this document.
+    # Links that originate from this document.             
+    # @return [Array<Link>]
     attr_accessor :links
 
-    # List of document properties.
+    # List of document properties.             
+    # @return [EmailProperties]
     attr_accessor :document_properties
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -71,9 +73,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [Array<Link>] links Links that originate from this document.             
+    # @param [EmailProperties] document_properties List of document properties.             
     def initialize(links=nil, document_properties=nil)
-      self.links = links
-      self.document_properties = document_properties
+      self.links = links if links
+      self.document_properties = document_properties if document_properties
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

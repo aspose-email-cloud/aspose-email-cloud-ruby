@@ -32,25 +32,20 @@ module AsposeEmailCloud
   # Request model for create_contact operation.
   class CreateContactRequestData < EmailRequest
 
-    # Create contact document
-    # @param [String] format Contact document format
+    # Create contact document             
+    # @param [String] format Contact document format Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name
     # @param [HierarchicalObjectRequest] request Create contact request
     def initialize(format, name, request)
-      @format = format
-      @name = name
-      @request = request
+      @format = format if format
+      @name = name if name
+      @request = request if request
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'format' is set
       if api_client.config.client_side_validation && @format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.create_contact"
-      end
-
-      # verify enum value
-      if api_client.config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
-        raise ArgumentError, "invalid value for 'format', must be one of VCard, WebDav, Msg"
       end
 
       # verify the required parameter 'name' is set

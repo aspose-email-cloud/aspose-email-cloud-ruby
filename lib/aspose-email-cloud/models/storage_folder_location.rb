@@ -27,12 +27,14 @@
 require 'date'
 
 module AsposeEmailCloud
-  # A storage folder location information
+  # A storage folder location information             
   class StorageFolderLocation
-    # A storage name
+    # A storage name             
+    # @return [String]
     attr_accessor :storage
 
-    # A path to a folder in specified storage
+    # A path to a folder in specified storage             
+    # @return [String]
     attr_accessor :folder_path
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -69,9 +71,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] storage A storage name             
+    # @param [String] folder_path A path to a folder in specified storage             
     def initialize(storage=nil, folder_path=nil)
-      self.storage = storage
-      self.folder_path = folder_path
+      self.storage = storage if storage
+      self.folder_path = folder_path if folder_path
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

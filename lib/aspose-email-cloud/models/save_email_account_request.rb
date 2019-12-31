@@ -27,30 +27,38 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Save email account settings with login/password authentication request
+  # Save email account settings with login/password authentication request             
   class SaveEmailAccountRequest
-    # Email account host
+    # Email account host             
+    # @return [String]
     attr_accessor :host
 
-    # Email account port
+    # Email account port             
+    # @return [Integer]
     attr_accessor :port
 
-    # Email account login
+    # Email account login             
+    # @return [String]
     attr_accessor :login
 
-    # Email account security options
+    # Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @return [String]
     attr_accessor :security_options
 
-    # Email account protocol type
+    # Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+    # @return [String]
     attr_accessor :protocol_type
 
-    # Email account description
+    # Email account description             
+    # @return [String]
     attr_accessor :description
 
-    # A storage file location info to store email account
+    # A storage file location info to store email account             
+    # @return [StorageFileLocation]
     attr_accessor :storage_file
 
-    # Email account password
+    # Email account password             
+    # @return [String]
     attr_accessor :password
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -73,8 +81,8 @@ module AsposeEmailCloud
         :'host' => :'String',
         :'port' => :'Integer',
         :'login' => :'String',
-        :'security_options' => :'Object',
-        :'protocol_type' => :'Object',
+        :'security_options' => :'String',
+        :'protocol_type' => :'String',
         :'description' => :'String',
         :'storage_file' => :'StorageFileLocation',
         :'password' => :'String'
@@ -123,15 +131,23 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] host Email account host             
+    # @param [Integer] port Email account port             
+    # @param [String] login Email account login             
+    # @param [String] security_options Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+    # @param [String] description Email account description             
+    # @param [StorageFileLocation] storage_file A storage file location info to store email account             
+    # @param [String] password Email account password             
     def initialize(host=nil, port=nil, login=nil, security_options=nil, protocol_type=nil, description=nil, storage_file=nil, password=nil)
-      self.host = host
-      self.port = port
-      self.login = login
-      self.security_options = security_options
-      self.protocol_type = protocol_type
-      self.description = description
-      self.storage_file = storage_file
-      self.password = password
+      self.host = host if host
+      self.port = port if port
+      self.login = login if login
+      self.security_options = security_options if security_options
+      self.protocol_type = protocol_type if protocol_type
+      self.description = description if description
+      self.storage_file = storage_file if storage_file
+      self.password = password if password
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -162,8 +178,16 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "security_options", security_options cannot be nil.')
       end
 
+      if @security_options.to_s.length < 1
+        invalid_properties.push('invalid value for "security_options", the character length must be great than or equal to 1.')
+      end
+
       if @protocol_type.nil?
         invalid_properties.push('invalid value for "protocol_type", protocol_type cannot be nil.')
+      end
+
+      if @protocol_type.to_s.length < 1
+        invalid_properties.push('invalid value for "protocol_type", the character length must be great than or equal to 1.')
       end
 
       if @storage_file.nil?
@@ -190,7 +214,9 @@ module AsposeEmailCloud
       return false if @login.nil?
       return false if @login.to_s.length < 1
       return false if @security_options.nil?
+      return false if @security_options.to_s.length < 1
       return false if @protocol_type.nil?
+      return false if @protocol_type.to_s.length < 1
       return false if @storage_file.nil?
       return false if @password.nil?
       return false if @password.to_s.length < 1
@@ -223,6 +249,34 @@ module AsposeEmailCloud
       end
 
       @login = login
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] security_options Value to be assigned
+    def security_options=(security_options)
+      if security_options.nil?
+        fail ArgumentError, 'security_options cannot be nil'
+      end
+
+      if security_options.to_s.length < 1
+        fail ArgumentError, 'invalid value for "security_options", the character length must be great than or equal to 1.'
+      end
+
+      @security_options = security_options
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] protocol_type Value to be assigned
+    def protocol_type=(protocol_type)
+      if protocol_type.nil?
+        fail ArgumentError, 'protocol_type cannot be nil'
+      end
+
+      if protocol_type.to_s.length < 1
+        fail ArgumentError, 'invalid value for "protocol_type", the character length must be great than or equal to 1.'
+      end
+
+      @protocol_type = protocol_type
     end
 
     # Custom attribute writer method with validation

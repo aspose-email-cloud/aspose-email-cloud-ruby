@@ -32,10 +32,10 @@ module AsposeEmailCloud
   # Request model for set_email_read_flag operation.
   class SetEmailReadFlagRequestData < EmailRequest
 
-    # Sets \&quot;Message is read\&quot; flag
+    # Sets \&quot;Message is read\&quot; flag             
     # @param [SetMessageReadFlagAccountBaseRequest] request Message is read request
     def initialize(request)
-      @request = request
+      @request = request if request
     end
 
     def to_http_info(api_client)

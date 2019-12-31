@@ -39,11 +39,11 @@ module AsposeEmailCloud
     # @param [String] dest_storage_name Destination storage name
     # @param [String] version_id File version ID to move
     def initialize(src_path, dest_path, src_storage_name = nil, dest_storage_name = nil, version_id = nil)
-      @src_path = src_path
-      @dest_path = dest_path
-      @src_storage_name = src_storage_name
-      @dest_storage_name = dest_storage_name
-      @version_id = version_id
+      @src_path = src_path if src_path
+      @dest_path = dest_path if dest_path
+      @src_storage_name = src_storage_name if src_storage_name
+      @dest_storage_name = dest_storage_name if dest_storage_name
+      @version_id = version_id if version_id
     end
 
     def to_http_info(api_client)

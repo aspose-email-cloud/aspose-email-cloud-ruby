@@ -27,12 +27,14 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Create email document request
+  # Create email document request             
   class CreateEmailRequest
-    # An email document that should be created
+    # An email document that should be created             
+    # @return [EmailDocument]
     attr_accessor :email_document
 
-    # Email document location in storage
+    # Email document location in storage             
+    # @return [StorageFolderLocation]
     attr_accessor :storage_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -69,9 +71,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [EmailDocument] email_document An email document that should be created             
+    # @param [StorageFolderLocation] storage_folder Email document location in storage             
     def initialize(email_document=nil, storage_folder=nil)
-      self.email_document = email_document
-      self.storage_folder = storage_folder
+      self.email_document = email_document if email_document
+      self.storage_folder = storage_folder if storage_folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

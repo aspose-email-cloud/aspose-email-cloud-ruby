@@ -32,14 +32,14 @@ module AsposeEmailCloud
   # Request model for add_mapi_attachment operation.
   class AddMapiAttachmentRequestData < EmailRequest
 
-    # Add attachment to document
+    # Add attachment to document             
     # @param [String] name Document file name
     # @param [String] attachment Attachment file name
     # @param [AddAttachmentRequest] request Add attachment request
     def initialize(name, attachment, request)
-      @name = name
-      @attachment = attachment
-      @request = request
+      @name = name if name
+      @attachment = attachment if attachment
+      @request = request if request
     end
 
     def to_http_info(api_client)

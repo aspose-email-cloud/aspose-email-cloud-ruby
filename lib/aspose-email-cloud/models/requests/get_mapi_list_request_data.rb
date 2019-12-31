@@ -32,16 +32,16 @@ module AsposeEmailCloud
   # Request model for get_mapi_list operation.
   class GetMapiListRequestData < EmailRequest
 
-    # Get document list from storage folder
+    # Get document list from storage folder             
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name
     # @param [Integer] items_per_page Count of items on page
     # @param [Integer] page_number Page number
     def initialize(folder = nil, storage = nil, items_per_page = nil, page_number = nil)
-      @folder = folder
-      @storage = storage
-      @items_per_page = items_per_page
-      @page_number = page_number
+      @folder = folder if folder
+      @storage = storage if storage
+      @items_per_page = items_per_page if items_per_page
+      @page_number = page_number if page_number
     end
 
     def to_http_info(api_client)

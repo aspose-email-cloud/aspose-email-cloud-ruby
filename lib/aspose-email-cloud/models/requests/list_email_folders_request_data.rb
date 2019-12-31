@@ -32,18 +32,18 @@ module AsposeEmailCloud
   # Request model for list_email_folders operation.
   class ListEmailFoldersRequestData < EmailRequest
 
-    # Get folders list in email account
+    # Get folders list in email account             
     # @param [String] first_account Email account
-    # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
+    # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
     # @param [String] parent_folder Folder in which subfolders should be listed
     def initialize(first_account, second_account = nil, storage = nil, storage_folder = nil, parent_folder = nil)
-      @first_account = first_account
-      @second_account = second_account
-      @storage = storage
-      @storage_folder = storage_folder
-      @parent_folder = parent_folder
+      @first_account = first_account if first_account
+      @second_account = second_account if second_account
+      @storage = storage if storage
+      @storage_folder = storage_folder if storage_folder
+      @parent_folder = parent_folder if parent_folder
     end
 
     def to_http_info(api_client)

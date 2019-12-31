@@ -32,29 +32,24 @@ module AsposeEmailCloud
   # Request model for get_contact_attachment operation.
   class GetContactAttachmentRequestData < EmailRequest
 
-    # Get attachment file by name
-    # @param [String] format Contact document format
+    # Get attachment file by name             
+    # @param [String] format Contact document format. Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name
     # @param [String] attachment Attachment name or index
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name
     def initialize(format, name, attachment, folder = nil, storage = nil)
-      @format = format
-      @name = name
-      @attachment = attachment
-      @folder = folder
-      @storage = storage
+      @format = format if format
+      @name = name if name
+      @attachment = attachment if attachment
+      @folder = folder if folder
+      @storage = storage if storage
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'format' is set
       if api_client.config.client_side_validation && @format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.get_contact_attachment"
-      end
-
-      # verify enum value
-      if api_client.config.client_side_validation && !['VCard', 'WebDav', 'Msg'].include?(@format)
-        raise ArgumentError, "invalid value for 'format', must be one of VCard, WebDav, Msg"
       end
 
       # verify the required parameter 'name' is set

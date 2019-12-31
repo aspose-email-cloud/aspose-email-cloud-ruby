@@ -27,9 +27,10 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Email document property DTO.
+  # Email document property DTO.             
   class MimeResponse
-    # Gets or sets base64 encoded mime content.
+    # Gets or sets base64 encoded mime content.             
+    # @return [String]
     attr_accessor :mime
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -60,8 +61,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
+    # @param [String] mime Gets or sets base64 encoded mime content.             
     def initialize(mime=nil)
-      self.mime = mime
+      self.mime = mime if mime
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

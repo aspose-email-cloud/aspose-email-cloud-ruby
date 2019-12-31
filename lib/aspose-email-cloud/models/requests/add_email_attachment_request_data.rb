@@ -32,14 +32,14 @@ module AsposeEmailCloud
   # Request model for add_email_attachment operation.
   class AddEmailAttachmentRequestData < EmailRequest
 
-    # Adds an attachment to Email document
+    # Adds an attachment to Email document             
     # @param [String] attachment_name Attachment file name
     # @param [String] file_name Email document file name
     # @param [AddAttachmentRequest] request Storage info to specify location of email document and attachment files
     def initialize(attachment_name, file_name, request)
-      @attachment_name = attachment_name
-      @file_name = file_name
-      @request = request
+      @attachment_name = attachment_name if attachment_name
+      @file_name = file_name if file_name
+      @request = request if request
     end
 
     def to_http_info(api_client)
