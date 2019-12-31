@@ -10,9 +10,11 @@ describe EmailApi do
   # Api setup uses environment variables 'appKey', 'appSid', 'apiBaseUrl'
   before(:all) do
     @api = EmailApi.new(ENV['appKey'], ENV['appSid'], ENV['apiBaseUrl'])
-    @api.api_client.config.scheme = "http"
     auth_url = ENV['authUrl']
-    @api.api_client.config.auth_url = auth_url if auth_url
+    if auth_url
+      @api.api_client.config.scheme = "http" if auth_url.include? "http:"
+      @api.api_client.config.auth_url = auth_url  
+    end
     @folder = SecureRandom.uuid().to_s()
     @storage = 'First Storage'
     @api.create_folder(CreateFolderRequestData.new(@folder, @storage))
