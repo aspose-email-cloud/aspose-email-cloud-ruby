@@ -29,7 +29,7 @@ require 'date'
 module AsposeEmailCloud
   # Image from storage for recognition             
   class AiBcrImageStorageFile
-    # Determines that image contains single VCard or more             
+    # Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon             
     # @return [BOOLEAN]
     attr_accessor :is_single
 
@@ -71,7 +71,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [BOOLEAN] is_single Determines that image contains single VCard or more             
+    # @param [BOOLEAN] is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon             
     # @param [StorageFileLocation] file Image location             
     def initialize(is_single=nil, file=nil)
       self.is_single = is_single if is_single

@@ -156,48 +156,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-<a name="ai_bcr_parse_ocr_data"></a>
-# **ai_bcr_parse_ocr_data**
-> ai_bcr_parse_ocr_data(request)
-
-Parse OCR data to vCard properties             
-
-### Return type
-
-[**ListResponseOfHierarchicalObject**](ListResponseOfHierarchicalObject.md)
-
-### Request Parameters
-```ruby
-request = AsposeEmailCloud::AiBcrParseOcrDataRequestData.new(rq)
-```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rq** | [**AiBcrParseOcrDataRq**](AiBcrParseOcrDataRq.md)|  | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="ai_bcr_parse_ocr_data_storage"></a>
-# **ai_bcr_parse_ocr_data_storage**
-> ai_bcr_parse_ocr_data_storage(request)
-
-Parse vCards from OCR data and save them to Storage             
-
-### Return type
-
-[**ListResponseOfStorageFileLocation**](ListResponseOfStorageFileLocation.md)
-
-### Request Parameters
-```ruby
-request = AsposeEmailCloud::AiBcrParseOcrDataStorageRequestData.new(rq)
-```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rq** | [**AiBcrParseOcrDataStorageRq**](AiBcrParseOcrDataStorageRq.md)|  | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
 <a name="ai_bcr_parse_storage"></a>
 # **ai_bcr_parse_storage**
 > ai_bcr_parse_storage(request)

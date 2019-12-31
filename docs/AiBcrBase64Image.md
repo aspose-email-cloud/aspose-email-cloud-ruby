@@ -2,7 +2,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_single** | **BOOLEAN** | Determines that image contains single VCard or more              | 
+**is_single** | **BOOLEAN** | Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon              | 
 **base64_data** | **String** | Image data in base64              | [optional] 
 
  Parent class: [AiBcrImage](AiBcrImage.md)

@@ -11,8 +11,6 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**ai_bcr_ocr**](EmailApi.md#ai_bcr_ocr) | **POST** /email/AiBcr/ocr | Ocr images             
 *EmailApi* | [**ai_bcr_ocr_storage**](EmailApi.md#ai_bcr_ocr_storage) | **POST** /email/AiBcr/ocr-storage | Ocr images from storage             
 *EmailApi* | [**ai_bcr_parse**](EmailApi.md#ai_bcr_parse) | **POST** /email/AiBcr/parse | Parse images to vCard properties             
-*EmailApi* | [**ai_bcr_parse_ocr_data**](EmailApi.md#ai_bcr_parse_ocr_data) | **POST** /email/AiBcr/parse-ocr-data | Parse OCR data to vCard properties             
-*EmailApi* | [**ai_bcr_parse_ocr_data_storage**](EmailApi.md#ai_bcr_parse_ocr_data_storage) | **POST** /email/AiBcr/parse-ocr-data-storage | Parse vCards from OCR data and save them to Storage             
 *EmailApi* | [**ai_bcr_parse_storage**](EmailApi.md#ai_bcr_parse_storage) | **POST** /email/AiBcr/parse-storage | Parse images from storage to vCard files             
 *EmailApi* | [**ai_name_complete**](EmailApi.md#ai_name_complete) | **GET** /email/AiName/complete | The call proposes k most probable names for given starting characters             
 *EmailApi* | [**ai_name_expand**](EmailApi.md#ai_name_expand) | **GET** /email/AiName/expand | Expands a person&#39;s name into a list of possible alternatives using options for expanding instructions             
@@ -136,7 +134,6 @@ Class | Method | HTTP request | Description
  - [models.AiBcrBase64Image](AiBcrBase64Image.md)
  - [models.AiBcrBase64Rq](AiBcrBase64Rq.md)
  - [models.AiBcrImageStorageFile](AiBcrImageStorageFile.md)
- - [models.AiBcrParseOcrDataRq](AiBcrParseOcrDataRq.md)
  - [models.AiBcrStorageImageRq](AiBcrStorageImageRq.md)
  - [models.AiNameParsedMatchRq](AiNameParsedMatchRq.md)
  - [models.AppendEmailAccountBaseRequest](AppendEmailAccountBaseRequest.md)
@@ -154,7 +151,6 @@ Class | Method | HTTP request | Description
  - [models.SendEmailMimeBaseRequest](SendEmailMimeBaseRequest.md)
  - [models.SetMessageReadFlagAccountBaseRequest](SetMessageReadFlagAccountBaseRequest.md)
  - [models.StorageFileLocation](StorageFileLocation.md)
- - [models.AiBcrParseOcrDataStorageRq](AiBcrParseOcrDataStorageRq.md)
  - [models.AiBcrParseStorageRq](AiBcrParseStorageRq.md)
  - [models.AppendEmailBaseRequest](AppendEmailBaseRequest.md)
  - [models.AppendEmailMimeBaseRequest](AppendEmailMimeBaseRequest.md)

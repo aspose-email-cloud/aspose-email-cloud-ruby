@@ -43,7 +43,7 @@ module AsposeEmailCloud
     end
 
     # Adds an attachment to iCalendar file             
-    # @param [cakePrefix_add_calendar_attachmentRequestData_cakeCodePostProcessor] request Request object.
+    # @param [AddCalendarAttachmentRequestData] request Request object.
     # @return [nil]
     def add_calendar_attachment(request)
       http_request = request.to_http_info(@api_client)
@@ -99,22 +99,6 @@ module AsposeEmailCloud
     def ai_bcr_parse(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :POST, 'ListResponseOfHierarchicalObject')
-    end
-
-    # Parse OCR data to vCard properties             
-    # @param [AiBcrParseOcrDataRequestData] request Request object.
-    # @return [ListResponseOfHierarchicalObject]
-    def ai_bcr_parse_ocr_data(request)
-      http_request = request.to_http_info(@api_client)
-      make_request(http_request, :POST, 'ListResponseOfHierarchicalObject')
-    end
-
-    # Parse vCards from OCR data and save them to Storage             
-    # @param [AiBcrParseOcrDataStorageRequestData] request Request object.
-    # @return [ListResponseOfStorageFileLocation]
-    def ai_bcr_parse_ocr_data_storage(request)
-      http_request = request.to_http_info(@api_client)
-      make_request(http_request, :POST, 'ListResponseOfStorageFileLocation')
     end
 
     # Parse images from storage to vCard files             
