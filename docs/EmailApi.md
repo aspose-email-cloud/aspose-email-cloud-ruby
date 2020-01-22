@@ -520,12 +520,12 @@ Adds an email from model to specified folder in email account
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::AppendEmailModelMessageRequestData.new(request)
+request = AsposeEmailCloud::AppendEmailModelMessageRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AppendEmailModelRequest**](AppendEmailModelRequest.md)| Append email request | 
+ **rq** | [**AppendEmailModelRq**](AppendEmailModelRq.md)| Append email request | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1917,12 +1917,12 @@ nil (empty response body)
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::SendEmailModelRequestData.new(request)
+request = AsposeEmailCloud::SendEmailModelRequestData.new(rq)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**SendEmailModelRequest**](SendEmailModelRequest.md)| Send email request | 
+ **rq** | [**SendEmailModelRq**](SendEmailModelRq.md)| Send email request | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

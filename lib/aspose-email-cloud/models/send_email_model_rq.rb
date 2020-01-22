@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="SendEmailModelRequest.rb">
+#  <copyright company="Aspose" file="SendEmailModelRq.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -28,7 +28,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Send email model request             
-  class SendEmailModelRequest
+  class SendEmailModelRq
     # First account storage file name for receiving emails (or universal one)             
     # @return [String]
     attr_accessor :first_account

@@ -61,7 +61,7 @@ module AsposeEmailCloud
     # @return [DateTime]
     attr_accessor :date
 
-    # Delivery notifications.             
+    # Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
     # @return [Array<String>]
     attr_accessor :delivery_notification_options
 
@@ -399,7 +399,7 @@ module AsposeEmailCloud
     # @param [String] body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
     # @param [Array<MailAddress>] cc CC recipients.             
     # @param [DateTime] date Message date.             
-    # @param [Array<String>] delivery_notification_options Delivery notifications.             
+    # @param [Array<String>] delivery_notification_options Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
     # @param [MailAddress] from From address.             
     # @param [Hash<String, String>] headers Document headers.             
     # @param [String] html_body HTML body.             

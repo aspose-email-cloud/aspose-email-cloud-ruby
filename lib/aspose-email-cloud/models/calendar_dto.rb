@@ -27,37 +27,37 @@
 require 'date'
 
 module AsposeEmailCloud
-  # iCalendar document representation             
+  # iCalendar document representation.             
   class CalendarDto
-    # Document attachments
+    # Document attachments.
     # @return [Array<Attachment>]
     attr_accessor :attachments
 
-    # Event attendees
+    # Event attendees.
     # @return [Array<MailAddress>]
     attr_accessor :attendees
 
-    # Description
+    # Description.
     # @return [String]
     attr_accessor :description
 
-    # End date
+    # End date.
     # @return [DateTime]
     attr_accessor :end_date
 
-    # End time zone
+    # End time zone.
     # @return [String]
     attr_accessor :end_time_zone
 
-    # Appointment flags
+    # Appointment flags. Items: Enumerates iCalendar flags. Enum, available values: None, AllDayEvent
     # @return [Array<String>]
     attr_accessor :flags
 
-    # Indicates if description is in HTML format
+    # Indicates if description is in HTML format.
     # @return [BOOLEAN]
     attr_accessor :is_description_html
 
-    # Location
+    # Location.
     # @return [String]
     attr_accessor :location
 
@@ -73,11 +73,11 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :microsoft_intended_status
 
-    # Optional attendees             
+    # Optional attendees.             
     # @return [Array<MailAddress>]
     attr_accessor :optional_attendees
 
-    # Event organizer             
+    # Event organizer.             
     # @return [MailAddress]
     attr_accessor :organizer
 
@@ -85,7 +85,7 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :recurrence_string
 
-    # Reminders
+    # Reminders.
     # @return [Array<CalendarReminder>]
     attr_accessor :reminders
 
@@ -93,11 +93,11 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :sequence_id
 
-    # Start date
+    # Start date.
     # @return [DateTime]
     attr_accessor :start_date
 
-    # Start time zone
+    # Start time zone.
     # @return [String]
     attr_accessor :start_time_zone
 
@@ -105,7 +105,7 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :status
 
-    # Summary
+    # Summary.
     # @return [String]
     attr_accessor :summary
 
@@ -271,26 +271,26 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Array<Attachment>] attachments Document attachments
-    # @param [Array<MailAddress>] attendees Event attendees
-    # @param [String] description Description
-    # @param [DateTime] end_date End date
-    # @param [String] end_time_zone End time zone
-    # @param [Array<String>] flags Appointment flags
-    # @param [BOOLEAN] is_description_html Indicates if description is in HTML format
-    # @param [String] location Location
+    # @param [Array<Attachment>] attachments Document attachments.
+    # @param [Array<MailAddress>] attendees Event attendees.
+    # @param [String] description Description.
+    # @param [DateTime] end_date End date.
+    # @param [String] end_time_zone End time zone.
+    # @param [Array<String>] flags Appointment flags. Items: Enumerates iCalendar flags. Enum, available values: None, AllDayEvent
+    # @param [BOOLEAN] is_description_html Indicates if description is in HTML format.
+    # @param [String] location Location.
     # @param [String] method Defines the iCalendar object method type associated with the calendar document. Enum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
     # @param [String] microsoft_busy_status Specifies the BUSY status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
     # @param [String] microsoft_intended_status Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
-    # @param [Array<MailAddress>] optional_attendees Optional attendees             
-    # @param [MailAddress] organizer Event organizer             
+    # @param [Array<MailAddress>] optional_attendees Optional attendees.             
+    # @param [MailAddress] organizer Event organizer.             
     # @param [String] recurrence_string String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"                   
-    # @param [Array<CalendarReminder>] reminders Reminders
+    # @param [Array<CalendarReminder>] reminders Reminders.
     # @param [String] sequence_id The sequence id. Read only.
-    # @param [DateTime] start_date Start date
-    # @param [String] start_time_zone Start time zone
+    # @param [DateTime] start_date Start date.
+    # @param [String] start_time_zone Start time zone.
     # @param [String] status Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
-    # @param [String] summary Summary
+    # @param [String] summary Summary.
     # @param [String] transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
     def initialize(attachments=nil, attendees=nil, description=nil, end_date=nil, end_time_zone=nil, flags=nil, is_description_html=nil, location=nil, method=nil, microsoft_busy_status=nil, microsoft_intended_status=nil, optional_attendees=nil, organizer=nil, recurrence_string=nil, reminders=nil, sequence_id=nil, start_date=nil, start_time_zone=nil, status=nil, summary=nil, transparency=nil)
       self.attachments = attachments if attachments

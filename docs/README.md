@@ -212,11 +212,11 @@ Class | Method | HTTP request | Description
  - [models.SaveOAuthEmailAccountRequest](SaveOAuthEmailAccountRequest.md)
  - [models.SendEmailBaseRequest](SendEmailBaseRequest.md)
  - [models.SendEmailMimeBaseRequest](SendEmailMimeBaseRequest.md)
- - [models.SendEmailModelRequest](SendEmailModelRequest.md)
+ - [models.SendEmailModelRq](SendEmailModelRq.md)
  - [models.SetMessageReadFlagAccountBaseRequest](SetMessageReadFlagAccountBaseRequest.md)
  - [models.StorageFileLocation](StorageFileLocation.md)
  - [models.AiBcrParseStorageRq](AiBcrParseStorageRq.md)
  - [models.AppendEmailBaseRequest](AppendEmailBaseRequest.md)
  - [models.AppendEmailMimeBaseRequest](AppendEmailMimeBaseRequest.md)
- - [models.AppendEmailModelRequest](AppendEmailModelRequest.md)
+ - [models.AppendEmailModelRq](AppendEmailModelRq.md)
 
