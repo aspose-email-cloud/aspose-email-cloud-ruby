@@ -101,6 +101,22 @@ module AsposeEmailCloud
       make_request(http_request, :POST, 'ListResponseOfHierarchicalObject')
     end
 
+    # Parse images to vCard document models             
+    # @param [AiBcrParseModelRequestData] request Request object.
+    # @return [ListResponseOfContactDto]
+    def ai_bcr_parse_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :POST, 'ListResponseOfContactDto')
+    end
+
+    # Parse OCR data to vCard document models             
+    # @param [AiBcrParseOcrDataModelRequestData] request Request object.
+    # @return [ListResponseOfContactDto]
+    def ai_bcr_parse_ocr_data_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :POST, 'ListResponseOfContactDto')
+    end
+
     # Parse images from storage to vCard files             
     # @param [AiBcrParseStorageRequestData] request Request object.
     # @return [ListResponseOfStorageFileLocation]
@@ -205,12 +221,36 @@ module AsposeEmailCloud
       make_request(http_request, :PUT, 'EmailPropertyResponse')
     end
 
+    # Adds an email from model to specified folder in email account             
+    # @param [AppendEmailModelMessageRequestData] request Request object.
+    # @return [ValueResponse]
+    def append_email_model_message(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'ValueResponse')
+    end
+
     # Adds an email from MIME to specified folder in email account             
     # @param [AppendMimeMessageRequestData] request Request object.
     # @return [ValueResponse]
     def append_mime_message(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, 'ValueResponse')
+    end
+
+    # Convert iCalendar to AlternateView             
+    # @param [ConvertCalendarModelToAlternateRequestData] request Request object.
+    # @return [AlternateView]
+    def convert_calendar_model_to_alternate(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'AlternateView')
+    end
+
+    # Converts email document to specified format and returns as file             
+    # @param [ConvertEmailRequestData] request Request object.
+    # @return [File]
+    def convert_email(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
     end
 
     # Copy file
@@ -372,6 +412,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'MimeResponse')
     end
 
+    # Fetch message model from email account             
+    # @param [FetchEmailModelRequestData] request Request object.
+    # @return [EmailDto]
+    def fetch_email_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'EmailDto')
+    end
+
     # Get calendar file properties             
     # @param [GetCalendarRequestData] request Request object.
     # @return [HierarchicalObject]
@@ -396,6 +444,30 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'ListResponseOfHierarchicalObjectResponse')
     end
 
+    # Get calendar file             
+    # @param [GetCalendarModelRequestData] request Request object.
+    # @return [CalendarDto]
+    def get_calendar_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'CalendarDto')
+    end
+
+    # Get iCalendar from storage as AlternateView             
+    # @param [GetCalendarModelAsAlternateRequestData] request Request object.
+    # @return [AlternateView]
+    def get_calendar_model_as_alternate(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'AlternateView')
+    end
+
+    # Get iCalendar list from storage folder             
+    # @param [GetCalendarModelListRequestData] request Request object.
+    # @return [CalendarDtoList]
+    def get_calendar_model_list(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'CalendarDtoList')
+    end
+
     # Get attachment file by name             
     # @param [GetContactAttachmentRequestData] request Request object.
     # @return [File]
@@ -410,6 +482,22 @@ module AsposeEmailCloud
     def get_contact_list(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ListResponseOfHierarchicalObjectResponse')
+    end
+
+    # Get contact document.             
+    # @param [GetContactModelRequestData] request Request object.
+    # @return [ContactDto]
+    def get_contact_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'ContactDto')
+    end
+
+    # Get contact list from storage folder.             
+    # @param [GetContactModelListRequestData] request Request object.
+    # @return [ContactDtoList]
+    def get_contact_model_list(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'ContactDtoList')
     end
 
     # Get contact document properties             
@@ -436,12 +524,36 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'EmailDocument')
     end
 
+    # Converts email document from storage to specified format and returns as file             
+    # @param [GetEmailAsFileRequestData] request Request object.
+    # @return [File]
+    def get_email_as_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'File')
+    end
+
     # Get email attachment by name             
     # @param [GetEmailAttachmentRequestData] request Request object.
     # @return [File]
     def get_email_attachment(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'File')
+    end
+
+    # Get email document.             
+    # @param [GetEmailModelRequestData] request Request object.
+    # @return [EmailDto]
+    def get_email_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'EmailDto')
+    end
+
+    # Get email list from storage folder.             
+    # @param [GetEmailModelListRequestData] request Request object.
+    # @return [EmailDtoList]
+    def get_email_model_list(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'EmailDtoList')
     end
 
     # Get an email document property by its name             
@@ -509,12 +621,21 @@ module AsposeEmailCloud
     end
 
     # Get messages from folder, filtered by query             
-    # The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3>,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"              
+    # The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3     >,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"              
     # @param [ListEmailMessagesRequestData] request Request object.
     # @return [ListResponseOfString]
     def list_email_messages(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ListResponseOfString')
+    end
+
+    # Get messages from folder, filtered by query             
+    # The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3     >,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"              
+    # @param [ListEmailModelsRequestData] request Request object.
+    # @return [ListResponseOfEmailDto]
+    def list_email_models(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'ListResponseOfEmailDto')
     end
 
     # Move file
@@ -541,6 +662,33 @@ module AsposeEmailCloud
     def object_exists(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ObjectExist')
+    end
+
+    # Save iCalendar             
+    # @param [SaveCalendarModelRequestData] request Request object.
+    # @return [nil]
+    def save_calendar_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
+    # Save contact.             
+    # @param [SaveContactModelRequestData] request Request object.
+    # @return [nil]
+    def save_contact_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
+    # Save email document.             
+    # @param [SaveEmailModelRequestData] request Request object.
+    # @return [nil]
+    def save_email_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
     end
 
     # Create email account file (*.account) with login/password authentication             
@@ -574,6 +722,15 @@ module AsposeEmailCloud
     # @param [SendEmailMimeRequestData] request Request object.
     # @return [nil]
     def send_email_mime(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :POST, nil)
+      nil
+    end
+
+    # Send an email specified by model in request             
+    # @param [SendEmailModelRequestData] request Request object.
+    # @return [nil]
+    def send_email_model(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :POST, nil)
       nil
