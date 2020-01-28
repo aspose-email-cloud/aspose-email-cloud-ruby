@@ -83,21 +83,21 @@ describe EmailApi do
     expect(factStartDate).to eq(startDate)
   end
 
-  it 'Test AiName gender detection' do
+  it 'Test AiName gender detection', :pipeline do
     result = @api.ai_name_genderize(
       AiNameGenderizeRequestData.new('John Cane'))
     expect(result.value.count).to be >= 1
     expect(result.value[0].gender).to eq 'Male'
   end
 
-  it 'Test AiName formatting' do
+  it 'Test AiName formatting', :pipeline do
     result = @api.ai_name_format(
       AiNameFormatRequestData.new('Mr. John Michael Cane', nil, nil, nil, nil, '%t%L%f%m')
     )
     expect(result.name).to eq 'Mr. Cane J. M.'
   end
 
-  it 'AiName match test' do
+  it 'AiName match test', :pipeline do
     first = 'John Michael Cane'
     second = 'Cane J.'
     result = @api.ai_name_match(
@@ -106,7 +106,7 @@ describe EmailApi do
     expect(result.similarity).to be >= 0.5
   end
 
-  it 'Expand AiName test' do
+  it 'Expand AiName test', :pipeline do
     name = 'Smith Bobby'
     result = @api.ai_name_expand(AiNameExpandRequestData.new(name))
     mr = result.names.find { |weighted| weighted.name == 'Mr. Smith' }
@@ -115,7 +115,7 @@ describe EmailApi do
     expect(initial).not_to be_nil
   end
 
-  it 'Complete AiName test' do
+  it 'Complete AiName test', :pipeline do
     prefix = 'Dav'
     result = @api.ai_name_complete(
       AiNameCompleteRequestData.new(prefix)
@@ -128,7 +128,7 @@ describe EmailApi do
     expect(names).to include 'Dave'
   end
 
-  it 'Extract AiName from email address' do
+  it 'Extract AiName from email address', :pipeline do
     address = 'john-cane@gmail.com'
     result = @api.ai_name_parse_email_address(
       AiNameParseEmailAddressRequestData.new(address)
@@ -143,7 +143,7 @@ describe EmailApi do
   end
 
   # Test business card recognition with storage
-  it 'AiBcr Parse using storage' do
+  it 'AiBcr Parse using storage', :pipeline do
     image = File.new(File.join(__dir__, 'data', 'test_single_0001.png'))
     fileName = SecureRandom.uuid.to_s + '.png'
     path = "#{@folder}/#{fileName}"
@@ -174,7 +174,7 @@ describe EmailApi do
   end
 
   # Test business card recognition
-  it 'AiBcr Parse' do
+  it 'AiBcr Parse', :pipeline do
     image = File.open(File.join(__dir__, 'data', 'test_single_0001.png'), 'rb') do |f|
       bin = f.read
       Base64.encode64(bin)
@@ -255,7 +255,7 @@ describe EmailApi do
     expect(exist_result.exists).to be true
   end
 
-  it 'AI BCR Parse to model' do
+  it 'AI BCR Parse to model', :pipeline do
     image = File.open(File.join(__dir__, 'data', 'test_single_0001.png'), 'rb') do |f|
         bin = f.read
         Base64.encode64(bin)
