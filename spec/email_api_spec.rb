@@ -9,11 +9,12 @@ include AsposeEmailCloud
 describe EmailApi do
   # Api setup uses environment variables 'appKey', 'appSid', 'apiBaseUrl'
   before(:all) do
-    @api = EmailApi.new(ENV['appKey'], ENV['appSid'], ENV['apiBaseUrl'])
+    api_base_url = ENV['apiBaseUrl']
+    @api = EmailApi.new(ENV['appKey'], ENV['appSid'], api_base_url)
     auth_url = ENV['authUrl']
     if auth_url
-      @api.api_client.config.scheme = "http" if auth_url.include? "http:"
-      @api.api_client.config.auth_url = auth_url  
+      @api.api_client.config.scheme = "http" if api_base_url.include? "http:"
+      @api.api_client.config.auth_url = auth_url
     end
     @folder = SecureRandom.uuid().to_s()
     @storage = 'First Storage'
@@ -38,7 +39,7 @@ describe EmailApi do
 
   # 'File' field should be a File object, this is the only way for SDK to recognize that it is the file to upload
   it 'Files support test', :pipeline do
-    sample = File.new(File.join(File.expand_path(File.dirname(__FILE__)), 'data', 'sample.ics'))
+    sample = File.new(File.join(__dir__, 'data', 'sample.ics'))
     fileName = SecureRandom.uuid().to_s() + '.ics'
     path = "#{@folder}/#{fileName}"
     @api.upload_file(UploadFileRequestData.new(path, sample, @storage))
@@ -57,10 +58,10 @@ describe EmailApi do
       extension = format == 'Msg' ? '.msg' : '.vcf'
       fileName = SecureRandom.uuid() + extension
       @api.create_contact(CreateContactRequestData.new(
-          format,
-          fileName,
-          HierarchicalObjectRequest.new(
-              HierarchicalObject.new('CONTACT', nil, []),
+                            format,
+                            fileName,
+                            HierarchicalObjectRequest.new(
+                              HierarchicalObject.new('CONTACT', nil, []),
               StorageFolderLocation.new(@storage, @folder))))
       path = "#{@folder}/#{fileName}"
       exists = @api.object_exists(ObjectExistsRequestData.new(path, @storage)).exists
@@ -73,8 +74,8 @@ describe EmailApi do
   it 'Test DateTime serialization and deserialization', :pipeline do
     startDate = DateTime.now + 2
     # remove microseconds
-    startDate = startDate - startDate.sec_fraction / (24 * 60 * 60)
-    startDate = startDate.new_offset(0) #offset will be lost anyway
+    startDate -= startDate.sec_fraction / (24 * 60 * 60)
+    startDate = startDate.new_offset(0) # offset will be lost anyway
     calendarFile = create_calendar(startDate)
     calendar = @api.get_calendar(GetCalendarRequestData.new(calendarFile, @folder, @storage))
     startDateProperty = calendar.internal_properties.find { |item| item.name == 'STARTDATE' }
@@ -91,7 +92,8 @@ describe EmailApi do
 
   it 'Test AiName formatting' do
     result = @api.ai_name_format(
-      AiNameFormatRequestData.new('Mr. John Michael Cane', nil, nil, nil, nil, '%t%L%f%m'))
+      AiNameFormatRequestData.new('Mr. John Michael Cane', nil, nil, nil, nil, '%t%L%f%m')
+    )
     expect(result.name).to eq 'Mr. Cane J. M.'
   end
 
@@ -99,15 +101,16 @@ describe EmailApi do
     first = 'John Michael Cane'
     second = 'Cane J.'
     result = @api.ai_name_match(
-      AiNameMatchRequestData.new(first, second))
+      AiNameMatchRequestData.new(first, second)
+    )
     expect(result.similarity).to be >= 0.5
   end
 
   it 'Expand AiName test' do
     name = 'Smith Bobby'
     result = @api.ai_name_expand(AiNameExpandRequestData.new(name))
-    mr = result.names.find {|weighted| weighted.name == 'Mr. Smith' }
-    initial = result.names.find {|weighted| weighted.name == 'B. Smith' }
+    mr = result.names.find { |weighted| weighted.name == 'Mr. Smith' }
+    initial = result.names.find { |weighted| weighted.name == 'B. Smith' }
     expect(mr).not_to be_nil
     expect(initial).not_to be_nil
   end
@@ -115,10 +118,11 @@ describe EmailApi do
   it 'Complete AiName test' do
     prefix = 'Dav'
     result = @api.ai_name_complete(
-      AiNameCompleteRequestData.new(prefix))
-    names = result.names.map {|weighted|
+      AiNameCompleteRequestData.new(prefix)
+    )
+    names = result.names.map do |weighted|
       "#{prefix}#{weighted.name}"
-    }
+    end
     expect(names).to include 'David'
     expect(names).to include 'Davis'
     expect(names).to include 'Dave'
@@ -127,31 +131,32 @@ describe EmailApi do
   it 'Extract AiName from email address' do
     address = 'john-cane@gmail.com'
     result = @api.ai_name_parse_email_address(
-      AiNameParseEmailAddressRequestData.new(address))
+      AiNameParseEmailAddressRequestData.new(address)
+    )
     extracted_values = result.value
-      .map { |item| item.name }
-      .reduce(:+)
-    given_name = extracted_values.find {|item| item.category == 'GivenName'}
-    surname = extracted_values.find {|item| item.category == 'Surname'}
+                             .map(&:name)
+                             .reduce(:+)
+    given_name = extracted_values.find { |item| item.category == 'GivenName' }
+    surname = extracted_values.find { |item| item.category == 'Surname' }
     expect(given_name.value).to eq 'John'
     expect(surname.value).to eq 'Cane'
   end
 
   # Test business card recognition with storage
   it 'AiBcr Parse using storage' do
-    image = File.new(File.join(File.expand_path(File.dirname(__FILE__)), 'data', 'test_single_0001.png'))
-    fileName = SecureRandom.uuid().to_s() + '.png'
+    image = File.new(File.join(__dir__, 'data', 'test_single_0001.png'))
+    fileName = SecureRandom.uuid.to_s + '.png'
     path = "#{@folder}/#{fileName}"
     # 1) Upload business card image to storage
     @api.upload_file(UploadFileRequestData.new(path, image, @storage))
-    outFolder = SecureRandom.uuid().to_s()
+    outFolder = SecureRandom.uuid.to_s
     outFolderPath = "#{@folder}/#{outFolder}"
     @api.create_folder(CreateFolderRequestData.new(outFolderPath, @storage))
     # 2) Call business card recognition action
     result = @api.ai_bcr_parse_storage(AiBcrParseStorageRequestData.new(
-      AiBcrParseStorageRq.new(
-        nil,
-        [AiBcrImageStorageFile.new(true, StorageFileLocation.new(@storage, @folder, fileName))],
+                                         AiBcrParseStorageRq.new(
+                                           nil,
+                                           [AiBcrImageStorageFile.new(true, StorageFileLocation.new(@storage, @folder, fileName))],
         StorageFolderLocation.new(@storage, outFolderPath))))
     # Check that only one file produced
     expect(result.value.count).to eq 1
@@ -170,15 +175,96 @@ describe EmailApi do
 
   # Test business card recognition
   it 'AiBcr Parse' do
-    image = File.open(File.join(File.expand_path(File.dirname(__FILE__)), 'data', 'test_single_0001.png'), 'rb') { |f|
+    image = File.open(File.join(__dir__, 'data', 'test_single_0001.png'), 'rb') do |f|
       bin = f.read
       Base64.encode64(bin)
-    }
+    end
     result = @api.ai_bcr_parse(AiBcrParseRequestData.new(
       AiBcrBase64Rq.new(nil, [AiBcrBase64Image.new(true, image)])))
     expect(result.value.count).to eq 1
     display_name = result.value[0].internal_properties.find { |item| item.name == 'DISPLAYNAME' }
     expect(display_name.value).to include 'Thomas'
+  end
+
+  it 'Create calendar email', :pipeline do
+    calendar = CalendarDto.new
+    calendar.attendees = [MailAddress.new('Attendee Name', 'attendee@aspose.com', 'Accepted')]
+    calendar.description = 'Some description'
+    calendar.summary = 'Some summary'
+    calendar.organizer = MailAddress.new('Organizer Name', 'organizer@aspose.com', 'Accepted')
+    calendar.start_date = DateTime.now + 1
+    calendar.end_date = DateTime.now + 2
+    calendar.location = 'Some location'
+
+    folder_location = StorageFolderLocation.new(@storage, @folder)
+    calendar_file = SecureRandom.uuid.to_s + '.ics'
+    @api.save_calendar_model(
+        SaveCalendarModelRequestData.new(
+            calendar_file,
+            StorageModelRqOfCalendarDto.new(calendar, folder_location)))
+
+    exist_result = @api.object_exists(
+        ObjectExistsRequestData.new("#{@folder}/#{calendar_file}", @storage))
+    expect(exist_result.exists).to be true
+
+    alternate = @api.convert_calendar_model_to_alternate(
+        ConvertCalendarModelToAlternateRequestData.new(
+            CalendarDtoAlternateRq.new(calendar, 'Create')))
+
+    email = EmailDto.new()
+    email.alternate_views = [alternate]
+    email.from = MailAddress.new('From Name', 'cloud.em@yandex.ru')
+    email.to = [MailAddress.new('To Name', 'cloud.em@yandex.ru')]
+    email.subject = 'Some subject'
+    email.body = 'Some body'
+
+    email_file = "#{SecureRandom.uuid.to_s}.eml"
+    @api.save_email_model(
+        SaveEmailModelRequestData.new(
+            'Eml', email_file,
+            StorageModelRqOfEmailDto.new(
+                email, folder_location)))
+
+    downloaded = @api.download_file(
+        DownloadFileRequestData.new("#{@folder}/#{email_file}", @storage))
+    content = IO.read(downloaded)
+    expect(content).to include('cloud.em@yandex.ru')
+  end
+
+  it 'Create contact model', :pipeline do
+    contact = ContactDto.new()
+    contact.surname = 'Thomas'
+    contact.given_name = 'Alex'
+    contact.email_addresses = [EmailAddress.new(
+        EnumWithCustomOfEmailAddressCategory.new('Work'),
+        'Alex Thomas', true, nil, 'alex.thomas@work.com')]
+    contact.phone_numbers = [PhoneNumber.new(
+        EnumWithCustomOfPhoneNumberCategory.new('Work'),
+        '+49211424721', true)]
+    contact.gender = 'Male'
+
+    contact_file = "#{SecureRandom.uuid.to_s}.vcf"
+    @api.save_contact_model(
+        SaveContactModelRequestData.new(
+            'VCard', contact_file,
+            StorageModelRqOfContactDto.new(
+                contact,
+                StorageFolderLocation.new(@storage, @folder))))
+    exist_result = @api.object_exists(
+      ObjectExistsRequestData.new("#{@folder}/#{contact_file}", @storage))
+    expect(exist_result.exists).to be true
+  end
+
+  it 'AI BCR Parse to model' do
+    image = File.open(File.join(__dir__, 'data', 'test_single_0001.png'), 'rb') do |f|
+        bin = f.read
+        Base64.encode64(bin)
+    end
+    result = @api.ai_bcr_parse_model(AiBcrParseModelRequestData.new(
+        AiBcrBase64Rq.new(nil, [AiBcrBase64Image.new(true, image)])))
+    expect(result.value.count).to eq 1
+    first_vcard = result.value[0]
+    expect(first_vcard.display_name).to include 'Thomas'
   end
 
   def create_calendar(startDate = nil)

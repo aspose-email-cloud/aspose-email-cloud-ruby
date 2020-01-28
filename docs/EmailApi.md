@@ -156,6 +156,48 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="ai_bcr_parse_model"></a>
+# **ai_bcr_parse_model**
+> ai_bcr_parse_model(request)
+
+Parse images to vCard document models             
+
+### Return type
+
+[**ListResponseOfContactDto**](ListResponseOfContactDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiBcrParseModelRequestData.new(rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**AiBcrBase64Rq**](AiBcrBase64Rq.md)| Request with base64 images data | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="ai_bcr_parse_ocr_data_model"></a>
+# **ai_bcr_parse_ocr_data_model**
+> ai_bcr_parse_ocr_data_model(request)
+
+Parse OCR data to vCard document models             
+
+### Return type
+
+[**ListResponseOfContactDto**](ListResponseOfContactDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AiBcrParseOcrDataModelRequestData.new(rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**AiBcrParseOcrDataRq**](AiBcrParseOcrDataRq.md)|  | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="ai_bcr_parse_storage"></a>
 # **ai_bcr_parse_storage**
 > ai_bcr_parse_storage(request)
@@ -466,6 +508,27 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="append_email_model_message"></a>
+# **append_email_model_message**
+> append_email_model_message(request)
+
+Adds an email from model to specified folder in email account             
+
+### Return type
+
+[**ValueResponse**](ValueResponse.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::AppendEmailModelMessageRequestData.new(rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**AppendEmailModelRq**](AppendEmailModelRq.md)| Append email request | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="append_mime_message"></a>
 # **append_mime_message**
 > append_mime_message(request)
@@ -484,6 +547,49 @@ request = AsposeEmailCloud::AppendMimeMessageRequestData.new(request)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**AppendEmailMimeBaseRequest**](AppendEmailMimeBaseRequest.md)| Append email request | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_calendar_model_to_alternate"></a>
+# **convert_calendar_model_to_alternate**
+> convert_calendar_model_to_alternate(request)
+
+Convert iCalendar to AlternateView             
+
+### Return type
+
+[**AlternateView**](AlternateView.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertCalendarModelToAlternateRequestData.new(rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**CalendarDtoAlternateRq**](CalendarDtoAlternateRq.md)| iCalendar to AlternateView request | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_email"></a>
+# **convert_email**
+> convert_email(request)
+
+Converts email document to specified format and returns as file             
+
+### Return type
+
+**File**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertEmailRequestData.new(format, file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **file** | **File**| File to upload | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -898,6 +1004,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="fetch_email_model"></a>
+# **fetch_email_model**
+> fetch_email_model(request)
+
+Fetch message model from email account             
+
+### Return type
+
+[**EmailDto**](EmailDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::FetchEmailModelRequestData.new(message_id, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **message_id** | **String**| Message identifier | 
+ **first_account** | **String**| Email account | 
+ **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **storage** | **String**| Storage name where account file(s) located | [optional] 
+ **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_calendar"></a>
 # **get_calendar**
 > get_calendar(request)
@@ -969,6 +1100,78 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_calendar_model"></a>
+# **get_calendar_model**
+> get_calendar_model(request)
+
+Get calendar file             
+
+### Return type
+
+[**CalendarDto**](CalendarDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetCalendarModelRequestData.new(name, folder=folder, storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| iCalendar file name in storage | 
+ **folder** | **String**| Path to folder in storage | [optional] 
+ **storage** | **String**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_calendar_model_as_alternate"></a>
+# **get_calendar_model_as_alternate**
+> get_calendar_model_as_alternate(request)
+
+Get iCalendar from storage as AlternateView             
+
+### Return type
+
+[**AlternateView**](AlternateView.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetCalendarModelAsAlternateRequestData.new(name, calendar_action, sequence_id=sequence_id, folder=folder, storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| iCalendar file name in storage | 
+ **calendar_action** | **String**| iCalendar method type Enum, available values: Create, Update, Cancel | 
+ **sequence_id** | **String**| The sequence id | [optional] 
+ **folder** | **String**| Path to folder in storage | [optional] 
+ **storage** | **String**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_calendar_model_list"></a>
+# **get_calendar_model_list**
+> get_calendar_model_list(request)
+
+Get iCalendar list from storage folder             
+
+### Return type
+
+[**CalendarDtoList**](CalendarDtoList.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetCalendarModelListRequestData.new(folder, items_per_page=items_per_page, page_number=page_number, storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder** | **String**| Path to folder in storage | 
+ **items_per_page** | **Integer**| Count of items on page | [optional] [default to 10]
+ **page_number** | **Integer**| Page number | [optional] [default to 0]
+ **storage** | **String**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_contact_attachment"></a>
 # **get_contact_attachment**
 > get_contact_attachment(request)
@@ -1016,6 +1219,55 @@ Name | Type | Description  | Notes
  **storage** | **String**| Storage name | [optional] 
  **items_per_page** | **Integer**| Count of items on page | [optional] [default to 10]
  **page_number** | **Integer**| Page number | [optional] [default to 0]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_contact_model"></a>
+# **get_contact_model**
+> get_contact_model(request)
+
+Get contact document.             
+
+### Return type
+
+[**ContactDto**](ContactDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetContactModelRequestData.new(format, name, folder=folder, storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
+ **name** | **String**| Contact document file name. | 
+ **folder** | **String**| Path to folder in storage. | [optional] 
+ **storage** | **String**| Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_contact_model_list"></a>
+# **get_contact_model_list**
+> get_contact_model_list(request)
+
+Get contact list from storage folder.             
+
+### Return type
+
+[**ContactDtoList**](ContactDtoList.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetContactModelListRequestData.new(format, folder=folder, storage=storage, items_per_page=items_per_page, page_number=page_number)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
+ **folder** | **String**| Path to folder in storage. | [optional] 
+ **storage** | **String**| Storage name. | [optional] 
+ **items_per_page** | **Integer**| Count of items on page. | [optional] [default to 10]
+ **page_number** | **Integer**| Page number. | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1087,6 +1339,30 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_email_as_file"></a>
+# **get_email_as_file**
+> get_email_as_file(request)
+
+Converts email document from storage to specified format and returns as file             
+
+### Return type
+
+**File**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetEmailAsFileRequestData.new(file_name, format, storage=storage, folder=folder)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_name** | **String**| Email document file name | 
+ **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **storage** | **String**| Storage name | [optional] 
+ **folder** | **String**| Path to folder in storage | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_email_attachment"></a>
 # **get_email_attachment**
 > get_email_attachment(request)
@@ -1108,6 +1384,55 @@ Name | Type | Description  | Notes
  **file_name** | **String**| Email document file name | 
  **storage** | **String**| Storage name | [optional] 
  **folder** | **String**| Path to folder in storage | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_email_model"></a>
+# **get_email_model**
+> get_email_model(request)
+
+Get email document.             
+
+### Return type
+
+[**EmailDto**](EmailDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetEmailModelRequestData.new(format, name, folder=folder, storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **name** | **String**| Email document file name. | 
+ **folder** | **String**| Path to folder in storage. | [optional] 
+ **storage** | **String**| Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_email_model_list"></a>
+# **get_email_model_list**
+> get_email_model_list(request)
+
+Get email list from storage folder.             
+
+### Return type
+
+[**EmailDtoList**](EmailDtoList.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetEmailModelListRequestData.new(format, folder=folder, storage=storage, items_per_page=items_per_page, page_number=page_number)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **folder** | **String**| Path to folder in storage. | [optional] 
+ **storage** | **String**| Storage name. | [optional] 
+ **items_per_page** | **Integer**| Count of items on page. | [optional] [default to 10]
+ **page_number** | **Integer**| Page number. | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1304,7 +1629,7 @@ Name | Type | Description  | Notes
 
 Get messages from folder, filtered by query             
 
-The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3>,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"              
+The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3     >,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"              
 
 ### Return type
 
@@ -1313,6 +1638,35 @@ The query string should have the following view.      The example of a simple ex
 ### Request Parameters
 ```ruby
 request = AsposeEmailCloud::ListEmailMessagesRequestData.new(folder, query_string, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, recursive=recursive)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder** | **String**| A folder in email account | 
+ **query_string** | **String**| A MailQuery search string | 
+ **first_account** | **String**| Email account | 
+ **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **storage** | **String**| Storage name where account file(s) located | [optional] 
+ **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
+ **recursive** | **BOOLEAN**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="list_email_models"></a>
+# **list_email_models**
+> list_email_models(request)
+
+Get messages from folder, filtered by query             
+
+The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3     >,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"              
+
+### Return type
+
+[**ListResponseOfEmailDto**](ListResponseOfEmailDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ListEmailModelsRequestData.new(folder, query_string, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, recursive=recursive)
 ```
 
 Name | Type | Description  | Notes
@@ -1399,6 +1753,74 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="save_calendar_model"></a>
+# **save_calendar_model**
+> save_calendar_model(request)
+
+Save iCalendar             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SaveCalendarModelRequestData.new(name, rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| iCalendar file name in storage | 
+ **rq** | [**StorageModelRqOfCalendarDto**](StorageModelRqOfCalendarDto.md)| Calendar properties update request | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="save_contact_model"></a>
+# **save_contact_model**
+> save_contact_model(request)
+
+Save contact.             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SaveContactModelRequestData.new(format, name, rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
+ **name** | **String**| Contact document file name. | 
+ **rq** | [**StorageModelRqOfContactDto**](StorageModelRqOfContactDto.md)| Create contact request. | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="save_email_model"></a>
+# **save_email_model**
+> save_email_model(request)
+
+Save email document.             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SaveEmailModelRequestData.new(format, name, rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **name** | **String**| iCalendar file name in storage. | 
+ **rq** | [**StorageModelRqOfEmailDto**](StorageModelRqOfEmailDto.md)| Calendar properties update request. | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="save_mail_account"></a>
 # **save_mail_account**
 > save_mail_account(request)
@@ -1480,6 +1902,27 @@ request = AsposeEmailCloud::SendEmailMimeRequestData.new(request)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**SendEmailMimeBaseRequest**](SendEmailMimeBaseRequest.md)| Send email request | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="send_email_model"></a>
+# **send_email_model**
+> send_email_model(request)
+
+Send an email specified by model in request             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SendEmailModelRequestData.new(rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**SendEmailModelRq**](SendEmailModelRq.md)| Send email request | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

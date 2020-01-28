@@ -27,7 +27,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Email document property DTO.             
+  # String value object             
   class ValueResponse
     # Gets or sets string content.             
     # @return [String]
