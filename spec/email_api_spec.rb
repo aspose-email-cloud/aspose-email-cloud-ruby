@@ -267,6 +267,13 @@ describe EmailApi do
     expect(first_vcard.display_name).to include 'Thomas'
   end
 
+  it 'Discover email config', :pipeline do
+    configs = @api.discover_email_config(DiscoverEmailConfigRequestData.new('example@gmail.com', true))
+    expect(configs.value.count).to be >= 2
+    smtp = configs.value.find { |item| item.protocol_type == 'SMTP' }
+    expect(smtp.host).to eq 'smtp.gmail.com'
+  end
+
   def create_calendar(startDate = nil)
     fileName = SecureRandom.uuid().to_s() + '.ics'
     startDate = startDate.nil? ? DateTime.now + 1 : startDate

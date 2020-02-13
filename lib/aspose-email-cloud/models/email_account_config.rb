@@ -35,7 +35,7 @@ module AsposeEmailCloud
 
     # Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @return [String]
-    attr_accessor :type
+    attr_accessor :protocol_type
 
     # Email account host.             
     # @return [String]
@@ -45,7 +45,7 @@ module AsposeEmailCloud
     # @return [Integer]
     attr_accessor :port
 
-    # Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @return [String]
     attr_accessor :socket_type
 
@@ -65,7 +65,7 @@ module AsposeEmailCloud
     def self.attribute_map
       {
         :'display_name' => :'displayName',
-        :'type' => :'type',
+        :'protocol_type' => :'protocolType',
         :'host' => :'host',
         :'port' => :'port',
         :'socket_type' => :'socketType',
@@ -79,7 +79,7 @@ module AsposeEmailCloud
     def self.swagger_types
       {
         :'display_name' => :'String',
-        :'type' => :'String',
+        :'protocol_type' => :'String',
         :'host' => :'String',
         :'port' => :'Integer',
         :'socket_type' => :'String',
@@ -101,8 +101,8 @@ module AsposeEmailCloud
         self.display_name = attributes[:'displayName']
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'protocolType')
+        self.protocol_type = attributes[:'protocolType']
       end
 
       if attributes.has_key?(:'host')
@@ -136,16 +136,16 @@ module AsposeEmailCloud
 
     # Initializes the object
     # @param [String] display_name Email account display name             
-    # @param [String] type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+    # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [String] host Email account host.             
     # @param [Integer] port Port.             
-    # @param [String] socket_type Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @param [String] socket_type Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @param [Array<String>] authentication_types Supported authentication types.              Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
     # @param [Array<NameValuePair>] extra_info Extra account information.             
     # @param [BOOLEAN] is_validated Determines that configuration validated. Set to false if validation skipped.             
-    def initialize(display_name=nil, type=nil, host=nil, port=nil, socket_type=nil, authentication_types=nil, extra_info=nil, is_validated=nil)
+    def initialize(display_name=nil, protocol_type=nil, host=nil, port=nil, socket_type=nil, authentication_types=nil, extra_info=nil, is_validated=nil)
       self.display_name = display_name if display_name
-      self.type = type if type
+      self.protocol_type = protocol_type if protocol_type
       self.host = host if host
       self.port = port if port
       self.socket_type = socket_type if socket_type
@@ -158,8 +158,8 @@ module AsposeEmailCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
+      if @protocol_type.nil?
+        invalid_properties.push('invalid value for "protocol_type", protocol_type cannot be nil.')
       end
 
       if @socket_type.nil?
@@ -176,7 +176,7 @@ module AsposeEmailCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
+      return false if @protocol_type.nil?
       return false if @socket_type.nil?
       return false if @is_validated.nil?
       true
@@ -188,7 +188,7 @@ module AsposeEmailCloud
       return true if self.equal?(o)
       self.class == o.class &&
           display_name == o.display_name &&
-          type == o.type &&
+          protocol_type == o.protocol_type &&
           host == o.host &&
           port == o.port &&
           socket_type == o.socket_type &&
@@ -206,7 +206,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [display_name, type, host, port, socket_type, authentication_types, extra_info, is_validated].hash
+      [display_name, protocol_type, host, port, socket_type, authentication_types, extra_info, is_validated].hash
     end
 
     # Builds the object from hash

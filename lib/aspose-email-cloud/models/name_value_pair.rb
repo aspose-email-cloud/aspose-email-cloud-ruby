@@ -27,12 +27,13 @@
 require 'date'
 
 module AsposeEmailCloud
+  # An extended property.
   class NameValuePair
-    
+    # Name of the property 
     # @return [String]
     attr_accessor :value
 
-    
+    # Value of the property
     # @return [String]
     attr_accessor :name
 
@@ -70,8 +71,8 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] value 
-    # @param [String] name 
+    # @param [String] value Name of the property 
+    # @param [String] name Value of the property
     def initialize(value=nil, name=nil)
       self.value = value if value
       self.name = name if name

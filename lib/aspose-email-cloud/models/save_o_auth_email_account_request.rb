@@ -41,7 +41,7 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :login
 
-    # Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @return [String]
     attr_accessor :security_options
 
@@ -154,7 +154,7 @@ module AsposeEmailCloud
     # @param [String] host Email account host             
     # @param [Integer] port Email account port             
     # @param [String] login Email account login             
-    # @param [String] security_options Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @param [String] security_options Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [String] description Email account description             
     # @param [StorageFileLocation] storage_file A storage file location info to store email account             
