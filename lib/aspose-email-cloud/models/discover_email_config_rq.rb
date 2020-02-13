@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="DiscoverEmailConfigRequest.rb">
+#  <copyright company="Aspose" file="DiscoverEmailConfigRq.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -28,7 +28,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Discover email configuration request.             
-  class DiscoverEmailConfigRequest
+  class DiscoverEmailConfigRq
     # Email address to discover.             
     # @return [String]
     attr_accessor :address

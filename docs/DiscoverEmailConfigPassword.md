@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **login** | **String** | Email account login. If not specified, address used as a login.              | [optional] 
 **password** | **String** | Email account password.              | 
 
- Parent class: [DiscoverEmailConfigRequest](DiscoverEmailConfigRequest.md)
+ Parent class: [DiscoverEmailConfigRq](DiscoverEmailConfigRq.md)
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

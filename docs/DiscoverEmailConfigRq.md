@@ -1,4 +1,4 @@
-# models.DiscoverEmailConfigRequest
+# models.DiscoverEmailConfigRq
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
