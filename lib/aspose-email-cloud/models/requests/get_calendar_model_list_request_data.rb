@@ -32,21 +32,34 @@ module AsposeEmailCloud
   # Request model for get_calendar_model_list operation.
   class GetCalendarModelListRequestData < EmailRequest
 
+    # Path to folder in storage
+    # @return [String]
+    attr_accessor :folder
+    # Count of items on page
+    # @return [Integer]
+    attr_accessor :items_per_page
+    # Page number
+    # @return [Integer]
+    attr_accessor :page_number
+    # Storage name
+    # @return [String]
+    attr_accessor :storage
+
     # Get iCalendar list from storage folder             
     # @param [String] folder Path to folder in storage
     # @param [Integer] items_per_page Count of items on page
     # @param [Integer] page_number Page number
     # @param [String] storage Storage name
     def initialize(folder, items_per_page = nil, page_number = nil, storage = nil)
-      @folder = folder if folder
-      @items_per_page = items_per_page if items_per_page
-      @page_number = page_number if page_number
-      @storage = storage if storage
+      self.folder = folder if folder
+      self.items_per_page = items_per_page if items_per_page
+      self.page_number = page_number if page_number
+      self.storage = storage if storage
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'folder' is set
-      if api_client.config.client_side_validation && @folder.nil?
+      if api_client.config.client_side_validation && self.folder.nil?
         raise ArgumentError, "Missing the required parameter 'folder' when calling EmailApi.get_calendar_model_list"
       end
 
@@ -55,10 +68,10 @@ module AsposeEmailCloud
 
       # query parameters
       query_params = {}
-      query_params[:folder] = @folder
-      query_params[:itemsPerPage] = @items_per_page unless @items_per_page.nil?
-      query_params[:pageNumber] = @page_number unless @page_number.nil?
-      query_params[:storage] = @storage unless @storage.nil?
+      query_params[:folder] = self.folder
+      query_params[:itemsPerPage] = self.items_per_page unless self.items_per_page.nil?
+      query_params[:pageNumber] = self.page_number unless self.page_number.nil?
+      query_params[:storage] = self.storage unless self.storage.nil?
 
       # form parameters
       form_params = {}

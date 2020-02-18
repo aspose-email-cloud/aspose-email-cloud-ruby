@@ -32,6 +32,25 @@ module AsposeEmailCloud
   # Request model for ai_name_expand operation.
   class AiNameExpandRequestData < EmailRequest
 
+    # A name to format (required)
+    # @return [String]
+    attr_accessor :name
+    # An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)
+    # @return [String]
+    attr_accessor :language
+    # A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France
+    # @return [String]
+    attr_accessor :location
+    # A character encoding name
+    # @return [String]
+    attr_accessor :encoding
+    # A writing system code; starts with the ISO-15924 script name
+    # @return [String]
+    attr_accessor :script
+    # Name writing style. Enum, available values: Formal, Informal, Legal, Academic
+    # @return [String]
+    attr_accessor :style
+
     # Expands a person&#39;s name into a list of possible alternatives using options for expanding instructions             
     # @param [String] name A name to format (required)
     # @param [String] language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)
@@ -40,17 +59,17 @@ module AsposeEmailCloud
     # @param [String] script A writing system code; starts with the ISO-15924 script name
     # @param [String] style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
     def initialize(name, language = nil, location = nil, encoding = nil, script = nil, style = nil)
-      @name = name if name
-      @language = language if language
-      @location = location if location
-      @encoding = encoding if encoding
-      @script = script if script
-      @style = style if style
+      self.name = name if name
+      self.language = language if language
+      self.location = location if location
+      self.encoding = encoding if encoding
+      self.script = script if script
+      self.style = style if style
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'name' is set
-      if api_client.config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && self.name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.ai_name_expand"
       end
 
@@ -59,12 +78,12 @@ module AsposeEmailCloud
 
       # query parameters
       query_params = {}
-      query_params[:name] = @name
-      query_params[:language] = @language unless @language.nil?
-      query_params[:location] = @location unless @location.nil?
-      query_params[:encoding] = @encoding unless @encoding.nil?
-      query_params[:script] = @script unless @script.nil?
-      query_params[:style] = @style unless @style.nil?
+      query_params[:name] = self.name
+      query_params[:language] = self.language unless self.language.nil?
+      query_params[:location] = self.location unless self.location.nil?
+      query_params[:encoding] = self.encoding unless self.encoding.nil?
+      query_params[:script] = self.script unless self.script.nil?
+      query_params[:style] = self.style unless self.style.nil?
 
       # form parameters
       form_params = {}

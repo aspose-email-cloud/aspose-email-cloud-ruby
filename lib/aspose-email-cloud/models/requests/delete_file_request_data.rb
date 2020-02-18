@@ -32,29 +32,39 @@ module AsposeEmailCloud
   # Request model for delete_file operation.
   class DeleteFileRequestData < EmailRequest
 
+    # File path e.g. &#39;/folder/file.ext&#39;
+    # @return [String]
+    attr_accessor :path
+    # Storage name
+    # @return [String]
+    attr_accessor :storage_name
+    # File version ID to delete
+    # @return [String]
+    attr_accessor :version_id
+
     # Delete file
     # @param [String] path File path e.g. &#39;/folder/file.ext&#39;
     # @param [String] storage_name Storage name
     # @param [String] version_id File version ID to delete
     def initialize(path, storage_name = nil, version_id = nil)
-      @path = path if path
-      @storage_name = storage_name if storage_name
-      @version_id = version_id if version_id
+      self.path = path if path
+      self.storage_name = storage_name if storage_name
+      self.version_id = version_id if version_id
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'path' is set
-      if api_client.config.client_side_validation && @path.nil?
+      if api_client.config.client_side_validation && self.path.nil?
         raise ArgumentError, "Missing the required parameter 'path' when calling EmailApi.delete_file"
       end
 
       # resource path
-      local_var_path = '/email/storage/file/{path}'.sub('{' + 'path' + '}', @path.to_s)
+      local_var_path = '/email/storage/file/{path}'.sub('{' + 'path' + '}', self.path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:storageName] = @storage_name unless @storage_name.nil?
-      query_params[:versionId] = @version_id unless @version_id.nil?
+      query_params[:storageName] = self.storage_name unless self.storage_name.nil?
+      query_params[:versionId] = self.version_id unless self.version_id.nil?
 
       # form parameters
       form_params = {}

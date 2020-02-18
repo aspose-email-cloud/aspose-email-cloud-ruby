@@ -32,6 +32,22 @@ module AsposeEmailCloud
   # Request model for copy_file operation.
   class CopyFileRequestData < EmailRequest
 
+    # Source file path e.g. &#39;/folder/file.ext&#39;
+    # @return [String]
+    attr_accessor :src_path
+    # Destination file path
+    # @return [String]
+    attr_accessor :dest_path
+    # Source storage name
+    # @return [String]
+    attr_accessor :src_storage_name
+    # Destination storage name
+    # @return [String]
+    attr_accessor :dest_storage_name
+    # File version ID to copy
+    # @return [String]
+    attr_accessor :version_id
+
     # Copy file
     # @param [String] src_path Source file path e.g. &#39;/folder/file.ext&#39;
     # @param [String] dest_path Destination file path
@@ -39,33 +55,33 @@ module AsposeEmailCloud
     # @param [String] dest_storage_name Destination storage name
     # @param [String] version_id File version ID to copy
     def initialize(src_path, dest_path, src_storage_name = nil, dest_storage_name = nil, version_id = nil)
-      @src_path = src_path if src_path
-      @dest_path = dest_path if dest_path
-      @src_storage_name = src_storage_name if src_storage_name
-      @dest_storage_name = dest_storage_name if dest_storage_name
-      @version_id = version_id if version_id
+      self.src_path = src_path if src_path
+      self.dest_path = dest_path if dest_path
+      self.src_storage_name = src_storage_name if src_storage_name
+      self.dest_storage_name = dest_storage_name if dest_storage_name
+      self.version_id = version_id if version_id
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'src_path' is set
-      if api_client.config.client_side_validation && @src_path.nil?
+      if api_client.config.client_side_validation && self.src_path.nil?
         raise ArgumentError, "Missing the required parameter 'src_path' when calling EmailApi.copy_file"
       end
 
       # verify the required parameter 'dest_path' is set
-      if api_client.config.client_side_validation && @dest_path.nil?
+      if api_client.config.client_side_validation && self.dest_path.nil?
         raise ArgumentError, "Missing the required parameter 'dest_path' when calling EmailApi.copy_file"
       end
 
       # resource path
-      local_var_path = '/email/storage/file/copy/{srcPath}'.sub('{' + 'srcPath' + '}', @src_path.to_s)
+      local_var_path = '/email/storage/file/copy/{srcPath}'.sub('{' + 'srcPath' + '}', self.src_path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:destPath] = @dest_path
-      query_params[:srcStorageName] = @src_storage_name unless @src_storage_name.nil?
-      query_params[:destStorageName] = @dest_storage_name unless @dest_storage_name.nil?
-      query_params[:versionId] = @version_id unless @version_id.nil?
+      query_params[:destPath] = self.dest_path
+      query_params[:srcStorageName] = self.src_storage_name unless self.src_storage_name.nil?
+      query_params[:destStorageName] = self.dest_storage_name unless self.dest_storage_name.nil?
+      query_params[:versionId] = self.version_id unless self.version_id.nil?
 
       # form parameters
       form_params = {}

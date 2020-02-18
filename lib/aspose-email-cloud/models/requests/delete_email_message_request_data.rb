@@ -32,15 +32,19 @@ module AsposeEmailCloud
   # Request model for delete_email_message operation.
   class DeleteEmailMessageRequestData < EmailRequest
 
+    # Delete message request
+    # @return [DeleteMessageBaseRequest]
+    attr_accessor :request
+
     # Delete message from email account by id             
     # @param [DeleteMessageBaseRequest] request Delete message request
     def initialize(request)
-      @request = request if request
+      self.request = request if request
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
+      if api_client.config.client_side_validation && self.request.nil?
         raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.delete_email_message"
       end
 
@@ -54,7 +58,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = api_client.object_to_http_body(self.request)
       auth_names = ['JWT']
 
       # header parameters

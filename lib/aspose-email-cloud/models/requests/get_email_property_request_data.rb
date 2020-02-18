@@ -32,36 +32,49 @@ module AsposeEmailCloud
   # Request model for get_email_property operation.
   class GetEmailPropertyRequestData < EmailRequest
 
+    # A property name
+    # @return [String]
+    attr_accessor :property_name
+    # Email document file name
+    # @return [String]
+    attr_accessor :file_name
+    # Storage name
+    # @return [String]
+    attr_accessor :storage
+    # Path to folder in storage
+    # @return [String]
+    attr_accessor :folder
+
     # Get an email document property by its name             
     # @param [String] property_name A property name
     # @param [String] file_name Email document file name
     # @param [String] storage Storage name
     # @param [String] folder Path to folder in storage
     def initialize(property_name, file_name, storage = nil, folder = nil)
-      @property_name = property_name if property_name
-      @file_name = file_name if file_name
-      @storage = storage if storage
-      @folder = folder if folder
+      self.property_name = property_name if property_name
+      self.file_name = file_name if file_name
+      self.storage = storage if storage
+      self.folder = folder if folder
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'property_name' is set
-      if api_client.config.client_side_validation && @property_name.nil?
+      if api_client.config.client_side_validation && self.property_name.nil?
         raise ArgumentError, "Missing the required parameter 'property_name' when calling EmailApi.get_email_property"
       end
 
       # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && @file_name.nil?
+      if api_client.config.client_side_validation && self.file_name.nil?
         raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.get_email_property"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}/properties/{propertyName}'.sub('{' + 'propertyName' + '}', @property_name.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/{fileName}/properties/{propertyName}'.sub('{' + 'propertyName' + '}', self.property_name.to_s).sub('{' + 'fileName' + '}', self.file_name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:storage] = @storage unless @storage.nil?
-      query_params[:folder] = @folder unless @folder.nil?
+      query_params[:storage] = self.storage unless self.storage.nil?
+      query_params[:folder] = self.folder unless self.folder.nil?
 
       # form parameters
       form_params = {}

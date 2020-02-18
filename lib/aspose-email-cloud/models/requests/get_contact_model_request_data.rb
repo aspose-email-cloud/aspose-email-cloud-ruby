@@ -32,36 +32,49 @@ module AsposeEmailCloud
   # Request model for get_contact_model operation.
   class GetContactModelRequestData < EmailRequest
 
+    # Contact document format. Enum, available values: VCard, WebDav, Msg
+    # @return [String]
+    attr_accessor :format
+    # Contact document file name.
+    # @return [String]
+    attr_accessor :name
+    # Path to folder in storage.
+    # @return [String]
+    attr_accessor :folder
+    # Storage name.
+    # @return [String]
+    attr_accessor :storage
+
     # Get contact document.             
     # @param [String] format Contact document format. Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name.
     # @param [String] folder Path to folder in storage.
     # @param [String] storage Storage name.
     def initialize(format, name, folder = nil, storage = nil)
-      @format = format if format
-      @name = name if name
-      @folder = folder if folder
-      @storage = storage if storage
+      self.format = format if format
+      self.name = name if name
+      self.folder = folder if folder
+      self.storage = storage if storage
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'format' is set
-      if api_client.config.client_side_validation && @format.nil?
+      if api_client.config.client_side_validation && self.format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.get_contact_model"
       end
 
       # verify the required parameter 'name' is set
-      if api_client.config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && self.name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.get_contact_model"
       end
 
       # resource path
-      local_var_path = '/email/ContactModel/{format}/{name}'.sub('{' + 'format' + '}', @format.to_s).sub('{' + 'name' + '}', @name.to_s)
+      local_var_path = '/email/ContactModel/{format}/{name}'.sub('{' + 'format' + '}', self.format.to_s).sub('{' + 'name' + '}', self.name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:folder] = @folder unless @folder.nil?
-      query_params[:storage] = @storage unless @storage.nil?
+      query_params[:folder] = self.folder unless self.folder.nil?
+      query_params[:storage] = self.storage unless self.storage.nil?
 
       # form parameters
       form_params = {}

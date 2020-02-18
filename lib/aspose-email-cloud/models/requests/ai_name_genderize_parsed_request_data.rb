@@ -32,15 +32,19 @@ module AsposeEmailCloud
   # Request model for ai_name_genderize_parsed operation.
   class AiNameGenderizeParsedRequestData < EmailRequest
 
+    # Gender detection request data
+    # @return [AiNameParsedRq]
+    attr_accessor :rq
+
     # Detect person&#39;s gender from parsed name             
     # @param [AiNameParsedRq] rq Gender detection request data
     def initialize(rq)
-      @rq = rq if rq
+      self.rq = rq if rq
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'rq' is set
-      if api_client.config.client_side_validation && @rq.nil?
+      if api_client.config.client_side_validation && self.rq.nil?
         raise ArgumentError, "Missing the required parameter 'rq' when calling EmailApi.ai_name_genderize_parsed"
       end
 
@@ -54,7 +58,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@rq)
+      post_body = api_client.object_to_http_body(self.rq)
       auth_names = ['JWT']
 
       # header parameters

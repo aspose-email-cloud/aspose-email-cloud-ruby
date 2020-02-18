@@ -32,27 +32,34 @@ module AsposeEmailCloud
   # Request model for save_calendar_model operation.
   class SaveCalendarModelRequestData < EmailRequest
 
+    # iCalendar file name in storage
+    # @return [String]
+    attr_accessor :name
+    # Calendar properties update request
+    # @return [StorageModelRqOfCalendarDto]
+    attr_accessor :rq
+
     # Save iCalendar             
     # @param [String] name iCalendar file name in storage
     # @param [StorageModelRqOfCalendarDto] rq Calendar properties update request
     def initialize(name, rq)
-      @name = name if name
-      @rq = rq if rq
+      self.name = name if name
+      self.rq = rq if rq
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'name' is set
-      if api_client.config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && self.name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.save_calendar_model"
       end
 
       # verify the required parameter 'rq' is set
-      if api_client.config.client_side_validation && @rq.nil?
+      if api_client.config.client_side_validation && self.rq.nil?
         raise ArgumentError, "Missing the required parameter 'rq' when calling EmailApi.save_calendar_model"
       end
 
       # resource path
-      local_var_path = '/email/CalendarModel/{name}'.sub('{' + 'name' + '}', @name.to_s)
+      local_var_path = '/email/CalendarModel/{name}'.sub('{' + 'name' + '}', self.name.to_s)
 
       # query parameters
       query_params = {}
@@ -61,7 +68,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@rq)
+      post_body = api_client.object_to_http_body(self.rq)
       auth_names = ['JWT']
 
       # header parameters

@@ -32,15 +32,19 @@ module AsposeEmailCloud
   # Request model for send_email_model operation.
   class SendEmailModelRequestData < EmailRequest
 
+    # Send email request
+    # @return [SendEmailModelRq]
+    attr_accessor :rq
+
     # Send an email specified by model in request             
     # @param [SendEmailModelRq] rq Send email request
     def initialize(rq)
-      @rq = rq if rq
+      self.rq = rq if rq
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'rq' is set
-      if api_client.config.client_side_validation && @rq.nil?
+      if api_client.config.client_side_validation && self.rq.nil?
         raise ArgumentError, "Missing the required parameter 'rq' when calling EmailApi.send_email_model"
       end
 
@@ -54,7 +58,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@rq)
+      post_body = api_client.object_to_http_body(self.rq)
       auth_names = ['JWT']
 
       # header parameters

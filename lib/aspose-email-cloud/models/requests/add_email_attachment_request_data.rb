@@ -32,34 +32,44 @@ module AsposeEmailCloud
   # Request model for add_email_attachment operation.
   class AddEmailAttachmentRequestData < EmailRequest
 
+    # Attachment file name
+    # @return [String]
+    attr_accessor :attachment_name
+    # Email document file name
+    # @return [String]
+    attr_accessor :file_name
+    # Storage info to specify location of email document and attachment files
+    # @return [AddAttachmentRequest]
+    attr_accessor :request
+
     # Adds an attachment to Email document             
     # @param [String] attachment_name Attachment file name
     # @param [String] file_name Email document file name
     # @param [AddAttachmentRequest] request Storage info to specify location of email document and attachment files
     def initialize(attachment_name, file_name, request)
-      @attachment_name = attachment_name if attachment_name
-      @file_name = file_name if file_name
-      @request = request if request
+      self.attachment_name = attachment_name if attachment_name
+      self.file_name = file_name if file_name
+      self.request = request if request
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'attachment_name' is set
-      if api_client.config.client_side_validation && @attachment_name.nil?
+      if api_client.config.client_side_validation && self.attachment_name.nil?
         raise ArgumentError, "Missing the required parameter 'attachment_name' when calling EmailApi.add_email_attachment"
       end
 
       # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && @file_name.nil?
+      if api_client.config.client_side_validation && self.file_name.nil?
         raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.add_email_attachment"
       end
 
       # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
+      if api_client.config.client_side_validation && self.request.nil?
         raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.add_email_attachment"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}/attachments/{attachmentName}'.sub('{' + 'attachmentName' + '}', @attachment_name.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/{fileName}/attachments/{attachmentName}'.sub('{' + 'attachmentName' + '}', self.attachment_name.to_s).sub('{' + 'fileName' + '}', self.file_name.to_s)
 
       # query parameters
       query_params = {}
@@ -68,7 +78,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = api_client.object_to_http_body(self.request)
       auth_names = ['JWT']
 
       # header parameters

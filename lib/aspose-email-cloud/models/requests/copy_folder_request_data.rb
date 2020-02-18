@@ -32,37 +32,50 @@ module AsposeEmailCloud
   # Request model for copy_folder operation.
   class CopyFolderRequestData < EmailRequest
 
+    # Source folder path e.g. &#39;/src&#39;
+    # @return [String]
+    attr_accessor :src_path
+    # Destination folder path e.g. &#39;/dst&#39;
+    # @return [String]
+    attr_accessor :dest_path
+    # Source storage name
+    # @return [String]
+    attr_accessor :src_storage_name
+    # Destination storage name
+    # @return [String]
+    attr_accessor :dest_storage_name
+
     # Copy folder
     # @param [String] src_path Source folder path e.g. &#39;/src&#39;
     # @param [String] dest_path Destination folder path e.g. &#39;/dst&#39;
     # @param [String] src_storage_name Source storage name
     # @param [String] dest_storage_name Destination storage name
     def initialize(src_path, dest_path, src_storage_name = nil, dest_storage_name = nil)
-      @src_path = src_path if src_path
-      @dest_path = dest_path if dest_path
-      @src_storage_name = src_storage_name if src_storage_name
-      @dest_storage_name = dest_storage_name if dest_storage_name
+      self.src_path = src_path if src_path
+      self.dest_path = dest_path if dest_path
+      self.src_storage_name = src_storage_name if src_storage_name
+      self.dest_storage_name = dest_storage_name if dest_storage_name
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'src_path' is set
-      if api_client.config.client_side_validation && @src_path.nil?
+      if api_client.config.client_side_validation && self.src_path.nil?
         raise ArgumentError, "Missing the required parameter 'src_path' when calling EmailApi.copy_folder"
       end
 
       # verify the required parameter 'dest_path' is set
-      if api_client.config.client_side_validation && @dest_path.nil?
+      if api_client.config.client_side_validation && self.dest_path.nil?
         raise ArgumentError, "Missing the required parameter 'dest_path' when calling EmailApi.copy_folder"
       end
 
       # resource path
-      local_var_path = '/email/storage/folder/copy/{srcPath}'.sub('{' + 'srcPath' + '}', @src_path.to_s)
+      local_var_path = '/email/storage/folder/copy/{srcPath}'.sub('{' + 'srcPath' + '}', self.src_path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:destPath] = @dest_path
-      query_params[:srcStorageName] = @src_storage_name unless @src_storage_name.nil?
-      query_params[:destStorageName] = @dest_storage_name unless @dest_storage_name.nil?
+      query_params[:destPath] = self.dest_path
+      query_params[:srcStorageName] = self.src_storage_name unless self.src_storage_name.nil?
+      query_params[:destStorageName] = self.dest_storage_name unless self.dest_storage_name.nil?
 
       # form parameters
       form_params = {}

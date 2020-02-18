@@ -32,6 +32,22 @@ module AsposeEmailCloud
   # Request model for delete_contact_property operation.
   class DeleteContactPropertyRequestData < EmailRequest
 
+    # Contact document format Enum, available values: VCard, WebDav, Msg
+    # @return [String]
+    attr_accessor :format
+    # Contact document file name
+    # @return [String]
+    attr_accessor :name
+    # Indexed property name
+    # @return [String]
+    attr_accessor :member_name
+    # Property index
+    # @return [Integer]
+    attr_accessor :index
+    # Calendar document location in storage information
+    # @return [StorageFolderLocation]
+    attr_accessor :folder
+
     # Delete property from indexed property list             
     # @param [String] format Contact document format Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name
@@ -39,41 +55,41 @@ module AsposeEmailCloud
     # @param [Integer] index Property index
     # @param [StorageFolderLocation] folder Calendar document location in storage information
     def initialize(format, name, member_name, index, folder)
-      @format = format if format
-      @name = name if name
-      @member_name = member_name if member_name
-      @index = index if index
-      @folder = folder if folder
+      self.format = format if format
+      self.name = name if name
+      self.member_name = member_name if member_name
+      self.index = index if index
+      self.folder = folder if folder
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'format' is set
-      if api_client.config.client_side_validation && @format.nil?
+      if api_client.config.client_side_validation && self.format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.delete_contact_property"
       end
 
       # verify the required parameter 'name' is set
-      if api_client.config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && self.name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.delete_contact_property"
       end
 
       # verify the required parameter 'member_name' is set
-      if api_client.config.client_side_validation && @member_name.nil?
+      if api_client.config.client_side_validation && self.member_name.nil?
         raise ArgumentError, "Missing the required parameter 'member_name' when calling EmailApi.delete_contact_property"
       end
 
       # verify the required parameter 'index' is set
-      if api_client.config.client_side_validation && @index.nil?
+      if api_client.config.client_side_validation && self.index.nil?
         raise ArgumentError, "Missing the required parameter 'index' when calling EmailApi.delete_contact_property"
       end
 
       # verify the required parameter 'folder' is set
-      if api_client.config.client_side_validation && @folder.nil?
+      if api_client.config.client_side_validation && self.folder.nil?
         raise ArgumentError, "Missing the required parameter 'folder' when calling EmailApi.delete_contact_property"
       end
 
       # resource path
-      local_var_path = '/email/Contact/{format}/{name}/properties/{memberName}/{index}'.sub('{' + 'format' + '}', @format.to_s).sub('{' + 'name' + '}', @name.to_s).sub('{' + 'memberName' + '}', @member_name.to_s).sub('{' + 'index' + '}', @index.to_s)
+      local_var_path = '/email/Contact/{format}/{name}/properties/{memberName}/{index}'.sub('{' + 'format' + '}', self.format.to_s).sub('{' + 'name' + '}', self.name.to_s).sub('{' + 'memberName' + '}', self.member_name.to_s).sub('{' + 'index' + '}', self.index.to_s)
 
       # query parameters
       query_params = {}
@@ -82,7 +98,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@folder)
+      post_body = api_client.object_to_http_body(self.folder)
       auth_names = ['JWT']
 
       # header parameters

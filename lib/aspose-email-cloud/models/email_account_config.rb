@@ -45,7 +45,7 @@ module AsposeEmailCloud
     # @return [Integer]
     attr_accessor :port
 
-    # Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @return [String]
     attr_accessor :socket_type
 
@@ -139,7 +139,7 @@ module AsposeEmailCloud
     # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [String] host Email account host.             
     # @param [Integer] port Port.             
-    # @param [String] socket_type Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @param [String] socket_type Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @param [Array<String>] authentication_types Supported authentication types.              Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
     # @param [Array<NameValuePair>] extra_info Extra account information.             
     # @param [BOOLEAN] is_validated Determines that configuration validated. Set to false if validation skipped.             

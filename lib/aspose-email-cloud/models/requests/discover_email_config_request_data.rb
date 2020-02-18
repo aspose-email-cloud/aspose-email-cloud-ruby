@@ -32,17 +32,24 @@ module AsposeEmailCloud
   # Request model for discover_email_config operation.
   class DiscoverEmailConfigRequestData < EmailRequest
 
+    # Email address
+    # @return [String]
+    attr_accessor :address
+    # Turns on fast processing. All discover systems will run in parallel. First discovered result will be returned             
+    # @return [BOOLEAN]
+    attr_accessor :fast_processing
+
     # Discover email accounts by email address. Does not validate discovered accounts.             
     # @param [String] address Email address
     # @param [BOOLEAN] fast_processing Turns on fast processing. All discover systems will run in parallel. First discovered result will be returned             
     def initialize(address, fast_processing = nil)
-      @address = address if address
-      @fast_processing = fast_processing if fast_processing
+      self.address = address if address
+      self.fast_processing = fast_processing if fast_processing
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'address' is set
-      if api_client.config.client_side_validation && @address.nil?
+      if api_client.config.client_side_validation && self.address.nil?
         raise ArgumentError, "Missing the required parameter 'address' when calling EmailApi.discover_email_config"
       end
 
@@ -51,8 +58,8 @@ module AsposeEmailCloud
 
       # query parameters
       query_params = {}
-      query_params[:address] = @address
-      query_params[:fastProcessing] = @fast_processing unless @fast_processing.nil?
+      query_params[:address] = self.address
+      query_params[:fastProcessing] = self.fast_processing unless self.fast_processing.nil?
 
       # form parameters
       form_params = {}

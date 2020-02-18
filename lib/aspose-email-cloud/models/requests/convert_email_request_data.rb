@@ -32,34 +32,41 @@ module AsposeEmailCloud
   # Request model for convert_email operation.
   class ConvertEmailRequestData < EmailRequest
 
+    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # @return [String]
+    attr_accessor :format
+    # File to upload
+    # @return [File]
+    attr_accessor :file
+
     # Converts email document to specified format and returns as file             
     # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
     # @param [File] file File to upload
     def initialize(format, file)
-      @format = format if format
-      @file = file if file
+      self.format = format if format
+      self.file = file if file
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'format' is set
-      if api_client.config.client_side_validation && @format.nil?
+      if api_client.config.client_side_validation && self.format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.convert_email"
       end
 
       # verify the required parameter 'file' is set
-      if api_client.config.client_side_validation && @file.nil?
+      if api_client.config.client_side_validation && self.file.nil?
         raise ArgumentError, "Missing the required parameter 'file' when calling EmailApi.convert_email"
       end
 
       # resource path
-      local_var_path = '/email/convert/{format}'.sub('{' + 'format' + '}', @format.to_s)
+      local_var_path = '/email/convert/{format}'.sub('{' + 'format' + '}', self.format.to_s)
 
       # query parameters
       query_params = {}
 
       # form parameters
       form_params = {}
-      form_params['File'] = @file
+      form_params['File'] = self.file
 
       # http body (model)
       post_body = nil

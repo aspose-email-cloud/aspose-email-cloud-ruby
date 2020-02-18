@@ -32,34 +32,44 @@ module AsposeEmailCloud
   # Request model for save_contact_model operation.
   class SaveContactModelRequestData < EmailRequest
 
+    # Contact document format. Enum, available values: VCard, WebDav, Msg
+    # @return [String]
+    attr_accessor :format
+    # Contact document file name.
+    # @return [String]
+    attr_accessor :name
+    # Create contact request.
+    # @return [StorageModelRqOfContactDto]
+    attr_accessor :rq
+
     # Save contact.             
     # @param [String] format Contact document format. Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name.
     # @param [StorageModelRqOfContactDto] rq Create contact request.
     def initialize(format, name, rq)
-      @format = format if format
-      @name = name if name
-      @rq = rq if rq
+      self.format = format if format
+      self.name = name if name
+      self.rq = rq if rq
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'format' is set
-      if api_client.config.client_side_validation && @format.nil?
+      if api_client.config.client_side_validation && self.format.nil?
         raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.save_contact_model"
       end
 
       # verify the required parameter 'name' is set
-      if api_client.config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && self.name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.save_contact_model"
       end
 
       # verify the required parameter 'rq' is set
-      if api_client.config.client_side_validation && @rq.nil?
+      if api_client.config.client_side_validation && self.rq.nil?
         raise ArgumentError, "Missing the required parameter 'rq' when calling EmailApi.save_contact_model"
       end
 
       # resource path
-      local_var_path = '/email/ContactModel/{format}/{name}'.sub('{' + 'format' + '}', @format.to_s).sub('{' + 'name' + '}', @name.to_s)
+      local_var_path = '/email/ContactModel/{format}/{name}'.sub('{' + 'format' + '}', self.format.to_s).sub('{' + 'name' + '}', self.name.to_s)
 
       # query parameters
       query_params = {}
@@ -68,7 +78,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@rq)
+      post_body = api_client.object_to_http_body(self.rq)
       auth_names = ['JWT']
 
       # header parameters

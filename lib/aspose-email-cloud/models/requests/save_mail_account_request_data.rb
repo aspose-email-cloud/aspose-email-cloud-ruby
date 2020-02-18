@@ -32,15 +32,19 @@ module AsposeEmailCloud
   # Request model for save_mail_account operation.
   class SaveMailAccountRequestData < EmailRequest
 
+    # Email account information
+    # @return [SaveEmailAccountRequest]
+    attr_accessor :request
+
     # Create email account file (*.account) with login/password authentication             
     # @param [SaveEmailAccountRequest] request Email account information
     def initialize(request)
-      @request = request if request
+      self.request = request if request
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
+      if api_client.config.client_side_validation && self.request.nil?
         raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.save_mail_account"
       end
 
@@ -54,7 +58,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = api_client.object_to_http_body(self.request)
       auth_names = ['JWT']
 
       # header parameters

@@ -32,20 +32,24 @@ module AsposeEmailCloud
   # Request model for storage_exists operation.
   class StorageExistsRequestData < EmailRequest
 
+    # Storage name
+    # @return [String]
+    attr_accessor :storage_name
+
     # Check if storage exists
     # @param [String] storage_name Storage name
     def initialize(storage_name)
-      @storage_name = storage_name if storage_name
+      self.storage_name = storage_name if storage_name
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'storage_name' is set
-      if api_client.config.client_side_validation && @storage_name.nil?
+      if api_client.config.client_side_validation && self.storage_name.nil?
         raise ArgumentError, "Missing the required parameter 'storage_name' when calling EmailApi.storage_exists"
       end
 
       # resource path
-      local_var_path = '/email/storage/{storageName}/exist'.sub('{' + 'storageName' + '}', @storage_name.to_s)
+      local_var_path = '/email/storage/{storageName}/exist'.sub('{' + 'storageName' + '}', self.storage_name.to_s)
 
       # query parameters
       query_params = {}

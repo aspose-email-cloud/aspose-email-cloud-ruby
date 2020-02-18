@@ -32,15 +32,19 @@ module AsposeEmailCloud
   # Request model for discover_email_config_password operation.
   class DiscoverEmailConfigPasswordRequestData < EmailRequest
 
+    # Discover email configuration request.
+    # @return [DiscoverEmailConfigPassword]
+    attr_accessor :rq
+
     # Discover email accounts by email address. Validates discovered accounts using login and password.             
     # @param [DiscoverEmailConfigPassword] rq Discover email configuration request.
     def initialize(rq)
-      @rq = rq if rq
+      self.rq = rq if rq
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'rq' is set
-      if api_client.config.client_side_validation && @rq.nil?
+      if api_client.config.client_side_validation && self.rq.nil?
         raise ArgumentError, "Missing the required parameter 'rq' when calling EmailApi.discover_email_config_password"
       end
 
@@ -54,7 +58,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@rq)
+      post_body = api_client.object_to_http_body(self.rq)
       auth_names = ['JWT']
 
       # header parameters

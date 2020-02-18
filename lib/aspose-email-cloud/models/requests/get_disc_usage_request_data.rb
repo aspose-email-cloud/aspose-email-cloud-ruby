@@ -32,10 +32,14 @@ module AsposeEmailCloud
   # Request model for get_disc_usage operation.
   class GetDiscUsageRequestData < EmailRequest
 
+    # Storage name
+    # @return [String]
+    attr_accessor :storage_name
+
     # Get disc usage
     # @param [String] storage_name Storage name
     def initialize(storage_name = nil)
-      @storage_name = storage_name if storage_name
+      self.storage_name = storage_name if storage_name
     end
 
     def to_http_info(api_client)
@@ -44,7 +48,7 @@ module AsposeEmailCloud
 
       # query parameters
       query_params = {}
-      query_params[:storageName] = @storage_name unless @storage_name.nil?
+      query_params[:storageName] = self.storage_name unless self.storage_name.nil?
 
       # form parameters
       form_params = {}

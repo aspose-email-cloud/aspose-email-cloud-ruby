@@ -32,27 +32,34 @@ module AsposeEmailCloud
   # Request model for update_mapi_properties operation.
   class UpdateMapiPropertiesRequestData < EmailRequest
 
+    # Document file name
+    # @return [String]
+    attr_accessor :name
+    # Properties that should be updated/added
+    # @return [HierarchicalObjectRequest]
+    attr_accessor :request
+
     # Update document properties             
     # @param [String] name Document file name
     # @param [HierarchicalObjectRequest] request Properties that should be updated/added
     def initialize(name, request)
-      @name = name if name
-      @request = request if request
+      self.name = name if name
+      self.request = request if request
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'name' is set
-      if api_client.config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && self.name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.update_mapi_properties"
       end
 
       # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
+      if api_client.config.client_side_validation && self.request.nil?
         raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.update_mapi_properties"
       end
 
       # resource path
-      local_var_path = '/email/Mapi/{name}/properties'.sub('{' + 'name' + '}', @name.to_s)
+      local_var_path = '/email/Mapi/{name}/properties'.sub('{' + 'name' + '}', self.name.to_s)
 
       # query parameters
       query_params = {}
@@ -61,7 +68,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = api_client.object_to_http_body(self.request)
       auth_names = ['JWT']
 
       # header parameters

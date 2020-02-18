@@ -32,27 +32,34 @@ module AsposeEmailCloud
   # Request model for create_email operation.
   class CreateEmailRequestData < EmailRequest
 
+    # Email document file name in storage
+    # @return [String]
+    attr_accessor :file_name
+    # An email document and optional Storage info to specify where the file should be located
+    # @return [CreateEmailRequest]
+    attr_accessor :request
+
     # Create an email document             
     # @param [String] file_name Email document file name in storage
     # @param [CreateEmailRequest] request An email document and optional Storage info to specify where the file should be located
     def initialize(file_name, request)
-      @file_name = file_name if file_name
-      @request = request if request
+      self.file_name = file_name if file_name
+      self.request = request if request
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && @file_name.nil?
+      if api_client.config.client_side_validation && self.file_name.nil?
         raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.create_email"
       end
 
       # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
+      if api_client.config.client_side_validation && self.request.nil?
         raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.create_email"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}'.sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/{fileName}'.sub('{' + 'fileName' + '}', self.file_name.to_s)
 
       # query parameters
       query_params = {}
@@ -61,7 +68,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = api_client.object_to_http_body(self.request)
       auth_names = ['JWT']
 
       # header parameters

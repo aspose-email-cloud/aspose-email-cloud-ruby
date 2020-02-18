@@ -32,41 +32,54 @@ module AsposeEmailCloud
   # Request model for delete_calendar_property operation.
   class DeleteCalendarPropertyRequestData < EmailRequest
 
+    # iCalendar file name in storage
+    # @return [String]
+    attr_accessor :name
+    # Indexed property name
+    # @return [String]
+    attr_accessor :member_name
+    # Property index path
+    # @return [String]
+    attr_accessor :index
+    # Storage detail to specify iCalendar file location
+    # @return [StorageFolderLocation]
+    attr_accessor :request
+
     # Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}             
     # @param [String] name iCalendar file name in storage
     # @param [String] member_name Indexed property name
     # @param [String] index Property index path
     # @param [StorageFolderLocation] request Storage detail to specify iCalendar file location
     def initialize(name, member_name, index, request)
-      @name = name if name
-      @member_name = member_name if member_name
-      @index = index if index
-      @request = request if request
+      self.name = name if name
+      self.member_name = member_name if member_name
+      self.index = index if index
+      self.request = request if request
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'name' is set
-      if api_client.config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && self.name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.delete_calendar_property"
       end
 
       # verify the required parameter 'member_name' is set
-      if api_client.config.client_side_validation && @member_name.nil?
+      if api_client.config.client_side_validation && self.member_name.nil?
         raise ArgumentError, "Missing the required parameter 'member_name' when calling EmailApi.delete_calendar_property"
       end
 
       # verify the required parameter 'index' is set
-      if api_client.config.client_side_validation && @index.nil?
+      if api_client.config.client_side_validation && self.index.nil?
         raise ArgumentError, "Missing the required parameter 'index' when calling EmailApi.delete_calendar_property"
       end
 
       # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
+      if api_client.config.client_side_validation && self.request.nil?
         raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.delete_calendar_property"
       end
 
       # resource path
-      local_var_path = '/email/Calendar/{name}/properties/{memberName}/{index}'.sub('{' + 'name' + '}', @name.to_s).sub('{' + 'memberName' + '}', @member_name.to_s).sub('{' + 'index' + '}', @index.to_s)
+      local_var_path = '/email/Calendar/{name}/properties/{memberName}/{index}'.sub('{' + 'name' + '}', self.name.to_s).sub('{' + 'memberName' + '}', self.member_name.to_s).sub('{' + 'index' + '}', self.index.to_s)
 
       # query parameters
       query_params = {}
@@ -75,7 +88,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = api_client.object_to_http_body(self.request)
       auth_names = ['JWT']
 
       # header parameters
