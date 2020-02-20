@@ -274,6 +274,52 @@ describe EmailApi do
     expect(smtp.host).to eq 'smtp.gmail.com'
   end
 
+  it 'Create MAPI document', :pipeline do
+    fileName = SecureRandom.uuid().to_s() + '.msg'
+    @api.create_mapi(CreateMapiRequestData.new(
+      fileName,
+      HierarchicalObjectRequest.new(
+        HierarchicalObject.new('IPM.Contact', nil, [
+          PrimitiveObject.new("Tag:'PidTagMessageClass':0x1A:String", nil, "IPM.Contact"),
+          PrimitiveObject.new("Tag:'PidTagSubject':0x37:String", nil, nil),
+          PrimitiveObject.new("Tag:'PidTagSubjectPrefix':0x3D:String", nil, nil),
+          PrimitiveObject.new("Tag:'PidTagMessageFlags':0xE07:Integer32", nil, "8"),
+          PrimitiveObject.new("Tag:'PidTagNormalizedSubject':0xE1D:String", nil, nil),
+          PrimitiveObject.new("Tag:'PidTagBody':0x1000:String", nil, nil),
+          PrimitiveObject.new("Tag:'PidTagStoreSupportMask':0x340D:Integer32", nil, "265849"),
+          PrimitiveObject.new("Tag:'PidTagSurname':0x3A11:String", nil, "Surname"),
+          PrimitiveObject.new("Tag:'PidTagOtherTelephoneNumber':0x3A1F:String", nil, "+79123456789"),
+          PrimitiveObject.new("Tag:'':0x6662:Integer32", nil, "0"),
+          PrimitiveObject.new("Lid:'PidLidAddressBookProviderArrayType':0x8029:Integer32:00062004-0000-0000-c000-000000000046", nil, "1")
+        ]),
+        StorageFolderLocation.new(@storage, @folder))))
+    exist = @api.object_exists(ObjectExistsRequestData.new("#{@folder}/#{fileName}", @storage))
+      .exists
+    expect(exist).to be true
+  end
+
+  it 'Add attachment using MAPI', :pipeline do
+    fileName = create_calendar()
+    attachmentName = create_calendar()
+    @api.add_mapi_attachment(AddMapiAttachmentRequestData.new(
+      fileName,
+      attachmentName,
+      AddAttachmentRequest.new(
+        StorageFolderLocation.new(@storage, @folder),
+        StorageFolderLocation.new(@storage, @folder))))
+    calendarAttachment = @api.get_calendar_attachment(GetCalendarAttachmentRequestData.new(
+      fileName, attachmentName, @folder, @storage))
+    content = IO.read(calendarAttachment)
+    expect(content).to include('Aspose Ltd')
+  end
+
+  it 'Get MAPI properties', :pipeline do
+    fileName = create_calendar()
+    properties = @api.get_mapi_properties(GetMapiPropertiesRequestData.new(
+      fileName, @folder, @storage))
+    expect(properties.hierarchical_object.name).to include('IPM.Schedule')
+  end
+
   def create_calendar(startDate = nil)
     fileName = SecureRandom.uuid().to_s() + '.ics'
     startDate = startDate.nil? ? DateTime.now + 1 : startDate
