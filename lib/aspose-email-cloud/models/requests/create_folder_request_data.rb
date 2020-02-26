@@ -32,26 +32,33 @@ module AsposeEmailCloud
   # Request model for create_folder operation.
   class CreateFolderRequestData < EmailRequest
 
+    # Folder path to create e.g. &#39;folder_1/folder_2/&#39;
+    # @return [String]
+    attr_accessor :path
+    # Storage name
+    # @return [String]
+    attr_accessor :storage_name
+
     # Create the folder
     # @param [String] path Folder path to create e.g. &#39;folder_1/folder_2/&#39;
     # @param [String] storage_name Storage name
     def initialize(path, storage_name = nil)
-      @path = path if path
-      @storage_name = storage_name if storage_name
+      self.path = path if path
+      self.storage_name = storage_name if storage_name
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'path' is set
-      if api_client.config.client_side_validation && @path.nil?
+      if api_client.config.client_side_validation && self.path.nil?
         raise ArgumentError, "Missing the required parameter 'path' when calling EmailApi.create_folder"
       end
 
       # resource path
-      local_var_path = '/email/storage/folder/{path}'.sub('{' + 'path' + '}', @path.to_s)
+      local_var_path = '/email/storage/folder/{path}'.sub('{' + 'path' + '}', self.path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:storageName] = @storage_name unless @storage_name.nil?
+      query_params[:storageName] = self.storage_name unless self.storage_name.nil?
 
       # form parameters
       form_params = {}

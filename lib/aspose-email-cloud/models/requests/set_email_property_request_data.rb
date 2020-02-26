@@ -32,34 +32,44 @@ module AsposeEmailCloud
   # Request model for set_email_property operation.
   class SetEmailPropertyRequestData < EmailRequest
 
+    # A property name that should be changed
+    # @return [String]
+    attr_accessor :property_name
+    # Email document file name
+    # @return [String]
+    attr_accessor :file_name
+    # A property that should be changed and optional Storage info to specify where the file located             
+    # @return [SetEmailPropertyRequest]
+    attr_accessor :request
+
     # Set email document property value             
     # @param [String] property_name A property name that should be changed
     # @param [String] file_name Email document file name
     # @param [SetEmailPropertyRequest] request A property that should be changed and optional Storage info to specify where the file located             
     def initialize(property_name, file_name, request)
-      @property_name = property_name if property_name
-      @file_name = file_name if file_name
-      @request = request if request
+      self.property_name = property_name if property_name
+      self.file_name = file_name if file_name
+      self.request = request if request
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'property_name' is set
-      if api_client.config.client_side_validation && @property_name.nil?
+      if api_client.config.client_side_validation && self.property_name.nil?
         raise ArgumentError, "Missing the required parameter 'property_name' when calling EmailApi.set_email_property"
       end
 
       # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && @file_name.nil?
+      if api_client.config.client_side_validation && self.file_name.nil?
         raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.set_email_property"
       end
 
       # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
+      if api_client.config.client_side_validation && self.request.nil?
         raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.set_email_property"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}/properties/{propertyName}'.sub('{' + 'propertyName' + '}', @property_name.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/{fileName}/properties/{propertyName}'.sub('{' + 'propertyName' + '}', self.property_name.to_s).sub('{' + 'fileName' + '}', self.file_name.to_s)
 
       # query parameters
       query_params = {}
@@ -68,7 +78,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = api_client.object_to_http_body(self.request)
       auth_names = ['JWT']
 
       # header parameters

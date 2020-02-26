@@ -396,6 +396,30 @@ module AsposeEmailCloud
       nil
     end
 
+    # Discover email accounts by email address. Does not validate discovered accounts.             
+    # @param [DiscoverEmailConfigRequestData] request Request object.
+    # @return [EmailAccountConfigList]
+    def discover_email_config(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'EmailAccountConfigList')
+    end
+
+    # Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.             
+    # @param [DiscoverEmailConfigOauthRequestData] request Request object.
+    # @return [EmailAccountConfigList]
+    def discover_email_config_oauth(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :POST, 'EmailAccountConfigList')
+    end
+
+    # Discover email accounts by email address. Validates discovered accounts using login and password.             
+    # @param [DiscoverEmailConfigPasswordRequestData] request Request object.
+    # @return [EmailAccountConfigList]
+    def discover_email_config_password(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :POST, 'EmailAccountConfigList')
+    end
+
     # Download file
     # @param [DownloadFileRequestData] request Request object.
     # @return [File]

@@ -32,16 +32,29 @@ module AsposeEmailCloud
   # Request model for get_mapi_list operation.
   class GetMapiListRequestData < EmailRequest
 
+    # Path to folder in storage
+    # @return [String]
+    attr_accessor :folder
+    # Storage name
+    # @return [String]
+    attr_accessor :storage
+    # Count of items on page
+    # @return [Integer]
+    attr_accessor :items_per_page
+    # Page number
+    # @return [Integer]
+    attr_accessor :page_number
+
     # Get document list from storage folder             
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name
     # @param [Integer] items_per_page Count of items on page
     # @param [Integer] page_number Page number
     def initialize(folder = nil, storage = nil, items_per_page = nil, page_number = nil)
-      @folder = folder if folder
-      @storage = storage if storage
-      @items_per_page = items_per_page if items_per_page
-      @page_number = page_number if page_number
+      self.folder = folder if folder
+      self.storage = storage if storage
+      self.items_per_page = items_per_page if items_per_page
+      self.page_number = page_number if page_number
     end
 
     def to_http_info(api_client)
@@ -50,10 +63,10 @@ module AsposeEmailCloud
 
       # query parameters
       query_params = {}
-      query_params[:folder] = @folder unless @folder.nil?
-      query_params[:storage] = @storage unless @storage.nil?
-      query_params[:itemsPerPage] = @items_per_page unless @items_per_page.nil?
-      query_params[:pageNumber] = @page_number unless @page_number.nil?
+      query_params[:folder] = self.folder unless self.folder.nil?
+      query_params[:storage] = self.storage unless self.storage.nil?
+      query_params[:itemsPerPage] = self.items_per_page unless self.items_per_page.nil?
+      query_params[:pageNumber] = self.page_number unless self.page_number.nil?
 
       # form parameters
       form_params = {}

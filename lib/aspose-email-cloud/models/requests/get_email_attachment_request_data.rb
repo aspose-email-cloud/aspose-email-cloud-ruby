@@ -32,36 +32,49 @@ module AsposeEmailCloud
   # Request model for get_email_attachment operation.
   class GetEmailAttachmentRequestData < EmailRequest
 
+    # Attachment name
+    # @return [String]
+    attr_accessor :attachment
+    # Email document file name
+    # @return [String]
+    attr_accessor :file_name
+    # Storage name
+    # @return [String]
+    attr_accessor :storage
+    # Path to folder in storage
+    # @return [String]
+    attr_accessor :folder
+
     # Get email attachment by name             
     # @param [String] attachment Attachment name
     # @param [String] file_name Email document file name
     # @param [String] storage Storage name
     # @param [String] folder Path to folder in storage
     def initialize(attachment, file_name, storage = nil, folder = nil)
-      @attachment = attachment if attachment
-      @file_name = file_name if file_name
-      @storage = storage if storage
-      @folder = folder if folder
+      self.attachment = attachment if attachment
+      self.file_name = file_name if file_name
+      self.storage = storage if storage
+      self.folder = folder if folder
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'attachment' is set
-      if api_client.config.client_side_validation && @attachment.nil?
+      if api_client.config.client_side_validation && self.attachment.nil?
         raise ArgumentError, "Missing the required parameter 'attachment' when calling EmailApi.get_email_attachment"
       end
 
       # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && @file_name.nil?
+      if api_client.config.client_side_validation && self.file_name.nil?
         raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.get_email_attachment"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}/attachments/{attachment}'.sub('{' + 'attachment' + '}', @attachment.to_s).sub('{' + 'fileName' + '}', @file_name.to_s)
+      local_var_path = '/email/{fileName}/attachments/{attachment}'.sub('{' + 'attachment' + '}', self.attachment.to_s).sub('{' + 'fileName' + '}', self.file_name.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:storage] = @storage unless @storage.nil?
-      query_params[:folder] = @folder unless @folder.nil?
+      query_params[:storage] = self.storage unless self.storage.nil?
+      query_params[:folder] = self.folder unless self.folder.nil?
 
       # form parameters
       form_params = {}

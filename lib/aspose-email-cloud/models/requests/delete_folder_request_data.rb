@@ -32,29 +32,39 @@ module AsposeEmailCloud
   # Request model for delete_folder operation.
   class DeleteFolderRequestData < EmailRequest
 
+    # Folder path e.g. &#39;/folder&#39;
+    # @return [String]
+    attr_accessor :path
+    # Storage name
+    # @return [String]
+    attr_accessor :storage_name
+    # Enable to delete folders, subfolders and files
+    # @return [BOOLEAN]
+    attr_accessor :recursive
+
     # Delete folder
     # @param [String] path Folder path e.g. &#39;/folder&#39;
     # @param [String] storage_name Storage name
     # @param [BOOLEAN] recursive Enable to delete folders, subfolders and files
     def initialize(path, storage_name = nil, recursive = nil)
-      @path = path if path
-      @storage_name = storage_name if storage_name
-      @recursive = recursive if recursive
+      self.path = path if path
+      self.storage_name = storage_name if storage_name
+      self.recursive = recursive if recursive
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'path' is set
-      if api_client.config.client_side_validation && @path.nil?
+      if api_client.config.client_side_validation && self.path.nil?
         raise ArgumentError, "Missing the required parameter 'path' when calling EmailApi.delete_folder"
       end
 
       # resource path
-      local_var_path = '/email/storage/folder/{path}'.sub('{' + 'path' + '}', @path.to_s)
+      local_var_path = '/email/storage/folder/{path}'.sub('{' + 'path' + '}', self.path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:storageName] = @storage_name unless @storage_name.nil?
-      query_params[:recursive] = @recursive unless @recursive.nil?
+      query_params[:storageName] = self.storage_name unless self.storage_name.nil?
+      query_params[:recursive] = self.recursive unless self.recursive.nil?
 
       # form parameters
       form_params = {}

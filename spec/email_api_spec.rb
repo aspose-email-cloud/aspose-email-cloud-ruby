@@ -83,21 +83,21 @@ describe EmailApi do
     expect(factStartDate).to eq(startDate)
   end
 
-  it 'Test AiName gender detection' do
+  it 'Test AiName gender detection', :pipeline do
     result = @api.ai_name_genderize(
       AiNameGenderizeRequestData.new('John Cane'))
     expect(result.value.count).to be >= 1
     expect(result.value[0].gender).to eq 'Male'
   end
 
-  it 'Test AiName formatting' do
+  it 'Test AiName formatting', :pipeline do
     result = @api.ai_name_format(
       AiNameFormatRequestData.new('Mr. John Michael Cane', nil, nil, nil, nil, '%t%L%f%m')
     )
     expect(result.name).to eq 'Mr. Cane J. M.'
   end
 
-  it 'AiName match test' do
+  it 'AiName match test', :pipeline do
     first = 'John Michael Cane'
     second = 'Cane J.'
     result = @api.ai_name_match(
@@ -106,7 +106,7 @@ describe EmailApi do
     expect(result.similarity).to be >= 0.5
   end
 
-  it 'Expand AiName test' do
+  it 'Expand AiName test', :pipeline do
     name = 'Smith Bobby'
     result = @api.ai_name_expand(AiNameExpandRequestData.new(name))
     mr = result.names.find { |weighted| weighted.name == 'Mr. Smith' }
@@ -115,7 +115,7 @@ describe EmailApi do
     expect(initial).not_to be_nil
   end
 
-  it 'Complete AiName test' do
+  it 'Complete AiName test', :pipeline do
     prefix = 'Dav'
     result = @api.ai_name_complete(
       AiNameCompleteRequestData.new(prefix)
@@ -128,7 +128,7 @@ describe EmailApi do
     expect(names).to include 'Dave'
   end
 
-  it 'Extract AiName from email address' do
+  it 'Extract AiName from email address', :pipeline do
     address = 'john-cane@gmail.com'
     result = @api.ai_name_parse_email_address(
       AiNameParseEmailAddressRequestData.new(address)
@@ -143,7 +143,7 @@ describe EmailApi do
   end
 
   # Test business card recognition with storage
-  it 'AiBcr Parse using storage' do
+  it 'AiBcr Parse using storage', :pipeline do
     image = File.new(File.join(__dir__, 'data', 'test_single_0001.png'))
     fileName = SecureRandom.uuid.to_s + '.png'
     path = "#{@folder}/#{fileName}"
@@ -174,7 +174,7 @@ describe EmailApi do
   end
 
   # Test business card recognition
-  it 'AiBcr Parse' do
+  it 'AiBcr Parse', :pipeline do
     image = File.open(File.join(__dir__, 'data', 'test_single_0001.png'), 'rb') do |f|
       bin = f.read
       Base64.encode64(bin)
@@ -255,7 +255,7 @@ describe EmailApi do
     expect(exist_result.exists).to be true
   end
 
-  it 'AI BCR Parse to model' do
+  it 'AI BCR Parse to model', :pipeline do
     image = File.open(File.join(__dir__, 'data', 'test_single_0001.png'), 'rb') do |f|
         bin = f.read
         Base64.encode64(bin)
@@ -265,6 +265,59 @@ describe EmailApi do
     expect(result.value.count).to eq 1
     first_vcard = result.value[0]
     expect(first_vcard.display_name).to include 'Thomas'
+  end
+
+  it 'Discover email config', :pipeline do
+    configs = @api.discover_email_config(DiscoverEmailConfigRequestData.new('example@gmail.com', true))
+    expect(configs.value.count).to be >= 2
+    smtp = configs.value.find { |item| item.protocol_type == 'SMTP' }
+    expect(smtp.host).to eq 'smtp.gmail.com'
+  end
+
+  it 'Create MAPI document', :pipeline do
+    fileName = SecureRandom.uuid().to_s() + '.msg'
+    @api.create_mapi(CreateMapiRequestData.new(
+      fileName,
+      HierarchicalObjectRequest.new(
+        HierarchicalObject.new('IPM.Contact', nil, [
+          PrimitiveObject.new("Tag:'PidTagMessageClass':0x1A:String", nil, "IPM.Contact"),
+          PrimitiveObject.new("Tag:'PidTagSubject':0x37:String", nil, nil),
+          PrimitiveObject.new("Tag:'PidTagSubjectPrefix':0x3D:String", nil, nil),
+          PrimitiveObject.new("Tag:'PidTagMessageFlags':0xE07:Integer32", nil, "8"),
+          PrimitiveObject.new("Tag:'PidTagNormalizedSubject':0xE1D:String", nil, nil),
+          PrimitiveObject.new("Tag:'PidTagBody':0x1000:String", nil, nil),
+          PrimitiveObject.new("Tag:'PidTagStoreSupportMask':0x340D:Integer32", nil, "265849"),
+          PrimitiveObject.new("Tag:'PidTagSurname':0x3A11:String", nil, "Surname"),
+          PrimitiveObject.new("Tag:'PidTagOtherTelephoneNumber':0x3A1F:String", nil, "+79123456789"),
+          PrimitiveObject.new("Tag:'':0x6662:Integer32", nil, "0"),
+          PrimitiveObject.new("Lid:'PidLidAddressBookProviderArrayType':0x8029:Integer32:00062004-0000-0000-c000-000000000046", nil, "1")
+        ]),
+        StorageFolderLocation.new(@storage, @folder))))
+    exist = @api.object_exists(ObjectExistsRequestData.new("#{@folder}/#{fileName}", @storage))
+      .exists
+    expect(exist).to be true
+  end
+
+  it 'Add attachment using MAPI', :pipeline do
+    fileName = create_calendar()
+    attachmentName = create_calendar()
+    @api.add_mapi_attachment(AddMapiAttachmentRequestData.new(
+      fileName,
+      attachmentName,
+      AddAttachmentRequest.new(
+        StorageFolderLocation.new(@storage, @folder),
+        StorageFolderLocation.new(@storage, @folder))))
+    calendarAttachment = @api.get_calendar_attachment(GetCalendarAttachmentRequestData.new(
+      fileName, attachmentName, @folder, @storage))
+    content = IO.read(calendarAttachment)
+    expect(content).to include('Aspose Ltd')
+  end
+
+  it 'Get MAPI properties', :pipeline do
+    fileName = create_calendar()
+    properties = @api.get_mapi_properties(GetMapiPropertiesRequestData.new(
+      fileName, @folder, @storage))
+    expect(properties.hierarchical_object.name).to include('IPM.Schedule')
   end
 
   def create_calendar(startDate = nil)

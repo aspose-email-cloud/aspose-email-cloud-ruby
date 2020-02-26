@@ -32,15 +32,19 @@ module AsposeEmailCloud
   # Request model for append_email_model_message operation.
   class AppendEmailModelMessageRequestData < EmailRequest
 
+    # Append email request
+    # @return [AppendEmailModelRq]
+    attr_accessor :rq
+
     # Adds an email from model to specified folder in email account             
     # @param [AppendEmailModelRq] rq Append email request
     def initialize(rq)
-      @rq = rq if rq
+      self.rq = rq if rq
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'rq' is set
-      if api_client.config.client_side_validation && @rq.nil?
+      if api_client.config.client_side_validation && self.rq.nil?
         raise ArgumentError, "Missing the required parameter 'rq' when calling EmailApi.append_email_model_message"
       end
 
@@ -54,7 +58,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@rq)
+      post_body = api_client.object_to_http_body(self.rq)
       auth_names = ['JWT']
 
       # header parameters

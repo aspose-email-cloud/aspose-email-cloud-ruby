@@ -32,6 +32,22 @@ module AsposeEmailCloud
   # Request model for list_email_folders operation.
   class ListEmailFoldersRequestData < EmailRequest
 
+    # Email account
+    # @return [String]
+    attr_accessor :first_account
+    # Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
+    # @return [String]
+    attr_accessor :second_account
+    # Storage name where account file(s) located
+    # @return [String]
+    attr_accessor :storage
+    # Folder in storage where account file(s) located
+    # @return [String]
+    attr_accessor :storage_folder
+    # Folder in which subfolders should be listed
+    # @return [String]
+    attr_accessor :parent_folder
+
     # Get folders list in email account             
     # @param [String] first_account Email account
     # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
@@ -39,16 +55,16 @@ module AsposeEmailCloud
     # @param [String] storage_folder Folder in storage where account file(s) located
     # @param [String] parent_folder Folder in which subfolders should be listed
     def initialize(first_account, second_account = nil, storage = nil, storage_folder = nil, parent_folder = nil)
-      @first_account = first_account if first_account
-      @second_account = second_account if second_account
-      @storage = storage if storage
-      @storage_folder = storage_folder if storage_folder
-      @parent_folder = parent_folder if parent_folder
+      self.first_account = first_account if first_account
+      self.second_account = second_account if second_account
+      self.storage = storage if storage
+      self.storage_folder = storage_folder if storage_folder
+      self.parent_folder = parent_folder if parent_folder
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'first_account' is set
-      if api_client.config.client_side_validation && @first_account.nil?
+      if api_client.config.client_side_validation && self.first_account.nil?
         raise ArgumentError, "Missing the required parameter 'first_account' when calling EmailApi.list_email_folders"
       end
 
@@ -57,11 +73,11 @@ module AsposeEmailCloud
 
       # query parameters
       query_params = {}
-      query_params[:firstAccount] = @first_account
-      query_params[:secondAccount] = @second_account unless @second_account.nil?
-      query_params[:storage] = @storage unless @storage.nil?
-      query_params[:storageFolder] = @storage_folder unless @storage_folder.nil?
-      query_params[:parentFolder] = @parent_folder unless @parent_folder.nil?
+      query_params[:firstAccount] = self.first_account
+      query_params[:secondAccount] = self.second_account unless self.second_account.nil?
+      query_params[:storage] = self.storage unless self.storage.nil?
+      query_params[:storageFolder] = self.storage_folder unless self.storage_folder.nil?
+      query_params[:parentFolder] = self.parent_folder unless self.parent_folder.nil?
 
       # form parameters
       form_params = {}

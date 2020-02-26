@@ -32,34 +32,44 @@ module AsposeEmailCloud
   # Request model for add_mapi_attachment operation.
   class AddMapiAttachmentRequestData < EmailRequest
 
+    # Document file name
+    # @return [String]
+    attr_accessor :name
+    # Attachment file name
+    # @return [String]
+    attr_accessor :attachment
+    # Add attachment request
+    # @return [AddAttachmentRequest]
+    attr_accessor :request
+
     # Add attachment to document             
     # @param [String] name Document file name
     # @param [String] attachment Attachment file name
     # @param [AddAttachmentRequest] request Add attachment request
     def initialize(name, attachment, request)
-      @name = name if name
-      @attachment = attachment if attachment
-      @request = request if request
+      self.name = name if name
+      self.attachment = attachment if attachment
+      self.request = request if request
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'name' is set
-      if api_client.config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && self.name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.add_mapi_attachment"
       end
 
       # verify the required parameter 'attachment' is set
-      if api_client.config.client_side_validation && @attachment.nil?
+      if api_client.config.client_side_validation && self.attachment.nil?
         raise ArgumentError, "Missing the required parameter 'attachment' when calling EmailApi.add_mapi_attachment"
       end
 
       # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && @request.nil?
+      if api_client.config.client_side_validation && self.request.nil?
         raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.add_mapi_attachment"
       end
 
       # resource path
-      local_var_path = '/email/Mapi/{name}/attachments/{attachment}'.sub('{' + 'name' + '}', @name.to_s).sub('{' + 'attachment' + '}', @attachment.to_s)
+      local_var_path = '/email/Mapi/{name}/attachments/{attachment}'.sub('{' + 'name' + '}', self.name.to_s).sub('{' + 'attachment' + '}', self.attachment.to_s)
 
       # query parameters
       query_params = {}
@@ -68,7 +78,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(@request)
+      post_body = api_client.object_to_http_body(self.request)
       auth_names = ['JWT']
 
       # header parameters

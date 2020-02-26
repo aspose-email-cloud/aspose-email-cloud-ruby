@@ -32,6 +32,22 @@ module AsposeEmailCloud
   # Request model for get_calendar_model_as_alternate operation.
   class GetCalendarModelAsAlternateRequestData < EmailRequest
 
+    # iCalendar file name in storage
+    # @return [String]
+    attr_accessor :name
+    # iCalendar method type Enum, available values: Create, Update, Cancel
+    # @return [String]
+    attr_accessor :calendar_action
+    # The sequence id
+    # @return [String]
+    attr_accessor :sequence_id
+    # Path to folder in storage
+    # @return [String]
+    attr_accessor :folder
+    # Storage name
+    # @return [String]
+    attr_accessor :storage
+
     # Get iCalendar from storage as AlternateView             
     # @param [String] name iCalendar file name in storage
     # @param [String] calendar_action iCalendar method type Enum, available values: Create, Update, Cancel
@@ -39,32 +55,32 @@ module AsposeEmailCloud
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name
     def initialize(name, calendar_action, sequence_id = nil, folder = nil, storage = nil)
-      @name = name if name
-      @calendar_action = calendar_action if calendar_action
-      @sequence_id = sequence_id if sequence_id
-      @folder = folder if folder
-      @storage = storage if storage
+      self.name = name if name
+      self.calendar_action = calendar_action if calendar_action
+      self.sequence_id = sequence_id if sequence_id
+      self.folder = folder if folder
+      self.storage = storage if storage
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'name' is set
-      if api_client.config.client_side_validation && @name.nil?
+      if api_client.config.client_side_validation && self.name.nil?
         raise ArgumentError, "Missing the required parameter 'name' when calling EmailApi.get_calendar_model_as_alternate"
       end
 
       # verify the required parameter 'calendar_action' is set
-      if api_client.config.client_side_validation && @calendar_action.nil?
+      if api_client.config.client_side_validation && self.calendar_action.nil?
         raise ArgumentError, "Missing the required parameter 'calendar_action' when calling EmailApi.get_calendar_model_as_alternate"
       end
 
       # resource path
-      local_var_path = '/email/CalendarModel/{name}/as-alternate/{calendarAction}'.sub('{' + 'name' + '}', @name.to_s).sub('{' + 'calendarAction' + '}', @calendar_action.to_s)
+      local_var_path = '/email/CalendarModel/{name}/as-alternate/{calendarAction}'.sub('{' + 'name' + '}', self.name.to_s).sub('{' + 'calendarAction' + '}', self.calendar_action.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:sequenceId] = @sequence_id unless @sequence_id.nil?
-      query_params[:folder] = @folder unless @folder.nil?
-      query_params[:storage] = @storage unless @storage.nil?
+      query_params[:sequenceId] = self.sequence_id unless self.sequence_id.nil?
+      query_params[:folder] = self.folder unless self.folder.nil?
+      query_params[:storage] = self.storage unless self.storage.nil?
 
       # form parameters
       form_params = {}

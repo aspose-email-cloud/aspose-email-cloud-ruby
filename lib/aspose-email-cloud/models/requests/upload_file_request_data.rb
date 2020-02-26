@@ -32,37 +32,47 @@ module AsposeEmailCloud
   # Request model for upload_file operation.
   class UploadFileRequestData < EmailRequest
 
+    # Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
+    # @return [String]
+    attr_accessor :path
+    # File to upload
+    # @return [File]
+    attr_accessor :file
+    # Storage name
+    # @return [String]
+    attr_accessor :storage_name
+
     # Upload file
     # @param [String] path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
     # @param [File] file File to upload
     # @param [String] storage_name Storage name
     def initialize(path, file, storage_name = nil)
-      @path = path if path
-      @file = file if file
-      @storage_name = storage_name if storage_name
+      self.path = path if path
+      self.file = file if file
+      self.storage_name = storage_name if storage_name
     end
 
     def to_http_info(api_client)
       # verify the required parameter 'path' is set
-      if api_client.config.client_side_validation && @path.nil?
+      if api_client.config.client_side_validation && self.path.nil?
         raise ArgumentError, "Missing the required parameter 'path' when calling EmailApi.upload_file"
       end
 
       # verify the required parameter 'file' is set
-      if api_client.config.client_side_validation && @file.nil?
+      if api_client.config.client_side_validation && self.file.nil?
         raise ArgumentError, "Missing the required parameter 'file' when calling EmailApi.upload_file"
       end
 
       # resource path
-      local_var_path = '/email/storage/file/{path}'.sub('{' + 'path' + '}', @path.to_s)
+      local_var_path = '/email/storage/file/{path}'.sub('{' + 'path' + '}', self.path.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:storageName] = @storage_name unless @storage_name.nil?
+      query_params[:storageName] = self.storage_name unless self.storage_name.nil?
 
       # form parameters
       form_params = {}
-      form_params['File'] = @file
+      form_params['File'] = self.file
 
       # http body (model)
       post_body = nil
