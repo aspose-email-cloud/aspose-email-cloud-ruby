@@ -320,6 +320,15 @@ describe EmailApi do
     expect(properties.hierarchical_object.name).to include('IPM.Schedule')
   end
 
+  it 'Check disposable email', :pipeline do
+    disposable = @api.is_email_address_disposable(
+      IsEmailAddressDisposableRequestData.new('example@mailcatch.com'))
+    expect(disposable.value).to be true
+    regular = @api.is_email_address_disposable(
+      IsEmailAddressDisposableRequestData.new('example@gmail.com'))
+    expect(regular.value).to be false
+  end
+
   def create_calendar(startDate = nil)
     fileName = SecureRandom.uuid().to_s() + '.ics'
     startDate = startDate.nil? ? DateTime.now + 1 : startDate
