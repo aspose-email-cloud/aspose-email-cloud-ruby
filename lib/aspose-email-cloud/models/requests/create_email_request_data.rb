@@ -35,13 +35,13 @@ module AsposeEmailCloud
     # Email document file name in storage
     # @return [String]
     attr_accessor :file_name
-    # An email document and optional Storage info to specify where the file should be located
+    # An email document and optional Storage info to specify where the file should be located             
     # @return [CreateEmailRequest]
     attr_accessor :request
 
     # Create an email document             
     # @param [String] file_name Email document file name in storage
-    # @param [CreateEmailRequest] request An email document and optional Storage info to specify where the file should be located
+    # @param [CreateEmailRequest] request An email document and optional Storage info to specify where the file should be located             
     def initialize(file_name, request)
       self.file_name = file_name if file_name
       self.request = request if request
