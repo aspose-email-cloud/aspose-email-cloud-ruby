@@ -76,6 +76,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**get_mapi_attachments**](EmailApi.md#get_mapi_attachments) | **GET** /email/Mapi/{name}/attachments | Get document attachment list             
 *EmailApi* | [**get_mapi_list**](EmailApi.md#get_mapi_list) | **GET** /email/Mapi | Get document list from storage folder             
 *EmailApi* | [**get_mapi_properties**](EmailApi.md#get_mapi_properties) | **GET** /email/Mapi/{name}/properties | Get document properties             
+*EmailApi* | [**is_email_address_disposable**](EmailApi.md#is_email_address_disposable) | **GET** /email/disposable/isDisposable/{address} | Check email address is disposable             
 *EmailApi* | [**list_email_folders**](EmailApi.md#list_email_folders) | **GET** /email/client/ListFolders | Get folders list in email account             
 *EmailApi* | [**list_email_messages**](EmailApi.md#list_email_messages) | **GET** /email/client/ListMessages | Get messages from folder, filtered by query             
 *EmailApi* | [**list_email_models**](EmailApi.md#list_email_models) | **GET** /email/client/ListMessagesModel | Get messages from folder, filtered by query             
@@ -194,6 +195,7 @@ Class | Method | HTTP request | Description
  - [models.StorageModelRqOfEmailDto](StorageModelRqOfEmailDto.md)
  - [models.Url](Url.md)
  - [models.ValueResponse](ValueResponse.md)
+ - [models.ValueTOfBoolean](ValueTOfBoolean.md)
  - [models.AiBcrBase64Image](AiBcrBase64Image.md)
  - [models.AiBcrBase64Rq](AiBcrBase64Rq.md)
  - [models.AiBcrImageStorageFile](AiBcrImageStorageFile.md)

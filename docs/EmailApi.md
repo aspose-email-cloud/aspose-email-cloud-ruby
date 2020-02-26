@@ -705,7 +705,7 @@ request = AsposeEmailCloud::CreateEmailRequestData.new(file_name, request)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file_name** | **String**| Email document file name in storage | 
- **request** | [**CreateEmailRequest**](CreateEmailRequest.md)| An email document and optional Storage info to specify where the file should be located | 
+ **request** | [**CreateEmailRequest**](CreateEmailRequest.md)| An email document and optional Storage info to specify where the file should be located              | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1124,7 +1124,7 @@ Get iCalendar document attachment by name
 
 ### Return type
 
-**File**
+**file**
 
 ### Request Parameters
 ```ruby
@@ -1244,7 +1244,7 @@ Get attachment file by name
 
 ### Return type
 
-**File**
+**file**
 
 ### Request Parameters
 ```ruby
@@ -1411,7 +1411,7 @@ Converts email document from storage to specified format and returns as file
 
 ### Return type
 
-**File**
+**file**
 
 ### Request Parameters
 ```ruby
@@ -1435,7 +1435,7 @@ Get email attachment by name
 
 ### Return type
 
-**File**
+**file**
 
 ### Request Parameters
 ```ruby
@@ -1576,7 +1576,7 @@ Get document attachment as file stream
 
 ### Return type
 
-**File**
+**file**
 
 ### Request Parameters
 ```ruby
@@ -1659,6 +1659,27 @@ Name | Type | Description  | Notes
  **name** | **String**| Document file name | 
  **folder** | **String**| Path to folder in storage | [optional] 
  **storage** | **String**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="is_email_address_disposable"></a>
+# **is_email_address_disposable**
+> is_email_address_disposable(request)
+
+Check email address is disposable             
+
+### Return type
+
+[**ValueTOfBoolean**](ValueTOfBoolean.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::IsEmailAddressDisposableRequestData.new(address)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **String**| An email address to check | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

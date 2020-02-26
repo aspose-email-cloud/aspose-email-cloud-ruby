@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="create_email_request_data.rb">
+#  <copyright company="Aspose" file="is_email_address_disposable_request_data.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,37 +29,27 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for create_email operation.
-  class CreateEmailRequestData < EmailRequest
+  # Request model for is_email_address_disposable operation.
+  class IsEmailAddressDisposableRequestData < EmailRequest
 
-    # Email document file name in storage
+    # An email address to check
     # @return [String]
-    attr_accessor :file_name
-    # An email document and optional Storage info to specify where the file should be located             
-    # @return [CreateEmailRequest]
-    attr_accessor :request
+    attr_accessor :address
 
-    # Create an email document             
-    # @param [String] file_name Email document file name in storage
-    # @param [CreateEmailRequest] request An email document and optional Storage info to specify where the file should be located             
-    def initialize(file_name, request)
-      self.file_name = file_name if file_name
-      self.request = request if request
+    # Check email address is disposable             
+    # @param [String] address An email address to check
+    def initialize(address)
+      self.address = address if address
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'file_name' is set
-      if api_client.config.client_side_validation && self.file_name.nil?
-        raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.create_email"
-      end
-
-      # verify the required parameter 'request' is set
-      if api_client.config.client_side_validation && self.request.nil?
-        raise ArgumentError, "Missing the required parameter 'request' when calling EmailApi.create_email"
+      # verify the required parameter 'address' is set
+      if api_client.config.client_side_validation && self.address.nil?
+        raise ArgumentError, "Missing the required parameter 'address' when calling EmailApi.is_email_address_disposable"
       end
 
       # resource path
-      local_var_path = '/email/{fileName}'.sub('{' + 'fileName' + '}', self.file_name.to_s)
+      local_var_path = '/email/disposable/isDisposable/{address}'.sub('{' + 'address' + '}', self.address.to_s)
 
       # query parameters
       query_params = {}
@@ -68,7 +58,7 @@ module AsposeEmailCloud
       form_params = {}
 
       # http body (model)
-      post_body = api_client.object_to_http_body(self.request)
+      post_body = nil
       auth_names = ['JWT']
 
       # header parameters

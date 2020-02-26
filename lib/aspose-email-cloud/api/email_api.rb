@@ -636,6 +636,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'HierarchicalObjectResponse')
     end
 
+    # Check email address is disposable             
+    # @param [IsEmailAddressDisposableRequestData] request Request object.
+    # @return [ValueTOfBoolean]
+    def is_email_address_disposable(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'ValueTOfBoolean')
+    end
+
     # Get folders list in email account             
     # @param [ListEmailFoldersRequestData] request Request object.
     # @return [ListResponseOfMailServerFolder]
