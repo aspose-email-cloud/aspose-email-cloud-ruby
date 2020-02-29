@@ -19,7 +19,14 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         version: 2.6.x
-
+    - name: Run tests for production
+      env:
+        appSid: ${{secrets.appSidProd}}
+        appKey: ${{secrets.appKeyProd}}
+        apiBaseUrl: "https://api.aspose.cloud"
+      run: |
+        gem install -g
+        rspec -t pipeline spec
     - name: Publish to RubyGems
       run: |
         mkdir -p $HOME/.gem
