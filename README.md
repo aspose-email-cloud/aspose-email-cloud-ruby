@@ -1,4 +1,4 @@
-﻿# Aspose.Email Cloud SDK for Ruby [![Gem](https://img.shields.io/gem/v/aspose_email_cloud)](https://rubygems.org/gems/aspose_email_cloud) [![License](https://img.shields.io/github/license/aspose-email-cloud/aspose-email-cloud-ruby)](https://rubygems.org/gems/aspose_email_cloud)
+﻿# Aspose.Email Cloud SDK for Ruby [![Gem](https://img.shields.io/gem/v/aspose_email_cloud)](https://rubygems.org/gems/aspose_email_cloud) [![License](https://img.shields.io/github/license/aspose-email-cloud/aspose-email-cloud-ruby)](https://rubygems.org/gems/aspose_email_cloud) ![tests](https://github.com/aspose-email-cloud/aspose-email-cloud-ruby/workflows/tests/badge.svg)
 This repository contains Aspose.Email Cloud SDK for Ruby source code. This SDK allows you to work with Aspose.Email Cloud REST APIs in your Ruby applications quickly and easily, with zero initial cost.
 
 [Aspose.Email Cloud home](https://products.aspose.cloud/email/family "Aspose.Email Cloud")  
