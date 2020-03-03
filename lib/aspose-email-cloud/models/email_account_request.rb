@@ -41,7 +41,7 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :login
 
-    # Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @return [String]
     attr_accessor :security_options
 
@@ -124,7 +124,7 @@ module AsposeEmailCloud
     # @param [String] host Email account host             
     # @param [Integer] port Email account port             
     # @param [String] login Email account login             
-    # @param [String] security_options Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @param [String] security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [String] description Email account description             
     # @param [StorageFileLocation] storage_file A storage file location info to store email account             
@@ -342,7 +342,10 @@ module AsposeEmailCloud
           end
         end
       else # model
-        type = value[:type] || type
+        sub_type = value[:type] || value[:derived_type] || type
+        if AsposeEmailCloud.const_defined?(sub_type)
+          type = sub_type
+        end
         temp_model = AsposeEmailCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

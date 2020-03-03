@@ -41,7 +41,7 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :login
 
-    # Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @return [String]
     attr_accessor :security_options
 
@@ -69,6 +69,10 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :refresh_token
 
+    # The url to obtain access token. If not specified, will try to discover from email account host.             
+    # @return [String]
+    attr_accessor :request_url
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -81,7 +85,8 @@ module AsposeEmailCloud
         :'storage_file' => :'storageFile',
         :'client_id' => :'clientId',
         :'client_secret' => :'clientSecret',
-        :'refresh_token' => :'refreshToken'
+        :'refresh_token' => :'refreshToken',
+        :'request_url' => :'requestUrl'
       }
     end
 
@@ -97,7 +102,8 @@ module AsposeEmailCloud
         :'storage_file' => :'StorageFileLocation',
         :'client_id' => :'String',
         :'client_secret' => :'String',
-        :'refresh_token' => :'String'
+        :'refresh_token' => :'String',
+        :'request_url' => :'String'
       }
     end
 
@@ -148,20 +154,25 @@ module AsposeEmailCloud
       if attributes.has_key?(:'refreshToken')
         self.refresh_token = attributes[:'refreshToken']
       end
+
+      if attributes.has_key?(:'requestUrl')
+        self.request_url = attributes[:'requestUrl']
+      end
     end
 
     # Initializes the object
     # @param [String] host Email account host             
     # @param [Integer] port Email account port             
     # @param [String] login Email account login             
-    # @param [String] security_options Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @param [String] security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [String] description Email account description             
     # @param [StorageFileLocation] storage_file A storage file location info to store email account             
     # @param [String] client_id OAuth client identifier             
     # @param [String] client_secret OAuth client secret             
     # @param [String] refresh_token OAuth refresh token             
-    def initialize(host=nil, port=nil, login=nil, security_options=nil, protocol_type=nil, description=nil, storage_file=nil, client_id=nil, client_secret=nil, refresh_token=nil)
+    # @param [String] request_url The url to obtain access token. If not specified, will try to discover from email account host.             
+    def initialize(host=nil, port=nil, login=nil, security_options=nil, protocol_type=nil, description=nil, storage_file=nil, client_id=nil, client_secret=nil, refresh_token=nil, request_url=nil)
       self.host = host if host
       self.port = port if port
       self.login = login if login
@@ -172,6 +183,7 @@ module AsposeEmailCloud
       self.client_id = client_id if client_id
       self.client_secret = client_secret if client_secret
       self.refresh_token = refresh_token if refresh_token
+      self.request_url = request_url if request_url
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -379,7 +391,8 @@ module AsposeEmailCloud
           storage_file == o.storage_file &&
           client_id == o.client_id &&
           client_secret == o.client_secret &&
-          refresh_token == o.refresh_token
+          refresh_token == o.refresh_token &&
+          request_url == o.request_url
     end
 
     # @see the `==` method
@@ -391,7 +404,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [host, port, login, security_options, protocol_type, description, storage_file, client_id, client_secret, refresh_token].hash
+      [host, port, login, security_options, protocol_type, description, storage_file, client_id, client_secret, refresh_token, request_url].hash
     end
 
     # Builds the object from hash
@@ -453,7 +466,10 @@ module AsposeEmailCloud
           end
         end
       else # model
-        type = value[:type] || type
+        sub_type = value[:type] || value[:derived_type] || type
+        if AsposeEmailCloud.const_defined?(sub_type)
+          type = sub_type
+        end
         temp_model = AsposeEmailCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end
