@@ -35,7 +35,13 @@ module AsposeEmailCloud
 
     
     # @return [String]
-    attr_accessor :discriminator
+    def discriminator #getter method
+      self.class.name.split('::').last
+    end
+
+    def discriminator=(discriminator) #setter method, parameter ignored
+      @discriminator = self.class.name.split('::').last
+    end
 
     # Email client account password             
     # @return [String]
@@ -72,7 +78,7 @@ module AsposeEmailCloud
       end
 
       if attributes.has_key?(:'discriminator')
-        self.discriminator = attributes[:'discriminator']
+        @discriminator = self.class.name.split('::').last
       end
 
       if attributes.has_key?(:'password')
@@ -86,7 +92,7 @@ module AsposeEmailCloud
     # @param [String] password Email client account password             
     def initialize(login=nil, discriminator=nil, password=nil)
       self.login = login if login
-      self.discriminator = discriminator if discriminator
+      @discriminator = self.class.name.split('::').last if discriminator
       self.password = password if password
     end
 
@@ -237,7 +243,7 @@ module AsposeEmailCloud
           end
         end
       else # model
-        sub_type = value[:type] || value[:derived_type] || type
+        sub_type = value[:type] || value[:discriminator] || type
         if AsposeEmailCloud.const_defined?(sub_type)
           type = sub_type
         end

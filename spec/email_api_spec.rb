@@ -329,6 +329,25 @@ describe EmailApi do
     expect(regular.value).to be false
   end
 
+  it 'Check EmailClientAccount', :pipeline do
+    account = EmailClientAccount.new(
+      'smtp.gmail.com',
+      551,
+      'SSLAuto',
+      'SMTP',
+      EmailClientAccountPasswordCredentials.new(
+        'login', nil, 'password'))
+        fileName = SecureRandom.uuid().to_s() + '.account'
+    @api.save_email_client_account(SaveEmailClientAccountRequestData.new(
+      StorageFileRqOfEmailClientAccount.new(
+        account, StorageFileLocation.new(@storage, @folder, fileName))))
+    result = @api.get_email_client_account(GetEmailClientAccountRequestData.new(
+      fileName, @folder, @storage))
+    expect(result.credentials.discriminator).to eq(account.credentials.discriminator)
+    expect(result.credentials.password).to eq(account.credentials.password)
+    expect(result.host).to eq(account.host)
+  end
+
   def create_calendar(startDate = nil)
     fileName = SecureRandom.uuid().to_s() + '.ics'
     startDate = startDate.nil? ? DateTime.now + 1 : startDate

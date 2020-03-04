@@ -35,7 +35,13 @@ module AsposeEmailCloud
 
     
     # @return [String]
-    attr_accessor :discriminator
+    def discriminator #getter method
+      self.class.name.split('::').last
+    end
+
+    def discriminator=(discriminator) #setter method, parameter ignored
+      @discriminator = self.class.name.split('::').last
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -66,7 +72,7 @@ module AsposeEmailCloud
       end
 
       if attributes.has_key?(:'discriminator')
-        self.discriminator = attributes[:'discriminator']
+        @discriminator = self.class.name.split('::').last
       end
     end
 
@@ -75,7 +81,7 @@ module AsposeEmailCloud
     # @param [String] discriminator 
     def initialize(login=nil, discriminator=nil)
       self.login = login if login
-      self.discriminator = discriminator if discriminator
+      @discriminator = self.class.name.split('::').last if discriminator
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -200,7 +206,7 @@ module AsposeEmailCloud
           end
         end
       else # model
-        sub_type = value[:type] || value[:derived_type] || type
+        sub_type = value[:type] || value[:discriminator] || type
         if AsposeEmailCloud.const_defined?(sub_type)
           type = sub_type
         end

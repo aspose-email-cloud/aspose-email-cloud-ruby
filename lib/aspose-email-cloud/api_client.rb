@@ -229,7 +229,7 @@ module AsposeEmailCloud
         end
       else
         # models, e.g. Pet
-        sub_type = data[:type] || data[:derived_type] || return_type
+        sub_type = data[:type] || data[:discriminator] || return_type
         if AsposeEmailCloud.const_defined?(sub_type)
           return_type = sub_type
         end

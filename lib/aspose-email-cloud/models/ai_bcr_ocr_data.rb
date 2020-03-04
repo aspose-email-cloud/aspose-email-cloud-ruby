@@ -201,7 +201,7 @@ module AsposeEmailCloud
           end
         end
       else # model
-        sub_type = value[:type] || value[:derived_type] || type
+        sub_type = value[:type] || value[:discriminator] || type
         if AsposeEmailCloud.const_defined?(sub_type)
           type = sub_type
         end
