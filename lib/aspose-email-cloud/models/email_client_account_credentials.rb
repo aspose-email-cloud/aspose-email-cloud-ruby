@@ -81,7 +81,7 @@ module AsposeEmailCloud
     # @param [String] discriminator 
     def initialize(login=nil, discriminator=nil)
       self.login = login if login
-      @discriminator = self.class.name.split('::').last if discriminator
+      @discriminator = self.class.name.split('::').last
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -125,7 +125,7 @@ module AsposeEmailCloud
     # @param [String] request_url The url to obtain access token. If not specified, will try to discover from email client account host.             
     def initialize(login=nil, discriminator=nil, client_id=nil, client_secret=nil, refresh_token=nil, request_url=nil)
       self.login = login if login
-      @discriminator = self.class.name.split('::').last if discriminator
+      @discriminator = self.class.name.split('::').last
       self.client_id = client_id if client_id
       self.client_secret = client_secret if client_secret
       self.refresh_token = refresh_token if refresh_token

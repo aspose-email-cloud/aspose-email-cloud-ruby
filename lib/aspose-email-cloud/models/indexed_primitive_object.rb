@@ -103,7 +103,7 @@ module AsposeEmailCloud
     # @param [String] value Gets or sets the name of a property.             
     def initialize(name=nil, type=nil, index=nil, value=nil)
       self.name = name if name
-      @type = self.class.name.split('::').last if type
+      @type = self.class.name.split('::').last
       self.index = index if index
       self.value = value if value
     end

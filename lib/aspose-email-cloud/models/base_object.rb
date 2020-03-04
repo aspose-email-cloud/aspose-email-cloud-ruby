@@ -81,7 +81,7 @@ module AsposeEmailCloud
     # @param [String] type Property type. Used for deserialization purposes             
     def initialize(name=nil, type=nil)
       self.name = name if name
-      @type = self.class.name.split('::').last if type
+      @type = self.class.name.split('::').last
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

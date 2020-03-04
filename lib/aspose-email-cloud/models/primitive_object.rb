@@ -92,7 +92,7 @@ module AsposeEmailCloud
     # @param [String] value Property value             
     def initialize(name=nil, type=nil, value=nil)
       self.name = name if name
-      @type = self.class.name.split('::').last if type
+      @type = self.class.name.split('::').last
       self.value = value if value
     end
 

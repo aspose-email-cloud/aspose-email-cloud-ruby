@@ -92,7 +92,7 @@ module AsposeEmailCloud
     # @param [String] password Email client account password             
     def initialize(login=nil, discriminator=nil, password=nil)
       self.login = login if login
-      @discriminator = self.class.name.split('::').last if discriminator
+      @discriminator = self.class.name.split('::').last
       self.password = password if password
     end
 

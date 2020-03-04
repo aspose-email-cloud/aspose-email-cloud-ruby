@@ -105,7 +105,7 @@ module AsposeEmailCloud
     # @param [Array<BaseObject>] internal_properties List of internal properties             
     def initialize(name=nil, type=nil, index=nil, internal_properties=nil)
       self.name = name if name
-      @type = self.class.name.split('::').last if type
+      @type = self.class.name.split('::').last
       self.index = index if index
       self.internal_properties = internal_properties if internal_properties
     end
