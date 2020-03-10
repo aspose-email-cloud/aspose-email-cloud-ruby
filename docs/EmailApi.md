@@ -1482,7 +1482,7 @@ Get email client multi account file (*.multi.account). Will respond error if fil
 
 ### Return type
 
-nil (empty response body)
+[**EmailClientMultiAccount**](EmailClientMultiAccount.md)
 
 ### Request Parameters
 ```ruby
