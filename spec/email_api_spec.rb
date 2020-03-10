@@ -348,6 +348,36 @@ describe EmailApi do
     expect(result.host).to eq(account.host)
   end
 
+  it 'Check EmailClientMultiAccount', :pipeline do
+    # Create multi account object
+    multi_account = EmailClientMultiAccount.new(
+      [EmailClientAccount.new('imap.gmail.com', 993, 'SSLAuto', 'IMAP',
+        EmailClientAccountPasswordCredentials.new(
+          'example@gmail.com', nil, 'password')),
+      EmailClientAccount.new('exchange.outlook.com', 443, 'SSLAuto', 'EWS',
+        EmailClientAccountOauthCredentials.new(
+          'example@outlook.com', nil, 'client_id', 'client_secret', 'refresh_token'))],
+      EmailClientAccount.new('smtp.gmail.com', 465, 'SSLAuto', 'SMTP',
+        EmailClientAccountPasswordCredentials.new(
+          'example@gmail.com', nil, 'password')))
+    file_name = SecureRandom.uuid().to_s() + '.multi.account'
+    folder = @folder
+    storage = @storage
+    # Save multi account
+    @api.save_email_client_multi_account(SaveEmailClientMultiAccountRequestData.new(
+      StorageFileRqOfEmailClientMultiAccount.new(
+        multi_account,
+        StorageFileLocation.new(storage, folder, file_name))))
+    # Get multi account object from storage
+    multi_account_from_storage = @api.get_email_client_multi_account(
+      GetEmailClientMultiAccountRequestData.new(
+        file_name, folder, storage))
+
+    expect(multi_account_from_storage.receive_accounts.count).to eq(2)
+    expect(multi_account_from_storage.send_account.credentials.discriminator)
+      .to eq(multi_account.send_account.credentials.discriminator)
+  end
+
   def create_calendar(startDate = nil)
     fileName = SecureRandom.uuid().to_s() + '.ics'
     startDate = startDate.nil? ? DateTime.now + 1 : startDate
