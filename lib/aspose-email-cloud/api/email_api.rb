@@ -572,6 +572,15 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'EmailClientAccount')
     end
 
+    # Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".             
+    # @param [GetEmailClientMultiAccountRequestData] request Request object.
+    # @return [nil]
+    def get_email_client_multi_account(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, nil)
+      nil
+    end
+
     # Get email document.             
     # @param [GetEmailModelRequestData] request Request object.
     # @return [EmailDto]
@@ -726,6 +735,15 @@ module AsposeEmailCloud
     # @param [SaveEmailClientAccountRequestData] request Request object.
     # @return [nil]
     def save_email_client_account(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
+    # Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".             
+    # @param [SaveEmailClientMultiAccountRequestData] request Request object.
+    # @return [nil]
+    def save_email_client_multi_account(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil

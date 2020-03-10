@@ -1474,6 +1474,29 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_email_client_multi_account"></a>
+# **get_email_client_multi_account**
+> get_email_client_multi_account(request)
+
+Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetEmailClientMultiAccountRequestData.new(name, folder, storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| File name on storage | 
+ **folder** | **String**| Folder on storage | 
+ **storage** | **String**| Storage name | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_email_model"></a>
 # **get_email_model**
 > get_email_model(request)
@@ -1924,6 +1947,27 @@ request = AsposeEmailCloud::SaveEmailClientAccountRequestData.new(request)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**StorageFileRqOfEmailClientAccount**](StorageFileRqOfEmailClientAccount.md)| Email account information | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="save_email_client_multi_account"></a>
+# **save_email_client_multi_account**
+> save_email_client_multi_account(request)
+
+Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SaveEmailClientMultiAccountRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**StorageFileRqOfEmailClientMultiAccount**](StorageFileRqOfEmailClientMultiAccount.md)| Email accounts information | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
