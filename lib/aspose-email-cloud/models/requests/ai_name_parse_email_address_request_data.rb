@@ -35,10 +35,10 @@ module AsposeEmailCloud
     # Email address to parse (required)
     # @return [String]
     attr_accessor :email_address
-    # An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)
+    # An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)             
     # @return [String]
     attr_accessor :language
-    # A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France
+    # A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France             
     # @return [String]
     attr_accessor :location
     # A character encoding name
@@ -53,8 +53,8 @@ module AsposeEmailCloud
 
     # Parse person&#39;s name out of an email address             
     # @param [String] email_address Email address to parse (required)
-    # @param [String] language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)
-    # @param [String] location A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France
+    # @param [String] language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)             
+    # @param [String] location A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France             
     # @param [String] encoding A character encoding name
     # @param [String] script A writing system code; starts with the ISO-15924 script name
     # @param [String] style Name writing style. Enum, available values: Formal, Informal, Legal, Academic

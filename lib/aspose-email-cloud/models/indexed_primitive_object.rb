@@ -103,7 +103,7 @@ module AsposeEmailCloud
     # @param [String] value Gets or sets the name of a property.             
     def initialize(name=nil, type=nil, index=nil, value=nil)
       self.name = name if name
-      @type = self.class.name.split('::').last if type
+      @type = self.class.name.split('::').last
       self.index = index if index
       self.value = value if value
     end
@@ -208,7 +208,10 @@ module AsposeEmailCloud
           end
         end
       else # model
-        type = value[:type] || type
+        sub_type = value[:type] || value[:discriminator] || type
+        if AsposeEmailCloud.const_defined?(sub_type)
+          type = sub_type
+        end
         temp_model = AsposeEmailCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

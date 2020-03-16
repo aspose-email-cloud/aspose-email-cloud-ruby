@@ -237,8 +237,8 @@ request = AsposeEmailCloud::AiNameCompleteRequestData.new(name, language=languag
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| A name to complete (required) | 
- **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
- **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)              | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France              | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
  **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
@@ -263,8 +263,8 @@ request = AsposeEmailCloud::AiNameExpandRequestData.new(name, language=language,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| A name to format (required) | 
- **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
- **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)              | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France              | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
  **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
@@ -310,8 +310,8 @@ request = AsposeEmailCloud::AiNameFormatRequestData.new(name, language=language,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| A name to format (required) | 
- **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
- **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)              | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France              | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
  **format** | **String**| Format of the name. Predefined format can be used by ID, or custom format can be specified. Predefined formats:      /format/default/ (&#x3D; &#39;%t%F%m%N%L%p&#39;)     /format/FN+LN/ (&#x3D; &#39;%F%L&#39;)     /format/title+FN+LN/ (&#x3D; &#39;%t%F%L&#39;)     /format/FN+MN+LN/ (&#x3D; &#39;%F%M%N%L&#39;)     /format/title+FN+MN+LN/ (&#x3D; &#39;%t%F%M%N%L&#39;)     /format/FN+MI+LN/ (&#x3D; &#39;%F%m%N%L&#39;)     /format/title+FN+MI+LN/ (&#x3D; &#39;%t%F%m%N%L&#39;)     /format/LN/ (&#x3D; &#39;%L&#39;)     /format/title+LN/ (&#x3D; &#39;%t%L&#39;)     /format/LN+FN+MN/ (&#x3D; &#39;%L,%F%M%N&#39;)     /format/LN+title+FN+MN/ (&#x3D; &#39;%L,%t%F%M%N&#39;)     /format/LN+FN+MI/ (&#x3D; &#39;%L,%F%m%N&#39;)     /format/LN+title+FN+MI/ (&#x3D; &#39;%L,%t%F%m%N&#39;)  Custom format string - custom combination of characters and the next term placeholders:      &#39;%t&#39; - Title (prefix)     &#39;%F&#39; - First name     &#39;%f&#39; - First initial     &#39;%M&#39; - Middle name(s)     &#39;%m&#39; - Middle initial(s)     &#39;%N&#39; - Nickname     &#39;%L&#39; - Last name     &#39;%l&#39; - Last initial     &#39;%p&#39; - Postfix  If no value for format option was provided, its default value is &#39;%t%F%m%N%L%p&#39;              | [optional] [default to ]
@@ -358,8 +358,8 @@ request = AsposeEmailCloud::AiNameGenderizeRequestData.new(name, language=langua
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| A name to parse (required) | 
- **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
- **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)              | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France              | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
  **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
@@ -406,8 +406,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| A name to match (required) | 
  **other_name** | **String**| Another name to match (required) | 
- **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
- **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)              | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France              | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
  **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
@@ -453,8 +453,8 @@ request = AsposeEmailCloud::AiNameParseRequestData.new(name, language=language, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| A name to parse (required) | 
- **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
- **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)              | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France              | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
  **style** | **String**| Name writing style Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
@@ -479,8 +479,8 @@ request = AsposeEmailCloud::AiNameParseEmailAddressRequestData.new(email_address
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email_address** | **String**| Email address to parse (required) | 
- **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian) | [optional] [default to ]
- **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France | [optional] [default to ]
+ **language** | **String**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian)              | [optional] [default to ]
+ **location** | **String**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France              | [optional] [default to ]
  **encoding** | **String**| A character encoding name | [optional] [default to ]
  **script** | **String**| A writing system code; starts with the ISO-15924 script name | [optional] [default to ]
  **style** | **String**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
@@ -1451,6 +1451,52 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_email_client_account"></a>
+# **get_email_client_account**
+> get_email_client_account(request)
+
+Get email client account from storage             
+
+### Return type
+
+[**EmailClientAccount**](EmailClientAccount.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetEmailClientAccountRequestData.new(name, folder, storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| File name on storage | 
+ **folder** | **String**| Folder on storage | 
+ **storage** | **String**| Storage name | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_email_client_multi_account"></a>
+# **get_email_client_multi_account**
+> get_email_client_multi_account(request)
+
+Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".             
+
+### Return type
+
+[**EmailClientMultiAccount**](EmailClientMultiAccount.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetEmailClientMultiAccountRequestData.new(name, folder, storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| File name on storage | 
+ **folder** | **String**| Folder on storage | 
+ **storage** | **String**| Storage name | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_email_model"></a>
 # **get_email_model**
 > get_email_model(request)
@@ -1662,6 +1708,27 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="is_email_address_disposable"></a>
+# **is_email_address_disposable**
+> is_email_address_disposable(request)
+
+Check email address is disposable             
+
+### Return type
+
+[**ValueTOfBoolean**](ValueTOfBoolean.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::IsEmailAddressDisposableRequestData.new(address)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **String**| An email address to check | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="list_email_folders"></a>
 # **list_email_folders**
 > list_email_folders(request)
@@ -1859,6 +1926,48 @@ Name | Type | Description  | Notes
  **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
  **name** | **String**| Contact document file name. | 
  **rq** | [**StorageModelRqOfContactDto**](StorageModelRqOfContactDto.md)| Create contact request. | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="save_email_client_account"></a>
+# **save_email_client_account**
+> save_email_client_account(request)
+
+Create email client account file (*.account) with any of supported credentials             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SaveEmailClientAccountRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**StorageFileRqOfEmailClientAccount**](StorageFileRqOfEmailClientAccount.md)| Email account information | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="save_email_client_multi_account"></a>
+# **save_email_client_multi_account**
+> save_email_client_multi_account(request)
+
+Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SaveEmailClientMultiAccountRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**StorageFileRqOfEmailClientMultiAccount**](StorageFileRqOfEmailClientMultiAccount.md)| Email accounts information | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

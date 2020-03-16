@@ -27,28 +27,29 @@
 require 'date'
 
 module AsposeEmailCloud
+  # Name-Value property             
   class NameValuePair
-    
-    # @return [String]
-    attr_accessor :value
-
-    
+    # Property name             
     # @return [String]
     attr_accessor :name
+
+    # Property value             
+    # @return [String]
+    attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'value' => :'value',
-        :'name' => :'name'
+        :'name' => :'name',
+        :'value' => :'value'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'value' => :'String',
-        :'name' => :'String'
+        :'name' => :'String',
+        :'value' => :'String'
       }
     end
 
@@ -60,21 +61,21 @@ module AsposeEmailCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
-      end
-
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'value')
+        self.value = attributes[:'value']
       end
     end
 
     # Initializes the object
-    # @param [String] value 
-    # @param [String] name 
-    def initialize(value=nil, name=nil)
-      self.value = value if value
+    # @param [String] name Property name             
+    # @param [String] value Property value             
+    def initialize(name=nil, value=nil)
       self.name = name if name
+      self.value = value if value
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -95,8 +96,8 @@ module AsposeEmailCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          value == o.value &&
-          name == o.name
+          name == o.name &&
+          value == o.value
     end
 
     # @see the `==` method
@@ -108,7 +109,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [value, name].hash
+      [name, value].hash
     end
 
     # Builds the object from hash
@@ -170,7 +171,10 @@ module AsposeEmailCloud
           end
         end
       else # model
-        type = value[:type] || type
+        sub_type = value[:type] || value[:discriminator] || type
+        if AsposeEmailCloud.const_defined?(sub_type)
+          type = sub_type
+        end
         temp_model = AsposeEmailCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

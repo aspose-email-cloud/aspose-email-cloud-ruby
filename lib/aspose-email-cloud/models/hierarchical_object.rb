@@ -94,7 +94,7 @@ module AsposeEmailCloud
     # @param [Array<BaseObject>] internal_properties List of internal properties             
     def initialize(name=nil, type=nil, internal_properties=nil)
       self.name = name if name
-      @type = self.class.name.split('::').last if type
+      @type = self.class.name.split('::').last
       self.internal_properties = internal_properties if internal_properties
     end
 
@@ -192,7 +192,10 @@ module AsposeEmailCloud
           end
         end
       else # model
-        type = value[:type] || type
+        sub_type = value[:type] || value[:discriminator] || type
+        if AsposeEmailCloud.const_defined?(sub_type)
+          type = sub_type
+        end
         temp_model = AsposeEmailCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

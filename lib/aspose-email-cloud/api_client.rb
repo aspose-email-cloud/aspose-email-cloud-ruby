@@ -229,6 +229,10 @@ module AsposeEmailCloud
         end
       else
         # models, e.g. Pet
+        sub_type = data[:type] || data[:discriminator] || return_type
+        if AsposeEmailCloud.const_defined?(sub_type)
+          return_type = sub_type
+        end
         AsposeEmailCloud.const_get(return_type).new.tap do |model|
           model.build_from_hash data
         end

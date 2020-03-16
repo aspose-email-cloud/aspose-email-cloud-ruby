@@ -564,6 +564,22 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'File')
     end
 
+    # Get email client account from storage             
+    # @param [GetEmailClientAccountRequestData] request Request object.
+    # @return [EmailClientAccount]
+    def get_email_client_account(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'EmailClientAccount')
+    end
+
+    # Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".             
+    # @param [GetEmailClientMultiAccountRequestData] request Request object.
+    # @return [EmailClientMultiAccount]
+    def get_email_client_multi_account(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'EmailClientMultiAccount')
+    end
+
     # Get email document.             
     # @param [GetEmailModelRequestData] request Request object.
     # @return [EmailDto]
@@ -636,6 +652,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'HierarchicalObjectResponse')
     end
 
+    # Check email address is disposable             
+    # @param [IsEmailAddressDisposableRequestData] request Request object.
+    # @return [ValueTOfBoolean]
+    def is_email_address_disposable(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'ValueTOfBoolean')
+    end
+
     # Get folders list in email account             
     # @param [ListEmailFoldersRequestData] request Request object.
     # @return [ListResponseOfMailServerFolder]
@@ -701,6 +725,24 @@ module AsposeEmailCloud
     # @param [SaveContactModelRequestData] request Request object.
     # @return [nil]
     def save_contact_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
+    # Create email client account file (*.account) with any of supported credentials             
+    # @param [SaveEmailClientAccountRequestData] request Request object.
+    # @return [nil]
+    def save_email_client_account(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
+    # Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".             
+    # @param [SaveEmailClientMultiAccountRequestData] request Request object.
+    # @return [nil]
+    def save_email_client_multi_account(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, nil)
       nil

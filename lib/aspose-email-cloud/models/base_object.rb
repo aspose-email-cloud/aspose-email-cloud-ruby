@@ -81,7 +81,7 @@ module AsposeEmailCloud
     # @param [String] type Property type. Used for deserialization purposes             
     def initialize(name=nil, type=nil)
       self.name = name if name
-      @type = self.class.name.split('::').last if type
+      @type = self.class.name.split('::').last
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -177,7 +177,10 @@ module AsposeEmailCloud
           end
         end
       else # model
-        type = value[:type] || type
+        sub_type = value[:type] || value[:discriminator] || type
+        if AsposeEmailCloud.const_defined?(sub_type)
+          type = sub_type
+        end
         temp_model = AsposeEmailCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

@@ -45,7 +45,7 @@ module AsposeEmailCloud
     # @return [Integer]
     attr_accessor :port
 
-    # Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @return [String]
     attr_accessor :socket_type
 
@@ -139,7 +139,7 @@ module AsposeEmailCloud
     # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [String] host Email account host.             
     # @param [Integer] port Port.             
-    # @param [String] socket_type Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @param [String] socket_type Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @param [Array<String>] authentication_types Supported authentication types.              Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
     # @param [Array<NameValuePair>] extra_info Extra account information.             
     # @param [BOOLEAN] is_validated Determines that configuration validated. Set to false if validation skipped.             
@@ -268,7 +268,10 @@ module AsposeEmailCloud
           end
         end
       else # model
-        type = value[:type] || type
+        sub_type = value[:type] || value[:discriminator] || type
+        if AsposeEmailCloud.const_defined?(sub_type)
+          type = sub_type
+        end
         temp_model = AsposeEmailCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end
