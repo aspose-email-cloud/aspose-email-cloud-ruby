@@ -38,7 +38,7 @@ module AsposeEmailCloud
     # Email account
     # @return [String]
     attr_accessor :first_account
-    # Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
+    # Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
     # @return [String]
     attr_accessor :second_account
     # Storage name where account file(s) located
@@ -51,7 +51,7 @@ module AsposeEmailCloud
     # Fetch message model from email account             
     # @param [String] message_id Message identifier
     # @param [String] first_account Email account
-    # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
+    # @param [String] second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
     def initialize(message_id, first_account, second_account = nil, storage = nil, storage_folder = nil)

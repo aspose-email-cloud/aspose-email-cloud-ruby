@@ -29,11 +29,11 @@ require 'date'
 module AsposeEmailCloud
   # Send email file request             
   class SendEmailBaseRequest
-    # First account storage file name for receiving emails (or universal one)             
+    # First account storage file name             
     # @return [String]
     attr_accessor :first_account
 
-    # Second account storage file name for sending emails (ignored if first is universal)             
+    # Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @return [String]
     attr_accessor :second_account
 
@@ -91,8 +91,8 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] first_account First account storage file name for receiving emails (or universal one)             
-    # @param [String] second_account Second account storage file name for sending emails (ignored if first is universal)             
+    # @param [String] first_account First account storage file name             
+    # @param [String] second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
     # @param [StorageFileLocation] email_file Email document (*.eml) file location in storage             
     def initialize(first_account=nil, second_account=nil, storage_folder=nil, email_file=nil)

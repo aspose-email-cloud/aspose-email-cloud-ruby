@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="fetch_email_message_request_data.rb">
+#  <copyright company="Aspose" file="get_email_thread_request_data.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,12 +29,12 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for fetch_email_message operation.
-  class FetchEmailMessageRequestData < EmailRequest
+  # Request model for get_email_thread operation.
+  class GetEmailThreadRequestData < EmailRequest
 
-    # Message identifier
+    # Thread identifier
     # @return [String]
-    attr_accessor :message_id
+    attr_accessor :thread_id
     # Email account
     # @return [String]
     attr_accessor :first_account
@@ -48,14 +48,14 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :storage_folder
 
-    # Fetch message mime from email account             
-    # @param [String] message_id Message identifier
+    # Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
+    # @param [String] thread_id Thread identifier
     # @param [String] first_account Email account
     # @param [String] second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
-    def initialize(message_id, first_account, second_account = nil, storage = nil, storage_folder = nil)
-      self.message_id = message_id if message_id
+    def initialize(thread_id, first_account, second_account = nil, storage = nil, storage_folder = nil)
+      self.thread_id = thread_id if thread_id
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
       self.storage = storage if storage
@@ -63,22 +63,21 @@ module AsposeEmailCloud
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'message_id' is set
-      if api_client.config.client_side_validation && self.message_id.nil?
-        raise ArgumentError, "Missing the required parameter 'message_id' when calling EmailApi.fetch_email_message"
+      # verify the required parameter 'thread_id' is set
+      if api_client.config.client_side_validation && self.thread_id.nil?
+        raise ArgumentError, "Missing the required parameter 'thread_id' when calling EmailApi.get_email_thread"
       end
 
       # verify the required parameter 'first_account' is set
       if api_client.config.client_side_validation && self.first_account.nil?
-        raise ArgumentError, "Missing the required parameter 'first_account' when calling EmailApi.fetch_email_message"
+        raise ArgumentError, "Missing the required parameter 'first_account' when calling EmailApi.get_email_thread"
       end
 
       # resource path
-      local_var_path = '/email/client/Fetch'
+      local_var_path = '/email/client/threads/{threadId}'.sub('{' + 'threadId' + '}', self.thread_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:messageId] = self.message_id
       query_params[:firstAccount] = self.first_account
       query_params[:secondAccount] = self.second_account unless self.second_account.nil?
       query_params[:storage] = self.storage unless self.storage.nil?

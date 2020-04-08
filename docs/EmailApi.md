@@ -1062,7 +1062,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **String**| Message identifier | 
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
 
@@ -1087,7 +1087,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **String**| Message identifier | 
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
 
@@ -1570,6 +1570,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_email_thread"></a>
+# **get_email_thread**
+> get_email_thread(request)
+
+Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
+
+### Return type
+
+[**EmailThread**](EmailThread.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetEmailThreadRequestData.new(thread_id, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **String**| Thread identifier | 
+ **first_account** | **String**| Email account | 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
+ **storage** | **String**| Storage name where account file(s) located | [optional] 
+ **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_file_versions"></a>
 # **get_file_versions**
 > get_file_versions(request)
@@ -1747,7 +1772,7 @@ request = AsposeEmailCloud::ListEmailFoldersRequestData.new(first_account, secon
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
  **parent_folder** | **String**| Folder in which subfolders should be listed | [optional] 
@@ -1776,7 +1801,7 @@ Name | Type | Description  | Notes
  **folder** | **String**| A folder in email account | 
  **query_string** | **String**| A MailQuery search string | 
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
  **recursive** | **BOOLEAN**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
@@ -1805,10 +1830,36 @@ Name | Type | Description  | Notes
  **folder** | **String**| A folder in email account | 
  **query_string** | **String**| A MailQuery search string | 
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
  **recursive** | **BOOLEAN**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="list_email_threads"></a>
+# **list_email_threads**
+> list_email_threads(request)
+
+Get message threads from folder. All messages are partly fetched (without email body and other fields)             
+
+### Return type
+
+[**EmailThreadList**](EmailThreadList.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ListEmailThreadsRequestData.new(folder, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, update_folder_cache=update_folder_cache)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder** | **String**| A folder in email account | 
+ **first_account** | **String**| Email account | 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
+ **storage** | **String**| Storage name where account file(s) located | [optional] 
+ **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
+ **update_folder_cache** | **BOOLEAN**| This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account              | [optional] [default to true]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

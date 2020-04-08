@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="EmailDtoList.rb">
+#  <copyright company="Aspose" file="EmailThread.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,23 +27,35 @@
 require 'date'
 
 module AsposeEmailCloud
-  # List of email documents from storage             
-  class EmailDtoList
-    
-    # @return [Array<StorageModelOfEmailDto>]
-    attr_accessor :value
+  # Email messages thread             
+  class EmailThread
+    # Thread identifier             
+    # @return [String]
+    attr_accessor :id
+
+    # Thread subject             
+    # @return [String]
+    attr_accessor :subject
+
+    # List of messages in thread             
+    # @return [Array<EmailDto>]
+    attr_accessor :messages
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'value' => :'value'
+        :'id' => :'id',
+        :'subject' => :'subject',
+        :'messages' => :'messages'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'value' => :'Array<StorageModelOfEmailDto>'
+        :'id' => :'String',
+        :'subject' => :'String',
+        :'messages' => :'Array<EmailDto>'
       }
     end
 
@@ -55,17 +67,29 @@ module AsposeEmailCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'value')
-        if (value = attributes[:'value']).is_a?(Array)
-          self.value = value
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'subject')
+        self.subject = attributes[:'subject']
+      end
+
+      if attributes.has_key?(:'messages')
+        if (value = attributes[:'messages']).is_a?(Array)
+          self.messages = value
         end
       end
     end
 
     # Initializes the object
-    # @param [Array<StorageModelOfEmailDto>] value 
-    def initialize(value=nil)
-      self.value = value if value
+    # @param [String] id Thread identifier             
+    # @param [String] subject Thread subject             
+    # @param [Array<EmailDto>] messages List of messages in thread             
+    def initialize(id=nil, subject=nil, messages=nil)
+      self.id = id if id
+      self.subject = subject if subject
+      self.messages = messages if messages
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -86,7 +110,9 @@ module AsposeEmailCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          value == o.value
+          id == o.id &&
+          subject == o.subject &&
+          messages == o.messages
     end
 
     # @see the `==` method
@@ -98,7 +124,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [value].hash
+      [id, subject, messages].hash
     end
 
     # Builds the object from hash

@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="EmailDtoList.rb">
+#  <copyright company="Aspose" file="EmailThreadList.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,10 +27,10 @@
 require 'date'
 
 module AsposeEmailCloud
-  # List of email documents from storage             
-  class EmailDtoList
+  # List of email threads             
+  class EmailThreadList
     
-    # @return [Array<StorageModelOfEmailDto>]
+    # @return [Array<EmailThread>]
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -43,7 +43,7 @@ module AsposeEmailCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'value' => :'Array<StorageModelOfEmailDto>'
+        :'value' => :'Array<EmailThread>'
       }
     end
 
@@ -63,7 +63,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Array<StorageModelOfEmailDto>] value 
+    # @param [Array<EmailThread>] value 
     def initialize(value=nil)
       self.value = value if value
     end

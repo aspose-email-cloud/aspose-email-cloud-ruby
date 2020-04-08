@@ -604,6 +604,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'EmailPropertyResponse')
     end
 
+    # Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
+    # @param [GetEmailThreadRequestData] request Request object.
+    # @return [EmailThread]
+    def get_email_thread(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'EmailThread')
+    end
+
     # Get file versions
     # @param [GetFileVersionsRequestData] request Request object.
     # @return [FileVersions]
@@ -684,6 +692,14 @@ module AsposeEmailCloud
     def list_email_models(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ListResponseOfEmailDto')
+    end
+
+    # Get message threads from folder. All messages are partly fetched (without email body and other fields)             
+    # @param [ListEmailThreadsRequestData] request Request object.
+    # @return [EmailThreadList]
+    def list_email_threads(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'EmailThreadList')
     end
 
     # Move file

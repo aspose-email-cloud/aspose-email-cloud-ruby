@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="fetch_email_message_request_data.rb">
+#  <copyright company="Aspose" file="list_email_threads_request_data.rb">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,12 +29,12 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for fetch_email_message operation.
-  class FetchEmailMessageRequestData < EmailRequest
+  # Request model for list_email_threads operation.
+  class ListEmailThreadsRequestData < EmailRequest
 
-    # Message identifier
+    # A folder in email account
     # @return [String]
-    attr_accessor :message_id
+    attr_accessor :folder
     # Email account
     # @return [String]
     attr_accessor :first_account
@@ -47,42 +47,48 @@ module AsposeEmailCloud
     # Folder in storage where account file(s) located
     # @return [String]
     attr_accessor :storage_folder
+    # This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account             
+    # @return [BOOLEAN]
+    attr_accessor :update_folder_cache
 
-    # Fetch message mime from email account             
-    # @param [String] message_id Message identifier
+    # Get message threads from folder. All messages are partly fetched (without email body and other fields)             
+    # @param [String] folder A folder in email account
     # @param [String] first_account Email account
     # @param [String] second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
-    def initialize(message_id, first_account, second_account = nil, storage = nil, storage_folder = nil)
-      self.message_id = message_id if message_id
+    # @param [BOOLEAN] update_folder_cache This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account             
+    def initialize(folder, first_account, second_account = nil, storage = nil, storage_folder = nil, update_folder_cache = nil)
+      self.folder = folder if folder
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
       self.storage = storage if storage
       self.storage_folder = storage_folder if storage_folder
+      self.update_folder_cache = update_folder_cache if update_folder_cache
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'message_id' is set
-      if api_client.config.client_side_validation && self.message_id.nil?
-        raise ArgumentError, "Missing the required parameter 'message_id' when calling EmailApi.fetch_email_message"
+      # verify the required parameter 'folder' is set
+      if api_client.config.client_side_validation && self.folder.nil?
+        raise ArgumentError, "Missing the required parameter 'folder' when calling EmailApi.list_email_threads"
       end
 
       # verify the required parameter 'first_account' is set
       if api_client.config.client_side_validation && self.first_account.nil?
-        raise ArgumentError, "Missing the required parameter 'first_account' when calling EmailApi.fetch_email_message"
+        raise ArgumentError, "Missing the required parameter 'first_account' when calling EmailApi.list_email_threads"
       end
 
       # resource path
-      local_var_path = '/email/client/Fetch'
+      local_var_path = '/email/client/threads'
 
       # query parameters
       query_params = {}
-      query_params[:messageId] = self.message_id
+      query_params[:folder] = self.folder
       query_params[:firstAccount] = self.first_account
       query_params[:secondAccount] = self.second_account unless self.second_account.nil?
       query_params[:storage] = self.storage unless self.storage.nil?
       query_params[:storageFolder] = self.storage_folder unless self.storage_folder.nil?
+      query_params[:updateFolderCache] = self.update_folder_cache unless self.update_folder_cache.nil?
 
       # form parameters
       form_params = {}
