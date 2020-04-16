@@ -360,6 +360,15 @@ module AsposeEmailCloud
       nil
     end
 
+    # Delete thread by id. All messages from thread will also be deleted             
+    # @param [DeleteEmailThreadRequestData] request Request object.
+    # @return [nil]
+    def delete_email_thread(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :DELETE, nil)
+      nil
+    end
+
     # Delete file
     # @param [DeleteFileRequestData] request Request object.
     # @return [nil]
@@ -832,6 +841,15 @@ module AsposeEmailCloud
     def set_email_read_flag(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :POST, nil)
+      nil
+    end
+
+    # Mar all messages in thread as read or unread             
+    # @param [SetEmailThreadReadFlagRequestData] request Request object.
+    # @return [nil]
+    def set_email_thread_read_flag(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
       nil
     end
 

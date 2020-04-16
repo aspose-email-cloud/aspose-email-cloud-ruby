@@ -865,6 +865,28 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="delete_email_thread"></a>
+# **delete_email_thread**
+> delete_email_thread(request)
+
+Delete thread by id. All messages from thread will also be deleted             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::DeleteEmailThreadRequestData.new(thread_id, request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **String**| Thread id | 
+ **request** | [**DeleteEmailThreadAccountRq**](DeleteEmailThreadAccountRq.md)| Email account specifier | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="delete_file"></a>
 # **delete_file**
 > delete_file(request)
@@ -1822,14 +1844,14 @@ The query string should have the following view.      The example of a simple ex
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::ListEmailModelsRequestData.new(folder, query_string, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, recursive=recursive)
+request = AsposeEmailCloud::ListEmailModelsRequestData.new(folder, first_account, query_string=query_string, second_account=second_account, storage=storage, storage_folder=storage_folder, recursive=recursive)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **folder** | **String**| A folder in email account | 
- **query_string** | **String**| A MailQuery search string | 
  **first_account** | **String**| Email account | 
+ **query_string** | **String**| A MailQuery search string | [optional] 
  **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
@@ -1849,7 +1871,7 @@ Get message threads from folder. All messages are partly fetched (without email 
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::ListEmailThreadsRequestData.new(folder, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, update_folder_cache=update_folder_cache)
+request = AsposeEmailCloud::ListEmailThreadsRequestData.new(folder, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, update_folder_cache=update_folder_cache, messages_cache_limit=messages_cache_limit)
 ```
 
 Name | Type | Description  | Notes
@@ -1860,6 +1882,7 @@ Name | Type | Description  | Notes
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
  **update_folder_cache** | **BOOLEAN**| This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account              | [optional] [default to true]
+ **messages_cache_limit** | **Integer**| Limit messages cache size if CacheFile is used. Ignored in accounts without limits support              | [optional] [default to 200]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2191,6 +2214,28 @@ request = AsposeEmailCloud::SetEmailReadFlagRequestData.new(request)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**SetMessageReadFlagAccountBaseRequest**](SetMessageReadFlagAccountBaseRequest.md)| Message is read request | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="set_email_thread_read_flag"></a>
+# **set_email_thread_read_flag**
+> set_email_thread_read_flag(request)
+
+Mar all messages in thread as read or unread             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SetEmailThreadReadFlagRequestData.new(thread_id, request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **String**| Thread id | 
+ **request** | [**EmailThreadReadFlagRq**](EmailThreadReadFlagRq.md)| Email account specifier and IsRead flag | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

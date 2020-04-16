@@ -50,6 +50,9 @@ module AsposeEmailCloud
     # This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account             
     # @return [BOOLEAN]
     attr_accessor :update_folder_cache
+    # Limit messages cache size if CacheFile is used. Ignored in accounts without limits support             
+    # @return [Integer]
+    attr_accessor :messages_cache_limit
 
     # Get message threads from folder. All messages are partly fetched (without email body and other fields)             
     # @param [String] folder A folder in email account
@@ -58,13 +61,15 @@ module AsposeEmailCloud
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
     # @param [BOOLEAN] update_folder_cache This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account             
-    def initialize(folder, first_account, second_account = nil, storage = nil, storage_folder = nil, update_folder_cache = nil)
+    # @param [Integer] messages_cache_limit Limit messages cache size if CacheFile is used. Ignored in accounts without limits support             
+    def initialize(folder, first_account, second_account = nil, storage = nil, storage_folder = nil, update_folder_cache = nil, messages_cache_limit = nil)
       self.folder = folder if folder
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
       self.storage = storage if storage
       self.storage_folder = storage_folder if storage_folder
       self.update_folder_cache = update_folder_cache if update_folder_cache
+      self.messages_cache_limit = messages_cache_limit if messages_cache_limit
     end
 
     def to_http_info(api_client)
@@ -89,6 +94,7 @@ module AsposeEmailCloud
       query_params[:storage] = self.storage unless self.storage.nil?
       query_params[:storageFolder] = self.storage_folder unless self.storage_folder.nil?
       query_params[:updateFolderCache] = self.update_folder_cache unless self.update_folder_cache.nil?
+      query_params[:messagesCacheLimit] = self.messages_cache_limit unless self.messages_cache_limit.nil?
 
       # form parameters
       form_params = {}

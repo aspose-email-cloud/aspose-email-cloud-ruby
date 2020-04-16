@@ -42,6 +42,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**delete_contact_property**](EmailApi.md#delete_contact_property) | **DELETE** /email/Contact/{format}/{name}/properties/{memberName}/{index} | Delete property from indexed property list             
 *EmailApi* | [**delete_email_folder**](EmailApi.md#delete_email_folder) | **DELETE** /email/client/DeleteFolder | Delete a folder in email account             
 *EmailApi* | [**delete_email_message**](EmailApi.md#delete_email_message) | **DELETE** /email/client/DeleteMessage | Delete message from email account by id             
+*EmailApi* | [**delete_email_thread**](EmailApi.md#delete_email_thread) | **DELETE** /email/client/threads/{threadId} | Delete thread by id. All messages from thread will also be deleted             
 *EmailApi* | [**delete_file**](EmailApi.md#delete_file) | **DELETE** /email/storage/file/{path} | Delete file
 *EmailApi* | [**delete_folder**](EmailApi.md#delete_folder) | **DELETE** /email/storage/folder/{path} | Delete folder
 *EmailApi* | [**delete_mapi_attachment**](EmailApi.md#delete_mapi_attachment) | **DELETE** /email/Mapi/{name}/attachments/{attachment} | Remove attachment from document             
@@ -99,6 +100,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**send_email_model**](EmailApi.md#send_email_model) | **POST** /email/client/SendModel | Send an email specified by model in request             
 *EmailApi* | [**set_email_property**](EmailApi.md#set_email_property) | **PUT** /email/{fileName}/properties/{propertyName} | Set email document property value             
 *EmailApi* | [**set_email_read_flag**](EmailApi.md#set_email_read_flag) | **POST** /email/client/SetReadFlag | Sets \&quot;Message is read\&quot; flag             
+*EmailApi* | [**set_email_thread_read_flag**](EmailApi.md#set_email_thread_read_flag) | **PUT** /email/client/threads/{threadId}/read-flag | Mar all messages in thread as read or unread             
 *EmailApi* | [**storage_exists**](EmailApi.md#storage_exists) | **GET** /email/storage/{storageName}/exist | Check if storage exists
 *EmailApi* | [**update_calendar_properties**](EmailApi.md#update_calendar_properties) | **PUT** /email/Calendar/{name}/properties | Update calendar file properties             
 *EmailApi* | [**update_contact_properties**](EmailApi.md#update_contact_properties) | **PUT** /email/Contact/{format}/{name}/properties | Update contact document properties             
@@ -221,6 +223,7 @@ Class | Method | HTTP request | Description
  - [models.CalendarDtoList](CalendarDtoList.md)
  - [models.ContactDtoList](ContactDtoList.md)
  - [models.CreateFolderBaseRequest](CreateFolderBaseRequest.md)
+ - [models.DeleteEmailThreadAccountRq](DeleteEmailThreadAccountRq.md)
  - [models.DeleteFolderBaseRequest](DeleteFolderBaseRequest.md)
  - [models.DeleteMessageBaseRequest](DeleteMessageBaseRequest.md)
  - [models.DiscoverEmailConfigOauth](DiscoverEmailConfigOauth.md)
@@ -230,6 +233,7 @@ Class | Method | HTTP request | Description
  - [models.EmailClientAccountPasswordCredentials](EmailClientAccountPasswordCredentials.md)
  - [models.EmailDtoList](EmailDtoList.md)
  - [models.EmailThreadList](EmailThreadList.md)
+ - [models.EmailThreadReadFlagRq](EmailThreadReadFlagRq.md)
  - [models.FileVersion](FileVersion.md)
  - [models.HierarchicalObject](HierarchicalObject.md)
  - [models.IndexedHierarchicalObject](IndexedHierarchicalObject.md)
