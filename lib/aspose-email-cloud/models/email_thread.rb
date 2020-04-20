@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="EmailThread.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -41,12 +41,17 @@ module AsposeEmailCloud
     # @return [Array<EmailDto>]
     attr_accessor :messages
 
+    # Thread folder location             
+    # @return [String]
+    attr_accessor :folder
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'subject' => :'subject',
-        :'messages' => :'messages'
+        :'messages' => :'messages',
+        :'folder' => :'folder'
       }
     end
 
@@ -55,7 +60,8 @@ module AsposeEmailCloud
       {
         :'id' => :'String',
         :'subject' => :'String',
-        :'messages' => :'Array<EmailDto>'
+        :'messages' => :'Array<EmailDto>',
+        :'folder' => :'String'
       }
     end
 
@@ -80,16 +86,22 @@ module AsposeEmailCloud
           self.messages = value
         end
       end
+
+      if attributes.has_key?(:'folder')
+        self.folder = attributes[:'folder']
+      end
     end
 
     # Initializes the object
     # @param [String] id Thread identifier             
     # @param [String] subject Thread subject             
     # @param [Array<EmailDto>] messages List of messages in thread             
-    def initialize(id=nil, subject=nil, messages=nil)
+    # @param [String] folder Thread folder location             
+    def initialize(id=nil, subject=nil, messages=nil, folder=nil)
       self.id = id if id
       self.subject = subject if subject
       self.messages = messages if messages
+      self.folder = folder if folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -112,7 +124,8 @@ module AsposeEmailCloud
       self.class == o.class &&
           id == o.id &&
           subject == o.subject &&
-          messages == o.messages
+          messages == o.messages &&
+          folder == o.folder
     end
 
     # @see the `==` method
@@ -124,7 +137,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, subject, messages].hash
+      [id, subject, messages, folder].hash
     end
 
     # Builds the object from hash

@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="email_api.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -711,6 +711,24 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'EmailThreadList')
     end
 
+    # Move message to another folder             
+    # @param [MoveEmailMessageRequestData] request Request object.
+    # @return [nil]
+    def move_email_message(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
+    # Move thread to another folder             
+    # @param [MoveEmailThreadRequestData] request Request object.
+    # @return [nil]
+    def move_email_thread(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
     # Move file
     # @param [MoveFileRequestData] request Request object.
     # @return [nil]
@@ -844,7 +862,7 @@ module AsposeEmailCloud
       nil
     end
 
-    # Mar all messages in thread as read or unread             
+    # Mark all messages in thread as read or unread             
     # @param [SetEmailThreadReadFlagRequestData] request Request object.
     # @return [nil]
     def set_email_thread_read_flag(request)

@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="set_email_thread_read_flag_request_data.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -39,7 +39,7 @@ module AsposeEmailCloud
     # @return [EmailThreadReadFlagRq]
     attr_accessor :request
 
-    # Mar all messages in thread as read or unread             
+    # Mark all messages in thread as read or unread             
     # @param [String] thread_id Thread id
     # @param [EmailThreadReadFlagRq] request Email account specifier and IsRead flag
     def initialize(thread_id, request)

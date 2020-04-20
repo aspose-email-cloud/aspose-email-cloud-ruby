@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="aspose-email-cloud.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -160,6 +160,8 @@ require_relative './aspose-email-cloud/models/hierarchical_object'
 require_relative './aspose-email-cloud/models/indexed_hierarchical_object'
 require_relative './aspose-email-cloud/models/indexed_primitive_object'
 require_relative './aspose-email-cloud/models/linked_resource'
+require_relative './aspose-email-cloud/models/move_email_message_rq'
+require_relative './aspose-email-cloud/models/move_email_thread_rq'
 require_relative './aspose-email-cloud/models/primitive_object'
 require_relative './aspose-email-cloud/models/save_email_account_request'
 require_relative './aspose-email-cloud/models/save_o_auth_email_account_request'
@@ -261,6 +263,8 @@ require_relative './aspose-email-cloud/models/requests/list_email_folders_reques
 require_relative './aspose-email-cloud/models/requests/list_email_messages_request_data.rb'
 require_relative './aspose-email-cloud/models/requests/list_email_models_request_data.rb'
 require_relative './aspose-email-cloud/models/requests/list_email_threads_request_data.rb'
+require_relative './aspose-email-cloud/models/requests/move_email_message_request_data.rb'
+require_relative './aspose-email-cloud/models/requests/move_email_thread_request_data.rb'
 require_relative './aspose-email-cloud/models/requests/move_file_request_data.rb'
 require_relative './aspose-email-cloud/models/requests/move_folder_request_data.rb'
 require_relative './aspose-email-cloud/models/requests/object_exists_request_data.rb'

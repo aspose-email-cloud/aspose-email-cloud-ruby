@@ -1077,7 +1077,7 @@ Fetch message mime from email account
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::FetchEmailMessageRequestData.new(message_id, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder)
+request = AsposeEmailCloud::FetchEmailMessageRequestData.new(message_id, first_account, second_account=second_account, folder=folder, storage=storage, storage_folder=storage_folder)
 ```
 
 Name | Type | Description  | Notes
@@ -1085,6 +1085,7 @@ Name | Type | Description  | Notes
  **message_id** | **String**| Message identifier | 
  **first_account** | **String**| Email account | 
  **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
+ **folder** | **String**| Account folder to fetch from (should be specified for some protocols such as IMAP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
 
@@ -1102,7 +1103,7 @@ Fetch message model from email account
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::FetchEmailModelRequestData.new(message_id, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder)
+request = AsposeEmailCloud::FetchEmailModelRequestData.new(message_id, first_account, second_account=second_account, folder=folder, storage=storage, storage_folder=storage_folder)
 ```
 
 Name | Type | Description  | Notes
@@ -1110,6 +1111,7 @@ Name | Type | Description  | Notes
  **message_id** | **String**| Message identifier | 
  **first_account** | **String**| Email account | 
  **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
+ **folder** | **String**| Account folder to fetch from (should be specified for some protocols such as IMAP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
 
@@ -1886,6 +1888,49 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="move_email_message"></a>
+# **move_email_message**
+> move_email_message(request)
+
+Move message to another folder             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::MoveEmailMessageRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**MoveEmailMessageRq**](MoveEmailMessageRq.md)| Email account, folder and message specifier | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="move_email_thread"></a>
+# **move_email_thread**
+> move_email_thread(request)
+
+Move thread to another folder             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::MoveEmailThreadRequestData.new(thread_id, request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **String**| Thread identifier | 
+ **request** | [**MoveEmailThreadRq**](MoveEmailThreadRq.md)| Move thread request | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="move_file"></a>
 # **move_file**
 > move_file(request)
@@ -2221,7 +2266,7 @@ Name | Type | Description  | Notes
 # **set_email_thread_read_flag**
 > set_email_thread_read_flag(request)
 
-Mar all messages in thread as read or unread             
+Mark all messages in thread as read or unread             
 
 ### Return type
 

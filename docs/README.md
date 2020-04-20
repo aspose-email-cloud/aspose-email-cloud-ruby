@@ -85,6 +85,8 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**list_email_messages**](EmailApi.md#list_email_messages) | **GET** /email/client/ListMessages | Get messages from folder, filtered by query             
 *EmailApi* | [**list_email_models**](EmailApi.md#list_email_models) | **GET** /email/client/ListMessagesModel | Get messages from folder, filtered by query             
 *EmailApi* | [**list_email_threads**](EmailApi.md#list_email_threads) | **GET** /email/client/threads | Get message threads from folder. All messages are partly fetched (without email body and other fields)             
+*EmailApi* | [**move_email_message**](EmailApi.md#move_email_message) | **PUT** /email/client/move | Move message to another folder             
+*EmailApi* | [**move_email_thread**](EmailApi.md#move_email_thread) | **PUT** /email/client/threads/{threadId}/move | Move thread to another folder             
 *EmailApi* | [**move_file**](EmailApi.md#move_file) | **PUT** /email/storage/file/move/{srcPath} | Move file
 *EmailApi* | [**move_folder**](EmailApi.md#move_folder) | **PUT** /email/storage/folder/move/{srcPath} | Move folder
 *EmailApi* | [**object_exists**](EmailApi.md#object_exists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
@@ -100,7 +102,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**send_email_model**](EmailApi.md#send_email_model) | **POST** /email/client/SendModel | Send an email specified by model in request             
 *EmailApi* | [**set_email_property**](EmailApi.md#set_email_property) | **PUT** /email/{fileName}/properties/{propertyName} | Set email document property value             
 *EmailApi* | [**set_email_read_flag**](EmailApi.md#set_email_read_flag) | **POST** /email/client/SetReadFlag | Sets \&quot;Message is read\&quot; flag             
-*EmailApi* | [**set_email_thread_read_flag**](EmailApi.md#set_email_thread_read_flag) | **PUT** /email/client/threads/{threadId}/read-flag | Mar all messages in thread as read or unread             
+*EmailApi* | [**set_email_thread_read_flag**](EmailApi.md#set_email_thread_read_flag) | **PUT** /email/client/threads/{threadId}/read-flag | Mark all messages in thread as read or unread             
 *EmailApi* | [**storage_exists**](EmailApi.md#storage_exists) | **GET** /email/storage/{storageName}/exist | Check if storage exists
 *EmailApi* | [**update_calendar_properties**](EmailApi.md#update_calendar_properties) | **PUT** /email/Calendar/{name}/properties | Update calendar file properties             
 *EmailApi* | [**update_contact_properties**](EmailApi.md#update_contact_properties) | **PUT** /email/Contact/{format}/{name}/properties | Update contact document properties             
@@ -239,6 +241,8 @@ Class | Method | HTTP request | Description
  - [models.IndexedHierarchicalObject](IndexedHierarchicalObject.md)
  - [models.IndexedPrimitiveObject](IndexedPrimitiveObject.md)
  - [models.LinkedResource](LinkedResource.md)
+ - [models.MoveEmailMessageRq](MoveEmailMessageRq.md)
+ - [models.MoveEmailThreadRq](MoveEmailThreadRq.md)
  - [models.PrimitiveObject](PrimitiveObject.md)
  - [models.SaveEmailAccountRequest](SaveEmailAccountRequest.md)
  - [models.SaveOAuthEmailAccountRequest](SaveOAuthEmailAccountRequest.md)

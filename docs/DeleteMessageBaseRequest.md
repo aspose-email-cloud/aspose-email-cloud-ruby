@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **second_account** | **String** | Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)              | [optional] 
 **storage_folder** | [**StorageFolderLocation**](StorageFolderLocation.md) | Storage folder location of account files              | [optional] 
 **message_id** | **String** | Message identifier              | 
+**folder** | **String** | Account folder where message located. Should be specified for some accounts              | [optional] 
 **delete_permanently** | **BOOLEAN** | Specifies that message should be deleted permanently              | 
 
  Parent class: [AccountBaseRequest](AccountBaseRequest.md)
