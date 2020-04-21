@@ -45,13 +45,18 @@ module AsposeEmailCloud
     # @return [BOOLEAN]
     attr_accessor :is_read
 
+    # Specifies account folder to get thread from (required for some account types, such as EWS)             
+    # @return [String]
+    attr_accessor :folder
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'first_account' => :'firstAccount',
         :'second_account' => :'secondAccount',
         :'storage_folder' => :'storageFolder',
-        :'is_read' => :'isRead'
+        :'is_read' => :'isRead',
+        :'folder' => :'folder'
       }
     end
 
@@ -61,7 +66,8 @@ module AsposeEmailCloud
         :'first_account' => :'String',
         :'second_account' => :'String',
         :'storage_folder' => :'StorageFolderLocation',
-        :'is_read' => :'BOOLEAN'
+        :'is_read' => :'BOOLEAN',
+        :'folder' => :'String'
       }
     end
 
@@ -88,6 +94,10 @@ module AsposeEmailCloud
       if attributes.has_key?(:'isRead')
         self.is_read = attributes[:'isRead']
       end
+
+      if attributes.has_key?(:'folder')
+        self.folder = attributes[:'folder']
+      end
     end
 
     # Initializes the object
@@ -95,11 +105,13 @@ module AsposeEmailCloud
     # @param [String] second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
     # @param [BOOLEAN] is_read Read flag to set. \"true\" by default             
-    def initialize(first_account=nil, second_account=nil, storage_folder=nil, is_read=nil)
+    # @param [String] folder Specifies account folder to get thread from (required for some account types, such as EWS)             
+    def initialize(first_account=nil, second_account=nil, storage_folder=nil, is_read=nil, folder=nil)
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
       self.storage_folder = storage_folder if storage_folder
       self.is_read = is_read if is_read
+      self.folder = folder if folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -152,7 +164,8 @@ module AsposeEmailCloud
           first_account == o.first_account &&
           second_account == o.second_account &&
           storage_folder == o.storage_folder &&
-          is_read == o.is_read
+          is_read == o.is_read &&
+          folder == o.folder
     end
 
     # @see the `==` method
@@ -164,7 +177,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [first_account, second_account, storage_folder, is_read].hash
+      [first_account, second_account, storage_folder, is_read, folder].hash
     end
 
     # Builds the object from hash

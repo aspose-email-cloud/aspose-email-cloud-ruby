@@ -1606,7 +1606,7 @@ Get message thread by id. All messages are fully fetched. For accounts with Cach
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::GetEmailThreadRequestData.new(thread_id, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder)
+request = AsposeEmailCloud::GetEmailThreadRequestData.new(thread_id, first_account, second_account=second_account, folder=folder, storage=storage, storage_folder=storage_folder)
 ```
 
 Name | Type | Description  | Notes
@@ -1614,6 +1614,7 @@ Name | Type | Description  | Notes
  **thread_id** | **String**| Thread identifier | 
  **first_account** | **String**| Email account | 
  **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
+ **folder** | **String**| Specifies account folder to get thread from (required for some account types, such as EWS)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
 

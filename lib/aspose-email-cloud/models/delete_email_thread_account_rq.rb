@@ -41,12 +41,17 @@ module AsposeEmailCloud
     # @return [StorageFolderLocation]
     attr_accessor :storage_folder
 
+    # Specifies account folder to get thread from (required for some account types, such as EWS)             
+    # @return [String]
+    attr_accessor :folder
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'first_account' => :'firstAccount',
         :'second_account' => :'secondAccount',
-        :'storage_folder' => :'storageFolder'
+        :'storage_folder' => :'storageFolder',
+        :'folder' => :'folder'
       }
     end
 
@@ -55,7 +60,8 @@ module AsposeEmailCloud
       {
         :'first_account' => :'String',
         :'second_account' => :'String',
-        :'storage_folder' => :'StorageFolderLocation'
+        :'storage_folder' => :'StorageFolderLocation',
+        :'folder' => :'String'
       }
     end
 
@@ -78,16 +84,22 @@ module AsposeEmailCloud
       if attributes.has_key?(:'storageFolder')
         self.storage_folder = attributes[:'storageFolder']
       end
+
+      if attributes.has_key?(:'folder')
+        self.folder = attributes[:'folder']
+      end
     end
 
     # Initializes the object
     # @param [String] first_account First account storage file name             
     # @param [String] second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
-    def initialize(first_account=nil, second_account=nil, storage_folder=nil)
+    # @param [String] folder Specifies account folder to get thread from (required for some account types, such as EWS)             
+    def initialize(first_account=nil, second_account=nil, storage_folder=nil, folder=nil)
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
       self.storage_folder = storage_folder if storage_folder
+      self.folder = folder if folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -134,7 +146,8 @@ module AsposeEmailCloud
       self.class == o.class &&
           first_account == o.first_account &&
           second_account == o.second_account &&
-          storage_folder == o.storage_folder
+          storage_folder == o.storage_folder &&
+          folder == o.folder
     end
 
     # @see the `==` method
@@ -146,7 +159,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [first_account, second_account, storage_folder].hash
+      [first_account, second_account, storage_folder, folder].hash
     end
 
     # Builds the object from hash
