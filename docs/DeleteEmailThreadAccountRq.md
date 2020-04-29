@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 **first_account** | **String** | First account storage file name              | 
 **second_account** | **String** | Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)              | [optional] 
 **storage_folder** | [**StorageFolderLocation**](StorageFolderLocation.md) | Storage folder location of account files              | [optional] 
-**folder** | **String** | Specifies account folder to get thread from (required for some account types, such as EWS)              | [optional] 
+**folder_id** | **String** | Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.              | [optional] 
 
  Parent class: [AccountBaseRequest](AccountBaseRequest.md)
 

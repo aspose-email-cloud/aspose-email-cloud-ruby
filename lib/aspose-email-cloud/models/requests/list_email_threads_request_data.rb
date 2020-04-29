@@ -32,9 +32,9 @@ module AsposeEmailCloud
   # Request model for list_email_threads operation.
   class ListEmailThreadsRequestData < EmailRequest
 
-    # A folder in email account
+    # A folder id in email account. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.             
     # @return [String]
-    attr_accessor :folder
+    attr_accessor :folder_id
     # Email account
     # @return [String]
     attr_accessor :first_account
@@ -55,15 +55,15 @@ module AsposeEmailCloud
     attr_accessor :messages_cache_limit
 
     # Get message threads from folder. All messages are partly fetched (without email body and other fields)             
-    # @param [String] folder A folder in email account
+    # @param [String] folder_id A folder id in email account. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.             
     # @param [String] first_account Email account
     # @param [String] second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
     # @param [BOOLEAN] update_folder_cache This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account             
     # @param [Integer] messages_cache_limit Limit messages cache size if CacheFile is used. Ignored in accounts without limits support             
-    def initialize(folder, first_account, second_account = nil, storage = nil, storage_folder = nil, update_folder_cache = nil, messages_cache_limit = nil)
-      self.folder = folder if folder
+    def initialize(folder_id, first_account, second_account = nil, storage = nil, storage_folder = nil, update_folder_cache = nil, messages_cache_limit = nil)
+      self.folder_id = folder_id if folder_id
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
       self.storage = storage if storage
@@ -73,9 +73,9 @@ module AsposeEmailCloud
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'folder' is set
-      if api_client.config.client_side_validation && self.folder.nil?
-        raise ArgumentError, "Missing the required parameter 'folder' when calling EmailApi.list_email_threads"
+      # verify the required parameter 'folder_id' is set
+      if api_client.config.client_side_validation && self.folder_id.nil?
+        raise ArgumentError, "Missing the required parameter 'folder_id' when calling EmailApi.list_email_threads"
       end
 
       # verify the required parameter 'first_account' is set
@@ -88,7 +88,7 @@ module AsposeEmailCloud
 
       # query parameters
       query_params = {}
-      query_params[:folder] = self.folder
+      query_params[:folderId] = self.folder_id
       query_params[:firstAccount] = self.first_account
       query_params[:secondAccount] = self.second_account unless self.second_account.nil?
       query_params[:storage] = self.storage unless self.storage.nil?

@@ -1606,7 +1606,7 @@ Get message thread by id. All messages are fully fetched. For accounts with Cach
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::GetEmailThreadRequestData.new(thread_id, first_account, second_account=second_account, folder=folder, storage=storage, storage_folder=storage_folder)
+request = AsposeEmailCloud::GetEmailThreadRequestData.new(thread_id, first_account, second_account=second_account, folder_id=folder_id, storage=storage, storage_folder=storage_folder)
 ```
 
 Name | Type | Description  | Notes
@@ -1614,7 +1614,7 @@ Name | Type | Description  | Notes
  **thread_id** | **String**| Thread identifier | 
  **first_account** | **String**| Email account | 
  **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
- **folder** | **String**| Specifies account folder to get thread from (required for some account types, such as EWS)              | [optional] 
+ **folder_id** | **String**| Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
 
@@ -1874,12 +1874,12 @@ Get message threads from folder. All messages are partly fetched (without email 
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::ListEmailThreadsRequestData.new(folder, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, update_folder_cache=update_folder_cache, messages_cache_limit=messages_cache_limit)
+request = AsposeEmailCloud::ListEmailThreadsRequestData.new(folder_id, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, update_folder_cache=update_folder_cache, messages_cache_limit=messages_cache_limit)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder** | **String**| A folder in email account | 
+ **folder_id** | **String**| A folder id in email account. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.              | 
  **first_account** | **String**| Email account | 
  **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
@@ -2109,7 +2109,7 @@ request = AsposeEmailCloud::SaveEmailModelRequestData.new(format, name, rq)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **String**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
- **name** | **String**| iCalendar file name in storage. | 
+ **name** | **String**| Email document file name in storage. | 
  **rq** | [**StorageModelRqOfEmailDto**](StorageModelRqOfEmailDto.md)| Calendar properties update request. | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

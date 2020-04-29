@@ -49,6 +49,10 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :address
 
+    # The original e-mail address string             
+    # @return [String]
+    attr_accessor :original_address_string
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -56,7 +60,8 @@ module AsposeEmailCloud
         :'display_name' => :'displayName',
         :'preferred' => :'preferred',
         :'routing_type' => :'routingType',
-        :'address' => :'address'
+        :'address' => :'address',
+        :'original_address_string' => :'originalAddressString'
       }
     end
 
@@ -67,7 +72,8 @@ module AsposeEmailCloud
         :'display_name' => :'String',
         :'preferred' => :'BOOLEAN',
         :'routing_type' => :'String',
-        :'address' => :'String'
+        :'address' => :'String',
+        :'original_address_string' => :'String'
       }
     end
 
@@ -98,6 +104,10 @@ module AsposeEmailCloud
       if attributes.has_key?(:'address')
         self.address = attributes[:'address']
       end
+
+      if attributes.has_key?(:'originalAddressString')
+        self.original_address_string = attributes[:'originalAddressString']
+      end
     end
 
     # Initializes the object
@@ -106,12 +116,14 @@ module AsposeEmailCloud
     # @param [BOOLEAN] preferred Defines whether email address is preferred.             
     # @param [String] routing_type A routing type for an email.             
     # @param [String] address Email address.             
-    def initialize(category=nil, display_name=nil, preferred=nil, routing_type=nil, address=nil)
+    # @param [String] original_address_string The original e-mail address string             
+    def initialize(category=nil, display_name=nil, preferred=nil, routing_type=nil, address=nil, original_address_string=nil)
       self.category = category if category
       self.display_name = display_name if display_name
       self.preferred = preferred if preferred
       self.routing_type = routing_type if routing_type
       self.address = address if address
+      self.original_address_string = original_address_string if original_address_string
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -141,7 +153,8 @@ module AsposeEmailCloud
           display_name == o.display_name &&
           preferred == o.preferred &&
           routing_type == o.routing_type &&
-          address == o.address
+          address == o.address &&
+          original_address_string == o.original_address_string
     end
 
     # @see the `==` method
@@ -153,7 +166,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [category, display_name, preferred, routing_type, address].hash
+      [category, display_name, preferred, routing_type, address, original_address_string].hash
     end
 
     # Builds the object from hash

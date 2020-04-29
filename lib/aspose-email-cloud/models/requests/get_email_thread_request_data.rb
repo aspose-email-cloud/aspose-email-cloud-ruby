@@ -41,9 +41,9 @@ module AsposeEmailCloud
     # Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
     # @return [String]
     attr_accessor :second_account
-    # Specifies account folder to get thread from (required for some account types, such as EWS)             
+    # Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.             
     # @return [String]
-    attr_accessor :folder
+    attr_accessor :folder_id
     # Storage name where account file(s) located
     # @return [String]
     attr_accessor :storage
@@ -55,14 +55,14 @@ module AsposeEmailCloud
     # @param [String] thread_id Thread identifier
     # @param [String] first_account Email account
     # @param [String] second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
-    # @param [String] folder Specifies account folder to get thread from (required for some account types, such as EWS)             
+    # @param [String] folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
-    def initialize(thread_id, first_account, second_account = nil, folder = nil, storage = nil, storage_folder = nil)
+    def initialize(thread_id, first_account, second_account = nil, folder_id = nil, storage = nil, storage_folder = nil)
       self.thread_id = thread_id if thread_id
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
-      self.folder = folder if folder
+      self.folder_id = folder_id if folder_id
       self.storage = storage if storage
       self.storage_folder = storage_folder if storage_folder
     end
@@ -85,7 +85,7 @@ module AsposeEmailCloud
       query_params = {}
       query_params[:firstAccount] = self.first_account
       query_params[:secondAccount] = self.second_account unless self.second_account.nil?
-      query_params[:folder] = self.folder unless self.folder.nil?
+      query_params[:folderId] = self.folder_id unless self.folder_id.nil?
       query_params[:storage] = self.storage unless self.storage.nil?
       query_params[:storageFolder] = self.storage_folder unless self.storage_folder.nil?
 

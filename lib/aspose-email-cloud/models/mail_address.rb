@@ -41,12 +41,17 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :participation_status
 
+    # The original e-mail address string             
+    # @return [String]
+    attr_accessor :original_address_string
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'display_name' => :'displayName',
         :'address' => :'address',
-        :'participation_status' => :'participationStatus'
+        :'participation_status' => :'participationStatus',
+        :'original_address_string' => :'originalAddressString'
       }
     end
 
@@ -55,7 +60,8 @@ module AsposeEmailCloud
       {
         :'display_name' => :'String',
         :'address' => :'String',
-        :'participation_status' => :'String'
+        :'participation_status' => :'String',
+        :'original_address_string' => :'String'
       }
     end
 
@@ -78,16 +84,22 @@ module AsposeEmailCloud
       if attributes.has_key?(:'participationStatus')
         self.participation_status = attributes[:'participationStatus']
       end
+
+      if attributes.has_key?(:'originalAddressString')
+        self.original_address_string = attributes[:'originalAddressString']
+      end
     end
 
     # Initializes the object
     # @param [String] display_name Display name             
     # @param [String] address Address             
     # @param [String] participation_status Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
-    def initialize(display_name=nil, address=nil, participation_status=nil)
+    # @param [String] original_address_string The original e-mail address string             
+    def initialize(display_name=nil, address=nil, participation_status=nil, original_address_string=nil)
       self.display_name = display_name if display_name
       self.address = address if address
       self.participation_status = participation_status if participation_status
+      self.original_address_string = original_address_string if original_address_string
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -115,7 +127,8 @@ module AsposeEmailCloud
       self.class == o.class &&
           display_name == o.display_name &&
           address == o.address &&
-          participation_status == o.participation_status
+          participation_status == o.participation_status &&
+          original_address_string == o.original_address_string
     end
 
     # @see the `==` method
@@ -127,7 +140,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [display_name, address, participation_status].hash
+      [display_name, address, participation_status, original_address_string].hash
     end
 
     # Builds the object from hash
