@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="get_email_thread_request_data.rb">
+#  <copyright company="Aspose" file="fetch_email_thread_messages_request_data.rb">
 #    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,8 +29,8 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for get_email_thread operation.
-  class GetEmailThreadRequestData < EmailRequest
+  # Request model for fetch_email_thread_messages operation.
+  class FetchEmailThreadMessagesRequestData < EmailRequest
 
     # Thread identifier
     # @return [String]
@@ -41,9 +41,9 @@ module AsposeEmailCloud
     # Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
     # @return [String]
     attr_accessor :second_account
-    # Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.             
+    # Specifies account folder to get thread from             
     # @return [String]
-    attr_accessor :folder_id
+    attr_accessor :folder
     # Storage name where account file(s) located
     # @return [String]
     attr_accessor :storage
@@ -51,18 +51,18 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :storage_folder
 
-    # Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
+    # Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
     # @param [String] thread_id Thread identifier
     # @param [String] first_account Email account
     # @param [String] second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
-    # @param [String] folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.             
+    # @param [String] folder Specifies account folder to get thread from             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
-    def initialize(thread_id, first_account, second_account = nil, folder_id = nil, storage = nil, storage_folder = nil)
+    def initialize(thread_id, first_account, second_account = nil, folder = nil, storage = nil, storage_folder = nil)
       self.thread_id = thread_id if thread_id
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
-      self.folder_id = folder_id if folder_id
+      self.folder = folder if folder
       self.storage = storage if storage
       self.storage_folder = storage_folder if storage_folder
     end
@@ -70,22 +70,22 @@ module AsposeEmailCloud
     def to_http_info(api_client)
       # verify the required parameter 'thread_id' is set
       if api_client.config.client_side_validation && self.thread_id.nil?
-        raise ArgumentError, "Missing the required parameter 'thread_id' when calling EmailApi.get_email_thread"
+        raise ArgumentError, "Missing the required parameter 'thread_id' when calling EmailApi.fetch_email_thread_messages"
       end
 
       # verify the required parameter 'first_account' is set
       if api_client.config.client_side_validation && self.first_account.nil?
-        raise ArgumentError, "Missing the required parameter 'first_account' when calling EmailApi.get_email_thread"
+        raise ArgumentError, "Missing the required parameter 'first_account' when calling EmailApi.fetch_email_thread_messages"
       end
 
       # resource path
-      local_var_path = '/email/client/threads/{threadId}'.sub('{' + 'threadId' + '}', self.thread_id.to_s)
+      local_var_path = '/email/client/threads/{threadId}/messages'.sub('{' + 'threadId' + '}', self.thread_id.to_s)
 
       # query parameters
       query_params = {}
       query_params[:firstAccount] = self.first_account
       query_params[:secondAccount] = self.second_account unless self.second_account.nil?
-      query_params[:folderId] = self.folder_id unless self.folder_id.nil?
+      query_params[:folder] = self.folder unless self.folder.nil?
       query_params[:storage] = self.storage unless self.storage.nil?
       query_params[:storageFolder] = self.storage_folder unless self.storage_folder.nil?
 
