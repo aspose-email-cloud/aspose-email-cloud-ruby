@@ -453,6 +453,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'EmailDto')
     end
 
+    # Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
+    # @param [FetchEmailThreadMessagesRequestData] request Request object.
+    # @return [ListResponseOfEmailDto]
+    def fetch_email_thread_messages(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'ListResponseOfEmailDto')
+    end
+
     # Get calendar file properties             
     # @param [GetCalendarRequestData] request Request object.
     # @return [HierarchicalObject]
@@ -611,14 +619,6 @@ module AsposeEmailCloud
     def get_email_property(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'EmailPropertyResponse')
-    end
-
-    # Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
-    # @param [GetEmailThreadRequestData] request Request object.
-    # @return [EmailThread]
-    def get_email_thread(request)
-      http_request = request.to_http_info(@api_client)
-      make_request(http_request, :GET, 'EmailThread')
     end
 
     # Get file versions

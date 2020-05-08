@@ -45,9 +45,9 @@ module AsposeEmailCloud
     # @return [BOOLEAN]
     attr_accessor :is_read
 
-    # Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.             
+    # Specifies account folder to get thread from             
     # @return [String]
-    attr_accessor :folder_id
+    attr_accessor :folder
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -56,7 +56,7 @@ module AsposeEmailCloud
         :'second_account' => :'secondAccount',
         :'storage_folder' => :'storageFolder',
         :'is_read' => :'isRead',
-        :'folder_id' => :'folderId'
+        :'folder' => :'folder'
       }
     end
 
@@ -67,7 +67,7 @@ module AsposeEmailCloud
         :'second_account' => :'String',
         :'storage_folder' => :'StorageFolderLocation',
         :'is_read' => :'BOOLEAN',
-        :'folder_id' => :'String'
+        :'folder' => :'String'
       }
     end
 
@@ -95,8 +95,8 @@ module AsposeEmailCloud
         self.is_read = attributes[:'isRead']
       end
 
-      if attributes.has_key?(:'folderId')
-        self.folder_id = attributes[:'folderId']
+      if attributes.has_key?(:'folder')
+        self.folder = attributes[:'folder']
       end
     end
 
@@ -105,13 +105,13 @@ module AsposeEmailCloud
     # @param [String] second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
     # @param [BOOLEAN] is_read Read flag to set. \"true\" by default             
-    # @param [String] folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.             
-    def initialize(first_account=nil, second_account=nil, storage_folder=nil, is_read=nil, folder_id=nil)
+    # @param [String] folder Specifies account folder to get thread from             
+    def initialize(first_account=nil, second_account=nil, storage_folder=nil, is_read=nil, folder=nil)
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
       self.storage_folder = storage_folder if storage_folder
       self.is_read = is_read if is_read
-      self.folder_id = folder_id if folder_id
+      self.folder = folder if folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -165,7 +165,7 @@ module AsposeEmailCloud
           second_account == o.second_account &&
           storage_folder == o.storage_folder &&
           is_read == o.is_read &&
-          folder_id == o.folder_id
+          folder == o.folder
     end
 
     # @see the `==` method
@@ -177,7 +177,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [first_account, second_account, storage_folder, is_read, folder_id].hash
+      [first_account, second_account, storage_folder, is_read, folder].hash
     end
 
     # Builds the object from hash

@@ -1117,6 +1117,32 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="fetch_email_thread_messages"></a>
+# **fetch_email_thread_messages**
+> fetch_email_thread_messages(request)
+
+Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
+
+### Return type
+
+[**ListResponseOfEmailDto**](ListResponseOfEmailDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::FetchEmailThreadMessagesRequestData.new(thread_id, first_account, second_account=second_account, folder=folder, storage=storage, storage_folder=storage_folder)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **String**| Thread identifier | 
+ **first_account** | **String**| Email account | 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
+ **folder** | **String**| Specifies account folder to get thread from              | [optional] 
+ **storage** | **String**| Storage name where account file(s) located | [optional] 
+ **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_calendar"></a>
 # **get_calendar**
 > get_calendar(request)
@@ -1594,32 +1620,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-<a name="get_email_thread"></a>
-# **get_email_thread**
-> get_email_thread(request)
-
-Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
-
-### Return type
-
-[**EmailThread**](EmailThread.md)
-
-### Request Parameters
-```ruby
-request = AsposeEmailCloud::GetEmailThreadRequestData.new(thread_id, first_account, second_account=second_account, folder_id=folder_id, storage=storage, storage_folder=storage_folder)
-```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **thread_id** | **String**| Thread identifier | 
- **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
- **folder_id** | **String**| Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.              | [optional] 
- **storage** | **String**| Storage name where account file(s) located | [optional] 
- **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
 <a name="get_file_versions"></a>
 # **get_file_versions**
 > get_file_versions(request)
@@ -1874,12 +1874,12 @@ Get message threads from folder. All messages are partly fetched (without email 
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::ListEmailThreadsRequestData.new(folder_id, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, update_folder_cache=update_folder_cache, messages_cache_limit=messages_cache_limit)
+request = AsposeEmailCloud::ListEmailThreadsRequestData.new(folder, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, update_folder_cache=update_folder_cache, messages_cache_limit=messages_cache_limit)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **String**| A folder id in email account. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.              | 
+ **folder** | **String**| A folder in email account.              | 
  **first_account** | **String**| Email account | 
  **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
