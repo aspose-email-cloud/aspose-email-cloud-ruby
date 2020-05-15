@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="convert_email_request_data.rb">
+#  <copyright company="Aspose" file="convert_contact_request_data.rb">
 #    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,37 +29,47 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for convert_email operation.
-  class ConvertEmailRequestData < EmailRequest
+  # Request model for convert_contact operation.
+  class ConvertContactRequestData < EmailRequest
 
-    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # File format to convert to Enum, available values: VCard, WebDav, Msg
+    # @return [String]
+    attr_accessor :destination_format
+    # File format to convert from Enum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :format
     # File to convert
     # @return [File]
     attr_accessor :file
 
-    # Converts email document to specified format and returns as file             
-    # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # Converts contact document to specified format and returns as file             
+    # @param [String] destination_format File format to convert to Enum, available values: VCard, WebDav, Msg
+    # @param [String] format File format to convert from Enum, available values: VCard, WebDav, Msg
     # @param [File] file File to convert
-    def initialize(format, file)
+    def initialize(destination_format, format, file)
+      self.destination_format = destination_format if destination_format
       self.format = format if format
       self.file = file if file
     end
 
     def to_http_info(api_client)
+      # verify the required parameter 'destination_format' is set
+      if api_client.config.client_side_validation && self.destination_format.nil?
+        raise ArgumentError, "Missing the required parameter 'destination_format' when calling EmailApi.convert_contact"
+      end
+
       # verify the required parameter 'format' is set
       if api_client.config.client_side_validation && self.format.nil?
-        raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.convert_email"
+        raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.convert_contact"
       end
 
       # verify the required parameter 'file' is set
       if api_client.config.client_side_validation && self.file.nil?
-        raise ArgumentError, "Missing the required parameter 'file' when calling EmailApi.convert_email"
+        raise ArgumentError, "Missing the required parameter 'file' when calling EmailApi.convert_contact"
       end
 
       # resource path
-      local_var_path = '/email/convert/{format}'.sub('{' + 'format' + '}', self.format.to_s)
+      local_var_path = '/email/ContactModel/{format}/convert/{destinationFormat}'.sub('{' + 'destinationFormat' + '}', self.destination_format.to_s).sub('{' + 'format' + '}', self.format.to_s)
 
       # query parameters
       query_params = {}
