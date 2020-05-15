@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="convert_email_request_data.rb">
+#  <copyright company="Aspose" file="get_calendar_as_file_request_data.rb">
 #    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,44 +29,55 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for convert_email operation.
-  class ConvertEmailRequestData < EmailRequest
+  # Request model for get_calendar_as_file operation.
+  class GetCalendarAsFileRequestData < EmailRequest
 
-    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # Calendar document file name
+    # @return [String]
+    attr_accessor :file_name
+    # File format Enum, available values: Ics, Msg
     # @return [String]
     attr_accessor :format
-    # File to convert
-    # @return [File]
-    attr_accessor :file
+    # Storage name
+    # @return [String]
+    attr_accessor :storage
+    # Path to folder in storage
+    # @return [String]
+    attr_accessor :folder
 
-    # Converts email document to specified format and returns as file             
-    # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
-    # @param [File] file File to convert
-    def initialize(format, file)
+    # Converts calendar document from storage to specified format and returns as file             
+    # @param [String] file_name Calendar document file name
+    # @param [String] format File format Enum, available values: Ics, Msg
+    # @param [String] storage Storage name
+    # @param [String] folder Path to folder in storage
+    def initialize(file_name, format, storage = nil, folder = nil)
+      self.file_name = file_name if file_name
       self.format = format if format
-      self.file = file if file
+      self.storage = storage if storage
+      self.folder = folder if folder
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'format' is set
-      if api_client.config.client_side_validation && self.format.nil?
-        raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.convert_email"
+      # verify the required parameter 'file_name' is set
+      if api_client.config.client_side_validation && self.file_name.nil?
+        raise ArgumentError, "Missing the required parameter 'file_name' when calling EmailApi.get_calendar_as_file"
       end
 
-      # verify the required parameter 'file' is set
-      if api_client.config.client_side_validation && self.file.nil?
-        raise ArgumentError, "Missing the required parameter 'file' when calling EmailApi.convert_email"
+      # verify the required parameter 'format' is set
+      if api_client.config.client_side_validation && self.format.nil?
+        raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.get_calendar_as_file"
       end
 
       # resource path
-      local_var_path = '/email/convert/{format}'.sub('{' + 'format' + '}', self.format.to_s)
+      local_var_path = '/email/CalendarModel/{fileName}/as-file/{format}'.sub('{' + 'fileName' + '}', self.file_name.to_s).sub('{' + 'format' + '}', self.format.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:storage] = self.storage unless self.storage.nil?
+      query_params[:folder] = self.folder unless self.folder.nil?
 
       # form parameters
       form_params = {}
-      form_params['File'] = self.file
 
       # http body (model)
       post_body = nil
@@ -75,7 +86,7 @@ module AsposeEmailCloud
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = select_header_accept(['application/json'])
+      header_params['Accept'] = select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = form_params.any? ? 'multipart/form-data' : select_header_content_type(['application/json'])
 

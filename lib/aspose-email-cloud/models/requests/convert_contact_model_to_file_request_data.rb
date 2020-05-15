@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="convert_email_request_data.rb">
+#  <copyright company="Aspose" file="convert_contact_model_to_file_request_data.rb">
 #    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,53 +29,52 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for convert_email operation.
-  class ConvertEmailRequestData < EmailRequest
+  # Request model for convert_contact_model_to_file operation.
+  class ConvertContactModelToFileRequestData < EmailRequest
 
-    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # File format Enum, available values: VCard, WebDav, Msg
     # @return [String]
-    attr_accessor :format
-    # File to convert
-    # @return [File]
-    attr_accessor :file
+    attr_accessor :destination_format
+    # Contact model to convert
+    # @return [ContactDto]
+    attr_accessor :contact_dto
 
-    # Converts email document to specified format and returns as file             
-    # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
-    # @param [File] file File to convert
-    def initialize(format, file)
-      self.format = format if format
-      self.file = file if file
+    # Converts contact model to specified format and returns as file             
+    # @param [String] destination_format File format Enum, available values: VCard, WebDav, Msg
+    # @param [ContactDto] contact_dto Contact model to convert
+    def initialize(destination_format, contact_dto)
+      self.destination_format = destination_format if destination_format
+      self.contact_dto = contact_dto if contact_dto
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'format' is set
-      if api_client.config.client_side_validation && self.format.nil?
-        raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.convert_email"
+      # verify the required parameter 'destination_format' is set
+      if api_client.config.client_side_validation && self.destination_format.nil?
+        raise ArgumentError, "Missing the required parameter 'destination_format' when calling EmailApi.convert_contact_model_to_file"
       end
 
-      # verify the required parameter 'file' is set
-      if api_client.config.client_side_validation && self.file.nil?
-        raise ArgumentError, "Missing the required parameter 'file' when calling EmailApi.convert_email"
+      # verify the required parameter 'contact_dto' is set
+      if api_client.config.client_side_validation && self.contact_dto.nil?
+        raise ArgumentError, "Missing the required parameter 'contact_dto' when calling EmailApi.convert_contact_model_to_file"
       end
 
       # resource path
-      local_var_path = '/email/convert/{format}'.sub('{' + 'format' + '}', self.format.to_s)
+      local_var_path = '/email/ContactModel/model-as-file/{destinationFormat}'.sub('{' + 'destinationFormat' + '}', self.destination_format.to_s)
 
       # query parameters
       query_params = {}
 
       # form parameters
       form_params = {}
-      form_params['File'] = self.file
 
       # http body (model)
-      post_body = nil
+      post_body = api_client.object_to_http_body(self.contact_dto)
       auth_names = ['JWT']
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = select_header_accept(['application/json'])
+      header_params['Accept'] = select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = form_params.any? ? 'multipart/form-data' : select_header_content_type(['application/json'])
 

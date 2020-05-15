@@ -237,12 +237,44 @@ module AsposeEmailCloud
       make_request(http_request, :PUT, 'ValueResponse')
     end
 
+    # Converts calendar document to specified format and returns as file             
+    # @param [ConvertCalendarRequestData] request Request object.
+    # @return [File]
+    def convert_calendar(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
     # Convert iCalendar to AlternateView             
     # @param [ConvertCalendarModelToAlternateRequestData] request Request object.
     # @return [AlternateView]
     def convert_calendar_model_to_alternate(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, 'AlternateView')
+    end
+
+    # Converts calendar model to specified format and returns as file             
+    # @param [ConvertCalendarModelToFileRequestData] request Request object.
+    # @return [File]
+    def convert_calendar_model_to_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
+    # Converts contact document to specified format and returns as file             
+    # @param [ConvertContactRequestData] request Request object.
+    # @return [File]
+    def convert_contact(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
+    # Converts contact model to specified format and returns as file             
+    # @param [ConvertContactModelToFileRequestData] request Request object.
+    # @return [File]
+    def convert_contact_model_to_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
     end
 
     # Converts email document to specified format and returns as file             
@@ -469,6 +501,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'HierarchicalObject')
     end
 
+    # Converts calendar document from storage to specified format and returns as file             
+    # @param [GetCalendarAsFileRequestData] request Request object.
+    # @return [File]
+    def get_calendar_as_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'File')
+    end
+
     # Get iCalendar document attachment by name             
     # @param [GetCalendarAttachmentRequestData] request Request object.
     # @return [File]
@@ -507,6 +547,14 @@ module AsposeEmailCloud
     def get_calendar_model_list(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'CalendarDtoList')
+    end
+
+    # Converts calendar document from storage to specified format and returns as file             
+    # @param [GetContactAsFileRequestData] request Request object.
+    # @return [File]
+    def get_contact_as_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'File')
     end
 
     # Get attachment file by name             
