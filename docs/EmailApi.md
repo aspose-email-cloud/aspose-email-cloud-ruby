@@ -558,7 +558,7 @@ Converts calendar document to specified format and returns as file
 
 ### Return type
 
-**File**
+**file**
 
 ### Request Parameters
 ```ruby
@@ -623,7 +623,7 @@ Converts contact document to specified format and returns as file
 
 ### Return type
 
-**File**
+**file**
 
 ### Request Parameters
 ```ruby
@@ -668,7 +668,7 @@ Converts email document to specified format and returns as file
 
 ### Return type
 
-**File**
+**file**
 
 ### Request Parameters
 ```ruby
@@ -679,6 +679,28 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
  **file** | **File**| File to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_email_model_to_file"></a>
+# **convert_email_model_to_file**
+> convert_email_model_to_file(request)
+
+Converts Email model to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertEmailModelToFileRequestData.new(destination_format, email_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **email_dto** | [**EmailDto**](EmailDto.md)| Email model to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1303,6 +1325,27 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_calendar_file_as_model"></a>
+# **get_calendar_file_as_model**
+> get_calendar_file_as_model(request)
+
+Converts calendar document to a model representation             
+
+### Return type
+
+[**CalendarDto**](CalendarDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetCalendarFileAsModelRequestData.new(file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| File to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_calendar_list"></a>
 # **get_calendar_list**
 > get_calendar_list(request)
@@ -1446,6 +1489,28 @@ Name | Type | Description  | Notes
  **attachment** | **String**| Attachment name or index | 
  **folder** | **String**| Path to folder in storage | [optional] 
  **storage** | **String**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_contact_file_as_model"></a>
+# **get_contact_file_as_model**
+> get_contact_file_as_model(request)
+
+Converts contact document to a model representation             
+
+### Return type
+
+[**ContactDto**](ContactDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetContactFileAsModelRequestData.new(format, file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| File format Enum, available values: VCard, WebDav, Msg | 
+ **file** | **File**| File to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1682,6 +1747,28 @@ Name | Type | Description  | Notes
  **name** | **String**| File name on storage | 
  **folder** | **String**| Folder on storage | 
  **storage** | **String**| Storage name | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_email_file_as_model"></a>
+# **get_email_file_as_model**
+> get_email_file_as_model(request)
+
+Converts email document to a model representation             
+
+### Return type
+
+[**EmailDto**](EmailDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetEmailFileAsModelRequestData.new(format, file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **file** | **File**| File to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

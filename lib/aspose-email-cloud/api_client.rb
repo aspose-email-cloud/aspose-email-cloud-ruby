@@ -248,7 +248,6 @@ module AsposeEmailCloud
     # @see Configuration#temp_folder_path
     def download_file(response)
       tempfile = nil
-      encoding = nil
       content_disposition = response.headers['Content-Disposition']
       if content_disposition and content_disposition =~ /filename=/i
         filename = content_disposition[/filename=['"]?([^'"\s]+)['"]?/, 1]
@@ -257,8 +256,8 @@ module AsposeEmailCloud
         prefix = 'download-'
       end
       prefix += '-' unless prefix.end_with?('-')
-      encoding = response.body.encoding
-      tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding: encoding)
+      tempfile = Tempfile.open(prefix, @config.temp_folder_path)
+      tempfile.binmode
       @tempfile = tempfile
       tempfile.write(response.body)
       response.on_complete do |resp|

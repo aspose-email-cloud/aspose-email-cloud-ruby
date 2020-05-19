@@ -391,6 +391,33 @@ module EmailApiSpec
         .to eq(multi_account.send_account.credentials.discriminator)
     end
 
+    it 'Check convert calendar', :pipeline do
+      location = 'Some location'
+      # Create DTO with specified location:
+      calendar_dto = CalendarDto.new
+      calendar_dto.location = location
+      calendar_dto.summary = 'Some summary'
+      calendar_dto.description = 'Some description'
+      calendar_dto.start_date = DateTime.now
+      calendar_dto.end_date = DateTime.now + 1
+      calendar_dto.organizer = MailAddress.new nil, 'organizer@aspose.com'
+      calendar_dto.attendees = [MailAddress.new(nil, 'attendee@aspose.com')]
+      # We can convert this DTO to a MAPI or ICS file:
+      mapi_file = @api.convert_calendar_model_to_file(
+        ConvertCalendarModelToFileRequestData.new('Msg', calendar_dto))
+      # Let's convert this file to an ICS format:
+      ics_file = @api.convert_calendar(
+        ConvertCalendarRequestData.new('Ics', mapi_file))
+      # ICS is a text format. We can read file content to a string and check that it
+      # contains specified location as a substring:
+      ics_content = IO.read(ics_file)
+      expect(ics_content).to include location
+      # We can also convert the file back to a CalendarDto object:
+      dto = @api.get_calendar_file_as_model(
+        GetCalendarFileAsModelRequestData.new(ics_file))
+      expect(dto.location).to eq location
+    end
+
     def create_calendar(start_date = nil)
       file_name = SecureRandom.uuid.to_s + '.ics'
       start_date = start_date.nil? ? DateTime.now + 1 : start_date
