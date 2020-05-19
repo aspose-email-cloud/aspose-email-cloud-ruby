@@ -285,6 +285,14 @@ module AsposeEmailCloud
       make_request(http_request, :PUT, 'File')
     end
 
+    # Converts Email model to specified format and returns as file             
+    # @param [ConvertEmailModelToFileRequestData] request Request object.
+    # @return [File]
+    def convert_email_model_to_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
     # Copy file
     # @param [CopyFileRequestData] request Request object.
     # @return [nil]
@@ -517,6 +525,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'File')
     end
 
+    # Converts calendar document to a model representation             
+    # @param [GetCalendarFileAsModelRequestData] request Request object.
+    # @return [CalendarDto]
+    def get_calendar_file_as_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'CalendarDto')
+    end
+
     # Get iCalendar files list in folder on storage             
     # @param [GetCalendarListRequestData] request Request object.
     # @return [ListResponseOfHierarchicalObjectResponse]
@@ -563,6 +579,14 @@ module AsposeEmailCloud
     def get_contact_attachment(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'File')
+    end
+
+    # Converts contact document to a model representation             
+    # @param [GetContactFileAsModelRequestData] request Request object.
+    # @return [ContactDto]
+    def get_contact_file_as_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'ContactDto')
     end
 
     # Get contact list from storage folder             
@@ -643,6 +667,14 @@ module AsposeEmailCloud
     def get_email_client_multi_account(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'EmailClientMultiAccount')
+    end
+
+    # Converts email document to a model representation             
+    # @param [GetEmailFileAsModelRequestData] request Request object.
+    # @return [EmailDto]
+    def get_email_file_as_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'EmailDto')
     end
 
     # Get email document.             
