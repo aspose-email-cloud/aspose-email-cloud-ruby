@@ -32,34 +32,24 @@ module AsposeEmailCloud
   # Request model for get_email_file_as_model operation.
   class GetEmailFileAsModelRequestData < EmailRequest
 
-    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
-    # @return [String]
-    attr_accessor :format
     # File to convert
     # @return [File]
     attr_accessor :file
 
     # Converts email document to a model representation             
-    # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
     # @param [File] file File to convert
-    def initialize(format, file)
-      self.format = format if format
+    def initialize(file)
       self.file = file if file
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'format' is set
-      if api_client.config.client_side_validation && self.format.nil?
-        raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.get_email_file_as_model"
-      end
-
       # verify the required parameter 'file' is set
       if api_client.config.client_side_validation && self.file.nil?
         raise ArgumentError, "Missing the required parameter 'file' when calling EmailApi.get_email_file_as_model"
       end
 
       # resource path
-      local_var_path = '/email/model/{format}/file-as-model'.sub('{' + 'format' + '}', self.format.to_s)
+      local_var_path = '/email/model/file-as-model'
 
       # query parameters
       query_params = {}

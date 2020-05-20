@@ -1762,12 +1762,11 @@ Converts email document to a model representation
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::GetEmailFileAsModelRequestData.new(format, file)
+request = AsposeEmailCloud::GetEmailFileAsModelRequestData.new(file)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
  **file** | **File**| File to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
