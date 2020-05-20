@@ -85,7 +85,7 @@ module AsposeEmailCloud
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = select_header_accept(['application/json'])
+      header_params['Accept'] = select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = form_params.any? ? 'multipart/form-data' : select_header_content_type(['application/json'])
 
