@@ -418,6 +418,44 @@ module EmailApiSpec
       expect(dto.location).to eq location
     end
 
+    it 'Check convert contact', :pipeline do
+      surname = 'Cane'
+      contact_dto = ContactDto.new
+      contact_dto.surname = surname
+      contact_dto.given_name = 'John'
+      contact_dto.gender = 'Male'
+      contact_dto.email_addresses = [EmailAddress.new(nil, nil, nil, nil, 'address@aspose.com')]
+      contact_dto.phone_numbers = [PhoneNumber.new(nil, '+4734534643')]
+      mapi_file = @api.convert_contact_model_to_file(
+        ConvertContactModelToFileRequestData.new('Msg', contact_dto))
+      vcard_file = @api.convert_contact(
+        ConvertContactRequestData.new('VCard', 'Msg', mapi_file))
+      vcard_content = IO.read(vcard_file)
+      expect(vcard_content).to include surname
+      dto = @api.get_contact_file_as_model(
+        GetContactFileAsModelRequestData.new('VCard', vcard_file))
+      expect(dto.surname).to eq surname
+    end
+
+    it 'Check convert email', :pipeline do
+      from = 'from@aspose.com'
+      email_dto = EmailDto.new
+      email_dto.from = MailAddress.new(nil, from)
+      email_dto.to = [MailAddress.new(nil, 'to@aspose.com')]
+      email_dto.subject = 'Some subject'
+      email_dto.body = 'Some body'
+      email_dto.date = DateTime.now
+      mapi_file = @api.convert_email_model_to_file(
+        ConvertEmailModelToFileRequestData.new('Msg', email_dto))
+      eml_file = @api.convert_email(
+        ConvertEmailRequestData.new('Eml', mapi_file))
+      eml_content = IO.read(eml_file)
+      expect(eml_content).to include from
+      dto = @api.get_email_file_as_model(
+        GetEmailFileAsModelRequestData.new(eml_file))
+      expect(dto.from.address).to eq from
+    end
+
     def create_calendar(start_date = nil)
       file_name = SecureRandom.uuid.to_s + '.ics'
       start_date = start_date.nil? ? DateTime.now + 1 : start_date
