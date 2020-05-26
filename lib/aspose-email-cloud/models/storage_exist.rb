@@ -27,9 +27,8 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Storage exists
   class StorageExist
-    # Shows that the storage exists.             
+    
     # @return [BOOLEAN]
     attr_accessor :exists
 
@@ -61,7 +60,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [BOOLEAN] exists Shows that the storage exists.             
+    # @param [BOOLEAN] exists 
     def initialize(exists=nil)
       self.exists = exists if exists
     end

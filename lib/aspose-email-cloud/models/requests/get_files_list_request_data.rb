@@ -32,16 +32,15 @@ module AsposeEmailCloud
   # Request model for get_files_list operation.
   class GetFilesListRequestData < EmailRequest
 
-    # Folder path e.g. &#39;/folder&#39;
+    # 
     # @return [String]
     attr_accessor :path
-    # Storage name
+    # 
     # @return [String]
     attr_accessor :storage_name
 
-    # Get all files and folders within a folder
-    # @param [String] path Folder path e.g. &#39;/folder&#39;
-    # @param [String] storage_name Storage name
+    # @param [String] path 
+    # @param [String] storage_name 
     def initialize(path, storage_name = nil)
       self.path = path if path
       self.storage_name = storage_name if storage_name

@@ -27,13 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Class for disc space information.
   class DiscUsage
-    # Application used disc space.
+    
     # @return [Integer]
     attr_accessor :used_size
 
-    # Total disc space.
+    
     # @return [Integer]
     attr_accessor :total_size
 
@@ -71,8 +70,8 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Integer] used_size Application used disc space.
-    # @param [Integer] total_size Total disc space.
+    # @param [Integer] used_size 
+    # @param [Integer] total_size 
     def initialize(used_size=nil, total_size=nil)
       self.used_size = used_size if used_size
       self.total_size = total_size if total_size

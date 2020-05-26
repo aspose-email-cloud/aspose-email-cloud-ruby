@@ -32,20 +32,19 @@ module AsposeEmailCloud
   # Request model for download_file operation.
   class DownloadFileRequestData < EmailRequest
 
-    # File path e.g. &#39;/folder/file.ext&#39;
+    # 
     # @return [String]
     attr_accessor :path
-    # Storage name
+    # 
     # @return [String]
     attr_accessor :storage_name
-    # File version ID to download
+    # 
     # @return [String]
     attr_accessor :version_id
 
-    # Download file
-    # @param [String] path File path e.g. &#39;/folder/file.ext&#39;
-    # @param [String] storage_name Storage name
-    # @param [String] version_id File version ID to download
+    # @param [String] path 
+    # @param [String] storage_name 
+    # @param [String] version_id 
     def initialize(path, storage_name = nil, version_id = nil)
       self.path = path if path
       self.storage_name = storage_name if storage_name

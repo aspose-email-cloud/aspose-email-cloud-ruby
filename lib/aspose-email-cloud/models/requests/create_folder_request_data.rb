@@ -32,16 +32,15 @@ module AsposeEmailCloud
   # Request model for create_folder operation.
   class CreateFolderRequestData < EmailRequest
 
-    # Folder path to create e.g. &#39;folder_1/folder_2/&#39;
+    # 
     # @return [String]
     attr_accessor :path
-    # Storage name
+    # 
     # @return [String]
     attr_accessor :storage_name
 
-    # Create the folder
-    # @param [String] path Folder path to create e.g. &#39;folder_1/folder_2/&#39;
-    # @param [String] storage_name Storage name
+    # @param [String] path 
+    # @param [String] storage_name 
     def initialize(path, storage_name = nil)
       self.path = path if path
       self.storage_name = storage_name if storage_name

@@ -708,7 +708,7 @@ Name | Type | Description  | Notes
 # **copy_file**
 > copy_file(request)
 
-Copy file
+
 
 ### Return type
 
@@ -721,11 +721,11 @@ request = AsposeEmailCloud::CopyFileRequestData.new(src_path, dest_path, src_sto
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **String**| Source file path e.g. &#39;/folder/file.ext&#39; | 
- **dest_path** | **String**| Destination file path | 
- **src_storage_name** | **String**| Source storage name | [optional] 
- **dest_storage_name** | **String**| Destination storage name | [optional] 
- **version_id** | **String**| File version ID to copy | [optional] 
+ **src_path** | **String**|  | 
+ **dest_path** | **String**|  | 
+ **src_storage_name** | **String**|  | [optional] 
+ **dest_storage_name** | **String**|  | [optional] 
+ **version_id** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 # **copy_folder**
 > copy_folder(request)
 
-Copy folder
+
 
 ### Return type
 
@@ -746,10 +746,10 @@ request = AsposeEmailCloud::CopyFolderRequestData.new(src_path, dest_path, src_s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **String**| Source folder path e.g. &#39;/src&#39; | 
- **dest_path** | **String**| Destination folder path e.g. &#39;/dst&#39; | 
- **src_storage_name** | **String**| Source storage name | [optional] 
- **dest_storage_name** | **String**| Destination storage name | [optional] 
+ **src_path** | **String**|  | 
+ **dest_path** | **String**|  | 
+ **src_storage_name** | **String**|  | [optional] 
+ **dest_storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -845,7 +845,7 @@ Name | Type | Description  | Notes
 # **create_folder**
 > create_folder(request)
 
-Create the folder
+
 
 ### Return type
 
@@ -858,8 +858,8 @@ request = AsposeEmailCloud::CreateFolderRequestData.new(path, storage_name=stora
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| Folder path to create e.g. &#39;folder_1/folder_2/&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1002,7 +1002,7 @@ Name | Type | Description  | Notes
 # **delete_file**
 > delete_file(request)
 
-Delete file
+
 
 ### Return type
 
@@ -1015,9 +1015,9 @@ request = AsposeEmailCloud::DeleteFileRequestData.new(path, storage_name=storage
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| File path e.g. &#39;/folder/file.ext&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
- **version_id** | **String**| File version ID to delete | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
+ **version_id** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1025,7 +1025,7 @@ Name | Type | Description  | Notes
 # **delete_folder**
 > delete_folder(request)
 
-Delete folder
+
 
 ### Return type
 
@@ -1038,9 +1038,9 @@ request = AsposeEmailCloud::DeleteFolderRequestData.new(path, storage_name=stora
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| Folder path e.g. &#39;/folder&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
- **recursive** | **BOOLEAN**| Enable to delete folders, subfolders and files | [optional] [default to false]
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
+ **recursive** | **BOOLEAN**|  | [optional] [default to false]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1157,7 +1157,7 @@ Name | Type | Description  | Notes
 # **download_file**
 > download_file(request)
 
-Download file
+
 
 ### Return type
 
@@ -1170,9 +1170,9 @@ request = AsposeEmailCloud::DownloadFileRequestData.new(path, storage_name=stora
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| File path e.g. &#39;/folder/file.ext&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
- **version_id** | **String**| File version ID to download | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
+ **version_id** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1616,7 +1616,7 @@ Name | Type | Description  | Notes
 # **get_disc_usage**
 > get_disc_usage(request)
 
-Get disc usage
+
 
 ### Return type
 
@@ -1629,7 +1629,7 @@ request = AsposeEmailCloud::GetDiscUsageRequestData.new(storage_name=storage_nam
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_name** | **String**| Storage name | [optional] 
+ **storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1848,7 +1848,7 @@ Name | Type | Description  | Notes
 # **get_file_versions**
 > get_file_versions(request)
 
-Get file versions
+
 
 ### Return type
 
@@ -1861,8 +1861,8 @@ request = AsposeEmailCloud::GetFileVersionsRequestData.new(path, storage_name=st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| File path e.g. &#39;/file.ext&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1870,7 +1870,7 @@ Name | Type | Description  | Notes
 # **get_files_list**
 > get_files_list(request)
 
-Get all files and folders within a folder
+
 
 ### Return type
 
@@ -1883,8 +1883,8 @@ request = AsposeEmailCloud::GetFilesListRequestData.new(path, storage_name=stora
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| Folder path e.g. &#39;/folder&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2160,7 +2160,7 @@ Name | Type | Description  | Notes
 # **move_file**
 > move_file(request)
 
-Move file
+
 
 ### Return type
 
@@ -2173,11 +2173,11 @@ request = AsposeEmailCloud::MoveFileRequestData.new(src_path, dest_path, src_sto
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **String**| Source file path e.g. &#39;/src.ext&#39; | 
- **dest_path** | **String**| Destination file path e.g. &#39;/dest.ext&#39; | 
- **src_storage_name** | **String**| Source storage name | [optional] 
- **dest_storage_name** | **String**| Destination storage name | [optional] 
- **version_id** | **String**| File version ID to move | [optional] 
+ **src_path** | **String**|  | 
+ **dest_path** | **String**|  | 
+ **src_storage_name** | **String**|  | [optional] 
+ **dest_storage_name** | **String**|  | [optional] 
+ **version_id** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2185,7 +2185,7 @@ Name | Type | Description  | Notes
 # **move_folder**
 > move_folder(request)
 
-Move folder
+
 
 ### Return type
 
@@ -2198,10 +2198,10 @@ request = AsposeEmailCloud::MoveFolderRequestData.new(src_path, dest_path, src_s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **String**| Folder path to move e.g. &#39;/folder&#39; | 
- **dest_path** | **String**| Destination folder path to move to e.g &#39;/dst&#39; | 
- **src_storage_name** | **String**| Source storage name | [optional] 
- **dest_storage_name** | **String**| Destination storage name | [optional] 
+ **src_path** | **String**|  | 
+ **dest_path** | **String**|  | 
+ **src_storage_name** | **String**|  | [optional] 
+ **dest_storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2209,7 +2209,7 @@ Name | Type | Description  | Notes
 # **object_exists**
 > object_exists(request)
 
-Check if file or folder exists
+
 
 ### Return type
 
@@ -2222,9 +2222,9 @@ request = AsposeEmailCloud::ObjectExistsRequestData.new(path, storage_name=stora
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
- **version_id** | **String**| File version ID | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
+ **version_id** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2513,7 +2513,7 @@ Name | Type | Description  | Notes
 # **storage_exists**
 > storage_exists(request)
 
-Check if storage exists
+
 
 ### Return type
 
@@ -2526,7 +2526,7 @@ request = AsposeEmailCloud::StorageExistsRequestData.new(storage_name)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_name** | **String**| Storage name | 
+ **storage_name** | **String**|  | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2601,7 +2601,7 @@ Name | Type | Description  | Notes
 # **upload_file**
 > upload_file(request)
 
-Upload file
+
 
 ### Return type
 
@@ -2614,9 +2614,9 @@ request = AsposeEmailCloud::UploadFileRequestData.new(path, file, storage_name=s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.              | 
+ **path** | **String**|  | 
  **file** | **File**| File to upload | 
- **storage_name** | **String**| Storage name | [optional] 
+ **storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

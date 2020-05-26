@@ -32,12 +32,11 @@ module AsposeEmailCloud
   # Request model for storage_exists operation.
   class StorageExistsRequestData < EmailRequest
 
-    # Storage name
+    # 
     # @return [String]
     attr_accessor :storage_name
 
-    # Check if storage exists
-    # @param [String] storage_name Storage name
+    # @param [String] storage_name 
     def initialize(storage_name)
       self.storage_name = storage_name if storage_name
     end

@@ -42,7 +42,7 @@ module AsposeEmailCloud
     attr_accessor :storage_folder
 
     # Message to send             
-    # @return [EmailDto]
+    # @return [Object]
     attr_accessor :message
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -61,7 +61,7 @@ module AsposeEmailCloud
         :'first_account' => :'String',
         :'second_account' => :'String',
         :'storage_folder' => :'StorageFolderLocation',
-        :'message' => :'EmailDto'
+        :'message' => :'Object'
       }
     end
 
@@ -94,7 +94,7 @@ module AsposeEmailCloud
     # @param [String] first_account First account storage file name             
     # @param [String] second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
-    # @param [EmailDto] message Message to send             
+    # @param [Object] message Message to send             
     def initialize(first_account=nil, second_account=nil, storage_folder=nil, message=nil)
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account

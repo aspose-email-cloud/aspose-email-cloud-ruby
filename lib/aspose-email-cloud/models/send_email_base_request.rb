@@ -42,7 +42,7 @@ module AsposeEmailCloud
     attr_accessor :storage_folder
 
     # Email document (*.eml) file location in storage             
-    # @return [StorageFileLocation]
+    # @return [Object]
     attr_accessor :email_file
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -61,7 +61,7 @@ module AsposeEmailCloud
         :'first_account' => :'String',
         :'second_account' => :'String',
         :'storage_folder' => :'StorageFolderLocation',
-        :'email_file' => :'StorageFileLocation'
+        :'email_file' => :'Object'
       }
     end
 
@@ -94,7 +94,7 @@ module AsposeEmailCloud
     # @param [String] first_account First account storage file name             
     # @param [String] second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
-    # @param [StorageFileLocation] email_file Email document (*.eml) file location in storage             
+    # @param [Object] email_file Email document (*.eml) file location in storage             
     def initialize(first_account=nil, second_account=nil, storage_folder=nil, email_file=nil)
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account

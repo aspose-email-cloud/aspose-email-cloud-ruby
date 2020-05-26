@@ -293,7 +293,6 @@ module AsposeEmailCloud
       make_request(http_request, :PUT, 'File')
     end
 
-    # Copy file
     # @param [CopyFileRequestData] request Request object.
     # @return [nil]
     def copy_file(request)
@@ -302,7 +301,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Copy folder
     # @param [CopyFolderRequestData] request Request object.
     # @return [nil]
     def copy_folder(request)
@@ -346,7 +344,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Create the folder
     # @param [CreateFolderRequestData] request Request object.
     # @return [nil]
     def create_folder(request)
@@ -409,7 +406,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Delete file
     # @param [DeleteFileRequestData] request Request object.
     # @return [nil]
     def delete_file(request)
@@ -418,7 +414,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Delete folder
     # @param [DeleteFolderRequestData] request Request object.
     # @return [nil]
     def delete_folder(request)
@@ -469,7 +464,6 @@ module AsposeEmailCloud
       make_request(http_request, :POST, 'EmailAccountConfigList')
     end
 
-    # Download file
     # @param [DownloadFileRequestData] request Request object.
     # @return [File]
     def download_file(request)
@@ -621,7 +615,6 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'HierarchicalObject')
     end
 
-    # Get disc usage
     # @param [GetDiscUsageRequestData] request Request object.
     # @return [DiscUsage]
     def get_disc_usage(request)
@@ -701,7 +694,6 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'EmailPropertyResponse')
     end
 
-    # Get file versions
     # @param [GetFileVersionsRequestData] request Request object.
     # @return [FileVersions]
     def get_file_versions(request)
@@ -709,7 +701,6 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'FileVersions')
     end
 
-    # Get all files and folders within a folder
     # @param [GetFilesListRequestData] request Request object.
     # @return [FilesList]
     def get_files_list(request)
@@ -809,7 +800,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Move file
     # @param [MoveFileRequestData] request Request object.
     # @return [nil]
     def move_file(request)
@@ -818,7 +808,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Move folder
     # @param [MoveFolderRequestData] request Request object.
     # @return [nil]
     def move_folder(request)
@@ -827,7 +816,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Check if file or folder exists
     # @param [ObjectExistsRequestData] request Request object.
     # @return [ObjectExist]
     def object_exists(request)
@@ -951,7 +939,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Check if storage exists
     # @param [StorageExistsRequestData] request Request object.
     # @return [StorageExist]
     def storage_exists(request)
@@ -986,7 +973,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Upload file
     # @param [UploadFileRequestData] request Request object.
     # @return [FilesUploadResult]
     def upload_file(request)

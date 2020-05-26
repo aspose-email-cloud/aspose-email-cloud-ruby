@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **storage_folder** | [**StorageFolderLocation**](StorageFolderLocation.md) | Storage folder location of account files              | [optional] 
 **folder** | **String** | Email account folder to store a message              | 
 **mark_as_sent** | **BOOLEAN** | Mark message as sent              | 
-**message** | [**EmailDto**](EmailDto.md) | Email document              | 
+**message** | **Object** | Email document              | 
 
  Parent class: [AppendEmailAccountBaseRequest](AppendEmailAccountBaseRequest.md)
 

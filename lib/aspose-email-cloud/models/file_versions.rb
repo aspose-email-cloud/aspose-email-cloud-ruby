@@ -27,9 +27,8 @@
 require 'date'
 
 module AsposeEmailCloud
-  # File versions FileVersion.
   class FileVersions
-    # File versions FileVersion.
+    
     # @return [Array<FileVersion>]
     attr_accessor :value
 
@@ -63,7 +62,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Array<FileVersion>] value File versions FileVersion.
+    # @param [Array<FileVersion>] value 
     def initialize(value=nil)
       self.value = value if value
     end

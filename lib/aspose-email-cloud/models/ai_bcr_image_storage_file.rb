@@ -34,7 +34,7 @@ module AsposeEmailCloud
     attr_accessor :is_single
 
     # Image location             
-    # @return [StorageFileLocation]
+    # @return [Object]
     attr_accessor :file
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -49,7 +49,7 @@ module AsposeEmailCloud
     def self.swagger_types
       {
         :'is_single' => :'BOOLEAN',
-        :'file' => :'StorageFileLocation'
+        :'file' => :'Object'
       }
     end
 
@@ -72,7 +72,7 @@ module AsposeEmailCloud
 
     # Initializes the object
     # @param [BOOLEAN] is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon             
-    # @param [StorageFileLocation] file Image location             
+    # @param [Object] file Image location             
     def initialize(is_single=nil, file=nil)
       self.is_single = is_single if is_single
       self.file = file if file
