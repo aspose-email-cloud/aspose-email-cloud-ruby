@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="save_email_model_request_data.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
     # @return [String]
     attr_accessor :format
-    # iCalendar file name in storage.
+    # Email document file name in storage.
     # @return [String]
     attr_accessor :name
     # Calendar properties update request.
@@ -44,7 +44,7 @@ module AsposeEmailCloud
 
     # Save email document.             
     # @param [String] format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
-    # @param [String] name iCalendar file name in storage.
+    # @param [String] name Email document file name in storage.
     # @param [StorageModelRqOfEmailDto] rq Calendar properties update request.
     def initialize(format, name, rq)
       self.format = format if format

@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="Error.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -27,21 +27,20 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Error
   class Error
-    # Code             
+    
     # @return [String]
     attr_accessor :code
 
-    # Message             
+    
     # @return [String]
     attr_accessor :message
 
-    # Description             
+    
     # @return [String]
     attr_accessor :description
 
-    # Inner Error             
+    
     # @return [ErrorDetails]
     attr_accessor :inner_error
 
@@ -91,10 +90,10 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] code Code             
-    # @param [String] message Message             
-    # @param [String] description Description             
-    # @param [ErrorDetails] inner_error Inner Error             
+    # @param [String] code 
+    # @param [String] message 
+    # @param [String] description 
+    # @param [ErrorDetails] inner_error 
     def initialize(code=nil, message=nil, description=nil, inner_error=nil)
       self.code = code if code
       self.message = message if message

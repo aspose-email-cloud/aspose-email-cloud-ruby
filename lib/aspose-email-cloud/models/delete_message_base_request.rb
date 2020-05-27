@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="DeleteMessageBaseRequest.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -29,11 +29,11 @@ require 'date'
 module AsposeEmailCloud
   # Delete message request             
   class DeleteMessageBaseRequest
-    # First account storage file name for receiving emails (or universal one)             
+    # First account storage file name             
     # @return [String]
     attr_accessor :first_account
 
-    # Second account storage file name for sending emails (ignored if first is universal)             
+    # Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @return [String]
     attr_accessor :second_account
 
@@ -44,6 +44,10 @@ module AsposeEmailCloud
     # Message identifier             
     # @return [String]
     attr_accessor :message_id
+
+    # Account folder where message located. Should be specified for some accounts             
+    # @return [String]
+    attr_accessor :folder
 
     # Specifies that message should be deleted permanently             
     # @return [BOOLEAN]
@@ -56,6 +60,7 @@ module AsposeEmailCloud
         :'second_account' => :'secondAccount',
         :'storage_folder' => :'storageFolder',
         :'message_id' => :'messageId',
+        :'folder' => :'folder',
         :'delete_permanently' => :'deletePermanently'
       }
     end
@@ -67,6 +72,7 @@ module AsposeEmailCloud
         :'second_account' => :'String',
         :'storage_folder' => :'StorageFolderLocation',
         :'message_id' => :'String',
+        :'folder' => :'String',
         :'delete_permanently' => :'BOOLEAN'
       }
     end
@@ -95,22 +101,28 @@ module AsposeEmailCloud
         self.message_id = attributes[:'messageId']
       end
 
+      if attributes.has_key?(:'folder')
+        self.folder = attributes[:'folder']
+      end
+
       if attributes.has_key?(:'deletePermanently')
         self.delete_permanently = attributes[:'deletePermanently']
       end
     end
 
     # Initializes the object
-    # @param [String] first_account First account storage file name for receiving emails (or universal one)             
-    # @param [String] second_account Second account storage file name for sending emails (ignored if first is universal)             
+    # @param [String] first_account First account storage file name             
+    # @param [String] second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
     # @param [String] message_id Message identifier             
+    # @param [String] folder Account folder where message located. Should be specified for some accounts             
     # @param [BOOLEAN] delete_permanently Specifies that message should be deleted permanently             
-    def initialize(first_account=nil, second_account=nil, storage_folder=nil, message_id=nil, delete_permanently=nil)
+    def initialize(first_account=nil, second_account=nil, storage_folder=nil, message_id=nil, folder=nil, delete_permanently=nil)
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
       self.storage_folder = storage_folder if storage_folder
       self.message_id = message_id if message_id
+      self.folder = folder if folder
       self.delete_permanently = delete_permanently if delete_permanently
     end
 
@@ -189,6 +201,7 @@ module AsposeEmailCloud
           second_account == o.second_account &&
           storage_folder == o.storage_folder &&
           message_id == o.message_id &&
+          folder == o.folder &&
           delete_permanently == o.delete_permanently
     end
 
@@ -201,7 +214,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [first_account, second_account, storage_folder, message_id, delete_permanently].hash
+      [first_account, second_account, storage_folder, message_id, folder, delete_permanently].hash
     end
 
     # Builds the object from hash

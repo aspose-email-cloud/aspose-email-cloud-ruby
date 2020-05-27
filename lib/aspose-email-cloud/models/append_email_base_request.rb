@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="AppendEmailBaseRequest.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -29,11 +29,11 @@ require 'date'
 module AsposeEmailCloud
   # Append email from storage file to account request             
   class AppendEmailBaseRequest
-    # First account storage file name for receiving emails (or universal one)             
+    # First account storage file name             
     # @return [String]
     attr_accessor :first_account
 
-    # Second account storage file name for sending emails (ignored if first is universal)             
+    # Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @return [String]
     attr_accessor :second_account
 
@@ -50,7 +50,7 @@ module AsposeEmailCloud
     attr_accessor :mark_as_sent
 
     # Email document file location in storage             
-    # @return [StorageFileLocation]
+    # @return [Object]
     attr_accessor :email_file
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -73,7 +73,7 @@ module AsposeEmailCloud
         :'storage_folder' => :'StorageFolderLocation',
         :'folder' => :'String',
         :'mark_as_sent' => :'BOOLEAN',
-        :'email_file' => :'StorageFileLocation'
+        :'email_file' => :'Object'
       }
     end
 
@@ -111,12 +111,12 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] first_account First account storage file name for receiving emails (or universal one)             
-    # @param [String] second_account Second account storage file name for sending emails (ignored if first is universal)             
+    # @param [String] first_account First account storage file name             
+    # @param [String] second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)             
     # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
     # @param [String] folder Email account folder to store a message             
     # @param [BOOLEAN] mark_as_sent Mark message as sent             
-    # @param [StorageFileLocation] email_file Email document file location in storage             
+    # @param [Object] email_file Email document file location in storage             
     def initialize(first_account=nil, second_account=nil, storage_folder=nil, folder=nil, mark_as_sent=nil, email_file=nil)
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account

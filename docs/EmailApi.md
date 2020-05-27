@@ -550,6 +550,28 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="convert_calendar"></a>
+# **convert_calendar**
+> convert_calendar(request)
+
+Converts calendar document to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertCalendarRequestData.new(format, file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| File format Enum, available values: Ics, Msg | 
+ **file** | **File**| File to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="convert_calendar_model_to_alternate"></a>
 # **convert_calendar_model_to_alternate**
 > convert_calendar_model_to_alternate(request)
@@ -571,6 +593,73 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="convert_calendar_model_to_file"></a>
+# **convert_calendar_model_to_file**
+> convert_calendar_model_to_file(request)
+
+Converts calendar model to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertCalendarModelToFileRequestData.new(format, calendar_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| File format Enum, available values: Ics, Msg | 
+ **calendar_dto** | [**CalendarDto**](CalendarDto.md)| Calendar model to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_contact"></a>
+# **convert_contact**
+> convert_contact(request)
+
+Converts contact document to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertContactRequestData.new(destination_format, format, file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **String**| File format to convert to Enum, available values: VCard, WebDav, Msg | 
+ **format** | **String**| File format to convert from Enum, available values: VCard, WebDav, Msg | 
+ **file** | **File**| File to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_contact_model_to_file"></a>
+# **convert_contact_model_to_file**
+> convert_contact_model_to_file(request)
+
+Converts contact model to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertContactModelToFileRequestData.new(destination_format, contact_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **String**| File format Enum, available values: VCard, WebDav, Msg | 
+ **contact_dto** | [**ContactDto**](ContactDto.md)| Contact model to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="convert_email"></a>
 # **convert_email**
 > convert_email(request)
@@ -579,7 +668,7 @@ Converts email document to specified format and returns as file
 
 ### Return type
 
-**File**
+**file**
 
 ### Request Parameters
 ```ruby
@@ -589,7 +678,29 @@ request = AsposeEmailCloud::ConvertEmailRequestData.new(format, file)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
- **file** | **File**| File to upload | 
+ **file** | **File**| File to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_email_model_to_file"></a>
+# **convert_email_model_to_file**
+> convert_email_model_to_file(request)
+
+Converts Email model to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertEmailModelToFileRequestData.new(destination_format, email_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **email_dto** | [**EmailDto**](EmailDto.md)| Email model to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -597,7 +708,7 @@ Name | Type | Description  | Notes
 # **copy_file**
 > copy_file(request)
 
-Copy file
+
 
 ### Return type
 
@@ -610,11 +721,11 @@ request = AsposeEmailCloud::CopyFileRequestData.new(src_path, dest_path, src_sto
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **String**| Source file path e.g. &#39;/folder/file.ext&#39; | 
- **dest_path** | **String**| Destination file path | 
- **src_storage_name** | **String**| Source storage name | [optional] 
- **dest_storage_name** | **String**| Destination storage name | [optional] 
- **version_id** | **String**| File version ID to copy | [optional] 
+ **src_path** | **String**|  | 
+ **dest_path** | **String**|  | 
+ **src_storage_name** | **String**|  | [optional] 
+ **dest_storage_name** | **String**|  | [optional] 
+ **version_id** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -622,7 +733,7 @@ Name | Type | Description  | Notes
 # **copy_folder**
 > copy_folder(request)
 
-Copy folder
+
 
 ### Return type
 
@@ -635,10 +746,10 @@ request = AsposeEmailCloud::CopyFolderRequestData.new(src_path, dest_path, src_s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **String**| Source folder path e.g. &#39;/src&#39; | 
- **dest_path** | **String**| Destination folder path e.g. &#39;/dst&#39; | 
- **src_storage_name** | **String**| Source storage name | [optional] 
- **dest_storage_name** | **String**| Destination storage name | [optional] 
+ **src_path** | **String**|  | 
+ **dest_path** | **String**|  | 
+ **src_storage_name** | **String**|  | [optional] 
+ **dest_storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -734,7 +845,7 @@ Name | Type | Description  | Notes
 # **create_folder**
 > create_folder(request)
 
-Create the folder
+
 
 ### Return type
 
@@ -747,8 +858,8 @@ request = AsposeEmailCloud::CreateFolderRequestData.new(path, storage_name=stora
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| Folder path to create e.g. &#39;folder_1/folder_2/&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -865,11 +976,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="delete_email_thread"></a>
+# **delete_email_thread**
+> delete_email_thread(request)
+
+Delete thread by id. All messages from thread will also be deleted             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::DeleteEmailThreadRequestData.new(thread_id, request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **String**| Thread id | 
+ **request** | [**DeleteEmailThreadAccountRq**](DeleteEmailThreadAccountRq.md)| Email account specifier | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="delete_file"></a>
 # **delete_file**
 > delete_file(request)
 
-Delete file
+
 
 ### Return type
 
@@ -882,9 +1015,9 @@ request = AsposeEmailCloud::DeleteFileRequestData.new(path, storage_name=storage
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| File path e.g. &#39;/folder/file.ext&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
- **version_id** | **String**| File version ID to delete | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
+ **version_id** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -892,7 +1025,7 @@ Name | Type | Description  | Notes
 # **delete_folder**
 > delete_folder(request)
 
-Delete folder
+
 
 ### Return type
 
@@ -905,9 +1038,9 @@ request = AsposeEmailCloud::DeleteFolderRequestData.new(path, storage_name=stora
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| Folder path e.g. &#39;/folder&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
- **recursive** | **BOOLEAN**| Enable to delete folders, subfolders and files | [optional] [default to false]
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
+ **recursive** | **BOOLEAN**|  | [optional] [default to false]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1024,7 +1157,7 @@ Name | Type | Description  | Notes
 # **download_file**
 > download_file(request)
 
-Download file
+
 
 ### Return type
 
@@ -1037,9 +1170,9 @@ request = AsposeEmailCloud::DownloadFileRequestData.new(path, storage_name=stora
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| File path e.g. &#39;/folder/file.ext&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
- **version_id** | **String**| File version ID to download | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
+ **version_id** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1055,14 +1188,15 @@ Fetch message mime from email account
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::FetchEmailMessageRequestData.new(message_id, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder)
+request = AsposeEmailCloud::FetchEmailMessageRequestData.new(message_id, first_account, second_account=second_account, folder=folder, storage=storage, storage_folder=storage_folder)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **String**| Message identifier | 
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
+ **folder** | **String**| Account folder to fetch from (should be specified for some protocols such as IMAP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
 
@@ -1080,14 +1214,41 @@ Fetch message model from email account
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::FetchEmailModelRequestData.new(message_id, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder)
+request = AsposeEmailCloud::FetchEmailModelRequestData.new(message_id, first_account, second_account=second_account, folder=folder, storage=storage, storage_folder=storage_folder)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **String**| Message identifier | 
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
+ **folder** | **String**| Account folder to fetch from (should be specified for some protocols such as IMAP)              | [optional] 
+ **storage** | **String**| Storage name where account file(s) located | [optional] 
+ **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="fetch_email_thread_messages"></a>
+# **fetch_email_thread_messages**
+> fetch_email_thread_messages(request)
+
+Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
+
+### Return type
+
+[**ListResponseOfEmailDto**](ListResponseOfEmailDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::FetchEmailThreadMessagesRequestData.new(thread_id, first_account, second_account=second_account, folder=folder, storage=storage, storage_folder=storage_folder)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **String**| Thread identifier | 
+ **first_account** | **String**| Email account | 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
+ **folder** | **String**| Specifies account folder to get thread from              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
 
@@ -1116,6 +1277,30 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_calendar_as_file"></a>
+# **get_calendar_as_file**
+> get_calendar_as_file(request)
+
+Converts calendar document from storage to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetCalendarAsFileRequestData.new(file_name, format, storage=storage, folder=folder)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_name** | **String**| Calendar document file name | 
+ **format** | **String**| File format Enum, available values: Ics, Msg | 
+ **storage** | **String**| Storage name | [optional] 
+ **folder** | **String**| Path to folder in storage | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_calendar_attachment"></a>
 # **get_calendar_attachment**
 > get_calendar_attachment(request)
@@ -1137,6 +1322,27 @@ Name | Type | Description  | Notes
  **attachment** | **String**| Attachment name or index | 
  **folder** | **String**| Path to folder in storage | [optional] 
  **storage** | **String**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_calendar_file_as_model"></a>
+# **get_calendar_file_as_model**
+> get_calendar_file_as_model(request)
+
+Converts calendar document to a model representation             
+
+### Return type
+
+[**CalendarDto**](CalendarDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetCalendarFileAsModelRequestData.new(file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| File to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1236,6 +1442,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_contact_as_file"></a>
+# **get_contact_as_file**
+> get_contact_as_file(request)
+
+Converts calendar document from storage to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetContactAsFileRequestData.new(file_name, destination_format, format, storage=storage, folder=folder)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_name** | **String**| Calendar document file name | 
+ **destination_format** | **String**| File format Enum, available values: VCard, WebDav, Msg | 
+ **format** | **String**| File format to convert from Enum, available values: VCard, WebDav, Msg | 
+ **storage** | **String**| Storage name | [optional] 
+ **folder** | **String**| Path to folder in storage | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_contact_attachment"></a>
 # **get_contact_attachment**
 > get_contact_attachment(request)
@@ -1258,6 +1489,28 @@ Name | Type | Description  | Notes
  **attachment** | **String**| Attachment name or index | 
  **folder** | **String**| Path to folder in storage | [optional] 
  **storage** | **String**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_contact_file_as_model"></a>
+# **get_contact_file_as_model**
+> get_contact_file_as_model(request)
+
+Converts contact document to a model representation             
+
+### Return type
+
+[**ContactDto**](ContactDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetContactFileAsModelRequestData.new(format, file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| File format Enum, available values: VCard, WebDav, Msg | 
+ **file** | **File**| File to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1363,7 +1616,7 @@ Name | Type | Description  | Notes
 # **get_disc_usage**
 > get_disc_usage(request)
 
-Get disc usage
+
 
 ### Return type
 
@@ -1376,7 +1629,7 @@ request = AsposeEmailCloud::GetDiscUsageRequestData.new(storage_name=storage_nam
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_name** | **String**| Storage name | [optional] 
+ **storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1497,6 +1750,27 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_email_file_as_model"></a>
+# **get_email_file_as_model**
+> get_email_file_as_model(request)
+
+Converts email document to a model representation             
+
+### Return type
+
+[**EmailDto**](EmailDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetEmailFileAsModelRequestData.new(file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| File to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_email_model"></a>
 # **get_email_model**
 > get_email_model(request)
@@ -1574,7 +1848,7 @@ Name | Type | Description  | Notes
 # **get_file_versions**
 > get_file_versions(request)
 
-Get file versions
+
 
 ### Return type
 
@@ -1587,8 +1861,8 @@ request = AsposeEmailCloud::GetFileVersionsRequestData.new(path, storage_name=st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| File path e.g. &#39;/file.ext&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1596,7 +1870,7 @@ Name | Type | Description  | Notes
 # **get_files_list**
 > get_files_list(request)
 
-Get all files and folders within a folder
+
 
 ### Return type
 
@@ -1609,8 +1883,8 @@ request = AsposeEmailCloud::GetFilesListRequestData.new(path, storage_name=stora
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| Folder path e.g. &#39;/folder&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1747,7 +2021,7 @@ request = AsposeEmailCloud::ListEmailFoldersRequestData.new(first_account, secon
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
  **parent_folder** | **String**| Folder in which subfolders should be listed | [optional] 
@@ -1776,7 +2050,7 @@ Name | Type | Description  | Notes
  **folder** | **String**| A folder in email account | 
  **query_string** | **String**| A MailQuery search string | 
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
  **recursive** | **BOOLEAN**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
@@ -1797,18 +2071,88 @@ The query string should have the following view.      The example of a simple ex
 
 ### Request Parameters
 ```ruby
-request = AsposeEmailCloud::ListEmailModelsRequestData.new(folder, query_string, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, recursive=recursive)
+request = AsposeEmailCloud::ListEmailModelsRequestData.new(folder, first_account, query_string=query_string, second_account=second_account, storage=storage, storage_folder=storage_folder, recursive=recursive)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **folder** | **String**| A folder in email account | 
- **query_string** | **String**| A MailQuery search string | 
  **first_account** | **String**| Email account | 
- **second_account** | **String**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)              | [optional] 
+ **query_string** | **String**| A MailQuery search string | [optional] 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
  **storage** | **String**| Storage name where account file(s) located | [optional] 
  **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
  **recursive** | **BOOLEAN**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="list_email_threads"></a>
+# **list_email_threads**
+> list_email_threads(request)
+
+Get message threads from folder. All messages are partly fetched (without email body and other fields)             
+
+### Return type
+
+[**EmailThreadList**](EmailThreadList.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ListEmailThreadsRequestData.new(folder, first_account, second_account=second_account, storage=storage, storage_folder=storage_folder, update_folder_cache=update_folder_cache, messages_cache_limit=messages_cache_limit)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder** | **String**| A folder in email account.              | 
+ **first_account** | **String**| Email account | 
+ **second_account** | **String**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)              | [optional] 
+ **storage** | **String**| Storage name where account file(s) located | [optional] 
+ **storage_folder** | **String**| Folder in storage where account file(s) located | [optional] 
+ **update_folder_cache** | **BOOLEAN**| This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account              | [optional] [default to true]
+ **messages_cache_limit** | **Integer**| Limit messages cache size if CacheFile is used. Ignored in accounts without limits support              | [optional] [default to 200]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="move_email_message"></a>
+# **move_email_message**
+> move_email_message(request)
+
+Move message to another folder             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::MoveEmailMessageRequestData.new(request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**MoveEmailMessageRq**](MoveEmailMessageRq.md)| Email account, folder and message specifier | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="move_email_thread"></a>
+# **move_email_thread**
+> move_email_thread(request)
+
+Move thread to another folder             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::MoveEmailThreadRequestData.new(thread_id, request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **String**| Thread identifier | 
+ **request** | [**MoveEmailThreadRq**](MoveEmailThreadRq.md)| Move thread request | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1816,7 +2160,7 @@ Name | Type | Description  | Notes
 # **move_file**
 > move_file(request)
 
-Move file
+
 
 ### Return type
 
@@ -1829,11 +2173,11 @@ request = AsposeEmailCloud::MoveFileRequestData.new(src_path, dest_path, src_sto
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **String**| Source file path e.g. &#39;/src.ext&#39; | 
- **dest_path** | **String**| Destination file path e.g. &#39;/dest.ext&#39; | 
- **src_storage_name** | **String**| Source storage name | [optional] 
- **dest_storage_name** | **String**| Destination storage name | [optional] 
- **version_id** | **String**| File version ID to move | [optional] 
+ **src_path** | **String**|  | 
+ **dest_path** | **String**|  | 
+ **src_storage_name** | **String**|  | [optional] 
+ **dest_storage_name** | **String**|  | [optional] 
+ **version_id** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1841,7 +2185,7 @@ Name | Type | Description  | Notes
 # **move_folder**
 > move_folder(request)
 
-Move folder
+
 
 ### Return type
 
@@ -1854,10 +2198,10 @@ request = AsposeEmailCloud::MoveFolderRequestData.new(src_path, dest_path, src_s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **String**| Folder path to move e.g. &#39;/folder&#39; | 
- **dest_path** | **String**| Destination folder path to move to e.g &#39;/dst&#39; | 
- **src_storage_name** | **String**| Source storage name | [optional] 
- **dest_storage_name** | **String**| Destination storage name | [optional] 
+ **src_path** | **String**|  | 
+ **dest_path** | **String**|  | 
+ **src_storage_name** | **String**|  | [optional] 
+ **dest_storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1865,7 +2209,7 @@ Name | Type | Description  | Notes
 # **object_exists**
 > object_exists(request)
 
-Check if file or folder exists
+
 
 ### Return type
 
@@ -1878,9 +2222,9 @@ request = AsposeEmailCloud::ObjectExistsRequestData.new(path, storage_name=stora
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
- **version_id** | **String**| File version ID | [optional] 
+ **path** | **String**|  | 
+ **storage_name** | **String**|  | [optional] 
+ **version_id** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1989,7 +2333,7 @@ request = AsposeEmailCloud::SaveEmailModelRequestData.new(format, name, rq)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **String**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
- **name** | **String**| iCalendar file name in storage. | 
+ **name** | **String**| Email document file name in storage. | 
  **rq** | [**StorageModelRqOfEmailDto**](StorageModelRqOfEmailDto.md)| Calendar properties update request. | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -2143,11 +2487,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="set_email_thread_read_flag"></a>
+# **set_email_thread_read_flag**
+> set_email_thread_read_flag(request)
+
+Mark all messages in thread as read or unread             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SetEmailThreadReadFlagRequestData.new(thread_id, request)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **String**| Thread id | 
+ **request** | [**EmailThreadReadFlagRq**](EmailThreadReadFlagRq.md)| Email account specifier and IsRead flag | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="storage_exists"></a>
 # **storage_exists**
 > storage_exists(request)
 
-Check if storage exists
+
 
 ### Return type
 
@@ -2160,7 +2526,7 @@ request = AsposeEmailCloud::StorageExistsRequestData.new(storage_name)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_name** | **String**| Storage name | 
+ **storage_name** | **String**|  | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2235,7 +2601,7 @@ Name | Type | Description  | Notes
 # **upload_file**
 > upload_file(request)
 
-Upload file
+
 
 ### Return type
 
@@ -2248,9 +2614,9 @@ request = AsposeEmailCloud::UploadFileRequestData.new(path, file, storage_name=s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.              | 
+ **path** | **String**|  | 
  **file** | **File**| File to upload | 
- **storage_name** | **String**| Storage name | [optional] 
+ **storage_name** | **String**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

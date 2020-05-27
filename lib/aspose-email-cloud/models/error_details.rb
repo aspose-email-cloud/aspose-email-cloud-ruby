@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="ErrorDetails.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -27,13 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # The error details
   class ErrorDetails
-    # The request id
+    
     # @return [String]
     attr_accessor :request_id
 
-    # Date
+    
     # @return [DateTime]
     attr_accessor :date
 
@@ -71,8 +70,8 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] request_id The request id
-    # @param [DateTime] date Date
+    # @param [String] request_id 
+    # @param [DateTime] date 
     def initialize(request_id=nil, date=nil)
       self.request_id = request_id if request_id
       self.date = date if date

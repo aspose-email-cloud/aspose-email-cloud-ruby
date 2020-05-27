@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="FileVersions.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -27,9 +27,8 @@
 require 'date'
 
 module AsposeEmailCloud
-  # File versions FileVersion.
   class FileVersions
-    # File versions FileVersion.
+    
     # @return [Array<FileVersion>]
     attr_accessor :value
 
@@ -63,7 +62,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Array<FileVersion>] value File versions FileVersion.
+    # @param [Array<FileVersion>] value 
     def initialize(value=nil)
       self.value = value if value
     end

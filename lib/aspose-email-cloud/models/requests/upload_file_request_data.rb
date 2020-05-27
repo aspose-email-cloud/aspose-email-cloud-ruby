@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="upload_file_request_data.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -32,20 +32,19 @@ module AsposeEmailCloud
   # Request model for upload_file operation.
   class UploadFileRequestData < EmailRequest
 
-    # Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
+    # 
     # @return [String]
     attr_accessor :path
     # File to upload
     # @return [File]
     attr_accessor :file
-    # Storage name
+    # 
     # @return [String]
     attr_accessor :storage_name
 
-    # Upload file
-    # @param [String] path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
+    # @param [String] path 
     # @param [File] file File to upload
-    # @param [String] storage_name Storage name
+    # @param [String] storage_name 
     def initialize(path, file, storage_name = nil)
       self.path = path if path
       self.file = file if file

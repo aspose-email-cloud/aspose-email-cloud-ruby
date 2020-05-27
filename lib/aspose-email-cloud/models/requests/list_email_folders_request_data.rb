@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="list_email_folders_request_data.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Email account
     # @return [String]
     attr_accessor :first_account
-    # Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
+    # Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
     # @return [String]
     attr_accessor :second_account
     # Storage name where account file(s) located
@@ -50,7 +50,7 @@ module AsposeEmailCloud
 
     # Get folders list in email account             
     # @param [String] first_account Email account
-    # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
+    # @param [String] second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
     # @param [String] parent_folder Folder in which subfolders should be listed

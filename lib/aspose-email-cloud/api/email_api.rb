@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="email_api.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -237,12 +237,44 @@ module AsposeEmailCloud
       make_request(http_request, :PUT, 'ValueResponse')
     end
 
+    # Converts calendar document to specified format and returns as file             
+    # @param [ConvertCalendarRequestData] request Request object.
+    # @return [File]
+    def convert_calendar(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
     # Convert iCalendar to AlternateView             
     # @param [ConvertCalendarModelToAlternateRequestData] request Request object.
     # @return [AlternateView]
     def convert_calendar_model_to_alternate(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, 'AlternateView')
+    end
+
+    # Converts calendar model to specified format and returns as file             
+    # @param [ConvertCalendarModelToFileRequestData] request Request object.
+    # @return [File]
+    def convert_calendar_model_to_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
+    # Converts contact document to specified format and returns as file             
+    # @param [ConvertContactRequestData] request Request object.
+    # @return [File]
+    def convert_contact(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
+    # Converts contact model to specified format and returns as file             
+    # @param [ConvertContactModelToFileRequestData] request Request object.
+    # @return [File]
+    def convert_contact_model_to_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
     end
 
     # Converts email document to specified format and returns as file             
@@ -253,7 +285,14 @@ module AsposeEmailCloud
       make_request(http_request, :PUT, 'File')
     end
 
-    # Copy file
+    # Converts Email model to specified format and returns as file             
+    # @param [ConvertEmailModelToFileRequestData] request Request object.
+    # @return [File]
+    def convert_email_model_to_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
     # @param [CopyFileRequestData] request Request object.
     # @return [nil]
     def copy_file(request)
@@ -262,7 +301,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Copy folder
     # @param [CopyFolderRequestData] request Request object.
     # @return [nil]
     def copy_folder(request)
@@ -306,7 +344,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Create the folder
     # @param [CreateFolderRequestData] request Request object.
     # @return [nil]
     def create_folder(request)
@@ -360,7 +397,15 @@ module AsposeEmailCloud
       nil
     end
 
-    # Delete file
+    # Delete thread by id. All messages from thread will also be deleted             
+    # @param [DeleteEmailThreadRequestData] request Request object.
+    # @return [nil]
+    def delete_email_thread(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :DELETE, nil)
+      nil
+    end
+
     # @param [DeleteFileRequestData] request Request object.
     # @return [nil]
     def delete_file(request)
@@ -369,7 +414,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Delete folder
     # @param [DeleteFolderRequestData] request Request object.
     # @return [nil]
     def delete_folder(request)
@@ -420,7 +464,6 @@ module AsposeEmailCloud
       make_request(http_request, :POST, 'EmailAccountConfigList')
     end
 
-    # Download file
     # @param [DownloadFileRequestData] request Request object.
     # @return [File]
     def download_file(request)
@@ -444,6 +487,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'EmailDto')
     end
 
+    # Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
+    # @param [FetchEmailThreadMessagesRequestData] request Request object.
+    # @return [ListResponseOfEmailDto]
+    def fetch_email_thread_messages(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'ListResponseOfEmailDto')
+    end
+
     # Get calendar file properties             
     # @param [GetCalendarRequestData] request Request object.
     # @return [HierarchicalObject]
@@ -452,12 +503,28 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'HierarchicalObject')
     end
 
+    # Converts calendar document from storage to specified format and returns as file             
+    # @param [GetCalendarAsFileRequestData] request Request object.
+    # @return [File]
+    def get_calendar_as_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'File')
+    end
+
     # Get iCalendar document attachment by name             
     # @param [GetCalendarAttachmentRequestData] request Request object.
     # @return [File]
     def get_calendar_attachment(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'File')
+    end
+
+    # Converts calendar document to a model representation             
+    # @param [GetCalendarFileAsModelRequestData] request Request object.
+    # @return [CalendarDto]
+    def get_calendar_file_as_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'CalendarDto')
     end
 
     # Get iCalendar files list in folder on storage             
@@ -492,12 +559,28 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'CalendarDtoList')
     end
 
+    # Converts calendar document from storage to specified format and returns as file             
+    # @param [GetContactAsFileRequestData] request Request object.
+    # @return [File]
+    def get_contact_as_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'File')
+    end
+
     # Get attachment file by name             
     # @param [GetContactAttachmentRequestData] request Request object.
     # @return [File]
     def get_contact_attachment(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'File')
+    end
+
+    # Converts contact document to a model representation             
+    # @param [GetContactFileAsModelRequestData] request Request object.
+    # @return [ContactDto]
+    def get_contact_file_as_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'ContactDto')
     end
 
     # Get contact list from storage folder             
@@ -532,7 +615,6 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'HierarchicalObject')
     end
 
-    # Get disc usage
     # @param [GetDiscUsageRequestData] request Request object.
     # @return [DiscUsage]
     def get_disc_usage(request)
@@ -580,6 +662,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'EmailClientMultiAccount')
     end
 
+    # Converts email document to a model representation             
+    # @param [GetEmailFileAsModelRequestData] request Request object.
+    # @return [EmailDto]
+    def get_email_file_as_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'EmailDto')
+    end
+
     # Get email document.             
     # @param [GetEmailModelRequestData] request Request object.
     # @return [EmailDto]
@@ -604,7 +694,6 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'EmailPropertyResponse')
     end
 
-    # Get file versions
     # @param [GetFileVersionsRequestData] request Request object.
     # @return [FileVersions]
     def get_file_versions(request)
@@ -612,7 +701,6 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'FileVersions')
     end
 
-    # Get all files and folders within a folder
     # @param [GetFilesListRequestData] request Request object.
     # @return [FilesList]
     def get_files_list(request)
@@ -686,7 +774,32 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'ListResponseOfEmailDto')
     end
 
-    # Move file
+    # Get message threads from folder. All messages are partly fetched (without email body and other fields)             
+    # @param [ListEmailThreadsRequestData] request Request object.
+    # @return [EmailThreadList]
+    def list_email_threads(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'EmailThreadList')
+    end
+
+    # Move message to another folder             
+    # @param [MoveEmailMessageRequestData] request Request object.
+    # @return [nil]
+    def move_email_message(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
+    # Move thread to another folder             
+    # @param [MoveEmailThreadRequestData] request Request object.
+    # @return [nil]
+    def move_email_thread(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
     # @param [MoveFileRequestData] request Request object.
     # @return [nil]
     def move_file(request)
@@ -695,7 +808,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Move folder
     # @param [MoveFolderRequestData] request Request object.
     # @return [nil]
     def move_folder(request)
@@ -704,7 +816,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Check if file or folder exists
     # @param [ObjectExistsRequestData] request Request object.
     # @return [ObjectExist]
     def object_exists(request)
@@ -819,7 +930,15 @@ module AsposeEmailCloud
       nil
     end
 
-    # Check if storage exists
+    # Mark all messages in thread as read or unread             
+    # @param [SetEmailThreadReadFlagRequestData] request Request object.
+    # @return [nil]
+    def set_email_thread_read_flag(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
     # @param [StorageExistsRequestData] request Request object.
     # @return [StorageExist]
     def storage_exists(request)
@@ -854,7 +973,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Upload file
     # @param [UploadFileRequestData] request Request object.
     # @return [FilesUploadResult]
     def upload_file(request)

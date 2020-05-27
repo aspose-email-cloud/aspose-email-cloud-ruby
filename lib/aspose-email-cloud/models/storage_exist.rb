@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="StorageExist.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -27,9 +27,8 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Storage exists
   class StorageExist
-    # Shows that the storage exists.             
+    
     # @return [BOOLEAN]
     attr_accessor :exists
 
@@ -61,7 +60,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [BOOLEAN] exists Shows that the storage exists.             
+    # @param [BOOLEAN] exists 
     def initialize(exists=nil)
       self.exists = exists if exists
     end

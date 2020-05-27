@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="delete_folder_request_data.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -32,20 +32,19 @@ module AsposeEmailCloud
   # Request model for delete_folder operation.
   class DeleteFolderRequestData < EmailRequest
 
-    # Folder path e.g. &#39;/folder&#39;
+    # 
     # @return [String]
     attr_accessor :path
-    # Storage name
+    # 
     # @return [String]
     attr_accessor :storage_name
-    # Enable to delete folders, subfolders and files
+    # 
     # @return [BOOLEAN]
     attr_accessor :recursive
 
-    # Delete folder
-    # @param [String] path Folder path e.g. &#39;/folder&#39;
-    # @param [String] storage_name Storage name
-    # @param [BOOLEAN] recursive Enable to delete folders, subfolders and files
+    # @param [String] path 
+    # @param [String] storage_name 
+    # @param [BOOLEAN] recursive 
     def initialize(path, storage_name = nil, recursive = nil)
       self.path = path if path
       self.storage_name = storage_name if storage_name

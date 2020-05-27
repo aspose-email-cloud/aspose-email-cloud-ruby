@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="FilesList.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -27,9 +27,8 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Files list
   class FilesList
-    # Files and folders contained by folder StorageFile.
+    
     # @return [Array<StorageFile>]
     attr_accessor :value
 
@@ -63,7 +62,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Array<StorageFile>] value Files and folders contained by folder StorageFile.
+    # @param [Array<StorageFile>] value 
     def initialize(value=nil)
       self.value = value if value
     end

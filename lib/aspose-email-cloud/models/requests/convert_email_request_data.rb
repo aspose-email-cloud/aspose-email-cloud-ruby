@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="convert_email_request_data.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -35,13 +35,13 @@ module AsposeEmailCloud
     # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
     # @return [String]
     attr_accessor :format
-    # File to upload
+    # File to convert
     # @return [File]
     attr_accessor :file
 
     # Converts email document to specified format and returns as file             
     # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
-    # @param [File] file File to upload
+    # @param [File] file File to convert
     def initialize(format, file)
       self.format = format if format
       self.file = file if file
@@ -75,9 +75,9 @@ module AsposeEmailCloud
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = select_header_accept(['application/json'])
+      header_params['Accept'] = select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = form_params.any? ? 'multipart/form-data' : select_header_content_type(['application/json'])
+      header_params['Content-Type'] = form_params.any? ? 'multipart/form-data' : select_header_content_type(['multipart/form-data'])
 
       AsposeEmailCloud::HttpRequest.new(local_var_path,
                                       header_params,

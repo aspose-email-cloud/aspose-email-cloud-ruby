@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="AiBcrParseStorageRq.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -38,7 +38,7 @@ module AsposeEmailCloud
     attr_accessor :images
 
     # Parse output folder location on storage             
-    # @return [StorageFolderLocation]
+    # @return [Object]
     attr_accessor :out_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -55,7 +55,7 @@ module AsposeEmailCloud
       {
         :'options' => :'AiBcrOptions',
         :'images' => :'Array<AiBcrImageStorageFile>',
-        :'out_folder' => :'StorageFolderLocation'
+        :'out_folder' => :'Object'
       }
     end
 
@@ -85,7 +85,7 @@ module AsposeEmailCloud
     # Initializes the object
     # @param [AiBcrOptions] options Recognition options             
     # @param [Array<AiBcrImageStorageFile>] images List of images with business cards             
-    # @param [StorageFolderLocation] out_folder Parse output folder location on storage             
+    # @param [Object] out_folder Parse output folder location on storage             
     def initialize(options=nil, images=nil, out_folder=nil)
       self.options = options if options
       self.images = images if images

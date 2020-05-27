@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="api_client.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -248,7 +248,6 @@ module AsposeEmailCloud
     # @see Configuration#temp_folder_path
     def download_file(response)
       tempfile = nil
-      encoding = nil
       content_disposition = response.headers['Content-Disposition']
       if content_disposition and content_disposition =~ /filename=/i
         filename = content_disposition[/filename=['"]?([^'"\s]+)['"]?/, 1]
@@ -257,8 +256,8 @@ module AsposeEmailCloud
         prefix = 'download-'
       end
       prefix += '-' unless prefix.end_with?('-')
-      encoding = response.body.encoding
-      tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding: encoding)
+      tempfile = Tempfile.open(prefix, @config.temp_folder_path)
+      tempfile.binmode
       @tempfile = tempfile
       tempfile.write(response.body)
       response.on_complete do |resp|

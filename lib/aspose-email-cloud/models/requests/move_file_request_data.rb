@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="move_file_request_data.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -32,28 +32,27 @@ module AsposeEmailCloud
   # Request model for move_file operation.
   class MoveFileRequestData < EmailRequest
 
-    # Source file path e.g. &#39;/src.ext&#39;
+    # 
     # @return [String]
     attr_accessor :src_path
-    # Destination file path e.g. &#39;/dest.ext&#39;
+    # 
     # @return [String]
     attr_accessor :dest_path
-    # Source storage name
+    # 
     # @return [String]
     attr_accessor :src_storage_name
-    # Destination storage name
+    # 
     # @return [String]
     attr_accessor :dest_storage_name
-    # File version ID to move
+    # 
     # @return [String]
     attr_accessor :version_id
 
-    # Move file
-    # @param [String] src_path Source file path e.g. &#39;/src.ext&#39;
-    # @param [String] dest_path Destination file path e.g. &#39;/dest.ext&#39;
-    # @param [String] src_storage_name Source storage name
-    # @param [String] dest_storage_name Destination storage name
-    # @param [String] version_id File version ID to move
+    # @param [String] src_path 
+    # @param [String] dest_path 
+    # @param [String] src_storage_name 
+    # @param [String] dest_storage_name 
+    # @param [String] version_id 
     def initialize(src_path, dest_path, src_storage_name = nil, dest_storage_name = nil, version_id = nil)
       self.src_path = src_path if src_path
       self.dest_path = dest_path if dest_path

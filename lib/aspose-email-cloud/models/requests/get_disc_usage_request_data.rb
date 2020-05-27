@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="get_disc_usage_request_data.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -32,12 +32,11 @@ module AsposeEmailCloud
   # Request model for get_disc_usage operation.
   class GetDiscUsageRequestData < EmailRequest
 
-    # Storage name
+    # 
     # @return [String]
     attr_accessor :storage_name
 
-    # Get disc usage
-    # @param [String] storage_name Storage name
+    # @param [String] storage_name 
     def initialize(storage_name = nil)
       self.storage_name = storage_name if storage_name
     end

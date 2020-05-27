@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="ObjectExist.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -27,13 +27,12 @@
 require 'date'
 
 module AsposeEmailCloud
-  # Object exists
   class ObjectExist
-    # Indicates that the file or folder exists.
+    
     # @return [BOOLEAN]
     attr_accessor :exists
 
-    # True if it is a folder, false if it is a file.
+    
     # @return [BOOLEAN]
     attr_accessor :is_folder
 
@@ -71,8 +70,8 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [BOOLEAN] exists Indicates that the file or folder exists.
-    # @param [BOOLEAN] is_folder True if it is a folder, false if it is a file.
+    # @param [BOOLEAN] exists 
+    # @param [BOOLEAN] is_folder 
     def initialize(exists=nil, is_folder=nil)
       self.exists = exists if exists
       self.is_folder = is_folder if is_folder

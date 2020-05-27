@@ -1,6 +1,6 @@
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="EmailClientAccount.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -49,6 +49,10 @@ module AsposeEmailCloud
     # @return [EmailClientAccountCredentials]
     attr_accessor :credentials
 
+    # File with messages cache. Used to provide extra functions, which are not supported by account             
+    # @return [StorageFileLocation]
+    attr_accessor :cache_file
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -56,7 +60,8 @@ module AsposeEmailCloud
         :'port' => :'port',
         :'security_options' => :'securityOptions',
         :'protocol_type' => :'protocolType',
-        :'credentials' => :'credentials'
+        :'credentials' => :'credentials',
+        :'cache_file' => :'cacheFile'
       }
     end
 
@@ -67,7 +72,8 @@ module AsposeEmailCloud
         :'port' => :'Integer',
         :'security_options' => :'String',
         :'protocol_type' => :'String',
-        :'credentials' => :'EmailClientAccountCredentials'
+        :'credentials' => :'EmailClientAccountCredentials',
+        :'cache_file' => :'StorageFileLocation'
       }
     end
 
@@ -98,6 +104,10 @@ module AsposeEmailCloud
       if attributes.has_key?(:'credentials')
         self.credentials = attributes[:'credentials']
       end
+
+      if attributes.has_key?(:'cacheFile')
+        self.cache_file = attributes[:'cacheFile']
+      end
     end
 
     # Initializes the object
@@ -106,12 +116,14 @@ module AsposeEmailCloud
     # @param [String] security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [EmailClientAccountCredentials] credentials Email client account credentials             
-    def initialize(host=nil, port=nil, security_options=nil, protocol_type=nil, credentials=nil)
+    # @param [StorageFileLocation] cache_file File with messages cache. Used to provide extra functions, which are not supported by account             
+    def initialize(host=nil, port=nil, security_options=nil, protocol_type=nil, credentials=nil, cache_file=nil)
       self.host = host if host
       self.port = port if port
       self.security_options = security_options if security_options
       self.protocol_type = protocol_type if protocol_type
       self.credentials = credentials if credentials
+      self.cache_file = cache_file if cache_file
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -208,7 +220,8 @@ module AsposeEmailCloud
           port == o.port &&
           security_options == o.security_options &&
           protocol_type == o.protocol_type &&
-          credentials == o.credentials
+          credentials == o.credentials &&
+          cache_file == o.cache_file
     end
 
     # @see the `==` method
@@ -220,7 +233,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [host, port, security_options, protocol_type, credentials].hash
+      [host, port, security_options, protocol_type, credentials, cache_file].hash
     end
 
     # Builds the object from hash

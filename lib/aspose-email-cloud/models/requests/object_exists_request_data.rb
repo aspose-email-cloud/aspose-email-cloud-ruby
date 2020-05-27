@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="object_exists_request_data.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -32,20 +32,19 @@ module AsposeEmailCloud
   # Request model for object_exists operation.
   class ObjectExistsRequestData < EmailRequest
 
-    # File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39;
+    # 
     # @return [String]
     attr_accessor :path
-    # Storage name
+    # 
     # @return [String]
     attr_accessor :storage_name
-    # File version ID
+    # 
     # @return [String]
     attr_accessor :version_id
 
-    # Check if file or folder exists
-    # @param [String] path File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39;
-    # @param [String] storage_name Storage name
-    # @param [String] version_id File version ID
+    # @param [String] path 
+    # @param [String] storage_name 
+    # @param [String] version_id 
     def initialize(path, storage_name = nil, version_id = nil)
       self.path = path if path
       self.storage_name = storage_name if storage_name

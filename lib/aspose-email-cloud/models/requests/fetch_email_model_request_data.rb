@@ -1,7 +1,7 @@
 
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="fetch_email_model_request_data.rb">
-#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
 #    Permission is hereby granted, free of charge, to any person obtaining a
@@ -38,9 +38,12 @@ module AsposeEmailCloud
     # Email account
     # @return [String]
     attr_accessor :first_account
-    # Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
+    # Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
     # @return [String]
     attr_accessor :second_account
+    # Account folder to fetch from (should be specified for some protocols such as IMAP)             
+    # @return [String]
+    attr_accessor :folder
     # Storage name where account file(s) located
     # @return [String]
     attr_accessor :storage
@@ -51,13 +54,15 @@ module AsposeEmailCloud
     # Fetch message model from email account             
     # @param [String] message_id Message identifier
     # @param [String] first_account Email account
-    # @param [String] second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)             
+    # @param [String] second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)             
+    # @param [String] folder Account folder to fetch from (should be specified for some protocols such as IMAP)             
     # @param [String] storage Storage name where account file(s) located
     # @param [String] storage_folder Folder in storage where account file(s) located
-    def initialize(message_id, first_account, second_account = nil, storage = nil, storage_folder = nil)
+    def initialize(message_id, first_account, second_account = nil, folder = nil, storage = nil, storage_folder = nil)
       self.message_id = message_id if message_id
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
+      self.folder = folder if folder
       self.storage = storage if storage
       self.storage_folder = storage_folder if storage_folder
     end
@@ -81,6 +86,7 @@ module AsposeEmailCloud
       query_params[:messageId] = self.message_id
       query_params[:firstAccount] = self.first_account
       query_params[:secondAccount] = self.second_account unless self.second_account.nil?
+      query_params[:folder] = self.folder unless self.folder.nil?
       query_params[:storage] = self.storage unless self.storage.nil?
       query_params[:storageFolder] = self.storage_folder unless self.storage_folder.nil?
 
