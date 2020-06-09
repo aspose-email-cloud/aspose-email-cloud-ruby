@@ -11,5 +11,5 @@ Swagger Codegen version: 2.4.9
 =end
 
 module AsposeEmailCloud
-  VERSION = '20.5.1.97'
+  VERSION = '20.5.1.98'
 end
