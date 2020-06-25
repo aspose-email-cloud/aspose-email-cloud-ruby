@@ -142,7 +142,7 @@ module EmailApiSpec
     end
 
     # Test business card recognition with storage
-    it 'AiBcr Parse using storage', :pipeline do
+    it 'AiBcr Parse using storage', :ai do
       image = File.new(File.join(__dir__, 'data', 'test_single_0001.png'))
       file_name = SecureRandom.uuid.to_s + '.png'
       path = "#{@folder}/#{file_name}"
@@ -177,7 +177,7 @@ module EmailApiSpec
     end
 
     # Test business card recognition
-    it 'AiBcr Parse', :pipeline do
+    it 'AiBcr Parse', :ai do
       image = nil
       File.open(File.join(__dir__, 'data', 'test_single_0001.png'), 'rb') do |f|
         image = Base64.encode64(f.read)
@@ -258,7 +258,7 @@ module EmailApiSpec
       expect(exist_result.exists).to be true
     end
 
-    it 'AI BCR Parse to model', :pipeline do
+    it 'AI BCR Parse to model', :ai do
       image = nil
       File.open(File.join(__dir__, 'data', 'test_single_0001.png'), 'rb') do |f|
         image = Base64.encode64(f.read)
