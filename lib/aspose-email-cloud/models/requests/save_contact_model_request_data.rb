@@ -38,14 +38,14 @@ module AsposeEmailCloud
     # Contact document file name.
     # @return [String]
     attr_accessor :name
-    # Create contact request.
+    # Create/Update contact request.
     # @return [StorageModelRqOfContactDto]
     attr_accessor :rq
 
     # Save contact.             
     # @param [String] format Contact document format. Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name.
-    # @param [StorageModelRqOfContactDto] rq Create contact request.
+    # @param [StorageModelRqOfContactDto] rq Create/Update contact request.
     def initialize(format, name, rq)
       self.format = format if format
       self.name = name if name

@@ -35,13 +35,13 @@ module AsposeEmailCloud
     # iCalendar file name in storage
     # @return [String]
     attr_accessor :name
-    # Calendar properties update request
+    # Calendar update request
     # @return [StorageModelRqOfCalendarDto]
     attr_accessor :rq
 
     # Save iCalendar             
     # @param [String] name iCalendar file name in storage
-    # @param [StorageModelRqOfCalendarDto] rq Calendar properties update request
+    # @param [StorageModelRqOfCalendarDto] rq Calendar update request
     def initialize(name, rq)
       self.name = name if name
       self.rq = rq if rq

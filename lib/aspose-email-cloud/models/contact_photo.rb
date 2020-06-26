@@ -37,11 +37,22 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :base64_data
 
+    
+    # @return [String]
+    def discriminator #getter method
+      self.class.name.split('::').last
+    end
+
+    def discriminator=(discriminator) #setter method, parameter ignored
+      @discriminator = self.class.name.split('::').last
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'photo_image_format' => :'photoImageFormat',
-        :'base64_data' => :'base64Data'
+        :'base64_data' => :'base64Data',
+        :'discriminator' => :'discriminator'
       }
     end
 
@@ -49,7 +60,8 @@ module AsposeEmailCloud
     def self.swagger_types
       {
         :'photo_image_format' => :'String',
-        :'base64_data' => :'String'
+        :'base64_data' => :'String',
+        :'discriminator' => :'String'
       }
     end
 
@@ -68,14 +80,20 @@ module AsposeEmailCloud
       if attributes.has_key?(:'base64Data')
         self.base64_data = attributes[:'base64Data']
       end
+
+      if attributes.has_key?(:'discriminator')
+        @discriminator = self.class.name.split('::').last
+      end
     end
 
     # Initializes the object
     # @param [String] photo_image_format MapiContact photo image format. Enum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
     # @param [String] base64_data Photo serialized as base64 string.             
-    def initialize(photo_image_format=nil, base64_data=nil)
+    # @param [String] discriminator 
+    def initialize(photo_image_format=nil, base64_data=nil, discriminator=nil)
       self.photo_image_format = photo_image_format if photo_image_format
       self.base64_data = base64_data if base64_data
+      @discriminator = self.class.name.split('::').last
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -86,6 +104,10 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "photo_image_format", photo_image_format cannot be nil.')
       end
 
+      if @discriminator.nil?
+        invalid_properties.push('invalid value for "discriminator", discriminator cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -93,6 +115,7 @@ module AsposeEmailCloud
     # @return true if the model is valid
     def valid?
       return false if @photo_image_format.nil?
+      return false if @discriminator.nil?
       true
     end
 
@@ -102,7 +125,8 @@ module AsposeEmailCloud
       return true if self.equal?(o)
       self.class == o.class &&
           photo_image_format == o.photo_image_format &&
-          base64_data == o.base64_data
+          base64_data == o.base64_data &&
+          discriminator == o.discriminator
     end
 
     # @see the `==` method
@@ -114,7 +138,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [photo_image_format, base64_data].hash
+      [photo_image_format, base64_data, discriminator].hash
     end
 
     # Builds the object from hash

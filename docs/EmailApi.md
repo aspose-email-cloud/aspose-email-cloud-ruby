@@ -572,6 +572,27 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="convert_calendar_dto_to_mapi_model"></a>
+# **convert_calendar_dto_to_mapi_model**
+> convert_calendar_dto_to_mapi_model(request)
+
+Convert CalendarDto to MapiCalendarDto             
+
+### Return type
+
+[**MapiCalendarDto**](MapiCalendarDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertCalendarDtoToMapiModelRequestData.new(calendar_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **calendar_dto** | [**CalendarDto**](CalendarDto.md)| iCalendar model calendar representation | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="convert_calendar_model_to_alternate"></a>
 # **convert_calendar_model_to_alternate**
 > convert_calendar_model_to_alternate(request)
@@ -660,6 +681,27 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="convert_contact_model_to_mapi_model"></a>
+# **convert_contact_model_to_mapi_model**
+> convert_contact_model_to_mapi_model(request)
+
+Convert contact model to MAPI model contact representation             
+
+### Return type
+
+[**MapiContactDto**](MapiContactDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertContactModelToMapiModelRequestData.new(contact_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contact_dto** | [**ContactDto**](ContactDto.md)| Contact model to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="convert_email"></a>
 # **convert_email**
 > convert_email(request)
@@ -701,6 +743,156 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **destination_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
  **email_dto** | [**EmailDto**](EmailDto.md)| Email model to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_email_model_to_mapi_model"></a>
+# **convert_email_model_to_mapi_model**
+> convert_email_model_to_mapi_model(request)
+
+Converts Email model to MAPI model message representation             
+
+### Return type
+
+[**MapiMessageDto**](MapiMessageDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertEmailModelToMapiModelRequestData.new(email_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email_dto** | [**EmailDto**](EmailDto.md)| Email model to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_mapi_calendar_model_to_calendar_model"></a>
+# **convert_mapi_calendar_model_to_calendar_model**
+> convert_mapi_calendar_model_to_calendar_model(request)
+
+Converts MAPI calendar model to CalendarDto model             
+
+### Return type
+
+[**CalendarDto**](CalendarDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertMapiCalendarModelToCalendarModelRequestData.new(mapi_calendar_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mapi_calendar_dto** | [**MapiCalendarDto**](MapiCalendarDto.md)| MAPI calendar model to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_mapi_calendar_model_to_file"></a>
+# **convert_mapi_calendar_model_to_file**
+> convert_mapi_calendar_model_to_file(request)
+
+Converts MAPI calendar model to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertMapiCalendarModelToFileRequestData.new(destination_format, mapi_calendar_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **String**| File format Enum, available values: Ics, Msg | 
+ **mapi_calendar_dto** | [**MapiCalendarDto**](MapiCalendarDto.md)| MAPI calendar model to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_mapi_contact_model_to_contact_model"></a>
+# **convert_mapi_contact_model_to_contact_model**
+> convert_mapi_contact_model_to_contact_model(request)
+
+Converts MAPI contact model to Contact model             
+
+### Return type
+
+[**ContactDto**](ContactDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertMapiContactModelToContactModelRequestData.new(mapi_contact_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mapi_contact_dto** | [**MapiContactDto**](MapiContactDto.md)| MAPI contact model to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_mapi_contact_model_to_file"></a>
+# **convert_mapi_contact_model_to_file**
+> convert_mapi_contact_model_to_file(request)
+
+Converts MAPI contact model to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertMapiContactModelToFileRequestData.new(destination_format, mapi_contact_dto)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **String**| File format Enum, available values: VCard, WebDav, Msg | 
+ **mapi_contact_dto** | [**MapiContactDto**](MapiContactDto.md)| MAPI contact model to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_mapi_message_model_to_email_model"></a>
+# **convert_mapi_message_model_to_email_model**
+> convert_mapi_message_model_to_email_model(request)
+
+Converts MAPI message model to EmailDto model             
+
+### Return type
+
+[**EmailDto**](EmailDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertMapiMessageModelToEmailModelRequestData.new(mapi_message)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mapi_message** | [**MapiMessageDto**](MapiMessageDto.md)| MAPI message model to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="convert_mapi_message_model_to_file"></a>
+# **convert_mapi_message_model_to_file**
+> convert_mapi_message_model_to_file(request)
+
+Converts MAPI message model to specified format and returns as file             
+
+### Return type
+
+**file**
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::ConvertMapiMessageModelToFileRequestData.new(destination_format, mapi_message)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **mapi_message** | [**MapiMessageDto**](MapiMessageDto.md)| MAPI message model to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1325,6 +1517,27 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_calendar_file_as_mapi_model"></a>
+# **get_calendar_file_as_mapi_model**
+> get_calendar_file_as_mapi_model(request)
+
+Converts calendar file to a MAPI model representation             
+
+### Return type
+
+[**MapiCalendarDto**](MapiCalendarDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetCalendarFileAsMapiModelRequestData.new(file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| File to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_calendar_file_as_model"></a>
 # **get_calendar_file_as_model**
 > get_calendar_file_as_model(request)
@@ -1489,6 +1702,28 @@ Name | Type | Description  | Notes
  **attachment** | **String**| Attachment name or index | 
  **folder** | **String**| Path to folder in storage | [optional] 
  **storage** | **String**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_contact_file_as_mapi_model"></a>
+# **get_contact_file_as_mapi_model**
+> get_contact_file_as_mapi_model(request)
+
+Converts contact file to a MAPI model representation             
+
+### Return type
+
+[**MapiContactDto**](MapiContactDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetContactFileAsMapiModelRequestData.new(file_format, file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_format** | **String**| File format Enum, available values: VCard, WebDav, Msg | 
+ **file** | **File**| File to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1750,6 +1985,28 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_email_file_as_mapi_model"></a>
+# **get_email_file_as_mapi_model**
+> get_email_file_as_mapi_model(request)
+
+Converts email file to a MAPI model representation             
+
+### Return type
+
+[**MapiMessageDto**](MapiMessageDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetEmailFileAsMapiModelRequestData.new(file_format, file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **file** | **File**| File to convert | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_email_file_as_model"></a>
 # **get_email_file_as_model**
 > get_email_file_as_model(request)
@@ -1935,6 +2192,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+<a name="get_mapi_calendar_model"></a>
+# **get_mapi_calendar_model**
+> get_mapi_calendar_model(request)
+
+Get calendar file             
+
+### Return type
+
+[**MapiCalendarDto**](MapiCalendarDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetMapiCalendarModelRequestData.new(name, folder=folder, storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| Calendar file name in storage | 
+ **folder** | **String**| Path to folder in storage | [optional] 
+ **storage** | **String**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_mapi_contact_model"></a>
+# **get_mapi_contact_model**
+> get_mapi_contact_model(request)
+
+Get contact document.             
+
+### Return type
+
+[**MapiContactDto**](MapiContactDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetMapiContactModelRequestData.new(format, name, folder=folder, storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
+ **name** | **String**| Contact document file name. | 
+ **folder** | **String**| Path to folder in storage. | [optional] 
+ **storage** | **String**| Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 <a name="get_mapi_list"></a>
 # **get_mapi_list**
 > get_mapi_list(request)
@@ -1956,6 +2260,30 @@ Name | Type | Description  | Notes
  **storage** | **String**| Storage name | [optional] 
  **items_per_page** | **Integer**| Count of items on page | [optional] [default to 10]
  **page_number** | **Integer**| Page number | [optional] [default to 0]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="get_mapi_message_model"></a>
+# **get_mapi_message_model**
+> get_mapi_message_model(request)
+
+MAPI message document.             
+
+### Return type
+
+[**MapiMessageDto**](MapiMessageDto.md)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::GetMapiMessageModelRequestData.new(format, name, folder=folder, storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **name** | **String**| Email document file name. | 
+ **folder** | **String**| Path to folder in storage. | [optional] 
+ **storage** | **String**| Storage name. | [optional] 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2246,7 +2574,7 @@ request = AsposeEmailCloud::SaveCalendarModelRequestData.new(name, rq)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| iCalendar file name in storage | 
- **rq** | [**StorageModelRqOfCalendarDto**](StorageModelRqOfCalendarDto.md)| Calendar properties update request | 
+ **rq** | [**StorageModelRqOfCalendarDto**](StorageModelRqOfCalendarDto.md)| Calendar update request | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2269,7 +2597,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
  **name** | **String**| Contact document file name. | 
- **rq** | [**StorageModelRqOfContactDto**](StorageModelRqOfContactDto.md)| Create contact request. | 
+ **rq** | [**StorageModelRqOfContactDto**](StorageModelRqOfContactDto.md)| Create/Update contact request. | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2334,7 +2662,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **String**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
  **name** | **String**| Email document file name in storage. | 
- **rq** | [**StorageModelRqOfEmailDto**](StorageModelRqOfEmailDto.md)| Calendar properties update request. | 
+ **rq** | [**StorageModelRqOfEmailDto**](StorageModelRqOfEmailDto.md)| Email document create/update request. | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2377,6 +2705,75 @@ request = AsposeEmailCloud::SaveMailOAuthAccountRequestData.new(request)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**SaveOAuthEmailAccountRequest**](SaveOAuthEmailAccountRequest.md)| Email account information | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="save_mapi_calendar_model"></a>
+# **save_mapi_calendar_model**
+> save_mapi_calendar_model(request)
+
+Save MAPI Calendar to storage.             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SaveMapiCalendarModelRequestData.new(name, format, rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| Calendar file name in storage | 
+ **format** | **String**| File format Enum, available values: Ics, Msg | 
+ **rq** | [**StorageModelRqOfMapiCalendarDto**](StorageModelRqOfMapiCalendarDto.md)| Calendar update request | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="save_mapi_contact_model"></a>
+# **save_mapi_contact_model**
+> save_mapi_contact_model(request)
+
+Save contact.             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SaveMapiContactModelRequestData.new(format, name, rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
+ **name** | **String**| Contact document file name. | 
+ **rq** | [**StorageModelRqOfMapiContactDto**](StorageModelRqOfMapiContactDto.md)| Create/Update contact request. | 
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+<a name="save_mapi_message_model"></a>
+# **save_mapi_message_model**
+> save_mapi_message_model(request)
+
+Save MAPI message.             
+
+### Return type
+
+nil (empty response body)
+
+### Request Parameters
+```ruby
+request = AsposeEmailCloud::SaveMapiMessageModelRequestData.new(format, name, rq)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **name** | **String**| Message file name in storage. | 
+ **rq** | [**StorageModelRqOfMapiMessageDto**](StorageModelRqOfMapiMessageDto.md)| Message create/update request. | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
