@@ -81,9 +81,13 @@ module AsposeEmailCloud
     # @return [MailAddress]
     attr_accessor :organizer
 
-    # String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"                   
+    # Deprecated, use 'Recurrence' property. String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"                   
     # @return [String]
     attr_accessor :recurrence_string
+
+    # Recurrence pattern             
+    # @return [RecurrencePatternDto]
+    attr_accessor :recurrence
 
     # Reminders.
     # @return [Array<CalendarReminder>]
@@ -130,6 +134,7 @@ module AsposeEmailCloud
         :'optional_attendees' => :'optionalAttendees',
         :'organizer' => :'organizer',
         :'recurrence_string' => :'recurrenceString',
+        :'recurrence' => :'recurrence',
         :'reminders' => :'reminders',
         :'sequence_id' => :'sequenceId',
         :'start_date' => :'startDate',
@@ -157,6 +162,7 @@ module AsposeEmailCloud
         :'optional_attendees' => :'Array<MailAddress>',
         :'organizer' => :'MailAddress',
         :'recurrence_string' => :'String',
+        :'recurrence' => :'RecurrencePatternDto',
         :'reminders' => :'Array<CalendarReminder>',
         :'sequence_id' => :'String',
         :'start_date' => :'DateTime',
@@ -239,6 +245,10 @@ module AsposeEmailCloud
         self.recurrence_string = attributes[:'recurrenceString']
       end
 
+      if attributes.has_key?(:'recurrence')
+        self.recurrence = attributes[:'recurrence']
+      end
+
       if attributes.has_key?(:'reminders')
         if (value = attributes[:'reminders']).is_a?(Array)
           self.reminders = value
@@ -284,7 +294,8 @@ module AsposeEmailCloud
     # @param [String] microsoft_intended_status Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
     # @param [Array<MailAddress>] optional_attendees Optional attendees.             
     # @param [MailAddress] organizer Event organizer.             
-    # @param [String] recurrence_string String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"                   
+    # @param [String] recurrence_string Deprecated, use 'Recurrence' property. String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"                   
+    # @param [RecurrencePatternDto] recurrence Recurrence pattern             
     # @param [Array<CalendarReminder>] reminders Reminders.
     # @param [String] sequence_id The sequence id. Read only.
     # @param [DateTime] start_date Start date.
@@ -292,7 +303,7 @@ module AsposeEmailCloud
     # @param [String] status Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
     # @param [String] summary Summary.
     # @param [String] transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
-    def initialize(attachments=nil, attendees=nil, description=nil, end_date=nil, end_time_zone=nil, flags=nil, is_description_html=nil, location=nil, method=nil, microsoft_busy_status=nil, microsoft_intended_status=nil, optional_attendees=nil, organizer=nil, recurrence_string=nil, reminders=nil, sequence_id=nil, start_date=nil, start_time_zone=nil, status=nil, summary=nil, transparency=nil)
+    def initialize(attachments=nil, attendees=nil, description=nil, end_date=nil, end_time_zone=nil, flags=nil, is_description_html=nil, location=nil, method=nil, microsoft_busy_status=nil, microsoft_intended_status=nil, optional_attendees=nil, organizer=nil, recurrence_string=nil, recurrence=nil, reminders=nil, sequence_id=nil, start_date=nil, start_time_zone=nil, status=nil, summary=nil, transparency=nil)
       self.attachments = attachments if attachments
       self.attendees = attendees if attendees
       self.description = description if description
@@ -307,6 +318,7 @@ module AsposeEmailCloud
       self.optional_attendees = optional_attendees if optional_attendees
       self.organizer = organizer if organizer
       self.recurrence_string = recurrence_string if recurrence_string
+      self.recurrence = recurrence if recurrence
       self.reminders = reminders if reminders
       self.sequence_id = sequence_id if sequence_id
       self.start_date = start_date if start_date
@@ -422,6 +434,7 @@ module AsposeEmailCloud
           optional_attendees == o.optional_attendees &&
           organizer == o.organizer &&
           recurrence_string == o.recurrence_string &&
+          recurrence == o.recurrence &&
           reminders == o.reminders &&
           sequence_id == o.sequence_id &&
           start_date == o.start_date &&
@@ -440,7 +453,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachments, attendees, description, end_date, end_time_zone, flags, is_description_html, location, method, microsoft_busy_status, microsoft_intended_status, optional_attendees, organizer, recurrence_string, reminders, sequence_id, start_date, start_time_zone, status, summary, transparency].hash
+      [attachments, attendees, description, end_date, end_time_zone, flags, is_description_html, location, method, microsoft_busy_status, microsoft_intended_status, optional_attendees, organizer, recurrence_string, recurrence, reminders, sequence_id, start_date, start_time_zone, status, summary, transparency].hash
     end
 
     # Builds the object from hash

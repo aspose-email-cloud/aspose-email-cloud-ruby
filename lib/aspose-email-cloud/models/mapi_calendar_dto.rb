@@ -171,6 +171,10 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :uid
 
+    # Organizer             
+    # @return [Object]
+    attr_accessor :organizer
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -207,7 +211,8 @@ module AsposeEmailCloud
         :'sequence' => :'sequence',
         :'start_date' => :'startDate',
         :'start_date_time_zone' => :'startDateTimeZone',
-        :'uid' => :'uid'
+        :'uid' => :'uid',
+        :'organizer' => :'organizer'
       }
     end
 
@@ -247,7 +252,8 @@ module AsposeEmailCloud
         :'sequence' => :'Integer',
         :'start_date' => :'DateTime',
         :'start_date_time_zone' => :'Object',
-        :'uid' => :'String'
+        :'uid' => :'String',
+        :'organizer' => :'Object'
       }
     end
 
@@ -406,6 +412,10 @@ module AsposeEmailCloud
       if attributes.has_key?(:'uid')
         self.uid = attributes[:'uid']
       end
+
+      if attributes.has_key?(:'organizer')
+        self.organizer = attributes[:'organizer']
+      end
     end
 
     # Initializes the object
@@ -443,7 +453,8 @@ module AsposeEmailCloud
     # @param [DateTime] start_date Start date and time of the event. If the date is not set, default value for DateTime is returned.             
     # @param [Object] start_date_time_zone Time zone information that indicates the time zone of the StartDate property.             
     # @param [String] uid Unique identifier.             
-    def initialize(attachments=nil, billing=nil, body=nil, body_html=nil, body_rtf=nil, body_type=nil, categories=nil, companies=nil, item_id=nil, message_class=nil, mileage=nil, recipients=nil, sensitivity=nil, subject=nil, subject_prefix=nil, properties=nil, discriminator=nil, appointment_counter_proposal=nil, attendees=nil, busy_status=nil, client_intent=nil, end_date=nil, end_date_time_zone=nil, is_all_day=nil, key_words=nil, location=nil, recurrence=nil, reminder_delta=nil, reminder_file_parameter=nil, reminder_set=nil, sequence=nil, start_date=nil, start_date_time_zone=nil, uid=nil)
+    # @param [Object] organizer Organizer             
+    def initialize(attachments=nil, billing=nil, body=nil, body_html=nil, body_rtf=nil, body_type=nil, categories=nil, companies=nil, item_id=nil, message_class=nil, mileage=nil, recipients=nil, sensitivity=nil, subject=nil, subject_prefix=nil, properties=nil, discriminator=nil, appointment_counter_proposal=nil, attendees=nil, busy_status=nil, client_intent=nil, end_date=nil, end_date_time_zone=nil, is_all_day=nil, key_words=nil, location=nil, recurrence=nil, reminder_delta=nil, reminder_file_parameter=nil, reminder_set=nil, sequence=nil, start_date=nil, start_date_time_zone=nil, uid=nil, organizer=nil)
       self.attachments = attachments if attachments
       self.billing = billing if billing
       self.body = body if body
@@ -478,6 +489,7 @@ module AsposeEmailCloud
       self.start_date = start_date if start_date
       self.start_date_time_zone = start_date_time_zone if start_date_time_zone
       self.uid = uid if uid
+      self.organizer = organizer if organizer
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -586,7 +598,8 @@ module AsposeEmailCloud
           sequence == o.sequence &&
           start_date == o.start_date &&
           start_date_time_zone == o.start_date_time_zone &&
-          uid == o.uid
+          uid == o.uid &&
+          organizer == o.organizer
     end
 
     # @see the `==` method
@@ -598,7 +611,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachments, billing, body, body_html, body_rtf, body_type, categories, companies, item_id, message_class, mileage, recipients, sensitivity, subject, subject_prefix, properties, discriminator, appointment_counter_proposal, attendees, busy_status, client_intent, end_date, end_date_time_zone, is_all_day, key_words, location, recurrence, reminder_delta, reminder_file_parameter, reminder_set, sequence, start_date, start_date_time_zone, uid].hash
+      [attachments, billing, body, body_html, body_rtf, body_type, categories, companies, item_id, message_class, mileage, recipients, sensitivity, subject, subject_prefix, properties, discriminator, appointment_counter_proposal, attendees, busy_status, client_intent, end_date, end_date_time_zone, is_all_day, key_words, location, recurrence, reminder_delta, reminder_file_parameter, reminder_set, sequence, start_date, start_date_time_zone, uid, organizer].hash
     end
 
     # Builds the object from hash
