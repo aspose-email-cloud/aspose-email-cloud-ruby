@@ -33,8 +33,8 @@ module AsposeEmailCloud
     # @return [DateTime]
     attr_accessor :date
 
-    # Day of week.             
-    # @return [Object]
+    # Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+    # @return [String]
     attr_accessor :day_of_week
 
     # Hour.             
@@ -84,7 +84,7 @@ module AsposeEmailCloud
     def self.swagger_types
       {
         :'date' => :'DateTime',
-        :'day_of_week' => :'Object',
+        :'day_of_week' => :'String',
         :'hour' => :'Integer',
         :'milliseconds' => :'Integer',
         :'minute' => :'Integer',
@@ -142,7 +142,7 @@ module AsposeEmailCloud
 
     # Initializes the object
     # @param [DateTime] date Date and time that indicate when to begin using the Standard/Daylight time.             
-    # @param [Object] day_of_week Day of week.             
+    # @param [String] day_of_week Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     # @param [Integer] hour Hour.             
     # @param [Integer] milliseconds Milliseconds.             
     # @param [Integer] minute Minute.             
