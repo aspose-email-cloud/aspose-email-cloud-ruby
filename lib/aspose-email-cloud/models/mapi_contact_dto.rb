@@ -104,39 +104,39 @@ module AsposeEmailCloud
     end
 
     # Specify properties for up to three different e-mail addresses and three different fax addresses.             
-    # @return [Object]
+    # @return [MapiContactElectronicAddressPropertySetDto]
     attr_accessor :electronic_addresses
 
     # Specify events associated with a contact.             
-    # @return [Object]
+    # @return [MapiContactEventPropertySetDto]
     attr_accessor :events
 
     # The properties are used to specify the name of the person represented by the contact.             
-    # @return [Object]
+    # @return [MapiContactNamePropertySetDto]
     attr_accessor :name_info
 
     # Specify other fields of contact.             
-    # @return [Object]
+    # @return [MapiContactOtherPropertySetDto]
     attr_accessor :other_fields
 
     # Specify other additional contact information.             
-    # @return [Object]
+    # @return [MapiContactPersonalInfoPropertySetDto]
     attr_accessor :personal_info
 
     # Contact photo.             
-    # @return [Object]
+    # @return [MapiContactPhotoDto]
     attr_accessor :photo
 
     # Specify three physical addresses: Home Address, Work Address, and Other Address. One of the addresses can be marked as the Mailing Address.             
-    # @return [Object]
+    # @return [MapiContactPhysicalAddressPropertySetDto]
     attr_accessor :physical_addresses
 
     # Properties are used to store professional details for the person represented by the contact.             
-    # @return [Object]
+    # @return [MapiContactProfessionalPropertySetDto]
     attr_accessor :professional_info
 
     # Specify telephone numbers for the contact.             
-    # @return [Object]
+    # @return [MapiContactTelephonePropertySetDto]
     attr_accessor :telephones
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -191,15 +191,15 @@ module AsposeEmailCloud
         :'subject_prefix' => :'String',
         :'properties' => :'Array<MapiPropertyDto>',
         :'discriminator' => :'String',
-        :'electronic_addresses' => :'Object',
-        :'events' => :'Object',
-        :'name_info' => :'Object',
-        :'other_fields' => :'Object',
-        :'personal_info' => :'Object',
-        :'photo' => :'Object',
-        :'physical_addresses' => :'Object',
-        :'professional_info' => :'Object',
-        :'telephones' => :'Object'
+        :'electronic_addresses' => :'MapiContactElectronicAddressPropertySetDto',
+        :'events' => :'MapiContactEventPropertySetDto',
+        :'name_info' => :'MapiContactNamePropertySetDto',
+        :'other_fields' => :'MapiContactOtherPropertySetDto',
+        :'personal_info' => :'MapiContactPersonalInfoPropertySetDto',
+        :'photo' => :'MapiContactPhotoDto',
+        :'physical_addresses' => :'MapiContactPhysicalAddressPropertySetDto',
+        :'professional_info' => :'MapiContactProfessionalPropertySetDto',
+        :'telephones' => :'MapiContactTelephonePropertySetDto'
       }
     end
 
@@ -344,15 +344,15 @@ module AsposeEmailCloud
     # @param [String] subject_prefix Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.             
     # @param [Array<MapiPropertyDto>] properties List of MAPI properties             
     # @param [String] discriminator 
-    # @param [Object] electronic_addresses Specify properties for up to three different e-mail addresses and three different fax addresses.             
-    # @param [Object] events Specify events associated with a contact.             
-    # @param [Object] name_info The properties are used to specify the name of the person represented by the contact.             
-    # @param [Object] other_fields Specify other fields of contact.             
-    # @param [Object] personal_info Specify other additional contact information.             
-    # @param [Object] photo Contact photo.             
-    # @param [Object] physical_addresses Specify three physical addresses: Home Address, Work Address, and Other Address. One of the addresses can be marked as the Mailing Address.             
-    # @param [Object] professional_info Properties are used to store professional details for the person represented by the contact.             
-    # @param [Object] telephones Specify telephone numbers for the contact.             
+    # @param [MapiContactElectronicAddressPropertySetDto] electronic_addresses Specify properties for up to three different e-mail addresses and three different fax addresses.             
+    # @param [MapiContactEventPropertySetDto] events Specify events associated with a contact.             
+    # @param [MapiContactNamePropertySetDto] name_info The properties are used to specify the name of the person represented by the contact.             
+    # @param [MapiContactOtherPropertySetDto] other_fields Specify other fields of contact.             
+    # @param [MapiContactPersonalInfoPropertySetDto] personal_info Specify other additional contact information.             
+    # @param [MapiContactPhotoDto] photo Contact photo.             
+    # @param [MapiContactPhysicalAddressPropertySetDto] physical_addresses Specify three physical addresses: Home Address, Work Address, and Other Address. One of the addresses can be marked as the Mailing Address.             
+    # @param [MapiContactProfessionalPropertySetDto] professional_info Properties are used to store professional details for the person represented by the contact.             
+    # @param [MapiContactTelephonePropertySetDto] telephones Specify telephone numbers for the contact.             
     def initialize(attachments=nil, billing=nil, body=nil, body_html=nil, body_rtf=nil, body_type=nil, categories=nil, companies=nil, item_id=nil, message_class=nil, mileage=nil, recipients=nil, sensitivity=nil, subject=nil, subject_prefix=nil, properties=nil, discriminator=nil, electronic_addresses=nil, events=nil, name_info=nil, other_fields=nil, personal_info=nil, photo=nil, physical_addresses=nil, professional_info=nil, telephones=nil)
       self.attachments = attachments if attachments
       self.billing = billing if billing

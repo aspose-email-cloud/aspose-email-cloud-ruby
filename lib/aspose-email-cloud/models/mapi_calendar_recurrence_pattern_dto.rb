@@ -77,7 +77,7 @@ module AsposeEmailCloud
     # @return [DateTime]
     attr_accessor :start_date
 
-    # Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+    # Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     # @return [String]
     attr_accessor :week_start_day
 
@@ -215,7 +215,7 @@ module AsposeEmailCloud
     # @param [Integer] period Interval at which the meeting pattern repeats.             
     # @param [BOOLEAN] sliding_flag Defines whether pattern is sliding or not.             
     # @param [DateTime] start_date Start date of an item recurrence pattern.             
-    # @param [String] week_start_day Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+    # @param [String] week_start_day Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     # @param [String] discriminator 
     def initialize(calendar_type=nil, deleted_instance_dates=nil, end_date=nil, end_type=nil, exceptions=nil, frequency=nil, modified_instance_dates=nil, occurrence_count=nil, pattern_type=nil, period=nil, sliding_flag=nil, start_date=nil, week_start_day=nil, discriminator=nil)
       self.calendar_type = calendar_type if calendar_type

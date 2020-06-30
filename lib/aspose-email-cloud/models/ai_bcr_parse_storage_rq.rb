@@ -38,7 +38,7 @@ module AsposeEmailCloud
     attr_accessor :images
 
     # Parse output folder location on storage             
-    # @return [Object]
+    # @return [StorageFolderLocation]
     attr_accessor :out_folder
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -55,7 +55,7 @@ module AsposeEmailCloud
       {
         :'options' => :'AiBcrOptions',
         :'images' => :'Array<AiBcrImageStorageFile>',
-        :'out_folder' => :'Object'
+        :'out_folder' => :'StorageFolderLocation'
       }
     end
 
@@ -85,7 +85,7 @@ module AsposeEmailCloud
     # Initializes the object
     # @param [AiBcrOptions] options Recognition options             
     # @param [Array<AiBcrImageStorageFile>] images List of images with business cards             
-    # @param [Object] out_folder Parse output folder location on storage             
+    # @param [StorageFolderLocation] out_folder Parse output folder location on storage             
     def initialize(options=nil, images=nil, out_folder=nil)
       self.options = options if options
       self.images = images if images

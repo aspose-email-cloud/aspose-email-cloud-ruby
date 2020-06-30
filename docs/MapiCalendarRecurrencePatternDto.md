@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **period** | **Integer** | Interval at which the meeting pattern repeats.              | 
 **sliding_flag** | **BOOLEAN** | Defines whether pattern is sliding or not.              | 
 **start_date** | **DateTime** | Start date of an item recurrence pattern.              | 
-**week_start_day** | **String** | Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday | 
+**week_start_day** | **String** | Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday | 
 **discriminator** | **String** |  | 
 
 

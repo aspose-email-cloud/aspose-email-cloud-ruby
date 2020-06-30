@@ -108,7 +108,7 @@ module AsposeEmailCloud
     attr_accessor :appointment_counter_proposal
 
     # Attendees             
-    # @return [Object]
+    # @return [MapiCalendarAttendeesDto]
     attr_accessor :attendees
 
     # Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
@@ -124,7 +124,7 @@ module AsposeEmailCloud
     attr_accessor :end_date
 
     # Time zone information that indicates the time zone of the EndDate property.             
-    # @return [Object]
+    # @return [MapiCalendarTimeZoneDto]
     attr_accessor :end_date_time_zone
 
     # Value indicating whether the event is an all-day event.             
@@ -140,7 +140,7 @@ module AsposeEmailCloud
     attr_accessor :location
 
     # Recurrence properties.             
-    # @return [Object]
+    # @return [MapiCalendarEventRecurrenceDto]
     attr_accessor :recurrence
 
     # Interval, in minutes, between the time at which the reminder first becomes overdue and the start time of the Calendar object.             
@@ -164,7 +164,7 @@ module AsposeEmailCloud
     attr_accessor :start_date
 
     # Time zone information that indicates the time zone of the StartDate property.             
-    # @return [Object]
+    # @return [MapiCalendarTimeZoneDto]
     attr_accessor :start_date_time_zone
 
     # Unique identifier.             
@@ -172,7 +172,7 @@ module AsposeEmailCloud
     attr_accessor :uid
 
     # Organizer             
-    # @return [Object]
+    # @return [MapiElectronicAddressDto]
     attr_accessor :organizer
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -237,23 +237,23 @@ module AsposeEmailCloud
         :'properties' => :'Array<MapiPropertyDto>',
         :'discriminator' => :'String',
         :'appointment_counter_proposal' => :'BOOLEAN',
-        :'attendees' => :'Object',
+        :'attendees' => :'MapiCalendarAttendeesDto',
         :'busy_status' => :'String',
         :'client_intent' => :'Array<String>',
         :'end_date' => :'DateTime',
-        :'end_date_time_zone' => :'Object',
+        :'end_date_time_zone' => :'MapiCalendarTimeZoneDto',
         :'is_all_day' => :'BOOLEAN',
         :'key_words' => :'String',
         :'location' => :'String',
-        :'recurrence' => :'Object',
+        :'recurrence' => :'MapiCalendarEventRecurrenceDto',
         :'reminder_delta' => :'Integer',
         :'reminder_file_parameter' => :'String',
         :'reminder_set' => :'BOOLEAN',
         :'sequence' => :'Integer',
         :'start_date' => :'DateTime',
-        :'start_date_time_zone' => :'Object',
+        :'start_date_time_zone' => :'MapiCalendarTimeZoneDto',
         :'uid' => :'String',
-        :'organizer' => :'Object'
+        :'organizer' => :'MapiElectronicAddressDto'
       }
     end
 
@@ -437,23 +437,23 @@ module AsposeEmailCloud
     # @param [Array<MapiPropertyDto>] properties List of MAPI properties             
     # @param [String] discriminator 
     # @param [BOOLEAN] appointment_counter_proposal Value indicating whether a Meeting Response object is a counter proposal.             
-    # @param [Object] attendees Attendees             
+    # @param [MapiCalendarAttendeesDto] attendees Attendees             
     # @param [String] busy_status Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
     # @param [Array<String>] client_intent Actions the user has taken on this Meeting object.              Items: Enumerates the actions the user can taken on the Meeting object Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
     # @param [DateTime] end_date End date and time of the event. If the date is not set, default value for DateTime is returned.             
-    # @param [Object] end_date_time_zone Time zone information that indicates the time zone of the EndDate property.             
+    # @param [MapiCalendarTimeZoneDto] end_date_time_zone Time zone information that indicates the time zone of the EndDate property.             
     # @param [BOOLEAN] is_all_day Value indicating whether the event is an all-day event.             
     # @param [String] key_words Categories of the calendar object.             
     # @param [String] location Location of the event.             
-    # @param [Object] recurrence Recurrence properties.             
+    # @param [MapiCalendarEventRecurrenceDto] recurrence Recurrence properties.             
     # @param [Integer] reminder_delta Interval, in minutes, between the time at which the reminder first becomes overdue and the start time of the Calendar object.             
     # @param [String] reminder_file_parameter Full path of the sound that a client SHOULD play when the reminder becomes overdue.             
     # @param [BOOLEAN] reminder_set Value indicating whether a reminder is set on the object.             
     # @param [Integer] sequence Sequence number.             
     # @param [DateTime] start_date Start date and time of the event. If the date is not set, default value for DateTime is returned.             
-    # @param [Object] start_date_time_zone Time zone information that indicates the time zone of the StartDate property.             
+    # @param [MapiCalendarTimeZoneDto] start_date_time_zone Time zone information that indicates the time zone of the StartDate property.             
     # @param [String] uid Unique identifier.             
-    # @param [Object] organizer Organizer             
+    # @param [MapiElectronicAddressDto] organizer Organizer             
     def initialize(attachments=nil, billing=nil, body=nil, body_html=nil, body_rtf=nil, body_type=nil, categories=nil, companies=nil, item_id=nil, message_class=nil, mileage=nil, recipients=nil, sensitivity=nil, subject=nil, subject_prefix=nil, properties=nil, discriminator=nil, appointment_counter_proposal=nil, attendees=nil, busy_status=nil, client_intent=nil, end_date=nil, end_date_time_zone=nil, is_all_day=nil, key_words=nil, location=nil, recurrence=nil, reminder_delta=nil, reminder_file_parameter=nil, reminder_set=nil, sequence=nil, start_date=nil, start_date_time_zone=nil, uid=nil, organizer=nil)
       self.attachments = attachments if attachments
       self.billing = billing if billing
