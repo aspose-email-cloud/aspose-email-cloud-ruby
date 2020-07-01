@@ -1,6 +1,6 @@
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="convert_calendar_dto_to_mapi_model_request_data.rb">
+#  <copyright company="Aspose" file="convert_calendar_model_to_mapi_model_request_data.rb">
 #    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,8 +29,8 @@ require_relative './email_request'
 require_relative './http_request'
 
 module AsposeEmailCloud
-  # Request model for convert_calendar_dto_to_mapi_model operation.
-  class ConvertCalendarDtoToMapiModelRequestData < EmailRequest
+  # Request model for convert_calendar_model_to_mapi_model operation.
+  class ConvertCalendarModelToMapiModelRequestData < EmailRequest
 
     # iCalendar model calendar representation
     # @return [CalendarDto]
@@ -45,7 +45,7 @@ module AsposeEmailCloud
     def to_http_info(api_client)
       # verify the required parameter 'calendar_dto' is set
       if api_client.config.client_side_validation && self.calendar_dto.nil?
-        raise ArgumentError, "Missing the required parameter 'calendar_dto' when calling EmailApi.convert_calendar_dto_to_mapi_model"
+        raise ArgumentError, "Missing the required parameter 'calendar_dto' when calling EmailApi.convert_calendar_model_to_mapi_model"
       end
 
       # resource path

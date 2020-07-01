@@ -29,9 +29,9 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**append_email_model_message**](EmailApi.md#append_email_model_message) | **PUT** /email/client/AppendModel | Adds an email from model to specified folder in email account             
 *EmailApi* | [**append_mime_message**](EmailApi.md#append_mime_message) | **PUT** /email/client/AppendMime | Adds an email from MIME to specified folder in email account             
 *EmailApi* | [**convert_calendar**](EmailApi.md#convert_calendar) | **PUT** /email/CalendarModel/convert/{format} | Converts calendar document to specified format and returns as file             
-*EmailApi* | [**convert_calendar_dto_to_mapi_model**](EmailApi.md#convert_calendar_dto_to_mapi_model) | **PUT** /email/CalendarModel/model-as-mapi-model | Convert CalendarDto to MapiCalendarDto             
 *EmailApi* | [**convert_calendar_model_to_alternate**](EmailApi.md#convert_calendar_model_to_alternate) | **PUT** /email/CalendarModel/as-alternate | Convert iCalendar to AlternateView             
 *EmailApi* | [**convert_calendar_model_to_file**](EmailApi.md#convert_calendar_model_to_file) | **PUT** /email/CalendarModel/model-as-file/{format} | Converts calendar model to specified format and returns as file             
+*EmailApi* | [**convert_calendar_model_to_mapi_model**](EmailApi.md#convert_calendar_model_to_mapi_model) | **PUT** /email/CalendarModel/model-as-mapi-model | Convert CalendarDto to MapiCalendarDto             
 *EmailApi* | [**convert_contact**](EmailApi.md#convert_contact) | **PUT** /email/ContactModel/{format}/convert/{destinationFormat} | Converts contact document to specified format and returns as file             
 *EmailApi* | [**convert_contact_model_to_file**](EmailApi.md#convert_contact_model_to_file) | **PUT** /email/ContactModel/model-as-file/{destinationFormat} | Converts contact model to specified format and returns as file             
 *EmailApi* | [**convert_contact_model_to_mapi_model**](EmailApi.md#convert_contact_model_to_mapi_model) | **PUT** /email/ContactModel/model-as-mapi-model | Convert contact model to MAPI model contact representation             

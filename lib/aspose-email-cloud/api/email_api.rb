@@ -245,14 +245,6 @@ module AsposeEmailCloud
       make_request(http_request, :PUT, 'File')
     end
 
-    # Convert CalendarDto to MapiCalendarDto             
-    # @param [ConvertCalendarDtoToMapiModelRequestData] request Request object.
-    # @return [MapiCalendarDto]
-    def convert_calendar_dto_to_mapi_model(request)
-      http_request = request.to_http_info(@api_client)
-      make_request(http_request, :PUT, 'MapiCalendarDto')
-    end
-
     # Convert iCalendar to AlternateView             
     # @param [ConvertCalendarModelToAlternateRequestData] request Request object.
     # @return [AlternateView]
@@ -267,6 +259,14 @@ module AsposeEmailCloud
     def convert_calendar_model_to_file(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, 'File')
+    end
+
+    # Convert CalendarDto to MapiCalendarDto             
+    # @param [ConvertCalendarModelToMapiModelRequestData] request Request object.
+    # @return [MapiCalendarDto]
+    def convert_calendar_model_to_mapi_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'MapiCalendarDto')
     end
 
     # Converts contact document to specified format and returns as file             
