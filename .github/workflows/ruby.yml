@@ -15,7 +15,7 @@ jobs:
         ruby-version: 2.6.x
     - name: Install dependencies
       run: gem install -g
-    - name: Build and test with Rspec
+    - name: Test with Rspec
       env:
         appSid: ${{secrets.appSid}}
         appKey: ${{secrets.appKey}}
