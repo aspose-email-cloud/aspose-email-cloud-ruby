@@ -16,10 +16,12 @@ RSpec.configure do |config|
   config.formatter = :documentation
 end
 
+include AsposeEmailCloud
+
 RSpec.shared_context 'spec base', shared_context: :metadata do
   before(:all) do
     api_base_url = ENV['apiBaseUrl']
-    @api = AsposeEmailCloud::EmailApi.new(ENV['appKey'], ENV['appSid'], api_base_url)
+    @api = EmailApi.new(ENV['appKey'], ENV['appSid'], api_base_url)
     auth_url = ENV['authUrl']
     if auth_url
       @api.api_client.config.scheme = 'http' if api_base_url.include? 'http:'
@@ -27,11 +29,11 @@ RSpec.shared_context 'spec base', shared_context: :metadata do
     end
     @folder = SecureRandom.uuid.to_s
     @storage = 'First Storage'
-    @api.create_folder(AsposeEmailCloud::CreateFolderRequestData.new(@folder, @storage))
+    @api.create_folder(CreateFolderRequestData.new(@folder, @storage))
   end
 
   after(:all) do
-    @api.delete_folder(AsposeEmailCloud::DeleteFolderRequestData.new(@folder, @storage, true))
+    @api.delete_folder(DeleteFolderRequestData.new(@folder, @storage, true))
   end
 
   def create_calendar(start_date = nil)
