@@ -50,7 +50,7 @@ module AsposeEmailCloud
     attr_accessor :mark_as_sent
 
     # Email document file location in storage             
-    # @return [Object]
+    # @return [StorageFileLocation]
     attr_accessor :email_file
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -73,7 +73,7 @@ module AsposeEmailCloud
         :'storage_folder' => :'StorageFolderLocation',
         :'folder' => :'String',
         :'mark_as_sent' => :'BOOLEAN',
-        :'email_file' => :'Object'
+        :'email_file' => :'StorageFileLocation'
       }
     end
 
@@ -116,7 +116,7 @@ module AsposeEmailCloud
     # @param [StorageFolderLocation] storage_folder Storage folder location of account files             
     # @param [String] folder Email account folder to store a message             
     # @param [BOOLEAN] mark_as_sent Mark message as sent             
-    # @param [Object] email_file Email document file location in storage             
+    # @param [StorageFileLocation] email_file Email document file location in storage             
     def initialize(first_account=nil, second_account=nil, storage_folder=nil, folder=nil, mark_as_sent=nil, email_file=nil)
       self.first_account = first_account if first_account
       self.second_account = second_account if second_account
