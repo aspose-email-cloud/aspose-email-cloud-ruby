@@ -28,6 +28,7 @@ module SpecHelper
         @api.api_client.config.scheme = 'http' if api_base_url.include? 'http:'
         @api.api_client.config.auth_url = auth_url
       end
+      @api.api_client.config.logger.level = 'warn'
       @folder = SecureRandom.uuid.to_s
       @storage = 'First Storage'
       @api.create_folder(CreateFolderRequestData.new(@folder, @storage))

@@ -9,7 +9,7 @@ module OtherSpec
   include AsposeEmailCloud
 
   # A set of autotests to check main SDK logic
-  describe EmailApi do
+  describe 'Other specs' do
     include_context 'spec base'
     # 'File' field should be a File object,
     # this is the only way for SDK to recognize that it is the file to upload
