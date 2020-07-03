@@ -73,7 +73,7 @@ module CalendarSpec
         SaveEmailModelRequestData.new(
           'Eml', email_file,
           StorageModelRqOfEmailDto.new(
-            email, folder_location)))
+            email, storage_folder)))
 
       downloaded = @api.download_file(
         DownloadFileRequestData.new("#{@folder}/#{email_file}", @storage))
