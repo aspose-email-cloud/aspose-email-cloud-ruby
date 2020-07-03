@@ -18,10 +18,10 @@ module EmailModelSpec
       eml_file = @api.convert_email(
         ConvertEmailRequestData.new('Eml', mapi_file))
       eml_content = IO.read(eml_file)
-      expect(eml_content).to include from
+      expect(eml_content).to include email.from.address
       dto = @api.get_email_file_as_model(
         GetEmailFileAsModelRequestData.new(eml_file))
-      expect(dto.from.address).to eq from
+      expect(dto.from.address).to eq email.from.address
     end
 
     it 'Convert model to MAPI model', :pipeline do
