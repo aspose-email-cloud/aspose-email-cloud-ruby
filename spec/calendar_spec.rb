@@ -97,6 +97,8 @@ module CalendarSpec
       mapi_calendar = @api.convert_calendar_model_to_mapi_model(
         ConvertCalendarModelToMapiModelRequestData.new(calendar))
       expect(calendar.location).to eq mapi_calendar.location
+      expect('MapiCalendarDailyRecurrencePatternDto')
+        .to eq mapi_calendar.recurrence.recurrence_pattern.discriminator
     end
   end
 
@@ -110,6 +112,7 @@ module CalendarSpec
     calendar.end_date = DateTime.now + 1
     calendar.organizer = MailAddress.new nil, 'organizer@aspose.com'
     calendar.attendees = [MailAddress.new(nil, 'attendee@aspose.com')]
+    calendar.recurrence = DailyRecurrencePatternDto.new(nil, 10, nil, 'Monday')
     calendar
   end
 end
