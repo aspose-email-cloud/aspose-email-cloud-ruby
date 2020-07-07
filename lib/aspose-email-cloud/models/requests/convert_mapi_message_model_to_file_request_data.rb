@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for convert_mapi_message_model_to_file operation.
   class ConvertMapiMessageModelToFileRequestData < EmailRequest
 
-    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @return [String]
     attr_accessor :destination_format
     # MAPI message model to convert
@@ -40,7 +40,7 @@ module AsposeEmailCloud
     attr_accessor :mapi_message
 
     # Converts MAPI message model to specified format and returns as file             
-    # @param [String] destination_format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # @param [String] destination_format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @param [MapiMessageDto] mapi_message MAPI message model to convert
     def initialize(destination_format, mapi_message)
       self.destination_format = destination_format if destination_format

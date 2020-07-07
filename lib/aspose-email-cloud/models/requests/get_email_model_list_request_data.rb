@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_email_model_list operation.
   class GetEmailModelListRequestData < EmailRequest
 
-    # Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @return [String]
     attr_accessor :format
     # Path to folder in storage.
@@ -49,7 +49,7 @@ module AsposeEmailCloud
     attr_accessor :page_number
 
     # Get email list from storage folder.             
-    # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @param [String] folder Path to folder in storage.
     # @param [String] storage Storage name.
     # @param [Integer] items_per_page Count of items on page.

@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for convert_email operation.
   class ConvertEmailRequestData < EmailRequest
 
-    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @return [String]
     attr_accessor :format
     # File to convert
@@ -40,7 +40,7 @@ module AsposeEmailCloud
     attr_accessor :file
 
     # Converts email document to specified format and returns as file             
-    # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @param [File] file File to convert
     def initialize(format, file)
       self.format = format if format

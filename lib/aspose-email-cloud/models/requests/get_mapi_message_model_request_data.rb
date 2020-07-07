@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for get_mapi_message_model operation.
   class GetMapiMessageModelRequestData < EmailRequest
 
-    # Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @return [String]
     attr_accessor :format
     # Email document file name.
@@ -46,7 +46,7 @@ module AsposeEmailCloud
     attr_accessor :storage
 
     # MAPI message document.             
-    # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @param [String] name Email document file name.
     # @param [String] folder Path to folder in storage.
     # @param [String] storage Storage name.

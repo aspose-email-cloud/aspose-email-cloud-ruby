@@ -719,7 +719,7 @@ request = AsposeEmailCloud::ConvertEmailRequestData.new(format, file)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **file** | **File**| File to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -741,7 +741,7 @@ request = AsposeEmailCloud::ConvertEmailModelToFileRequestData.new(destination_f
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **destination_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **destination_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **email_dto** | [**EmailDto**](EmailDto.md)| Email model to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -891,7 +891,7 @@ request = AsposeEmailCloud::ConvertMapiMessageModelToFileRequestData.new(destina
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **destination_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **destination_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **mapi_message** | [**MapiMessageDto**](MapiMessageDto.md)| MAPI message model to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -1909,7 +1909,7 @@ request = AsposeEmailCloud::GetEmailAsFileRequestData.new(file_name, format, sto
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file_name** | **String**| Email document file name | 
- **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **storage** | **String**| Storage name | [optional] 
  **folder** | **String**| Path to folder in storage | [optional] 
 
@@ -2002,7 +2002,7 @@ request = AsposeEmailCloud::GetEmailFileAsMapiModelRequestData.new(file_format, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **file_format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **file** | **File**| File to convert | 
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -2045,7 +2045,7 @@ request = AsposeEmailCloud::GetEmailModelRequestData.new(format, name, folder=fo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **name** | **String**| Email document file name. | 
  **folder** | **String**| Path to folder in storage. | [optional] 
  **storage** | **String**| Storage name. | [optional] 
@@ -2069,7 +2069,7 @@ request = AsposeEmailCloud::GetEmailModelListRequestData.new(format, folder=fold
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **folder** | **String**| Path to folder in storage. | [optional] 
  **storage** | **String**| Storage name. | [optional] 
  **items_per_page** | **Integer**| Count of items on page. | [optional] [default to 10]
@@ -2280,7 +2280,7 @@ request = AsposeEmailCloud::GetMapiMessageModelRequestData.new(format, name, fol
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **name** | **String**| Email document file name. | 
  **folder** | **String**| Path to folder in storage. | [optional] 
  **storage** | **String**| Storage name. | [optional] 
@@ -2660,7 +2660,7 @@ request = AsposeEmailCloud::SaveEmailModelRequestData.new(format, name, rq)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **format** | **String**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **name** | **String**| Email document file name in storage. | 
  **rq** | [**StorageModelRqOfEmailDto**](StorageModelRqOfEmailDto.md)| Email document create/update request. | 
 
@@ -2771,7 +2771,7 @@ request = AsposeEmailCloud::SaveMapiMessageModelRequestData.new(format, name, rq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html | 
+ **format** | **String**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **name** | **String**| Message file name in storage. | 
  **rq** | [**StorageModelRqOfMapiMessageDto**](StorageModelRqOfMapiMessageDto.md)| Message create/update request. | 
 

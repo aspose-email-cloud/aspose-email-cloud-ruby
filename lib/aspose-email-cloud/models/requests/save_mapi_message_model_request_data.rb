@@ -32,7 +32,7 @@ module AsposeEmailCloud
   # Request model for save_mapi_message_model operation.
   class SaveMapiMessageModelRequestData < EmailRequest
 
-    # File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @return [String]
     attr_accessor :format
     # Message file name in storage.
@@ -43,7 +43,7 @@ module AsposeEmailCloud
     attr_accessor :rq
 
     # Save MAPI message.             
-    # @param [String] format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # @param [String] format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @param [String] name Message file name in storage.
     # @param [StorageModelRqOfMapiMessageDto] rq Message create/update request.
     def initialize(format, name, rq)
