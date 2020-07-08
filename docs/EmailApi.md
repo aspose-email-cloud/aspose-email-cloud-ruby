@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 # **convert_calendar_model_to_mapi_model**
 > convert_calendar_model_to_mapi_model(request)
 
-Convert CalendarDto to MapiCalendarDto             
+Converts CalendarDto to MapiCalendarDto.             
 
 ### Return type
 
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 # **convert_contact_model_to_mapi_model**
 > convert_contact_model_to_mapi_model(request)
 
-Convert contact model to MAPI model contact representation             
+Converts ContactDto to MapiContactDto.             
 
 ### Return type
 
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 # **convert_email_model_to_mapi_model**
 > convert_email_model_to_mapi_model(request)
 
-Converts Email model to MAPI model message representation             
+Converts EmailDto to MapiMessageDto.             
 
 ### Return type
 
@@ -814,7 +814,7 @@ Name | Type | Description  | Notes
 # **convert_mapi_contact_model_to_contact_model**
 > convert_mapi_contact_model_to_contact_model(request)
 
-Converts MAPI contact model to Contact model             
+Converts MAPI contact model to ContactDto model             
 
 ### Return type
 
@@ -2196,7 +2196,7 @@ Name | Type | Description  | Notes
 # **get_mapi_calendar_model**
 > get_mapi_calendar_model(request)
 
-Get calendar file             
+Get MAPI calendar document.             
 
 ### Return type
 
@@ -2219,7 +2219,7 @@ Name | Type | Description  | Notes
 # **get_mapi_contact_model**
 > get_mapi_contact_model(request)
 
-Get contact document.             
+Get MAPI contact document.             
 
 ### Return type
 
@@ -2267,7 +2267,7 @@ Name | Type | Description  | Notes
 # **get_mapi_message_model**
 > get_mapi_message_model(request)
 
-MAPI message document.             
+Get MAPI message document.             
 
 ### Return type
 
@@ -2735,7 +2735,7 @@ Name | Type | Description  | Notes
 # **save_mapi_contact_model**
 > save_mapi_contact_model(request)
 
-Save contact.             
+Save MAPI Contact to storage.             
 
 ### Return type
 
@@ -2758,7 +2758,7 @@ Name | Type | Description  | Notes
 # **save_mapi_message_model**
 > save_mapi_message_model(request)
 
-Save MAPI message.             
+Save MAPI message to storage.             
 
 ### Return type
 

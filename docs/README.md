@@ -31,16 +31,16 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**convert_calendar**](EmailApi.md#convert_calendar) | **PUT** /email/CalendarModel/convert/{format} | Converts calendar document to specified format and returns as file             
 *EmailApi* | [**convert_calendar_model_to_alternate**](EmailApi.md#convert_calendar_model_to_alternate) | **PUT** /email/CalendarModel/as-alternate | Convert iCalendar to AlternateView             
 *EmailApi* | [**convert_calendar_model_to_file**](EmailApi.md#convert_calendar_model_to_file) | **PUT** /email/CalendarModel/model-as-file/{format} | Converts calendar model to specified format and returns as file             
-*EmailApi* | [**convert_calendar_model_to_mapi_model**](EmailApi.md#convert_calendar_model_to_mapi_model) | **PUT** /email/CalendarModel/model-as-mapi-model | Convert CalendarDto to MapiCalendarDto             
+*EmailApi* | [**convert_calendar_model_to_mapi_model**](EmailApi.md#convert_calendar_model_to_mapi_model) | **PUT** /email/CalendarModel/model-as-mapi-model | Converts CalendarDto to MapiCalendarDto.             
 *EmailApi* | [**convert_contact**](EmailApi.md#convert_contact) | **PUT** /email/ContactModel/{format}/convert/{destinationFormat} | Converts contact document to specified format and returns as file             
 *EmailApi* | [**convert_contact_model_to_file**](EmailApi.md#convert_contact_model_to_file) | **PUT** /email/ContactModel/model-as-file/{destinationFormat} | Converts contact model to specified format and returns as file             
-*EmailApi* | [**convert_contact_model_to_mapi_model**](EmailApi.md#convert_contact_model_to_mapi_model) | **PUT** /email/ContactModel/model-as-mapi-model | Convert contact model to MAPI model contact representation             
+*EmailApi* | [**convert_contact_model_to_mapi_model**](EmailApi.md#convert_contact_model_to_mapi_model) | **PUT** /email/ContactModel/model-as-mapi-model | Converts ContactDto to MapiContactDto.             
 *EmailApi* | [**convert_email**](EmailApi.md#convert_email) | **PUT** /email/convert/{format} | Converts email document to specified format and returns as file             
 *EmailApi* | [**convert_email_model_to_file**](EmailApi.md#convert_email_model_to_file) | **PUT** /email/model/model-as-file/{destinationFormat} | Converts Email model to specified format and returns as file             
-*EmailApi* | [**convert_email_model_to_mapi_model**](EmailApi.md#convert_email_model_to_mapi_model) | **PUT** /email/model/model-as-mapi-model | Converts Email model to MAPI model message representation             
+*EmailApi* | [**convert_email_model_to_mapi_model**](EmailApi.md#convert_email_model_to_mapi_model) | **PUT** /email/model/model-as-mapi-model | Converts EmailDto to MapiMessageDto.             
 *EmailApi* | [**convert_mapi_calendar_model_to_calendar_model**](EmailApi.md#convert_mapi_calendar_model_to_calendar_model) | **PUT** /email/MapiCalendar/model-as-calendar-model | Converts MAPI calendar model to CalendarDto model             
 *EmailApi* | [**convert_mapi_calendar_model_to_file**](EmailApi.md#convert_mapi_calendar_model_to_file) | **PUT** /email/MapiCalendar/model-as-file/{destinationFormat} | Converts MAPI calendar model to specified format and returns as file             
-*EmailApi* | [**convert_mapi_contact_model_to_contact_model**](EmailApi.md#convert_mapi_contact_model_to_contact_model) | **PUT** /email/MapiContact/model-as-contact-model | Converts MAPI contact model to Contact model             
+*EmailApi* | [**convert_mapi_contact_model_to_contact_model**](EmailApi.md#convert_mapi_contact_model_to_contact_model) | **PUT** /email/MapiContact/model-as-contact-model | Converts MAPI contact model to ContactDto model             
 *EmailApi* | [**convert_mapi_contact_model_to_file**](EmailApi.md#convert_mapi_contact_model_to_file) | **PUT** /email/MapiContact/model-as-file/{destinationFormat} | Converts MAPI contact model to specified format and returns as file             
 *EmailApi* | [**convert_mapi_message_model_to_email_model**](EmailApi.md#convert_mapi_message_model_to_email_model) | **PUT** /email/MapiMessage/model-as-email-model | Converts MAPI message model to EmailDto model             
 *EmailApi* | [**convert_mapi_message_model_to_file**](EmailApi.md#convert_mapi_message_model_to_file) | **PUT** /email/MapiMessage/model-as-file/{destinationFormat} | Converts MAPI message model to specified format and returns as file             
@@ -100,10 +100,10 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**get_files_list**](EmailApi.md#get_files_list) | **GET** /email/storage/folder/{path} | 
 *EmailApi* | [**get_mapi_attachment**](EmailApi.md#get_mapi_attachment) | **GET** /email/Mapi/{name}/attachments/{attachment} | Get document attachment as file stream             
 *EmailApi* | [**get_mapi_attachments**](EmailApi.md#get_mapi_attachments) | **GET** /email/Mapi/{name}/attachments | Get document attachment list             
-*EmailApi* | [**get_mapi_calendar_model**](EmailApi.md#get_mapi_calendar_model) | **GET** /email/MapiCalendar/{name} | Get calendar file             
-*EmailApi* | [**get_mapi_contact_model**](EmailApi.md#get_mapi_contact_model) | **GET** /email/MapiContact/{format}/{name} | Get contact document.             
+*EmailApi* | [**get_mapi_calendar_model**](EmailApi.md#get_mapi_calendar_model) | **GET** /email/MapiCalendar/{name} | Get MAPI calendar document.             
+*EmailApi* | [**get_mapi_contact_model**](EmailApi.md#get_mapi_contact_model) | **GET** /email/MapiContact/{format}/{name} | Get MAPI contact document.             
 *EmailApi* | [**get_mapi_list**](EmailApi.md#get_mapi_list) | **GET** /email/Mapi | Get document list from storage folder             
-*EmailApi* | [**get_mapi_message_model**](EmailApi.md#get_mapi_message_model) | **GET** /email/MapiMessage/{format}/{name} | MAPI message document.             
+*EmailApi* | [**get_mapi_message_model**](EmailApi.md#get_mapi_message_model) | **GET** /email/MapiMessage/{format}/{name} | Get MAPI message document.             
 *EmailApi* | [**get_mapi_properties**](EmailApi.md#get_mapi_properties) | **GET** /email/Mapi/{name}/properties | Get document properties             
 *EmailApi* | [**is_email_address_disposable**](EmailApi.md#is_email_address_disposable) | **GET** /email/disposable/isDisposable/{address} | Check email address is disposable             
 *EmailApi* | [**list_email_folders**](EmailApi.md#list_email_folders) | **GET** /email/client/ListFolders | Get folders list in email account             
@@ -123,8 +123,8 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**save_mail_account**](EmailApi.md#save_mail_account) | **POST** /email/client/SaveMailAccount | Create email account file (*.account) with login/password authentication             
 *EmailApi* | [**save_mail_o_auth_account**](EmailApi.md#save_mail_o_auth_account) | **POST** /email/client/SaveMailOAuthAccount | Create email account file (*.account) with OAuth             
 *EmailApi* | [**save_mapi_calendar_model**](EmailApi.md#save_mapi_calendar_model) | **PUT** /email/MapiCalendar/{format}/{name} | Save MAPI Calendar to storage.             
-*EmailApi* | [**save_mapi_contact_model**](EmailApi.md#save_mapi_contact_model) | **PUT** /email/MapiContact/{format}/{name} | Save contact.             
-*EmailApi* | [**save_mapi_message_model**](EmailApi.md#save_mapi_message_model) | **PUT** /email/MapiMessage/{format}/{name} | Save MAPI message.             
+*EmailApi* | [**save_mapi_contact_model**](EmailApi.md#save_mapi_contact_model) | **PUT** /email/MapiContact/{format}/{name} | Save MAPI Contact to storage.             
+*EmailApi* | [**save_mapi_message_model**](EmailApi.md#save_mapi_message_model) | **PUT** /email/MapiMessage/{format}/{name} | Save MAPI message to storage.             
 *EmailApi* | [**send_email**](EmailApi.md#send_email) | **POST** /email/client/Send | Send an email from *.eml file located on storage             
 *EmailApi* | [**send_email_mime**](EmailApi.md#send_email_mime) | **POST** /email/client/SendMime | Send an email specified by MIME in request             
 *EmailApi* | [**send_email_model**](EmailApi.md#send_email_model) | **POST** /email/client/SendModel | Send an email specified by model in request             

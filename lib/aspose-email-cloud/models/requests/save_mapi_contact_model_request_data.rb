@@ -42,7 +42,7 @@ module AsposeEmailCloud
     # @return [StorageModelRqOfMapiContactDto]
     attr_accessor :rq
 
-    # Save contact.             
+    # Save MAPI Contact to storage.             
     # @param [String] format Contact document format. Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name.
     # @param [StorageModelRqOfMapiContactDto] rq Create/Update contact request.

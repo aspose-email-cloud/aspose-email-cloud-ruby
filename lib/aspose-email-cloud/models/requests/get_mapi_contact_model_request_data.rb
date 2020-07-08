@@ -45,7 +45,7 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :storage
 
-    # Get contact document.             
+    # Get MAPI contact document.             
     # @param [String] format Contact document format. Enum, available values: VCard, WebDav, Msg
     # @param [String] name Contact document file name.
     # @param [String] folder Path to folder in storage.

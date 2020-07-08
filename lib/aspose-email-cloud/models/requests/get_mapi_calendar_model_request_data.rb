@@ -42,7 +42,7 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :storage
 
-    # Get calendar file             
+    # Get MAPI calendar document.             
     # @param [String] name Calendar file name in storage
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name

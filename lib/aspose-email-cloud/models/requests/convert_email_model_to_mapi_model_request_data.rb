@@ -36,7 +36,7 @@ module AsposeEmailCloud
     # @return [EmailDto]
     attr_accessor :email_dto
 
-    # Converts Email model to MAPI model message representation             
+    # Converts EmailDto to MapiMessageDto.             
     # @param [EmailDto] email_dto Email model to convert
     def initialize(email_dto)
       self.email_dto = email_dto if email_dto

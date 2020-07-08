@@ -36,7 +36,7 @@ module AsposeEmailCloud
     # @return [MapiContactDto]
     attr_accessor :mapi_contact_dto
 
-    # Converts MAPI contact model to Contact model             
+    # Converts MAPI contact model to ContactDto model             
     # @param [MapiContactDto] mapi_contact_dto MAPI contact model to convert
     def initialize(mapi_contact_dto)
       self.mapi_contact_dto = mapi_contact_dto if mapi_contact_dto

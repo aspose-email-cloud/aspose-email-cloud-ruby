@@ -36,7 +36,7 @@ module AsposeEmailCloud
     # @return [CalendarDto]
     attr_accessor :calendar_dto
 
-    # Convert CalendarDto to MapiCalendarDto             
+    # Converts CalendarDto to MapiCalendarDto.             
     # @param [CalendarDto] calendar_dto iCalendar model calendar representation
     def initialize(calendar_dto)
       self.calendar_dto = calendar_dto if calendar_dto

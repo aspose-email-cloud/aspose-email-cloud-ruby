@@ -45,7 +45,7 @@ module AsposeEmailCloud
     # @return [String]
     attr_accessor :storage
 
-    # MAPI message document.             
+    # Get MAPI message document.             
     # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @param [String] name Email document file name.
     # @param [String] folder Path to folder in storage.

@@ -42,7 +42,7 @@ module AsposeEmailCloud
     # @return [StorageModelRqOfMapiMessageDto]
     attr_accessor :rq
 
-    # Save MAPI message.             
+    # Save MAPI message to storage.             
     # @param [String] format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @param [String] name Message file name in storage.
     # @param [StorageModelRqOfMapiMessageDto] rq Message create/update request.
