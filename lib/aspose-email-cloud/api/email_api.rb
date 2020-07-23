@@ -261,6 +261,14 @@ module AsposeEmailCloud
       make_request(http_request, :PUT, 'File')
     end
 
+    # Converts CalendarDto to MapiCalendarDto.             
+    # @param [ConvertCalendarModelToMapiModelRequestData] request Request object.
+    # @return [MapiCalendarDto]
+    def convert_calendar_model_to_mapi_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'MapiCalendarDto')
+    end
+
     # Converts contact document to specified format and returns as file             
     # @param [ConvertContactRequestData] request Request object.
     # @return [File]
@@ -277,6 +285,14 @@ module AsposeEmailCloud
       make_request(http_request, :PUT, 'File')
     end
 
+    # Converts ContactDto to MapiContactDto.             
+    # @param [ConvertContactModelToMapiModelRequestData] request Request object.
+    # @return [MapiContactDto]
+    def convert_contact_model_to_mapi_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'MapiContactDto')
+    end
+
     # Converts email document to specified format and returns as file             
     # @param [ConvertEmailRequestData] request Request object.
     # @return [File]
@@ -289,6 +305,62 @@ module AsposeEmailCloud
     # @param [ConvertEmailModelToFileRequestData] request Request object.
     # @return [File]
     def convert_email_model_to_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
+    # Converts EmailDto to MapiMessageDto.             
+    # @param [ConvertEmailModelToMapiModelRequestData] request Request object.
+    # @return [MapiMessageDto]
+    def convert_email_model_to_mapi_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'MapiMessageDto')
+    end
+
+    # Converts MAPI calendar model to CalendarDto model             
+    # @param [ConvertMapiCalendarModelToCalendarModelRequestData] request Request object.
+    # @return [CalendarDto]
+    def convert_mapi_calendar_model_to_calendar_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'CalendarDto')
+    end
+
+    # Converts MAPI calendar model to specified format and returns as file             
+    # @param [ConvertMapiCalendarModelToFileRequestData] request Request object.
+    # @return [File]
+    def convert_mapi_calendar_model_to_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
+    # Converts MAPI contact model to ContactDto model             
+    # @param [ConvertMapiContactModelToContactModelRequestData] request Request object.
+    # @return [ContactDto]
+    def convert_mapi_contact_model_to_contact_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'ContactDto')
+    end
+
+    # Converts MAPI contact model to specified format and returns as file             
+    # @param [ConvertMapiContactModelToFileRequestData] request Request object.
+    # @return [File]
+    def convert_mapi_contact_model_to_file(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'File')
+    end
+
+    # Converts MAPI message model to EmailDto model             
+    # @param [ConvertMapiMessageModelToEmailModelRequestData] request Request object.
+    # @return [EmailDto]
+    def convert_mapi_message_model_to_email_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'EmailDto')
+    end
+
+    # Converts MAPI message model to specified format and returns as file             
+    # @param [ConvertMapiMessageModelToFileRequestData] request Request object.
+    # @return [File]
+    def convert_mapi_message_model_to_file(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :PUT, 'File')
     end
@@ -519,6 +591,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'File')
     end
 
+    # Converts calendar file to a MAPI model representation             
+    # @param [GetCalendarFileAsMapiModelRequestData] request Request object.
+    # @return [MapiCalendarDto]
+    def get_calendar_file_as_mapi_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'MapiCalendarDto')
+    end
+
     # Converts calendar document to a model representation             
     # @param [GetCalendarFileAsModelRequestData] request Request object.
     # @return [CalendarDto]
@@ -573,6 +653,14 @@ module AsposeEmailCloud
     def get_contact_attachment(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'File')
+    end
+
+    # Converts contact file to a MAPI model representation             
+    # @param [GetContactFileAsMapiModelRequestData] request Request object.
+    # @return [MapiContactDto]
+    def get_contact_file_as_mapi_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'MapiContactDto')
     end
 
     # Converts contact document to a model representation             
@@ -662,6 +750,14 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'EmailClientMultiAccount')
     end
 
+    # Converts email file to a MAPI model representation             
+    # @param [GetEmailFileAsMapiModelRequestData] request Request object.
+    # @return [MapiMessageDto]
+    def get_email_file_as_mapi_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, 'MapiMessageDto')
+    end
+
     # Converts email document to a model representation             
     # @param [GetEmailFileAsModelRequestData] request Request object.
     # @return [EmailDto]
@@ -724,12 +820,36 @@ module AsposeEmailCloud
       make_request(http_request, :GET, 'ListResponseOfString')
     end
 
+    # Get MAPI calendar document.             
+    # @param [GetMapiCalendarModelRequestData] request Request object.
+    # @return [MapiCalendarDto]
+    def get_mapi_calendar_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'MapiCalendarDto')
+    end
+
+    # Get MAPI contact document.             
+    # @param [GetMapiContactModelRequestData] request Request object.
+    # @return [MapiContactDto]
+    def get_mapi_contact_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'MapiContactDto')
+    end
+
     # Get document list from storage folder             
     # @param [GetMapiListRequestData] request Request object.
     # @return [ListResponseOfHierarchicalObjectResponse]
     def get_mapi_list(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :GET, 'ListResponseOfHierarchicalObjectResponse')
+    end
+
+    # Get MAPI message document.             
+    # @param [GetMapiMessageModelRequestData] request Request object.
+    # @return [MapiMessageDto]
+    def get_mapi_message_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :GET, 'MapiMessageDto')
     end
 
     # Get document properties             
@@ -883,6 +1003,33 @@ module AsposeEmailCloud
     def save_mail_o_auth_account(request)
       http_request = request.to_http_info(@api_client)
       make_request(http_request, :POST, nil)
+      nil
+    end
+
+    # Save MAPI Calendar to storage.             
+    # @param [SaveMapiCalendarModelRequestData] request Request object.
+    # @return [nil]
+    def save_mapi_calendar_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
+    # Save MAPI Contact to storage.             
+    # @param [SaveMapiContactModelRequestData] request Request object.
+    # @return [nil]
+    def save_mapi_contact_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
+      nil
+    end
+
+    # Save MAPI message to storage.             
+    # @param [SaveMapiMessageModelRequestData] request Request object.
+    # @return [nil]
+    def save_mapi_message_model(request)
+      http_request = request.to_http_info(@api_client)
+      make_request(http_request, :PUT, nil)
       nil
     end
 

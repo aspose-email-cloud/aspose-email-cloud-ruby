@@ -4,7 +4,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **options** | [**AiBcrOptions**](AiBcrOptions.md) | Recognition options              | [optional] 
 **images** | [**Array&lt;AiBcrImageStorageFile&gt;**](AiBcrImageStorageFile.md) | List of images with business cards              | 
-**out_folder** | **Object** | Parse output folder location on storage              | 
+**out_folder** | [**StorageFolderLocation**](StorageFolderLocation.md) | Parse output folder location on storage              | 
 
  Parent class: [AiBcrStorageImageRq](AiBcrStorageImageRq.md)
 

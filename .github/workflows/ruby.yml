@@ -13,11 +13,11 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - name: Build and test with Rspec
+    - name: Install dependencies
+      run: gem install -g
+    - name: Test with Rspec
       env:
         appSid: ${{secrets.appSid}}
         appKey: ${{secrets.appKey}}
         apiBaseUrl: "https://api-qa.aspose.cloud"
-      run: |
-        gem install -g
-        rspec -t pipeline spec
+      run: rspec -t pipeline spec

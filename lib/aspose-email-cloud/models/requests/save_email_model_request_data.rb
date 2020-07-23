@@ -32,20 +32,20 @@ module AsposeEmailCloud
   # Request model for save_email_model operation.
   class SaveEmailModelRequestData < EmailRequest
 
-    # File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @return [String]
     attr_accessor :format
     # Email document file name in storage.
     # @return [String]
     attr_accessor :name
-    # Calendar properties update request.
+    # Email document create/update request.
     # @return [StorageModelRqOfEmailDto]
     attr_accessor :rq
 
     # Save email document.             
-    # @param [String] format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # @param [String] format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @param [String] name Email document file name in storage.
-    # @param [StorageModelRqOfEmailDto] rq Calendar properties update request.
+    # @param [StorageModelRqOfEmailDto] rq Email document create/update request.
     def initialize(format, name, rq)
       self.format = format if format
       self.name = name if name

@@ -35,7 +35,7 @@ module AsposeEmailCloud
     # Email document file name
     # @return [String]
     attr_accessor :file_name
-    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @return [String]
     attr_accessor :format
     # Storage name
@@ -47,7 +47,7 @@ module AsposeEmailCloud
 
     # Converts email document from storage to specified format and returns as file             
     # @param [String] file_name Email document file name
-    # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+    # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @param [String] storage Storage name
     # @param [String] folder Path to folder in storage
     def initialize(file_name, format, storage = nil, folder = nil)
