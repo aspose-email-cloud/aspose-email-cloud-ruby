@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,79 +31,60 @@ module AsposeEmailCloud
     # Specifies the name of the contact's spouse/partner             
     # @return [String]
     attr_accessor :spouse_name
-
     # Specifies the contact's personal web page URL             
     # @return [String]
     attr_accessor :personal_home_page
-
     # Specifies the language that the contact uses             
     # @return [String]
     attr_accessor :language
-
     # Specifies the additional notes             
     # @return [String]
     attr_accessor :notes
-
     # Specifies the hobbies of the contact             
     # @return [String]
     attr_accessor :hobbies
-
     # Specifies the location of the contact             
     # @return [String]
     attr_accessor :location
-
     # Specifies the contact's instant messaging address             
     # @return [String]
     attr_accessor :instant_messaging_address
-
     # Specifies an organizational ID number for the contact             
     # @return [String]
     attr_accessor :organizational_id_number
-
     # Specifies the contact's customer ID number             
     # @return [String]
     attr_accessor :customer_id
-
     # Specifies the contact's government ID number             
     # @return [String]
     attr_accessor :government_id_number
-
     # Specifies a URL path from which a client can retrieve free/busy information for the contact as an iCal file             
     # @return [String]
     attr_accessor :free_busy_location
-
     # Specifies the account name of the contact             
     # @return [String]
     attr_accessor :account
-
     # Specifies the contact's business web page URL             
     # @return [String]
     attr_accessor :html
-
     # Specifies the contact's business web page URL             
     # @return [String]
     attr_accessor :business_home_page
-
     # Specifies the contact's File Transfer Protocol (FTP) URL             
     # @return [String]
     attr_accessor :ftp_site
-
     # Specifies the name of the network to which the contact's computer is connected             
     # @return [String]
     attr_accessor :computer_network_name
-
     # Gender of the contact Enum, available values: Unspecified, Female, Male
     # @return [String]
     attr_accessor :gender
-
     # Specifies the name of the person who referred this contact to the user             
     # @return [String]
     attr_accessor :referred_by_name
-
     # Contains a list of names of children.             
     # @return [Array<String>]
     attr_accessor :children
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -156,93 +136,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'spouseName')
-        self.spouse_name = attributes[:'spouseName']
-      end
-
-      if attributes.has_key?(:'personalHomePage')
-        self.personal_home_page = attributes[:'personalHomePage']
-      end
-
-      if attributes.has_key?(:'language')
-        self.language = attributes[:'language']
-      end
-
-      if attributes.has_key?(:'notes')
-        self.notes = attributes[:'notes']
-      end
-
-      if attributes.has_key?(:'hobbies')
-        self.hobbies = attributes[:'hobbies']
-      end
-
-      if attributes.has_key?(:'location')
-        self.location = attributes[:'location']
-      end
-
-      if attributes.has_key?(:'instantMessagingAddress')
-        self.instant_messaging_address = attributes[:'instantMessagingAddress']
-      end
-
-      if attributes.has_key?(:'organizationalIdNumber')
-        self.organizational_id_number = attributes[:'organizationalIdNumber']
-      end
-
-      if attributes.has_key?(:'customerId')
-        self.customer_id = attributes[:'customerId']
-      end
-
-      if attributes.has_key?(:'governmentIdNumber')
-        self.government_id_number = attributes[:'governmentIdNumber']
-      end
-
-      if attributes.has_key?(:'freeBusyLocation')
-        self.free_busy_location = attributes[:'freeBusyLocation']
-      end
-
-      if attributes.has_key?(:'account')
-        self.account = attributes[:'account']
-      end
-
-      if attributes.has_key?(:'html')
-        self.html = attributes[:'html']
-      end
-
-      if attributes.has_key?(:'businessHomePage')
-        self.business_home_page = attributes[:'businessHomePage']
-      end
-
-      if attributes.has_key?(:'ftpSite')
-        self.ftp_site = attributes[:'ftpSite']
-      end
-
-      if attributes.has_key?(:'computerNetworkName')
-        self.computer_network_name = attributes[:'computerNetworkName']
-      end
-
-      if attributes.has_key?(:'gender')
-        self.gender = attributes[:'gender']
-      end
-
-      if attributes.has_key?(:'referredByName')
-        self.referred_by_name = attributes[:'referredByName']
-      end
-
-      if attributes.has_key?(:'children')
-        if (value = attributes[:'children']).is_a?(Array)
-          self.children = value
-        end
-      end
-    end
-
-    # Initializes the object
     # @param [String] spouse_name Specifies the name of the contact's spouse/partner             
     # @param [String] personal_home_page Specifies the contact's personal web page URL             
     # @param [String] language Specifies the language that the contact uses             
@@ -262,7 +155,26 @@ module AsposeEmailCloud
     # @param [String] gender Gender of the contact Enum, available values: Unspecified, Female, Male
     # @param [String] referred_by_name Specifies the name of the person who referred this contact to the user             
     # @param [Array<String>] children Contains a list of names of children.             
-    def initialize(spouse_name=nil, personal_home_page=nil, language=nil, notes=nil, hobbies=nil, location=nil, instant_messaging_address=nil, organizational_id_number=nil, customer_id=nil, government_id_number=nil, free_busy_location=nil, account=nil, html=nil, business_home_page=nil, ftp_site=nil, computer_network_name=nil, gender=nil, referred_by_name=nil, children=nil)
+    def initialize(
+      spouse_name: nil,
+      personal_home_page: nil,
+      language: nil,
+      notes: nil,
+      hobbies: nil,
+      location: nil,
+      instant_messaging_address: nil,
+      organizational_id_number: nil,
+      customer_id: nil,
+      government_id_number: nil,
+      free_busy_location: nil,
+      account: nil,
+      html: nil,
+      business_home_page: nil,
+      ftp_site: nil,
+      computer_network_name: nil,
+      gender: nil,
+      referred_by_name: nil,
+      children: nil)
       self.spouse_name = spouse_name if spouse_name
       self.personal_home_page = personal_home_page if personal_home_page
       self.language = language if language

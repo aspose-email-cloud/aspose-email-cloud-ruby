@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,31 +31,24 @@ module AsposeEmailCloud
     # Gets or sets the job title of the contact             
     # @return [String]
     attr_accessor :title
-
     # Gets or sets the company that employs the contact             
     # @return [String]
     attr_accessor :company_name
-
     # Gets or sets the name of the department to which the contact belongs             
     # @return [String]
     attr_accessor :department_name
-
     # Gets or sets the location of the office that the contact works in             
     # @return [String]
     attr_accessor :office_location
-
     # Gets or sets the name of the contact's manager             
     # @return [String]
     attr_accessor :manager_name
-
     # Gets or sets the name of the contact's assistant             
     # @return [String]
     attr_accessor :assistant
-
     # Gets or sets the profession of the contact             
     # @return [String]
     attr_accessor :profession
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -84,43 +76,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'title')
-        self.title = attributes[:'title']
-      end
-
-      if attributes.has_key?(:'companyName')
-        self.company_name = attributes[:'companyName']
-      end
-
-      if attributes.has_key?(:'departmentName')
-        self.department_name = attributes[:'departmentName']
-      end
-
-      if attributes.has_key?(:'officeLocation')
-        self.office_location = attributes[:'officeLocation']
-      end
-
-      if attributes.has_key?(:'managerName')
-        self.manager_name = attributes[:'managerName']
-      end
-
-      if attributes.has_key?(:'assistant')
-        self.assistant = attributes[:'assistant']
-      end
-
-      if attributes.has_key?(:'profession')
-        self.profession = attributes[:'profession']
-      end
-    end
-
-    # Initializes the object
     # @param [String] title Gets or sets the job title of the contact             
     # @param [String] company_name Gets or sets the company that employs the contact             
     # @param [String] department_name Gets or sets the name of the department to which the contact belongs             
@@ -128,7 +83,14 @@ module AsposeEmailCloud
     # @param [String] manager_name Gets or sets the name of the contact's manager             
     # @param [String] assistant Gets or sets the name of the contact's assistant             
     # @param [String] profession Gets or sets the profession of the contact             
-    def initialize(title=nil, company_name=nil, department_name=nil, office_location=nil, manager_name=nil, assistant=nil, profession=nil)
+    def initialize(
+      title: nil,
+      company_name: nil,
+      department_name: nil,
+      office_location: nil,
+      manager_name: nil,
+      assistant: nil,
+      profession: nil)
       self.title = title if title
       self.company_name = company_name if company_name
       self.department_name = department_name if department_name

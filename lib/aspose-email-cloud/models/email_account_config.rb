@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,35 +31,27 @@ module AsposeEmailCloud
     # Email account display name             
     # @return [String]
     attr_accessor :display_name
-
     # Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @return [String]
     attr_accessor :protocol_type
-
     # Email account host.             
     # @return [String]
     attr_accessor :host
-
     # Port.             
     # @return [Integer]
     attr_accessor :port
-
     # Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @return [String]
     attr_accessor :socket_type
-
     # Supported authentication types.              Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
     # @return [Array<String>]
     attr_accessor :authentication_types
-
     # Extra account information.             
     # @return [Array<NameValuePair>]
     attr_accessor :extra_info
-
     # Determines that configuration validated. Set to false if validation skipped.             
     # @return [BOOLEAN]
     attr_accessor :is_validated
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -90,51 +81,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'displayName')
-        self.display_name = attributes[:'displayName']
-      end
-
-      if attributes.has_key?(:'protocolType')
-        self.protocol_type = attributes[:'protocolType']
-      end
-
-      if attributes.has_key?(:'host')
-        self.host = attributes[:'host']
-      end
-
-      if attributes.has_key?(:'port')
-        self.port = attributes[:'port']
-      end
-
-      if attributes.has_key?(:'socketType')
-        self.socket_type = attributes[:'socketType']
-      end
-
-      if attributes.has_key?(:'authenticationTypes')
-        if (value = attributes[:'authenticationTypes']).is_a?(Array)
-          self.authentication_types = value
-        end
-      end
-
-      if attributes.has_key?(:'extraInfo')
-        if (value = attributes[:'extraInfo']).is_a?(Array)
-          self.extra_info = value
-        end
-      end
-
-      if attributes.has_key?(:'isValidated')
-        self.is_validated = attributes[:'isValidated']
-      end
-    end
-
-    # Initializes the object
     # @param [String] display_name Email account display name             
     # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [String] host Email account host.             
@@ -143,7 +89,15 @@ module AsposeEmailCloud
     # @param [Array<String>] authentication_types Supported authentication types.              Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
     # @param [Array<NameValuePair>] extra_info Extra account information.             
     # @param [BOOLEAN] is_validated Determines that configuration validated. Set to false if validation skipped.             
-    def initialize(display_name=nil, protocol_type=nil, host=nil, port=nil, socket_type=nil, authentication_types=nil, extra_info=nil, is_validated=nil)
+    def initialize(
+      display_name: nil,
+      protocol_type: nil,
+      host: nil,
+      port: nil,
+      socket_type: nil,
+      authentication_types: nil,
+      extra_info: nil,
+      is_validated: nil)
       self.display_name = display_name if display_name
       self.protocol_type = protocol_type if protocol_type
       self.host = host if host

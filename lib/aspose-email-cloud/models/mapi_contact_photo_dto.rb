@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,13 +31,9 @@ module AsposeEmailCloud
     # MapiContact photo image format. Enum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
     # @return [String]
     attr_accessor :photo_image_format
-
     # Photo serialized as base64 string.             
     # @return [String]
     attr_accessor :base64_data
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -46,7 +41,6 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -66,34 +60,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'photoImageFormat')
-        self.photo_image_format = attributes[:'photoImageFormat']
-      end
-
-      if attributes.has_key?(:'base64Data')
-        self.base64_data = attributes[:'base64Data']
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-    end
-
-    # Initializes the object
     # @param [String] photo_image_format MapiContact photo image format. Enum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
     # @param [String] base64_data Photo serialized as base64 string.             
-    # @param [String] discriminator 
-    def initialize(photo_image_format=nil, base64_data=nil, discriminator=nil)
+    def initialize(
+      photo_image_format: nil,
+      base64_data: nil)
       self.photo_image_format = photo_image_format if photo_image_format
       self.base64_data = base64_data if base64_data
-      @discriminator = self.class.name.split('::').last
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -102,6 +75,14 @@ module AsposeEmailCloud
       invalid_properties = Array.new
       if @photo_image_format.nil?
         invalid_properties.push('invalid value for "photo_image_format", photo_image_format cannot be nil.')
+      end
+
+      if @base64_data.nil?
+        invalid_properties.push('invalid value for "base64_data", base64_data cannot be nil.')
+      end
+
+      if @base64_data.to_s.length < 1
+        invalid_properties.push('invalid value for "base64_data", the character length must be great than or equal to 1.')
       end
 
       if @discriminator.nil?
@@ -115,8 +96,24 @@ module AsposeEmailCloud
     # @return true if the model is valid
     def valid?
       return false if @photo_image_format.nil?
+      return false if @base64_data.nil?
+      return false if @base64_data.to_s.length < 1
       return false if @discriminator.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] base64_data Value to be assigned
+    def base64_data=(base64_data)
+      if base64_data.nil?
+        fail ArgumentError, 'base64_data cannot be nil'
+      end
+
+      if base64_data.to_s.length < 1
+        fail ArgumentError, 'invalid value for "base64_data", the character length must be great than or equal to 1.'
+      end
+
+      @base64_data = base64_data
     end
 
     # Checks equality by comparing each attribute.

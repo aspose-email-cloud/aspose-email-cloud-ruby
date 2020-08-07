@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,43 +31,33 @@ module AsposeEmailCloud
     # Full name of the contact             
     # @return [String]
     attr_accessor :display_name
-
     # Title of the contact             
     # @return [String]
     attr_accessor :display_name_prefix
-
     # Name under which to file this contact when displaying a list of contacts             
     # @return [String]
     attr_accessor :file_under
-
     # Value specifying how to generate and recompute the property when other properties are changed             
     # @return [Integer]
     attr_accessor :file_under_id
-
     # Generation suffix of the contact             
     # @return [String]
     attr_accessor :generation
-
     # Given name (first name) of the contact             
     # @return [String]
     attr_accessor :given_name
-
     # Initials of the contact             
     # @return [String]
     attr_accessor :initials
-
     # Middle name of the contact             
     # @return [String]
     attr_accessor :middle_name
-
     # Nickname of the contact             
     # @return [String]
     attr_accessor :nickname
-
     # Surname (family name) of the contact             
     # @return [String]
     attr_accessor :surname
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -102,55 +91,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'displayName')
-        self.display_name = attributes[:'displayName']
-      end
-
-      if attributes.has_key?(:'displayNamePrefix')
-        self.display_name_prefix = attributes[:'displayNamePrefix']
-      end
-
-      if attributes.has_key?(:'fileUnder')
-        self.file_under = attributes[:'fileUnder']
-      end
-
-      if attributes.has_key?(:'fileUnderId')
-        self.file_under_id = attributes[:'fileUnderId']
-      end
-
-      if attributes.has_key?(:'generation')
-        self.generation = attributes[:'generation']
-      end
-
-      if attributes.has_key?(:'givenName')
-        self.given_name = attributes[:'givenName']
-      end
-
-      if attributes.has_key?(:'initials')
-        self.initials = attributes[:'initials']
-      end
-
-      if attributes.has_key?(:'middleName')
-        self.middle_name = attributes[:'middleName']
-      end
-
-      if attributes.has_key?(:'nickname')
-        self.nickname = attributes[:'nickname']
-      end
-
-      if attributes.has_key?(:'surname')
-        self.surname = attributes[:'surname']
-      end
-    end
-
-    # Initializes the object
     # @param [String] display_name Full name of the contact             
     # @param [String] display_name_prefix Title of the contact             
     # @param [String] file_under Name under which to file this contact when displaying a list of contacts             
@@ -161,7 +101,17 @@ module AsposeEmailCloud
     # @param [String] middle_name Middle name of the contact             
     # @param [String] nickname Nickname of the contact             
     # @param [String] surname Surname (family name) of the contact             
-    def initialize(display_name=nil, display_name_prefix=nil, file_under=nil, file_under_id=nil, generation=nil, given_name=nil, initials=nil, middle_name=nil, nickname=nil, surname=nil)
+    def initialize(
+      display_name: nil,
+      display_name_prefix: nil,
+      file_under: nil,
+      file_under_id: nil,
+      generation: nil,
+      given_name: nil,
+      initials: nil,
+      middle_name: nil,
+      nickname: nil,
+      surname: nil)
       self.display_name = display_name if display_name
       self.display_name_prefix = display_name_prefix if display_name_prefix
       self.file_under = file_under if file_under

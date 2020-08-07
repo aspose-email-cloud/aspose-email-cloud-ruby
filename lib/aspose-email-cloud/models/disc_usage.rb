@@ -23,19 +23,17 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
+  # Class for disc space information.
   class DiscUsage
-    
+    # Application used disc space.
     # @return [Integer]
     attr_accessor :used_size
-
-    
+    # Total disc space.
     # @return [Integer]
     attr_accessor :total_size
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -53,26 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'usedSize')
-        self.used_size = attributes[:'usedSize']
-      end
-
-      if attributes.has_key?(:'totalSize')
-        self.total_size = attributes[:'totalSize']
-      end
-    end
-
-    # Initializes the object
-    # @param [Integer] used_size 
-    # @param [Integer] total_size 
-    def initialize(used_size=nil, total_size=nil)
+    # @param [Integer] used_size Application used disc space.
+    # @param [Integer] total_size Total disc space.
+    def initialize(
+      used_size: nil,
+      total_size: nil)
       self.used_size = used_size if used_size
       self.total_size = total_size if total_size
     end

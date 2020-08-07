@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,23 +31,18 @@ module AsposeEmailCloud
     # An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)             
     # @return [String]
     attr_accessor :language
-
     # A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France             
     # @return [String]
     attr_accessor :location
-
     # A writing system code; starts with the ISO-15924 script name             
     # @return [String]
     attr_accessor :script
-
     # A character encoding name             
     # @return [String]
     attr_accessor :encoding
-
     # Name writing style. Enum, available values: Formal, Informal, Legal, Academic
     # @return [String]
     attr_accessor :style
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -72,41 +66,17 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'language')
-        self.language = attributes[:'language']
-      end
-
-      if attributes.has_key?(:'location')
-        self.location = attributes[:'location']
-      end
-
-      if attributes.has_key?(:'script')
-        self.script = attributes[:'script']
-      end
-
-      if attributes.has_key?(:'encoding')
-        self.encoding = attributes[:'encoding']
-      end
-
-      if attributes.has_key?(:'style')
-        self.style = attributes[:'style']
-      end
-    end
-
-    # Initializes the object
     # @param [String] language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)             
     # @param [String] location A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France             
     # @param [String] script A writing system code; starts with the ISO-15924 script name             
     # @param [String] encoding A character encoding name             
     # @param [String] style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
-    def initialize(language=nil, location=nil, script=nil, encoding=nil, style=nil)
+    def initialize(
+      language: nil,
+      location: nil,
+      script: nil,
+      encoding: nil,
+      style: nil)
       self.language = language if language
       self.location = location if location
       self.script = script if script

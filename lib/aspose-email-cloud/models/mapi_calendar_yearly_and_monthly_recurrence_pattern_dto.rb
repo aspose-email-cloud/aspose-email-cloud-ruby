@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,57 +31,42 @@ module AsposeEmailCloud
     # Enumerated the calendar type of the mapi recurrence Enum, available values: Default, CalGregorian, CalGregorianUs, CalJapan, CalTaiwan, CalKorea, CalHijri, CalThai, CalHebrew, CalGregorianMeFrench, CalGregorianArabic, CalGregorianXLitEnglish, CalGregorianXLitFrench, CalLunarJapanese, CalChineseLunar, CalSaka, CalLunarEtoChn, CalLunarEtoKor, CalLunarRokuyou, CalLunarKorean, CalUmAlQura
     # @return [String]
     attr_accessor :calendar_type
-
     # An array of dates, each of which is the original instance date of either a deleted instance or a modified instance for this recurrence.             
     # @return [Array<DateTime>]
     attr_accessor :deleted_instance_dates
-
     # End date of an item recurrence pattern.             
     # @return [DateTime]
     attr_accessor :end_date
-
     # Enumerates the ending type for the recurrence. Enum, available values: None, EndAfterDate, EndAfterNOccurrences, NeverEnd
     # @return [String]
     attr_accessor :end_type
-
     # An exception specifies changes to an instance of a recurring series.             
     # @return [Array<MapiCalendarExceptionInfoDto>]
     attr_accessor :exceptions
-
     # Enumerates mapi calendar recurrence frequency Enum, available values: None, Daily, Weekly, Monthly, Yearly
     # @return [String]
     attr_accessor :frequency
-
     # An array of dates, each of which is the date of a modified instance.             
     # @return [Array<DateTime>]
     attr_accessor :modified_instance_dates
-
     # Number of occurrences in a recurrence.             
     # @return [Integer]
     attr_accessor :occurrence_count
-
     # Enumerates the mapi calendar recurrence pattern types Enum, available values: Day, Week, Month, MonthEnd, MonthNth, HjMonth, HjMonthNth, HjMonthEnd
     # @return [String]
     attr_accessor :pattern_type
-
     # Interval at which the meeting pattern repeats.             
     # @return [Integer]
     attr_accessor :period
-
     # Defines whether pattern is sliding or not.             
     # @return [BOOLEAN]
     attr_accessor :sliding_flag
-
     # Start date of an item recurrence pattern.             
     # @return [DateTime]
     attr_accessor :start_date
-
     # Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     # @return [String]
     attr_accessor :week_start_day
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -90,19 +74,15 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # Day of the month on which the recurrence falls.             
     # @return [Integer]
     attr_accessor :day
-
     # Days of week at which the event occurs.              Items: Enumerates the days of week of the mapi calendar recurrence pattern Enum, available values: Saturday, Friday, Thursday, Wednesday, Tuesday, Monday, Sunday
     # @return [Array<String>]
     attr_accessor :day_of_week
-
     # Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
     # @return [String]
     attr_accessor :position
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -150,91 +130,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'calendarType')
-        self.calendar_type = attributes[:'calendarType']
-      end
-
-      if attributes.has_key?(:'deletedInstanceDates')
-        if (value = attributes[:'deletedInstanceDates']).is_a?(Array)
-          self.deleted_instance_dates = value
-        end
-      end
-
-      if attributes.has_key?(:'endDate')
-        self.end_date = attributes[:'endDate']
-      end
-
-      if attributes.has_key?(:'endType')
-        self.end_type = attributes[:'endType']
-      end
-
-      if attributes.has_key?(:'exceptions')
-        if (value = attributes[:'exceptions']).is_a?(Array)
-          self.exceptions = value
-        end
-      end
-
-      if attributes.has_key?(:'frequency')
-        self.frequency = attributes[:'frequency']
-      end
-
-      if attributes.has_key?(:'modifiedInstanceDates')
-        if (value = attributes[:'modifiedInstanceDates']).is_a?(Array)
-          self.modified_instance_dates = value
-        end
-      end
-
-      if attributes.has_key?(:'occurrenceCount')
-        self.occurrence_count = attributes[:'occurrenceCount']
-      end
-
-      if attributes.has_key?(:'patternType')
-        self.pattern_type = attributes[:'patternType']
-      end
-
-      if attributes.has_key?(:'period')
-        self.period = attributes[:'period']
-      end
-
-      if attributes.has_key?(:'slidingFlag')
-        self.sliding_flag = attributes[:'slidingFlag']
-      end
-
-      if attributes.has_key?(:'startDate')
-        self.start_date = attributes[:'startDate']
-      end
-
-      if attributes.has_key?(:'weekStartDay')
-        self.week_start_day = attributes[:'weekStartDay']
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-
-      if attributes.has_key?(:'day')
-        self.day = attributes[:'day']
-      end
-
-      if attributes.has_key?(:'dayOfWeek')
-        if (value = attributes[:'dayOfWeek']).is_a?(Array)
-          self.day_of_week = value
-        end
-      end
-
-      if attributes.has_key?(:'position')
-        self.position = attributes[:'position']
-      end
-    end
-
-    # Initializes the object
     # @param [String] calendar_type Enumerated the calendar type of the mapi recurrence Enum, available values: Default, CalGregorian, CalGregorianUs, CalJapan, CalTaiwan, CalKorea, CalHijri, CalThai, CalHebrew, CalGregorianMeFrench, CalGregorianArabic, CalGregorianXLitEnglish, CalGregorianXLitFrench, CalLunarJapanese, CalChineseLunar, CalSaka, CalLunarEtoChn, CalLunarEtoKor, CalLunarRokuyou, CalLunarKorean, CalUmAlQura
     # @param [Array<DateTime>] deleted_instance_dates An array of dates, each of which is the original instance date of either a deleted instance or a modified instance for this recurrence.             
     # @param [DateTime] end_date End date of an item recurrence pattern.             
@@ -248,11 +143,26 @@ module AsposeEmailCloud
     # @param [BOOLEAN] sliding_flag Defines whether pattern is sliding or not.             
     # @param [DateTime] start_date Start date of an item recurrence pattern.             
     # @param [String] week_start_day Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
-    # @param [String] discriminator 
     # @param [Integer] day Day of the month on which the recurrence falls.             
     # @param [Array<String>] day_of_week Days of week at which the event occurs.              Items: Enumerates the days of week of the mapi calendar recurrence pattern Enum, available values: Saturday, Friday, Thursday, Wednesday, Tuesday, Monday, Sunday
     # @param [String] position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
-    def initialize(calendar_type=nil, deleted_instance_dates=nil, end_date=nil, end_type=nil, exceptions=nil, frequency=nil, modified_instance_dates=nil, occurrence_count=nil, pattern_type=nil, period=nil, sliding_flag=nil, start_date=nil, week_start_day=nil, discriminator=nil, day=nil, day_of_week=nil, position=nil)
+    def initialize(
+      calendar_type: nil,
+      deleted_instance_dates: nil,
+      end_date: nil,
+      end_type: nil,
+      exceptions: nil,
+      frequency: nil,
+      modified_instance_dates: nil,
+      occurrence_count: nil,
+      pattern_type: nil,
+      period: nil,
+      sliding_flag: nil,
+      start_date: nil,
+      week_start_day: nil,
+      day: nil,
+      day_of_week: nil,
+      position: nil)
       self.calendar_type = calendar_type if calendar_type
       self.deleted_instance_dates = deleted_instance_dates if deleted_instance_dates
       self.end_date = end_date if end_date
@@ -266,7 +176,6 @@ module AsposeEmailCloud
       self.sliding_flag = sliding_flag if sliding_flag
       self.start_date = start_date if start_date
       self.week_start_day = week_start_day if week_start_day
-      @discriminator = self.class.name.split('::').last
       self.day = day if day
       self.day_of_week = day_of_week if day_of_week
       self.position = position if position

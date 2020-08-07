@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,19 +31,15 @@ module AsposeEmailCloud
     # Email address of the message recipient or sender.             
     # @return [String]
     attr_accessor :email_address
-
     # Type of the address of the message recipient or sender.             
     # @return [String]
     attr_accessor :address_type
-
     # Display name of the message recipient or sender.             
     # @return [String]
     attr_accessor :display_name
-
     # Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient. Enum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
     # @return [String]
     attr_accessor :recipient_type
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -66,36 +61,15 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'emailAddress')
-        self.email_address = attributes[:'emailAddress']
-      end
-
-      if attributes.has_key?(:'addressType')
-        self.address_type = attributes[:'addressType']
-      end
-
-      if attributes.has_key?(:'displayName')
-        self.display_name = attributes[:'displayName']
-      end
-
-      if attributes.has_key?(:'recipientType')
-        self.recipient_type = attributes[:'recipientType']
-      end
-    end
-
-    # Initializes the object
     # @param [String] email_address Email address of the message recipient or sender.             
     # @param [String] address_type Type of the address of the message recipient or sender.             
     # @param [String] display_name Display name of the message recipient or sender.             
     # @param [String] recipient_type Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient. Enum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
-    def initialize(email_address=nil, address_type=nil, display_name=nil, recipient_type=nil)
+    def initialize(
+      email_address: nil,
+      address_type: nil,
+      display_name: nil,
+      recipient_type: nil)
       self.email_address = email_address if email_address
       self.address_type = address_type if address_type
       self.display_name = display_name if display_name

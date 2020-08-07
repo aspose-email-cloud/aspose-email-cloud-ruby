@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,9 +31,6 @@ module AsposeEmailCloud
     # Property descriptor             
     # @return [MapiPropertyDescriptor]
     attr_accessor :descriptor
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -42,11 +38,9 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # Property values             
     # @return [Array<Integer>]
     attr_accessor :values
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -66,35 +60,12 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'descriptor')
-        self.descriptor = attributes[:'descriptor']
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-
-      if attributes.has_key?(:'values')
-        if (value = attributes[:'values']).is_a?(Array)
-          self.values = value
-        end
-      end
-    end
-
-    # Initializes the object
     # @param [MapiPropertyDescriptor] descriptor Property descriptor             
-    # @param [String] discriminator 
     # @param [Array<Integer>] values Property values             
-    def initialize(descriptor=nil, discriminator=nil, values=nil)
+    def initialize(
+      descriptor: nil,
+      values: nil)
       self.descriptor = descriptor if descriptor
-      @discriminator = self.class.name.split('::').last
       self.values = values if values
     end
 

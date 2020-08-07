@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,23 +31,18 @@ module AsposeEmailCloud
     # Address type.             
     # @return [String]
     attr_accessor :address_type
-
     # Email address.             
     # @return [String]
     attr_accessor :email_address
-
     # User-readable display name for the e-mail address.             
     # @return [String]
     attr_accessor :display_name
-
     # Telephone number of the mail user's primary fax machine.             
     # @return [String]
     attr_accessor :fax_number
-
     # SMTP e-mail address that  corresponds to the e-mail address.             
     # @return [String]
     attr_accessor :original_display_name
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -72,41 +66,17 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'addressType')
-        self.address_type = attributes[:'addressType']
-      end
-
-      if attributes.has_key?(:'emailAddress')
-        self.email_address = attributes[:'emailAddress']
-      end
-
-      if attributes.has_key?(:'displayName')
-        self.display_name = attributes[:'displayName']
-      end
-
-      if attributes.has_key?(:'faxNumber')
-        self.fax_number = attributes[:'faxNumber']
-      end
-
-      if attributes.has_key?(:'originalDisplayName')
-        self.original_display_name = attributes[:'originalDisplayName']
-      end
-    end
-
-    # Initializes the object
     # @param [String] address_type Address type.             
     # @param [String] email_address Email address.             
     # @param [String] display_name User-readable display name for the e-mail address.             
     # @param [String] fax_number Telephone number of the mail user's primary fax machine.             
     # @param [String] original_display_name SMTP e-mail address that  corresponds to the e-mail address.             
-    def initialize(address_type=nil, email_address=nil, display_name=nil, fax_number=nil, original_display_name=nil)
+    def initialize(
+      address_type: nil,
+      email_address: nil,
+      display_name: nil,
+      fax_number: nil,
+      original_display_name: nil)
       self.address_type = address_type if address_type
       self.email_address = email_address if email_address
       self.display_name = display_name if display_name

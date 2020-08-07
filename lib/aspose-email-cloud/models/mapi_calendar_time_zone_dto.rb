@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,11 +31,9 @@ module AsposeEmailCloud
     # Human-readable description of the time zone.             
     # @return [String]
     attr_accessor :key_name
-
     # Time zone rules             
     # @return [Array<MapiCalendarTimeZoneInfoDto>]
     attr_accessor :time_zone_rules
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,28 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'keyName')
-        self.key_name = attributes[:'keyName']
-      end
-
-      if attributes.has_key?(:'timeZoneRules')
-        if (value = attributes[:'timeZoneRules']).is_a?(Array)
-          self.time_zone_rules = value
-        end
-      end
-    end
-
-    # Initializes the object
     # @param [String] key_name Human-readable description of the time zone.             
     # @param [Array<MapiCalendarTimeZoneInfoDto>] time_zone_rules Time zone rules             
-    def initialize(key_name=nil, time_zone_rules=nil)
+    def initialize(
+      key_name: nil,
+      time_zone_rules: nil)
       self.key_name = key_name if key_name
       self.time_zone_rules = time_zone_rules if time_zone_rules
     end

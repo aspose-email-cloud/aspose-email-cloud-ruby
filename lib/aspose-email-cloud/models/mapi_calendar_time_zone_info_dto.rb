@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,31 +31,24 @@ module AsposeEmailCloud
     # Time zone's offset in minutes from UTC.             
     # @return [Integer]
     attr_accessor :bias
-
     # Offset in minutes from lBias during daylight saving time.             
     # @return [Integer]
     attr_accessor :daylight_bias
-
     # Date and local time that indicate when to begin using the DaylightBias.             
     # @return [MapiCalendarTimeZoneRuleDto]
     attr_accessor :daylight_date
-
     # Offset in minutes from lBias during standard time.             
     # @return [Integer]
     attr_accessor :standard_bias
-
     # Date and local time that indicate when to begin using the StandardBias.             
     # @return [MapiCalendarTimeZoneRuleDto]
     attr_accessor :standard_date
-
     # Individual bit flags that specify information about this TimeZoneRule.              Items: Enumerates the individual bit flags that specify information about TimeZoneRule Enum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
     # @return [Array<String>]
     attr_accessor :time_zone_flags
-
     # Year in which this rule is scheduled to take effect.             
     # @return [Integer]
     attr_accessor :year
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -84,45 +76,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'bias')
-        self.bias = attributes[:'bias']
-      end
-
-      if attributes.has_key?(:'daylightBias')
-        self.daylight_bias = attributes[:'daylightBias']
-      end
-
-      if attributes.has_key?(:'daylightDate')
-        self.daylight_date = attributes[:'daylightDate']
-      end
-
-      if attributes.has_key?(:'standardBias')
-        self.standard_bias = attributes[:'standardBias']
-      end
-
-      if attributes.has_key?(:'standardDate')
-        self.standard_date = attributes[:'standardDate']
-      end
-
-      if attributes.has_key?(:'timeZoneFlags')
-        if (value = attributes[:'timeZoneFlags']).is_a?(Array)
-          self.time_zone_flags = value
-        end
-      end
-
-      if attributes.has_key?(:'year')
-        self.year = attributes[:'year']
-      end
-    end
-
-    # Initializes the object
     # @param [Integer] bias Time zone's offset in minutes from UTC.             
     # @param [Integer] daylight_bias Offset in minutes from lBias during daylight saving time.             
     # @param [MapiCalendarTimeZoneRuleDto] daylight_date Date and local time that indicate when to begin using the DaylightBias.             
@@ -130,7 +83,14 @@ module AsposeEmailCloud
     # @param [MapiCalendarTimeZoneRuleDto] standard_date Date and local time that indicate when to begin using the StandardBias.             
     # @param [Array<String>] time_zone_flags Individual bit flags that specify information about this TimeZoneRule.              Items: Enumerates the individual bit flags that specify information about TimeZoneRule Enum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
     # @param [Integer] year Year in which this rule is scheduled to take effect.             
-    def initialize(bias=nil, daylight_bias=nil, daylight_date=nil, standard_bias=nil, standard_date=nil, time_zone_flags=nil, year=nil)
+    def initialize(
+      bias: nil,
+      daylight_bias: nil,
+      daylight_date: nil,
+      standard_bias: nil,
+      standard_date: nil,
+      time_zone_flags: nil,
+      year: nil)
       self.bias = bias if bias
       self.daylight_bias = daylight_bias if daylight_bias
       self.daylight_date = daylight_date if daylight_date

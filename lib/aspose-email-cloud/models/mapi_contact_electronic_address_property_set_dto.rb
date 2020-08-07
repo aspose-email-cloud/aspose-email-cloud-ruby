@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,39 +31,30 @@ module AsposeEmailCloud
     # Refers to the group of properties that define the business fax address for a contact.
     # @return [MapiContactElectronicAddressDto]
     attr_accessor :business_fax
-
     # Default value of electronic address Uses when user does not set any electronic address if UseAutocomplete property is set 'true'             
     # @return [MapiContactElectronicAddressDto]
     attr_accessor :default_email_address
-
     # Refers to the group of properties that define the first e-mail address for a contact.             
     # @return [MapiContactElectronicAddressDto]
     attr_accessor :email1
-
     # Refers to the group of properties that define the second e-mail address for a contact.             
     # @return [MapiContactElectronicAddressDto]
     attr_accessor :email2
-
     # Refers to the group of properties that define the third e-mail address for a contact.             
     # @return [MapiContactElectronicAddressDto]
     attr_accessor :email3
-
     # Refers to the group of properties that define the home fax address for a contact.             
     # @return [MapiContactElectronicAddressDto]
     attr_accessor :home_fax
-
     # Shows if MapiContactElectronicAddressPropertySetDto is empty
     # @return [BOOLEAN]
     attr_accessor :is_empty
-
     # Refers to the group of properties that define the primary fax address for a contact.             
     # @return [MapiContactElectronicAddressDto]
     attr_accessor :primary_fax
-
     # Indicates that one electronic address is completed automatically in case if user does not set any electronic address             
     # @return [BOOLEAN]
     attr_accessor :use_autocomplete
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -96,51 +86,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'businessFax')
-        self.business_fax = attributes[:'businessFax']
-      end
-
-      if attributes.has_key?(:'defaultEmailAddress')
-        self.default_email_address = attributes[:'defaultEmailAddress']
-      end
-
-      if attributes.has_key?(:'email1')
-        self.email1 = attributes[:'email1']
-      end
-
-      if attributes.has_key?(:'email2')
-        self.email2 = attributes[:'email2']
-      end
-
-      if attributes.has_key?(:'email3')
-        self.email3 = attributes[:'email3']
-      end
-
-      if attributes.has_key?(:'homeFax')
-        self.home_fax = attributes[:'homeFax']
-      end
-
-      if attributes.has_key?(:'isEmpty')
-        self.is_empty = attributes[:'isEmpty']
-      end
-
-      if attributes.has_key?(:'primaryFax')
-        self.primary_fax = attributes[:'primaryFax']
-      end
-
-      if attributes.has_key?(:'useAutocomplete')
-        self.use_autocomplete = attributes[:'useAutocomplete']
-      end
-    end
-
-    # Initializes the object
     # @param [MapiContactElectronicAddressDto] business_fax Refers to the group of properties that define the business fax address for a contact.
     # @param [MapiContactElectronicAddressDto] default_email_address Default value of electronic address Uses when user does not set any electronic address if UseAutocomplete property is set 'true'             
     # @param [MapiContactElectronicAddressDto] email1 Refers to the group of properties that define the first e-mail address for a contact.             
@@ -150,7 +95,16 @@ module AsposeEmailCloud
     # @param [BOOLEAN] is_empty Shows if MapiContactElectronicAddressPropertySetDto is empty
     # @param [MapiContactElectronicAddressDto] primary_fax Refers to the group of properties that define the primary fax address for a contact.             
     # @param [BOOLEAN] use_autocomplete Indicates that one electronic address is completed automatically in case if user does not set any electronic address             
-    def initialize(business_fax=nil, default_email_address=nil, email1=nil, email2=nil, email3=nil, home_fax=nil, is_empty=nil, primary_fax=nil, use_autocomplete=nil)
+    def initialize(
+      business_fax: nil,
+      default_email_address: nil,
+      email1: nil,
+      email2: nil,
+      email3: nil,
+      home_fax: nil,
+      is_empty: nil,
+      primary_fax: nil,
+      use_autocomplete: nil)
       self.business_fax = business_fax if business_fax
       self.default_email_address = default_email_address if default_email_address
       self.email1 = email1 if email1

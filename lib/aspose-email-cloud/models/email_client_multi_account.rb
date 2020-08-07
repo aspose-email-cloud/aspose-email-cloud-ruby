@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,11 +31,9 @@ module AsposeEmailCloud
     # Email client receive accounts             
     # @return [Array<EmailClientAccount>]
     attr_accessor :receive_accounts
-
     # Email client send account             
     # @return [EmailClientAccount]
     attr_accessor :send_account
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,28 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'receiveAccounts')
-        if (value = attributes[:'receiveAccounts']).is_a?(Array)
-          self.receive_accounts = value
-        end
-      end
-
-      if attributes.has_key?(:'sendAccount')
-        self.send_account = attributes[:'sendAccount']
-      end
-    end
-
-    # Initializes the object
     # @param [Array<EmailClientAccount>] receive_accounts Email client receive accounts             
     # @param [EmailClientAccount] send_account Email client send account             
-    def initialize(receive_accounts=nil, send_account=nil)
+    def initialize(
+      receive_accounts: nil,
+      send_account: nil)
       self.receive_accounts = receive_accounts if receive_accounts
       self.send_account = send_account if send_account
     end

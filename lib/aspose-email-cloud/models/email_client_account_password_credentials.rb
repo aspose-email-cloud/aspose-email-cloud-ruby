@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,9 +31,6 @@ module AsposeEmailCloud
     # Email client account login             
     # @return [String]
     attr_accessor :login
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -42,11 +38,9 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # Email client account password             
     # @return [String]
     attr_accessor :password
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -66,33 +60,12 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'login')
-        self.login = attributes[:'login']
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-
-      if attributes.has_key?(:'password')
-        self.password = attributes[:'password']
-      end
-    end
-
-    # Initializes the object
     # @param [String] login Email client account login             
-    # @param [String] discriminator 
     # @param [String] password Email client account password             
-    def initialize(login=nil, discriminator=nil, password=nil)
+    def initialize(
+      login: nil,
+      password: nil)
       self.login = login if login
-      @discriminator = self.class.name.split('::').last
       self.password = password if password
     end
 

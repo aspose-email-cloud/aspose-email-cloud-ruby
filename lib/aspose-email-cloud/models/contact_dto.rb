@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,147 +31,111 @@ module AsposeEmailCloud
     # Associated persons.             
     # @return [Array<AssociatedPerson>]
     attr_accessor :associated_persons
-
     # Document attachments.             
     # @return [Array<Attachment>]
     attr_accessor :attachments
-
     # Company name.             
     # @return [String]
     attr_accessor :company_name
-
     # Computer network.             
     # @return [String]
     attr_accessor :computer_network_name
-
     # Customer id.             
     # @return [String]
     attr_accessor :customer_id
-
     # Department name.             
     # @return [String]
     attr_accessor :department_name
-
     # Display name.             
     # @return [String]
     attr_accessor :display_name
-
     # Person's email addresses.             
     # @return [Array<EmailAddress>]
     attr_accessor :email_addresses
-
     # Person's events.             
     # @return [Array<CustomerEvent>]
     attr_accessor :events
-
     # A name used for sorting.             
     # @return [String]
     attr_accessor :file_as
-
     # Specifies how to generate and recompute the value of the dispidFileAs property when other contact name properties change. Coincides MS-OXPROPS revision 16.2 from 7/31/2014. Enum, available values: Empty, DisplayName, FirstName, LastName, Organization, LastFirstMiddle, OrgLastFirstMiddle, LastFirstMiddleOrg, LastFirstMiddle2, LastFirstMiddle3, OrgLastFirstMiddle2, OrgLastFirstMiddle3, LastFirstMiddleOrg2, LastFirstMiddleOrg3, LastFirstMiddleGen, FirstMiddleLastGen, LastFirstMiddleGen2, BestMatch, AccordingToLocale, None
     # @return [String]
     attr_accessor :file_as_mapping
-
     # URL path from which a client can retrieve free/busy information for the contact as an iCal file.             
     # @return [String]
     attr_accessor :free_busy_location
-
     # Enum defines gender of a person. Enum, available values: Unspecified, Female, Male
     # @return [String]
     attr_accessor :gender
-
     # Person's given name.             
     # @return [String]
     attr_accessor :given_name
-
     # Government id number.             
     # @return [String]
     attr_accessor :government_id_number
-
     # Person's hobbies.             
     # @return [String]
     attr_accessor :hobbies
-
     # Person's initials.             
     # @return [String]
     attr_accessor :initials
-
     # Person's instant messenger addresses.             
     # @return [Array<InstantMessengerAddress>]
     attr_accessor :instant_messengers
-
     # Person's job title.             
     # @return [String]
     attr_accessor :job_title
-
     # Language.             
     # @return [String]
     attr_accessor :language
-
     # Person's location.             
     # @return [String]
     attr_accessor :location
-
     # Person's middle name.             
     # @return [String]
     attr_accessor :middle_name
-
     # Person's nickname.             
     # @return [String]
     attr_accessor :nickname
-
     # Notes.             
     # @return [String]
     attr_accessor :notes
-
     # Defines format of a text. Enum, available values: Text, Html
     # @return [String]
     attr_accessor :notes_format
-
     # Office location.             
     # @return [String]
     attr_accessor :office_location
-
     # Contains an identifier for the mail user used within the mail user's organization.             
     # @return [String]
     attr_accessor :organizational_id_number
-
     # Person's phone numbers.             
     # @return [Array<PhoneNumber>]
     attr_accessor :phone_numbers
-
     # Person's photo.             
     # @return [ContactPhoto]
     attr_accessor :photo
-
     # Person's physical addresses.             
     # @return [Array<PostalAddress>]
     attr_accessor :physical_addresses
-
     # Encoding for all text properties.             
     # @return [String]
     attr_accessor :preferred_text_encoding
-
     # A prefix of a full name such like Mr.(mister), Dr.(doctor) and so on.             
     # @return [String]
     attr_accessor :prefix
-
     # A job position of a person in a company.             
     # @return [String]
     attr_accessor :profession
-
     # A suffix of a full name such like Jr.(junior), Sr.(senior) and so on.             
     # @return [String]
     attr_accessor :suffix
-
     # Person's surname.             
     # @return [String]
     attr_accessor :surname
-
     # Person's urls.             
     # @return [Array<Url>]
     attr_accessor :urls
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -258,175 +221,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'associatedPersons')
-        if (value = attributes[:'associatedPersons']).is_a?(Array)
-          self.associated_persons = value
-        end
-      end
-
-      if attributes.has_key?(:'attachments')
-        if (value = attributes[:'attachments']).is_a?(Array)
-          self.attachments = value
-        end
-      end
-
-      if attributes.has_key?(:'companyName')
-        self.company_name = attributes[:'companyName']
-      end
-
-      if attributes.has_key?(:'computerNetworkName')
-        self.computer_network_name = attributes[:'computerNetworkName']
-      end
-
-      if attributes.has_key?(:'customerId')
-        self.customer_id = attributes[:'customerId']
-      end
-
-      if attributes.has_key?(:'departmentName')
-        self.department_name = attributes[:'departmentName']
-      end
-
-      if attributes.has_key?(:'displayName')
-        self.display_name = attributes[:'displayName']
-      end
-
-      if attributes.has_key?(:'emailAddresses')
-        if (value = attributes[:'emailAddresses']).is_a?(Array)
-          self.email_addresses = value
-        end
-      end
-
-      if attributes.has_key?(:'events')
-        if (value = attributes[:'events']).is_a?(Array)
-          self.events = value
-        end
-      end
-
-      if attributes.has_key?(:'fileAs')
-        self.file_as = attributes[:'fileAs']
-      end
-
-      if attributes.has_key?(:'fileAsMapping')
-        self.file_as_mapping = attributes[:'fileAsMapping']
-      end
-
-      if attributes.has_key?(:'freeBusyLocation')
-        self.free_busy_location = attributes[:'freeBusyLocation']
-      end
-
-      if attributes.has_key?(:'gender')
-        self.gender = attributes[:'gender']
-      end
-
-      if attributes.has_key?(:'givenName')
-        self.given_name = attributes[:'givenName']
-      end
-
-      if attributes.has_key?(:'governmentIdNumber')
-        self.government_id_number = attributes[:'governmentIdNumber']
-      end
-
-      if attributes.has_key?(:'hobbies')
-        self.hobbies = attributes[:'hobbies']
-      end
-
-      if attributes.has_key?(:'initials')
-        self.initials = attributes[:'initials']
-      end
-
-      if attributes.has_key?(:'instantMessengers')
-        if (value = attributes[:'instantMessengers']).is_a?(Array)
-          self.instant_messengers = value
-        end
-      end
-
-      if attributes.has_key?(:'jobTitle')
-        self.job_title = attributes[:'jobTitle']
-      end
-
-      if attributes.has_key?(:'language')
-        self.language = attributes[:'language']
-      end
-
-      if attributes.has_key?(:'location')
-        self.location = attributes[:'location']
-      end
-
-      if attributes.has_key?(:'middleName')
-        self.middle_name = attributes[:'middleName']
-      end
-
-      if attributes.has_key?(:'nickname')
-        self.nickname = attributes[:'nickname']
-      end
-
-      if attributes.has_key?(:'notes')
-        self.notes = attributes[:'notes']
-      end
-
-      if attributes.has_key?(:'notesFormat')
-        self.notes_format = attributes[:'notesFormat']
-      end
-
-      if attributes.has_key?(:'officeLocation')
-        self.office_location = attributes[:'officeLocation']
-      end
-
-      if attributes.has_key?(:'organizationalIdNumber')
-        self.organizational_id_number = attributes[:'organizationalIdNumber']
-      end
-
-      if attributes.has_key?(:'phoneNumbers')
-        if (value = attributes[:'phoneNumbers']).is_a?(Array)
-          self.phone_numbers = value
-        end
-      end
-
-      if attributes.has_key?(:'photo')
-        self.photo = attributes[:'photo']
-      end
-
-      if attributes.has_key?(:'physicalAddresses')
-        if (value = attributes[:'physicalAddresses']).is_a?(Array)
-          self.physical_addresses = value
-        end
-      end
-
-      if attributes.has_key?(:'preferredTextEncoding')
-        self.preferred_text_encoding = attributes[:'preferredTextEncoding']
-      end
-
-      if attributes.has_key?(:'prefix')
-        self.prefix = attributes[:'prefix']
-      end
-
-      if attributes.has_key?(:'profession')
-        self.profession = attributes[:'profession']
-      end
-
-      if attributes.has_key?(:'suffix')
-        self.suffix = attributes[:'suffix']
-      end
-
-      if attributes.has_key?(:'surname')
-        self.surname = attributes[:'surname']
-      end
-
-      if attributes.has_key?(:'urls')
-        if (value = attributes[:'urls']).is_a?(Array)
-          self.urls = value
-        end
-      end
-    end
-
-    # Initializes the object
     # @param [Array<AssociatedPerson>] associated_persons Associated persons.             
     # @param [Array<Attachment>] attachments Document attachments.             
     # @param [String] company_name Company name.             
@@ -463,7 +257,43 @@ module AsposeEmailCloud
     # @param [String] suffix A suffix of a full name such like Jr.(junior), Sr.(senior) and so on.             
     # @param [String] surname Person's surname.             
     # @param [Array<Url>] urls Person's urls.             
-    def initialize(associated_persons=nil, attachments=nil, company_name=nil, computer_network_name=nil, customer_id=nil, department_name=nil, display_name=nil, email_addresses=nil, events=nil, file_as=nil, file_as_mapping=nil, free_busy_location=nil, gender=nil, given_name=nil, government_id_number=nil, hobbies=nil, initials=nil, instant_messengers=nil, job_title=nil, language=nil, location=nil, middle_name=nil, nickname=nil, notes=nil, notes_format=nil, office_location=nil, organizational_id_number=nil, phone_numbers=nil, photo=nil, physical_addresses=nil, preferred_text_encoding=nil, prefix=nil, profession=nil, suffix=nil, surname=nil, urls=nil)
+    def initialize(
+      associated_persons: nil,
+      attachments: nil,
+      company_name: nil,
+      computer_network_name: nil,
+      customer_id: nil,
+      department_name: nil,
+      display_name: nil,
+      email_addresses: nil,
+      events: nil,
+      file_as: nil,
+      file_as_mapping: nil,
+      free_busy_location: nil,
+      gender: nil,
+      given_name: nil,
+      government_id_number: nil,
+      hobbies: nil,
+      initials: nil,
+      instant_messengers: nil,
+      job_title: nil,
+      language: nil,
+      location: nil,
+      middle_name: nil,
+      nickname: nil,
+      notes: nil,
+      notes_format: nil,
+      office_location: nil,
+      organizational_id_number: nil,
+      phone_numbers: nil,
+      photo: nil,
+      physical_addresses: nil,
+      preferred_text_encoding: nil,
+      prefix: nil,
+      profession: nil,
+      suffix: nil,
+      surname: nil,
+      urls: nil)
       self.associated_persons = associated_persons if associated_persons
       self.attachments = attachments if attachments
       self.company_name = company_name if company_name

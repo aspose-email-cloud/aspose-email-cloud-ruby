@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -31,11 +30,9 @@ module AsposeEmailCloud
     # Phone number category. Enum, available values: Custom, Home, Work, Office, Mobile, Fax, HomeFax, WorkFax, Pager, Car, Isdn, Telex, Callback, Radio, Company, TtyTdd, Assistant, Primary
     # @return [String]
     attr_accessor :value
-
     
     # @return [String]
     attr_accessor :description
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -53,26 +50,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
-      end
-
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
-      end
-    end
-
-    # Initializes the object
     # @param [String] value Phone number category. Enum, available values: Custom, Home, Work, Office, Mobile, Fax, HomeFax, WorkFax, Pager, Car, Isdn, Telex, Callback, Radio, Company, TtyTdd, Assistant, Primary
     # @param [String] description 
-    def initialize(value=nil, description=nil)
+    def initialize(
+      value: nil,
+      description: nil)
       self.value = value if value
       self.description = description if description
     end
@@ -85,6 +67,10 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "value", value cannot be nil.')
       end
 
+      if @value.to_s.length < 1
+        invalid_properties.push('invalid value for "value", the character length must be great than or equal to 1.')
+      end
+
       invalid_properties
     end
 
@@ -92,7 +78,22 @@ module AsposeEmailCloud
     # @return true if the model is valid
     def valid?
       return false if @value.nil?
+      return false if @value.to_s.length < 1
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] value Value to be assigned
+    def value=(value)
+      if value.nil?
+        fail ArgumentError, 'value cannot be nil'
+      end
+
+      if value.to_s.length < 1
+        fail ArgumentError, 'invalid value for "value", the character length must be great than or equal to 1.'
+      end
+
+      @value = value
     end
 
     # Checks equality by comparing each attribute.

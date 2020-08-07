@@ -2,8 +2,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**storage_file** | [**StorageFileLocation**](StorageFileLocation.md) |  | [optional] 
-**value** | [**EmailDto**](EmailDto.md) |  | [optional] 
+**storage_file** | [**StorageFileLocation**](StorageFileLocation.md) |  | 
+**value** | [**EmailDto**](EmailDto.md) |  | 
 
 
 

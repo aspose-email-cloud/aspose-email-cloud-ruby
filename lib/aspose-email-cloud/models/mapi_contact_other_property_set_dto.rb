@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,35 +31,27 @@ module AsposeEmailCloud
     # Indicates whether the end-user wants this message object hidden from other users who have access to the message object.             
     # @return [BOOLEAN]
     attr_accessor :private
-
     # Specifies whether to create a journal for each action associated with this contact.             
     # @return [BOOLEAN]
     attr_accessor :journal
-
     # Specifies the initial signal time for a reminder.             
     # @return [DateTime]
     attr_accessor :reminder_time
-
     # Represents the status of a meeting request.             
     # @return [String]
     attr_accessor :reminder_topic
-
     # Specifies the first field on the contact that is intended for miscellaneous use for the contact.             
     # @return [String]
     attr_accessor :user_field1
-
     # Specifies the second field on the contact that is intended for miscellaneous use for the contact.             
     # @return [String]
     attr_accessor :user_field2
-
     # Specifies the third field on the contact that is intended for miscellaneous use for the contact.             
     # @return [String]
     attr_accessor :user_field3
-
     # Specifies the forth field on the contact that is intended for miscellaneous use for the contact.             
     # @return [String]
     attr_accessor :user_field4
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -90,47 +81,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'private')
-        self.private = attributes[:'private']
-      end
-
-      if attributes.has_key?(:'journal')
-        self.journal = attributes[:'journal']
-      end
-
-      if attributes.has_key?(:'reminderTime')
-        self.reminder_time = attributes[:'reminderTime']
-      end
-
-      if attributes.has_key?(:'reminderTopic')
-        self.reminder_topic = attributes[:'reminderTopic']
-      end
-
-      if attributes.has_key?(:'userField1')
-        self.user_field1 = attributes[:'userField1']
-      end
-
-      if attributes.has_key?(:'userField2')
-        self.user_field2 = attributes[:'userField2']
-      end
-
-      if attributes.has_key?(:'userField3')
-        self.user_field3 = attributes[:'userField3']
-      end
-
-      if attributes.has_key?(:'userField4')
-        self.user_field4 = attributes[:'userField4']
-      end
-    end
-
-    # Initializes the object
     # @param [BOOLEAN] private Indicates whether the end-user wants this message object hidden from other users who have access to the message object.             
     # @param [BOOLEAN] journal Specifies whether to create a journal for each action associated with this contact.             
     # @param [DateTime] reminder_time Specifies the initial signal time for a reminder.             
@@ -139,7 +89,15 @@ module AsposeEmailCloud
     # @param [String] user_field2 Specifies the second field on the contact that is intended for miscellaneous use for the contact.             
     # @param [String] user_field3 Specifies the third field on the contact that is intended for miscellaneous use for the contact.             
     # @param [String] user_field4 Specifies the forth field on the contact that is intended for miscellaneous use for the contact.             
-    def initialize(private=nil, journal=nil, reminder_time=nil, reminder_topic=nil, user_field1=nil, user_field2=nil, user_field3=nil, user_field4=nil)
+    def initialize(
+      private: nil,
+      journal: nil,
+      reminder_time: nil,
+      reminder_topic: nil,
+      user_field1: nil,
+      user_field2: nil,
+      user_field3: nil,
+      user_field4: nil)
       self.private = private if private
       self.journal = journal if journal
       self.reminder_time = reminder_time if reminder_time

@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,69 +31,51 @@ module AsposeEmailCloud
     # Message item attachments.             
     # @return [Array<MapiAttachmentDto>]
     attr_accessor :attachments
-
     # Billing information associated with an item.             
     # @return [String]
     attr_accessor :billing
-
     # Message text.             
     # @return [String]
     attr_accessor :body
-
     # Gets the BodyRtf of the message converted to HTML, if present, otherwise an empty string.             
     # @return [String]
     attr_accessor :body_html
-
     # RTF formatted message text.             
     # @return [String]
     attr_accessor :body_rtf
-
     # The content type of message body. Enum, available values: PlainText, Html, Rtf
     # @return [String]
     attr_accessor :body_type
-
     # Contains keywords or categories for the message object.             
     # @return [Array<String>]
     attr_accessor :categories
-
     # Contains the names of the companies that are associated with an item.             
     # @return [Array<String>]
     attr_accessor :companies
-
     # The item id, uses with a server.             
     # @return [String]
     attr_accessor :item_id
-
     # Case-sensitive string that identifies the sender-defined message class, such as IPM.Note. The message class specifies the type, purpose, or content of the message.             
     # @return [String]
     attr_accessor :message_class
-
     # Contains the mileage information that is associated with an item.             
     # @return [String]
     attr_accessor :mileage
-
     # Recipients of the message.             
     # @return [Array<MapiRecipientDto>]
     attr_accessor :recipients
-
     # Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
     # @return [String]
     attr_accessor :sensitivity
-
     # Subject of the message.             
     # @return [String]
     attr_accessor :subject
-
     # Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.             
     # @return [String]
     attr_accessor :subject_prefix
-
     # List of MAPI properties             
     # @return [Array<MapiPropertyDto>]
     attr_accessor :properties
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -102,7 +83,6 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -150,93 +130,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'attachments')
-        if (value = attributes[:'attachments']).is_a?(Array)
-          self.attachments = value
-        end
-      end
-
-      if attributes.has_key?(:'billing')
-        self.billing = attributes[:'billing']
-      end
-
-      if attributes.has_key?(:'body')
-        self.body = attributes[:'body']
-      end
-
-      if attributes.has_key?(:'bodyHtml')
-        self.body_html = attributes[:'bodyHtml']
-      end
-
-      if attributes.has_key?(:'bodyRtf')
-        self.body_rtf = attributes[:'bodyRtf']
-      end
-
-      if attributes.has_key?(:'bodyType')
-        self.body_type = attributes[:'bodyType']
-      end
-
-      if attributes.has_key?(:'categories')
-        if (value = attributes[:'categories']).is_a?(Array)
-          self.categories = value
-        end
-      end
-
-      if attributes.has_key?(:'companies')
-        if (value = attributes[:'companies']).is_a?(Array)
-          self.companies = value
-        end
-      end
-
-      if attributes.has_key?(:'itemId')
-        self.item_id = attributes[:'itemId']
-      end
-
-      if attributes.has_key?(:'messageClass')
-        self.message_class = attributes[:'messageClass']
-      end
-
-      if attributes.has_key?(:'mileage')
-        self.mileage = attributes[:'mileage']
-      end
-
-      if attributes.has_key?(:'recipients')
-        if (value = attributes[:'recipients']).is_a?(Array)
-          self.recipients = value
-        end
-      end
-
-      if attributes.has_key?(:'sensitivity')
-        self.sensitivity = attributes[:'sensitivity']
-      end
-
-      if attributes.has_key?(:'subject')
-        self.subject = attributes[:'subject']
-      end
-
-      if attributes.has_key?(:'subjectPrefix')
-        self.subject_prefix = attributes[:'subjectPrefix']
-      end
-
-      if attributes.has_key?(:'properties')
-        if (value = attributes[:'properties']).is_a?(Array)
-          self.properties = value
-        end
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-    end
-
-    # Initializes the object
     # @param [Array<MapiAttachmentDto>] attachments Message item attachments.             
     # @param [String] billing Billing information associated with an item.             
     # @param [String] body Message text.             
@@ -253,8 +146,23 @@ module AsposeEmailCloud
     # @param [String] subject Subject of the message.             
     # @param [String] subject_prefix Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.             
     # @param [Array<MapiPropertyDto>] properties List of MAPI properties             
-    # @param [String] discriminator 
-    def initialize(attachments=nil, billing=nil, body=nil, body_html=nil, body_rtf=nil, body_type=nil, categories=nil, companies=nil, item_id=nil, message_class=nil, mileage=nil, recipients=nil, sensitivity=nil, subject=nil, subject_prefix=nil, properties=nil, discriminator=nil)
+    def initialize(
+      attachments: nil,
+      billing: nil,
+      body: nil,
+      body_html: nil,
+      body_rtf: nil,
+      body_type: nil,
+      categories: nil,
+      companies: nil,
+      item_id: nil,
+      message_class: nil,
+      mileage: nil,
+      recipients: nil,
+      sensitivity: nil,
+      subject: nil,
+      subject_prefix: nil,
+      properties: nil)
       self.attachments = attachments if attachments
       self.billing = billing if billing
       self.body = body if body
@@ -271,7 +179,6 @@ module AsposeEmailCloud
       self.subject = subject if subject
       self.subject_prefix = subject_prefix if subject_prefix
       self.properties = properties if properties
-      @discriminator = self.class.name.split('::').last
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

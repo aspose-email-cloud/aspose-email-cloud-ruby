@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,59 +31,45 @@ module AsposeEmailCloud
     # Attachments in the recurrence exception.             
     # @return [Array<MapiAttachmentDto>]
     attr_accessor :attachments
-
     # Body.             
     # @return [String]
     attr_accessor :body
-
     # Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
     # @return [String]
     attr_accessor :busy_status
-
     # End date.             
     # @return [DateTime]
     attr_accessor :end_date_time
-
     # Value of this field specifies whether the Exception Embedded Message object contains attachments.             
     # @return [BOOLEAN]
     attr_accessor :has_attachment
-
     # Location.             
     # @return [String]
     attr_accessor :location
-
     # Enumerates the appointment state Enum, available values: Meeting, Received, Canceled
     # @return [String]
     attr_accessor :meeting_type
-
     # Original start date.             
     # @return [DateTime]
     attr_accessor :original_start_date
-
     # Override flags.              Items: Specifies what data in the MapiCalendarOverride structure has a value different from the recurring series. Enum, available values: Subject, MeetingType, ReminderDelta, Reminder, Location, BusyStatus, Attachment, Subtype, AppointmentColor, ExceptionalBody
     # @return [Array<String>]
     attr_accessor :override_flags
-
     # Reminder delta.             
     # @return [Integer]
     attr_accessor :reminder_delta
-
     # Value for the PidLidReminderSet property.             
     # @return [BOOLEAN]
     attr_accessor :reminder_set
-
     # Start date.             
     # @return [DateTime]
     attr_accessor :start_date_time
-
     # Subject.             
     # @return [String]
     attr_accessor :subject
-
     # SubType.             
     # @return [Integer]
     attr_accessor :sub_type
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -126,75 +111,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'attachments')
-        if (value = attributes[:'attachments']).is_a?(Array)
-          self.attachments = value
-        end
-      end
-
-      if attributes.has_key?(:'body')
-        self.body = attributes[:'body']
-      end
-
-      if attributes.has_key?(:'busyStatus')
-        self.busy_status = attributes[:'busyStatus']
-      end
-
-      if attributes.has_key?(:'endDateTime')
-        self.end_date_time = attributes[:'endDateTime']
-      end
-
-      if attributes.has_key?(:'hasAttachment')
-        self.has_attachment = attributes[:'hasAttachment']
-      end
-
-      if attributes.has_key?(:'location')
-        self.location = attributes[:'location']
-      end
-
-      if attributes.has_key?(:'meetingType')
-        self.meeting_type = attributes[:'meetingType']
-      end
-
-      if attributes.has_key?(:'originalStartDate')
-        self.original_start_date = attributes[:'originalStartDate']
-      end
-
-      if attributes.has_key?(:'overrideFlags')
-        if (value = attributes[:'overrideFlags']).is_a?(Array)
-          self.override_flags = value
-        end
-      end
-
-      if attributes.has_key?(:'reminderDelta')
-        self.reminder_delta = attributes[:'reminderDelta']
-      end
-
-      if attributes.has_key?(:'reminderSet')
-        self.reminder_set = attributes[:'reminderSet']
-      end
-
-      if attributes.has_key?(:'startDateTime')
-        self.start_date_time = attributes[:'startDateTime']
-      end
-
-      if attributes.has_key?(:'subject')
-        self.subject = attributes[:'subject']
-      end
-
-      if attributes.has_key?(:'subType')
-        self.sub_type = attributes[:'subType']
-      end
-    end
-
-    # Initializes the object
     # @param [Array<MapiAttachmentDto>] attachments Attachments in the recurrence exception.             
     # @param [String] body Body.             
     # @param [String] busy_status Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
@@ -209,7 +125,21 @@ module AsposeEmailCloud
     # @param [DateTime] start_date_time Start date.             
     # @param [String] subject Subject.             
     # @param [Integer] sub_type SubType.             
-    def initialize(attachments=nil, body=nil, busy_status=nil, end_date_time=nil, has_attachment=nil, location=nil, meeting_type=nil, original_start_date=nil, override_flags=nil, reminder_delta=nil, reminder_set=nil, start_date_time=nil, subject=nil, sub_type=nil)
+    def initialize(
+      attachments: nil,
+      body: nil,
+      busy_status: nil,
+      end_date_time: nil,
+      has_attachment: nil,
+      location: nil,
+      meeting_type: nil,
+      original_start_date: nil,
+      override_flags: nil,
+      reminder_delta: nil,
+      reminder_set: nil,
+      start_date_time: nil,
+      subject: nil,
+      sub_type: nil)
       self.attachments = attachments if attachments
       self.body = body if body
       self.busy_status = busy_status if busy_status

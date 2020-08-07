@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **display_name** | **String** | Display name.              | [optional] 
 **preferred** | **BOOLEAN** | Defines whether email address is preferred.              | 
 **routing_type** | **String** | A routing type for an email.              | [optional] 
-**address** | **String** | Email address.              | [optional] 
+**address** | **String** | Email address.              | 
 **original_address_string** | **String** | The original e-mail address string              | [optional] 
 
 

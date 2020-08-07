@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,15 +31,12 @@ module AsposeEmailCloud
     # Specifies the address of the contact's work             
     # @return [MapiContactPhysicalAddressDto]
     attr_accessor :work_address
-
     # Specifies the address of the contact's home             
     # @return [MapiContactPhysicalAddressDto]
     attr_accessor :home_address
-
     # Specifies the other contact's address             
     # @return [MapiContactPhysicalAddressDto]
     attr_accessor :other_address
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -60,31 +56,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'workAddress')
-        self.work_address = attributes[:'workAddress']
-      end
-
-      if attributes.has_key?(:'homeAddress')
-        self.home_address = attributes[:'homeAddress']
-      end
-
-      if attributes.has_key?(:'otherAddress')
-        self.other_address = attributes[:'otherAddress']
-      end
-    end
-
-    # Initializes the object
     # @param [MapiContactPhysicalAddressDto] work_address Specifies the address of the contact's work             
     # @param [MapiContactPhysicalAddressDto] home_address Specifies the address of the contact's home             
     # @param [MapiContactPhysicalAddressDto] other_address Specifies the other contact's address             
-    def initialize(work_address=nil, home_address=nil, other_address=nil)
+    def initialize(
+      work_address: nil,
+      home_address: nil,
+      other_address: nil)
       self.work_address = work_address if work_address
       self.home_address = home_address if home_address
       self.other_address = other_address if other_address

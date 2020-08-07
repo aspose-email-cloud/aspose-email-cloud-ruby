@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,69 +31,51 @@ module AsposeEmailCloud
     # Message item attachments.             
     # @return [Array<MapiAttachmentDto>]
     attr_accessor :attachments
-
     # Billing information associated with an item.             
     # @return [String]
     attr_accessor :billing
-
     # Message text.             
     # @return [String]
     attr_accessor :body
-
     # Gets the BodyRtf of the message converted to HTML, if present, otherwise an empty string.             
     # @return [String]
     attr_accessor :body_html
-
     # RTF formatted message text.             
     # @return [String]
     attr_accessor :body_rtf
-
     # The content type of message body. Enum, available values: PlainText, Html, Rtf
     # @return [String]
     attr_accessor :body_type
-
     # Contains keywords or categories for the message object.             
     # @return [Array<String>]
     attr_accessor :categories
-
     # Contains the names of the companies that are associated with an item.             
     # @return [Array<String>]
     attr_accessor :companies
-
     # The item id, uses with a server.             
     # @return [String]
     attr_accessor :item_id
-
     # Case-sensitive string that identifies the sender-defined message class, such as IPM.Note. The message class specifies the type, purpose, or content of the message.             
     # @return [String]
     attr_accessor :message_class
-
     # Contains the mileage information that is associated with an item.             
     # @return [String]
     attr_accessor :mileage
-
     # Recipients of the message.             
     # @return [Array<MapiRecipientDto>]
     attr_accessor :recipients
-
     # Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
     # @return [String]
     attr_accessor :sensitivity
-
     # Subject of the message.             
     # @return [String]
     attr_accessor :subject
-
     # Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.             
     # @return [String]
     attr_accessor :subject_prefix
-
     # List of MAPI properties             
     # @return [Array<MapiPropertyDto>]
     attr_accessor :properties
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -102,107 +83,81 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # Message text             
     # @return [String]
     attr_accessor :message_body
-
     # Date and time the message sender submitted a message.             
     # @return [DateTime]
     attr_accessor :client_submit_time
-
     # Topic of the first message in a conversation thread.             
     # @return [String]
     attr_accessor :conversation_topic
-
     # Date and time a message was delivered.             
     # @return [DateTime]
     attr_accessor :delivery_time
-
     # List of the display names of any blind carbon copy (BCC) message recipients, separated by semicolons (;).             
     # @return [String]
     attr_accessor :display_bcc
-
     # List of the display names of any carbon copy (CC) message recipients, separated by semicolons (;).             
     # @return [String]
     attr_accessor :display_cc
-
     # Display name for the message.             
     # @return [String]
     attr_accessor :display_name
-
     # Prefix of the display name.             
     # @return [String]
     attr_accessor :display_name_prefix
-
     # List of the display names of the primary (To) message recipients, separated by semicolons (;).             
     # @return [String]
     attr_accessor :display_to
-
     # Message flags.              Items: Mapi message flags. Enum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
     # @return [Array<String>]
     attr_accessor :flags
-
     # Transport message headers             
     # @return [Hash<String, String>]
     attr_accessor :headers
-
     # Internet message id of the message.             
     # @return [String]
     attr_accessor :internet_message_id
-
     # Represents outlook message format. Enum, available values: Ascii, Unicode
     # @return [String]
     attr_accessor :message_format
-
     # Normalized subject of the message.             
     # @return [String]
     attr_accessor :normalized_subject
-
     # Value indicating whether the read receipt is requested.
     # @return [BOOLEAN]
     attr_accessor :read_receipt_requested
-
     # Reply to names.
     # @return [String]
     attr_accessor :reply_to
-
     # Message sender's e-mail address type.
     # @return [String]
     attr_accessor :sender_address_type
-
     # Message sender's e-mail address.
     # @return [String]
     attr_accessor :sender_email_address
-
     # Message sender's display name.
     # @return [String]
     attr_accessor :sender_name
-
     # Message sender's e-mail address.
     # @return [String]
     attr_accessor :sender_smtp_address
-
     # Address type for the messaging user represented by the sender.
     # @return [String]
     attr_accessor :sent_representing_address_type
-
     # E-mail address for the messaging user represented by the sender.
     # @return [String]
     attr_accessor :sent_representing_email_address
-
     # Display name for the messaging user represented by the sender.
     # @return [String]
     attr_accessor :sent_representing_name
-
     # E-mail address for the messaging user represented by the sender.
     # @return [String]
     attr_accessor :sent_representing_smtp_address
-
     # Transport-specific message envelope information.
     # @return [String]
     attr_accessor :transport_message_headers
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -300,197 +255,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'attachments')
-        if (value = attributes[:'attachments']).is_a?(Array)
-          self.attachments = value
-        end
-      end
-
-      if attributes.has_key?(:'billing')
-        self.billing = attributes[:'billing']
-      end
-
-      if attributes.has_key?(:'body')
-        self.body = attributes[:'body']
-      end
-
-      if attributes.has_key?(:'bodyHtml')
-        self.body_html = attributes[:'bodyHtml']
-      end
-
-      if attributes.has_key?(:'bodyRtf')
-        self.body_rtf = attributes[:'bodyRtf']
-      end
-
-      if attributes.has_key?(:'bodyType')
-        self.body_type = attributes[:'bodyType']
-      end
-
-      if attributes.has_key?(:'categories')
-        if (value = attributes[:'categories']).is_a?(Array)
-          self.categories = value
-        end
-      end
-
-      if attributes.has_key?(:'companies')
-        if (value = attributes[:'companies']).is_a?(Array)
-          self.companies = value
-        end
-      end
-
-      if attributes.has_key?(:'itemId')
-        self.item_id = attributes[:'itemId']
-      end
-
-      if attributes.has_key?(:'messageClass')
-        self.message_class = attributes[:'messageClass']
-      end
-
-      if attributes.has_key?(:'mileage')
-        self.mileage = attributes[:'mileage']
-      end
-
-      if attributes.has_key?(:'recipients')
-        if (value = attributes[:'recipients']).is_a?(Array)
-          self.recipients = value
-        end
-      end
-
-      if attributes.has_key?(:'sensitivity')
-        self.sensitivity = attributes[:'sensitivity']
-      end
-
-      if attributes.has_key?(:'subject')
-        self.subject = attributes[:'subject']
-      end
-
-      if attributes.has_key?(:'subjectPrefix')
-        self.subject_prefix = attributes[:'subjectPrefix']
-      end
-
-      if attributes.has_key?(:'properties')
-        if (value = attributes[:'properties']).is_a?(Array)
-          self.properties = value
-        end
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-
-      if attributes.has_key?(:'messageBody')
-        self.message_body = attributes[:'messageBody']
-      end
-
-      if attributes.has_key?(:'clientSubmitTime')
-        self.client_submit_time = attributes[:'clientSubmitTime']
-      end
-
-      if attributes.has_key?(:'conversationTopic')
-        self.conversation_topic = attributes[:'conversationTopic']
-      end
-
-      if attributes.has_key?(:'deliveryTime')
-        self.delivery_time = attributes[:'deliveryTime']
-      end
-
-      if attributes.has_key?(:'displayBcc')
-        self.display_bcc = attributes[:'displayBcc']
-      end
-
-      if attributes.has_key?(:'displayCc')
-        self.display_cc = attributes[:'displayCc']
-      end
-
-      if attributes.has_key?(:'displayName')
-        self.display_name = attributes[:'displayName']
-      end
-
-      if attributes.has_key?(:'displayNamePrefix')
-        self.display_name_prefix = attributes[:'displayNamePrefix']
-      end
-
-      if attributes.has_key?(:'displayTo')
-        self.display_to = attributes[:'displayTo']
-      end
-
-      if attributes.has_key?(:'flags')
-        if (value = attributes[:'flags']).is_a?(Array)
-          self.flags = value
-        end
-      end
-
-      if attributes.has_key?(:'headers')
-        if (value = attributes[:'headers']).is_a?(Hash)
-          self.headers = value
-        end
-      end
-
-      if attributes.has_key?(:'internetMessageId')
-        self.internet_message_id = attributes[:'internetMessageId']
-      end
-
-      if attributes.has_key?(:'messageFormat')
-        self.message_format = attributes[:'messageFormat']
-      end
-
-      if attributes.has_key?(:'normalizedSubject')
-        self.normalized_subject = attributes[:'normalizedSubject']
-      end
-
-      if attributes.has_key?(:'readReceiptRequested')
-        self.read_receipt_requested = attributes[:'readReceiptRequested']
-      end
-
-      if attributes.has_key?(:'replyTo')
-        self.reply_to = attributes[:'replyTo']
-      end
-
-      if attributes.has_key?(:'senderAddressType')
-        self.sender_address_type = attributes[:'senderAddressType']
-      end
-
-      if attributes.has_key?(:'senderEmailAddress')
-        self.sender_email_address = attributes[:'senderEmailAddress']
-      end
-
-      if attributes.has_key?(:'senderName')
-        self.sender_name = attributes[:'senderName']
-      end
-
-      if attributes.has_key?(:'senderSmtpAddress')
-        self.sender_smtp_address = attributes[:'senderSmtpAddress']
-      end
-
-      if attributes.has_key?(:'sentRepresentingAddressType')
-        self.sent_representing_address_type = attributes[:'sentRepresentingAddressType']
-      end
-
-      if attributes.has_key?(:'sentRepresentingEmailAddress')
-        self.sent_representing_email_address = attributes[:'sentRepresentingEmailAddress']
-      end
-
-      if attributes.has_key?(:'sentRepresentingName')
-        self.sent_representing_name = attributes[:'sentRepresentingName']
-      end
-
-      if attributes.has_key?(:'sentRepresentingSmtpAddress')
-        self.sent_representing_smtp_address = attributes[:'sentRepresentingSmtpAddress']
-      end
-
-      if attributes.has_key?(:'transportMessageHeaders')
-        self.transport_message_headers = attributes[:'transportMessageHeaders']
-      end
-    end
-
-    # Initializes the object
     # @param [Array<MapiAttachmentDto>] attachments Message item attachments.             
     # @param [String] billing Billing information associated with an item.             
     # @param [String] body Message text.             
@@ -507,7 +271,6 @@ module AsposeEmailCloud
     # @param [String] subject Subject of the message.             
     # @param [String] subject_prefix Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.             
     # @param [Array<MapiPropertyDto>] properties List of MAPI properties             
-    # @param [String] discriminator 
     # @param [String] message_body Message text             
     # @param [DateTime] client_submit_time Date and time the message sender submitted a message.             
     # @param [String] conversation_topic Topic of the first message in a conversation thread.             
@@ -533,7 +296,48 @@ module AsposeEmailCloud
     # @param [String] sent_representing_name Display name for the messaging user represented by the sender.
     # @param [String] sent_representing_smtp_address E-mail address for the messaging user represented by the sender.
     # @param [String] transport_message_headers Transport-specific message envelope information.
-    def initialize(attachments=nil, billing=nil, body=nil, body_html=nil, body_rtf=nil, body_type=nil, categories=nil, companies=nil, item_id=nil, message_class=nil, mileage=nil, recipients=nil, sensitivity=nil, subject=nil, subject_prefix=nil, properties=nil, discriminator=nil, message_body=nil, client_submit_time=nil, conversation_topic=nil, delivery_time=nil, display_bcc=nil, display_cc=nil, display_name=nil, display_name_prefix=nil, display_to=nil, flags=nil, headers=nil, internet_message_id=nil, message_format=nil, normalized_subject=nil, read_receipt_requested=nil, reply_to=nil, sender_address_type=nil, sender_email_address=nil, sender_name=nil, sender_smtp_address=nil, sent_representing_address_type=nil, sent_representing_email_address=nil, sent_representing_name=nil, sent_representing_smtp_address=nil, transport_message_headers=nil)
+    def initialize(
+      attachments: nil,
+      billing: nil,
+      body: nil,
+      body_html: nil,
+      body_rtf: nil,
+      body_type: nil,
+      categories: nil,
+      companies: nil,
+      item_id: nil,
+      message_class: nil,
+      mileage: nil,
+      recipients: nil,
+      sensitivity: nil,
+      subject: nil,
+      subject_prefix: nil,
+      properties: nil,
+      message_body: nil,
+      client_submit_time: nil,
+      conversation_topic: nil,
+      delivery_time: nil,
+      display_bcc: nil,
+      display_cc: nil,
+      display_name: nil,
+      display_name_prefix: nil,
+      display_to: nil,
+      flags: nil,
+      headers: nil,
+      internet_message_id: nil,
+      message_format: nil,
+      normalized_subject: nil,
+      read_receipt_requested: nil,
+      reply_to: nil,
+      sender_address_type: nil,
+      sender_email_address: nil,
+      sender_name: nil,
+      sender_smtp_address: nil,
+      sent_representing_address_type: nil,
+      sent_representing_email_address: nil,
+      sent_representing_name: nil,
+      sent_representing_smtp_address: nil,
+      transport_message_headers: nil)
       self.attachments = attachments if attachments
       self.billing = billing if billing
       self.body = body if body
@@ -550,7 +354,6 @@ module AsposeEmailCloud
       self.subject = subject if subject
       self.subject_prefix = subject_prefix if subject_prefix
       self.properties = properties if properties
-      @discriminator = self.class.name.split('::').last
       self.message_body = message_body if message_body
       self.client_submit_time = client_submit_time if client_submit_time
       self.conversation_topic = conversation_topic if conversation_topic

@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,131 +31,99 @@ module AsposeEmailCloud
     # Collection of alternate views of message.             
     # @return [Array<AlternateView>]
     attr_accessor :alternate_views
-
     # Email message attachments.             
     # @return [Array<Attachment>]
     attr_accessor :attachments
-
     # BCC recipients.             
     # @return [Array<MailAddress>]
     attr_accessor :bcc
-
     # Email message body as plain text.             
     # @return [String]
     attr_accessor :body
-
     # Body encoding.             
     # @return [String]
     attr_accessor :body_encoding
-
     # The content type of message body. Enum, available values: PlainText, Html, Rtf
     # @return [String]
     attr_accessor :body_type
-
     # CC recipients.             
     # @return [Array<MailAddress>]
     attr_accessor :cc
-
     # Message date.             
     # @return [DateTime]
     attr_accessor :date
-
     # Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
     # @return [Array<String>]
     attr_accessor :delivery_notification_options
-
     # From address.             
     # @return [MailAddress]
     attr_accessor :from
-
     # Document headers.             
     # @return [Hash<String, String>]
     attr_accessor :headers
-
     # HTML body.             
     # @return [String]
     attr_accessor :html_body
-
     # Html body as plain text. Read only.             
     # @return [String]
     attr_accessor :html_body_text
-
     # Indicates whether the message body is in Html.             
     # @return [BOOLEAN]
     attr_accessor :is_body_html
-
     # Indicates whether or not a message has been sent.             
     # @return [BOOLEAN]
     attr_accessor :is_draft
-
     # Indicates whether the message is encrypted. Read only.             
     # @return [BOOLEAN]
     attr_accessor :is_encrypted
-
     # Indicates whether the message is signed. Read only.             
     # @return [BOOLEAN]
     attr_accessor :is_signed
-
     # Linked resources of message.             
     # @return [Array<LinkedResource>]
     attr_accessor :linked_resources
-
     # Message id.             
     # @return [String]
     attr_accessor :message_id
-
     # Indicates whether original EML message is in TNEF format. Read only.             
     # @return [BOOLEAN]
     attr_accessor :original_is_tnef
-
     # Preferred encoding.             
     # @return [String]
     attr_accessor :preferred_text_encoding
-
     # Email priority status. Enum, available values: High, Low, Normal
     # @return [String]
     attr_accessor :priority
-
     # Read receipt addresses.             
     # @return [Array<MailAddress>]
     attr_accessor :read_receipt_to
-
     # The list of addresses to reply to for the mail message.             
     # @return [Array<MailAddress>]
     attr_accessor :reply_to_list
-
     # ReversePath address.             
     # @return [MailAddress]
     attr_accessor :reverse_path
-
     # Sender address.             
     # @return [MailAddress]
     attr_accessor :sender
-
     # Specifies the sensitivity of a MailMessage. Enum, available values: None, Normal, Personal, Private, CompanyConfidential
     # @return [String]
     attr_accessor :sensitivity
-
     # Message subject.             
     # @return [String]
     attr_accessor :subject
-
     # Subject encoding.             
     # @return [String]
     attr_accessor :subject_encoding
-
     # Coordinated Universal Time (UTC) offset for the message dates. This property defines the time zone difference, between the local time and UTC represented as count of ticks (10 000 per millisecond).             
     # @return [Integer]
     attr_accessor :time_zone_offset
-
     # The address collection that contains the recipients of message.             
     # @return [Array<MailAddress>]
     attr_accessor :to
-
     # The X-Mailer the software that created the e-mail message.             
     # @return [String]
     attr_accessor :x_mailer
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -234,163 +201,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'alternateViews')
-        if (value = attributes[:'alternateViews']).is_a?(Array)
-          self.alternate_views = value
-        end
-      end
-
-      if attributes.has_key?(:'attachments')
-        if (value = attributes[:'attachments']).is_a?(Array)
-          self.attachments = value
-        end
-      end
-
-      if attributes.has_key?(:'bcc')
-        if (value = attributes[:'bcc']).is_a?(Array)
-          self.bcc = value
-        end
-      end
-
-      if attributes.has_key?(:'body')
-        self.body = attributes[:'body']
-      end
-
-      if attributes.has_key?(:'bodyEncoding')
-        self.body_encoding = attributes[:'bodyEncoding']
-      end
-
-      if attributes.has_key?(:'bodyType')
-        self.body_type = attributes[:'bodyType']
-      end
-
-      if attributes.has_key?(:'cc')
-        if (value = attributes[:'cc']).is_a?(Array)
-          self.cc = value
-        end
-      end
-
-      if attributes.has_key?(:'date')
-        self.date = attributes[:'date']
-      end
-
-      if attributes.has_key?(:'deliveryNotificationOptions')
-        if (value = attributes[:'deliveryNotificationOptions']).is_a?(Array)
-          self.delivery_notification_options = value
-        end
-      end
-
-      if attributes.has_key?(:'from')
-        self.from = attributes[:'from']
-      end
-
-      if attributes.has_key?(:'headers')
-        if (value = attributes[:'headers']).is_a?(Hash)
-          self.headers = value
-        end
-      end
-
-      if attributes.has_key?(:'htmlBody')
-        self.html_body = attributes[:'htmlBody']
-      end
-
-      if attributes.has_key?(:'htmlBodyText')
-        self.html_body_text = attributes[:'htmlBodyText']
-      end
-
-      if attributes.has_key?(:'isBodyHtml')
-        self.is_body_html = attributes[:'isBodyHtml']
-      end
-
-      if attributes.has_key?(:'isDraft')
-        self.is_draft = attributes[:'isDraft']
-      end
-
-      if attributes.has_key?(:'isEncrypted')
-        self.is_encrypted = attributes[:'isEncrypted']
-      end
-
-      if attributes.has_key?(:'isSigned')
-        self.is_signed = attributes[:'isSigned']
-      end
-
-      if attributes.has_key?(:'linkedResources')
-        if (value = attributes[:'linkedResources']).is_a?(Array)
-          self.linked_resources = value
-        end
-      end
-
-      if attributes.has_key?(:'messageId')
-        self.message_id = attributes[:'messageId']
-      end
-
-      if attributes.has_key?(:'originalIsTnef')
-        self.original_is_tnef = attributes[:'originalIsTnef']
-      end
-
-      if attributes.has_key?(:'preferredTextEncoding')
-        self.preferred_text_encoding = attributes[:'preferredTextEncoding']
-      end
-
-      if attributes.has_key?(:'priority')
-        self.priority = attributes[:'priority']
-      end
-
-      if attributes.has_key?(:'readReceiptTo')
-        if (value = attributes[:'readReceiptTo']).is_a?(Array)
-          self.read_receipt_to = value
-        end
-      end
-
-      if attributes.has_key?(:'replyToList')
-        if (value = attributes[:'replyToList']).is_a?(Array)
-          self.reply_to_list = value
-        end
-      end
-
-      if attributes.has_key?(:'reversePath')
-        self.reverse_path = attributes[:'reversePath']
-      end
-
-      if attributes.has_key?(:'sender')
-        self.sender = attributes[:'sender']
-      end
-
-      if attributes.has_key?(:'sensitivity')
-        self.sensitivity = attributes[:'sensitivity']
-      end
-
-      if attributes.has_key?(:'subject')
-        self.subject = attributes[:'subject']
-      end
-
-      if attributes.has_key?(:'subjectEncoding')
-        self.subject_encoding = attributes[:'subjectEncoding']
-      end
-
-      if attributes.has_key?(:'timeZoneOffset')
-        self.time_zone_offset = attributes[:'timeZoneOffset']
-      end
-
-      if attributes.has_key?(:'to')
-        if (value = attributes[:'to']).is_a?(Array)
-          self.to = value
-        end
-      end
-
-      if attributes.has_key?(:'xMailer')
-        self.x_mailer = attributes[:'xMailer']
-      end
-    end
-
-    # Initializes the object
     # @param [Array<AlternateView>] alternate_views Collection of alternate views of message.             
     # @param [Array<Attachment>] attachments Email message attachments.             
     # @param [Array<MailAddress>] bcc BCC recipients.             
@@ -423,7 +233,39 @@ module AsposeEmailCloud
     # @param [Integer] time_zone_offset Coordinated Universal Time (UTC) offset for the message dates. This property defines the time zone difference, between the local time and UTC represented as count of ticks (10 000 per millisecond).             
     # @param [Array<MailAddress>] to The address collection that contains the recipients of message.             
     # @param [String] x_mailer The X-Mailer the software that created the e-mail message.             
-    def initialize(alternate_views=nil, attachments=nil, bcc=nil, body=nil, body_encoding=nil, body_type=nil, cc=nil, date=nil, delivery_notification_options=nil, from=nil, headers=nil, html_body=nil, html_body_text=nil, is_body_html=nil, is_draft=nil, is_encrypted=nil, is_signed=nil, linked_resources=nil, message_id=nil, original_is_tnef=nil, preferred_text_encoding=nil, priority=nil, read_receipt_to=nil, reply_to_list=nil, reverse_path=nil, sender=nil, sensitivity=nil, subject=nil, subject_encoding=nil, time_zone_offset=nil, to=nil, x_mailer=nil)
+    def initialize(
+      alternate_views: nil,
+      attachments: nil,
+      bcc: nil,
+      body: nil,
+      body_encoding: nil,
+      body_type: nil,
+      cc: nil,
+      date: nil,
+      delivery_notification_options: nil,
+      from: nil,
+      headers: nil,
+      html_body: nil,
+      html_body_text: nil,
+      is_body_html: nil,
+      is_draft: nil,
+      is_encrypted: nil,
+      is_signed: nil,
+      linked_resources: nil,
+      message_id: nil,
+      original_is_tnef: nil,
+      preferred_text_encoding: nil,
+      priority: nil,
+      read_receipt_to: nil,
+      reply_to_list: nil,
+      reverse_path: nil,
+      sender: nil,
+      sensitivity: nil,
+      subject: nil,
+      subject_encoding: nil,
+      time_zone_offset: nil,
+      to: nil,
+      x_mailer: nil)
       self.alternate_views = alternate_views if alternate_views
       self.attachments = attachments if attachments
       self.bcc = bcc if bcc

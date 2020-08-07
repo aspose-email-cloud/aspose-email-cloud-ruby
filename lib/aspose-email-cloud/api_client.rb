@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="api_client.rb">
 #    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
@@ -50,11 +52,10 @@ module AsposeEmailCloud
     # @param [String] base_url Server URL.
     # @param [String] api_version Api version.
     # @param [Object] debug Debug switch [true, false].
-    def initialize(app_key = nil, app_sid = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v3.0', debug = false)
+    def initialize(app_key = nil, app_sid = nil, base_url = 'api.aspose.cloud', api_version = 'v4.0', debug = false)
       @config = Configuration.new(app_key, app_sid, base_url, api_version, debug)
       @default_headers = {
-        'x-aspose-client' => 'ruby sdk',
-        'x-aspose-version' => '19.7'
+        'x-aspose-client' => 'ruby sdk'
       }
     end
 
@@ -383,3 +384,4 @@ module AsposeEmailCloud
     end
   end
 end
+

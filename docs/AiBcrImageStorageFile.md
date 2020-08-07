@@ -2,8 +2,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_single** | **BOOLEAN** | Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon              | 
-**file** | [**StorageFileLocation**](StorageFileLocation.md) | Image location              | [optional] 
+**is_single** | **BOOLEAN** | Determines that image contains single VCard or more.              | 
+**file** | [**StorageFileLocation**](StorageFileLocation.md) | Image location              | 
 
  Parent class: [AiBcrImage](AiBcrImage.md)
 

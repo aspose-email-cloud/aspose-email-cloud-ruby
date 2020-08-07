@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,19 +31,15 @@ module AsposeEmailCloud
     # List of attendees.             
     # @return [Array<MapiRecipientDto>]
     attr_accessor :appointment_recipients
-
     # List of unsendable attendees.             
     # @return [Array<MapiRecipientDto>]
     attr_accessor :appointment_unsendable_recipients
-
     # Value indicating whether attendees are not allowed to propose a new date and/or time for the meeting.             
     # @return [BOOLEAN]
     attr_accessor :not_allow_propose
-
     # Value indicating whether a response is requested to a Message object.             
     # @return [BOOLEAN]
     attr_accessor :response_requested
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -66,40 +61,15 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'appointmentRecipients')
-        if (value = attributes[:'appointmentRecipients']).is_a?(Array)
-          self.appointment_recipients = value
-        end
-      end
-
-      if attributes.has_key?(:'appointmentUnsendableRecipients')
-        if (value = attributes[:'appointmentUnsendableRecipients']).is_a?(Array)
-          self.appointment_unsendable_recipients = value
-        end
-      end
-
-      if attributes.has_key?(:'notAllowPropose')
-        self.not_allow_propose = attributes[:'notAllowPropose']
-      end
-
-      if attributes.has_key?(:'responseRequested')
-        self.response_requested = attributes[:'responseRequested']
-      end
-    end
-
-    # Initializes the object
     # @param [Array<MapiRecipientDto>] appointment_recipients List of attendees.             
     # @param [Array<MapiRecipientDto>] appointment_unsendable_recipients List of unsendable attendees.             
     # @param [BOOLEAN] not_allow_propose Value indicating whether attendees are not allowed to propose a new date and/or time for the meeting.             
     # @param [BOOLEAN] response_requested Value indicating whether a response is requested to a Message object.             
-    def initialize(appointment_recipients=nil, appointment_unsendable_recipients=nil, not_allow_propose=nil, response_requested=nil)
+    def initialize(
+      appointment_recipients: nil,
+      appointment_unsendable_recipients: nil,
+      not_allow_propose: nil,
+      response_requested: nil)
       self.appointment_recipients = appointment_recipients if appointment_recipients
       self.appointment_unsendable_recipients = appointment_unsendable_recipients if appointment_unsendable_recipients
       self.not_allow_propose = not_allow_propose if not_allow_propose

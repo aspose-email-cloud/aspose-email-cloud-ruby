@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,69 +31,51 @@ module AsposeEmailCloud
     # Message item attachments.             
     # @return [Array<MapiAttachmentDto>]
     attr_accessor :attachments
-
     # Billing information associated with an item.             
     # @return [String]
     attr_accessor :billing
-
     # Message text.             
     # @return [String]
     attr_accessor :body
-
     # Gets the BodyRtf of the message converted to HTML, if present, otherwise an empty string.             
     # @return [String]
     attr_accessor :body_html
-
     # RTF formatted message text.             
     # @return [String]
     attr_accessor :body_rtf
-
     # The content type of message body. Enum, available values: PlainText, Html, Rtf
     # @return [String]
     attr_accessor :body_type
-
     # Contains keywords or categories for the message object.             
     # @return [Array<String>]
     attr_accessor :categories
-
     # Contains the names of the companies that are associated with an item.             
     # @return [Array<String>]
     attr_accessor :companies
-
     # The item id, uses with a server.             
     # @return [String]
     attr_accessor :item_id
-
     # Case-sensitive string that identifies the sender-defined message class, such as IPM.Note. The message class specifies the type, purpose, or content of the message.             
     # @return [String]
     attr_accessor :message_class
-
     # Contains the mileage information that is associated with an item.             
     # @return [String]
     attr_accessor :mileage
-
     # Recipients of the message.             
     # @return [Array<MapiRecipientDto>]
     attr_accessor :recipients
-
     # Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
     # @return [String]
     attr_accessor :sensitivity
-
     # Subject of the message.             
     # @return [String]
     attr_accessor :subject
-
     # Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.             
     # @return [String]
     attr_accessor :subject_prefix
-
     # List of MAPI properties             
     # @return [Array<MapiPropertyDto>]
     attr_accessor :properties
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -102,79 +83,60 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # Value indicating whether a Meeting Response object is a counter proposal.             
     # @return [BOOLEAN]
     attr_accessor :appointment_counter_proposal
-
     # Attendees             
     # @return [MapiCalendarAttendeesDto]
     attr_accessor :attendees
-
     # Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
     # @return [String]
     attr_accessor :busy_status
-
     # Actions the user has taken on this Meeting object.              Items: Enumerates the actions the user can taken on the Meeting object Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
     # @return [Array<String>]
     attr_accessor :client_intent
-
     # End date and time of the event. If the date is not set, default value for DateTime is returned.             
     # @return [DateTime]
     attr_accessor :end_date
-
     # Time zone information that indicates the time zone of the EndDate property.             
     # @return [MapiCalendarTimeZoneDto]
     attr_accessor :end_date_time_zone
-
     # Value indicating whether the event is an all-day event.             
     # @return [BOOLEAN]
     attr_accessor :is_all_day
-
     # Categories of the calendar object.             
     # @return [String]
     attr_accessor :key_words
-
     # Location of the event.             
     # @return [String]
     attr_accessor :location
-
     # Recurrence properties.             
     # @return [MapiCalendarEventRecurrenceDto]
     attr_accessor :recurrence
-
     # Interval, in minutes, between the time at which the reminder first becomes overdue and the start time of the Calendar object.             
     # @return [Integer]
     attr_accessor :reminder_delta
-
     # Full path of the sound that a client SHOULD play when the reminder becomes overdue.             
     # @return [String]
     attr_accessor :reminder_file_parameter
-
     # Value indicating whether a reminder is set on the object.             
     # @return [BOOLEAN]
     attr_accessor :reminder_set
-
     # Sequence number.             
     # @return [Integer]
     attr_accessor :sequence
-
     # Start date and time of the event. If the date is not set, default value for DateTime is returned.             
     # @return [DateTime]
     attr_accessor :start_date
-
     # Time zone information that indicates the time zone of the StartDate property.             
     # @return [MapiCalendarTimeZoneDto]
     attr_accessor :start_date_time_zone
-
     # Unique identifier.             
     # @return [String]
     attr_accessor :uid
-
     # Organizer             
     # @return [MapiElectronicAddressDto]
     attr_accessor :organizer
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -258,167 +220,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'attachments')
-        if (value = attributes[:'attachments']).is_a?(Array)
-          self.attachments = value
-        end
-      end
-
-      if attributes.has_key?(:'billing')
-        self.billing = attributes[:'billing']
-      end
-
-      if attributes.has_key?(:'body')
-        self.body = attributes[:'body']
-      end
-
-      if attributes.has_key?(:'bodyHtml')
-        self.body_html = attributes[:'bodyHtml']
-      end
-
-      if attributes.has_key?(:'bodyRtf')
-        self.body_rtf = attributes[:'bodyRtf']
-      end
-
-      if attributes.has_key?(:'bodyType')
-        self.body_type = attributes[:'bodyType']
-      end
-
-      if attributes.has_key?(:'categories')
-        if (value = attributes[:'categories']).is_a?(Array)
-          self.categories = value
-        end
-      end
-
-      if attributes.has_key?(:'companies')
-        if (value = attributes[:'companies']).is_a?(Array)
-          self.companies = value
-        end
-      end
-
-      if attributes.has_key?(:'itemId')
-        self.item_id = attributes[:'itemId']
-      end
-
-      if attributes.has_key?(:'messageClass')
-        self.message_class = attributes[:'messageClass']
-      end
-
-      if attributes.has_key?(:'mileage')
-        self.mileage = attributes[:'mileage']
-      end
-
-      if attributes.has_key?(:'recipients')
-        if (value = attributes[:'recipients']).is_a?(Array)
-          self.recipients = value
-        end
-      end
-
-      if attributes.has_key?(:'sensitivity')
-        self.sensitivity = attributes[:'sensitivity']
-      end
-
-      if attributes.has_key?(:'subject')
-        self.subject = attributes[:'subject']
-      end
-
-      if attributes.has_key?(:'subjectPrefix')
-        self.subject_prefix = attributes[:'subjectPrefix']
-      end
-
-      if attributes.has_key?(:'properties')
-        if (value = attributes[:'properties']).is_a?(Array)
-          self.properties = value
-        end
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-
-      if attributes.has_key?(:'appointmentCounterProposal')
-        self.appointment_counter_proposal = attributes[:'appointmentCounterProposal']
-      end
-
-      if attributes.has_key?(:'attendees')
-        self.attendees = attributes[:'attendees']
-      end
-
-      if attributes.has_key?(:'busyStatus')
-        self.busy_status = attributes[:'busyStatus']
-      end
-
-      if attributes.has_key?(:'clientIntent')
-        if (value = attributes[:'clientIntent']).is_a?(Array)
-          self.client_intent = value
-        end
-      end
-
-      if attributes.has_key?(:'endDate')
-        self.end_date = attributes[:'endDate']
-      end
-
-      if attributes.has_key?(:'endDateTimeZone')
-        self.end_date_time_zone = attributes[:'endDateTimeZone']
-      end
-
-      if attributes.has_key?(:'isAllDay')
-        self.is_all_day = attributes[:'isAllDay']
-      end
-
-      if attributes.has_key?(:'keyWords')
-        self.key_words = attributes[:'keyWords']
-      end
-
-      if attributes.has_key?(:'location')
-        self.location = attributes[:'location']
-      end
-
-      if attributes.has_key?(:'recurrence')
-        self.recurrence = attributes[:'recurrence']
-      end
-
-      if attributes.has_key?(:'reminderDelta')
-        self.reminder_delta = attributes[:'reminderDelta']
-      end
-
-      if attributes.has_key?(:'reminderFileParameter')
-        self.reminder_file_parameter = attributes[:'reminderFileParameter']
-      end
-
-      if attributes.has_key?(:'reminderSet')
-        self.reminder_set = attributes[:'reminderSet']
-      end
-
-      if attributes.has_key?(:'sequence')
-        self.sequence = attributes[:'sequence']
-      end
-
-      if attributes.has_key?(:'startDate')
-        self.start_date = attributes[:'startDate']
-      end
-
-      if attributes.has_key?(:'startDateTimeZone')
-        self.start_date_time_zone = attributes[:'startDateTimeZone']
-      end
-
-      if attributes.has_key?(:'uid')
-        self.uid = attributes[:'uid']
-      end
-
-      if attributes.has_key?(:'organizer')
-        self.organizer = attributes[:'organizer']
-      end
-    end
-
-    # Initializes the object
     # @param [Array<MapiAttachmentDto>] attachments Message item attachments.             
     # @param [String] billing Billing information associated with an item.             
     # @param [String] body Message text.             
@@ -435,7 +236,6 @@ module AsposeEmailCloud
     # @param [String] subject Subject of the message.             
     # @param [String] subject_prefix Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.             
     # @param [Array<MapiPropertyDto>] properties List of MAPI properties             
-    # @param [String] discriminator 
     # @param [BOOLEAN] appointment_counter_proposal Value indicating whether a Meeting Response object is a counter proposal.             
     # @param [MapiCalendarAttendeesDto] attendees Attendees             
     # @param [String] busy_status Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
@@ -454,7 +254,41 @@ module AsposeEmailCloud
     # @param [MapiCalendarTimeZoneDto] start_date_time_zone Time zone information that indicates the time zone of the StartDate property.             
     # @param [String] uid Unique identifier.             
     # @param [MapiElectronicAddressDto] organizer Organizer             
-    def initialize(attachments=nil, billing=nil, body=nil, body_html=nil, body_rtf=nil, body_type=nil, categories=nil, companies=nil, item_id=nil, message_class=nil, mileage=nil, recipients=nil, sensitivity=nil, subject=nil, subject_prefix=nil, properties=nil, discriminator=nil, appointment_counter_proposal=nil, attendees=nil, busy_status=nil, client_intent=nil, end_date=nil, end_date_time_zone=nil, is_all_day=nil, key_words=nil, location=nil, recurrence=nil, reminder_delta=nil, reminder_file_parameter=nil, reminder_set=nil, sequence=nil, start_date=nil, start_date_time_zone=nil, uid=nil, organizer=nil)
+    def initialize(
+      attachments: nil,
+      billing: nil,
+      body: nil,
+      body_html: nil,
+      body_rtf: nil,
+      body_type: nil,
+      categories: nil,
+      companies: nil,
+      item_id: nil,
+      message_class: nil,
+      mileage: nil,
+      recipients: nil,
+      sensitivity: nil,
+      subject: nil,
+      subject_prefix: nil,
+      properties: nil,
+      appointment_counter_proposal: nil,
+      attendees: nil,
+      busy_status: nil,
+      client_intent: nil,
+      end_date: nil,
+      end_date_time_zone: nil,
+      is_all_day: nil,
+      key_words: nil,
+      location: nil,
+      recurrence: nil,
+      reminder_delta: nil,
+      reminder_file_parameter: nil,
+      reminder_set: nil,
+      sequence: nil,
+      start_date: nil,
+      start_date_time_zone: nil,
+      uid: nil,
+      organizer: nil)
       self.attachments = attachments if attachments
       self.billing = billing if billing
       self.body = body if body
@@ -471,7 +305,6 @@ module AsposeEmailCloud
       self.subject = subject if subject
       self.subject_prefix = subject_prefix if subject_prefix
       self.properties = properties if properties
-      @discriminator = self.class.name.split('::').last
       self.appointment_counter_proposal = appointment_counter_proposal if appointment_counter_proposal
       self.attendees = attendees if attendees
       self.busy_status = busy_status if busy_status

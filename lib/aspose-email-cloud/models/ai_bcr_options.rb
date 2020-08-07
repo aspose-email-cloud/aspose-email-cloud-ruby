@@ -23,20 +23,17 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
-  # Recognition options             
+  # Recognition options.             
   class AiBcrOptions
-    # Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default             
+    # Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default.             
     # @return [String]
     attr_accessor :languages
-
-    # Comma-separated codes of countries             
+    # Comma-separated codes of countries.             
     # @return [String]
     attr_accessor :countries
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,26 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'languages')
-        self.languages = attributes[:'languages']
-      end
-
-      if attributes.has_key?(:'countries')
-        self.countries = attributes[:'countries']
-      end
-    end
-
-    # Initializes the object
-    # @param [String] languages Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default             
-    # @param [String] countries Comma-separated codes of countries             
-    def initialize(languages=nil, countries=nil)
+    # @param [String] languages Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default.             
+    # @param [String] countries Comma-separated codes of countries.             
+    def initialize(
+      languages: nil,
+      countries: nil)
       self.languages = languages if languages
       self.countries = countries if countries
     end

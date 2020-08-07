@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,9 +31,6 @@ module AsposeEmailCloud
     # Email client account login             
     # @return [String]
     attr_accessor :login
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -42,23 +38,18 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # The client ID obtained from the Google Cloud Console during application registration.             
     # @return [String]
     attr_accessor :client_id
-
     # The client secret obtained during application registration.             
     # @return [String]
     attr_accessor :client_secret
-
     # OAuth 2.0 refresh token             
     # @return [String]
     attr_accessor :refresh_token
-
     # The url to obtain access token. If not specified, will try to discover from email client account host.             
     # @return [String]
     attr_accessor :request_url
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -84,48 +75,18 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'login')
-        self.login = attributes[:'login']
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-
-      if attributes.has_key?(:'clientId')
-        self.client_id = attributes[:'clientId']
-      end
-
-      if attributes.has_key?(:'clientSecret')
-        self.client_secret = attributes[:'clientSecret']
-      end
-
-      if attributes.has_key?(:'refreshToken')
-        self.refresh_token = attributes[:'refreshToken']
-      end
-
-      if attributes.has_key?(:'requestUrl')
-        self.request_url = attributes[:'requestUrl']
-      end
-    end
-
-    # Initializes the object
     # @param [String] login Email client account login             
-    # @param [String] discriminator 
     # @param [String] client_id The client ID obtained from the Google Cloud Console during application registration.             
     # @param [String] client_secret The client secret obtained during application registration.             
     # @param [String] refresh_token OAuth 2.0 refresh token             
     # @param [String] request_url The url to obtain access token. If not specified, will try to discover from email client account host.             
-    def initialize(login=nil, discriminator=nil, client_id=nil, client_secret=nil, refresh_token=nil, request_url=nil)
+    def initialize(
+      login: nil,
+      client_id: nil,
+      client_secret: nil,
+      refresh_token: nil,
+      request_url: nil)
       self.login = login if login
-      @discriminator = self.class.name.split('::').last
       self.client_id = client_id if client_id
       self.client_secret = client_secret if client_secret
       self.refresh_token = refresh_token if refresh_token

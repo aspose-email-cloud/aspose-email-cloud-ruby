@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,39 +31,30 @@ module AsposeEmailCloud
     # Attachment file content as Base64 string.             
     # @return [String]
     attr_accessor :base64_data
-
     # Attachment content id             
     # @return [String]
     attr_accessor :content_id
-
     # Content type             
     # @return [ContentType]
     attr_accessor :content_type
-
     # Attachment headers.             
     # @return [Hash<String, String>]
     attr_accessor :headers
-
     # Content-Disposition header. Read only.             
     # @return [String]
     attr_accessor :content_disposition
-
     # Determines if attachment is an embedded message. Read only.             
     # @return [BOOLEAN]
     attr_accessor :is_embedded_message
-
     # Attachment name.             
     # @return [String]
     attr_accessor :name
-
     # Encoding of attachment name.             
     # @return [String]
     attr_accessor :name_encoding
-
     # Preferred text encoding.             
     # @return [String]
     attr_accessor :preferred_text_encoding
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -96,53 +86,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'base64Data')
-        self.base64_data = attributes[:'base64Data']
-      end
-
-      if attributes.has_key?(:'contentId')
-        self.content_id = attributes[:'contentId']
-      end
-
-      if attributes.has_key?(:'contentType')
-        self.content_type = attributes[:'contentType']
-      end
-
-      if attributes.has_key?(:'headers')
-        if (value = attributes[:'headers']).is_a?(Hash)
-          self.headers = value
-        end
-      end
-
-      if attributes.has_key?(:'contentDisposition')
-        self.content_disposition = attributes[:'contentDisposition']
-      end
-
-      if attributes.has_key?(:'isEmbeddedMessage')
-        self.is_embedded_message = attributes[:'isEmbeddedMessage']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'nameEncoding')
-        self.name_encoding = attributes[:'nameEncoding']
-      end
-
-      if attributes.has_key?(:'preferredTextEncoding')
-        self.preferred_text_encoding = attributes[:'preferredTextEncoding']
-      end
-    end
-
-    # Initializes the object
     # @param [String] base64_data Attachment file content as Base64 string.             
     # @param [String] content_id Attachment content id             
     # @param [ContentType] content_type Content type             
@@ -152,7 +95,16 @@ module AsposeEmailCloud
     # @param [String] name Attachment name.             
     # @param [String] name_encoding Encoding of attachment name.             
     # @param [String] preferred_text_encoding Preferred text encoding.             
-    def initialize(base64_data=nil, content_id=nil, content_type=nil, headers=nil, content_disposition=nil, is_embedded_message=nil, name=nil, name_encoding=nil, preferred_text_encoding=nil)
+    def initialize(
+      base64_data: nil,
+      content_id: nil,
+      content_type: nil,
+      headers: nil,
+      content_disposition: nil,
+      is_embedded_message: nil,
+      name: nil,
+      name_encoding: nil,
+      preferred_text_encoding: nil)
       self.base64_data = base64_data if base64_data
       self.content_id = content_id if content_id
       self.content_type = content_type if content_type

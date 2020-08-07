@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,15 +31,12 @@ module AsposeEmailCloud
     # Associated person's name.             
     # @return [String]
     attr_accessor :name
-
     # Associated person's category.             
     # @return [EnumWithCustomOfAssociatedPersonCategory]
     attr_accessor :category
-
     # Defines whether associated person is preferred.             
     # @return [BOOLEAN]
     attr_accessor :preferred
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -60,31 +56,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'category')
-        self.category = attributes[:'category']
-      end
-
-      if attributes.has_key?(:'preferred')
-        self.preferred = attributes[:'preferred']
-      end
-    end
-
-    # Initializes the object
     # @param [String] name Associated person's name.             
     # @param [EnumWithCustomOfAssociatedPersonCategory] category Associated person's category.             
     # @param [BOOLEAN] preferred Defines whether associated person is preferred.             
-    def initialize(name=nil, category=nil, preferred=nil)
+    def initialize(
+      name: nil,
+      category: nil,
+      preferred: nil)
       self.name = name if name
       self.category = category if category
       self.preferred = preferred if preferred

@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,27 +31,21 @@ module AsposeEmailCloud
     # Time zone information that describes how to convert the meeting date and time on a recurring series to and from UTC.             
     # @return [MapiCalendarTimeZoneDto]
     attr_accessor :appointment_time_zone_definition_recur
-
     # Date of the last instance.             
     # @return [DateTime]
     attr_accessor :clip_end
-
     # Date of the first instance.             
     # @return [DateTime]
     attr_accessor :clip_start
-
     # Value indicating whether the object represents an exception.             
     # @return [BOOLEAN]
     attr_accessor :is_exception
-
     # Recurrence pattern.             
     # @return [MapiCalendarRecurrencePatternDto]
     attr_accessor :recurrence_pattern
-
     # Time zone information for a recurring meeting.             
     # @return [MapiCalendarTimeZoneDto]
     attr_accessor :time_zone_struct
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -78,46 +71,19 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'appointmentTimeZoneDefinitionRecur')
-        self.appointment_time_zone_definition_recur = attributes[:'appointmentTimeZoneDefinitionRecur']
-      end
-
-      if attributes.has_key?(:'clipEnd')
-        self.clip_end = attributes[:'clipEnd']
-      end
-
-      if attributes.has_key?(:'clipStart')
-        self.clip_start = attributes[:'clipStart']
-      end
-
-      if attributes.has_key?(:'isException')
-        self.is_exception = attributes[:'isException']
-      end
-
-      if attributes.has_key?(:'recurrencePattern')
-        self.recurrence_pattern = attributes[:'recurrencePattern']
-      end
-
-      if attributes.has_key?(:'timeZoneStruct')
-        self.time_zone_struct = attributes[:'timeZoneStruct']
-      end
-    end
-
-    # Initializes the object
     # @param [MapiCalendarTimeZoneDto] appointment_time_zone_definition_recur Time zone information that describes how to convert the meeting date and time on a recurring series to and from UTC.             
     # @param [DateTime] clip_end Date of the last instance.             
     # @param [DateTime] clip_start Date of the first instance.             
     # @param [BOOLEAN] is_exception Value indicating whether the object represents an exception.             
     # @param [MapiCalendarRecurrencePatternDto] recurrence_pattern Recurrence pattern.             
     # @param [MapiCalendarTimeZoneDto] time_zone_struct Time zone information for a recurring meeting.             
-    def initialize(appointment_time_zone_definition_recur=nil, clip_end=nil, clip_start=nil, is_exception=nil, recurrence_pattern=nil, time_zone_struct=nil)
+    def initialize(
+      appointment_time_zone_definition_recur: nil,
+      clip_end: nil,
+      clip_start: nil,
+      is_exception: nil,
+      recurrence_pattern: nil,
+      time_zone_struct: nil)
       self.appointment_time_zone_definition_recur = appointment_time_zone_definition_recur if appointment_time_zone_definition_recur
       self.clip_end = clip_end if clip_end
       self.clip_start = clip_start if clip_start

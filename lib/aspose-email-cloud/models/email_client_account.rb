@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,27 +31,21 @@ module AsposeEmailCloud
     # Mail server host name or IP address             
     # @return [String]
     attr_accessor :host
-
     # Mail server port             
     # @return [Integer]
     attr_accessor :port
-
     # Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @return [String]
     attr_accessor :security_options
-
     # Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @return [String]
     attr_accessor :protocol_type
-
     # Email client account credentials             
     # @return [EmailClientAccountCredentials]
     attr_accessor :credentials
-
     # File with messages cache. Used to provide extra functions, which are not supported by account             
     # @return [StorageFileLocation]
     attr_accessor :cache_file
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -78,46 +71,19 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'host')
-        self.host = attributes[:'host']
-      end
-
-      if attributes.has_key?(:'port')
-        self.port = attributes[:'port']
-      end
-
-      if attributes.has_key?(:'securityOptions')
-        self.security_options = attributes[:'securityOptions']
-      end
-
-      if attributes.has_key?(:'protocolType')
-        self.protocol_type = attributes[:'protocolType']
-      end
-
-      if attributes.has_key?(:'credentials')
-        self.credentials = attributes[:'credentials']
-      end
-
-      if attributes.has_key?(:'cacheFile')
-        self.cache_file = attributes[:'cacheFile']
-      end
-    end
-
-    # Initializes the object
     # @param [String] host Mail server host name or IP address             
     # @param [Integer] port Mail server port             
     # @param [String] security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [EmailClientAccountCredentials] credentials Email client account credentials             
     # @param [StorageFileLocation] cache_file File with messages cache. Used to provide extra functions, which are not supported by account             
-    def initialize(host=nil, port=nil, security_options=nil, protocol_type=nil, credentials=nil, cache_file=nil)
+    def initialize(
+      host: nil,
+      port: nil,
+      security_options: nil,
+      protocol_type: nil,
+      credentials: nil,
+      cache_file: nil)
       self.host = host if host
       self.port = port if port
       self.security_options = security_options if security_options

@@ -23,39 +23,32 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
+  # File Version
   class FileVersion
-    
+    # File or folder name.
     # @return [String]
     attr_accessor :name
-
-    
+    # True if it is a folder.
     # @return [BOOLEAN]
     attr_accessor :is_folder
-
-    
+    # File or folder last modified DateTime.
     # @return [DateTime]
     attr_accessor :modified_date
-
-    
+    # File or folder size.
     # @return [Integer]
     attr_accessor :size
-
-    
+    # File or folder path.
     # @return [String]
     attr_accessor :path
-
-    
+    # File Version ID.
     # @return [String]
     attr_accessor :version_id
-
-    
+    # Specifies whether the file is (true) or is not (false) the latest version of an file.
     # @return [BOOLEAN]
     attr_accessor :is_latest
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -83,51 +76,21 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'isFolder')
-        self.is_folder = attributes[:'isFolder']
-      end
-
-      if attributes.has_key?(:'modifiedDate')
-        self.modified_date = attributes[:'modifiedDate']
-      end
-
-      if attributes.has_key?(:'size')
-        self.size = attributes[:'size']
-      end
-
-      if attributes.has_key?(:'path')
-        self.path = attributes[:'path']
-      end
-
-      if attributes.has_key?(:'versionId')
-        self.version_id = attributes[:'versionId']
-      end
-
-      if attributes.has_key?(:'isLatest')
-        self.is_latest = attributes[:'isLatest']
-      end
-    end
-
-    # Initializes the object
-    # @param [String] name 
-    # @param [BOOLEAN] is_folder 
-    # @param [DateTime] modified_date 
-    # @param [Integer] size 
-    # @param [String] path 
-    # @param [String] version_id 
-    # @param [BOOLEAN] is_latest 
-    def initialize(name=nil, is_folder=nil, modified_date=nil, size=nil, path=nil, version_id=nil, is_latest=nil)
+    # @param [String] name File or folder name.
+    # @param [BOOLEAN] is_folder True if it is a folder.
+    # @param [DateTime] modified_date File or folder last modified DateTime.
+    # @param [Integer] size File or folder size.
+    # @param [String] path File or folder path.
+    # @param [String] version_id File Version ID.
+    # @param [BOOLEAN] is_latest Specifies whether the file is (true) or is not (false) the latest version of an file.
+    def initialize(
+      name: nil,
+      is_folder: nil,
+      modified_date: nil,
+      size: nil,
+      path: nil,
+      version_id: nil,
+      is_latest: nil)
       self.name = name if name
       self.is_folder = is_folder if is_folder
       self.modified_date = modified_date if modified_date

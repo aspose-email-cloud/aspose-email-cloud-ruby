@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,19 +31,15 @@ module AsposeEmailCloud
     # Display name             
     # @return [String]
     attr_accessor :display_name
-
     # Address             
     # @return [String]
     attr_accessor :address
-
     # Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
     # @return [String]
     attr_accessor :participation_status
-
     # The original e-mail address string             
     # @return [String]
     attr_accessor :original_address_string
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -66,36 +61,15 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'displayName')
-        self.display_name = attributes[:'displayName']
-      end
-
-      if attributes.has_key?(:'address')
-        self.address = attributes[:'address']
-      end
-
-      if attributes.has_key?(:'participationStatus')
-        self.participation_status = attributes[:'participationStatus']
-      end
-
-      if attributes.has_key?(:'originalAddressString')
-        self.original_address_string = attributes[:'originalAddressString']
-      end
-    end
-
-    # Initializes the object
     # @param [String] display_name Display name             
     # @param [String] address Address             
     # @param [String] participation_status Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
     # @param [String] original_address_string The original e-mail address string             
-    def initialize(display_name=nil, address=nil, participation_status=nil, original_address_string=nil)
+    def initialize(
+      display_name: nil,
+      address: nil,
+      participation_status: nil,
+      original_address_string: nil)
       self.display_name = display_name if display_name
       self.address = address if address
       self.participation_status = participation_status if participation_status

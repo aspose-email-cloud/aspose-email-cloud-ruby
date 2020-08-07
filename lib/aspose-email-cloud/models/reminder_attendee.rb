@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,7 +31,6 @@ module AsposeEmailCloud
     # Contains the email address.
     # @return [String]
     attr_accessor :address
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -48,21 +46,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'address')
-        self.address = attributes[:'address']
-      end
-    end
-
-    # Initializes the object
     # @param [String] address Contains the email address.
-    def initialize(address=nil)
+    def initialize(
+      address: nil)
       self.address = address if address
     end
 
@@ -70,13 +56,37 @@ module AsposeEmailCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @address.nil?
+        invalid_properties.push('invalid value for "address", address cannot be nil.')
+      end
+
+      if @address.to_s.length < 1
+        invalid_properties.push('invalid value for "address", the character length must be great than or equal to 1.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @address.nil?
+      return false if @address.to_s.length < 1
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] address Value to be assigned
+    def address=(address)
+      if address.nil?
+        fail ArgumentError, 'address cannot be nil'
+      end
+
+      if address.to_s.length < 1
+        fail ArgumentError, 'invalid value for "address", the character length must be great than or equal to 1.'
+      end
+
+      @address = address
     end
 
     # Checks equality by comparing each attribute.

@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -31,11 +30,9 @@ module AsposeEmailCloud
     
     # @return [StorageFileLocation]
     attr_accessor :storage_file
-
     
     # @return [CalendarDto]
     attr_accessor :value
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -53,26 +50,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'storageFile')
-        self.storage_file = attributes[:'storageFile']
-      end
-
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
-      end
-    end
-
-    # Initializes the object
     # @param [StorageFileLocation] storage_file 
     # @param [CalendarDto] value 
-    def initialize(storage_file=nil, value=nil)
+    def initialize(
+      storage_file: nil,
+      value: nil)
       self.storage_file = storage_file if storage_file
       self.value = value if value
     end
@@ -81,12 +63,22 @@ module AsposeEmailCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @storage_file.nil?
+        invalid_properties.push('invalid value for "storage_file", storage_file cannot be nil.')
+      end
+
+      if @value.nil?
+        invalid_properties.push('invalid value for "value", value cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @storage_file.nil?
+      return false if @value.nil?
       true
     end
 

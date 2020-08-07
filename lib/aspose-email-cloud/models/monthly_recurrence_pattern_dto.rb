@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,21 +31,15 @@ module AsposeEmailCloud
     # Number of recurrence units.             
     # @return [Integer]
     attr_accessor :interval
-
     # Number of occurrences of the recurrence pattern.             
     # @return [Integer]
     attr_accessor :occurs
-
     # End date.             
     # @return [DateTime]
     attr_accessor :end_date
-
     # Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
     # @return [String]
     attr_accessor :week_start
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -54,19 +47,15 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
     # @return [String]
     attr_accessor :start_day
-
     # Start offset.             
     # @return [Integer]
     attr_accessor :start_offset
-
     # Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
     # @return [String]
     attr_accessor :start_position
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -96,61 +85,25 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'interval')
-        self.interval = attributes[:'interval']
-      end
-
-      if attributes.has_key?(:'occurs')
-        self.occurs = attributes[:'occurs']
-      end
-
-      if attributes.has_key?(:'endDate')
-        self.end_date = attributes[:'endDate']
-      end
-
-      if attributes.has_key?(:'weekStart')
-        self.week_start = attributes[:'weekStart']
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-
-      if attributes.has_key?(:'startDay')
-        self.start_day = attributes[:'startDay']
-      end
-
-      if attributes.has_key?(:'startOffset')
-        self.start_offset = attributes[:'startOffset']
-      end
-
-      if attributes.has_key?(:'startPosition')
-        self.start_position = attributes[:'startPosition']
-      end
-    end
-
-    # Initializes the object
     # @param [Integer] interval Number of recurrence units.             
     # @param [Integer] occurs Number of occurrences of the recurrence pattern.             
     # @param [DateTime] end_date End date.             
     # @param [String] week_start Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
-    # @param [String] discriminator 
     # @param [String] start_day Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
     # @param [Integer] start_offset Start offset.             
     # @param [String] start_position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
-    def initialize(interval=nil, occurs=nil, end_date=nil, week_start=nil, discriminator=nil, start_day=nil, start_offset=nil, start_position=nil)
+    def initialize(
+      interval: nil,
+      occurs: nil,
+      end_date: nil,
+      week_start: nil,
+      start_day: nil,
+      start_offset: nil,
+      start_position: nil)
       self.interval = interval if interval
       self.occurs = occurs if occurs
       self.end_date = end_date if end_date
       self.week_start = week_start if week_start
-      @discriminator = self.class.name.split('::').last
       self.start_day = start_day if start_day
       self.start_offset = start_offset if start_offset
       self.start_position = start_position if start_position

@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,11 +31,9 @@ module AsposeEmailCloud
     # Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
     # @return [String]
     attr_accessor :category
-
     # Extracted value             
     # @return [String]
     attr_accessor :value
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,26 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'category')
-        self.category = attributes[:'category']
-      end
-
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
-      end
-    end
-
-    # Initializes the object
     # @param [String] category Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
     # @param [String] value Extracted value             
-    def initialize(category=nil, value=nil)
+    def initialize(
+      category: nil,
+      value: nil)
       self.category = category if category
       self.value = value if value
     end

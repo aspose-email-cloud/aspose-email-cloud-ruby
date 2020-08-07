@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,19 +31,15 @@ module AsposeEmailCloud
     # Thread identifier             
     # @return [String]
     attr_accessor :id
-
     # Thread subject             
     # @return [String]
     attr_accessor :subject
-
     # List of messages in thread             
     # @return [Array<EmailDto>]
     attr_accessor :messages
-
     # Thread folder location             
     # @return [String]
     attr_accessor :folder
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -66,38 +61,15 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
-      end
-
-      if attributes.has_key?(:'subject')
-        self.subject = attributes[:'subject']
-      end
-
-      if attributes.has_key?(:'messages')
-        if (value = attributes[:'messages']).is_a?(Array)
-          self.messages = value
-        end
-      end
-
-      if attributes.has_key?(:'folder')
-        self.folder = attributes[:'folder']
-      end
-    end
-
-    # Initializes the object
     # @param [String] id Thread identifier             
     # @param [String] subject Thread subject             
     # @param [Array<EmailDto>] messages List of messages in thread             
     # @param [String] folder Thread folder location             
-    def initialize(id=nil, subject=nil, messages=nil, folder=nil)
+    def initialize(
+      id: nil,
+      subject: nil,
+      messages: nil,
+      folder: nil)
       self.id = id if id
       self.subject = subject if subject
       self.messages = messages if messages

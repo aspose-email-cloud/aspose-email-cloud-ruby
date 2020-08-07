@@ -23,14 +23,11 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
   # Property identified by a string name along with a property set             
   class MapiPidNamePropertyDescriptor
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -38,27 +35,21 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # The name used to refer to the property in the documentation. The prefix of the canonical name identifies the basic characteristics of a property to the implementer. The canonical naming structure uses three categories that are denoted by the following prefixes to the canonical property name: * PidLid prefix: Properties identified by an unsigned 32-bit quantity along with a property set. * PidName prefix: Properties identified by a string name along with a property set. * PidTag prefix: Properties identified by an unsigned 16-bit quantity.             
     # @return [String]
     attr_accessor :canonical_name
-
     # [MS-OXCDATA]: Data Structures Enum, available values: Unspecified, Null, Integer16, Integer32, Floating32, Floating64, Currency, FloatingTime, ErrorCode, Boolean, Integer64, String, String8, Time, Guid, ServerId, Restriction, RuleAction, Binary, MultipleInteger16, MultipleInteger32, MultipleFloating32, MultipleFloating64, MultipleCurrency, MultipleFloatingTime, MultipleBoolean, MultipleInteger64, MultipleString, MultipleString8, MultipleTime, MultipleGuid, MultipleBinary, Object
     # @return [String]
     attr_accessor :data_type
-
     # Indicates if data type contains of multiple values             
     # @return [BOOLEAN]
     attr_accessor :multiple_values_data_type
-
     # A string that identifies the property             
     # @return [String]
     attr_accessor :name
-
     # A GUID that identifies a group of properties with a similar purpose.             
     # @return [String]
     attr_accessor :property_set
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -84,47 +75,17 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-
-      if attributes.has_key?(:'canonicalName')
-        self.canonical_name = attributes[:'canonicalName']
-      end
-
-      if attributes.has_key?(:'dataType')
-        self.data_type = attributes[:'dataType']
-      end
-
-      if attributes.has_key?(:'multipleValuesDataType')
-        self.multiple_values_data_type = attributes[:'multipleValuesDataType']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'propertySet')
-        self.property_set = attributes[:'propertySet']
-      end
-    end
-
-    # Initializes the object
-    # @param [String] discriminator 
     # @param [String] canonical_name The name used to refer to the property in the documentation. The prefix of the canonical name identifies the basic characteristics of a property to the implementer. The canonical naming structure uses three categories that are denoted by the following prefixes to the canonical property name: * PidLid prefix: Properties identified by an unsigned 32-bit quantity along with a property set. * PidName prefix: Properties identified by a string name along with a property set. * PidTag prefix: Properties identified by an unsigned 16-bit quantity.             
     # @param [String] data_type [MS-OXCDATA]: Data Structures Enum, available values: Unspecified, Null, Integer16, Integer32, Floating32, Floating64, Currency, FloatingTime, ErrorCode, Boolean, Integer64, String, String8, Time, Guid, ServerId, Restriction, RuleAction, Binary, MultipleInteger16, MultipleInteger32, MultipleFloating32, MultipleFloating64, MultipleCurrency, MultipleFloatingTime, MultipleBoolean, MultipleInteger64, MultipleString, MultipleString8, MultipleTime, MultipleGuid, MultipleBinary, Object
     # @param [BOOLEAN] multiple_values_data_type Indicates if data type contains of multiple values             
     # @param [String] name A string that identifies the property             
     # @param [String] property_set A GUID that identifies a group of properties with a similar purpose.             
-    def initialize(discriminator=nil, canonical_name=nil, data_type=nil, multiple_values_data_type=nil, name=nil, property_set=nil)
-      @discriminator = self.class.name.split('::').last
+    def initialize(#,
+      canonical_name: nil,
+      data_type: nil,
+      multiple_values_data_type: nil,
+      name: nil,
+      property_set: nil)
       self.canonical_name = canonical_name if canonical_name
       self.data_type = data_type if data_type
       self.multiple_values_data_type = multiple_values_data_type if multiple_values_data_type
