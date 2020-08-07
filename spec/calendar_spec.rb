@@ -11,64 +11,47 @@ module CalendarSpec
   # A set of autotests to check main SDK logic
   describe 'Calendar spec' do
     include_context 'spec base'
-    # This test checks that BaseObject.Type field filled automatically by SDK
-    # and properly used in serialization and deserialization
-    it 'HierarchicalObject serialization and deserialization test', :pipeline do
-      file_name = create_calendar
-      calendar = @api.get_calendar(GetCalendarRequestData.new(file_name, @folder, @storage))
-      expect(calendar.internal_properties.count { |item| item.type == 'PrimitiveObject' })
-        .to be >= 3
-      primitive = calendar.internal_properties.find { |item| item.type == 'PrimitiveObject' }
-      expect(primitive).to be_a(PrimitiveObject)
-      expect(primitive.value).not_to be_nil
-    end
-
-    # Checks that SDK and Backend do not change DateTime during processing.
-    # In most cases developer should carefully serialize and deserialize DateTime
-    it 'Test DateTime serialization and deserialization', :pipeline do
-      start_date = DateTime.now + 2
-      # remove microseconds
-      start_date -= start_date.sec_fraction / (24 * 60 * 60)
-      start_date = start_date.new_offset(0) # offset will be lost anyway
-      calendar_file = create_calendar(start_date)
-      calendar = @api.get_calendar(GetCalendarRequestData.new(calendar_file, @folder, @storage))
-      start_date_property = calendar.internal_properties.find { |item| item.name == 'STARTDATE' }
-      fact_start_date = DateTime.strptime(start_date_property.value, '%Y-%m-%d %H:%M:%SZ')
-      expect(fact_start_date).to eq(start_date)
-    end
 
     it 'Create calendar email', :pipeline do
       calendar = CalendarSpec.calendar_dto
       calendar_file = SecureRandom.uuid.to_s + '.ics'
-      @api.save_calendar_model(
-        SaveCalendarModelRequestData.new(
-          calendar_file,
-          StorageModelRqOfCalendarDto.new(calendar, storage_folder)))
+      @api.calendar.save(
+        CalendarSaveRequest.new(
+          storage_file: StorageFileLocation.new(
+            storage: @storage,
+            folder_path: @folder,
+            file_name: calendar_file),
+          value: calendar,
+          format: 'Ics'))
 
-      exist_result = @api.object_exists(
-        ObjectExistsRequestData.new("#{@folder}/#{calendar_file}", @storage))
+      exist_result = @api.cloud_storage.storage.object_exists(
+        ObjectExistsRequest.new(path: "#{@folder}/#{calendar_file}", storage_name: @storage))
       expect(exist_result.exists).to be true
 
-      alternate = @api.convert_calendar_model_to_alternate(
-        ConvertCalendarModelToAlternateRequestData.new(
-          CalendarDtoAlternateRq.new(calendar, 'Create')))
+      alternate = @api.calendar.as_alternate(
+        CalendarAsAlternateRequest.new(
+          value: calendar,
+          action: 'Create'))
 
-      email = EmailDto.new
-      email.alternate_views = [alternate]
-      email.from = MailAddress.new('From Name', 'cloud.em@yandex.ru')
-      email.to = [MailAddress.new('To Name', 'cloud.em@yandex.ru')]
-      email.subject = 'Some subject'
-      email.body = 'Some body'
+      email = EmailDto.new(
+        alternate_views: [alternate],
+        from: MailAddress.new(display_name: 'From Name', address: 'cloud.em@yandex.ru'),
+        to: [MailAddress.new(display_name: 'To Name', address: 'cloud.em@yandex.ru')],
+        subject: 'Some subject',
+        body: 'Some body')
 
       email_file = "#{SecureRandom.uuid}.eml"
-      @api.save_email_model(
-        SaveEmailModelRequestData.new(
-          'Eml', email_file,
-          StorageModelRqOfEmailDto.new(
-            email, storage_folder)))
+      @api.email.save(
+        EmailSaveRequest.new(
+          storage_file: StorageFileLocation.new(
+            storage: @storage,
+            folder_path: @folder,
+            file_name: email_file),
+          value: email,
+          format: 'Eml'))
 
-      downloaded = @api.download_file(
-        DownloadFileRequestData.new("#{@folder}/#{email_file}", @storage))
+      downloaded = @api.cloud_storage.file.download_file(
+        DownloadFileRequest.new(path: "#{@folder}/#{email_file}", storage_name: @storage))
       content = IO.read(downloaded)
       expect(content).to include('cloud.em@yandex.ru')
     end
@@ -77,25 +60,24 @@ module CalendarSpec
       # Create DTO with specified location:
       # We can convert this DTO to a MAPI or ICS file:
       calendar = CalendarSpec.calendar_dto
-      mapi_file = @api.convert_calendar_model_to_file(
-        ConvertCalendarModelToFileRequestData.new('Msg', calendar))
+      mapi_file = @api.calendar.as_file(
+        CalendarAsFileRequest.new(format: 'Msg', value: calendar))
       # Let's convert this file to an ICS format:
-      ics_file = @api.convert_calendar(
-        ConvertCalendarRequestData.new('Ics', mapi_file))
+      ics_file = @api.calendar.convert(
+        CalendarConvertRequest.new(format: 'Ics', file: mapi_file))
       # ICS is a text format. We can read file content to a string and check that it
       # contains specified location as a substring:
       ics_content = IO.read(ics_file)
       expect(ics_content).to include calendar.location
       # We can also convert the file back to a CalendarDto object:
-      dto = @api.get_calendar_file_as_model(
-        GetCalendarFileAsModelRequestData.new(ics_file))
+      dto = @api.calendar.from_file(
+        CalendarFromFileRequest.new(ics_file))
       expect(dto.location).to eq calendar.location
     end
 
     it 'Convert model to MAPI model', :pipeline do
       calendar = CalendarSpec.calendar_dto
-      mapi_calendar = @api.convert_calendar_model_to_mapi_model(
-        ConvertCalendarModelToMapiModelRequestData.new(calendar))
+      mapi_calendar = @api.calendar.as_mapi(calendar)
       expect(calendar.location).to eq mapi_calendar.location
       expect('MapiCalendarDailyRecurrencePatternDto')
         .to eq mapi_calendar.recurrence.recurrence_pattern.discriminator
@@ -104,15 +86,15 @@ module CalendarSpec
 
   # @return [CalendarDto]
   def self.calendar_dto
-    calendar = CalendarDto.new
-    calendar.location = 'Some location'
-    calendar.summary = 'Some summary'
-    calendar.description = 'Some description'
-    calendar.start_date = DateTime.now
-    calendar.end_date = DateTime.now + 1
-    calendar.organizer = MailAddress.new nil, 'organizer@aspose.com'
-    calendar.attendees = [MailAddress.new(nil, 'attendee@aspose.com')]
-    calendar.recurrence = DailyRecurrencePatternDto.new(nil, 10, nil, 'Monday')
-    calendar
+    CalendarDto.new(
+      location: 'Some location',
+      summary: 'Some summary',
+      description: 'Some description',
+      start_date: DateTime.now,
+      end_date: DateTime.now,
+      organizer: MailAddress.new(address: 'organizer@aspose.com'),
+      attendees: [MailAddress.new(address: 'attendee@aspose.com')],
+      # TODO Add model inheritance support
+      recurrence: DailyRecurrencePatternDto.new(occurs: 10, week_start: 'Monday'))
   end
 end

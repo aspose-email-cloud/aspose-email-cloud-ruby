@@ -21,71 +21,25 @@ include AsposeEmailCloud
 RSpec.shared_context 'spec base', shared_context: :metadata do
   before(:all) do
     api_base_url = ENV['apiBaseUrl']
-    @api = EmailApi.new(ENV['appKey'], ENV['appSid'], api_base_url)
+    @api = EmailCloud.new(ENV['appKey'], ENV['appSid'], api_base_url)
     auth_url = ENV['authUrl']
     if auth_url
-      @api.api_client.config.scheme = 'http' if api_base_url.include? 'http:'
-      @api.api_client.config.auth_url = auth_url
+      @api.api_invoker.api_client.config.scheme = 'http' if api_base_url.include? 'http:'
+      @api.api_invoker.api_client.config.auth_url = auth_url
     end
-    @api.api_client.config.logger.level = 'warn'
+    @api.api_invoker.api_client.config.logger.level = 'warn'
     @folder = SecureRandom.uuid.to_s
     @storage = 'First Storage'
-    @api.create_folder(CreateFolderRequestData.new(@folder, @storage))
+    @api.cloud_storage.folder.create_folder(
+      CreateFolderRequest.new(path: @folder, storage_name: @storage))
   end
 
   after(:all) do
-    @api.delete_folder(DeleteFolderRequestData.new(@folder, @storage, true))
-  end
-
-  def create_calendar(start_date = nil)
-    file_name = SecureRandom.uuid.to_s + '.ics'
-    start_date = start_date.nil? ? DateTime.now + 1 : start_date
-    end_date = start_date + 1
-    @api.create_calendar(
-      CreateCalendarRequestData.new(
-        file_name,
-        HierarchicalObjectRequest.new(
-          calendar_hierarchical_object(start_date, end_date),
-          storage_folder)))
-    file_name
-  end
-
-  def calendar_hierarchical_object(start_date, end_date)
-    HierarchicalObject.new(
-      'CALENDAR', nil, [
-        PrimitiveObject.new('LOCATION', nil, 'location'),
-        hierarchical_date(start_date, 'STARTDATE'),
-        hierarchical_date(end_date, 'ENDDATE'),
-        hierarchical_address('organizer@aspose.com', 'Piu Man', 'ORGANIZER'),
-        HierarchicalObject.new(
-          'ATTENDEES', nil, [
-            indexed_hierarchical_address(
-              'attendee@aspose.com', 'Attendee Name', 0, 'ATTENDEE')])])
-  end
-
-  def hierarchical_date(date, property_name)
-    PrimitiveObject.new(property_name, nil,
-                        date.strftime('%Y-%m-%d %H:%M:%SZ'))
-  end
-
-  def hierarchical_address(address, display_name, property_name)
-    HierarchicalObject.new(
-      property_name, nil,
-      hierarchical_email_address(address, display_name))
-  end
-
-  def indexed_hierarchical_address(address, display_name, index, property_name)
-    IndexedHierarchicalObject.new(
-      property_name, nil, index,
-      hierarchical_email_address(address, display_name))
-  end
-
-  def hierarchical_email_address(address, display_name)
-    [PrimitiveObject.new('ADDRESS', nil, address),
-     PrimitiveObject.new('DISPLAYNAME', nil, display_name)]
+    @api.cloud_storage.folder.delete_folder(
+      DeleteFolderRequest.new(path: @folder, storage_name: @storage, recursive: true))
   end
 
   def storage_folder
-    StorageFolderLocation.new(@storage, @folder)
+    StorageFolderLocation.new(storage: @storage, folder_path: @folder)
   end
 end
