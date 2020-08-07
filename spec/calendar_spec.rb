@@ -71,7 +71,7 @@ module CalendarSpec
       expect(ics_content).to include calendar.location
       # We can also convert the file back to a CalendarDto object:
       dto = @api.calendar.from_file(
-        CalendarFromFileRequest.new(ics_file))
+        CalendarFromFileRequest.new(file: ics_file))
       expect(dto.location).to eq calendar.location
     end
 
