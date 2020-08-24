@@ -1,8 +1,12 @@
 # CalendarApi
 
-<a name="calendar_as_alternate"></a>
-# **calendar_as_alternate**
-> calendar_as_alternate(request)
+            
+<a name="as_alternate"></a>
+# as_alternate
+
+```ruby
+as_alternate(request)
+```
 
 Convert iCalendar to AlternateView             
 
@@ -10,20 +14,18 @@ Convert iCalendar to AlternateView
 
 [**AlternateView**](AlternateView.md)
 
-### Request Parameters
+### request Parameter
+
+See parameter model documentation at [CalendarAsAlternateRequest](CalendarAsAlternateRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="as_file"></a>
+# as_file
+
 ```ruby
-request = AsposeEmailCloud::CalendarAsAlternateRequestData.new(request)
+as_file(request)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**CalendarAsAlternateRequest**](CalendarAsAlternateRequest.md)| iCalendar to AlternateView request | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="calendar_as_file"></a>
-# **calendar_as_file**
-> calendar_as_file(request)
 
 Converts calendar model to specified format and returns as file.             
 
@@ -31,20 +33,18 @@ Converts calendar model to specified format and returns as file.
 
 **file**
 
-### Request Parameters
+### request Parameter
+
+See parameter model documentation at [CalendarAsFileRequest](CalendarAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="as_mapi"></a>
+# as_mapi
+
 ```ruby
-request = AsposeEmailCloud::CalendarAsFileRequestData.new(request)
+as_mapi(calendar_dto)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**CalendarAsFileRequest**](CalendarAsFileRequest.md)| Calendar model and format to convert. | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="calendar_as_mapi"></a>
-# **calendar_as_mapi**
-> calendar_as_mapi(request)
 
 Converts CalendarDto to MapiCalendarDto.             
 
@@ -52,20 +52,18 @@ Converts CalendarDto to MapiCalendarDto.
 
 [**MapiCalendarDto**](MapiCalendarDto.md)
 
-### Request Parameters
+### calendar_dto Parameter
+
+See parameter model documentation at [CalendarDto](CalendarDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="convert"></a>
+# convert
+
 ```ruby
-request = AsposeEmailCloud::CalendarAsMapiRequestData.new(calendar_dto)
+convert(request)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **calendar_dto** | [**CalendarDto**](CalendarDto.md)| iCalendar model calendar representation. | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="calendar_convert"></a>
-# **calendar_convert**
-> calendar_convert(request)
 
 Converts calendar document to specified format and returns as file.             
 
@@ -73,21 +71,26 @@ Converts calendar document to specified format and returns as file.
 
 **file**
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::CalendarConvertRequestData.new(format, file)
+AsposeEmailCloud::CalendarConvertRequest.new(
+    format,
+    file)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| File format. Enum, available values: Ics, Msg | 
- **file** | **File**| File to convert | 
+ **format** | **String** | File format. Enum, available values: Ics, Msg | 
+ **file** | **File** | File to convert | 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="from_file"></a>
+# from_file
 
-<a name="calendar_from_file"></a>
-# **calendar_from_file**
-> calendar_from_file(request)
+```ruby
+from_file(request)
+```
 
 Converts calendar document to a model representation.             
 
@@ -95,20 +98,24 @@ Converts calendar document to a model representation.
 
 [**CalendarDto**](CalendarDto.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::CalendarFromFileRequestData.new(file)
+AsposeEmailCloud::CalendarFromFileRequest.new(
+    file)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **File**| File to convert | 
+ **file** | **File** | File to convert | 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="get"></a>
+# get
 
-<a name="calendar_get"></a>
-# **calendar_get**
-> calendar_get(request)
+```ruby
+get(request)
+```
 
 Get calendar file from storage.             
 
@@ -116,22 +123,28 @@ Get calendar file from storage.
 
 [**CalendarDto**](CalendarDto.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::CalendarGetRequestData.new(file_name, folder=folder, storage=storage)
+AsposeEmailCloud::CalendarGetRequest.new(
+    file_name,
+    folder,
+    storage)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **String**| iCalendar file name in storage. | 
- **folder** | **String**| Path to folder in storage. | [optional] 
- **storage** | **String**| Storage name. | [optional] 
+ **file_name** | **String** | iCalendar file name in storage. | 
+ **folder** | **String** | Path to folder in storage. | [optional] 
+ **storage** | **String** | Storage name. | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="get_as_alternate"></a>
+# get_as_alternate
 
-<a name="calendar_get_as_alternate"></a>
-# **calendar_get_as_alternate**
-> calendar_get_as_alternate(request)
+```ruby
+get_as_alternate(request)
+```
 
 Get iCalendar from storage as AlternateView             
 
@@ -139,24 +152,32 @@ Get iCalendar from storage as AlternateView
 
 [**AlternateView**](AlternateView.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::CalendarGetAsAlternateRequestData.new(file_name, calendar_action, sequence_id=sequence_id, folder=folder, storage=storage)
+AsposeEmailCloud::CalendarGetAsAlternateRequest.new(
+    file_name,
+    calendar_action,
+    sequence_id,
+    folder,
+    storage)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **String**| iCalendar file name in storage | 
- **calendar_action** | **String**| iCalendar method type Enum, available values: Create, Update, Cancel | 
- **sequence_id** | **String**| The sequence id | [optional] 
- **folder** | **String**| Path to folder in storage | [optional] 
- **storage** | **String**| Storage name | [optional] 
+ **file_name** | **String** | iCalendar file name in storage | 
+ **calendar_action** | **String** | iCalendar method type Enum, available values: Create, Update, Cancel | 
+ **sequence_id** | **String** | The sequence id | [optional] 
+ **folder** | **String** | Path to folder in storage | [optional] 
+ **storage** | **String** | Storage name | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="get_as_file"></a>
+# get_as_file
 
-<a name="calendar_get_as_file"></a>
-# **calendar_get_as_file**
-> calendar_get_as_file(request)
+```ruby
+get_as_file(request)
+```
 
 Converts calendar document from storage to specified format and returns as file.             
 
@@ -164,23 +185,30 @@ Converts calendar document from storage to specified format and returns as file.
 
 **file**
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::CalendarGetAsFileRequestData.new(file_name, format, storage=storage, folder=folder)
+AsposeEmailCloud::CalendarGetAsFileRequest.new(
+    file_name,
+    format,
+    storage,
+    folder)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **String**| Calendar document file name. | 
- **format** | **String**| File format. Enum, available values: Ics, Msg | 
- **storage** | **String**| Storage name. | [optional] 
- **folder** | **String**| Path to folder in storage. | [optional] 
+ **file_name** | **String** | Calendar document file name. | 
+ **format** | **String** | File format. Enum, available values: Ics, Msg | 
+ **storage** | **String** | Storage name. | [optional] 
+ **folder** | **String** | Path to folder in storage. | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="get_list"></a>
+# get_list
 
-<a name="calendar_get_list"></a>
-# **calendar_get_list**
-> calendar_get_list(request)
+```ruby
+get_list(request)
+```
 
 Get iCalendar list from storage folder.             
 
@@ -188,23 +216,30 @@ Get iCalendar list from storage folder.
 
 [**CalendarStorageList**](CalendarStorageList.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::CalendarGetListRequestData.new(folder, items_per_page=items_per_page, page_number=page_number, storage=storage)
+AsposeEmailCloud::CalendarGetListRequest.new(
+    folder,
+    items_per_page,
+    page_number,
+    storage)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder** | **String**| Path to folder in storage. | 
- **items_per_page** | **Integer**| Count of items on page. | [optional] [default to 10]
- **page_number** | **Integer**| Page number. | [optional] [default to 0]
- **storage** | **String**| Storage name. | [optional] 
+ **folder** | **String** | Path to folder in storage. | 
+ **items_per_page** | **Integer** | Count of items on page. | [optional] [default to 10]
+ **page_number** | **Integer** | Page number. | [optional] [default to 0]
+ **storage** | **String** | Storage name. | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="save"></a>
+# save
 
-<a name="calendar_save"></a>
-# **calendar_save**
-> calendar_save(request)
+```ruby
+save(request)
+```
 
 Save iCalendar             
 
@@ -212,14 +247,9 @@ Save iCalendar
 
 nil (empty response body)
 
-### Request Parameters
-```ruby
-request = AsposeEmailCloud::CalendarSaveRequestData.new(request)
-```
+### request Parameter
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**CalendarSaveRequest**](CalendarSaveRequest.md)| iCalendar create/update request | 
+See parameter model documentation at [CalendarSaveRequest](CalendarSaveRequest.md)
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

@@ -1,4 +1,4 @@
-# models.MapiContactPhotoDto
+# AsposeEmailCloud::MapiContactPhotoDto
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 
  Parent class: [ContactPhoto](ContactPhoto.md)
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+[[Back to Model list]](Models.md) [[Back to README]](README.md)
 
 

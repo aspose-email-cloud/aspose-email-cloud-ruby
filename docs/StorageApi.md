@@ -1,8 +1,12 @@
 # StorageApi
 
+            
 <a name="get_disc_usage"></a>
-# **get_disc_usage**
-> get_disc_usage(request)
+# get_disc_usage
+
+```ruby
+get_disc_usage(request)
+```
 
 Get disc usage
 
@@ -10,20 +14,24 @@ Get disc usage
 
 [**DiscUsage**](DiscUsage.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::GetDiscUsageRequestData.new(storage_name=storage_name)
+AsposeEmailCloud::GetDiscUsageRequest.new(
+    storage_name)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_name** | **String**| Storage name | [optional] 
+ **storage_name** | **String** | Storage name | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="get_file_versions"></a>
-# **get_file_versions**
-> get_file_versions(request)
+# get_file_versions
+
+```ruby
+get_file_versions(request)
+```
 
 Get file versions
 
@@ -31,21 +39,26 @@ Get file versions
 
 [**FileVersions**](FileVersions.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::GetFileVersionsRequestData.new(path, storage_name=storage_name)
+AsposeEmailCloud::GetFileVersionsRequest.new(
+    path,
+    storage_name)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| File path e.g. &#39;/file.ext&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
+ **path** | **String** | File path e.g. &#39;/file.ext&#39; | 
+ **storage_name** | **String** | Storage name | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="object_exists"></a>
-# **object_exists**
-> object_exists(request)
+# object_exists
+
+```ruby
+object_exists(request)
+```
 
 Check if file or folder exists
 
@@ -53,22 +66,28 @@ Check if file or folder exists
 
 [**ObjectExist**](ObjectExist.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::ObjectExistsRequestData.new(path, storage_name=storage_name, version_id=version_id)
+AsposeEmailCloud::ObjectExistsRequest.new(
+    path,
+    storage_name,
+    version_id)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String**| File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; | 
- **storage_name** | **String**| Storage name | [optional] 
- **version_id** | **String**| File version ID | [optional] 
+ **path** | **String** | File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; | 
+ **storage_name** | **String** | Storage name | [optional] 
+ **version_id** | **String** | File version ID | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="exists"></a>
+# exists
 
-<a name="storage_exists"></a>
-# **storage_exists**
-> storage_exists(request)
+```ruby
+exists(request)
+```
 
 Check if storage exists
 
@@ -76,14 +95,15 @@ Check if storage exists
 
 [**StorageExist**](StorageExist.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::StorageExistsRequestData.new(storage_name)
+AsposeEmailCloud::StorageExistsRequest.new(
+    storage_name)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_name** | **String**| Storage name | 
+ **storage_name** | **String** | Storage name | 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

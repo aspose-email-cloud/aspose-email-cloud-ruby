@@ -1,8 +1,12 @@
 # MapiMessageApi
 
-<a name="mapi_message_as_email_dto"></a>
-# **mapi_message_as_email_dto**
-> mapi_message_as_email_dto(request)
+            
+<a name="as_email_dto"></a>
+# as_email_dto
+
+```ruby
+as_email_dto(mapi_message)
+```
 
 Converts MAPI message model to EmailDto model             
 
@@ -10,20 +14,18 @@ Converts MAPI message model to EmailDto model
 
 [**EmailDto**](EmailDto.md)
 
-### Request Parameters
+### mapi_message Parameter
+
+See parameter model documentation at [MapiMessageDto](MapiMessageDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="as_file"></a>
+# as_file
+
 ```ruby
-request = AsposeEmailCloud::MapiMessageAsEmailDtoRequestData.new(mapi_message)
+as_file(request)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mapi_message** | [**MapiMessageDto**](MapiMessageDto.md)| MAPI message model to convert | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="mapi_message_as_file"></a>
-# **mapi_message_as_file**
-> mapi_message_as_file(request)
 
 Converts MAPI message model to specified format and returns as file.             
 
@@ -31,20 +33,18 @@ Converts MAPI message model to specified format and returns as file.
 
 **file**
 
-### Request Parameters
+### request Parameter
+
+See parameter model documentation at [MapiMessageAsFileRequest](MapiMessageAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="from_file"></a>
+# from_file
+
 ```ruby
-request = AsposeEmailCloud::MapiMessageAsFileRequestData.new(request)
+from_file(request)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**MapiMessageAsFileRequest**](MapiMessageAsFileRequest.md)| MAPI message model to convert. | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="mapi_message_from_file"></a>
-# **mapi_message_from_file**
-> mapi_message_from_file(request)
 
 Converts email file to a MAPI model representation             
 
@@ -52,21 +52,26 @@ Converts email file to a MAPI model representation
 
 [**MapiMessageDto**](MapiMessageDto.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::MapiMessageFromFileRequestData.new(format, file)
+AsposeEmailCloud::MapiMessageFromFileRequest.new(
+    format,
+    file)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
- **file** | **File**| File to convert | 
+ **format** | **String** | File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **file** | **File** | File to convert | 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="get"></a>
+# get
 
-<a name="mapi_message_get"></a>
-# **mapi_message_get**
-> mapi_message_get(request)
+```ruby
+get(request)
+```
 
 Get MAPI message document.             
 
@@ -74,23 +79,30 @@ Get MAPI message document.
 
 [**MapiMessageDto**](MapiMessageDto.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::MapiMessageGetRequestData.new(format, file_name, folder=folder, storage=storage)
+AsposeEmailCloud::MapiMessageGetRequest.new(
+    format,
+    file_name,
+    folder,
+    storage)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
- **file_name** | **String**| Email document file name. | 
- **folder** | **String**| Path to folder in storage. | [optional] 
- **storage** | **String**| Storage name. | [optional] 
+ **format** | **String** | Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **file_name** | **String** | Email document file name. | 
+ **folder** | **String** | Path to folder in storage. | [optional] 
+ **storage** | **String** | Storage name. | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="save"></a>
+# save
 
-<a name="mapi_message_save"></a>
-# **mapi_message_save**
-> mapi_message_save(request)
+```ruby
+save(request)
+```
 
 Save MAPI message to storage.             
 
@@ -98,14 +110,9 @@ Save MAPI message to storage.
 
 nil (empty response body)
 
-### Request Parameters
-```ruby
-request = AsposeEmailCloud::MapiMessageSaveRequestData.new(request)
-```
+### request Parameter
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**MapiMessageSaveRequest**](MapiMessageSaveRequest.md)| Message create/update request. | 
+See parameter model documentation at [MapiMessageSaveRequest](MapiMessageSaveRequest.md)
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

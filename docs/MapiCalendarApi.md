@@ -1,8 +1,12 @@
 # MapiCalendarApi
 
-<a name="mapi_calendar_as_calendar_dto"></a>
-# **mapi_calendar_as_calendar_dto**
-> mapi_calendar_as_calendar_dto(request)
+            
+<a name="as_calendar_dto"></a>
+# as_calendar_dto
+
+```ruby
+as_calendar_dto(mapi_calendar_dto)
+```
 
 Converts MAPI calendar model to CalendarDto model.             
 
@@ -10,20 +14,18 @@ Converts MAPI calendar model to CalendarDto model.
 
 [**CalendarDto**](CalendarDto.md)
 
-### Request Parameters
+### mapi_calendar_dto Parameter
+
+See parameter model documentation at [MapiCalendarDto](MapiCalendarDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="as_file"></a>
+# as_file
+
 ```ruby
-request = AsposeEmailCloud::MapiCalendarAsCalendarDtoRequestData.new(mapi_calendar_dto)
+as_file(request)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mapi_calendar_dto** | [**MapiCalendarDto**](MapiCalendarDto.md)| MAPI calendar model to convert. | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="mapi_calendar_as_file"></a>
-# **mapi_calendar_as_file**
-> mapi_calendar_as_file(request)
 
 Converts MAPI calendar model to specified format and returns as file.             
 
@@ -31,20 +33,18 @@ Converts MAPI calendar model to specified format and returns as file.
 
 **file**
 
-### Request Parameters
+### request Parameter
+
+See parameter model documentation at [MapiCalendarAsFileRequest](MapiCalendarAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="from_file"></a>
+# from_file
+
 ```ruby
-request = AsposeEmailCloud::MapiCalendarAsFileRequestData.new(request)
+from_file(request)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**MapiCalendarAsFileRequest**](MapiCalendarAsFileRequest.md)| MAPI calendar model to convert. | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="mapi_calendar_from_file"></a>
-# **mapi_calendar_from_file**
-> mapi_calendar_from_file(request)
 
 Converts calendar file to a MAPI model representation.             
 
@@ -52,20 +52,24 @@ Converts calendar file to a MAPI model representation.
 
 [**MapiCalendarDto**](MapiCalendarDto.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::MapiCalendarFromFileRequestData.new(file)
+AsposeEmailCloud::MapiCalendarFromFileRequest.new(
+    file)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **File**| File to convert | 
+ **file** | **File** | File to convert | 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="get"></a>
+# get
 
-<a name="mapi_calendar_get"></a>
-# **mapi_calendar_get**
-> mapi_calendar_get(request)
+```ruby
+get(request)
+```
 
 Get MAPI calendar document.             
 
@@ -73,22 +77,28 @@ Get MAPI calendar document.
 
 [**MapiCalendarDto**](MapiCalendarDto.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::MapiCalendarGetRequestData.new(file_name, folder=folder, storage=storage)
+AsposeEmailCloud::MapiCalendarGetRequest.new(
+    file_name,
+    folder,
+    storage)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **String**| Calendar file name in storage. | 
- **folder** | **String**| Path to folder in storage. | [optional] 
- **storage** | **String**| Storage name. | [optional] 
+ **file_name** | **String** | Calendar file name in storage. | 
+ **folder** | **String** | Path to folder in storage. | [optional] 
+ **storage** | **String** | Storage name. | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="save"></a>
+# save
 
-<a name="mapi_calendar_save"></a>
-# **mapi_calendar_save**
-> mapi_calendar_save(request)
+```ruby
+save(request)
+```
 
 Save MAPI Calendar to storage.             
 
@@ -96,14 +106,9 @@ Save MAPI Calendar to storage.
 
 nil (empty response body)
 
-### Request Parameters
-```ruby
-request = AsposeEmailCloud::MapiCalendarSaveRequestData.new(request)
-```
+### request Parameter
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**MapiCalendarSaveRequest**](MapiCalendarSaveRequest.md)| Calendar create/update request. | 
+See parameter model documentation at [MapiCalendarSaveRequest](MapiCalendarSaveRequest.md)
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

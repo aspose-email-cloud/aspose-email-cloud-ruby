@@ -1,8 +1,12 @@
 # EmailConfigApi
 
-<a name="email_config_discover"></a>
-# **email_config_discover**
-> email_config_discover(request)
+            
+<a name="discover"></a>
+# discover
+
+```ruby
+discover(request)
+```
 
 Discover email accounts by email address. Does not validate discovered accounts.             
 
@@ -10,21 +14,26 @@ Discover email accounts by email address. Does not validate discovered accounts.
 
 [**EmailAccountConfigList**](EmailAccountConfigList.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::EmailConfigDiscoverRequestData.new(address, fast_processing=fast_processing)
+AsposeEmailCloud::EmailConfigDiscoverRequest.new(
+    address,
+    fast_processing)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address** | **String**| Email address. | 
- **fast_processing** | **BOOLEAN**| Turns on fast processing. All discover systems will run in parallel. First discovered result will be returned.              | [optional] [default to false]
+ **address** | **String** | Email address. | 
+ **fast_processing** | **BOOLEAN** | Turns on fast processing. All discover systems will run in parallel. First discovered result will be returned.              | [optional] [default to false]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="discover_oauth"></a>
+# discover_oauth
 
-<a name="email_config_discover_oauth"></a>
-# **email_config_discover_oauth**
-> email_config_discover_oauth(request)
+```ruby
+discover_oauth(request)
+```
 
 Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.             
 
@@ -32,20 +41,18 @@ Discover email accounts by email address. Validates discovered accounts using OA
 
 [**EmailAccountConfigList**](EmailAccountConfigList.md)
 
-### Request Parameters
+### request Parameter
+
+See parameter model documentation at [EmailConfigDiscoverOauthRequest](EmailConfigDiscoverOauthRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="discover_password"></a>
+# discover_password
+
 ```ruby
-request = AsposeEmailCloud::EmailConfigDiscoverOauthRequestData.new(request)
+discover_password(request)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**EmailConfigDiscoverOauthRequest**](EmailConfigDiscoverOauthRequest.md)| Discover email configuration request. | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="email_config_discover_password"></a>
-# **email_config_discover_password**
-> email_config_discover_password(request)
 
 Discover email accounts by email address. Validates discovered accounts using login and password.             
 
@@ -53,14 +60,9 @@ Discover email accounts by email address. Validates discovered accounts using lo
 
 [**EmailAccountConfigList**](EmailAccountConfigList.md)
 
-### Request Parameters
-```ruby
-request = AsposeEmailCloud::EmailConfigDiscoverPasswordRequestData.new(request)
-```
+### request Parameter
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**EmailConfigDiscoverPasswordRequest**](EmailConfigDiscoverPasswordRequest.md)| Discover email configuration request. | 
+See parameter model documentation at [EmailConfigDiscoverPasswordRequest](EmailConfigDiscoverPasswordRequest.md)
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

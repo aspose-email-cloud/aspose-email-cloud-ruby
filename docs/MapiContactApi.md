@@ -1,8 +1,12 @@
 # MapiContactApi
 
-<a name="mapi_contact_as_contact_dto"></a>
-# **mapi_contact_as_contact_dto**
-> mapi_contact_as_contact_dto(request)
+            
+<a name="as_contact_dto"></a>
+# as_contact_dto
+
+```ruby
+as_contact_dto(mapi_contact_dto)
+```
 
 Converts MAPI contact model to ContactDto model.             
 
@@ -10,20 +14,18 @@ Converts MAPI contact model to ContactDto model.
 
 [**ContactDto**](ContactDto.md)
 
-### Request Parameters
+### mapi_contact_dto Parameter
+
+See parameter model documentation at [MapiContactDto](MapiContactDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="as_file"></a>
+# as_file
+
 ```ruby
-request = AsposeEmailCloud::MapiContactAsContactDtoRequestData.new(mapi_contact_dto)
+as_file(request)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mapi_contact_dto** | [**MapiContactDto**](MapiContactDto.md)| MAPI contact model to convert. | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="mapi_contact_as_file"></a>
-# **mapi_contact_as_file**
-> mapi_contact_as_file(request)
 
 Converts MAPI contact model to specified format and returns as file.             
 
@@ -31,20 +33,18 @@ Converts MAPI contact model to specified format and returns as file.
 
 **file**
 
-### Request Parameters
+### request Parameter
+
+See parameter model documentation at [MapiContactAsFileRequest](MapiContactAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="from_file"></a>
+# from_file
+
 ```ruby
-request = AsposeEmailCloud::MapiContactAsFileRequestData.new(request)
+from_file(request)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**MapiContactAsFileRequest**](MapiContactAsFileRequest.md)| MAPI contact model to convert. | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="mapi_contact_from_file"></a>
-# **mapi_contact_from_file**
-> mapi_contact_from_file(request)
 
 Converts contact file to a MAPI model representation.             
 
@@ -52,21 +52,26 @@ Converts contact file to a MAPI model representation.
 
 [**MapiContactDto**](MapiContactDto.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::MapiContactFromFileRequestData.new(format, file)
+AsposeEmailCloud::MapiContactFromFileRequest.new(
+    format,
+    file)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| File format Enum, available values: VCard, WebDav, Msg | 
- **file** | **File**| File to convert | 
+ **format** | **String** | File format Enum, available values: VCard, WebDav, Msg | 
+ **file** | **File** | File to convert | 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="get"></a>
+# get
 
-<a name="mapi_contact_get"></a>
-# **mapi_contact_get**
-> mapi_contact_get(request)
+```ruby
+get(request)
+```
 
 Get MAPI contact document.             
 
@@ -74,23 +79,30 @@ Get MAPI contact document.
 
 [**MapiContactDto**](MapiContactDto.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::MapiContactGetRequestData.new(format, file_name, folder=folder, storage=storage)
+AsposeEmailCloud::MapiContactGetRequest.new(
+    format,
+    file_name,
+    folder,
+    storage)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Contact document format. Enum, available values: VCard, WebDav, Msg | 
- **file_name** | **String**| Contact document file name. | 
- **folder** | **String**| Path to folder in storage. | [optional] 
- **storage** | **String**| Storage name. | [optional] 
+ **format** | **String** | Contact document format. Enum, available values: VCard, WebDav, Msg | 
+ **file_name** | **String** | Contact document file name. | 
+ **folder** | **String** | Path to folder in storage. | [optional] 
+ **storage** | **String** | Storage name. | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="save"></a>
+# save
 
-<a name="mapi_contact_save"></a>
-# **mapi_contact_save**
-> mapi_contact_save(request)
+```ruby
+save(request)
+```
 
 Save MAPI Contact to storage.             
 
@@ -98,14 +110,9 @@ Save MAPI Contact to storage.
 
 nil (empty response body)
 
-### Request Parameters
-```ruby
-request = AsposeEmailCloud::MapiContactSaveRequestData.new(request)
-```
+### request Parameter
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**MapiContactSaveRequest**](MapiContactSaveRequest.md)| Create/Update contact request. | 
+See parameter model documentation at [MapiContactSaveRequest](MapiContactSaveRequest.md)
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

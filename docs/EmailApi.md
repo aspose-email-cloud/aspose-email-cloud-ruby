@@ -1,8 +1,12 @@
 # EmailApi
 
-<a name="email_as_file"></a>
-# **email_as_file**
-> email_as_file(request)
+            
+<a name="as_file"></a>
+# as_file
+
+```ruby
+as_file(request)
+```
 
 Converts Email model to specified format and returns as file.             
 
@@ -10,20 +14,18 @@ Converts Email model to specified format and returns as file.
 
 **file**
 
-### Request Parameters
+### request Parameter
+
+See parameter model documentation at [EmailAsFileRequest](EmailAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="as_mapi"></a>
+# as_mapi
+
 ```ruby
-request = AsposeEmailCloud::EmailAsFileRequestData.new(request)
+as_mapi(email_dto)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**EmailAsFileRequest**](EmailAsFileRequest.md)| Email model and format to convert. | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="email_as_mapi"></a>
-# **email_as_mapi**
-> email_as_mapi(request)
 
 Converts EmailDto to MapiMessageDto.             
 
@@ -31,20 +33,18 @@ Converts EmailDto to MapiMessageDto.
 
 [**MapiMessageDto**](MapiMessageDto.md)
 
-### Request Parameters
+### email_dto Parameter
+
+See parameter model documentation at [EmailDto](EmailDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="convert"></a>
+# convert
+
 ```ruby
-request = AsposeEmailCloud::EmailAsMapiRequestData.new(email_dto)
+convert(request)
 ```
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email_dto** | [**EmailDto**](EmailDto.md)| Email model to convert | 
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-<a name="email_convert"></a>
-# **email_convert**
-> email_convert(request)
 
 Converts email document to specified format and returns as file             
 
@@ -52,21 +52,26 @@ Converts email document to specified format and returns as file
 
 **file**
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::EmailConvertRequestData.new(format, file)
+AsposeEmailCloud::EmailConvertRequest.new(
+    format,
+    file)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
- **file** | **File**| File to convert | 
+ **format** | **String** | File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **file** | **File** | File to convert | 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="from_file"></a>
+# from_file
 
-<a name="email_from_file"></a>
-# **email_from_file**
-> email_from_file(request)
+```ruby
+from_file(request)
+```
 
 Converts email document to a model representation             
 
@@ -74,21 +79,26 @@ Converts email document to a model representation
 
 [**EmailDto**](EmailDto.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::EmailFromFileRequestData.new(format, file)
+AsposeEmailCloud::EmailFromFileRequest.new(
+    format,
+    file)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**|  Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
- **file** | **File**| File to convert | 
+ **format** | **String** |  Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **file** | **File** | File to convert | 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="get"></a>
+# get
 
-<a name="email_get"></a>
-# **email_get**
-> email_get(request)
+```ruby
+get(request)
+```
 
 Get email document from storage.             
 
@@ -96,23 +106,30 @@ Get email document from storage.
 
 [**EmailDto**](EmailDto.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::EmailGetRequestData.new(format, file_name, folder=folder, storage=storage)
+AsposeEmailCloud::EmailGetRequest.new(
+    format,
+    file_name,
+    folder,
+    storage)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
- **file_name** | **String**| Email document file name. | 
- **folder** | **String**| Path to folder in storage. | [optional] 
- **storage** | **String**| Storage name. | [optional] 
+ **format** | **String** | Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **file_name** | **String** | Email document file name. | 
+ **folder** | **String** | Path to folder in storage. | [optional] 
+ **storage** | **String** | Storage name. | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="get_as_file"></a>
+# get_as_file
 
-<a name="email_get_as_file"></a>
-# **email_get_as_file**
-> email_get_as_file(request)
+```ruby
+get_as_file(request)
+```
 
 Converts email document from storage to specified format and returns as file             
 
@@ -120,23 +137,30 @@ Converts email document from storage to specified format and returns as file
 
 **file**
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::EmailGetAsFileRequestData.new(file_name, format, storage=storage, folder=folder)
+AsposeEmailCloud::EmailGetAsFileRequest.new(
+    file_name,
+    format,
+    storage,
+    folder)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **String**| Email document file name | 
- **format** | **String**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
- **storage** | **String**| Storage name | [optional] 
- **folder** | **String**| Path to folder in storage | [optional] 
+ **file_name** | **String** | Email document file name | 
+ **format** | **String** | File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **storage** | **String** | Storage name | [optional] 
+ **folder** | **String** | Path to folder in storage | [optional] 
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="get_list"></a>
+# get_list
 
-<a name="email_get_list"></a>
-# **email_get_list**
-> email_get_list(request)
+```ruby
+get_list(request)
+```
 
 Get email list from storage folder.             
 
@@ -144,24 +168,32 @@ Get email list from storage folder.
 
 [**EmailStorageList**](EmailStorageList.md)
 
-### Request Parameters
+### request Parameter
 ```ruby
-request = AsposeEmailCloud::EmailGetListRequestData.new(format, folder=folder, storage=storage, items_per_page=items_per_page, page_number=page_number)
+AsposeEmailCloud::EmailGetListRequest.new(
+    format,
+    folder,
+    storage,
+    items_per_page,
+    page_number)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
- **folder** | **String**| Path to folder in storage. | [optional] 
- **storage** | **String**| Storage name. | [optional] 
- **items_per_page** | **Integer**| Count of items on page. | [optional] [default to 10]
- **page_number** | **Integer**| Page number. | [optional] [default to 0]
+ **format** | **String** | Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **folder** | **String** | Path to folder in storage. | [optional] 
+ **storage** | **String** | Storage name. | [optional] 
+ **items_per_page** | **Integer** | Count of items on page. | [optional] [default to 10]
+ **page_number** | **Integer** | Page number. | [optional] [default to 0]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+<a name="save"></a>
+# save
 
-<a name="email_save"></a>
-# **email_save**
-> email_save(request)
+```ruby
+save(request)
+```
 
 Save email document to storage.             
 
@@ -169,14 +201,9 @@ Save email document to storage.
 
 nil (empty response body)
 
-### Request Parameters
-```ruby
-request = AsposeEmailCloud::EmailSaveRequestData.new(request)
-```
+### request Parameter
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**EmailSaveRequest**](EmailSaveRequest.md)| Email document create/update request. | 
+See parameter model documentation at [EmailSaveRequest](EmailSaveRequest.md)
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

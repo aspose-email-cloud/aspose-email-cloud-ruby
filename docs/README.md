@@ -3,11 +3,11 @@
 `EmailCloud` is the main API class. It provides an access to all of Aspose.Email Cloud functions.
 `app_key` and `app_sid` credentials should be obtained from [dashboard](https://dashboard.aspose.cloud/#/) to use `EmailCloud`:
 
-```python
+```ruby
 app_key = 'Your App Key'
 app_sid = 'Your App SID'
 
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 ```
 
 All Aspose.Email Cloud functions are divided into groups and represented as `EmailCloud` fields:
