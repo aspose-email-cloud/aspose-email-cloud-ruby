@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Email document list.             
-  class EmailList
+  class EmailList < ListResponseOfEmailDto
     
     # @return [Array<EmailDto>]
     attr_accessor :value

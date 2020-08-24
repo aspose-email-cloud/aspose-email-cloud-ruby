@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Yearly recurrence pattern.             
-  class YearlyRecurrencePatternDto
+  class YearlyRecurrencePatternDto < RecurrencePatternDto
     # Number of recurrence units.             
     # @return [Integer]
     attr_accessor :interval

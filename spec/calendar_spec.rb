@@ -94,7 +94,7 @@ module CalendarSpec
       end_date: DateTime.now,
       organizer: MailAddress.new(address: 'organizer@aspose.com'),
       attendees: [MailAddress.new(address: 'attendee@aspose.com')],
-      # TODO Add model inheritance support
+      # TODO: Add model inheritance support
       recurrence: DailyRecurrencePatternDto.new(occurs: 10, week_start: 'Monday'))
   end
 end

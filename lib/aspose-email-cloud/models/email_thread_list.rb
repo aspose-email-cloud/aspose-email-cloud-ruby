@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # List of email threads             
-  class EmailThreadList
+  class EmailThreadList < ListResponseOfEmailThread
     
     # @return [Array<EmailThread>]
     attr_accessor :value

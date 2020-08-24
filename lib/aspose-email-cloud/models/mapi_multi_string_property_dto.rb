@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Mapi property with Multiple String values             
-  class MapiMultiStringPropertyDto
+  class MapiMultiStringPropertyDto < MapiPropertyDto
     # Property descriptor             
     # @return [MapiPropertyDescriptor]
     attr_accessor :descriptor

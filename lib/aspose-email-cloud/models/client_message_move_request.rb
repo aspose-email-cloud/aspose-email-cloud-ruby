@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Email client move message request.             
-  class ClientMessageMoveRequest
+  class ClientMessageMoveRequest < ClientMessageBaseRequest
     # Email client account configuration location on storage.             
     # @return [StorageFileLocation]
     attr_accessor :account_location

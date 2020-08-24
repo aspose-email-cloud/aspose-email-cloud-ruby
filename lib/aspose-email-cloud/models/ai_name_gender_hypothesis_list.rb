@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Hypotheses about person's gender             
-  class AiNameGenderHypothesisList
+  class AiNameGenderHypothesisList < ListResponseOfAiNameGenderHypothesis
     
     # @return [Array<AiNameGenderHypothesis>]
     attr_accessor :value

@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Contains data and type of contact's photo.             
-  class MapiContactPhotoDto
+  class MapiContactPhotoDto < ContactPhoto
     # MapiContact photo image format. Enum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
     # @return [String]
     attr_accessor :photo_image_format

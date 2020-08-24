@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Save MapiCalendar to storage request.             
-  class MapiCalendarSaveRequest
+  class MapiCalendarSaveRequest < StorageModelOfMapiCalendarDto
     
     # @return [StorageFileLocation]
     attr_accessor :storage_file

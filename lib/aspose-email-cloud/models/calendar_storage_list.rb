@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # iCalendar models list with corresponding storage locations.             
-  class CalendarStorageList
+  class CalendarStorageList < ListResponseOfStorageModelOfCalendarDto
     
     # @return [Array<StorageModelOfCalendarDto>]
     attr_accessor :value

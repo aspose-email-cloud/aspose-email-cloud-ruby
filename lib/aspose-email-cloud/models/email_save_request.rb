@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Email save to storage request             
-  class EmailSaveRequest
+  class EmailSaveRequest < StorageModelOfEmailDto
     
     # @return [StorageFileLocation]
     attr_accessor :storage_file

@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Two parsed names to match request             
-  class AiNameMatchParsedRequest
+  class AiNameMatchParsedRequest < AiNameParsedRequest
     # AiName parser cultural context             
     # @return [AiNameCulturalContext]
     attr_accessor :cultural_context

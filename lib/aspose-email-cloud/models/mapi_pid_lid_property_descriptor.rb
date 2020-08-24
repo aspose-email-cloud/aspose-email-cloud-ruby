@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Property identified by an unsigned 32-bit quantity along with a property set             
-  class MapiPidLidPropertyDescriptor
+  class MapiPidLidPropertyDescriptor < MapiPidPropertyDescriptor
     def discriminator #getter method
       self.class.name.split('::').last
     end

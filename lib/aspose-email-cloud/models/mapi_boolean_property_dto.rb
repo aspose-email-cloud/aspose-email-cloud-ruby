@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Mapi property with Boolean value             
-  class MapiBooleanPropertyDto
+  class MapiBooleanPropertyDto < MapiPropertyDto
     # Property descriptor             
     # @return [MapiPropertyDescriptor]
     attr_accessor :descriptor

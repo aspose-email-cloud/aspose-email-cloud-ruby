@@ -26,7 +26,7 @@
 require 'date'
 
 module AsposeEmailCloud
-  class EmailConfigDiscoverPasswordRequest
+  class EmailConfigDiscoverPasswordRequest < DiscoverEmailConfigRequest
     # Email address to discover.             
     # @return [String]
     attr_accessor :address

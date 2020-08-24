@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # List of email client folders.             
-  class MailServerFolderList
+  class MailServerFolderList < ListResponseOfMailServerFolder
     
     # @return [Array<MailServerFolder>]
     attr_accessor :value

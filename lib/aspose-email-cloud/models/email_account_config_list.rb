@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # List of email accounts             
-  class EmailAccountConfigList
+  class EmailAccountConfigList < ListResponseOfEmailAccountConfig
     
     # @return [Array<EmailAccountConfig>]
     attr_accessor :value

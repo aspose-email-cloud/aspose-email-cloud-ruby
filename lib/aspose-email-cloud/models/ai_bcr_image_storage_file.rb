@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Image from storage for recognition             
-  class AiBcrImageStorageFile
+  class AiBcrImageStorageFile < AiBcrImage
     # Determines that image contains single VCard or more.             
     # @return [BOOLEAN]
     attr_accessor :is_single

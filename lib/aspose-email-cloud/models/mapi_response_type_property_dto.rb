@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Mapi property with response type value             
-  class MapiResponseTypePropertyDto
+  class MapiResponseTypePropertyDto < MapiPropertyDto
     # Property descriptor             
     # @return [MapiPropertyDescriptor]
     attr_accessor :descriptor

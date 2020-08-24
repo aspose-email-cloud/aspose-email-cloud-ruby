@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Mark thread messages as read or unread request.             
-  class ClientThreadSetIsReadRequest
+  class ClientThreadSetIsReadRequest < ClientThreadBaseRequest
     # Email client account configuration location on storage.             
     # @return [StorageFileLocation]
     attr_accessor :account_location

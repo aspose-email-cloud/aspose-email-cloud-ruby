@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Extracted name list.             
-  class AiNameExtractedList
+  class AiNameExtractedList < ListResponseOfAiNameExtracted
     
     # @return [Array<AiNameExtracted>]
     attr_accessor :value

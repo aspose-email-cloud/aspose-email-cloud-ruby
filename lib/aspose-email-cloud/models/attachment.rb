@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Document attachment.             
-  class Attachment
+  class Attachment < AttachmentBase
     # Attachment file content as Base64 string.             
     # @return [String]
     attr_accessor :base64_data

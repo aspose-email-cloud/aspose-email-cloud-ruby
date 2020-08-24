@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Mapi property with DateTime value             
-  class MapiDateTimePropertyDto
+  class MapiDateTimePropertyDto < MapiPropertyDto
     # Property descriptor             
     # @return [MapiPropertyDescriptor]
     attr_accessor :descriptor

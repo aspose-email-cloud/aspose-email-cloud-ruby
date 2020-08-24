@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Mapi property with PhysicalAddressIndexType value             
-  class MapiPhysicalAddressIndexPropertyDto
+  class MapiPhysicalAddressIndexPropertyDto < MapiPropertyDto
     # Property descriptor             
     # @return [MapiPropertyDescriptor]
     attr_accessor :descriptor

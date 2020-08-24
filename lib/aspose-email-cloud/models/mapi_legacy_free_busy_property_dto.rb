@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Mapi property with LegacyFreeBusyType value             
-  class MapiLegacyFreeBusyPropertyDto
+  class MapiLegacyFreeBusyPropertyDto < MapiPropertyDto
     # Property descriptor             
     # @return [MapiPropertyDescriptor]
     attr_accessor :descriptor

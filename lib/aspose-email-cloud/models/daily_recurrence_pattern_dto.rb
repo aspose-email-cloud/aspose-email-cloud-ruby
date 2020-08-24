@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Daily recurrence.             
-  class DailyRecurrencePatternDto
+  class DailyRecurrencePatternDto < RecurrencePatternDto
     # Number of recurrence units.             
     # @return [Integer]
     attr_accessor :interval

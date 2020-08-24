@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Represents the regenerating recurrence pattern that specifies how many days, weeks, months or years after the completion of the current task the next occurrence will be due.             
-  class TaskRegeneratingPatternDto
+  class TaskRegeneratingPatternDto < RecurrencePatternDto
     # Number of recurrence units.             
     # @return [Integer]
     attr_accessor :interval

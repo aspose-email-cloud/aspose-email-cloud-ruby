@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # File Version
-  class FileVersion
+  class FileVersion < StorageFile
     # File or folder name.
     # @return [String]
     attr_accessor :name

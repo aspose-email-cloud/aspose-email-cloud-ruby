@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Represents email client account OAuth 2.0 credentials             
-  class EmailClientAccountOauthCredentials
+  class EmailClientAccountOauthCredentials < EmailClientAccountCredentials
     # Email client account login             
     # @return [String]
     attr_accessor :login

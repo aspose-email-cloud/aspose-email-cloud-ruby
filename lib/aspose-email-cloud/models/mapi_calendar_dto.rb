@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Represents the mapi calendar object             
-  class MapiCalendarDto
+  class MapiCalendarDto < MapiMessageItemBaseDto
     # Message item attachments.             
     # @return [Array<MapiAttachmentDto>]
     attr_accessor :attachments

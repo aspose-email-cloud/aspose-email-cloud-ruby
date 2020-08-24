@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # List of name components             
-  class AiNameComponentList
+  class AiNameComponentList < ListResponseOfAiNameComponent
     
     # @return [Array<AiNameComponent>]
     attr_accessor :value

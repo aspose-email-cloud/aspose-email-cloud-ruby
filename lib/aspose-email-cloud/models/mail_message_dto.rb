@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Represents email message, stored as an EmailDto object.             
-  class MailMessageDto
+  class MailMessageDto < MailMessageBase
     def discriminator #getter method
       self.class.name.split('::').last
     end

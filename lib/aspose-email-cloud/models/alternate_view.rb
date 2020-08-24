@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Represents the format to view a message.             
-  class AlternateView
+  class AlternateView < AttachmentBase
     # Attachment file content as Base64 string.             
     # @return [String]
     attr_accessor :base64_data

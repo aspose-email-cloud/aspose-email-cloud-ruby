@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Contact models list with corresponding storage locations.             
-  class ContactStorageList
+  class ContactStorageList < ListResponseOfStorageModelOfContactDto
     
     # @return [Array<StorageModelOfContactDto>]
     attr_accessor :value

@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # MapiContact save to storage request.             
-  class MapiContactSaveRequest
+  class MapiContactSaveRequest < StorageModelOfMapiContactDto
     
     # @return [StorageFileLocation]
     attr_accessor :storage_file

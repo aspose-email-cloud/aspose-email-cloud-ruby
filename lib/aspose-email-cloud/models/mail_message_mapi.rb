@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Email message represented as MAPI object.             
-  class MailMessageMapi
+  class MailMessageMapi < MailMessageBase
     def discriminator #getter method
       self.class.name.split('::').last
     end

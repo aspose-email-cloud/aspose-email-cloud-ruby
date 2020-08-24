@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Email client multi account save request.             
-  class ClientAccountSaveMultiRequest
+  class ClientAccountSaveMultiRequest < StorageModelOfEmailClientMultiAccount
     
     # @return [StorageFileLocation]
     attr_accessor :storage_file

@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Represents an Outlook Message format document.             
-  class MapiMessageDto
+  class MapiMessageDto < MapiMessageItemBaseDto
     # Message item attachments.             
     # @return [Array<MapiAttachmentDto>]
     attr_accessor :attachments

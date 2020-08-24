@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # A storage file location information             
-  class StorageFileLocation
+  class StorageFileLocation < StorageFolderLocation
     # A storage name             
     # @return [String]
     attr_accessor :storage

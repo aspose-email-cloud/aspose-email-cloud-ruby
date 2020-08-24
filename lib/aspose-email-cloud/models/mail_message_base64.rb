@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Email message represented as file, encoded to Base64 format.             
-  class MailMessageBase64
+  class MailMessageBase64 < MailMessageBase
     def discriminator #getter method
       self.class.name.split('::').last
     end

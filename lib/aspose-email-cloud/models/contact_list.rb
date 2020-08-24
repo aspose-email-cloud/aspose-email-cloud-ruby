@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # List of VCard documents             
-  class ContactList
+  class ContactList < ListResponseOfContactDto
     
     # @return [Array<ContactDto>]
     attr_accessor :value

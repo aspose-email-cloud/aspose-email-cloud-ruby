@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Email Client create folder request.             
-  class ClientFolderCreateRequest
+  class ClientFolderCreateRequest < ClientAccountBaseRequest
     # Email client account configuration location on storage.             
     # @return [StorageFileLocation]
     attr_accessor :account_location

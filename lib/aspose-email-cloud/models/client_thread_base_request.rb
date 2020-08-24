@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Email client thread request.             
-  class ClientThreadBaseRequest
+  class ClientThreadBaseRequest < ClientAccountBaseRequest
     # Email client account configuration location on storage.             
     # @return [StorageFileLocation]
     attr_accessor :account_location

@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Mapi pid property descriptor base class             
-  class MapiPidPropertyDescriptor
+  class MapiPidPropertyDescriptor < MapiPropertyDescriptor
     def discriminator #getter method
       self.class.name.split('::').last
     end

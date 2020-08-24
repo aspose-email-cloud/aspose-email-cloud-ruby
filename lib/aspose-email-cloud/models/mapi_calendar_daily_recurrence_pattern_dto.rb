@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Represents the daily recurrence pattern of the mapi calendar.             
-  class MapiCalendarDailyRecurrencePatternDto
+  class MapiCalendarDailyRecurrencePatternDto < MapiCalendarRecurrencePatternDto
     # Enumerated the calendar type of the mapi recurrence Enum, available values: Default, CalGregorian, CalGregorianUs, CalJapan, CalTaiwan, CalKorea, CalHijri, CalThai, CalHebrew, CalGregorianMeFrench, CalGregorianArabic, CalGregorianXLitEnglish, CalGregorianXLitFrench, CalLunarJapanese, CalChineseLunar, CalSaka, CalLunarEtoChn, CalLunarEtoKor, CalLunarRokuyou, CalLunarKorean, CalUmAlQura
     # @return [String]
     attr_accessor :calendar_type

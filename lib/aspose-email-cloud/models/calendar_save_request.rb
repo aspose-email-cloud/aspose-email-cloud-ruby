@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Save iCalendar to storage request.             
-  class CalendarSaveRequest
+  class CalendarSaveRequest < StorageModelOfCalendarDto
     
     # @return [StorageFileLocation]
     attr_accessor :storage_file

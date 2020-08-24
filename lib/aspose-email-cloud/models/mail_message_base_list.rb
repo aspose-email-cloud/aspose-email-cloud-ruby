@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # List of messages.             
-  class MailMessageBaseList
+  class MailMessageBaseList < ListResponseOfMailMessageBase
     
     # @return [Array<MailMessageBase>]
     attr_accessor :value

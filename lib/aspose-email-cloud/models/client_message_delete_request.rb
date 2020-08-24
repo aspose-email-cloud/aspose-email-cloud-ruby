@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Email client delete message request.             
-  class ClientMessageDeleteRequest
+  class ClientMessageDeleteRequest < ClientMessageBaseRequest
     # Email client account configuration location on storage.             
     # @return [StorageFileLocation]
     attr_accessor :account_location

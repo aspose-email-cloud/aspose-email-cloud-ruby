@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   # Represents an embedded resource in a message.             
-  class LinkedResource
+  class LinkedResource < AttachmentBase
     # Attachment file content as Base64 string.             
     # @return [String]
     attr_accessor :base64_data
