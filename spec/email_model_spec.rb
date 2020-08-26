@@ -16,7 +16,7 @@ module EmailModelSpec
       mapi_file = @api.email.as_file(
         EmailAsFileRequest.new(format: 'Msg', value: email))
       eml_file = @api.email.convert(
-        EmailConvertRequest.new(from_format: 'Msg',to_format: 'Eml', file: mapi_file))
+        EmailConvertRequest.new(from_format: 'Msg', to_format: 'Eml', file: mapi_file))
       eml_content = IO.read(eml_file)
       expect(eml_content).to include email.from.address
       dto = @api.email.from_file(
