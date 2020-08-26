@@ -46,7 +46,6 @@ module AsposeEmailCloud
       @api_invoker = api_invoker
     end
 
-    # Copy folder
     # @param [CopyFolderRequest] request Request object.
     # @return [nil]
     def copy_folder(request)
@@ -55,7 +54,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Create the folder
     # @param [CreateFolderRequest] request Request object.
     # @return [nil]
     def create_folder(request)
@@ -64,7 +62,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Delete folder
     # @param [DeleteFolderRequest] request Request object.
     # @return [nil]
     def delete_folder(request)
@@ -73,7 +70,6 @@ module AsposeEmailCloud
       nil
     end
 
-    # Get all files and folders within a folder
     # @param [GetFilesListRequest] request Request object.
     # @return [FilesList]
     def get_files_list(request)
@@ -81,7 +77,6 @@ module AsposeEmailCloud
       @api_invoker.make_request(http_request, :GET, 'FilesList')
     end
 
-    # Move folder
     # @param [MoveFolderRequest] request Request object.
     # @return [nil]
     def move_folder(request)

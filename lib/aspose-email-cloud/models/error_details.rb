@@ -26,12 +26,11 @@
 require 'date'
 
 module AsposeEmailCloud
-  # The error details
   class ErrorDetails
-    # The request id
+    
     # @return [String]
     attr_accessor :request_id
-    # Date
+    
     # @return [DateTime]
     attr_accessor :date
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -51,8 +50,8 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] request_id The request id
-    # @param [DateTime] date Date
+    # @param [String] request_id 
+    # @param [DateTime] date 
     def initialize(
       request_id: nil,
       date: nil)

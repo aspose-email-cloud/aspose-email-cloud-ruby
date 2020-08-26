@@ -29,12 +29,11 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for get_disc_usage operation.
   class GetDiscUsageRequest < EmailRequest
-    # Storage name
+    # 
     # @return [String]
     attr_accessor :storage_name
 
-    # Get disc usage
-    # @param [String] storage_name Storage name
+    # @param [String] storage_name 
     def initialize(storage_name: nil)
       self.storage_name = storage_name if storage_name
     end

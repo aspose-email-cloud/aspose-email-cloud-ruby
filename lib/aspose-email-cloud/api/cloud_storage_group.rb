@@ -30,13 +30,13 @@ module AsposeEmailCloud
   # Cloud file storage operations.
   class CloudStorageGroup
     
-    # File operations controller
+    # 
     attr_reader :file
     
-    # Folder operations controller
+    # 
     attr_reader :folder
     
-    # Storage operations controller
+    # 
     attr_reader :storage
     
 
