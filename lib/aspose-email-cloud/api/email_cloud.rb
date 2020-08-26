@@ -31,33 +31,33 @@ module AsposeEmailCloud
     attr_reader :api_invoker
 
     
-    # iCalendar document operations.             
+    # iCalendar document operations.
     attr_reader :calendar
     
-    # Contact document operations. Supported formats: VCard, MSG, WebDav             
+    # Contact document operations. Supported formats: VCard, MSG, WebDav
     attr_reader :contact
     
-    # Email document (*.eml) operations.             
+    # Email document (*.eml) operations.
     attr_reader :email
     
-    # Check email address is disposable operations             
+    # Check email address is disposable operations
     attr_reader :disposable_email
     
-    # Email server configuration discovery.             
+    # Email server configuration discovery.
     attr_reader :email_config
     
 
     
-    # MAPI operations.             
+    # MAPI operations.
     attr_reader :mapi
     
-    # Builtin Email client operations.             
+    # Builtin Email client operations.
     attr_reader :client
     
-    # AI powered operations.             
+    # AI powered operations.
     attr_reader :ai
     
-    # Cloud file storage operations.             
+    # Cloud file storage operations.
     attr_reader :cloud_storage
     
 

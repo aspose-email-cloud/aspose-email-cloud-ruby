@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="email_api.rb">
+#  <copyright company="Aspose" file="client_group.rb">
 #    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,19 +27,19 @@
 
 module AsposeEmailCloud
 
-  # Builtin Email client operations.             
+  # Builtin Email client operations.
   class ClientGroup
     
-    # Email server account for built-in client operations.             
+    # Email server account for built-in client operations.
     attr_reader :account
     
-    # Email client folder operations.             
+    # Email client folder operations.
     attr_reader :folder
     
-    # Email client message operations.             
+    # Email client message operations.
     attr_reader :message
     
-    # Email client thread operations.             
+    # Email client thread operations.
     attr_reader :thread
     
 

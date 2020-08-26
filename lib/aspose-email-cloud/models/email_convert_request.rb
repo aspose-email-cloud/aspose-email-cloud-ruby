@@ -29,25 +29,34 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for email_convert operation.
   class EmailConvertRequest < EmailRequest
-    # File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+    # File format to convert to Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @return [String]
-    attr_accessor :format
+    attr_accessor :from_format
+    # File format to convert from Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+    # @return [String]
+    attr_accessor :to_format
     # File to convert
     # @return [File]
     attr_accessor :file
 
     # Converts email document to specified format and returns as file             
-    # @param [String] format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+    # @param [String] from_format File format to convert to Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+    # @param [String] to_format File format to convert from Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
     # @param [File] file File to convert
-    def initialize(format:, file:)
-      self.format = format if format
+    def initialize(from_format:, to_format:, file:)
+      self.from_format = from_format if from_format
+      self.to_format = to_format if to_format
       self.file = file if file
     end
 
     def to_http_info(api_client)
-      # verify the required parameter 'format' is set
-      if api_client.config.client_side_validation && self.format.nil?
-        raise ArgumentError, "Missing the required parameter 'format' when calling EmailApi.convert"
+      # verify the required parameter 'from_format' is set
+      if api_client.config.client_side_validation && self.from_format.nil?
+        raise ArgumentError, "Missing the required parameter 'from_format' when calling EmailApi.convert"
+      end
+      # verify the required parameter 'to_format' is set
+      if api_client.config.client_side_validation && self.to_format.nil?
+        raise ArgumentError, "Missing the required parameter 'to_format' when calling EmailApi.convert"
       end
       # verify the required parameter 'file' is set
       if api_client.config.client_side_validation && self.file.nil?
@@ -58,7 +67,8 @@ module AsposeEmailCloud
 
       # query parameters
       query_params = {}
-      query_params[:format] = self.format
+      query_params[:fromFormat] = self.from_format
+      query_params[:toFormat] = self.to_format
 
       # form parameters
       form_params = {}

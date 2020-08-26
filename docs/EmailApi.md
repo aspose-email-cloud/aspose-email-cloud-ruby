@@ -55,13 +55,15 @@ Converts email document to specified format and returns as file
 ### request Parameter
 ```ruby
 AsposeEmailCloud::EmailConvertRequest.new(
-    format,
+    from_format,
+    to_format,
     file)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String** | File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **from_format** | **String** | File format to convert to Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **to_format** | **String** | File format to convert from Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
  **file** | **File** | File to convert | 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

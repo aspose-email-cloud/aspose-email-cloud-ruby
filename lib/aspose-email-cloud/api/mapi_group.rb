@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="email_api.rb">
+#  <copyright company="Aspose" file="mapi_group.rb">
 #    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,16 +27,16 @@
 
 module AsposeEmailCloud
 
-  # MAPI operations.             
+  # MAPI operations.
   class MapiGroup
     
-    # MAPI calendar operations.             
+    # MAPI calendar operations.
     attr_reader :calendar
     
-    # MAPI contact operations             
+    # MAPI contact operations
     attr_reader :contact
     
-    # MAPI message operations             
+    # MAPI message operations
     attr_reader :message
     
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="email_api.rb">
+#  <copyright company="Aspose" file="ai_group.rb">
 #    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,13 +27,13 @@
 
 module AsposeEmailCloud
 
-  # AI powered operations.             
+  # AI powered operations.
   class AiGroup
     
-    # AI Business card recognition operations.             
+    # AI Business card recognition operations.
     attr_reader :bcr
     
-    # AI Name operations.             
+    # AI Name operations.
     attr_reader :name
     
 

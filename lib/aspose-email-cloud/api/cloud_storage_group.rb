@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="email_api.rb">
+#  <copyright company="Aspose" file="cloud_storage_group.rb">
 #    Copyright (c) 2018-2020 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -27,7 +27,7 @@
 
 module AsposeEmailCloud
 
-  # Cloud file storage operations.             
+  # Cloud file storage operations.
   class CloudStorageGroup
     
     # File operations controller
