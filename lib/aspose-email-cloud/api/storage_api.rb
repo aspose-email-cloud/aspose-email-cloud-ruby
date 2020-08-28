@@ -46,6 +46,7 @@ module AsposeEmailCloud
       @api_invoker = api_invoker
     end
 
+    # Get disc usage
     # @param [GetDiscUsageRequest] request Request object.
     # @return [DiscUsage]
     def get_disc_usage(request)
@@ -53,6 +54,7 @@ module AsposeEmailCloud
       @api_invoker.make_request(http_request, :GET, 'DiscUsage')
     end
 
+    # Get file versions
     # @param [GetFileVersionsRequest] request Request object.
     # @return [FileVersions]
     def get_file_versions(request)
@@ -60,6 +62,7 @@ module AsposeEmailCloud
       @api_invoker.make_request(http_request, :GET, 'FileVersions')
     end
 
+    # Check if file or folder exists
     # @param [ObjectExistsRequest] request Request object.
     # @return [ObjectExist]
     def object_exists(request)
@@ -67,6 +70,7 @@ module AsposeEmailCloud
       @api_invoker.make_request(http_request, :GET, 'ObjectExist')
     end
 
+    # Check if storage exists
     # @param [StorageExistsRequest] request Request object.
     # @return [StorageExist]
     def exists(request)

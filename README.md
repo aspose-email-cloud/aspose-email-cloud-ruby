@@ -1,33 +1,36 @@
-﻿# Aspose.Email Cloud SDK for Ruby
+# Aspose.Email Cloud SDK for Ruby
 [![Gem](https://img.shields.io/gem/v/aspose_email_cloud)](https://rubygems.org/gems/aspose_email_cloud) [![License](https://img.shields.io/github/license/aspose-email-cloud/aspose-email-cloud-ruby)](https://rubygems.org/gems/aspose_email_cloud) ![tests](https://github.com/aspose-email-cloud/aspose-email-cloud-ruby/workflows/tests/badge.svg)
 
 This repository contains Aspose.Email Cloud SDK for Ruby source code. This SDK allows you to work with Aspose.Email Cloud REST APIs in your Ruby applications quickly and easily, with zero initial cost.
 
-[Aspose.Email Cloud home](https://products.aspose.cloud/email/family "Aspose.Email Cloud")  
-[API Reference](https://apireference.aspose.cloud/email/)  
+[Aspose.Email Cloud home](https://products.aspose.cloud/email/family "Aspose.Email Cloud")
+[API Reference](https://apireference.aspose.cloud/email/)
 
 # Key features
 Aspose.Email Cloud is a REST API for creating email applications that work with standard email file formats. This SDK:
 - Lets developers manipulate different emails’ formats such as Outlook MSG, EML, VCard, and iCalendar files
 - Lets developers manipulate different emails' formats such as Outlook MSG, EML, VCard, and iCalendar files
 - Supports AI functions:
-    - The Business card recognition
-    - The Name API for parsing and handling personal names
+- The Business card recognition
+- The Name API for parsing and handling personal names
 - Has a built-in email client. This client provides:
-    - Unified REST API for different email protocols: IMAP, POP3, SMTP, EWS, WebDav
-    - Virtual multi-account
-    - Message threads (POP3 accounts are also supported)
+- Unified REST API for different email protocols: IMAP, POP3, SMTP, EWS, WebDav
+- Virtual multi-account
+- Message threads (POP3 accounts are also supported)
 - Email configuration discovery
 - Disposable email address detection
 
-## New features in version 20.7
-- New MAPI message files API with models:
-    - `MapiMessageDto` - represents the Microsoft Outlook message.
-    - `MapiCalendarDto` - represents the Microsoft Outlook calendar object.
-    - `MapiContactDto` - represents the Microsoft Outlook contact information. 
-- Improved Recurrence pattern support for CalendarDto.
+## New features in version 20.9
 
-See [Release notes](https://docs.aspose.cloud/display/emailcloud/Aspose.Email+Cloud+20.7+Release+Notes)
+Aspose.Email Cloud SDK 20.9.0 is based on a new v4.0 REST API.
+
+- All SDK functions are divided into groups (Email, Calendar, Contact, Client, Ai, Mapi, etc.).
+- Unified file API provided for supported file types (Save, Get, Convert, AsFile, FromFile, AsMapi/AsDto).
+- HierarchicalObject based API is removed.
+- All models are stored in one folder/namespace.
+- The request models are simplified.
+
+See [Release notes](https://docs.aspose.cloud/display/emailcloud/Aspose.Email+Cloud+20.9+Release+Notes).
 
 ## How to use the SDK?
 The complete source code is available in the GIT repository.
@@ -64,11 +67,11 @@ api = EmailApi.new('Your App Key', 'Your App Sid')
 Use `AiBcrParseModel` method to parse business card image to VCard DTO:
 ```ruby
 image = File.open('/tmp/alex.png', 'rb') do |f|
-    bin = f.read
-    Base64.encode64(bin)
+bin = f.read
+Base64.encode64(bin)
 end
 result = api.ai_bcr_parse_model(AiBcrParseModelRequestData.new(
-    AiBcrBase64Rq.new(nil, [AiBcrBase64Image.new(true, image)])))
+AiBcrBase64Rq.new(nil, [AiBcrBase64Image.new(true, image)])))
 contact = result.value[0]
 ```
 

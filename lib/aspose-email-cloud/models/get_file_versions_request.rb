@@ -29,15 +29,16 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for get_file_versions operation.
   class GetFileVersionsRequest < EmailRequest
-    # 
+    # File path e.g. &#39;/file.ext&#39;
     # @return [String]
     attr_accessor :path
-    # 
+    # Storage name
     # @return [String]
     attr_accessor :storage_name
 
-    # @param [String] path 
-    # @param [String] storage_name 
+    # Get file versions
+    # @param [String] path File path e.g. &#39;/file.ext&#39;
+    # @param [String] storage_name Storage name
     def initialize(path:, storage_name: nil)
       self.path = path if path
       self.storage_name = storage_name if storage_name

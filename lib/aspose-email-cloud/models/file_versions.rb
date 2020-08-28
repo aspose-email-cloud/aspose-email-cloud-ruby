@@ -26,8 +26,9 @@
 require 'date'
 
 module AsposeEmailCloud
+  # File versions FileVersion.
   class FileVersions
-    
+    # File versions FileVersion.
     # @return [Array<FileVersion>]
     attr_accessor :value
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -45,7 +46,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Array<FileVersion>] value 
+    # @param [Array<FileVersion>] value File versions FileVersion.
     def initialize(
       value: nil)
       self.value = value if value

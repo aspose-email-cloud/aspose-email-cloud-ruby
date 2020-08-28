@@ -2,7 +2,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**exists** | **BOOLEAN** |  | 
+**exists** | **BOOLEAN** | Shows that the storage exists.              | 
 
 
 

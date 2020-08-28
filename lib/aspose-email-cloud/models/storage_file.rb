@@ -26,20 +26,21 @@
 require 'date'
 
 module AsposeEmailCloud
+  # File or folder information
   class StorageFile
-    
+    # File or folder name.
     # @return [String]
     attr_accessor :name
-    
+    # True if it is a folder.
     # @return [BOOLEAN]
     attr_accessor :is_folder
-    
+    # File or folder last modified DateTime.
     # @return [DateTime]
     attr_accessor :modified_date
-    
+    # File or folder size.
     # @return [Integer]
     attr_accessor :size
-    
+    # File or folder path.
     # @return [String]
     attr_accessor :path
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -65,11 +66,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] name 
-    # @param [BOOLEAN] is_folder 
-    # @param [DateTime] modified_date 
-    # @param [Integer] size 
-    # @param [String] path 
+    # @param [String] name File or folder name.
+    # @param [BOOLEAN] is_folder True if it is a folder.
+    # @param [DateTime] modified_date File or folder last modified DateTime.
+    # @param [Integer] size File or folder size.
+    # @param [String] path File or folder path.
     def initialize(
       name: nil,
       is_folder: nil,

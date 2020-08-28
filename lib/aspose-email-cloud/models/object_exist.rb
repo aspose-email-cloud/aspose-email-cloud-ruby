@@ -26,11 +26,12 @@
 require 'date'
 
 module AsposeEmailCloud
+  # Object exists
   class ObjectExist
-    
+    # Indicates that the file or folder exists.
     # @return [BOOLEAN]
     attr_accessor :exists
-    
+    # True if it is a folder, false if it is a file.
     # @return [BOOLEAN]
     attr_accessor :is_folder
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -50,8 +51,8 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [BOOLEAN] exists 
-    # @param [BOOLEAN] is_folder 
+    # @param [BOOLEAN] exists Indicates that the file or folder exists.
+    # @param [BOOLEAN] is_folder True if it is a folder, false if it is a file.
     def initialize(
       exists: nil,
       is_folder: nil)

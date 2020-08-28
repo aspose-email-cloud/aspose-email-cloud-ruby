@@ -29,27 +29,28 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for copy_file operation.
   class CopyFileRequest < EmailRequest
-    # 
+    # Source file path e.g. &#39;/folder/file.ext&#39;
     # @return [String]
     attr_accessor :src_path
-    # 
+    # Destination file path
     # @return [String]
     attr_accessor :dest_path
-    # 
+    # Source storage name
     # @return [String]
     attr_accessor :src_storage_name
-    # 
+    # Destination storage name
     # @return [String]
     attr_accessor :dest_storage_name
-    # 
+    # File version ID to copy
     # @return [String]
     attr_accessor :version_id
 
-    # @param [String] src_path 
-    # @param [String] dest_path 
-    # @param [String] src_storage_name 
-    # @param [String] dest_storage_name 
-    # @param [String] version_id 
+    # Copy file
+    # @param [String] src_path Source file path e.g. &#39;/folder/file.ext&#39;
+    # @param [String] dest_path Destination file path
+    # @param [String] src_storage_name Source storage name
+    # @param [String] dest_storage_name Destination storage name
+    # @param [String] version_id File version ID to copy
     def initialize(src_path:, dest_path:, src_storage_name: nil, dest_storage_name: nil, version_id: nil)
       self.src_path = src_path if src_path
       self.dest_path = dest_path if dest_path

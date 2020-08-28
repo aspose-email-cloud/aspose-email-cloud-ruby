@@ -8,7 +8,7 @@
 get_disc_usage(request)
 ```
 
-
+Get disc usage
 
 ### Return type
 
@@ -22,7 +22,7 @@ AsposeEmailCloud::GetDiscUsageRequest.new(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_name** | **String** |  | [optional] 
+ **storage_name** | **String** | Storage name | [optional] 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
             
@@ -33,7 +33,7 @@ Name | Type | Description  | Notes
 get_file_versions(request)
 ```
 
-
+Get file versions
 
 ### Return type
 
@@ -48,8 +48,8 @@ AsposeEmailCloud::GetFileVersionsRequest.new(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String** |  | 
- **storage_name** | **String** |  | [optional] 
+ **path** | **String** | File path e.g. &#39;/file.ext&#39; | 
+ **storage_name** | **String** | Storage name | [optional] 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
             
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 object_exists(request)
 ```
 
-
+Check if file or folder exists
 
 ### Return type
 
@@ -76,9 +76,9 @@ AsposeEmailCloud::ObjectExistsRequest.new(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **String** |  | 
- **storage_name** | **String** |  | [optional] 
- **version_id** | **String** |  | [optional] 
+ **path** | **String** | File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; | 
+ **storage_name** | **String** | Storage name | [optional] 
+ **version_id** | **String** | File version ID | [optional] 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
             
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 exists(request)
 ```
 
-
+Check if storage exists
 
 ### Return type
 
@@ -103,7 +103,7 @@ AsposeEmailCloud::StorageExistsRequest.new(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_name** | **String** |  | 
+ **storage_name** | **String** | Storage name | 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

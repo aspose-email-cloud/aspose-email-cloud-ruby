@@ -26,11 +26,12 @@
 require 'date'
 
 module AsposeEmailCloud
+  # File upload result
   class FilesUploadResult
-    
+    # List of uploaded file names
     # @return [Array<String>]
     attr_accessor :uploaded
-    
+    # List of errors.
     # @return [Array<Error>]
     attr_accessor :errors
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -50,8 +51,8 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Array<String>] uploaded 
-    # @param [Array<Error>] errors 
+    # @param [Array<String>] uploaded List of uploaded file names
+    # @param [Array<Error>] errors List of errors.
     def initialize(
       uploaded: nil,
       errors: nil)

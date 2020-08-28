@@ -29,19 +29,20 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for upload_file operation.
   class UploadFileRequest < EmailRequest
-    # 
+    # Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
     # @return [String]
     attr_accessor :path
     # File to upload
     # @return [File]
     attr_accessor :file
-    # 
+    # Storage name
     # @return [String]
     attr_accessor :storage_name
 
-    # @param [String] path 
+    # Upload file
+    # @param [String] path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
     # @param [File] file File to upload
-    # @param [String] storage_name 
+    # @param [String] storage_name Storage name
     def initialize(path:, file:, storage_name: nil)
       self.path = path if path
       self.file = file if file

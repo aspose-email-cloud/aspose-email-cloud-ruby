@@ -46,6 +46,7 @@ module AsposeEmailCloud
       @api_invoker = api_invoker
     end
 
+    # Copy file
     # @param [CopyFileRequest] request Request object.
     # @return [nil]
     def copy_file(request)
@@ -54,6 +55,7 @@ module AsposeEmailCloud
       nil
     end
 
+    # Delete file
     # @param [DeleteFileRequest] request Request object.
     # @return [nil]
     def delete_file(request)
@@ -62,6 +64,7 @@ module AsposeEmailCloud
       nil
     end
 
+    # Download file
     # @param [DownloadFileRequest] request Request object.
     # @return [File]
     def download_file(request)
@@ -69,6 +72,7 @@ module AsposeEmailCloud
       @api_invoker.make_request(http_request, :GET, 'File')
     end
 
+    # Move file
     # @param [MoveFileRequest] request Request object.
     # @return [nil]
     def move_file(request)
@@ -77,6 +81,7 @@ module AsposeEmailCloud
       nil
     end
 
+    # Upload file
     # @param [UploadFileRequest] request Request object.
     # @return [FilesUploadResult]
     def upload_file(request)

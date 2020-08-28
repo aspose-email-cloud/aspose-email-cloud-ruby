@@ -26,8 +26,9 @@
 require 'date'
 
 module AsposeEmailCloud
+  # Files list
   class FilesList
-    
+    # Files and folders contained by folder StorageFile.
     # @return [Array<StorageFile>]
     attr_accessor :value
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -45,7 +46,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Array<StorageFile>] value 
+    # @param [Array<StorageFile>] value Files and folders contained by folder StorageFile.
     def initialize(
       value: nil)
       self.value = value if value

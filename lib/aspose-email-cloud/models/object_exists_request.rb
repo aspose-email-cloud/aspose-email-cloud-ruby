@@ -29,19 +29,20 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for object_exists operation.
   class ObjectExistsRequest < EmailRequest
-    # 
+    # File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39;
     # @return [String]
     attr_accessor :path
-    # 
+    # Storage name
     # @return [String]
     attr_accessor :storage_name
-    # 
+    # File version ID
     # @return [String]
     attr_accessor :version_id
 
-    # @param [String] path 
-    # @param [String] storage_name 
-    # @param [String] version_id 
+    # Check if file or folder exists
+    # @param [String] path File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39;
+    # @param [String] storage_name Storage name
+    # @param [String] version_id File version ID
     def initialize(path:, storage_name: nil, version_id: nil)
       self.path = path if path
       self.storage_name = storage_name if storage_name

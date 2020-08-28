@@ -29,23 +29,24 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for move_folder operation.
   class MoveFolderRequest < EmailRequest
-    # 
+    # Folder path to move e.g. &#39;/folder&#39;
     # @return [String]
     attr_accessor :src_path
-    # 
+    # Destination folder path to move to e.g &#39;/dst&#39;
     # @return [String]
     attr_accessor :dest_path
-    # 
+    # Source storage name
     # @return [String]
     attr_accessor :src_storage_name
-    # 
+    # Destination storage name
     # @return [String]
     attr_accessor :dest_storage_name
 
-    # @param [String] src_path 
-    # @param [String] dest_path 
-    # @param [String] src_storage_name 
-    # @param [String] dest_storage_name 
+    # Move folder
+    # @param [String] src_path Folder path to move e.g. &#39;/folder&#39;
+    # @param [String] dest_path Destination folder path to move to e.g &#39;/dst&#39;
+    # @param [String] src_storage_name Source storage name
+    # @param [String] dest_storage_name Destination storage name
     def initialize(src_path:, dest_path:, src_storage_name: nil, dest_storage_name: nil)
       self.src_path = src_path if src_path
       self.dest_path = dest_path if dest_path
