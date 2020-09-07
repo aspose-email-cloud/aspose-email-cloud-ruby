@@ -50,7 +50,7 @@ module AsposeEmailCloud
     # MailMessageBase type. Using this property you can get messages in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string).              Enum, available values: Dto, Mapi, Base64
     # @return [String]
     attr_accessor :type
-    # Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+    # Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
 
@@ -63,7 +63,7 @@ module AsposeEmailCloud
     # @param [String] account_storage_folder Folder in storage where account file located
     # @param [BOOLEAN] recursive Specifies that should message be searched in subfolders recursively
     # @param [String] type MailMessageBase type. Using this property you can get messages in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string).              Enum, available values: Dto, Mapi, Base64
-    # @param [String] format Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+    # @param [String] format Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     def initialize(folder:, account:, query_string: nil, storage: nil, account_storage_folder: nil, recursive: nil, type: nil, format: nil)
       self.folder = folder if folder
       self.account = account if account

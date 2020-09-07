@@ -29,7 +29,7 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for email_get operation.
   class EmailGetRequest < EmailRequest
-    # Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+    # Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
     # Email document file name.
@@ -43,7 +43,7 @@ module AsposeEmailCloud
     attr_accessor :storage
 
     # Get email document from storage.             
-    # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+    # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @param [String] file_name Email document file name.
     # @param [String] folder Path to folder in storage.
     # @param [String] storage Storage name.

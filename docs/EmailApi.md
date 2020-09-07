@@ -62,8 +62,8 @@ AsposeEmailCloud::EmailConvertRequest.new(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **from_format** | **String** | File format to convert to Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
- **to_format** | **String** | File format to convert from Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **from_format** | **String** | File format to convert to Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
+ **to_format** | **String** | File format to convert from Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
  **file** | **File** | File to convert | 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
@@ -90,7 +90,7 @@ AsposeEmailCloud::EmailFromFileRequest.new(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String** |  Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **format** | **String** |  Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
  **file** | **File** | File to convert | 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
@@ -119,7 +119,7 @@ AsposeEmailCloud::EmailGetRequest.new(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String** | Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **format** | **String** | Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
  **file_name** | **String** | Email document file name. | 
  **folder** | **String** | Path to folder in storage. | [optional] 
  **storage** | **String** | Storage name. | [optional] 
@@ -151,7 +151,7 @@ AsposeEmailCloud::EmailGetAsFileRequest.new(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file_name** | **String** | Email document file name | 
- **format** | **String** | File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **format** | **String** | File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
  **storage** | **String** | Storage name | [optional] 
  **folder** | **String** | Path to folder in storage | [optional] 
 
@@ -182,7 +182,7 @@ AsposeEmailCloud::EmailGetListRequest.new(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String** | Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | 
+ **format** | **String** | Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
  **folder** | **String** | Path to folder in storage. | [optional] 
  **storage** | **String** | Storage name. | [optional] 
  **items_per_page** | **Integer** | Count of items on page. | [optional] [default to 10]
