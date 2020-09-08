@@ -23,27 +23,23 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
+  # Error
   class Error
-    
+    # Code             
     # @return [String]
     attr_accessor :code
-
-    
+    # Message             
     # @return [String]
     attr_accessor :message
-
-    
+    # Description             
     # @return [String]
     attr_accessor :description
-
-    
+    # Inner Error             
     # @return [ErrorDetails]
     attr_accessor :inner_error
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -65,36 +61,15 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'code')
-        self.code = attributes[:'code']
-      end
-
-      if attributes.has_key?(:'message')
-        self.message = attributes[:'message']
-      end
-
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.has_key?(:'innerError')
-        self.inner_error = attributes[:'innerError']
-      end
-    end
-
-    # Initializes the object
-    # @param [String] code 
-    # @param [String] message 
-    # @param [String] description 
-    # @param [ErrorDetails] inner_error 
-    def initialize(code=nil, message=nil, description=nil, inner_error=nil)
+    # @param [String] code Code             
+    # @param [String] message Message             
+    # @param [String] description Description             
+    # @param [ErrorDetails] inner_error Inner Error             
+    def initialize(
+      code: nil,
+      message: nil,
+      description: nil,
+      inner_error: nil)
       self.code = code if code
       self.message = message if message
       self.description = description if description

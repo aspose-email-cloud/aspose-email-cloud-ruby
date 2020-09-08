@@ -1,12 +1,12 @@
-# models.ErrorDetails
+# AsposeEmailCloud::ErrorDetails
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**request_id** | **String** |  | [optional] 
-**date** | **DateTime** |  | 
+**request_id** | **String** | The request id | [optional] 
+**date** | **DateTime** | Date | 
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+[[Back to Model list]](Models.md) [[Back to README]](README.md)
 
 

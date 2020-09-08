@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,11 +31,9 @@ module AsposeEmailCloud
     # Recognized name gender. Enum, available values: Male, Female, Unknown
     # @return [String]
     attr_accessor :gender
-
     # Hypothesis score             
     # @return [Float]
     attr_accessor :score
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,26 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'gender')
-        self.gender = attributes[:'gender']
-      end
-
-      if attributes.has_key?(:'score')
-        self.score = attributes[:'score']
-      end
-    end
-
-    # Initializes the object
     # @param [String] gender Recognized name gender. Enum, available values: Male, Female, Unknown
     # @param [Float] score Hypothesis score             
-    def initialize(gender=nil, score=nil)
+    def initialize(
+      gender: nil,
+      score: nil)
       self.gender = gender if gender
       self.score = score if score
     end

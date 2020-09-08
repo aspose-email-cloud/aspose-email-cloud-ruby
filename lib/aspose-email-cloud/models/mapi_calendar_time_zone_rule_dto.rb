@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,39 +31,30 @@ module AsposeEmailCloud
     # Date and time that indicate when to begin using the Standard/Daylight time.             
     # @return [DateTime]
     attr_accessor :date
-
     # Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     # @return [String]
     attr_accessor :day_of_week
-
     # Hour.             
     # @return [Integer]
     attr_accessor :hour
-
     # Milliseconds.             
     # @return [Integer]
     attr_accessor :milliseconds
-
     # Minute.             
     # @return [Integer]
     attr_accessor :minute
-
     # Month.             
     # @return [Integer]
     attr_accessor :month
-
     # Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
     # @return [String]
     attr_accessor :position
-
     # Seconds.             
     # @return [Integer]
     attr_accessor :seconds
-
     # Year.             
     # @return [Integer]
     attr_accessor :year
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -96,51 +86,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'date')
-        self.date = attributes[:'date']
-      end
-
-      if attributes.has_key?(:'dayOfWeek')
-        self.day_of_week = attributes[:'dayOfWeek']
-      end
-
-      if attributes.has_key?(:'hour')
-        self.hour = attributes[:'hour']
-      end
-
-      if attributes.has_key?(:'milliseconds')
-        self.milliseconds = attributes[:'milliseconds']
-      end
-
-      if attributes.has_key?(:'minute')
-        self.minute = attributes[:'minute']
-      end
-
-      if attributes.has_key?(:'month')
-        self.month = attributes[:'month']
-      end
-
-      if attributes.has_key?(:'position')
-        self.position = attributes[:'position']
-      end
-
-      if attributes.has_key?(:'seconds')
-        self.seconds = attributes[:'seconds']
-      end
-
-      if attributes.has_key?(:'year')
-        self.year = attributes[:'year']
-      end
-    end
-
-    # Initializes the object
     # @param [DateTime] date Date and time that indicate when to begin using the Standard/Daylight time.             
     # @param [String] day_of_week Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     # @param [Integer] hour Hour.             
@@ -150,7 +95,16 @@ module AsposeEmailCloud
     # @param [String] position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
     # @param [Integer] seconds Seconds.             
     # @param [Integer] year Year.             
-    def initialize(date=nil, day_of_week=nil, hour=nil, milliseconds=nil, minute=nil, month=nil, position=nil, seconds=nil, year=nil)
+    def initialize(
+      date: nil,
+      day_of_week: nil,
+      hour: nil,
+      milliseconds: nil,
+      minute: nil,
+      month: nil,
+      position: nil,
+      seconds: nil,
+      year: nil)
       self.date = date if date
       self.day_of_week = day_of_week if day_of_week
       self.hour = hour if hour
@@ -190,6 +144,14 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "month", month cannot be nil.')
       end
 
+      if @month > 12
+        invalid_properties.push('invalid value for "month", must be smaller than or equal to 12.')
+      end
+
+      if @month < 0
+        invalid_properties.push('invalid value for "month", must be greater than or equal to 0.')
+      end
+
       if @position.nil?
         invalid_properties.push('invalid value for "position", position cannot be nil.')
       end
@@ -214,10 +176,30 @@ module AsposeEmailCloud
       return false if @milliseconds.nil?
       return false if @minute.nil?
       return false if @month.nil?
+      return false if @month > 12
+      return false if @month < 0
       return false if @position.nil?
       return false if @seconds.nil?
       return false if @year.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] month Value to be assigned
+    def month=(month)
+      if month.nil?
+        fail ArgumentError, 'month cannot be nil'
+      end
+
+      if month > 12
+        fail ArgumentError, 'invalid value for "month", must be smaller than or equal to 12.'
+      end
+
+      if month < 0
+        fail ArgumentError, 'invalid value for "month", must be greater than or equal to 0.'
+      end
+
+      @month = month
     end
 
     # Checks equality by comparing each attribute.

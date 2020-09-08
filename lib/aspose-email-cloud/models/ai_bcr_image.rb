@@ -23,16 +23,14 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
   # Image for recognition             
   class AiBcrImage
-    # Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon             
+    # Determines that image contains single VCard or more.             
     # @return [BOOLEAN]
     attr_accessor :is_single
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -48,21 +46,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'isSingle')
-        self.is_single = attributes[:'isSingle']
-      end
-    end
-
-    # Initializes the object
-    # @param [BOOLEAN] is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon             
-    def initialize(is_single=nil)
+    # @param [BOOLEAN] is_single Determines that image contains single VCard or more.             
+    def initialize(
+      is_single: nil)
       self.is_single = is_single if is_single
     end
 

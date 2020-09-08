@@ -23,16 +23,14 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
   # List of email threads             
-  class EmailThreadList
+  class EmailThreadList < ListResponseOfEmailThread
     
     # @return [Array<EmailThread>]
     attr_accessor :value
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -48,23 +46,9 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'value')
-        if (value = attributes[:'value']).is_a?(Array)
-          self.value = value
-        end
-      end
-    end
-
-    # Initializes the object
     # @param [Array<EmailThread>] value 
-    def initialize(value=nil)
+    def initialize(
+      value: nil)
       self.value = value if value
     end
 

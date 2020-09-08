@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,15 +31,12 @@ module AsposeEmailCloud
     # Address category.             
     # @return [EnumWithCustomOfInstantMessengerCategory]
     attr_accessor :category
-
     # Address.             
     # @return [String]
     attr_accessor :address
-
     # Determines whether this address is preferred.             
     # @return [BOOLEAN]
     attr_accessor :preferred
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -60,31 +56,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'category')
-        self.category = attributes[:'category']
-      end
-
-      if attributes.has_key?(:'address')
-        self.address = attributes[:'address']
-      end
-
-      if attributes.has_key?(:'preferred')
-        self.preferred = attributes[:'preferred']
-      end
-    end
-
-    # Initializes the object
     # @param [EnumWithCustomOfInstantMessengerCategory] category Address category.             
     # @param [String] address Address.             
     # @param [BOOLEAN] preferred Determines whether this address is preferred.             
-    def initialize(category=nil, address=nil, preferred=nil)
+    def initialize(
+      category: nil,
+      address: nil,
+      preferred: nil)
       self.category = category if category
       self.address = address if address
       self.preferred = preferred if preferred

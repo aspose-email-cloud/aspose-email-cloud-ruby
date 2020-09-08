@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,91 +31,69 @@ module AsposeEmailCloud
     # Document attachments.
     # @return [Array<Attachment>]
     attr_accessor :attachments
-
     # Event attendees.
     # @return [Array<MailAddress>]
     attr_accessor :attendees
-
     # Description.
     # @return [String]
     attr_accessor :description
-
     # End date.
     # @return [DateTime]
     attr_accessor :end_date
-
     # End time zone.
     # @return [String]
     attr_accessor :end_time_zone
-
     # Appointment flags. Items: Enumerates iCalendar flags. Enum, available values: None, AllDayEvent
     # @return [Array<String>]
     attr_accessor :flags
-
     # Indicates if description is in HTML format.
     # @return [BOOLEAN]
     attr_accessor :is_description_html
-
     # Location.
     # @return [String]
     attr_accessor :location
-
     # Defines the iCalendar object method type associated with the calendar document. Enum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
     # @return [String]
     attr_accessor :method
-
     # Specifies the BUSY status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
     # @return [String]
     attr_accessor :microsoft_busy_status
-
     # Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
     # @return [String]
     attr_accessor :microsoft_intended_status
-
     # Optional attendees.             
     # @return [Array<MailAddress>]
     attr_accessor :optional_attendees
-
     # Event organizer.             
     # @return [MailAddress]
     attr_accessor :organizer
-
     # Deprecated, use 'Recurrence' property. String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"                   
     # @return [String]
     attr_accessor :recurrence_string
-
     # Recurrence pattern             
     # @return [RecurrencePatternDto]
     attr_accessor :recurrence
-
     # Reminders.
     # @return [Array<CalendarReminder>]
     attr_accessor :reminders
-
     # The sequence id. Read only.
     # @return [String]
     attr_accessor :sequence_id
-
     # Start date.
     # @return [DateTime]
     attr_accessor :start_date
-
     # Start time zone.
     # @return [String]
     attr_accessor :start_time_zone
-
     # Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
     # @return [String]
     attr_accessor :status
-
     # Summary.
     # @return [String]
     attr_accessor :summary
-
     # Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
     # @return [String]
     attr_accessor :transparency
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -174,113 +151,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'attachments')
-        if (value = attributes[:'attachments']).is_a?(Array)
-          self.attachments = value
-        end
-      end
-
-      if attributes.has_key?(:'attendees')
-        if (value = attributes[:'attendees']).is_a?(Array)
-          self.attendees = value
-        end
-      end
-
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.has_key?(:'endDate')
-        self.end_date = attributes[:'endDate']
-      end
-
-      if attributes.has_key?(:'endTimeZone')
-        self.end_time_zone = attributes[:'endTimeZone']
-      end
-
-      if attributes.has_key?(:'flags')
-        if (value = attributes[:'flags']).is_a?(Array)
-          self.flags = value
-        end
-      end
-
-      if attributes.has_key?(:'isDescriptionHtml')
-        self.is_description_html = attributes[:'isDescriptionHtml']
-      end
-
-      if attributes.has_key?(:'location')
-        self.location = attributes[:'location']
-      end
-
-      if attributes.has_key?(:'method')
-        self.method = attributes[:'method']
-      end
-
-      if attributes.has_key?(:'microsoftBusyStatus')
-        self.microsoft_busy_status = attributes[:'microsoftBusyStatus']
-      end
-
-      if attributes.has_key?(:'microsoftIntendedStatus')
-        self.microsoft_intended_status = attributes[:'microsoftIntendedStatus']
-      end
-
-      if attributes.has_key?(:'optionalAttendees')
-        if (value = attributes[:'optionalAttendees']).is_a?(Array)
-          self.optional_attendees = value
-        end
-      end
-
-      if attributes.has_key?(:'organizer')
-        self.organizer = attributes[:'organizer']
-      end
-
-      if attributes.has_key?(:'recurrenceString')
-        self.recurrence_string = attributes[:'recurrenceString']
-      end
-
-      if attributes.has_key?(:'recurrence')
-        self.recurrence = attributes[:'recurrence']
-      end
-
-      if attributes.has_key?(:'reminders')
-        if (value = attributes[:'reminders']).is_a?(Array)
-          self.reminders = value
-        end
-      end
-
-      if attributes.has_key?(:'sequenceId')
-        self.sequence_id = attributes[:'sequenceId']
-      end
-
-      if attributes.has_key?(:'startDate')
-        self.start_date = attributes[:'startDate']
-      end
-
-      if attributes.has_key?(:'startTimeZone')
-        self.start_time_zone = attributes[:'startTimeZone']
-      end
-
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.has_key?(:'summary')
-        self.summary = attributes[:'summary']
-      end
-
-      if attributes.has_key?(:'transparency')
-        self.transparency = attributes[:'transparency']
-      end
-    end
-
-    # Initializes the object
     # @param [Array<Attachment>] attachments Document attachments.
     # @param [Array<MailAddress>] attendees Event attendees.
     # @param [String] description Description.
@@ -303,7 +173,29 @@ module AsposeEmailCloud
     # @param [String] status Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
     # @param [String] summary Summary.
     # @param [String] transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
-    def initialize(attachments=nil, attendees=nil, description=nil, end_date=nil, end_time_zone=nil, flags=nil, is_description_html=nil, location=nil, method=nil, microsoft_busy_status=nil, microsoft_intended_status=nil, optional_attendees=nil, organizer=nil, recurrence_string=nil, recurrence=nil, reminders=nil, sequence_id=nil, start_date=nil, start_time_zone=nil, status=nil, summary=nil, transparency=nil)
+    def initialize(
+      attachments: nil,
+      attendees: nil,
+      description: nil,
+      end_date: nil,
+      end_time_zone: nil,
+      flags: nil,
+      is_description_html: nil,
+      location: nil,
+      method: nil,
+      microsoft_busy_status: nil,
+      microsoft_intended_status: nil,
+      optional_attendees: nil,
+      organizer: nil,
+      recurrence_string: nil,
+      recurrence: nil,
+      reminders: nil,
+      sequence_id: nil,
+      start_date: nil,
+      start_time_zone: nil,
+      status: nil,
+      summary: nil,
+      transparency: nil)
       self.attachments = attachments if attachments
       self.attendees = attendees if attendees
       self.description = description if description

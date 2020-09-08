@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,27 +31,21 @@ module AsposeEmailCloud
     # Address type of an electronic address
     # @return [String]
     attr_accessor :address_type
-
     # User-readable display name for the e-mail address
     # @return [String]
     attr_accessor :display_name
-
     # E-mail address of the contact
     # @return [String]
     attr_accessor :email_address
-
     # Telephone number of the mail user's primary fax machine
     # @return [String]
     attr_accessor :fax_number
-
     # Shows if MapiContactElectronicAddress is empty
     # @return [BOOLEAN]
     attr_accessor :is_empty
-
     # SMTP e-mail address that corresponds to the e-mail address for the Contact object.
     # @return [String]
     attr_accessor :original_display_name
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -78,46 +71,19 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'addressType')
-        self.address_type = attributes[:'addressType']
-      end
-
-      if attributes.has_key?(:'displayName')
-        self.display_name = attributes[:'displayName']
-      end
-
-      if attributes.has_key?(:'emailAddress')
-        self.email_address = attributes[:'emailAddress']
-      end
-
-      if attributes.has_key?(:'faxNumber')
-        self.fax_number = attributes[:'faxNumber']
-      end
-
-      if attributes.has_key?(:'isEmpty')
-        self.is_empty = attributes[:'isEmpty']
-      end
-
-      if attributes.has_key?(:'originalDisplayName')
-        self.original_display_name = attributes[:'originalDisplayName']
-      end
-    end
-
-    # Initializes the object
     # @param [String] address_type Address type of an electronic address
     # @param [String] display_name User-readable display name for the e-mail address
     # @param [String] email_address E-mail address of the contact
     # @param [String] fax_number Telephone number of the mail user's primary fax machine
     # @param [BOOLEAN] is_empty Shows if MapiContactElectronicAddress is empty
     # @param [String] original_display_name SMTP e-mail address that corresponds to the e-mail address for the Contact object.
-    def initialize(address_type=nil, display_name=nil, email_address=nil, fax_number=nil, is_empty=nil, original_display_name=nil)
+    def initialize(
+      address_type: nil,
+      display_name: nil,
+      email_address: nil,
+      fax_number: nil,
+      is_empty: nil,
+      original_display_name: nil)
       self.address_type = address_type if address_type
       self.display_name = display_name if display_name
       self.email_address = email_address if email_address

@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,11 +31,9 @@ module AsposeEmailCloud
     # Extracted name components             
     # @return [Array<AiNameExtractedComponent>]
     attr_accessor :name
-
     # Extracted name score             
     # @return [Float]
     attr_accessor :score
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,28 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'name')
-        if (value = attributes[:'name']).is_a?(Array)
-          self.name = value
-        end
-      end
-
-      if attributes.has_key?(:'score')
-        self.score = attributes[:'score']
-      end
-    end
-
-    # Initializes the object
     # @param [Array<AiNameExtractedComponent>] name Extracted name components             
     # @param [Float] score Extracted name score             
-    def initialize(name=nil, score=nil)
+    def initialize(
+      name: nil,
+      score: nil)
       self.name = name if name
       self.score = score if score
     end

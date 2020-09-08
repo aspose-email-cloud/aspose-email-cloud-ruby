@@ -23,31 +23,26 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
+  # File or folder information
   class StorageFile
-    
+    # File or folder name.
     # @return [String]
     attr_accessor :name
-
-    
+    # True if it is a folder.
     # @return [BOOLEAN]
     attr_accessor :is_folder
-
-    
+    # File or folder last modified DateTime.
     # @return [DateTime]
     attr_accessor :modified_date
-
-    
+    # File or folder size.
     # @return [Integer]
     attr_accessor :size
-
-    
+    # File or folder path.
     # @return [String]
     attr_accessor :path
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -71,41 +66,17 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'isFolder')
-        self.is_folder = attributes[:'isFolder']
-      end
-
-      if attributes.has_key?(:'modifiedDate')
-        self.modified_date = attributes[:'modifiedDate']
-      end
-
-      if attributes.has_key?(:'size')
-        self.size = attributes[:'size']
-      end
-
-      if attributes.has_key?(:'path')
-        self.path = attributes[:'path']
-      end
-    end
-
-    # Initializes the object
-    # @param [String] name 
-    # @param [BOOLEAN] is_folder 
-    # @param [DateTime] modified_date 
-    # @param [Integer] size 
-    # @param [String] path 
-    def initialize(name=nil, is_folder=nil, modified_date=nil, size=nil, path=nil)
+    # @param [String] name File or folder name.
+    # @param [BOOLEAN] is_folder True if it is a folder.
+    # @param [DateTime] modified_date File or folder last modified DateTime.
+    # @param [Integer] size File or folder size.
+    # @param [String] path File or folder path.
+    def initialize(
+      name: nil,
+      is_folder: nil,
+      modified_date: nil,
+      size: nil,
+      path: nil)
       self.name = name if name
       self.is_folder = is_folder if is_folder
       self.modified_date = modified_date if modified_date

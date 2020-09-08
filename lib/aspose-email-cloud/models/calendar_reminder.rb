@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,35 +31,27 @@ module AsposeEmailCloud
     # Defines the action to be invoked when an alarm is triggered. Enum, available values: Audio, Display, Email, Procedure, None
     # @return [String]
     attr_accessor :action
-
     # Collection of Reminder Attachments. Could be an absolute URI or Base64 string representation of attachment content             
     # @return [Array<String>]
     attr_accessor :attachments
-
     # Contains collection of ReminderAttendee objects.             
     # @return [Array<ReminderAttendee>]
     attr_accessor :attendees
-
     # Provides a more complete description of the alarm.
     # @return [String]
     attr_accessor :description
-
     # Specifies the delay period in ticks, after which the alarm will repeat.             
     # @return [Integer]
     attr_accessor :duration
-
     # Defines the number of time the alarm should be repeated, after the initial trigger.             
     # @return [Integer]
     attr_accessor :repeat
-
     # Defines a short summary or subject for the alarm.
     # @return [String]
     attr_accessor :summary
-
     # Specifies when an alarm will trigger.
     # @return [ReminderTrigger]
     attr_accessor :trigger
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -90,51 +81,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'action')
-        self.action = attributes[:'action']
-      end
-
-      if attributes.has_key?(:'attachments')
-        if (value = attributes[:'attachments']).is_a?(Array)
-          self.attachments = value
-        end
-      end
-
-      if attributes.has_key?(:'attendees')
-        if (value = attributes[:'attendees']).is_a?(Array)
-          self.attendees = value
-        end
-      end
-
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.has_key?(:'duration')
-        self.duration = attributes[:'duration']
-      end
-
-      if attributes.has_key?(:'repeat')
-        self.repeat = attributes[:'repeat']
-      end
-
-      if attributes.has_key?(:'summary')
-        self.summary = attributes[:'summary']
-      end
-
-      if attributes.has_key?(:'trigger')
-        self.trigger = attributes[:'trigger']
-      end
-    end
-
-    # Initializes the object
     # @param [String] action Defines the action to be invoked when an alarm is triggered. Enum, available values: Audio, Display, Email, Procedure, None
     # @param [Array<String>] attachments Collection of Reminder Attachments. Could be an absolute URI or Base64 string representation of attachment content             
     # @param [Array<ReminderAttendee>] attendees Contains collection of ReminderAttendee objects.             
@@ -143,7 +89,15 @@ module AsposeEmailCloud
     # @param [Integer] repeat Defines the number of time the alarm should be repeated, after the initial trigger.             
     # @param [String] summary Defines a short summary or subject for the alarm.
     # @param [ReminderTrigger] trigger Specifies when an alarm will trigger.
-    def initialize(action=nil, attachments=nil, attendees=nil, description=nil, duration=nil, repeat=nil, summary=nil, trigger=nil)
+    def initialize(
+      action: nil,
+      attachments: nil,
+      attendees: nil,
+      description: nil,
+      duration: nil,
+      repeat: nil,
+      summary: nil,
+      trigger: nil)
       self.action = action if action
       self.attachments = attachments if attachments
       self.attendees = attendees if attendees

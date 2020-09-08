@@ -23,18 +23,14 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
   # Mapi property with Binary value represented as a Base64 string             
-  class MapiBinaryPropertyDto
+  class MapiBinaryPropertyDto < MapiPropertyDto
     # Property descriptor             
     # @return [MapiPropertyDescriptor]
     attr_accessor :descriptor
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -42,11 +38,9 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # Property value converted to Base64             
     # @return [String]
     attr_accessor :value_base64
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -66,33 +60,12 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'descriptor')
-        self.descriptor = attributes[:'descriptor']
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-
-      if attributes.has_key?(:'valueBase64')
-        self.value_base64 = attributes[:'valueBase64']
-      end
-    end
-
-    # Initializes the object
     # @param [MapiPropertyDescriptor] descriptor Property descriptor             
-    # @param [String] discriminator 
     # @param [String] value_base64 Property value converted to Base64             
-    def initialize(descriptor=nil, discriminator=nil, value_base64=nil)
+    def initialize(
+      descriptor: nil,
+      value_base64: nil)
       self.descriptor = descriptor if descriptor
-      @discriminator = self.class.name.split('::').last
       self.value_base64 = value_base64 if value_base64
     end
 

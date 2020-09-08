@@ -1,4 +1,4 @@
-# models.EmailAddress
+# AsposeEmailCloud::EmailAddress
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 **display_name** | **String** | Display name.              | [optional] 
 **preferred** | **BOOLEAN** | Defines whether email address is preferred.              | 
 **routing_type** | **String** | A routing type for an email.              | [optional] 
-**address** | **String** | Email address.              | [optional] 
+**address** | **String** | Email address.              | 
 **original_address_string** | **String** | The original e-mail address string              | [optional] 
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+[[Back to Model list]](Models.md) [[Back to README]](README.md)
 
 

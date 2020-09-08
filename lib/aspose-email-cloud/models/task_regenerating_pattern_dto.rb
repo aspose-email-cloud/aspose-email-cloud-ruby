@@ -23,30 +23,23 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
   # Represents the regenerating recurrence pattern that specifies how many days, weeks, months or years after the completion of the current task the next occurrence will be due.             
-  class TaskRegeneratingPatternDto
+  class TaskRegeneratingPatternDto < RecurrencePatternDto
     # Number of recurrence units.             
     # @return [Integer]
     attr_accessor :interval
-
     # Number of occurrences of the recurrence pattern.             
     # @return [Integer]
     attr_accessor :occurs
-
     # End date.             
     # @return [DateTime]
     attr_accessor :end_date
-
     # Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
     # @return [String]
     attr_accessor :week_start
-
-    
-    # @return [String]
     def discriminator #getter method
       self.class.name.split('::').last
     end
@@ -54,11 +47,9 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-
     # Enumerates the types of regenerating pattern. Enum, available values: Daily, Weekly, Monthly, Yearly
     # @return [String]
     attr_accessor :regenerating_type
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -84,51 +75,21 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'interval')
-        self.interval = attributes[:'interval']
-      end
-
-      if attributes.has_key?(:'occurs')
-        self.occurs = attributes[:'occurs']
-      end
-
-      if attributes.has_key?(:'endDate')
-        self.end_date = attributes[:'endDate']
-      end
-
-      if attributes.has_key?(:'weekStart')
-        self.week_start = attributes[:'weekStart']
-      end
-
-      if attributes.has_key?(:'discriminator')
-        @discriminator = self.class.name.split('::').last
-      end
-
-      if attributes.has_key?(:'regeneratingType')
-        self.regenerating_type = attributes[:'regeneratingType']
-      end
-    end
-
-    # Initializes the object
     # @param [Integer] interval Number of recurrence units.             
     # @param [Integer] occurs Number of occurrences of the recurrence pattern.             
     # @param [DateTime] end_date End date.             
     # @param [String] week_start Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
-    # @param [String] discriminator 
     # @param [String] regenerating_type Enumerates the types of regenerating pattern. Enum, available values: Daily, Weekly, Monthly, Yearly
-    def initialize(interval=nil, occurs=nil, end_date=nil, week_start=nil, discriminator=nil, regenerating_type=nil)
+    def initialize(
+      interval: nil,
+      occurs: nil,
+      end_date: nil,
+      week_start: nil,
+      regenerating_type: nil)
       self.interval = interval if interval
       self.occurs = occurs if occurs
       self.end_date = end_date if end_date
       self.week_start = week_start if week_start
-      @discriminator = self.class.name.split('::').last
       self.regenerating_type = regenerating_type if regenerating_type
     end
 

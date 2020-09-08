@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,39 +31,30 @@ module AsposeEmailCloud
     # Gets or sets a value indicating whether this address is mailing address             
     # @return [BOOLEAN]
     attr_accessor :is_mailing_address
-
     # Specifies the street portion of the contact's address             
     # @return [String]
     attr_accessor :street
-
     # Specifies the city or locality portion of the contact's address             
     # @return [String]
     attr_accessor :city
-
     # Specifies the state or province portion of the contact's address             
     # @return [String]
     attr_accessor :state_or_province
-
     # Specifies the postal code (ZIP code) portion of the contact's address             
     # @return [String]
     attr_accessor :postal_code
-
     # Specifies the country or region portion of the contact's address             
     # @return [String]
     attr_accessor :country
-
     # Specifies the country code portion of the contact's address             
     # @return [String]
     attr_accessor :country_code
-
     # Specifies the complete address of the contact's address             
     # @return [String]
     attr_accessor :address
-
     # Gets or sets the post office box             
     # @return [String]
     attr_accessor :post_office_box
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -96,51 +86,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'isMailingAddress')
-        self.is_mailing_address = attributes[:'isMailingAddress']
-      end
-
-      if attributes.has_key?(:'street')
-        self.street = attributes[:'street']
-      end
-
-      if attributes.has_key?(:'city')
-        self.city = attributes[:'city']
-      end
-
-      if attributes.has_key?(:'stateOrProvince')
-        self.state_or_province = attributes[:'stateOrProvince']
-      end
-
-      if attributes.has_key?(:'postalCode')
-        self.postal_code = attributes[:'postalCode']
-      end
-
-      if attributes.has_key?(:'country')
-        self.country = attributes[:'country']
-      end
-
-      if attributes.has_key?(:'countryCode')
-        self.country_code = attributes[:'countryCode']
-      end
-
-      if attributes.has_key?(:'address')
-        self.address = attributes[:'address']
-      end
-
-      if attributes.has_key?(:'postOfficeBox')
-        self.post_office_box = attributes[:'postOfficeBox']
-      end
-    end
-
-    # Initializes the object
     # @param [BOOLEAN] is_mailing_address Gets or sets a value indicating whether this address is mailing address             
     # @param [String] street Specifies the street portion of the contact's address             
     # @param [String] city Specifies the city or locality portion of the contact's address             
@@ -150,7 +95,16 @@ module AsposeEmailCloud
     # @param [String] country_code Specifies the country code portion of the contact's address             
     # @param [String] address Specifies the complete address of the contact's address             
     # @param [String] post_office_box Gets or sets the post office box             
-    def initialize(is_mailing_address=nil, street=nil, city=nil, state_or_province=nil, postal_code=nil, country=nil, country_code=nil, address=nil, post_office_box=nil)
+    def initialize(
+      is_mailing_address: nil,
+      street: nil,
+      city: nil,
+      state_or_province: nil,
+      postal_code: nil,
+      country: nil,
+      country_code: nil,
+      address: nil,
+      post_office_box: nil)
       self.is_mailing_address = is_mailing_address if is_mailing_address
       self.street = street if street
       self.city = city if city

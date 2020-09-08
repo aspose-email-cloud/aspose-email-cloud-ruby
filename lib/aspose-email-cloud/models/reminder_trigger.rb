@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,15 +31,12 @@ module AsposeEmailCloud
     # A trigger set to an absolute date/time.
     # @return [DateTime]
     attr_accessor :date_time
-
     # Specifies a relative time in ticks for the trigger of the alarm.             
     # @return [Integer]
     attr_accessor :duration
-
     # Specify the relationship of the alarm trigger with respect to the start or end of the event. Enum, available values: Start, End
     # @return [String]
     attr_accessor :related
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -60,31 +56,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'dateTime')
-        self.date_time = attributes[:'dateTime']
-      end
-
-      if attributes.has_key?(:'duration')
-        self.duration = attributes[:'duration']
-      end
-
-      if attributes.has_key?(:'related')
-        self.related = attributes[:'related']
-      end
-    end
-
-    # Initializes the object
     # @param [DateTime] date_time A trigger set to an absolute date/time.
     # @param [Integer] duration Specifies a relative time in ticks for the trigger of the alarm.             
     # @param [String] related Specify the relationship of the alarm trigger with respect to the start or end of the event. Enum, available values: Start, End
-    def initialize(date_time=nil, duration=nil, related=nil)
+    def initialize(
+      date_time: nil,
+      duration: nil,
+      related: nil)
       self.date_time = date_time if date_time
       self.duration = duration if duration
       self.related = related if related

@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,27 +31,21 @@ module AsposeEmailCloud
     # Address category.             
     # @return [EnumWithCustomOfEmailAddressCategory]
     attr_accessor :category
-
     # Display name.             
     # @return [String]
     attr_accessor :display_name
-
     # Defines whether email address is preferred.             
     # @return [BOOLEAN]
     attr_accessor :preferred
-
     # A routing type for an email.             
     # @return [String]
     attr_accessor :routing_type
-
     # Email address.             
     # @return [String]
     attr_accessor :address
-
     # The original e-mail address string             
     # @return [String]
     attr_accessor :original_address_string
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -78,46 +71,19 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'category')
-        self.category = attributes[:'category']
-      end
-
-      if attributes.has_key?(:'displayName')
-        self.display_name = attributes[:'displayName']
-      end
-
-      if attributes.has_key?(:'preferred')
-        self.preferred = attributes[:'preferred']
-      end
-
-      if attributes.has_key?(:'routingType')
-        self.routing_type = attributes[:'routingType']
-      end
-
-      if attributes.has_key?(:'address')
-        self.address = attributes[:'address']
-      end
-
-      if attributes.has_key?(:'originalAddressString')
-        self.original_address_string = attributes[:'originalAddressString']
-      end
-    end
-
-    # Initializes the object
     # @param [EnumWithCustomOfEmailAddressCategory] category Address category.             
     # @param [String] display_name Display name.             
     # @param [BOOLEAN] preferred Defines whether email address is preferred.             
     # @param [String] routing_type A routing type for an email.             
     # @param [String] address Email address.             
     # @param [String] original_address_string The original e-mail address string             
-    def initialize(category=nil, display_name=nil, preferred=nil, routing_type=nil, address=nil, original_address_string=nil)
+    def initialize(
+      category: nil,
+      display_name: nil,
+      preferred: nil,
+      routing_type: nil,
+      address: nil,
+      original_address_string: nil)
       self.category = category if category
       self.display_name = display_name if display_name
       self.preferred = preferred if preferred
@@ -134,6 +100,14 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "preferred", preferred cannot be nil.')
       end
 
+      if @address.nil?
+        invalid_properties.push('invalid value for "address", address cannot be nil.')
+      end
+
+      if @address.to_s.length < 1
+        invalid_properties.push('invalid value for "address", the character length must be great than or equal to 1.')
+      end
+
       invalid_properties
     end
 
@@ -141,7 +115,23 @@ module AsposeEmailCloud
     # @return true if the model is valid
     def valid?
       return false if @preferred.nil?
+      return false if @address.nil?
+      return false if @address.to_s.length < 1
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] address Value to be assigned
+    def address=(address)
+      if address.nil?
+        fail ArgumentError, 'address cannot be nil'
+      end
+
+      if address.to_s.length < 1
+        fail ArgumentError, 'invalid value for "address", the character length must be great than or equal to 1.'
+      end
+
+      @address = address
     end
 
     # Checks equality by comparing each attribute.

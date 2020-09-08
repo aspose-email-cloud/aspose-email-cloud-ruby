@@ -23,19 +23,17 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
+  # File upload result
   class FilesUploadResult
-    
+    # List of uploaded file names
     # @return [Array<String>]
     attr_accessor :uploaded
-
-    
+    # List of errors.
     # @return [Array<Error>]
     attr_accessor :errors
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -53,30 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'uploaded')
-        if (value = attributes[:'uploaded']).is_a?(Array)
-          self.uploaded = value
-        end
-      end
-
-      if attributes.has_key?(:'errors')
-        if (value = attributes[:'errors']).is_a?(Array)
-          self.errors = value
-        end
-      end
-    end
-
-    # Initializes the object
-    # @param [Array<String>] uploaded 
-    # @param [Array<Error>] errors 
-    def initialize(uploaded=nil, errors=nil)
+    # @param [Array<String>] uploaded List of uploaded file names
+    # @param [Array<Error>] errors List of errors.
+    def initialize(
+      uploaded: nil,
+      errors: nil)
       self.uploaded = uploaded if uploaded
       self.errors = errors if errors
     end

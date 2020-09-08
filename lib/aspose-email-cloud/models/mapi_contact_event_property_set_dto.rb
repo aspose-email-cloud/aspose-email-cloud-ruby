@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,11 +31,9 @@ module AsposeEmailCloud
     # Specifies the birthday of the contact.
     # @return [DateTime]
     attr_accessor :birthday
-
     # Specifies the wedding anniversary of the contact.             
     # @return [DateTime]
     attr_accessor :wedding_anniversary
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,26 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'birthday')
-        self.birthday = attributes[:'birthday']
-      end
-
-      if attributes.has_key?(:'weddingAnniversary')
-        self.wedding_anniversary = attributes[:'weddingAnniversary']
-      end
-    end
-
-    # Initializes the object
     # @param [DateTime] birthday Specifies the birthday of the contact.
     # @param [DateTime] wedding_anniversary Specifies the wedding anniversary of the contact.             
-    def initialize(birthday=nil, wedding_anniversary=nil)
+    def initialize(
+      birthday: nil,
+      wedding_anniversary: nil)
       self.birthday = birthday if birthday
       self.wedding_anniversary = wedding_anniversary if wedding_anniversary
     end

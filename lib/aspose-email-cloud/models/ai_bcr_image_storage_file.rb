@@ -23,20 +23,17 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
   # Image from storage for recognition             
-  class AiBcrImageStorageFile
-    # Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon             
+  class AiBcrImageStorageFile < AiBcrImage
+    # Determines that image contains single VCard or more.             
     # @return [BOOLEAN]
     attr_accessor :is_single
-
     # Image location             
     # @return [StorageFileLocation]
     attr_accessor :file
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,26 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'isSingle')
-        self.is_single = attributes[:'isSingle']
-      end
-
-      if attributes.has_key?(:'file')
-        self.file = attributes[:'file']
-      end
-    end
-
-    # Initializes the object
-    # @param [BOOLEAN] is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon             
+    # @param [BOOLEAN] is_single Determines that image contains single VCard or more.             
     # @param [StorageFileLocation] file Image location             
-    def initialize(is_single=nil, file=nil)
+    def initialize(
+      is_single: nil,
+      file: nil)
       self.is_single = is_single if is_single
       self.file = file if file
     end
@@ -86,6 +68,10 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "is_single", is_single cannot be nil.')
       end
 
+      if @file.nil?
+        invalid_properties.push('invalid value for "file", file cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -93,6 +79,7 @@ module AsposeEmailCloud
     # @return true if the model is valid
     def valid?
       return false if @is_single.nil?
+      return false if @file.nil?
       true
     end
 

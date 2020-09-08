@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,19 +31,15 @@ module AsposeEmailCloud
     # Component value             
     # @return [String]
     attr_accessor :value
-
     # Name component category. Enum, available values: Unknown, Mononym, Score, Format, FirstInitial, FirstName, MiddleInitial, MiddleName, MiddleNickname, MiddleSobriquet, MiddleMaidenName, MiddlePatronym, MiddleMatronym, LastInitial, LastName, LastNobiliaryParticle, LastNominalConjunction, LastPaternalSurname, LastMaternalSurname, PrefixTitle, PostfixGenerationalTitle, PostfixPostnominalLetters, ArabicIsm, ArabicKunya, ArabicNasab, ArabicSlaqab, ArabicNisbah
     # @return [String]
     attr_accessor :category
-
     # Score from 0.0 to 1.0             
     # @return [Float]
     attr_accessor :score
-
     # Component position from 0             
     # @return [Integer]
     attr_accessor :position
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -66,36 +61,15 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
-      end
-
-      if attributes.has_key?(:'category')
-        self.category = attributes[:'category']
-      end
-
-      if attributes.has_key?(:'score')
-        self.score = attributes[:'score']
-      end
-
-      if attributes.has_key?(:'position')
-        self.position = attributes[:'position']
-      end
-    end
-
-    # Initializes the object
     # @param [String] value Component value             
     # @param [String] category Name component category. Enum, available values: Unknown, Mononym, Score, Format, FirstInitial, FirstName, MiddleInitial, MiddleName, MiddleNickname, MiddleSobriquet, MiddleMaidenName, MiddlePatronym, MiddleMatronym, LastInitial, LastName, LastNobiliaryParticle, LastNominalConjunction, LastPaternalSurname, LastMaternalSurname, PrefixTitle, PostfixGenerationalTitle, PostfixPostnominalLetters, ArabicIsm, ArabicKunya, ArabicNasab, ArabicSlaqab, ArabicNisbah
     # @param [Float] score Score from 0.0 to 1.0             
     # @param [Integer] position Component position from 0             
-    def initialize(value=nil, category=nil, score=nil, position=nil)
+    def initialize(
+      value: nil,
+      category: nil,
+      score: nil,
+      position: nil)
       self.value = value if value
       self.category = category if category
       self.score = score if score

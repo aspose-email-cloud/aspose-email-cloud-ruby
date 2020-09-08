@@ -23,24 +23,20 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
   # A storage file location information             
-  class StorageFileLocation
+  class StorageFileLocation < StorageFolderLocation
     # A storage name             
     # @return [String]
     attr_accessor :storage
-
     # A path to a folder in specified storage             
     # @return [String]
     attr_accessor :folder_path
-
     # A file name in storage             
     # @return [String]
     attr_accessor :file_name
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -60,31 +56,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'storage')
-        self.storage = attributes[:'storage']
-      end
-
-      if attributes.has_key?(:'folderPath')
-        self.folder_path = attributes[:'folderPath']
-      end
-
-      if attributes.has_key?(:'fileName')
-        self.file_name = attributes[:'fileName']
-      end
-    end
-
-    # Initializes the object
     # @param [String] storage A storage name             
     # @param [String] folder_path A path to a folder in specified storage             
     # @param [String] file_name A file name in storage             
-    def initialize(storage=nil, folder_path=nil, file_name=nil)
+    def initialize(
+      storage: nil,
+      folder_path: nil,
+      file_name: nil)
       self.storage = storage if storage
       self.folder_path = folder_path if folder_path
       self.file_name = file_name if file_name

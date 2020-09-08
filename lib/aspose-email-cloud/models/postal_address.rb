@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,47 +31,36 @@ module AsposeEmailCloud
     # Address.             
     # @return [String]
     attr_accessor :address
-
     # Address category.             
     # @return [EnumWithCustomOfPostalAddressCategory]
     attr_accessor :category
-
     # Address's city.             
     # @return [String]
     attr_accessor :city
-
     # Address's country.             
     # @return [String]
     attr_accessor :country
-
     # Country code.             
     # @return [String]
     attr_accessor :country_code
-
     # Defines whether address may be used for mailing.             
     # @return [BOOLEAN]
     attr_accessor :is_mailing_address
-
     # Postal code.             
     # @return [String]
     attr_accessor :postal_code
-
     # Post Office box.             
     # @return [String]
     attr_accessor :post_office_box
-
     # Defines whether postal address is preferred.             
     # @return [BOOLEAN]
     attr_accessor :preferred
-
     # Address's region.             
     # @return [String]
     attr_accessor :state_or_province
-
     # Address's street.             
     # @return [String]
     attr_accessor :street
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -108,59 +96,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'address')
-        self.address = attributes[:'address']
-      end
-
-      if attributes.has_key?(:'category')
-        self.category = attributes[:'category']
-      end
-
-      if attributes.has_key?(:'city')
-        self.city = attributes[:'city']
-      end
-
-      if attributes.has_key?(:'country')
-        self.country = attributes[:'country']
-      end
-
-      if attributes.has_key?(:'countryCode')
-        self.country_code = attributes[:'countryCode']
-      end
-
-      if attributes.has_key?(:'isMailingAddress')
-        self.is_mailing_address = attributes[:'isMailingAddress']
-      end
-
-      if attributes.has_key?(:'postalCode')
-        self.postal_code = attributes[:'postalCode']
-      end
-
-      if attributes.has_key?(:'postOfficeBox')
-        self.post_office_box = attributes[:'postOfficeBox']
-      end
-
-      if attributes.has_key?(:'preferred')
-        self.preferred = attributes[:'preferred']
-      end
-
-      if attributes.has_key?(:'stateOrProvince')
-        self.state_or_province = attributes[:'stateOrProvince']
-      end
-
-      if attributes.has_key?(:'street')
-        self.street = attributes[:'street']
-      end
-    end
-
-    # Initializes the object
     # @param [String] address Address.             
     # @param [EnumWithCustomOfPostalAddressCategory] category Address category.             
     # @param [String] city Address's city.             
@@ -172,7 +107,18 @@ module AsposeEmailCloud
     # @param [BOOLEAN] preferred Defines whether postal address is preferred.             
     # @param [String] state_or_province Address's region.             
     # @param [String] street Address's street.             
-    def initialize(address=nil, category=nil, city=nil, country=nil, country_code=nil, is_mailing_address=nil, postal_code=nil, post_office_box=nil, preferred=nil, state_or_province=nil, street=nil)
+    def initialize(
+      address: nil,
+      category: nil,
+      city: nil,
+      country: nil,
+      country_code: nil,
+      is_mailing_address: nil,
+      postal_code: nil,
+      post_office_box: nil,
+      preferred: nil,
+      state_or_province: nil,
+      street: nil)
       self.address = address if address
       self.category = category if category
       self.city = city if city

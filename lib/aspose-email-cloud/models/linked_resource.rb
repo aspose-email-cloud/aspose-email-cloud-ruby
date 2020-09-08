@@ -23,32 +23,26 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
   # Represents an embedded resource in a message.             
-  class LinkedResource
+  class LinkedResource < AttachmentBase
     # Attachment file content as Base64 string.             
     # @return [String]
     attr_accessor :base64_data
-
     # Attachment content id             
     # @return [String]
     attr_accessor :content_id
-
     # Content type             
     # @return [ContentType]
     attr_accessor :content_type
-
     # Attachment headers.             
     # @return [Hash<String, String>]
     attr_accessor :headers
-
     # URI that the resource must match.             
     # @return [String]
     attr_accessor :content_link
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -72,43 +66,17 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'base64Data')
-        self.base64_data = attributes[:'base64Data']
-      end
-
-      if attributes.has_key?(:'contentId')
-        self.content_id = attributes[:'contentId']
-      end
-
-      if attributes.has_key?(:'contentType')
-        self.content_type = attributes[:'contentType']
-      end
-
-      if attributes.has_key?(:'headers')
-        if (value = attributes[:'headers']).is_a?(Hash)
-          self.headers = value
-        end
-      end
-
-      if attributes.has_key?(:'contentLink')
-        self.content_link = attributes[:'contentLink']
-      end
-    end
-
-    # Initializes the object
     # @param [String] base64_data Attachment file content as Base64 string.             
     # @param [String] content_id Attachment content id             
     # @param [ContentType] content_type Content type             
     # @param [Hash<String, String>] headers Attachment headers.             
     # @param [String] content_link URI that the resource must match.             
-    def initialize(base64_data=nil, content_id=nil, content_type=nil, headers=nil, content_link=nil)
+    def initialize(
+      base64_data: nil,
+      content_id: nil,
+      content_type: nil,
+      headers: nil,
+      content_link: nil)
       self.base64_data = base64_data if base64_data
       self.content_id = content_id if content_id
       self.content_type = content_type if content_type

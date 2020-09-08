@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,11 +31,9 @@ module AsposeEmailCloud
     # A storage name             
     # @return [String]
     attr_accessor :storage
-
     # A path to a folder in specified storage             
     # @return [String]
     attr_accessor :folder_path
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,26 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'storage')
-        self.storage = attributes[:'storage']
-      end
-
-      if attributes.has_key?(:'folderPath')
-        self.folder_path = attributes[:'folderPath']
-      end
-    end
-
-    # Initializes the object
     # @param [String] storage A storage name             
     # @param [String] folder_path A path to a folder in specified storage             
-    def initialize(storage=nil, folder_path=nil)
+    def initialize(
+      storage: nil,
+      folder_path: nil)
       self.storage = storage if storage
       self.folder_path = folder_path if folder_path
     end

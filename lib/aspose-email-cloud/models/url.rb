@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,15 +31,12 @@ module AsposeEmailCloud
     # Url category.             
     # @return [EnumWithCustomOfUrlCategory]
     attr_accessor :category
-
     # Defines whether url is preferred.             
     # @return [BOOLEAN]
     attr_accessor :preferred
-
     # URL.             
     # @return [String]
     attr_accessor :href
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -60,31 +56,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'category')
-        self.category = attributes[:'category']
-      end
-
-      if attributes.has_key?(:'preferred')
-        self.preferred = attributes[:'preferred']
-      end
-
-      if attributes.has_key?(:'href')
-        self.href = attributes[:'href']
-      end
-    end
-
-    # Initializes the object
     # @param [EnumWithCustomOfUrlCategory] category Url category.             
     # @param [BOOLEAN] preferred Defines whether url is preferred.             
     # @param [String] href URL.             
-    def initialize(category=nil, preferred=nil, href=nil)
+    def initialize(
+      category: nil,
+      preferred: nil,
+      href: nil)
       self.category = category if category
       self.preferred = preferred if preferred
       self.href = href if href

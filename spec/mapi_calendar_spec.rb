@@ -13,70 +13,60 @@ module MapiCalendarSpec
     include_context 'spec base'
     it 'Model to CalendarDto', :pipeline do
       mapi_calendar = MapiCalendarSpec.mapi_calendar_dto
-      calendar = @api.convert_mapi_calendar_model_to_calendar_model(
-        ConvertMapiCalendarModelToCalendarModelRequestData.new(mapi_calendar))
+      calendar = @api.mapi.calendar.as_calendar_dto(mapi_calendar)
       expect(mapi_calendar.subject).to eq calendar.summary
       expect(mapi_calendar.location).to eq calendar.location
     end
 
     it 'Convert MAPI model to file', :pipeline do
       mapi_calendar = MapiCalendarSpec.mapi_calendar_dto
-      ics_file = @api.convert_mapi_calendar_model_to_file(
-        ConvertMapiCalendarModelToFileRequestData.new('Ics', mapi_calendar))
+      ics_file = @api.mapi.calendar.as_file(
+        MapiCalendarAsFileRequest.new(format: 'Ics', value: mapi_calendar))
       ics_content = IO.read(ics_file)
       expect(ics_content).to include mapi_calendar.location
-      mapi_calendar_converted = @api.get_calendar_file_as_mapi_model(
-        GetCalendarFileAsMapiModelRequestData.new(ics_file))
+      mapi_calendar_converted = @api.mapi.calendar.from_file(
+        MapiCalendarFromFileRequest.new(file: ics_file))
       expect(mapi_calendar.location).to eq mapi_calendar_converted.location
     end
 
     it 'Check storage support', :pipeline do
       file_name = SecureRandom.uuid.to_s + '.msg'
       mapi_calendar = MapiCalendarSpec.mapi_calendar_dto
-      @api.save_mapi_calendar_model(
-        SaveMapiCalendarModelRequestData.new(
-          file_name, 'Msg',
-          StorageModelRqOfMapiCalendarDto.new(mapi_calendar, storage_folder)))
-      mapi_calendar_from_storage = @api.get_mapi_calendar_model(
-        GetMapiCalendarModelRequestData.new(file_name, @folder, @storage))
+      @api.mapi.calendar.save(
+        MapiCalendarSaveRequest.new(
+          storage_file: StorageFileLocation.new(
+            storage: @storage,
+            folder_path: @folder,
+            file_name: file_name),
+          value: mapi_calendar,
+          format: 'Msg'))
+      mapi_calendar_from_storage = @api.mapi.calendar.get(
+        MapiCalendarGetRequest.new(file_name: file_name, folder: @folder, storage: @storage))
       expect(mapi_calendar.location).to eq mapi_calendar_from_storage.location
     end
   end
 
   # @return [MapiCalendarDto]
   def self.mapi_calendar_dto
-    mapi_calendar = MapiCalendarDto.new
-    mapi_calendar.attendees = MapiCalendarAttendeesDto.new([mapi_recipient_dto])
-    mapi_calendar.client_intent = ['Manager']
-    mapi_calendar.recurrence = recurrence_dto
-    mapi_calendar.organizer = MapiElectronicAddressDto.new(nil, 'organizer@aspose.com')
-    mapi_calendar.busy_status = 'Tentative'
-    mapi_calendar.start_date = DateTime.now
-    mapi_calendar.end_date = DateTime.now + 1
-    mapi_calendar.location = 'Some location'
-    mapi_calendar.body = 'Some description'
-    mapi_calendar.body_type = 'PlainText'
-    mapi_calendar.subject = 'Some summary'
-    mapi_calendar
-  end
-
-  # @return [AsposeEmailCloud::MapiCalendarEventRecurrenceDto]
-  def self.recurrence_dto
-    recurrence = MapiCalendarEventRecurrenceDto.new
-    recurrence_pattern = MapiCalendarDailyRecurrencePatternDto.new
-    recurrence_pattern.occurrence_count = 10
-    recurrence_pattern.week_start_day = 'Monday'
-    recurrence.recurrence_pattern = recurrence_pattern
-    recurrence
-  end
-
-  # @return [AsposeEmailCloud::MapiRecipientDto]
-  def self.mapi_recipient_dto
-    mapi_recipient = MapiRecipientDto.new
-    mapi_recipient.address_type = 'SMTP'
-    mapi_recipient.display_name = 'Attendee Name'
-    mapi_recipient.email_address = 'attendee@aspose.com'
-    mapi_recipient.recipient_type = 'MapiTo'
-    mapi_recipient
+    MapiCalendarDto.new(
+      attendees: MapiCalendarAttendeesDto.new(appointment_recipients: [MapiRecipientDto.new(
+        address_type: 'SMTP',
+        display_name: 'Attendee Name',
+        email_address: 'attendee@aspose.com',
+        recipient_type: 'MapiTo')]),
+      client_intent: ['Manager'],
+      recurrence: MapiCalendarEventRecurrenceDto.new(
+        recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+          occurrence_count: 10,
+          week_start_day: 'Monday'
+        )),
+      organizer: MapiElectronicAddressDto.new(email_address: 'organizer@aspose.com'),
+      busy_status: 'Tentative',
+      start_date: DateTime.now,
+      end_date: DateTime.now,
+      location: 'Some location',
+      body: 'Some description',
+      body_type: 'PlainText',
+      subject: 'Some summary')
   end
 end

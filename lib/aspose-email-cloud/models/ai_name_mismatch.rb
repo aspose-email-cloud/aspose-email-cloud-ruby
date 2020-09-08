@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,15 +31,12 @@ module AsposeEmailCloud
     # Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
     # @return [String]
     attr_accessor :category
-
     # Similarity score             
     # @return [Float]
     attr_accessor :similarity
-
     # Explanation or mismatch subtype             
     # @return [String]
     attr_accessor :explanation
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -60,31 +56,13 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'category')
-        self.category = attributes[:'category']
-      end
-
-      if attributes.has_key?(:'similarity')
-        self.similarity = attributes[:'similarity']
-      end
-
-      if attributes.has_key?(:'explanation')
-        self.explanation = attributes[:'explanation']
-      end
-    end
-
-    # Initializes the object
     # @param [String] category Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
     # @param [Float] similarity Similarity score             
     # @param [String] explanation Explanation or mismatch subtype             
-    def initialize(category=nil, similarity=nil, explanation=nil)
+    def initialize(
+      category: nil,
+      similarity: nil,
+      explanation: nil)
       self.category = category if category
       self.similarity = similarity if similarity
       self.explanation = explanation if explanation

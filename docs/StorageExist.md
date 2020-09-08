@@ -1,11 +1,11 @@
-# models.StorageExist
+# AsposeEmailCloud::StorageExist
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**exists** | **BOOLEAN** |  | 
+**exists** | **BOOLEAN** | Shows that the storage exists.              | 
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+[[Back to Model list]](Models.md) [[Back to README]](README.md)
 
 

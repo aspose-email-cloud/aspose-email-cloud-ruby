@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,11 +31,9 @@ module AsposeEmailCloud
     # Attachment's name             
     # @return [String]
     attr_accessor :name
-
     # Attachment data represented as Base64 string.             
     # @return [String]
     attr_accessor :data_base64
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,26 +51,11 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'dataBase64')
-        self.data_base64 = attributes[:'dataBase64']
-      end
-    end
-
-    # Initializes the object
     # @param [String] name Attachment's name             
     # @param [String] data_base64 Attachment data represented as Base64 string.             
-    def initialize(name=nil, data_base64=nil)
+    def initialize(
+      name: nil,
+      data_base64: nil)
       self.name = name if name
       self.data_base64 = data_base64 if data_base64
     end

@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,23 +31,18 @@ module AsposeEmailCloud
     # The boundary parameter included in the Content-Type header.             
     # @return [String]
     attr_accessor :boundary
-
     # CharSet parameter.             
     # @return [String]
     attr_accessor :char_set
-
     # The internet media type.             
     # @return [String]
     attr_accessor :media_type
-
     # Name parameter.             
     # @return [String]
     attr_accessor :name
-
     # Full list of parameters             
     # @return [Array<ContentTypeParameter>]
     attr_accessor :parameters
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -72,43 +66,17 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'boundary')
-        self.boundary = attributes[:'boundary']
-      end
-
-      if attributes.has_key?(:'charSet')
-        self.char_set = attributes[:'charSet']
-      end
-
-      if attributes.has_key?(:'mediaType')
-        self.media_type = attributes[:'mediaType']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'parameters')
-        if (value = attributes[:'parameters']).is_a?(Array)
-          self.parameters = value
-        end
-      end
-    end
-
-    # Initializes the object
     # @param [String] boundary The boundary parameter included in the Content-Type header.             
     # @param [String] char_set CharSet parameter.             
     # @param [String] media_type The internet media type.             
     # @param [String] name Name parameter.             
     # @param [Array<ContentTypeParameter>] parameters Full list of parameters             
-    def initialize(boundary=nil, char_set=nil, media_type=nil, name=nil, parameters=nil)
+    def initialize(
+      boundary: nil,
+      char_set: nil,
+      media_type: nil,
+      name: nil,
+      parameters: nil)
       self.boundary = boundary if boundary
       self.char_set = char_set if char_set
       self.media_type = media_type if media_type

@@ -23,7 +23,6 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
-
 require 'date'
 
 module AsposeEmailCloud
@@ -32,79 +31,60 @@ module AsposeEmailCloud
     # Shows if MapiContactTelephonePropertySet is empty             
     # @return [BOOLEAN]
     attr_accessor :is_empty
-
     # Default value of electronic address Uses when user does not set any electronic address if UseAutocomplete property is set 'true'             
     # @return [String]
     attr_accessor :default_telephone_number
-
     # Indicates that one electronic address is completed automatically in case if user does not set any electronic address             
     # @return [BOOLEAN]
     attr_accessor :use_autocomplete
-
     # Gets or sets the callback telephone number             
     # @return [String]
     attr_accessor :callback_telephone_number
-
     # Gets or sets the business telephone number             
     # @return [String]
     attr_accessor :business_telephone_number
-
     # Gets or sets the home telephone number             
     # @return [String]
     attr_accessor :home_telephone_number
-
     # Gets or sets the primary telephone number             
     # @return [String]
     attr_accessor :primary_telephone_number
-
     # Gets or sets the second business telephone number             
     # @return [String]
     attr_accessor :business2_telephone_number
-
     # Gets or sets the mobile telephone number             
     # @return [String]
     attr_accessor :mobile_telephone_number
-
     # Gets or sets the radio telephone number             
     # @return [String]
     attr_accessor :radio_telephone_number
-
     # Gets or sets the car telephone number             
     # @return [String]
     attr_accessor :car_telephone_number
-
     # Gets or sets an alternate telephone number             
     # @return [String]
     attr_accessor :other_telephone_number
-
     # Gets or sets the telephone number of the contact's assistant             
     # @return [String]
     attr_accessor :assistant_telephone_number
-
     # Gets or sets a second home telephone number             
     # @return [String]
     attr_accessor :home2_telephone_number
-
     # Gets or sets the telephone number for the contact's text telephone (TTY) or telecommunication device for the deaf (TDD)             
     # @return [String]
     attr_accessor :tty_tdd_phone_number
-
     # Gets or sets the company phone number             
     # @return [String]
     attr_accessor :company_main_telephone_number
-
     # Gets or sets the telex number             
     # @return [String]
     attr_accessor :telex_number
-
     # Gets or sets the integrated services digital network (ISDN) number             
     # @return [String]
     attr_accessor :isdn_number
-
     # Gets or sets a pager telephone number             
     # @return [String]
     attr_accessor :pager_telephone_number
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -156,91 +136,6 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'isEmpty')
-        self.is_empty = attributes[:'isEmpty']
-      end
-
-      if attributes.has_key?(:'defaultTelephoneNumber')
-        self.default_telephone_number = attributes[:'defaultTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'useAutocomplete')
-        self.use_autocomplete = attributes[:'useAutocomplete']
-      end
-
-      if attributes.has_key?(:'callbackTelephoneNumber')
-        self.callback_telephone_number = attributes[:'callbackTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'businessTelephoneNumber')
-        self.business_telephone_number = attributes[:'businessTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'homeTelephoneNumber')
-        self.home_telephone_number = attributes[:'homeTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'primaryTelephoneNumber')
-        self.primary_telephone_number = attributes[:'primaryTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'business2TelephoneNumber')
-        self.business2_telephone_number = attributes[:'business2TelephoneNumber']
-      end
-
-      if attributes.has_key?(:'mobileTelephoneNumber')
-        self.mobile_telephone_number = attributes[:'mobileTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'radioTelephoneNumber')
-        self.radio_telephone_number = attributes[:'radioTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'carTelephoneNumber')
-        self.car_telephone_number = attributes[:'carTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'otherTelephoneNumber')
-        self.other_telephone_number = attributes[:'otherTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'assistantTelephoneNumber')
-        self.assistant_telephone_number = attributes[:'assistantTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'home2TelephoneNumber')
-        self.home2_telephone_number = attributes[:'home2TelephoneNumber']
-      end
-
-      if attributes.has_key?(:'ttyTddPhoneNumber')
-        self.tty_tdd_phone_number = attributes[:'ttyTddPhoneNumber']
-      end
-
-      if attributes.has_key?(:'companyMainTelephoneNumber')
-        self.company_main_telephone_number = attributes[:'companyMainTelephoneNumber']
-      end
-
-      if attributes.has_key?(:'telexNumber')
-        self.telex_number = attributes[:'telexNumber']
-      end
-
-      if attributes.has_key?(:'isdnNumber')
-        self.isdn_number = attributes[:'isdnNumber']
-      end
-
-      if attributes.has_key?(:'pagerTelephoneNumber')
-        self.pager_telephone_number = attributes[:'pagerTelephoneNumber']
-      end
-    end
-
-    # Initializes the object
     # @param [BOOLEAN] is_empty Shows if MapiContactTelephonePropertySet is empty             
     # @param [String] default_telephone_number Default value of electronic address Uses when user does not set any electronic address if UseAutocomplete property is set 'true'             
     # @param [BOOLEAN] use_autocomplete Indicates that one electronic address is completed automatically in case if user does not set any electronic address             
@@ -260,7 +155,26 @@ module AsposeEmailCloud
     # @param [String] telex_number Gets or sets the telex number             
     # @param [String] isdn_number Gets or sets the integrated services digital network (ISDN) number             
     # @param [String] pager_telephone_number Gets or sets a pager telephone number             
-    def initialize(is_empty=nil, default_telephone_number=nil, use_autocomplete=nil, callback_telephone_number=nil, business_telephone_number=nil, home_telephone_number=nil, primary_telephone_number=nil, business2_telephone_number=nil, mobile_telephone_number=nil, radio_telephone_number=nil, car_telephone_number=nil, other_telephone_number=nil, assistant_telephone_number=nil, home2_telephone_number=nil, tty_tdd_phone_number=nil, company_main_telephone_number=nil, telex_number=nil, isdn_number=nil, pager_telephone_number=nil)
+    def initialize(
+      is_empty: nil,
+      default_telephone_number: nil,
+      use_autocomplete: nil,
+      callback_telephone_number: nil,
+      business_telephone_number: nil,
+      home_telephone_number: nil,
+      primary_telephone_number: nil,
+      business2_telephone_number: nil,
+      mobile_telephone_number: nil,
+      radio_telephone_number: nil,
+      car_telephone_number: nil,
+      other_telephone_number: nil,
+      assistant_telephone_number: nil,
+      home2_telephone_number: nil,
+      tty_tdd_phone_number: nil,
+      company_main_telephone_number: nil,
+      telex_number: nil,
+      isdn_number: nil,
+      pager_telephone_number: nil)
       self.is_empty = is_empty if is_empty
       self.default_telephone_number = default_telephone_number if default_telephone_number
       self.use_autocomplete = use_autocomplete if use_autocomplete
