@@ -1,211 +1,811 @@
-# EmailApi
+# EmailApi (EmailCloud.email)
 
-            
+Email document (*.eml) operations.
+
 <a name="as_file"></a>
-# as_file
+## as_file
 
+Description: Converts Email model to specified format and returns as file.             
+
+Returns: File stream in specified format.
+
+Method call example:
 ```ruby
-as_file(request)
+result = api.email.as_file(request)
 ```
 
-Converts Email model to specified format and returns as file.             
+### Parameter: request
 
-### Return type
-
-**file**
-
-### request Parameter
+Description: Email model and format to convert.
 
 See parameter model documentation at [EmailAsFileRequest](EmailAsFileRequest.md)
 
-[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-<a name="as_mapi"></a>
-# as_mapi
-
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-as_mapi(email_dto)
+request = EmailAsFileRequest.new(
+  value: EmailDto.new(
+    attachments: [
+      Attachment.new(
+        name: 'some-file.txt',
+        base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+    body: 'Some body',
+    body_type: 'Html',
+    delivery_notification_options: [
+      'OnSuccess',
+      'Delay'],
+    from: MailAddress.new(
+      display_name: 'From Address',
+      address: 'from@aspose.com'),
+    html_body: '<b>Some body</b>',
+    is_body_html: true,
+    is_draft: true,
+    subject: 'Re: Some subject',
+    to: [
+      MailAddress.new(
+        display_name: 'To Address',
+        address: 'to@aspose.com')]))
 ```
 
-Converts EmailDto to MapiMessageDto.             
+</details>
 
-### Return type
+### Result
 
-[**MapiMessageDto**](MapiMessageDto.md)
+Description: File stream in specified format.
 
-### email_dto Parameter
+Return type: **file**
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = EmailAsFileRequest.new(
+  value: EmailDto.new(
+    attachments: [
+      Attachment.new(
+        name: 'some-file.txt',
+        base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+    body: 'Some body',
+    body_type: 'Html',
+    delivery_notification_options: [
+      'OnSuccess',
+      'Delay'],
+    from: MailAddress.new(
+      display_name: 'From Address',
+      address: 'from@aspose.com'),
+    html_body: '<b>Some body</b>',
+    is_body_html: true,
+    is_draft: true,
+    subject: 'Re: Some subject',
+    to: [
+      MailAddress.new(
+        display_name: 'To Address',
+        address: 'to@aspose.com')]))
+
+// Call method:
+result = api.email.as_file(request)
+```
+
+</details>
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+<a name="as_mapi"></a>
+## as_mapi
+
+Description: Converts EmailDto to MapiMessageDto.             
+
+Returns: MAPI model message representation
+
+Method call example:
+```ruby
+result = api.email.as_mapi(email_dto)
+```
+
+### Parameter: email_dto
+
+Description: Email model to convert
 
 See parameter model documentation at [EmailDto](EmailDto.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```ruby
+email_dto = EmailDto.new(
+  attachments: [
+    Attachment.new(
+      name: 'some-file.txt',
+      base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+  body: 'Some body',
+  body_type: 'Html',
+  delivery_notification_options: [
+    'OnSuccess',
+    'Delay'],
+  from: MailAddress.new(
+    display_name: 'From Address',
+    address: 'from@aspose.com'),
+  html_body: '<b>Some body</b>',
+  is_body_html: true,
+  is_draft: true,
+  subject: 'Re: Some subject',
+  to: [
+    MailAddress.new(
+      display_name: 'To Address',
+      address: 'to@aspose.com')])
+```
+
+</details>
+
+### Result
+
+Description: MAPI model message representation
+
+Return type: [**MapiMessageDto**](MapiMessageDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = MapiMessageDto.new(
+  message_body: 'Some body',
+  client_submit_time: DateTime.now,
+  delivery_time: DateTime.now,
+  display_to: 'To Address',
+  flags: [
+    'MsgFlagRead',
+    'MsgFlagUnsent',
+    'MsgFlagHasAttach'],
+  normalized_subject: 'Some subject',
+  sender_address_type: 'SMTP',
+  sender_email_address: 'from@aspose.com',
+  sender_name: 'From Address',
+  sender_smtp_address: 'from@aspose.com',
+  attachments: [
+    MapiAttachmentDto.new(
+      name: 'some-file.txt',
+      data_base64: 'U29tZSBmaWxlIHRleHQ=')],
+  body: 'Some body',
+  message_class: 'IPM.Note',
+  recipients: [
+    MapiRecipientDto.new(
+      email_address: 'to@aspose.com',
+      address_type: 'SMTP',
+      display_name: 'To Address',
+      recipient_type: 'MapiTo')],
+  subject: 'Re: Some subject',
+  subject_prefix: 'Re: ')
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+email_dto = EmailDto.new(
+  attachments: [
+    Attachment.new(
+      name: 'some-file.txt',
+      base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+  body: 'Some body',
+  body_type: 'Html',
+  delivery_notification_options: [
+    'OnSuccess',
+    'Delay'],
+  from: MailAddress.new(
+    display_name: 'From Address',
+    address: 'from@aspose.com'),
+  html_body: '<b>Some body</b>',
+  is_body_html: true,
+  is_draft: true,
+  subject: 'Re: Some subject',
+  to: [
+    MailAddress.new(
+      display_name: 'To Address',
+      address: 'to@aspose.com')])
+
+// Call method:
+result = api.email.as_mapi(email_dto)
+
+// Result example:
+result = MapiMessageDto.new(
+  message_body: 'Some body',
+  client_submit_time: DateTime.now,
+  delivery_time: DateTime.now,
+  display_to: 'To Address',
+  flags: [
+    'MsgFlagRead',
+    'MsgFlagUnsent',
+    'MsgFlagHasAttach'],
+  normalized_subject: 'Some subject',
+  sender_address_type: 'SMTP',
+  sender_email_address: 'from@aspose.com',
+  sender_name: 'From Address',
+  sender_smtp_address: 'from@aspose.com',
+  attachments: [
+    MapiAttachmentDto.new(
+      name: 'some-file.txt',
+      data_base64: 'U29tZSBmaWxlIHRleHQ=')],
+  body: 'Some body',
+  message_class: 'IPM.Note',
+  recipients: [
+    MapiRecipientDto.new(
+      email_address: 'to@aspose.com',
+      address_type: 'SMTP',
+      display_name: 'To Address',
+      recipient_type: 'MapiTo')],
+  subject: 'Re: Some subject',
+  subject_prefix: 'Re: ')
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="convert"></a>
-# convert
+## convert
 
+Description: Converts email document to specified format and returns as file             
+
+Returns: File stream in specified format
+
+Method call example:
 ```ruby
-convert(request)
+result = api.email.convert(request)
 ```
 
-Converts email document to specified format and returns as file             
+### Parameter: request
 
-### Return type
+Description: convert method request.
 
-**file**
+See parameter model documentation at [EmailConvertRequest](EmailConvertRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::EmailConvertRequest.new(
-    from_format,
-    to_format,
-    file)
+request = EmailConvertRequest.new(
+    from_format: 'Msg',
+    to_format: 'Mhtml',
+    file: File.new('/path/to/message.msg'))
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from_format** | **String** | File format to convert to Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
- **to_format** | **String** | File format to convert from Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
- **file** | **File** | File to convert | 
+</details>
+
+### Result
+
+Description: File stream in specified format
+
+Return type: **file**
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = EmailConvertRequest.new(
+    from_format: 'Msg',
+    to_format: 'Mhtml',
+    file: File.new('/path/to/message.msg'))
+
+// Call method:
+result = api.email.convert(request)
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="from_file"></a>
-# from_file
+## from_file
 
+Description: Converts email document to a model representation             
+
+Returns: Email document model
+
+Method call example:
 ```ruby
-from_file(request)
+result = api.email.from_file(request)
 ```
 
-Converts email document to a model representation             
+### Parameter: request
 
-### Return type
+Description: from_file method request.
 
-[**EmailDto**](EmailDto.md)
+See parameter model documentation at [EmailFromFileRequest](EmailFromFileRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::EmailFromFileRequest.new(
-    format,
-    file)
+request = EmailFromFileRequest.new(
+    format: 'Eml',
+    file: File.new('/path/to/message.eml'))
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **format** | **String** |  Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
- **file** | **File** | File to convert | 
+</details>
+
+### Result
+
+Description: Email document model
+
+Return type: [**EmailDto**](EmailDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = EmailDto.new(
+  attachments: [
+    Attachment.new(
+      name: 'some-file.txt',
+      base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+  body: 'Some body',
+  body_type: 'Html',
+  delivery_notification_options: [
+    'OnSuccess',
+    'Delay'],
+  from: MailAddress.new(
+    display_name: 'From Address',
+    address: 'from@aspose.com'),
+  html_body: '<b>Some body</b>',
+  is_body_html: true,
+  is_draft: true,
+  subject: 'Re: Some subject',
+  to: [
+    MailAddress.new(
+      display_name: 'To Address',
+      address: 'to@aspose.com')])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = EmailFromFileRequest.new(
+    format: 'Eml',
+    file: File.new('/path/to/message.eml'))
+
+// Call method:
+result = api.email.from_file(request)
+
+// Result example:
+result = EmailDto.new(
+  attachments: [
+    Attachment.new(
+      name: 'some-file.txt',
+      base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+  body: 'Some body',
+  body_type: 'Html',
+  delivery_notification_options: [
+    'OnSuccess',
+    'Delay'],
+  from: MailAddress.new(
+    display_name: 'From Address',
+    address: 'from@aspose.com'),
+  html_body: '<b>Some body</b>',
+  is_body_html: true,
+  is_draft: true,
+  subject: 'Re: Some subject',
+  to: [
+    MailAddress.new(
+      display_name: 'To Address',
+      address: 'to@aspose.com')])
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="get"></a>
-# get
+## get
 
+Description: Get email document from storage.             
+
+Returns: Email document.
+
+Method call example:
 ```ruby
-get(request)
+result = api.email.get(request)
 ```
 
-Get email document from storage.             
+### Parameter: request
 
-### Return type
+Description: get method request.
 
-[**EmailDto**](EmailDto.md)
+See parameter model documentation at [EmailGetRequest](EmailGetRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::EmailGetRequest.new(
-    format,
-    file_name,
-    folder,
-    storage)
+request = EmailGetRequest.new(
+    format: 'Eml',
+    file_name: 'email.eml',
+    folder: 'folder/on/storage',
+    storage: 'First Storage')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **format** | **String** | Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
- **file_name** | **String** | Email document file name. | 
- **folder** | **String** | Path to folder in storage. | [optional] 
- **storage** | **String** | Storage name. | [optional] 
+</details>
+
+### Result
+
+Description: Email document.
+
+Return type: [**EmailDto**](EmailDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = EmailDto.new(
+  attachments: [
+    Attachment.new(
+      name: 'some-file.txt',
+      base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+  body: 'Some body',
+  body_type: 'Html',
+  delivery_notification_options: [
+    'OnSuccess',
+    'Delay'],
+  from: MailAddress.new(
+    display_name: 'From Address',
+    address: 'from@aspose.com'),
+  html_body: '<b>Some body</b>',
+  is_body_html: true,
+  is_draft: true,
+  subject: 'Re: Some subject',
+  to: [
+    MailAddress.new(
+      display_name: 'To Address',
+      address: 'to@aspose.com')])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = EmailGetRequest.new(
+    format: 'Eml',
+    file_name: 'email.eml',
+    folder: 'folder/on/storage',
+    storage: 'First Storage')
+
+// Call method:
+result = api.email.get(request)
+
+// Result example:
+result = EmailDto.new(
+  attachments: [
+    Attachment.new(
+      name: 'some-file.txt',
+      base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+  body: 'Some body',
+  body_type: 'Html',
+  delivery_notification_options: [
+    'OnSuccess',
+    'Delay'],
+  from: MailAddress.new(
+    display_name: 'From Address',
+    address: 'from@aspose.com'),
+  html_body: '<b>Some body</b>',
+  is_body_html: true,
+  is_draft: true,
+  subject: 'Re: Some subject',
+  to: [
+    MailAddress.new(
+      display_name: 'To Address',
+      address: 'to@aspose.com')])
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="get_as_file"></a>
-# get_as_file
+## get_as_file
 
+Description: Converts email document from storage to specified format and returns as file             
+
+Returns: File stream in specified format
+
+Method call example:
 ```ruby
-get_as_file(request)
+result = api.email.get_as_file(request)
 ```
 
-Converts email document from storage to specified format and returns as file             
+### Parameter: request
 
-### Return type
+Description: get_as_file method request.
 
-**file**
+See parameter model documentation at [EmailGetAsFileRequest](EmailGetAsFileRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::EmailGetAsFileRequest.new(
-    file_name,
-    format,
-    storage,
-    folder)
+request = EmailGetAsFileRequest.new(
+    file_name: 'email.eml',
+    format: 'Mhtml',
+    storage: 'First Storage',
+    folder: 'folder/on/storage')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **file_name** | **String** | Email document file name | 
- **format** | **String** | File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
- **storage** | **String** | Storage name | [optional] 
- **folder** | **String** | Path to folder in storage | [optional] 
+</details>
+
+### Result
+
+Description: File stream in specified format
+
+Return type: **file**
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = EmailGetAsFileRequest.new(
+    file_name: 'email.eml',
+    format: 'Mhtml',
+    storage: 'First Storage',
+    folder: 'folder/on/storage')
+
+// Call method:
+result = api.email.get_as_file(request)
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="get_list"></a>
-# get_list
+## get_list
 
+Description: Get email list from storage folder.             
+
+Returns: Email document list.
+
+Method call example:
 ```ruby
-get_list(request)
+result = api.email.get_list(request)
 ```
 
-Get email list from storage folder.             
+### Parameter: request
 
-### Return type
+Description: get_list method request.
 
-[**EmailStorageList**](EmailStorageList.md)
+See parameter model documentation at [EmailGetListRequest](EmailGetListRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::EmailGetListRequest.new(
-    format,
-    folder,
-    storage,
-    items_per_page,
-    page_number)
+request = EmailGetListRequest.new(
+    format: 'Eml',
+    folder: 'folder/on/storage',
+    storage: 'First Storage',
+    items_per_page: 10,
+    page_number: 0)
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **format** | **String** | Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | 
- **folder** | **String** | Path to folder in storage. | [optional] 
- **storage** | **String** | Storage name. | [optional] 
- **items_per_page** | **Integer** | Count of items on page. | [optional] [default to 10]
- **page_number** | **Integer** | Page number. | [optional] [default to 0]
+</details>
+
+### Result
+
+Description: Email document list.
+
+Return type: [**EmailStorageList**](EmailStorageList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = EmailStorageList.new(
+  value: [
+    EmailSaveRequest.new(
+      storage_file: StorageFileLocation.new(
+        file_name: 'message.eml',
+        storage: 'First Storage',
+        folder_path: 'file/location/folder/on/storage'),
+      value: EmailDto.new(
+        attachments: [
+          Attachment.new(
+            name: 'some-file.txt',
+            base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+        body: 'Some body',
+        body_type: 'Html',
+        delivery_notification_options: [
+          'OnSuccess',
+          'Delay'],
+        from: MailAddress.new(
+          display_name: 'From Address',
+          address: 'from@aspose.com'),
+        html_body: '<b>Some body</b>',
+        is_body_html: true,
+        is_draft: true,
+        subject: 'Re: Some subject',
+        to: [
+          MailAddress.new(
+            display_name: 'To Address',
+            address: 'to@aspose.com')]))])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = EmailGetListRequest.new(
+    format: 'Eml',
+    folder: 'folder/on/storage',
+    storage: 'First Storage',
+    items_per_page: 10,
+    page_number: 0)
+
+// Call method:
+result = api.email.get_list(request)
+
+// Result example:
+result = EmailStorageList.new(
+  value: [
+    EmailSaveRequest.new(
+      storage_file: StorageFileLocation.new(
+        file_name: 'message.eml',
+        storage: 'First Storage',
+        folder_path: 'file/location/folder/on/storage'),
+      value: EmailDto.new(
+        attachments: [
+          Attachment.new(
+            name: 'some-file.txt',
+            base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+        body: 'Some body',
+        body_type: 'Html',
+        delivery_notification_options: [
+          'OnSuccess',
+          'Delay'],
+        from: MailAddress.new(
+          display_name: 'From Address',
+          address: 'from@aspose.com'),
+        html_body: '<b>Some body</b>',
+        is_body_html: true,
+        is_draft: true,
+        subject: 'Re: Some subject',
+        to: [
+          MailAddress.new(
+            display_name: 'To Address',
+            address: 'to@aspose.com')]))])
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="save"></a>
-# save
+## save
 
+Description: Save email document to storage.             
+
+Method call example:
 ```ruby
-save(request)
+api.email.save(request)
 ```
 
-Save email document to storage.             
+### Parameter: request
 
-### Return type
-
-nil (empty response body)
-
-### request Parameter
+Description: Email document create/update request.
 
 See parameter model documentation at [EmailSaveRequest](EmailSaveRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```ruby
+request = EmailSaveRequest.new(
+  format: 'Msg',
+  storage_file: StorageFileLocation.new(
+    file_name: 'email.eml',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'),
+  value: EmailDto.new(
+    attachments: [
+      Attachment.new(
+        name: 'some-file.txt',
+        base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+    body: 'Some body',
+    body_type: 'Html',
+    delivery_notification_options: [
+      'OnSuccess',
+      'Delay'],
+    from: MailAddress.new(
+      display_name: 'From Address',
+      address: 'from@aspose.com'),
+    html_body: '<b>Some body</b>',
+    is_body_html: true,
+    is_draft: true,
+    subject: 'Re: Some subject',
+    to: [
+      MailAddress.new(
+        display_name: 'To Address',
+        address: 'to@aspose.com')]))
+```
+
+</details>
+
+### Result
+
+Return type: nil (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = EmailSaveRequest.new(
+  format: 'Msg',
+  storage_file: StorageFileLocation.new(
+    file_name: 'email.eml',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'),
+  value: EmailDto.new(
+    attachments: [
+      Attachment.new(
+        name: 'some-file.txt',
+        base64_data: 'U29tZSBmaWxlIGNvbnRlbnQ=')],
+    body: 'Some body',
+    body_type: 'Html',
+    delivery_notification_options: [
+      'OnSuccess',
+      'Delay'],
+    from: MailAddress.new(
+      display_name: 'From Address',
+      address: 'from@aspose.com'),
+    html_body: '<b>Some body</b>',
+    is_body_html: true,
+    is_draft: true,
+    subject: 'Re: Some subject',
+    to: [
+      MailAddress.new(
+        display_name: 'To Address',
+        address: 'to@aspose.com')]))
+
+// Call method:
+api.email.save(request)
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

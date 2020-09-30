@@ -1,114 +1,617 @@
-# MapiCalendarApi
+# MapiCalendarApi (EmailCloud.mapi.calendar)
 
-            
+MAPI calendar operations.
+
 <a name="as_calendar_dto"></a>
-# as_calendar_dto
+## as_calendar_dto
 
+Description: Converts MAPI calendar model to CalendarDto model.             
+
+Returns: CalendarDto model.
+
+Method call example:
 ```ruby
-as_calendar_dto(mapi_calendar_dto)
+result = api.mapi.calendar.as_calendar_dto(mapi_calendar_dto)
 ```
 
-Converts MAPI calendar model to CalendarDto model.             
+### Parameter: mapi_calendar_dto
 
-### Return type
-
-[**CalendarDto**](CalendarDto.md)
-
-### mapi_calendar_dto Parameter
+Description: MAPI calendar model to convert.
 
 See parameter model documentation at [MapiCalendarDto](MapiCalendarDto.md)
 
-[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-<a name="as_file"></a>
-# as_file
-
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-as_file(request)
+mapi_calendar_dto = MapiCalendarDto.new(
+  attendees: MapiCalendarAttendeesDto.new(
+    appointment_recipients: [
+      MapiRecipientDto.new(
+        email_address: 'organizer@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Organizer Name',
+        recipient_type: 'MapiTo'),
+      MapiRecipientDto.new(
+        email_address: 'attendee@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Attendee Name',
+        recipient_type: 'MapiTo')]),
+  busy_status: 'Tentative',
+  client_intent: [
+    'Manager'],
+  end_date: DateTime.now,
+  location: 'Some location',
+  recurrence: MapiCalendarEventRecurrenceDto.new(
+    recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+      frequency: 'Daily',
+      occurrence_count: 10,
+      week_start_day: 'Monday')),
+  start_date: DateTime.now,
+  organizer: MapiElectronicAddressDto.new(
+    email_address: 'organizer@aspose.com'),
+  body: 'Some description',
+  subject: 'Some summary')
 ```
 
-Converts MAPI calendar model to specified format and returns as file.             
+</details>
 
-### Return type
+### Result
 
-**file**
+Description: CalendarDto model.
 
-### request Parameter
+Return type: [**CalendarDto**](CalendarDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = CalendarDto.new(
+  attendees: [
+    MailAddress.new(
+      display_name: 'Attendee Name',
+      address: 'attendee@aspose.com',
+      participation_status: 'Accepted')],
+  description: 'Some description',
+  end_date: DateTime.now,
+  location: 'Some location',
+  organizer: MailAddress.new(
+    display_name: 'Organizer Name',
+    address: 'organizer@aspose.com'),
+  recurrence: DailyRecurrencePatternDto.new(
+    interval: -1,
+    occurs: 10,
+    week_start: 'Monday'),
+  start_date: DateTime.now,
+  summary: 'Some summary')
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+mapi_calendar_dto = MapiCalendarDto.new(
+  attendees: MapiCalendarAttendeesDto.new(
+    appointment_recipients: [
+      MapiRecipientDto.new(
+        email_address: 'organizer@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Organizer Name',
+        recipient_type: 'MapiTo'),
+      MapiRecipientDto.new(
+        email_address: 'attendee@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Attendee Name',
+        recipient_type: 'MapiTo')]),
+  busy_status: 'Tentative',
+  client_intent: [
+    'Manager'],
+  end_date: DateTime.now,
+  location: 'Some location',
+  recurrence: MapiCalendarEventRecurrenceDto.new(
+    recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+      frequency: 'Daily',
+      occurrence_count: 10,
+      week_start_day: 'Monday')),
+  start_date: DateTime.now,
+  organizer: MapiElectronicAddressDto.new(
+    email_address: 'organizer@aspose.com'),
+  body: 'Some description',
+  subject: 'Some summary')
+
+// Call method:
+result = api.mapi.calendar.as_calendar_dto(mapi_calendar_dto)
+
+// Result example:
+result = CalendarDto.new(
+  attendees: [
+    MailAddress.new(
+      display_name: 'Attendee Name',
+      address: 'attendee@aspose.com',
+      participation_status: 'Accepted')],
+  description: 'Some description',
+  end_date: DateTime.now,
+  location: 'Some location',
+  organizer: MailAddress.new(
+    display_name: 'Organizer Name',
+    address: 'organizer@aspose.com'),
+  recurrence: DailyRecurrencePatternDto.new(
+    interval: -1,
+    occurs: 10,
+    week_start: 'Monday'),
+  start_date: DateTime.now,
+  summary: 'Some summary')
+```
+
+</details>
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+<a name="as_file"></a>
+## as_file
+
+Description: Converts MAPI calendar model to specified format and returns as file.             
+
+Returns: File stream in specified format.
+
+Method call example:
+```ruby
+result = api.mapi.calendar.as_file(request)
+```
+
+### Parameter: request
+
+Description: MAPI calendar model to convert.
 
 See parameter model documentation at [MapiCalendarAsFileRequest](MapiCalendarAsFileRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```ruby
+request = MapiCalendarAsFileRequest.new(
+  format: 'Msg',
+  value: MapiCalendarDto.new(
+    attendees: MapiCalendarAttendeesDto.new(
+      appointment_recipients: [
+        MapiRecipientDto.new(
+          email_address: 'organizer@aspose.com',
+          address_type: 'SMTP',
+          display_name: 'Organizer Name',
+          recipient_type: 'MapiTo'),
+        MapiRecipientDto.new(
+          email_address: 'attendee@aspose.com',
+          address_type: 'SMTP',
+          display_name: 'Attendee Name',
+          recipient_type: 'MapiTo')]),
+    busy_status: 'Tentative',
+    client_intent: [
+      'Manager'],
+    end_date: DateTime.now,
+    location: 'Some location',
+    recurrence: MapiCalendarEventRecurrenceDto.new(
+      recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+        frequency: 'Daily',
+        occurrence_count: 10,
+        week_start_day: 'Monday')),
+    start_date: DateTime.now,
+    organizer: MapiElectronicAddressDto.new(
+      email_address: 'organizer@aspose.com'),
+    body: 'Some description',
+    subject: 'Some summary'))
+```
+
+</details>
+
+### Result
+
+Description: File stream in specified format.
+
+Return type: **file**
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = MapiCalendarAsFileRequest.new(
+  format: 'Msg',
+  value: MapiCalendarDto.new(
+    attendees: MapiCalendarAttendeesDto.new(
+      appointment_recipients: [
+        MapiRecipientDto.new(
+          email_address: 'organizer@aspose.com',
+          address_type: 'SMTP',
+          display_name: 'Organizer Name',
+          recipient_type: 'MapiTo'),
+        MapiRecipientDto.new(
+          email_address: 'attendee@aspose.com',
+          address_type: 'SMTP',
+          display_name: 'Attendee Name',
+          recipient_type: 'MapiTo')]),
+    busy_status: 'Tentative',
+    client_intent: [
+      'Manager'],
+    end_date: DateTime.now,
+    location: 'Some location',
+    recurrence: MapiCalendarEventRecurrenceDto.new(
+      recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+        frequency: 'Daily',
+        occurrence_count: 10,
+        week_start_day: 'Monday')),
+    start_date: DateTime.now,
+    organizer: MapiElectronicAddressDto.new(
+      email_address: 'organizer@aspose.com'),
+    body: 'Some description',
+    subject: 'Some summary'))
+
+// Call method:
+result = api.mapi.calendar.as_file(request)
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="from_file"></a>
-# from_file
+## from_file
 
+Description: Converts calendar file to a MAPI model representation.             
+
+Returns: MAPI model.
+
+Method call example:
 ```ruby
-from_file(request)
+result = api.mapi.calendar.from_file(request)
 ```
 
-Converts calendar file to a MAPI model representation.             
+### Parameter: request
 
-### Return type
+Description: from_file method request.
 
-[**MapiCalendarDto**](MapiCalendarDto.md)
+See parameter model documentation at [MapiCalendarFromFileRequest](MapiCalendarFromFileRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::MapiCalendarFromFileRequest.new(
-    file)
+request = MapiCalendarFromFileRequest.new(
+    file: File.new('/path/to/calendar.msg'))
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **file** | **File** | File to convert | 
+</details>
+
+### Result
+
+Description: MAPI model.
+
+Return type: [**MapiCalendarDto**](MapiCalendarDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = MapiCalendarDto.new(
+  attendees: MapiCalendarAttendeesDto.new(
+    appointment_recipients: [
+      MapiRecipientDto.new(
+        email_address: 'organizer@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Organizer Name',
+        recipient_type: 'MapiTo'),
+      MapiRecipientDto.new(
+        email_address: 'attendee@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Attendee Name',
+        recipient_type: 'MapiTo')]),
+  busy_status: 'Tentative',
+  client_intent: [
+    'Manager'],
+  end_date: DateTime.now,
+  location: 'Some location',
+  recurrence: MapiCalendarEventRecurrenceDto.new(
+    recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+      frequency: 'Daily',
+      occurrence_count: 10,
+      week_start_day: 'Monday')),
+  start_date: DateTime.now,
+  organizer: MapiElectronicAddressDto.new(
+    email_address: 'organizer@aspose.com'),
+  body: 'Some description',
+  subject: 'Some summary')
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = MapiCalendarFromFileRequest.new(
+    file: File.new('/path/to/calendar.msg'))
+
+// Call method:
+result = api.mapi.calendar.from_file(request)
+
+// Result example:
+result = MapiCalendarDto.new(
+  attendees: MapiCalendarAttendeesDto.new(
+    appointment_recipients: [
+      MapiRecipientDto.new(
+        email_address: 'organizer@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Organizer Name',
+        recipient_type: 'MapiTo'),
+      MapiRecipientDto.new(
+        email_address: 'attendee@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Attendee Name',
+        recipient_type: 'MapiTo')]),
+  busy_status: 'Tentative',
+  client_intent: [
+    'Manager'],
+  end_date: DateTime.now,
+  location: 'Some location',
+  recurrence: MapiCalendarEventRecurrenceDto.new(
+    recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+      frequency: 'Daily',
+      occurrence_count: 10,
+      week_start_day: 'Monday')),
+  start_date: DateTime.now,
+  organizer: MapiElectronicAddressDto.new(
+    email_address: 'organizer@aspose.com'),
+  body: 'Some description',
+  subject: 'Some summary')
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="get"></a>
-# get
+## get
 
+Description: Get MAPI calendar document.             
+
+Returns: MAPI Calendar model.
+
+Method call example:
 ```ruby
-get(request)
+result = api.mapi.calendar.get(request)
 ```
 
-Get MAPI calendar document.             
+### Parameter: request
 
-### Return type
+Description: get method request.
 
-[**MapiCalendarDto**](MapiCalendarDto.md)
+See parameter model documentation at [MapiCalendarGetRequest](MapiCalendarGetRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::MapiCalendarGetRequest.new(
-    file_name,
-    folder,
-    storage)
+request = MapiCalendarGetRequest.new(
+    file_name: 'calendar.msg',
+    folder: 'calendar/location/on/storage',
+    storage: 'First Storage')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **file_name** | **String** | Calendar file name in storage. | 
- **folder** | **String** | Path to folder in storage. | [optional] 
- **storage** | **String** | Storage name. | [optional] 
+</details>
+
+### Result
+
+Description: MAPI Calendar model.
+
+Return type: [**MapiCalendarDto**](MapiCalendarDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = MapiCalendarDto.new(
+  attendees: MapiCalendarAttendeesDto.new(
+    appointment_recipients: [
+      MapiRecipientDto.new(
+        email_address: 'organizer@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Organizer Name',
+        recipient_type: 'MapiTo'),
+      MapiRecipientDto.new(
+        email_address: 'attendee@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Attendee Name',
+        recipient_type: 'MapiTo')]),
+  busy_status: 'Tentative',
+  client_intent: [
+    'Manager'],
+  end_date: DateTime.now,
+  location: 'Some location',
+  recurrence: MapiCalendarEventRecurrenceDto.new(
+    recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+      frequency: 'Daily',
+      occurrence_count: 10,
+      week_start_day: 'Monday')),
+  start_date: DateTime.now,
+  organizer: MapiElectronicAddressDto.new(
+    email_address: 'organizer@aspose.com'),
+  body: 'Some description',
+  subject: 'Some summary')
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = MapiCalendarGetRequest.new(
+    file_name: 'calendar.msg',
+    folder: 'calendar/location/on/storage',
+    storage: 'First Storage')
+
+// Call method:
+result = api.mapi.calendar.get(request)
+
+// Result example:
+result = MapiCalendarDto.new(
+  attendees: MapiCalendarAttendeesDto.new(
+    appointment_recipients: [
+      MapiRecipientDto.new(
+        email_address: 'organizer@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Organizer Name',
+        recipient_type: 'MapiTo'),
+      MapiRecipientDto.new(
+        email_address: 'attendee@aspose.com',
+        address_type: 'SMTP',
+        display_name: 'Attendee Name',
+        recipient_type: 'MapiTo')]),
+  busy_status: 'Tentative',
+  client_intent: [
+    'Manager'],
+  end_date: DateTime.now,
+  location: 'Some location',
+  recurrence: MapiCalendarEventRecurrenceDto.new(
+    recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+      frequency: 'Daily',
+      occurrence_count: 10,
+      week_start_day: 'Monday')),
+  start_date: DateTime.now,
+  organizer: MapiElectronicAddressDto.new(
+    email_address: 'organizer@aspose.com'),
+  body: 'Some description',
+  subject: 'Some summary')
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="save"></a>
-# save
+## save
 
+Description: Save MAPI Calendar to storage.             
+
+Method call example:
 ```ruby
-save(request)
+api.mapi.calendar.save(request)
 ```
 
-Save MAPI Calendar to storage.             
+### Parameter: request
 
-### Return type
-
-nil (empty response body)
-
-### request Parameter
+Description: Calendar create/update request.
 
 See parameter model documentation at [MapiCalendarSaveRequest](MapiCalendarSaveRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```ruby
+request = MapiCalendarSaveRequest.new(
+  format: 'Msg',
+  storage_file: StorageFileLocation.new(
+    file_name: 'calendar.msg',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'),
+  value: MapiCalendarDto.new(
+    attendees: MapiCalendarAttendeesDto.new(
+      appointment_recipients: [
+        MapiRecipientDto.new(
+          email_address: 'organizer@aspose.com',
+          address_type: 'SMTP',
+          display_name: 'Organizer Name',
+          recipient_type: 'MapiTo'),
+        MapiRecipientDto.new(
+          email_address: 'attendee@aspose.com',
+          address_type: 'SMTP',
+          display_name: 'Attendee Name',
+          recipient_type: 'MapiTo')]),
+    busy_status: 'Tentative',
+    client_intent: [
+      'Manager'],
+    end_date: DateTime.now,
+    location: 'Some location',
+    recurrence: MapiCalendarEventRecurrenceDto.new(
+      recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+        frequency: 'Daily',
+        occurrence_count: 10,
+        week_start_day: 'Monday')),
+    start_date: DateTime.now,
+    organizer: MapiElectronicAddressDto.new(
+      email_address: 'organizer@aspose.com'),
+    body: 'Some description',
+    subject: 'Some summary'))
+```
+
+</details>
+
+### Result
+
+Return type: nil (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = MapiCalendarSaveRequest.new(
+  format: 'Msg',
+  storage_file: StorageFileLocation.new(
+    file_name: 'calendar.msg',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'),
+  value: MapiCalendarDto.new(
+    attendees: MapiCalendarAttendeesDto.new(
+      appointment_recipients: [
+        MapiRecipientDto.new(
+          email_address: 'organizer@aspose.com',
+          address_type: 'SMTP',
+          display_name: 'Organizer Name',
+          recipient_type: 'MapiTo'),
+        MapiRecipientDto.new(
+          email_address: 'attendee@aspose.com',
+          address_type: 'SMTP',
+          display_name: 'Attendee Name',
+          recipient_type: 'MapiTo')]),
+    busy_status: 'Tentative',
+    client_intent: [
+      'Manager'],
+    end_date: DateTime.now,
+    location: 'Some location',
+    recurrence: MapiCalendarEventRecurrenceDto.new(
+      recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
+        frequency: 'Daily',
+        occurrence_count: 10,
+        week_start_day: 'Monday')),
+    start_date: DateTime.now,
+    organizer: MapiElectronicAddressDto.new(
+      email_address: 'organizer@aspose.com'),
+    body: 'Some description',
+    subject: 'Some summary'))
+
+// Call method:
+api.mapi.calendar.save(request)
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

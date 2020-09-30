@@ -1,28 +1,69 @@
-# DisposableEmailApi
+# DisposableEmailApi (EmailCloud.disposable_email)
 
-            
+Check email address is disposable operations
+
 <a name="is_disposable"></a>
-# is_disposable
+## is_disposable
 
+Description: Check email address is disposable             
+
+Returns: true if address is disposable
+
+Method call example:
 ```ruby
-is_disposable(request)
+result = api.disposable_email.is_disposable(request)
 ```
 
-Check email address is disposable             
+### Parameter: request
 
-### Return type
+Description: is_disposable method request.
 
-[**ValueTOfBoolean**](ValueTOfBoolean.md)
+See parameter model documentation at [DisposableEmailIsDisposableRequest](DisposableEmailIsDisposableRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::DisposableEmailIsDisposableRequest.new(
-    address)
+request = DisposableEmailIsDisposableRequest.new(
+    address: 'example@mailcatch.com')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **address** | **String** | An email address to check | 
+</details>
+
+### Result
+
+Description: true if address is disposable
+
+Return type: [**ValueTOfBoolean**](ValueTOfBoolean.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = 
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud(app_key, app_sid)
+
+// Prepare parameters:
+request = DisposableEmailIsDisposableRequest.new(
+    address: 'example@mailcatch.com')
+
+// Call method:
+result = api.disposable_email.is_disposable(request)
+
+// Result example:
+result = 
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 
