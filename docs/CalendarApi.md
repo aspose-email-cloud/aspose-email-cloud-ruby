@@ -84,7 +84,7 @@ result = AlternateView.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = CalendarAsAlternateRequest.new(
@@ -191,7 +191,7 @@ Return type: **file**
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = CalendarAsFileRequest.new(
@@ -312,7 +312,7 @@ result = MapiCalendarDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 calendar_dto = CalendarDto.new(
@@ -412,7 +412,7 @@ Return type: **file**
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = CalendarConvertRequest.new(
@@ -491,7 +491,7 @@ result = CalendarDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = CalendarFromFileRequest.new(
@@ -591,7 +591,7 @@ result = CalendarDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = CalendarGetRequest.new(
@@ -693,7 +693,7 @@ result = AlternateView.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = CalendarGetAsAlternateRequest.new(
@@ -771,7 +771,7 @@ Return type: **file**
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = CalendarGetAsFileRequest.new(
@@ -862,7 +862,7 @@ result = CalendarStorageList.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = CalendarGetListRequest.new(
@@ -962,7 +962,7 @@ Return type: nil (empty response body)
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = CalendarSaveRequest.new(

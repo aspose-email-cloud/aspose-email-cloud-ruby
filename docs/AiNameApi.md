@@ -57,7 +57,7 @@ result = AiNameWeightedVariants.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = AiNameCompleteRequest.new(
@@ -135,7 +135,7 @@ result = AiNameWeightedVariants.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = AiNameExpandRequest.new(
@@ -212,7 +212,7 @@ result = AiNameWeightedVariants.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = 
@@ -285,7 +285,7 @@ result = AiNameFormatted.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = AiNameFormatRequest.new(
@@ -353,7 +353,7 @@ result = AiNameFormatted.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = 
@@ -418,7 +418,7 @@ result =
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = AiNameGenderizeRequest.new(
@@ -481,7 +481,7 @@ result =
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = 
@@ -550,7 +550,7 @@ result = AiNameMatchResult.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = AiNameMatchRequest.new(
@@ -624,7 +624,7 @@ result = AiNameMatchResult.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = 
@@ -694,7 +694,7 @@ result =
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = AiNameParseRequest.new(
@@ -760,7 +760,7 @@ result =
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = AiNameParseEmailAddressRequest.new(

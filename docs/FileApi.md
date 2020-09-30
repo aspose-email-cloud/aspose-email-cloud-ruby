@@ -41,7 +41,7 @@ Return type: nil (empty response body)
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = CopyFileRequest.new(
@@ -94,7 +94,7 @@ Return type: nil (empty response body)
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = DeleteFileRequest.new(
@@ -149,7 +149,7 @@ Return type: **file**
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = DownloadFileRequest.new(
@@ -202,7 +202,7 @@ Return type: nil (empty response body)
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = MoveFileRequest.new(
@@ -268,7 +268,7 @@ result =
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = UploadFileRequest.new(

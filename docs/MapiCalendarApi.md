@@ -93,7 +93,7 @@ result = CalendarDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 mapi_calendar_dto = MapiCalendarDto.new(
@@ -220,7 +220,7 @@ Return type: **file**
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = MapiCalendarAsFileRequest.new(
@@ -336,7 +336,7 @@ result = MapiCalendarDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = MapiCalendarFromFileRequest.new(
@@ -456,7 +456,7 @@ result = MapiCalendarDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = MapiCalendarGetRequest.new(
@@ -569,7 +569,7 @@ Return type: nil (empty response body)
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = MapiCalendarSaveRequest.new(

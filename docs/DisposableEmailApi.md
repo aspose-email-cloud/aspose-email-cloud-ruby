@@ -50,7 +50,7 @@ result =
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = DisposableEmailIsDisposableRequest.new(

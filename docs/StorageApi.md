@@ -52,7 +52,7 @@ result = DiscUsage.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = GetDiscUsageRequest.new(
@@ -127,7 +127,7 @@ result = FileVersions.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = GetFileVersionsRequest.new(
@@ -202,7 +202,7 @@ result = ObjectExist.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = ObjectExistsRequest.new(
@@ -269,7 +269,7 @@ result = StorageExist.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud(app_key, app_sid)
+api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = StorageExistsRequest.new(
