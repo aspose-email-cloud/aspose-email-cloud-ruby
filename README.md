@@ -31,12 +31,12 @@ Aspose.Email Cloud SDK 20.9.0 is based on a new v4.0 REST API.
 - All models are stored in one folder/namespace.
 - The request models are simplified.
 
-See [Release notes](https://docs.aspose.cloud/display/emailcloud/Aspose.Email+Cloud+20.9+Release+Notes).
+See [Release notes](https://docs.aspose.cloud/email/aspose-email-cloud-20-9-release-notes/).
 
 ## How to use the SDK?
 The complete source code is available in the [GIT repository](https://github.com/aspose-email-cloud/aspose-email-cloud-ruby/tree/master/lib/aspose-email-cloud).
 
-Use [SDK tutorials](https://docs.aspose.cloud/display/emailcloud/SDK+Tutorials).
+Use [SDK tutorials](https://docs.aspose.cloud/email/sdk-tutorials/).
 
 SDK reference documentation is available in [this README](https://github.com/aspose-email-cloud/aspose-email-cloud-ruby/blob/master/docs/README.md).
 
@@ -47,7 +47,7 @@ To use this SDK, you need an App SID and an App Key; they can be looked up at [A
 ### Installation
 You can either directly use it in your project via source code or get [gem](https://rubygems.org/gems/aspose_email_cloud).
 
-See more details about SDK installation in this tutorial: [SDK setup](https://docs.aspose.cloud/display/emailcloud/SDK+setup).
+See more details about SDK installation in this tutorial: [SDK setup](https://docs.aspose.cloud/email/sdk-setup/).
 
 ### Usage examples
 To use the API, you should create an EmailCloud object:
@@ -63,4 +63,4 @@ result = api.ai.bcr.parse(AiBcrParseRequest.new(file: image, is_single: true))
 contact = result.value[0]
 ```
 
-[Product Page](https://products.aspose.cloud/email/ruby) | [Documentation](https://docs.aspose.cloud/display/Emailcloud/Home) | [Demo](https://products.aspose.app/email/family) | [API Reference](https://apireference.aspose.cloud/email/) | [Blog](https://blog.aspose.cloud/category/email/) | [Free support](https://forum.aspose.cloud/c/email) | [Free trial](https://dashboard.aspose.cloud/#/apps)
+[Product Page](https://products.aspose.cloud/email/ruby) | [Documentation](https://docs.aspose.cloud/email/) | [Demo](https://products.aspose.app/email/family) | [API Reference](https://apireference.aspose.cloud/email/) | [Blog](https://blog.aspose.cloud/category/email/) | [Free support](https://forum.aspose.cloud/c/email) | [Free trial](https://dashboard.aspose.cloud/#/apps)
