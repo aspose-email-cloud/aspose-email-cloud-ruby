@@ -33,7 +33,7 @@ request = ContactAsFileRequest.new(
     display_name: 'Alex Thomas',
     email_addresses: [
       EmailAddress.new(
-        category: EnumWithCustom<EmailAddressCategory>.new(
+        category: EnumWithCustomOfEmailAddressCategory.new(
           value: 'Custom',
           description: 'Partners'),
         display_name: 'Alex Thomas Partners',
@@ -43,7 +43,7 @@ request = ContactAsFileRequest.new(
     given_name: 'Alex',
     phone_numbers: [
       PhoneNumber.new(
-        category: EnumWithCustom<PhoneNumberCategory>.new(
+        category: EnumWithCustomOfPhoneNumberCategory.new(
           value: 'Office'),
         number: '+49 211 4247 21',
         preferred: true)],
@@ -51,7 +51,7 @@ request = ContactAsFileRequest.new(
     surname: 'Thomas',
     urls: [
       Url.new(
-        category: EnumWithCustom<UrlCategory>.new(
+        category: EnumWithCustomOfUrlCategory.new(
           value: 'Work'),
         preferred: true,
         href: 'www.aspose.com')]))
@@ -83,7 +83,7 @@ request = ContactAsFileRequest.new(
     display_name: 'Alex Thomas',
     email_addresses: [
       EmailAddress.new(
-        category: EnumWithCustom<EmailAddressCategory>.new(
+        category: EnumWithCustomOfEmailAddressCategory.new(
           value: 'Custom',
           description: 'Partners'),
         display_name: 'Alex Thomas Partners',
@@ -93,7 +93,7 @@ request = ContactAsFileRequest.new(
     given_name: 'Alex',
     phone_numbers: [
       PhoneNumber.new(
-        category: EnumWithCustom<PhoneNumberCategory>.new(
+        category: EnumWithCustomOfPhoneNumberCategory.new(
           value: 'Office'),
         number: '+49 211 4247 21',
         preferred: true)],
@@ -101,7 +101,7 @@ request = ContactAsFileRequest.new(
     surname: 'Thomas',
     urls: [
       Url.new(
-        category: EnumWithCustom<UrlCategory>.new(
+        category: EnumWithCustomOfUrlCategory.new(
           value: 'Work'),
         preferred: true,
         href: 'www.aspose.com')]))
@@ -143,7 +143,7 @@ contact_dto = ContactDto.new(
   display_name: 'Alex Thomas',
   email_addresses: [
     EmailAddress.new(
-      category: EnumWithCustom<EmailAddressCategory>.new(
+      category: EnumWithCustomOfEmailAddressCategory.new(
         value: 'Custom',
         description: 'Partners'),
       display_name: 'Alex Thomas Partners',
@@ -153,7 +153,7 @@ contact_dto = ContactDto.new(
   given_name: 'Alex',
   phone_numbers: [
     PhoneNumber.new(
-      category: EnumWithCustom<PhoneNumberCategory>.new(
+      category: EnumWithCustomOfPhoneNumberCategory.new(
         value: 'Office'),
       number: '+49 211 4247 21',
       preferred: true)],
@@ -161,7 +161,7 @@ contact_dto = ContactDto.new(
   surname: 'Thomas',
   urls: [
     Url.new(
-      category: EnumWithCustom<UrlCategory>.new(
+      category: EnumWithCustomOfUrlCategory.new(
         value: 'Work'),
       preferred: true,
       href: 'www.aspose.com')])
@@ -212,7 +212,7 @@ contact_dto = ContactDto.new(
   display_name: 'Alex Thomas',
   email_addresses: [
     EmailAddress.new(
-      category: EnumWithCustom<EmailAddressCategory>.new(
+      category: EnumWithCustomOfEmailAddressCategory.new(
         value: 'Custom',
         description: 'Partners'),
       display_name: 'Alex Thomas Partners',
@@ -222,7 +222,7 @@ contact_dto = ContactDto.new(
   given_name: 'Alex',
   phone_numbers: [
     PhoneNumber.new(
-      category: EnumWithCustom<PhoneNumberCategory>.new(
+      category: EnumWithCustomOfPhoneNumberCategory.new(
         value: 'Office'),
       number: '+49 211 4247 21',
       preferred: true)],
@@ -230,7 +230,7 @@ contact_dto = ContactDto.new(
   surname: 'Thomas',
   urls: [
     Url.new(
-      category: EnumWithCustom<UrlCategory>.new(
+      category: EnumWithCustomOfUrlCategory.new(
         value: 'Work'),
       preferred: true,
       href: 'www.aspose.com')])
@@ -361,7 +361,7 @@ result = ContactDto.new(
   display_name: 'Alex Thomas',
   email_addresses: [
     EmailAddress.new(
-      category: EnumWithCustom<EmailAddressCategory>.new(
+      category: EnumWithCustomOfEmailAddressCategory.new(
         value: 'Custom',
         description: 'Partners'),
       display_name: 'Alex Thomas Partners',
@@ -371,7 +371,7 @@ result = ContactDto.new(
   given_name: 'Alex',
   phone_numbers: [
     PhoneNumber.new(
-      category: EnumWithCustom<PhoneNumberCategory>.new(
+      category: EnumWithCustomOfPhoneNumberCategory.new(
         value: 'Office'),
       number: '+49 211 4247 21',
       preferred: true)],
@@ -379,7 +379,7 @@ result = ContactDto.new(
   surname: 'Thomas',
   urls: [
     Url.new(
-      category: EnumWithCustom<UrlCategory>.new(
+      category: EnumWithCustomOfUrlCategory.new(
         value: 'Work'),
       preferred: true,
       href: 'www.aspose.com')])
@@ -411,7 +411,7 @@ result = ContactDto.new(
   display_name: 'Alex Thomas',
   email_addresses: [
     EmailAddress.new(
-      category: EnumWithCustom<EmailAddressCategory>.new(
+      category: EnumWithCustomOfEmailAddressCategory.new(
         value: 'Custom',
         description: 'Partners'),
       display_name: 'Alex Thomas Partners',
@@ -421,7 +421,7 @@ result = ContactDto.new(
   given_name: 'Alex',
   phone_numbers: [
     PhoneNumber.new(
-      category: EnumWithCustom<PhoneNumberCategory>.new(
+      category: EnumWithCustomOfPhoneNumberCategory.new(
         value: 'Office'),
       number: '+49 211 4247 21',
       preferred: true)],
@@ -429,7 +429,7 @@ result = ContactDto.new(
   surname: 'Thomas',
   urls: [
     Url.new(
-      category: EnumWithCustom<UrlCategory>.new(
+      category: EnumWithCustomOfUrlCategory.new(
         value: 'Work'),
       preferred: true,
       href: 'www.aspose.com')])
@@ -487,7 +487,7 @@ result = ContactDto.new(
   display_name: 'Alex Thomas',
   email_addresses: [
     EmailAddress.new(
-      category: EnumWithCustom<EmailAddressCategory>.new(
+      category: EnumWithCustomOfEmailAddressCategory.new(
         value: 'Custom',
         description: 'Partners'),
       display_name: 'Alex Thomas Partners',
@@ -497,7 +497,7 @@ result = ContactDto.new(
   given_name: 'Alex',
   phone_numbers: [
     PhoneNumber.new(
-      category: EnumWithCustom<PhoneNumberCategory>.new(
+      category: EnumWithCustomOfPhoneNumberCategory.new(
         value: 'Office'),
       number: '+49 211 4247 21',
       preferred: true)],
@@ -505,7 +505,7 @@ result = ContactDto.new(
   surname: 'Thomas',
   urls: [
     Url.new(
-      category: EnumWithCustom<UrlCategory>.new(
+      category: EnumWithCustomOfUrlCategory.new(
         value: 'Work'),
       preferred: true,
       href: 'www.aspose.com')])
@@ -539,7 +539,7 @@ result = ContactDto.new(
   display_name: 'Alex Thomas',
   email_addresses: [
     EmailAddress.new(
-      category: EnumWithCustom<EmailAddressCategory>.new(
+      category: EnumWithCustomOfEmailAddressCategory.new(
         value: 'Custom',
         description: 'Partners'),
       display_name: 'Alex Thomas Partners',
@@ -549,7 +549,7 @@ result = ContactDto.new(
   given_name: 'Alex',
   phone_numbers: [
     PhoneNumber.new(
-      category: EnumWithCustom<PhoneNumberCategory>.new(
+      category: EnumWithCustomOfPhoneNumberCategory.new(
         value: 'Office'),
       number: '+49 211 4247 21',
       preferred: true)],
@@ -557,7 +557,7 @@ result = ContactDto.new(
   surname: 'Thomas',
   urls: [
     Url.new(
-      category: EnumWithCustom<UrlCategory>.new(
+      category: EnumWithCustomOfUrlCategory.new(
         value: 'Work'),
       preferred: true,
       href: 'www.aspose.com')])
@@ -671,7 +671,7 @@ Return type: [**ContactStorageList**](ContactStorageList.md)
 ```ruby
 result = ContactStorageList.new(
   value: [
-    StorageModel<ContactDto>.new(
+    StorageModelOfContactDto.new(
       storage_file: StorageFileLocation.new(
         file_name: 'contact.vcf',
         storage: 'First Storage',
@@ -684,7 +684,7 @@ result = ContactStorageList.new(
         display_name: 'Alex Thomas',
         email_addresses: [
           EmailAddress.new(
-            category: EnumWithCustom<EmailAddressCategory>.new(
+            category: EnumWithCustomOfEmailAddressCategory.new(
               value: 'Custom',
               description: 'Partners'),
             display_name: 'Alex Thomas Partners',
@@ -694,7 +694,7 @@ result = ContactStorageList.new(
         given_name: 'Alex',
         phone_numbers: [
           PhoneNumber.new(
-            category: EnumWithCustom<PhoneNumberCategory>.new(
+            category: EnumWithCustomOfPhoneNumberCategory.new(
               value: 'Office'),
             number: '+49 211 4247 21',
             preferred: true)],
@@ -702,7 +702,7 @@ result = ContactStorageList.new(
         surname: 'Thomas',
         urls: [
           Url.new(
-            category: EnumWithCustom<UrlCategory>.new(
+            category: EnumWithCustomOfUrlCategory.new(
               value: 'Work'),
             preferred: true,
             href: 'www.aspose.com')]))])
@@ -731,7 +731,7 @@ result = api.contact.get_list(request)
 // Result example:
 result = ContactStorageList.new(
   value: [
-    StorageModel<ContactDto>.new(
+    StorageModelOfContactDto.new(
       storage_file: StorageFileLocation.new(
         file_name: 'contact.vcf',
         storage: 'First Storage',
@@ -744,7 +744,7 @@ result = ContactStorageList.new(
         display_name: 'Alex Thomas',
         email_addresses: [
           EmailAddress.new(
-            category: EnumWithCustom<EmailAddressCategory>.new(
+            category: EnumWithCustomOfEmailAddressCategory.new(
               value: 'Custom',
               description: 'Partners'),
             display_name: 'Alex Thomas Partners',
@@ -754,7 +754,7 @@ result = ContactStorageList.new(
         given_name: 'Alex',
         phone_numbers: [
           PhoneNumber.new(
-            category: EnumWithCustom<PhoneNumberCategory>.new(
+            category: EnumWithCustomOfPhoneNumberCategory.new(
               value: 'Office'),
             number: '+49 211 4247 21',
             preferred: true)],
@@ -762,7 +762,7 @@ result = ContactStorageList.new(
         surname: 'Thomas',
         urls: [
           Url.new(
-            category: EnumWithCustom<UrlCategory>.new(
+            category: EnumWithCustomOfUrlCategory.new(
               value: 'Work'),
             preferred: true,
             href: 'www.aspose.com')]))])
@@ -804,7 +804,7 @@ request = ContactSaveRequest.new(
     display_name: 'Alex Thomas',
     email_addresses: [
       EmailAddress.new(
-        category: EnumWithCustom<EmailAddressCategory>.new(
+        category: EnumWithCustomOfEmailAddressCategory.new(
           value: 'Custom',
           description: 'Partners'),
         display_name: 'Alex Thomas Partners',
@@ -814,7 +814,7 @@ request = ContactSaveRequest.new(
     given_name: 'Alex',
     phone_numbers: [
       PhoneNumber.new(
-        category: EnumWithCustom<PhoneNumberCategory>.new(
+        category: EnumWithCustomOfPhoneNumberCategory.new(
           value: 'Office'),
         number: '+49 211 4247 21',
         preferred: true)],
@@ -822,7 +822,7 @@ request = ContactSaveRequest.new(
     surname: 'Thomas',
     urls: [
       Url.new(
-        category: EnumWithCustom<UrlCategory>.new(
+        category: EnumWithCustomOfUrlCategory.new(
           value: 'Work'),
         preferred: true,
         href: 'www.aspose.com')]))
@@ -856,7 +856,7 @@ request = ContactSaveRequest.new(
     display_name: 'Alex Thomas',
     email_addresses: [
       EmailAddress.new(
-        category: EnumWithCustom<EmailAddressCategory>.new(
+        category: EnumWithCustomOfEmailAddressCategory.new(
           value: 'Custom',
           description: 'Partners'),
         display_name: 'Alex Thomas Partners',
@@ -866,7 +866,7 @@ request = ContactSaveRequest.new(
     given_name: 'Alex',
     phone_numbers: [
       PhoneNumber.new(
-        category: EnumWithCustom<PhoneNumberCategory>.new(
+        category: EnumWithCustomOfPhoneNumberCategory.new(
           value: 'Office'),
         number: '+49 211 4247 21',
         preferred: true)],
@@ -874,7 +874,7 @@ request = ContactSaveRequest.new(
     surname: 'Thomas',
     urls: [
       Url.new(
-        category: EnumWithCustom<UrlCategory>.new(
+        category: EnumWithCustomOfUrlCategory.new(
           value: 'Work'),
         preferred: true,
         href: 'www.aspose.com')]))

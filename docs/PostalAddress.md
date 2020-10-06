@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ```ruby
 postal_address = PostalAddress.new(
   address: '221b',
-  category: EnumWithCustom<PostalAddressCategory>.new(
+  category: EnumWithCustomOfPostalAddressCategory.new(
     ),
   city: 'London',
   country: 'United Kingdom',

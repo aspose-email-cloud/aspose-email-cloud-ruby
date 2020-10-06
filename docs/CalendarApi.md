@@ -830,7 +830,7 @@ Return type: [**CalendarStorageList**](CalendarStorageList.md)
 ```ruby
 result = CalendarStorageList.new(
   value: [
-    StorageModel<CalendarDto>.new(
+    StorageModelOfCalendarDto.new(
       storage_file: StorageFileLocation.new(
         file_name: 'calendar.ics',
         storage: 'First Storage',
@@ -877,7 +877,7 @@ result = api.calendar.get_list(request)
 // Result example:
 result = CalendarStorageList.new(
   value: [
-    StorageModel<CalendarDto>.new(
+    StorageModelOfCalendarDto.new(
       storage_file: StorageFileLocation.new(
         file_name: 'calendar.ics',
         storage: 'First Storage',

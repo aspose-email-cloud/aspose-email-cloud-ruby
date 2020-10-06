@@ -59,7 +59,7 @@ result = ContactDto.new(
   display_name: 'Alex Thomas',
   email_addresses: [
     EmailAddress.new(
-      category: EnumWithCustom<EmailAddressCategory>.new(
+      category: EnumWithCustomOfEmailAddressCategory.new(
         value: 'Custom',
         description: 'Partners'),
       display_name: 'Alex Thomas Partners',
@@ -69,7 +69,7 @@ result = ContactDto.new(
   given_name: 'Alex',
   phone_numbers: [
     PhoneNumber.new(
-      category: EnumWithCustom<PhoneNumberCategory>.new(
+      category: EnumWithCustomOfPhoneNumberCategory.new(
         value: 'Office'),
       number: '+49 211 4247 21',
       preferred: true)],
@@ -77,7 +77,7 @@ result = ContactDto.new(
   surname: 'Thomas',
   urls: [
     Url.new(
-      category: EnumWithCustom<UrlCategory>.new(
+      category: EnumWithCustomOfUrlCategory.new(
         value: 'Work'),
       preferred: true,
       href: 'www.aspose.com')])
@@ -119,7 +119,7 @@ result = ContactDto.new(
   display_name: 'Alex Thomas',
   email_addresses: [
     EmailAddress.new(
-      category: EnumWithCustom<EmailAddressCategory>.new(
+      category: EnumWithCustomOfEmailAddressCategory.new(
         value: 'Custom',
         description: 'Partners'),
       display_name: 'Alex Thomas Partners',
@@ -129,7 +129,7 @@ result = ContactDto.new(
   given_name: 'Alex',
   phone_numbers: [
     PhoneNumber.new(
-      category: EnumWithCustom<PhoneNumberCategory>.new(
+      category: EnumWithCustomOfPhoneNumberCategory.new(
         value: 'Office'),
       number: '+49 211 4247 21',
       preferred: true)],
@@ -137,7 +137,7 @@ result = ContactDto.new(
   surname: 'Thomas',
   urls: [
     Url.new(
-      category: EnumWithCustom<UrlCategory>.new(
+      category: EnumWithCustomOfUrlCategory.new(
         value: 'Work'),
       preferred: true,
       href: 'www.aspose.com')])

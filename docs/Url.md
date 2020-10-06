@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 ```ruby
 url = Url.new(
-  category: EnumWithCustom<UrlCategory>.new(
+  category: EnumWithCustomOfUrlCategory.new(
     value: 'Work'),
   preferred: true,
   href: 'https://products.aspose.cloud/email')

@@ -14,7 +14,7 @@ Parent class: [ListResponseOfStorageModelOfCalendarDto](ListResponseOfStorageMod
 ```ruby
 calendar_storage_list = CalendarStorageList.new(
   value: [
-    StorageModel<CalendarDto>.new(
+    StorageModelOfCalendarDto.new(
       storage_file: StorageFileLocation.new(
         file_name: 'calendar.ics',
         storage: 'First Storage',

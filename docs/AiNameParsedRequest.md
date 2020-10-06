@@ -10,4 +10,32 @@ Name | Type | Description | Notes
 **parsed_name** |[**Array&lt;AiNameComponent&gt;**](AiNameComponent.md) | Parsed name              | 
 
 
+## Example
+```ruby
+ai_name_parsed_request = AiNameParsedRequest.new(
+  cultural_context: AiNameCulturalContext.new(
+    language: '',
+    location: '',
+    script: '',
+    encoding: ''),
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+```
+
+
 [[Back to Model list]](Models.md) [[Back to README]](README.md)

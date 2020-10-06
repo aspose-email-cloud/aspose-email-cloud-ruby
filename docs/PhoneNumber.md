@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 ```ruby
 phone_number = PhoneNumber.new(
-  category: EnumWithCustom<PhoneNumberCategory>.new(
+  category: EnumWithCustomOfPhoneNumberCategory.new(
     value: 'Company'),
   number: '+44 141 628 8900',
   preferred: true)

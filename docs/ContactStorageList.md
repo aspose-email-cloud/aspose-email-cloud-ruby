@@ -14,7 +14,7 @@ Parent class: [ListResponseOfStorageModelOfContactDto](ListResponseOfStorageMode
 ```ruby
 contact_storage_list = ContactStorageList.new(
   value: [
-    StorageModel<ContactDto>.new(
+    StorageModelOfContactDto.new(
       storage_file: StorageFileLocation.new(
         file_name: 'contact.vcf',
         storage: 'First Storage',
@@ -27,7 +27,7 @@ contact_storage_list = ContactStorageList.new(
         display_name: 'Alex Thomas',
         email_addresses: [
           EmailAddress.new(
-            category: EnumWithCustom<EmailAddressCategory>.new(
+            category: EnumWithCustomOfEmailAddressCategory.new(
               value: 'Custom',
               description: 'Partners'),
             display_name: 'Alex Thomas Partners',
@@ -37,7 +37,7 @@ contact_storage_list = ContactStorageList.new(
         given_name: 'Alex',
         phone_numbers: [
           PhoneNumber.new(
-            category: EnumWithCustom<PhoneNumberCategory>.new(
+            category: EnumWithCustomOfPhoneNumberCategory.new(
               value: 'Office'),
             number: '+49 211 4247 21',
             preferred: true)],
@@ -45,7 +45,7 @@ contact_storage_list = ContactStorageList.new(
         surname: 'Thomas',
         urls: [
           Url.new(
-            category: EnumWithCustom<UrlCategory>.new(
+            category: EnumWithCustomOfUrlCategory.new(
               value: 'Work'),
             preferred: true,
             href: 'www.aspose.com')]))])

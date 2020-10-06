@@ -180,7 +180,29 @@ See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.m
     <summary>Parameter initialization example:</summary>
     
 ```ruby
-request = 
+request = AiNameParsedRequest.new(
+  cultural_context: AiNameCulturalContext.new(
+    language: '',
+    location: '',
+    script: '',
+    encoding: ''),
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
 ```
 
 </details>
@@ -215,7 +237,29 @@ result = AiNameWeightedVariants.new(
 api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
-request = 
+request = AiNameParsedRequest.new(
+  cultural_context: AiNameCulturalContext.new(
+    language: '',
+    location: '',
+    script: '',
+    encoding: ''),
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
 
 // Call method:
 result = api.ai.name.expand_parsed(request)
@@ -326,7 +370,29 @@ See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.m
     <summary>Parameter initialization example:</summary>
     
 ```ruby
-request = 
+request = AiNameParsedRequest.new(
+  cultural_context: AiNameCulturalContext.new(
+    language: '',
+    location: '',
+    script: '',
+    encoding: ''),
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
 ```
 
 </details>
@@ -356,7 +422,29 @@ result = AiNameFormatted.new(
 api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
-request = 
+request = AiNameParsedRequest.new(
+  cultural_context: AiNameCulturalContext.new(
+    language: '',
+    location: '',
+    script: '',
+    encoding: ''),
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
 
 // Call method:
 result = api.ai.name.format_parsed(request)
@@ -456,7 +544,29 @@ See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.m
     <summary>Parameter initialization example:</summary>
     
 ```ruby
-request = 
+request = AiNameParsedRequest.new(
+  cultural_context: AiNameCulturalContext.new(
+    language: '',
+    location: '',
+    script: '',
+    encoding: ''),
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
 ```
 
 </details>
@@ -484,7 +594,29 @@ result =
 api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
-request = 
+request = AiNameParsedRequest.new(
+  cultural_context: AiNameCulturalContext.new(
+    language: '',
+    location: '',
+    script: '',
+    encoding: ''),
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
 
 // Call method:
 result = api.ai.name.genderize_parsed(request)
@@ -684,7 +816,24 @@ Return type: [**AiNameComponentList**](AiNameComponentList.md)
     <summary>Result example</summary>
 
 ```ruby
-result = 
+result = AiNameComponentList.new(
+  value: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
 ```
 </details>
 
@@ -706,7 +855,24 @@ request = AiNameParseRequest.new(
 result = api.ai.name.parse(request)
 
 // Result example:
-result = 
+result = AiNameComponentList.new(
+  value: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
 ```
 
 </details>
