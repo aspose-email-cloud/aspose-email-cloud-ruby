@@ -13,4 +13,44 @@ Name | Type | Description | Notes
 Parent class: [AiNameParsedRequest](AiNameParsedRequest.md)
 
 
+## Example
+```ruby
+ai_name_match_parsed_request = AiNameMatchParsedRequest.new(
+  other_parsed_name: [
+    AiNameComponent.new(
+      value: 'J',
+      category: 'FirstInitial',
+      score: 1),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 3),
+    AiNameComponent.new(
+      value: '%f%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)],
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+```
+
+
 [[Back to Model list]](Models.md) [[Back to README]](README.md)

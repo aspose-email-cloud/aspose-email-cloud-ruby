@@ -181,11 +181,6 @@ See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.m
     
 ```ruby
 request = AiNameParsedRequest.new(
-  cultural_context: AiNameCulturalContext.new(
-    language: '',
-    location: '',
-    script: '',
-    encoding: ''),
   parsed_name: [
     AiNameComponent.new(
       value: 'John',
@@ -238,11 +233,6 @@ api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = AiNameParsedRequest.new(
-  cultural_context: AiNameCulturalContext.new(
-    language: '',
-    location: '',
-    script: '',
-    encoding: ''),
   parsed_name: [
     AiNameComponent.new(
       value: 'John',
@@ -371,11 +361,6 @@ See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.m
     
 ```ruby
 request = AiNameParsedRequest.new(
-  cultural_context: AiNameCulturalContext.new(
-    language: '',
-    location: '',
-    script: '',
-    encoding: ''),
   parsed_name: [
     AiNameComponent.new(
       value: 'John',
@@ -423,11 +408,6 @@ api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = AiNameParsedRequest.new(
-  cultural_context: AiNameCulturalContext.new(
-    language: '',
-    location: '',
-    script: '',
-    encoding: ''),
   parsed_name: [
     AiNameComponent.new(
       value: 'John',
@@ -545,11 +525,6 @@ See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.m
     
 ```ruby
 request = AiNameParsedRequest.new(
-  cultural_context: AiNameCulturalContext.new(
-    language: '',
-    location: '',
-    script: '',
-    encoding: ''),
   parsed_name: [
     AiNameComponent.new(
       value: 'John',
@@ -595,11 +570,6 @@ api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
 request = AiNameParsedRequest.new(
-  cultural_context: AiNameCulturalContext.new(
-    language: '',
-    location: '',
-    script: '',
-    encoding: ''),
   parsed_name: [
     AiNameComponent.new(
       value: 'John',
@@ -726,7 +696,41 @@ See parameter model documentation at [AiNameMatchParsedRequest](AiNameMatchParse
     <summary>Parameter initialization example:</summary>
     
 ```ruby
-request = 
+request = AiNameMatchParsedRequest.new(
+  other_parsed_name: [
+    AiNameComponent.new(
+      value: 'J',
+      category: 'FirstInitial',
+      score: 1),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 3),
+    AiNameComponent.new(
+      value: '%f%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)],
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
 ```
 
 </details>
@@ -759,7 +763,41 @@ result = AiNameMatchResult.new(
 api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
-request = 
+request = AiNameMatchParsedRequest.new(
+  other_parsed_name: [
+    AiNameComponent.new(
+      value: 'J',
+      category: 'FirstInitial',
+      score: 1),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 3),
+    AiNameComponent.new(
+      value: '%f%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)],
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
 
 // Call method:
 result = api.ai.name.match_parsed(request)

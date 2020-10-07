@@ -13,3 +13,4 @@ Name | Type | Description | Notes
 request = StorageExistsRequest.new(
     storage_name: 'First Storage')
 ```
+

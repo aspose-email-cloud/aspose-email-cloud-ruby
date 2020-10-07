@@ -13,11 +13,6 @@ Name | Type | Description | Notes
 ## Example
 ```ruby
 ai_name_parsed_request = AiNameParsedRequest.new(
-  cultural_context: AiNameCulturalContext.new(
-    language: '',
-    location: '',
-    script: '',
-    encoding: ''),
   parsed_name: [
     AiNameComponent.new(
       value: 'John',
