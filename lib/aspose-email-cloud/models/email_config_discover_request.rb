@@ -79,5 +79,3 @@ module AsposeEmailCloud
   end
 end
 
-
-

@@ -1,191 +1,72 @@
-# ClientFolderApi (EmailCloud.client.folder)
+# ClientFolderApi
 
-Email client folder operations.
-
+            
 <a name="create"></a>
-## create
+# create
 
-Description: Create new folder in email account             
-
-Method call example:
 ```ruby
-api.client.folder.create(request)
+create(request)
 ```
 
-### Parameter: request
+Create new folder in email account             
 
-Description: Create folder request
+### Return type
+
+nil (empty response body)
+
+### request Parameter
 
 See parameter model documentation at [ClientFolderCreateRequest](ClientFolderCreateRequest.md)
 
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = ClientFolderCreateRequest.new(
-  parent_folder: 'INBOX/SubFolder/ParentFolder',
-  folder_name: 'NewFolder',
-  account_location: StorageFileLocation.new(
-    file_name: 'email.account',
-    storage: 'First Storage',
-    folder_path: 'file/location/folder/on/storage'))
-```
-
-</details>
-
-### Result
-
-Return type: nil (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = ClientFolderCreateRequest.new(
-  parent_folder: 'INBOX/SubFolder/ParentFolder',
-  folder_name: 'NewFolder',
-  account_location: StorageFileLocation.new(
-    file_name: 'email.account',
-    storage: 'First Storage',
-    folder_path: 'file/location/folder/on/storage'))
-
-// Call method:
-api.client.folder.create(request)
-```
-
-</details>
-
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="delete"></a>
-## delete
+# delete
 
-Description: Delete a folder in email account             
-
-Method call example:
 ```ruby
-api.client.folder.delete(request)
+delete(request)
 ```
 
-### Parameter: request
+Delete a folder in email account             
 
-Description: Delete folder request
+### Return type
+
+nil (empty response body)
+
+### request Parameter
 
 See parameter model documentation at [ClientFolderDeleteRequest](ClientFolderDeleteRequest.md)
 
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = ClientFolderDeleteRequest.new(
-  folder: 'INBOX/SubFolder/FolderToDelete',
-  account_location: StorageFileLocation.new(
-    file_name: 'email.account',
-    storage: 'First Storage',
-    folder_path: 'file/location/folder/on/storage'))
-```
-
-</details>
-
-### Result
-
-Return type: nil (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = ClientFolderDeleteRequest.new(
-  folder: 'INBOX/SubFolder/FolderToDelete',
-  account_location: StorageFileLocation.new(
-    file_name: 'email.account',
-    storage: 'First Storage',
-    folder_path: 'file/location/folder/on/storage'))
-
-// Call method:
-api.client.folder.delete(request)
-```
-
-</details>
-
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="get_list"></a>
-## get_list
-
-Description: Get folders list in email account             
-
-Returns: Folders list
-
-Method call example:
-```ruby
-result = api.client.folder.get_list(request)
-```
-
-### Parameter: request
-
-Description: get_list method request.
-
-See parameter model documentation at [ClientFolderGetListRequest](ClientFolderGetListRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = ClientFolderGetListRequest.new(
-    account: 'email.multi.account',
-    storage: 'First Storage',
-    account_storage_folder: 'email/account/location/on/storage',
-    parent_folder: 'INBOX')
-```
-
-</details>
-
-### Result
-
-Description: Folders list
-
-Return type: [**MailServerFolderList**](MailServerFolderList.md)
-
-<details>
-    <summary>Result example</summary>
+# get_list
 
 ```ruby
-result = 
+get_list(request)
 ```
-</details>
 
-### Complete example
+Get folders list in email account             
 
-<details>
-    <summary>Method call example:</summary>
+### Return type
 
+[**MailServerFolderList**](MailServerFolderList.md)
+
+### request Parameter
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = ClientFolderGetListRequest.new(
-    account: 'email.multi.account',
-    storage: 'First Storage',
-    account_storage_folder: 'email/account/location/on/storage',
-    parent_folder: 'INBOX')
-
-// Call method:
-result = api.client.folder.get_list(request)
-
-// Result example:
-result = 
+AsposeEmailCloud::ClientFolderGetListRequest.new(
+    account,
+    storage,
+    account_storage_folder,
+    parent_folder)
 ```
 
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account** | **String** | Email account | 
+ **storage** | **String** | Storage name where account file located | [optional] 
+ **account_storage_folder** | **String** | Folder in storage where account file located | [optional] 
+ **parent_folder** | **String** | Folder in which subfolders should be listed | [optional] 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

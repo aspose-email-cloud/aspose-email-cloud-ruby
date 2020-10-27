@@ -1,999 +1,255 @@
-# CalendarApi (EmailCloud.calendar)
+# CalendarApi
 
-iCalendar document operations.
-
+            
 <a name="as_alternate"></a>
-## as_alternate
+# as_alternate
 
-Description: Convert iCalendar to AlternateView             
-
-Returns: iCalendar document represented as AlternateView
-
-Method call example:
 ```ruby
-result = api.calendar.as_alternate(request)
+as_alternate(request)
 ```
 
-### Parameter: request
+Convert iCalendar to AlternateView             
 
-Description: iCalendar to AlternateView request
+### Return type
+
+[**AlternateView**](AlternateView.md)
+
+### request Parameter
 
 See parameter model documentation at [CalendarAsAlternateRequest](CalendarAsAlternateRequest.md)
 
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = CalendarAsAlternateRequest.new(
-  value: CalendarDto.new(
-    attendees: [
-      MailAddress.new(
-        display_name: 'Attendee Name',
-        address: 'attendee@aspose.com',
-        participation_status: 'Accepted')],
-    description: 'Some description',
-    end_date: DateTime.now,
-    location: 'Some location',
-    organizer: MailAddress.new(
-      display_name: 'Organizer Name',
-      address: 'organizer@aspose.com'),
-    recurrence: DailyRecurrencePatternDto.new(
-      interval: -1,
-      occurs: 10,
-      week_start: 'Monday'),
-    start_date: DateTime.now,
-    summary: 'Some summary'),
-  sequence_id: 'cf4ffb6c-895d-4e58-bdb4-0a3918e96a43')
-```
-
-</details>
-
-### Result
-
-Description: iCalendar document represented as AlternateView
-
-Return type: [**AlternateView**](AlternateView.md)
-
-<details>
-    <summary>Result example</summary>
-
-```ruby
-result = AlternateView.new(
-  base64_data: '<File content represented as Base64 string>',
-  content_id: 'fa7a8948-4af1-432a-b4d9-ee0c28542e75',
-  content_type: ContentType.new(
-    char_set: 'utf-8',
-    media_type: 'text/calendar',
-    name: 'meeting.ics',
-    parameters: [
-      ContentTypeParameter.new(
-        name: 'Method',
-        value: 'REQUEST'),
-      ContentTypeParameter.new(
-        name: 'Name',
-        value: 'meeting.ics'),
-      ContentTypeParameter.new(
-        name: 'charset',
-        value: 'utf-8')]))
-```
-</details>
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = CalendarAsAlternateRequest.new(
-  value: CalendarDto.new(
-    attendees: [
-      MailAddress.new(
-        display_name: 'Attendee Name',
-        address: 'attendee@aspose.com',
-        participation_status: 'Accepted')],
-    description: 'Some description',
-    end_date: DateTime.now,
-    location: 'Some location',
-    organizer: MailAddress.new(
-      display_name: 'Organizer Name',
-      address: 'organizer@aspose.com'),
-    recurrence: DailyRecurrencePatternDto.new(
-      interval: -1,
-      occurs: 10,
-      week_start: 'Monday'),
-    start_date: DateTime.now,
-    summary: 'Some summary'),
-  sequence_id: 'cf4ffb6c-895d-4e58-bdb4-0a3918e96a43')
-
-// Call method:
-result = api.calendar.as_alternate(request)
-
-// Result example:
-result = AlternateView.new(
-  base64_data: '<File content represented as Base64 string>',
-  content_id: 'fa7a8948-4af1-432a-b4d9-ee0c28542e75',
-  content_type: ContentType.new(
-    char_set: 'utf-8',
-    media_type: 'text/calendar',
-    name: 'meeting.ics',
-    parameters: [
-      ContentTypeParameter.new(
-        name: 'Method',
-        value: 'REQUEST'),
-      ContentTypeParameter.new(
-        name: 'Name',
-        value: 'meeting.ics'),
-      ContentTypeParameter.new(
-        name: 'charset',
-        value: 'utf-8')]))
-```
-
-</details>
-
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="as_file"></a>
-## as_file
+# as_file
 
-Description: Converts calendar model to specified format and returns as file.             
-
-Returns: File stream in specified format.
-
-Method call example:
 ```ruby
-result = api.calendar.as_file(request)
+as_file(request)
 ```
 
-### Parameter: request
+Converts calendar model to specified format and returns as file.             
 
-Description: Calendar model and format to convert.
+### Return type
+
+**file**
+
+### request Parameter
 
 See parameter model documentation at [CalendarAsFileRequest](CalendarAsFileRequest.md)
 
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = CalendarAsFileRequest.new(
-  value: CalendarDto.new(
-    attendees: [
-      MailAddress.new(
-        display_name: 'Attendee Name',
-        address: 'attendee@aspose.com',
-        participation_status: 'Accepted')],
-    description: 'Some description',
-    end_date: DateTime.now,
-    location: 'Some location',
-    organizer: MailAddress.new(
-      display_name: 'Organizer Name',
-      address: 'organizer@aspose.com'),
-    recurrence: DailyRecurrencePatternDto.new(
-      interval: -1,
-      occurs: 10,
-      week_start: 'Monday'),
-    start_date: DateTime.now,
-    summary: 'Some summary'))
-```
-
-</details>
-
-### Result
-
-Description: File stream in specified format.
-
-Return type: **file**
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = CalendarAsFileRequest.new(
-  value: CalendarDto.new(
-    attendees: [
-      MailAddress.new(
-        display_name: 'Attendee Name',
-        address: 'attendee@aspose.com',
-        participation_status: 'Accepted')],
-    description: 'Some description',
-    end_date: DateTime.now,
-    location: 'Some location',
-    organizer: MailAddress.new(
-      display_name: 'Organizer Name',
-      address: 'organizer@aspose.com'),
-    recurrence: DailyRecurrencePatternDto.new(
-      interval: -1,
-      occurs: 10,
-      week_start: 'Monday'),
-    start_date: DateTime.now,
-    summary: 'Some summary'))
-
-// Call method:
-result = api.calendar.as_file(request)
-```
-
-</details>
-
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="as_mapi"></a>
-## as_mapi
+# as_mapi
 
-Description: Converts CalendarDto to MapiCalendarDto.             
-
-Returns: MAPI model calendar representation.
-
-Method call example:
 ```ruby
-result = api.calendar.as_mapi(calendar_dto)
+as_mapi(calendar_dto)
 ```
 
-### Parameter: calendar_dto
+Converts CalendarDto to MapiCalendarDto.             
 
-Description: iCalendar model calendar representation.
+### Return type
+
+[**MapiCalendarDto**](MapiCalendarDto.md)
+
+### calendar_dto Parameter
 
 See parameter model documentation at [CalendarDto](CalendarDto.md)
 
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-calendar_dto = CalendarDto.new(
-  attendees: [
-    MailAddress.new(
-      display_name: 'Attendee Name',
-      address: 'attendee@aspose.com',
-      participation_status: 'Accepted')],
-  description: 'Some description',
-  end_date: DateTime.now,
-  location: 'Some location',
-  organizer: MailAddress.new(
-    display_name: 'Organizer Name',
-    address: 'organizer@aspose.com'),
-  recurrence: DailyRecurrencePatternDto.new(
-    interval: -1,
-    occurs: 10,
-    week_start: 'Monday'),
-  start_date: DateTime.now,
-  summary: 'Some summary')
-```
-
-</details>
-
-### Result
-
-Description: MAPI model calendar representation.
-
-Return type: [**MapiCalendarDto**](MapiCalendarDto.md)
-
-<details>
-    <summary>Result example</summary>
-
-```ruby
-result = MapiCalendarDto.new(
-  attendees: MapiCalendarAttendeesDto.new(
-    appointment_recipients: [
-      MapiRecipientDto.new(
-        email_address: 'organizer@aspose.com',
-        address_type: 'SMTP',
-        display_name: 'Organizer Name',
-        recipient_type: 'MapiTo'),
-      MapiRecipientDto.new(
-        email_address: 'attendee@aspose.com',
-        address_type: 'SMTP',
-        display_name: 'Attendee Name',
-        recipient_type: 'MapiTo')]),
-  busy_status: 'Tentative',
-  client_intent: [
-    'Manager'],
-  end_date: DateTime.now,
-  location: 'Some location',
-  recurrence: MapiCalendarEventRecurrenceDto.new(
-    recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
-      frequency: 'Daily',
-      occurrence_count: 10,
-      week_start_day: 'Monday')),
-  start_date: DateTime.now,
-  organizer: MapiElectronicAddressDto.new(
-    email_address: 'organizer@aspose.com'),
-  body: 'Some description',
-  subject: 'Some summary')
-```
-</details>
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-calendar_dto = CalendarDto.new(
-  attendees: [
-    MailAddress.new(
-      display_name: 'Attendee Name',
-      address: 'attendee@aspose.com',
-      participation_status: 'Accepted')],
-  description: 'Some description',
-  end_date: DateTime.now,
-  location: 'Some location',
-  organizer: MailAddress.new(
-    display_name: 'Organizer Name',
-    address: 'organizer@aspose.com'),
-  recurrence: DailyRecurrencePatternDto.new(
-    interval: -1,
-    occurs: 10,
-    week_start: 'Monday'),
-  start_date: DateTime.now,
-  summary: 'Some summary')
-
-// Call method:
-result = api.calendar.as_mapi(calendar_dto)
-
-// Result example:
-result = MapiCalendarDto.new(
-  attendees: MapiCalendarAttendeesDto.new(
-    appointment_recipients: [
-      MapiRecipientDto.new(
-        email_address: 'organizer@aspose.com',
-        address_type: 'SMTP',
-        display_name: 'Organizer Name',
-        recipient_type: 'MapiTo'),
-      MapiRecipientDto.new(
-        email_address: 'attendee@aspose.com',
-        address_type: 'SMTP',
-        display_name: 'Attendee Name',
-        recipient_type: 'MapiTo')]),
-  busy_status: 'Tentative',
-  client_intent: [
-    'Manager'],
-  end_date: DateTime.now,
-  location: 'Some location',
-  recurrence: MapiCalendarEventRecurrenceDto.new(
-    recurrence_pattern: MapiCalendarDailyRecurrencePatternDto.new(
-      frequency: 'Daily',
-      occurrence_count: 10,
-      week_start_day: 'Monday')),
-  start_date: DateTime.now,
-  organizer: MapiElectronicAddressDto.new(
-    email_address: 'organizer@aspose.com'),
-  body: 'Some description',
-  subject: 'Some summary')
-```
-
-</details>
-
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="convert"></a>
-## convert
-
-Description: Converts calendar document to specified format and returns as file.             
-
-Returns: File stream in specified format.
-
-Method call example:
-```ruby
-result = api.calendar.convert(request)
-```
-
-### Parameter: request
-
-Description: convert method request.
-
-See parameter model documentation at [CalendarConvertRequest](CalendarConvertRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = CalendarConvertRequest.new(
-    format: 'Ics',
-    file: File.new('/path/to/calendar.msg'))
-```
-
-</details>
-
-### Result
-
-Description: File stream in specified format.
-
-Return type: **file**
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
+# convert
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = CalendarConvertRequest.new(
-    format: 'Ics',
-    file: File.new('/path/to/calendar.msg'))
-
-// Call method:
-result = api.calendar.convert(request)
+convert(request)
 ```
 
-</details>
+Converts calendar document to specified format and returns as file.             
+
+### Return type
+
+**file**
+
+### request Parameter
+```ruby
+AsposeEmailCloud::CalendarConvertRequest.new(
+    format,
+    file)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **String** | File format. Enum, available values: Ics, Msg | 
+ **file** | **File** | File to convert | 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="from_file"></a>
-## from_file
-
-Description: Converts calendar document to a model representation.             
-
-Returns: iCalendar model.
-
-Method call example:
-```ruby
-result = api.calendar.from_file(request)
-```
-
-### Parameter: request
-
-Description: from_file method request.
-
-See parameter model documentation at [CalendarFromFileRequest](CalendarFromFileRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = CalendarFromFileRequest.new(
-    file: File.new('/path/to/calendar.ics'))
-```
-
-</details>
-
-### Result
-
-Description: iCalendar model.
-
-Return type: [**CalendarDto**](CalendarDto.md)
-
-<details>
-    <summary>Result example</summary>
+# from_file
 
 ```ruby
-result = CalendarDto.new(
-  attendees: [
-    MailAddress.new(
-      display_name: 'Attendee Name',
-      address: 'attendee@aspose.com',
-      participation_status: 'Accepted')],
-  description: 'Some description',
-  end_date: DateTime.now,
-  location: 'Some location',
-  organizer: MailAddress.new(
-    display_name: 'Organizer Name',
-    address: 'organizer@aspose.com'),
-  recurrence: DailyRecurrencePatternDto.new(
-    interval: -1,
-    occurs: 10,
-    week_start: 'Monday'),
-  start_date: DateTime.now,
-  summary: 'Some summary')
+from_file(request)
 ```
-</details>
 
-### Complete example
+Converts calendar document to a model representation.             
 
-<details>
-    <summary>Method call example:</summary>
+### Return type
 
+[**CalendarDto**](CalendarDto.md)
+
+### request Parameter
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = CalendarFromFileRequest.new(
-    file: File.new('/path/to/calendar.ics'))
-
-// Call method:
-result = api.calendar.from_file(request)
-
-// Result example:
-result = CalendarDto.new(
-  attendees: [
-    MailAddress.new(
-      display_name: 'Attendee Name',
-      address: 'attendee@aspose.com',
-      participation_status: 'Accepted')],
-  description: 'Some description',
-  end_date: DateTime.now,
-  location: 'Some location',
-  organizer: MailAddress.new(
-    display_name: 'Organizer Name',
-    address: 'organizer@aspose.com'),
-  recurrence: DailyRecurrencePatternDto.new(
-    interval: -1,
-    occurs: 10,
-    week_start: 'Monday'),
-  start_date: DateTime.now,
-  summary: 'Some summary')
+AsposeEmailCloud::CalendarFromFileRequest.new(
+    file)
 ```
 
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File** | File to convert | 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="get"></a>
-## get
-
-Description: Get calendar file from storage.             
-
-Returns: iCalendar model.
-
-Method call example:
-```ruby
-result = api.calendar.get(request)
-```
-
-### Parameter: request
-
-Description: get method request.
-
-See parameter model documentation at [CalendarGetRequest](CalendarGetRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = CalendarGetRequest.new(
-    file_name: 'calendar.ics',
-    folder: 'calendar/location/on/storage',
-    storage: 'First Storage')
-```
-
-</details>
-
-### Result
-
-Description: iCalendar model.
-
-Return type: [**CalendarDto**](CalendarDto.md)
-
-<details>
-    <summary>Result example</summary>
+# get
 
 ```ruby
-result = CalendarDto.new(
-  attendees: [
-    MailAddress.new(
-      display_name: 'Attendee Name',
-      address: 'attendee@aspose.com',
-      participation_status: 'Accepted')],
-  description: 'Some description',
-  end_date: DateTime.now,
-  location: 'Some location',
-  organizer: MailAddress.new(
-    display_name: 'Organizer Name',
-    address: 'organizer@aspose.com'),
-  recurrence: DailyRecurrencePatternDto.new(
-    interval: -1,
-    occurs: 10,
-    week_start: 'Monday'),
-  start_date: DateTime.now,
-  summary: 'Some summary')
+get(request)
 ```
-</details>
 
-### Complete example
+Get calendar file from storage.             
 
-<details>
-    <summary>Method call example:</summary>
+### Return type
 
+[**CalendarDto**](CalendarDto.md)
+
+### request Parameter
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = CalendarGetRequest.new(
-    file_name: 'calendar.ics',
-    folder: 'calendar/location/on/storage',
-    storage: 'First Storage')
-
-// Call method:
-result = api.calendar.get(request)
-
-// Result example:
-result = CalendarDto.new(
-  attendees: [
-    MailAddress.new(
-      display_name: 'Attendee Name',
-      address: 'attendee@aspose.com',
-      participation_status: 'Accepted')],
-  description: 'Some description',
-  end_date: DateTime.now,
-  location: 'Some location',
-  organizer: MailAddress.new(
-    display_name: 'Organizer Name',
-    address: 'organizer@aspose.com'),
-  recurrence: DailyRecurrencePatternDto.new(
-    interval: -1,
-    occurs: 10,
-    week_start: 'Monday'),
-  start_date: DateTime.now,
-  summary: 'Some summary')
+AsposeEmailCloud::CalendarGetRequest.new(
+    file_name,
+    folder,
+    storage)
 ```
 
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_name** | **String** | iCalendar file name in storage. | 
+ **folder** | **String** | Path to folder in storage. | [optional] 
+ **storage** | **String** | Storage name. | [optional] 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="get_as_alternate"></a>
-## get_as_alternate
-
-Description: Get iCalendar from storage as AlternateView             
-
-Returns: iCalendar document represented as AlternateView
-
-Method call example:
-```ruby
-result = api.calendar.get_as_alternate(request)
-```
-
-### Parameter: request
-
-Description: get_as_alternate method request.
-
-See parameter model documentation at [CalendarGetAsAlternateRequest](CalendarGetAsAlternateRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = CalendarGetAsAlternateRequest.new(
-    file_name: 'calendar.ics',
-    calendar_action: 'Create',
-    folder: 'calendar/location/on/storage',
-    storage: 'First Storage')
-```
-
-</details>
-
-### Result
-
-Description: iCalendar document represented as AlternateView
-
-Return type: [**AlternateView**](AlternateView.md)
-
-<details>
-    <summary>Result example</summary>
+# get_as_alternate
 
 ```ruby
-result = AlternateView.new(
-  base64_data: '<File content represented as Base64 string>',
-  content_id: 'fa7a8948-4af1-432a-b4d9-ee0c28542e75',
-  content_type: ContentType.new(
-    char_set: 'utf-8',
-    media_type: 'text/calendar',
-    name: 'meeting.ics',
-    parameters: [
-      ContentTypeParameter.new(
-        name: 'Method',
-        value: 'REQUEST'),
-      ContentTypeParameter.new(
-        name: 'Name',
-        value: 'meeting.ics'),
-      ContentTypeParameter.new(
-        name: 'charset',
-        value: 'utf-8')]))
+get_as_alternate(request)
 ```
-</details>
 
-### Complete example
+Get iCalendar from storage as AlternateView             
 
-<details>
-    <summary>Method call example:</summary>
+### Return type
 
+[**AlternateView**](AlternateView.md)
+
+### request Parameter
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = CalendarGetAsAlternateRequest.new(
-    file_name: 'calendar.ics',
-    calendar_action: 'Create',
-    folder: 'calendar/location/on/storage',
-    storage: 'First Storage')
-
-// Call method:
-result = api.calendar.get_as_alternate(request)
-
-// Result example:
-result = AlternateView.new(
-  base64_data: '<File content represented as Base64 string>',
-  content_id: 'fa7a8948-4af1-432a-b4d9-ee0c28542e75',
-  content_type: ContentType.new(
-    char_set: 'utf-8',
-    media_type: 'text/calendar',
-    name: 'meeting.ics',
-    parameters: [
-      ContentTypeParameter.new(
-        name: 'Method',
-        value: 'REQUEST'),
-      ContentTypeParameter.new(
-        name: 'Name',
-        value: 'meeting.ics'),
-      ContentTypeParameter.new(
-        name: 'charset',
-        value: 'utf-8')]))
+AsposeEmailCloud::CalendarGetAsAlternateRequest.new(
+    file_name,
+    calendar_action,
+    sequence_id,
+    folder,
+    storage)
 ```
 
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_name** | **String** | iCalendar file name in storage | 
+ **calendar_action** | **String** | iCalendar method type Enum, available values: Create, Update, Cancel | 
+ **sequence_id** | **String** | The sequence id | [optional] 
+ **folder** | **String** | Path to folder in storage | [optional] 
+ **storage** | **String** | Storage name | [optional] 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="get_as_file"></a>
-## get_as_file
-
-Description: Converts calendar document from storage to specified format and returns as file.             
-
-Returns: File stream in specified format.
-
-Method call example:
-```ruby
-result = api.calendar.get_as_file(request)
-```
-
-### Parameter: request
-
-Description: get_as_file method request.
-
-See parameter model documentation at [CalendarGetAsFileRequest](CalendarGetAsFileRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = CalendarGetAsFileRequest.new(
-    file_name: 'calendar.msg',
-    format: 'Ics',
-    storage: 'First Storage',
-    folder: 'calendar/file/location/on/storage')
-```
-
-</details>
-
-### Result
-
-Description: File stream in specified format.
-
-Return type: **file**
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
+# get_as_file
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = CalendarGetAsFileRequest.new(
-    file_name: 'calendar.msg',
-    format: 'Ics',
-    storage: 'First Storage',
-    folder: 'calendar/file/location/on/storage')
-
-// Call method:
-result = api.calendar.get_as_file(request)
+get_as_file(request)
 ```
 
-</details>
+Converts calendar document from storage to specified format and returns as file.             
+
+### Return type
+
+**file**
+
+### request Parameter
+```ruby
+AsposeEmailCloud::CalendarGetAsFileRequest.new(
+    file_name,
+    format,
+    storage,
+    folder)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_name** | **String** | Calendar document file name. | 
+ **format** | **String** | File format. Enum, available values: Ics, Msg | 
+ **storage** | **String** | Storage name. | [optional] 
+ **folder** | **String** | Path to folder in storage. | [optional] 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="get_list"></a>
-## get_list
-
-Description: Get iCalendar list from storage folder.             
-
-Returns: iCalendar document list.
-
-Method call example:
-```ruby
-result = api.calendar.get_list(request)
-```
-
-### Parameter: request
-
-Description: get_list method request.
-
-See parameter model documentation at [CalendarGetListRequest](CalendarGetListRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = CalendarGetListRequest.new(
-    folder: 'some/folder/on/storage',
-    items_per_page: 10,
-    page_number: 0,
-    storage: 'First Storage')
-```
-
-</details>
-
-### Result
-
-Description: iCalendar document list.
-
-Return type: [**CalendarStorageList**](CalendarStorageList.md)
-
-<details>
-    <summary>Result example</summary>
+# get_list
 
 ```ruby
-result = CalendarStorageList.new(
-  value: [
-    StorageModelOfCalendarDto.new(
-      storage_file: StorageFileLocation.new(
-        file_name: 'calendar.ics',
-        storage: 'First Storage',
-        folder_path: 'file/location/folder/on/storage'),
-      value: CalendarDto.new(
-        attendees: [
-          MailAddress.new(
-            display_name: 'Attendee Name',
-            address: 'attendee@aspose.com',
-            participation_status: 'Accepted')],
-        description: 'Some description',
-        end_date: DateTime.now,
-        location: 'Some location',
-        organizer: MailAddress.new(
-          display_name: 'Organizer Name',
-          address: 'organizer@aspose.com'),
-        recurrence: DailyRecurrencePatternDto.new(
-          interval: -1,
-          occurs: 10,
-          week_start: 'Monday'),
-        start_date: DateTime.now,
-        summary: 'Some summary'))])
+get_list(request)
 ```
-</details>
 
-### Complete example
+Get iCalendar list from storage folder.             
 
-<details>
-    <summary>Method call example:</summary>
+### Return type
 
+[**CalendarStorageList**](CalendarStorageList.md)
+
+### request Parameter
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = CalendarGetListRequest.new(
-    folder: 'some/folder/on/storage',
-    items_per_page: 10,
-    page_number: 0,
-    storage: 'First Storage')
-
-// Call method:
-result = api.calendar.get_list(request)
-
-// Result example:
-result = CalendarStorageList.new(
-  value: [
-    StorageModelOfCalendarDto.new(
-      storage_file: StorageFileLocation.new(
-        file_name: 'calendar.ics',
-        storage: 'First Storage',
-        folder_path: 'file/location/folder/on/storage'),
-      value: CalendarDto.new(
-        attendees: [
-          MailAddress.new(
-            display_name: 'Attendee Name',
-            address: 'attendee@aspose.com',
-            participation_status: 'Accepted')],
-        description: 'Some description',
-        end_date: DateTime.now,
-        location: 'Some location',
-        organizer: MailAddress.new(
-          display_name: 'Organizer Name',
-          address: 'organizer@aspose.com'),
-        recurrence: DailyRecurrencePatternDto.new(
-          interval: -1,
-          occurs: 10,
-          week_start: 'Monday'),
-        start_date: DateTime.now,
-        summary: 'Some summary'))])
+AsposeEmailCloud::CalendarGetListRequest.new(
+    folder,
+    items_per_page,
+    page_number,
+    storage)
 ```
 
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder** | **String** | Path to folder in storage. | 
+ **items_per_page** | **Integer** | Count of items on page. | [optional] [default to 10]
+ **page_number** | **Integer** | Page number. | [optional] [default to 0]
+ **storage** | **String** | Storage name. | [optional] 
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
 <a name="save"></a>
-## save
+# save
 
-Description: Save iCalendar             
-
-Method call example:
 ```ruby
-api.calendar.save(request)
+save(request)
 ```
 
-### Parameter: request
+Save iCalendar             
 
-Description: iCalendar create/update request
+### Return type
+
+nil (empty response body)
+
+### request Parameter
 
 See parameter model documentation at [CalendarSaveRequest](CalendarSaveRequest.md)
-
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```ruby
-request = CalendarSaveRequest.new(
-  storage_file: StorageFileLocation.new(
-    file_name: 'calendar.ics',
-    storage: 'First Storage',
-    folder_path: 'file/location/folder/on/storage'),
-  value: CalendarDto.new(
-    attendees: [
-      MailAddress.new(
-        display_name: 'Attendee Name',
-        address: 'attendee@aspose.com',
-        participation_status: 'Accepted')],
-    description: 'Some description',
-    end_date: DateTime.now,
-    location: 'Some location',
-    organizer: MailAddress.new(
-      display_name: 'Organizer Name',
-      address: 'organizer@aspose.com'),
-    recurrence: DailyRecurrencePatternDto.new(
-      interval: -1,
-      occurs: 10,
-      week_start: 'Monday'),
-    start_date: DateTime.now,
-    summary: 'Some summary'))
-```
-
-</details>
-
-### Result
-
-Return type: nil (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```ruby
-api = EmailCloud.new(app_key, app_sid)
-
-// Prepare parameters:
-request = CalendarSaveRequest.new(
-  storage_file: StorageFileLocation.new(
-    file_name: 'calendar.ics',
-    storage: 'First Storage',
-    folder_path: 'file/location/folder/on/storage'),
-  value: CalendarDto.new(
-    attendees: [
-      MailAddress.new(
-        display_name: 'Attendee Name',
-        address: 'attendee@aspose.com',
-        participation_status: 'Accepted')],
-    description: 'Some description',
-    end_date: DateTime.now,
-    location: 'Some location',
-    organizer: MailAddress.new(
-      display_name: 'Organizer Name',
-      address: 'organizer@aspose.com'),
-    recurrence: DailyRecurrencePatternDto.new(
-      interval: -1,
-      occurs: 10,
-      week_start: 'Monday'),
-    start_date: DateTime.now,
-    summary: 'Some summary'))
-
-// Call method:
-api.calendar.save(request)
-```
-
-</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 
