@@ -1,128 +1,372 @@
-# ClientThreadApi
+# ClientThreadApi (EmailCloud.client.thread)
 
-            
+Email client thread operations.
+
 <a name="delete"></a>
-# delete
+## delete
 
+Description: Delete thread by id. All messages from thread will also be deleted.             
+
+Method call example:
 ```ruby
-delete(request)
+api.client.thread.delete(request)
 ```
 
-Delete thread by id. All messages from thread will also be deleted.             
+### Parameter: request
 
-### Return type
-
-nil (empty response body)
-
-### request Parameter
+Description: Delete email thread request.
 
 See parameter model documentation at [ClientThreadDeleteRequest](ClientThreadDeleteRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```ruby
+request = ClientThreadDeleteRequest.new(
+  folder: 'INBOX/SubFolder',
+  thread_id: '5',
+  account_location: StorageFileLocation.new(
+    file_name: 'email.account',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'))
+```
+
+</details>
+
+### Result
+
+Return type: nil (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = ClientThreadDeleteRequest.new(
+  folder: 'INBOX/SubFolder',
+  thread_id: '5',
+  account_location: StorageFileLocation.new(
+    file_name: 'email.account',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'))
+
+// Call method:
+api.client.thread.delete(request)
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="get_list"></a>
-# get_list
+## get_list
 
+Description: Get message threads from folder. All messages are partly fetched (without email body and some other fields).             
+
+Returns: List of threads
+
+Method call example:
 ```ruby
-get_list(request)
+result = api.client.thread.get_list(request)
 ```
 
-Get message threads from folder. All messages are partly fetched (without email body and some other fields).             
+### Parameter: request
 
-### Return type
+Description: get_list method request.
 
-[**EmailThreadList**](EmailThreadList.md)
+See parameter model documentation at [ClientThreadGetListRequest](ClientThreadGetListRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::ClientThreadGetListRequest.new(
-    folder,
-    account,
-    storage,
-    account_storage_folder,
-    update_folder_cache,
-    messages_cache_limit)
+request = ClientThreadGetListRequest.new(
+    folder: 'INBOX/SubFolder',
+    account: 'email.account',
+    storage: 'First Storage',
+    account_storage_folder: 'email/account/location/on/storage')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **folder** | **String** | A folder in email account.              | 
- **account** | **String** | Email account | 
- **storage** | **String** | Storage name where account file located | [optional] 
- **account_storage_folder** | **String** | Folder in storage where account file located | [optional] 
- **update_folder_cache** | **BOOLEAN** | This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account              | [optional] [default to true]
- **messages_cache_limit** | **Integer** | Limit messages cache size if CacheFile is used. Ignored in accounts without limits support              | [optional] [default to 200]
+</details>
+
+### Result
+
+Description: List of threads
+
+Return type: [**EmailThreadList**](EmailThreadList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = EmailThreadList.new(
+  value: [
+    EmailThread.new(
+      id: '123',
+      subject: 'Some email subject',
+      messages: [
+        EmailDto.new(
+          date: DateTime.now,
+          from: MailAddress.new(
+            address: 'from@aspose.com'),
+          message_id: '1',
+          subject: 'Some email subject',
+          to: [
+            MailAddress.new(
+              address: 'to@aspose.com')]),
+        EmailDto.new(
+          date: DateTime.now,
+          from: MailAddress.new(
+            address: 'from@aspose.com'),
+          message_id: '3',
+          subject: 'Re: Some email subject',
+          to: [
+            MailAddress.new(
+              address: 'to@aspose.com')])])])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = ClientThreadGetListRequest.new(
+    folder: 'INBOX/SubFolder',
+    account: 'email.account',
+    storage: 'First Storage',
+    account_storage_folder: 'email/account/location/on/storage')
+
+// Call method:
+result = api.client.thread.get_list(request)
+
+// Result example:
+result = EmailThreadList.new(
+  value: [
+    EmailThread.new(
+      id: '123',
+      subject: 'Some email subject',
+      messages: [
+        EmailDto.new(
+          date: DateTime.now,
+          from: MailAddress.new(
+            address: 'from@aspose.com'),
+          message_id: '1',
+          subject: 'Some email subject',
+          to: [
+            MailAddress.new(
+              address: 'to@aspose.com')]),
+        EmailDto.new(
+          date: DateTime.now,
+          from: MailAddress.new(
+            address: 'from@aspose.com'),
+          message_id: '3',
+          subject: 'Re: Some email subject',
+          to: [
+            MailAddress.new(
+              address: 'to@aspose.com')])])])
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="get_messages"></a>
-# get_messages
+## get_messages
 
+Description: Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
+
+Returns: Requested thread with fully fetched messages
+
+Method call example:
 ```ruby
-get_messages(request)
+result = api.client.thread.get_messages(request)
 ```
 
-Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.             
+### Parameter: request
 
-### Return type
+Description: get_messages method request.
 
-[**EmailList**](EmailList.md)
+See parameter model documentation at [ClientThreadGetMessagesRequest](ClientThreadGetMessagesRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::ClientThreadGetMessagesRequest.new(
-    thread_id,
-    account,
-    folder,
-    storage,
-    account_storage_folder)
+request = ClientThreadGetMessagesRequest.new(
+    thread_id: '5',
+    account: 'email.account',
+    folder: 'INBOX',
+    storage: 'First Storage',
+    account_storage_folder: 'email/account/location/on/storage')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **thread_id** | **String** | Thread identifier | 
- **account** | **String** | Email account | 
- **folder** | **String** | Specifies account folder to get thread from              | [optional] 
- **storage** | **String** | Storage name where account file located | [optional] 
- **account_storage_folder** | **String** | Folder in storage where account file located | [optional] 
+</details>
+
+### Result
+
+Description: Requested thread with fully fetched messages
+
+Return type: [**EmailList**](EmailList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = 
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = ClientThreadGetMessagesRequest.new(
+    thread_id: '5',
+    account: 'email.account',
+    folder: 'INBOX',
+    storage: 'First Storage',
+    account_storage_folder: 'email/account/location/on/storage')
+
+// Call method:
+result = api.client.thread.get_messages(request)
+
+// Result example:
+result = 
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="move"></a>
-# move
+## move
 
+Description: Move thread to another folder.             
+
+Method call example:
 ```ruby
-move(request)
+api.client.thread.move(request)
 ```
 
-Move thread to another folder.             
+### Parameter: request
 
-### Return type
-
-nil (empty response body)
-
-### request Parameter
+Description: Move thread request.
 
 See parameter model documentation at [ClientThreadMoveRequest](ClientThreadMoveRequest.md)
 
-[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-<a name="set_is_read"></a>
-# set_is_read
-
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-set_is_read(request)
+request = ClientThreadMoveRequest.new(
+  destination_folder: 'INBOX/SubFolder',
+  thread_id: '5',
+  account_location: StorageFileLocation.new(
+    file_name: 'email.account',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'))
 ```
 
-Mark all messages in thread as read or unread.             
+</details>
 
-### Return type
+### Result
 
-nil (empty response body)
+Return type: nil (empty response body)
 
-### request Parameter
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = ClientThreadMoveRequest.new(
+  destination_folder: 'INBOX/SubFolder',
+  thread_id: '5',
+  account_location: StorageFileLocation.new(
+    file_name: 'email.account',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'))
+
+// Call method:
+api.client.thread.move(request)
+```
+
+</details>
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+<a name="set_is_read"></a>
+## set_is_read
+
+Description: Mark all messages in thread as read or unread.             
+
+Method call example:
+```ruby
+api.client.thread.set_is_read(request)
+```
+
+### Parameter: request
+
+Description: Email account specifier and IsRead flag.
 
 See parameter model documentation at [ClientThreadSetIsReadRequest](ClientThreadSetIsReadRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```ruby
+request = ClientThreadSetIsReadRequest.new(
+  is_read: true,
+  folder: 'INBOX',
+  thread_id: '5',
+  account_location: StorageFileLocation.new(
+    file_name: 'email.account',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'))
+```
+
+</details>
+
+### Result
+
+Return type: nil (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = ClientThreadSetIsReadRequest.new(
+  is_read: true,
+  folder: 'INBOX',
+  thread_id: '5',
+  account_location: StorageFileLocation.new(
+    file_name: 'email.account',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'))
+
+// Call method:
+api.client.thread.set_is_read(request)
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

@@ -1,109 +1,289 @@
-# StorageApi
+# StorageApi (EmailCloud.cloud_storage.storage)
 
-            
+Storage operations controller
+
 <a name="get_disc_usage"></a>
-# get_disc_usage
+## get_disc_usage
 
+Description: Get disc usage
+
+Returns: Disc usage.
+
+Method call example:
 ```ruby
-get_disc_usage(request)
+result = api.cloud_storage.storage.get_disc_usage(request)
 ```
 
-Get disc usage
+### Parameter: request
 
-### Return type
+Description: get_disc_usage method request.
 
-[**DiscUsage**](DiscUsage.md)
+See parameter model documentation at [GetDiscUsageRequest](GetDiscUsageRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::GetDiscUsageRequest.new(
-    storage_name)
+request = GetDiscUsageRequest.new(
+    storage_name: 'First Storage')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **storage_name** | **String** | Storage name | [optional] 
+</details>
+
+### Result
+
+Description: Disc usage.
+
+Return type: [**DiscUsage**](DiscUsage.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = DiscUsage.new(
+  used_size: 1048576,
+  total_size: 3145728)
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = GetDiscUsageRequest.new(
+    storage_name: 'First Storage')
+
+// Call method:
+result = api.cloud_storage.storage.get_disc_usage(request)
+
+// Result example:
+result = DiscUsage.new(
+  used_size: 1048576,
+  total_size: 3145728)
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="get_file_versions"></a>
-# get_file_versions
+## get_file_versions
 
+Description: Get file versions
+
+Returns: File versions.
+
+Method call example:
 ```ruby
-get_file_versions(request)
+result = api.cloud_storage.storage.get_file_versions(request)
 ```
 
-Get file versions
+### Parameter: request
 
-### Return type
+Description: get_file_versions method request.
 
-[**FileVersions**](FileVersions.md)
+See parameter model documentation at [GetFileVersionsRequest](GetFileVersionsRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::GetFileVersionsRequest.new(
-    path,
-    storage_name)
+request = GetFileVersionsRequest.new(
+    path: '/storage/path/to/file.ext',
+    storage_name: 'First Storage')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **path** | **String** | File path e.g. &#39;/file.ext&#39; | 
- **storage_name** | **String** | Storage name | [optional] 
+</details>
+
+### Result
+
+Description: File versions.
+
+Return type: [**FileVersions**](FileVersions.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = FileVersions.new(
+  value: [
+    FileVersion.new(
+      version_id: 'd5afd857-8797-4ca0-b806-a03fdfc3831f',
+      is_latest: true,
+      name: 'file.ext',
+      modified_date: DateTime.now,
+      size: 4096,
+      path: '/storage/path/to')])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = GetFileVersionsRequest.new(
+    path: '/storage/path/to/file.ext',
+    storage_name: 'First Storage')
+
+// Call method:
+result = api.cloud_storage.storage.get_file_versions(request)
+
+// Result example:
+result = FileVersions.new(
+  value: [
+    FileVersion.new(
+      version_id: 'd5afd857-8797-4ca0-b806-a03fdfc3831f',
+      is_latest: true,
+      name: 'file.ext',
+      modified_date: DateTime.now,
+      size: 4096,
+      path: '/storage/path/to')])
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="object_exists"></a>
-# object_exists
+## object_exists
 
+Description: Check if file or folder exists
+
+Returns: Object exist result.
+
+Method call example:
 ```ruby
-object_exists(request)
+result = api.cloud_storage.storage.object_exists(request)
 ```
 
-Check if file or folder exists
+### Parameter: request
 
-### Return type
+Description: object_exists method request.
 
-[**ObjectExist**](ObjectExist.md)
+See parameter model documentation at [ObjectExistsRequest](ObjectExistsRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::ObjectExistsRequest.new(
-    path,
-    storage_name,
-    version_id)
+request = ObjectExistsRequest.new(
+    path: '/storage/path/to/folder/or/file.ext',
+    storage_name: 'First Storage')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **path** | **String** | File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; | 
- **storage_name** | **String** | Storage name | [optional] 
- **version_id** | **String** | File version ID | [optional] 
+</details>
+
+### Result
+
+Description: Object exist result.
+
+Return type: [**ObjectExist**](ObjectExist.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = ObjectExist.new(
+  exists: true)
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = ObjectExistsRequest.new(
+    path: '/storage/path/to/folder/or/file.ext',
+    storage_name: 'First Storage')
+
+// Call method:
+result = api.cloud_storage.storage.object_exists(request)
+
+// Result example:
+result = ObjectExist.new(
+  exists: true)
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="exists"></a>
-# exists
+## exists
 
+Description: Check if storage exists
+
+Returns: Storage exist result.
+
+Method call example:
 ```ruby
-exists(request)
+result = api.cloud_storage.storage.exists(request)
 ```
 
-Check if storage exists
+### Parameter: request
 
-### Return type
+Description: exists method request.
 
-[**StorageExist**](StorageExist.md)
+See parameter model documentation at [StorageExistsRequest](StorageExistsRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::StorageExistsRequest.new(
-    storage_name)
+request = StorageExistsRequest.new(
+    storage_name: 'First Storage')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **storage_name** | **String** | Storage name | 
+</details>
+
+### Result
+
+Description: Storage exist result.
+
+Return type: [**StorageExist**](StorageExist.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = StorageExist.new(
+  exists: true)
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = StorageExistsRequest.new(
+    storage_name: 'First Storage')
+
+// Call method:
+result = api.cloud_storage.storage.exists(request)
+
+// Result example:
+result = StorageExist.new(
+  exists: true)
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 

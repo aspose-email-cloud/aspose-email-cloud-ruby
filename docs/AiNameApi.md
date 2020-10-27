@@ -1,328 +1,983 @@
-# AiNameApi
+# AiNameApi (EmailCloud.ai.name)
 
-            
+AI Name operations.
+
 <a name="complete"></a>
-# complete
+## complete
 
+Description: The call proposes k most probable names for given starting characters.             
+
+Returns: List of name variations.
+
+Method call example:
 ```ruby
-complete(request)
+result = api.ai.name.complete(request)
 ```
 
-The call proposes k most probable names for given starting characters.             
+### Parameter: request
 
-### Return type
+Description: complete method request.
 
-[**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+See parameter model documentation at [AiNameCompleteRequest](AiNameCompleteRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::AiNameCompleteRequest.new(
-    name,
-    language,
-    location,
-    encoding,
-    script,
-    style)
+request = AiNameCompleteRequest.new(
+    name: 'Dav')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String** | A name to complete. | 
- **language** | **String** | An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian).              | [optional] [default to ]
- **location** | **String** | A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France.              | [optional] [default to ]
- **encoding** | **String** | A character encoding name. | [optional] [default to ]
- **script** | **String** | A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **String** | Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+</details>
+
+### Result
+
+Description: List of name variations.
+
+Return type: [**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = AiNameWeightedVariants.new(
+  names: [
+    AiNameWeighted.new(
+      name: 'J. Cane',
+      score: 1),
+    AiNameWeighted.new(
+      name: 'Mr. Cane',
+      score: 0.75)])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameCompleteRequest.new(
+    name: 'Dav')
+
+// Call method:
+result = api.ai.name.complete(request)
+
+// Result example:
+result = AiNameWeightedVariants.new(
+  names: [
+    AiNameWeighted.new(
+      name: 'J. Cane',
+      score: 1),
+    AiNameWeighted.new(
+      name: 'Mr. Cane',
+      score: 0.75)])
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="expand"></a>
-# expand
+## expand
 
+Description: Expands a person's name into a list of possible alternatives using options for expanding instructions.             
+
+Returns: List of name variations.
+
+Method call example:
 ```ruby
-expand(request)
+result = api.ai.name.expand(request)
 ```
 
-Expands a person's name into a list of possible alternatives using options for expanding instructions.             
+### Parameter: request
 
-### Return type
+Description: expand method request.
 
-[**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+See parameter model documentation at [AiNameExpandRequest](AiNameExpandRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::AiNameExpandRequest.new(
-    name,
-    language,
-    location,
-    encoding,
-    script,
-    style)
+request = AiNameExpandRequest.new(
+    name: 'John Cane')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String** | A name to expand. | 
- **language** | **String** | An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian).              | [optional] [default to ]
- **location** | **String** | A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France.              | [optional] [default to ]
- **encoding** | **String** | A character encoding name. | [optional] [default to ]
- **script** | **String** | A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **String** | Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+</details>
+
+### Result
+
+Description: List of name variations.
+
+Return type: [**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = AiNameWeightedVariants.new(
+  names: [
+    AiNameWeighted.new(
+      name: 'J. Cane',
+      score: 1),
+    AiNameWeighted.new(
+      name: 'Mr. Cane',
+      score: 0.75)])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameExpandRequest.new(
+    name: 'John Cane')
+
+// Call method:
+result = api.ai.name.expand(request)
+
+// Result example:
+result = AiNameWeightedVariants.new(
+  names: [
+    AiNameWeighted.new(
+      name: 'J. Cane',
+      score: 1),
+    AiNameWeighted.new(
+      name: 'Mr. Cane',
+      score: 0.75)])
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="expand_parsed"></a>
-# expand_parsed
+## expand_parsed
 
+Description: Expands a person's parsed name into a list of possible alternatives using options for expanding instructions.             
+
+Returns: List of name variations.
+
+Method call example:
 ```ruby
-expand_parsed(request)
+result = api.ai.name.expand_parsed(request)
 ```
 
-Expands a person's parsed name into a list of possible alternatives using options for expanding instructions.             
+### Parameter: request
 
-### Return type
-
-[**AiNameWeightedVariants**](AiNameWeightedVariants.md)
-
-### request Parameter
+Description: Parsed name with options.
 
 See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```ruby
+request = AiNameParsedRequest.new(
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+```
+
+</details>
+
+### Result
+
+Description: List of name variations.
+
+Return type: [**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = AiNameWeightedVariants.new(
+  names: [
+    AiNameWeighted.new(
+      name: 'J. Cane',
+      score: 1),
+    AiNameWeighted.new(
+      name: 'Mr. Cane',
+      score: 0.75)])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameParsedRequest.new(
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+
+// Call method:
+result = api.ai.name.expand_parsed(request)
+
+// Result example:
+result = AiNameWeightedVariants.new(
+  names: [
+    AiNameWeighted.new(
+      name: 'J. Cane',
+      score: 1),
+    AiNameWeighted.new(
+      name: 'Mr. Cane',
+      score: 0.75)])
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="format"></a>
-# format
+## format
 
+Description: Formats a person's name in correct case and name order using options for formatting instructions.             
+
+Returns: Formatted name.
+
+Method call example:
 ```ruby
-format(request)
+result = api.ai.name.format(request)
 ```
 
-Formats a person's name in correct case and name order using options for formatting instructions.             
+### Parameter: request
 
-### Return type
+Description: format method request.
 
-[**AiNameFormatted**](AiNameFormatted.md)
+See parameter model documentation at [AiNameFormatRequest](AiNameFormatRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::AiNameFormatRequest.new(
-    name,
-    language,
-    location,
-    encoding,
-    script,
-    format,
-    style)
+request = AiNameFormatRequest.new(
+    name: 'Mr. John Michael Cane',
+    format: '%t%L%f%m')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String** | A name to format. | 
- **language** | **String** | An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian).              | [optional] [default to ]
- **location** | **String** | A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France.              | [optional] [default to ]
- **encoding** | **String** | A character encoding name. | [optional] [default to ]
- **script** | **String** | A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **format** | **String** | Format of the name. Predefined format can be used by ID, or custom format can be specified. Predefined formats:      /format/default/ (&#x3D; &#39;%t%F%m%N%L%p&#39;)     /format/FN+LN/ (&#x3D; &#39;%F%L&#39;)     /format/title+FN+LN/ (&#x3D; &#39;%t%F%L&#39;)     /format/FN+MN+LN/ (&#x3D; &#39;%F%M%N%L&#39;)     /format/title+FN+MN+LN/ (&#x3D; &#39;%t%F%M%N%L&#39;)     /format/FN+MI+LN/ (&#x3D; &#39;%F%m%N%L&#39;)     /format/title+FN+MI+LN/ (&#x3D; &#39;%t%F%m%N%L&#39;)     /format/LN/ (&#x3D; &#39;%L&#39;)     /format/title+LN/ (&#x3D; &#39;%t%L&#39;)     /format/LN+FN+MN/ (&#x3D; &#39;%L,%F%M%N&#39;)     /format/LN+title+FN+MN/ (&#x3D; &#39;%L,%t%F%M%N&#39;)     /format/LN+FN+MI/ (&#x3D; &#39;%L,%F%m%N&#39;)     /format/LN+title+FN+MI/ (&#x3D; &#39;%L,%t%F%m%N&#39;)  Custom format string - custom combination of characters and the next term placeholders:      &#39;%t&#39; - Title (prefix)     &#39;%F&#39; - First name     &#39;%f&#39; - First initial     &#39;%M&#39; - Middle name(s)     &#39;%m&#39; - Middle initial(s)     &#39;%N&#39; - Nickname     &#39;%L&#39; - Last name     &#39;%l&#39; - Last initial     &#39;%p&#39; - Postfix  If no value for format option was provided, its default value is &#39;%t%F%m%N%L%p&#39;              | [optional] [default to ]
- **style** | **String** | Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+</details>
+
+### Result
+
+Description: Formatted name.
+
+Return type: [**AiNameFormatted**](AiNameFormatted.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = AiNameFormatted.new(
+  name: 'Mr. Cane J. M.',
+  comments: 'format: %t%L%f%m; source: parsed format')
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameFormatRequest.new(
+    name: 'Mr. John Michael Cane',
+    format: '%t%L%f%m')
+
+// Call method:
+result = api.ai.name.format(request)
+
+// Result example:
+result = AiNameFormatted.new(
+  name: 'Mr. Cane J. M.',
+  comments: 'format: %t%L%f%m; source: parsed format')
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="format_parsed"></a>
-# format_parsed
+## format_parsed
 
+Description: Formats a person's parsed name in correct case and name order using options for formatting instructions.             
+
+Returns: Formatted name.
+
+Method call example:
 ```ruby
-format_parsed(request)
+result = api.ai.name.format_parsed(request)
 ```
 
-Formats a person's parsed name in correct case and name order using options for formatting instructions.             
+### Parameter: request
 
-### Return type
-
-[**AiNameFormatted**](AiNameFormatted.md)
-
-### request Parameter
+Description: Parsed name with options.
 
 See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```ruby
+request = AiNameParsedRequest.new(
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+```
+
+</details>
+
+### Result
+
+Description: Formatted name.
+
+Return type: [**AiNameFormatted**](AiNameFormatted.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = AiNameFormatted.new(
+  name: 'Mr. Cane J. M.',
+  comments: 'format: %t%L%f%m; source: parsed format')
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameParsedRequest.new(
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+
+// Call method:
+result = api.ai.name.format_parsed(request)
+
+// Result example:
+result = AiNameFormatted.new(
+  name: 'Mr. Cane J. M.',
+  comments: 'format: %t%L%f%m; source: parsed format')
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="genderize"></a>
-# genderize
+## genderize
 
+Description: Detect person's gender from name string.             
+
+Returns: Hypotheses about person's gender.
+
+Method call example:
 ```ruby
-genderize(request)
+result = api.ai.name.genderize(request)
 ```
 
-Detect person's gender from name string.             
+### Parameter: request
 
-### Return type
+Description: genderize method request.
 
-[**AiNameGenderHypothesisList**](AiNameGenderHypothesisList.md)
+See parameter model documentation at [AiNameGenderizeRequest](AiNameGenderizeRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::AiNameGenderizeRequest.new(
-    name,
-    language,
-    location,
-    encoding,
-    script,
-    style)
+request = AiNameGenderizeRequest.new(
+    name: 'John Cane')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String** | A name to genderize. | 
- **language** | **String** | An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian).              | [optional] [default to ]
- **location** | **String** | A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France.              | [optional] [default to ]
- **encoding** | **String** | A character encoding name. | [optional] [default to ]
- **script** | **String** | A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **String** | Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+</details>
+
+### Result
+
+Description: Hypotheses about person's gender.
+
+Return type: [**AiNameGenderHypothesisList**](AiNameGenderHypothesisList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = 
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameGenderizeRequest.new(
+    name: 'John Cane')
+
+// Call method:
+result = api.ai.name.genderize(request)
+
+// Result example:
+result = 
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="genderize_parsed"></a>
-# genderize_parsed
+## genderize_parsed
 
+Description: Detect person's gender from parsed name.             
+
+Returns: Hypotheses about person's gender.
+
+Method call example:
 ```ruby
-genderize_parsed(request)
+result = api.ai.name.genderize_parsed(request)
 ```
 
-Detect person's gender from parsed name.             
+### Parameter: request
 
-### Return type
-
-[**AiNameGenderHypothesisList**](AiNameGenderHypothesisList.md)
-
-### request Parameter
+Description: Gender detection request data.
 
 See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```ruby
+request = AiNameParsedRequest.new(
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+```
+
+</details>
+
+### Result
+
+Description: Hypotheses about person's gender.
+
+Return type: [**AiNameGenderHypothesisList**](AiNameGenderHypothesisList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = 
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameParsedRequest.new(
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+
+// Call method:
+result = api.ai.name.genderize_parsed(request)
+
+// Result example:
+result = 
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="match"></a>
-# match
+## match
 
+Description: Compare people's names. Uses options for comparing instructions.             
+
+Returns: Match result.
+
+Method call example:
 ```ruby
-match(request)
+result = api.ai.name.match(request)
 ```
 
-Compare people's names. Uses options for comparing instructions.             
+### Parameter: request
 
-### Return type
+Description: match method request.
 
-[**AiNameMatchResult**](AiNameMatchResult.md)
+See parameter model documentation at [AiNameMatchRequest](AiNameMatchRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::AiNameMatchRequest.new(
-    name,
-    other_name,
-    language,
-    location,
-    encoding,
-    script,
-    style)
+request = AiNameMatchRequest.new(
+    name: 'John Michael Cane',
+    other_name: 'Cane J.')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String** | A name to match. | 
- **other_name** | **String** | Another name to match. | 
- **language** | **String** | An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian).              | [optional] [default to ]
- **location** | **String** | A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France.              | [optional] [default to ]
- **encoding** | **String** | A character encoding name. | [optional] [default to ]
- **script** | **String** | A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **String** | Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+</details>
+
+### Result
+
+Description: Match result.
+
+Return type: [**AiNameMatchResult**](AiNameMatchResult.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = AiNameMatchResult.new(
+  similarity: 0.6,
+  mismatches: [
+    AiNameMismatch.new(
+      category: 'Gender',
+      explanation: 'no_match')])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameMatchRequest.new(
+    name: 'John Michael Cane',
+    other_name: 'Cane J.')
+
+// Call method:
+result = api.ai.name.match(request)
+
+// Result example:
+result = AiNameMatchResult.new(
+  similarity: 0.6,
+  mismatches: [
+    AiNameMismatch.new(
+      category: 'Gender',
+      explanation: 'no_match')])
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="match_parsed"></a>
-# match_parsed
+## match_parsed
 
+Description: Compare people's parsed names and attributes. Uses options for comparing instructions.             
+
+Returns: Match result.
+
+Method call example:
 ```ruby
-match_parsed(request)
+result = api.ai.name.match_parsed(request)
 ```
 
-Compare people's parsed names and attributes. Uses options for comparing instructions.             
+### Parameter: request
 
-### Return type
-
-[**AiNameMatchResult**](AiNameMatchResult.md)
-
-### request Parameter
+Description: Parsed names to match.
 
 See parameter model documentation at [AiNameMatchParsedRequest](AiNameMatchParsedRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```ruby
+request = AiNameMatchParsedRequest.new(
+  other_parsed_name: [
+    AiNameComponent.new(
+      value: 'J',
+      category: 'FirstInitial',
+      score: 1),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 3),
+    AiNameComponent.new(
+      value: '%f%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)],
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+```
+
+</details>
+
+### Result
+
+Description: Match result.
+
+Return type: [**AiNameMatchResult**](AiNameMatchResult.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = AiNameMatchResult.new(
+  similarity: 0.6,
+  mismatches: [
+    AiNameMismatch.new(
+      category: 'Gender',
+      explanation: 'no_match')])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameMatchParsedRequest.new(
+  other_parsed_name: [
+    AiNameComponent.new(
+      value: 'J',
+      category: 'FirstInitial',
+      score: 1),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 3),
+    AiNameComponent.new(
+      value: '%f%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)],
+  parsed_name: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+
+// Call method:
+result = api.ai.name.match_parsed(request)
+
+// Result example:
+result = AiNameMatchResult.new(
+  similarity: 0.6,
+  mismatches: [
+    AiNameMismatch.new(
+      category: 'Gender',
+      explanation: 'no_match')])
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="parse"></a>
-# parse
+## parse
 
+Description: Parse name to components.             
+
+Returns: List of name components.
+
+Method call example:
 ```ruby
-parse(request)
+result = api.ai.name.parse(request)
 ```
 
-Parse name to components.             
+### Parameter: request
 
-### Return type
+Description: parse method request.
 
-[**AiNameComponentList**](AiNameComponentList.md)
+See parameter model documentation at [AiNameParseRequest](AiNameParseRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::AiNameParseRequest.new(
-    name,
-    language,
-    location,
-    encoding,
-    script,
-    style)
+request = AiNameParseRequest.new(
+    name: 'John Cane',
+    language: 'eng',
+    location: 'USA')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String** | A name to parse. | 
- **language** | **String** | An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian).              | [optional] [default to ]
- **location** | **String** | A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France.              | [optional] [default to ]
- **encoding** | **String** | A character encoding name. | [optional] [default to ]
- **script** | **String** | A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **String** | Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+</details>
+
+### Result
+
+Description: List of name components.
+
+Return type: [**AiNameComponentList**](AiNameComponentList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = AiNameComponentList.new(
+  value: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameParseRequest.new(
+    name: 'John Cane',
+    language: 'eng',
+    location: 'USA')
+
+// Call method:
+result = api.ai.name.parse(request)
+
+// Result example:
+result = AiNameComponentList.new(
+  value: [
+    AiNameComponent.new(
+      value: 'John',
+      category: 'FirstName',
+      score: 0.95),
+    AiNameComponent.new(
+      value: 'Cane',
+      category: 'LastName',
+      score: 0.5,
+      position: 5),
+    AiNameComponent.new(
+      value: '%F%L',
+      category: 'Format'),
+    AiNameComponent.new(
+      value: '0.5',
+      category: 'Score',
+      score: 0.5)])
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
 <a name="parse_email_address"></a>
-# parse_email_address
+## parse_email_address
 
+Description: Parse person's name out of an email address.             
+
+Returns: Match result.
+
+Method call example:
 ```ruby
-parse_email_address(request)
+result = api.ai.name.parse_email_address(request)
 ```
 
-Parse person's name out of an email address.             
+### Parameter: request
 
-### Return type
+Description: parse_email_address method request.
 
-[**AiNameExtractedList**](AiNameExtractedList.md)
+See parameter model documentation at [AiNameParseEmailAddressRequest](AiNameParseEmailAddressRequest.md).
 
-### request Parameter
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```ruby
-AsposeEmailCloud::AiNameParseEmailAddressRequest.new(
-    email_address,
-    language,
-    location,
-    encoding,
-    script,
-    style)
+request = AiNameParseEmailAddressRequest.new(
+    email_address: 'john-cane@gmail.com')
 ```
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email_address** | **String** | Email address to parse. | 
- **language** | **String** | An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian).              | [optional] [default to ]
- **location** | **String** | A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France.              | [optional] [default to ]
- **encoding** | **String** | A character encoding name. | [optional] [default to ]
- **script** | **String** | A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **String** | Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+</details>
+
+### Result
+
+Description: Match result.
+
+Return type: [**AiNameExtractedList**](AiNameExtractedList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```ruby
+result = 
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```ruby
+api = EmailCloud.new(app_key, app_sid)
+
+// Prepare parameters:
+request = AiNameParseEmailAddressRequest.new(
+    email_address: 'john-cane@gmail.com')
+
+// Call method:
+result = api.ai.name.parse_email_address(request)
+
+// Result example:
+result = 
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
 
