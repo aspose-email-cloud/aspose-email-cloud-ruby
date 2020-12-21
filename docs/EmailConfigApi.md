@@ -89,7 +89,7 @@ result = EmailAccountConfigList.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = EmailConfigDiscoverRequest.new(
@@ -235,7 +235,7 @@ result = EmailAccountConfigList.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = EmailConfigDiscoverOauthRequest.new(
@@ -383,7 +383,7 @@ result = EmailAccountConfigList.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = EmailConfigDiscoverPasswordRequest.new(

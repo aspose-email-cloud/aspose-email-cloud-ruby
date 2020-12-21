@@ -51,9 +51,9 @@ module AsposeEmailCloud
     #
     # @return [Hash] key: parameter name, value: parameter value (API key)
     #
-    # @example parameter name is "api_key", API key is "xxx" (e.g. "api_key=xxx" in query string)
-    #   config.api_key['api_key'] = 'xxx'
-    attr_accessor :api_key
+    # @example parameter name is "client_secret", API key is "xxx" (e.g. "client_secret=xxx" in query string)
+    #   config.client_secret['client_secret'] = 'xxx'
+    attr_accessor :client_credentials
 
     # Defines API key prefixes used with API Key authentications.
     #
@@ -152,19 +152,19 @@ module AsposeEmailCloud
     attr_accessor :force_ending_format
 
     # Initializes a new instance.
-    # @param [String] app_key Key to access the server.
-    # @param [String] app_sid ID to access the server.
+    # @param [String] client_secret Key to access the server.
+    # @param [String] client_id ID to access the server.
     # @param [String] base_url Server URL.
     # @param [String] api_version Api version.
     # @param [Object] debug Debug switch [true, false].
-    def initialize(app_key = nil, app_sid = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v4.0', debug = false)
+    def initialize(client_secret = nil, client_id = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v4.0', debug = false)
       @scheme = 'https'
       self.host = base_url
       self.auth_url = base_url
       @api_version = api_version
       self.base_path = @api_version
-      @api_key = { 'api_key': app_key || '',
-                   'app_sid': app_sid || '' }
+      @client_credentials = { 'client_secret': client_secret || '',
+                              'client_id': client_id || '' }
       @api_key_prefix = {}
       @timeout = 0
       @client_side_validation = true
@@ -177,7 +177,7 @@ module AsposeEmailCloud
       @inject_format = false
       @force_ending_format = false
       @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
-      @on_premise = (!(app_key || app_sid) && base_url)
+      @on_premise = (!(client_secret || client_id) && base_url)
 
       yield(self) if block_given?
     end
@@ -213,9 +213,9 @@ module AsposeEmailCloud
     # @param [String] param_name the parameter name of API key auth
     def api_key_with_prefix(param_name)
       if @api_key_prefix[param_name]
-        "#{@api_key_prefix[param_name]} #{@api_key[param_name]}"
+        "#{@api_key_prefix[param_name]} #{@client_credentials[param_name]}"
       else
-        @api_key[param_name]
+        @client_credentials[param_name]
       end
     end
 
