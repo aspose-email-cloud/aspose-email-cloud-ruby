@@ -83,8 +83,8 @@ module AsposeEmailCloud
     def request_token_form_params(config)
       {
         'grant_type': 'client_credentials',
-        'client_id': config.client_secret[:client_id],
-        'client_secret': config.client_secret[:client_secret]
+        'client_id': config.client_credentials[:client_id],
+        'client_secret': config.client_credentials[:client_secret]
       }
     end
   end

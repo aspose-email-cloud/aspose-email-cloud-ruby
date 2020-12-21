@@ -53,7 +53,7 @@ module AsposeEmailCloud
     #
     # @example parameter name is "client_secret", API key is "xxx" (e.g. "client_secret=xxx" in query string)
     #   config.client_secret['client_secret'] = 'xxx'
-    attr_accessor :client_secret
+    attr_accessor :client_credentials
 
     # Defines API key prefixes used with API Key authentications.
     #
@@ -163,8 +163,8 @@ module AsposeEmailCloud
       self.auth_url = base_url
       @api_version = api_version
       self.base_path = @api_version
-      @client_secret = { 'client_secret': client_secret || '',
-                   'client_id': client_id || '' }
+      @client_credentials = { 'client_secret': client_secret || '',
+                              'client_id': client_id || '' }
       @api_key_prefix = {}
       @timeout = 0
       @client_side_validation = true
