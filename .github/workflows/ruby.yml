@@ -17,7 +17,7 @@ jobs:
       run: gem install -g
     - name: Test with Rspec
       env:
-        appSid: ${{secrets.appSid}}
-        appKey: ${{secrets.appKey}}
+        clientId: ${{secrets.appSid}}
+        clientSecret: ${{secrets.appKey}}
         apiBaseUrl: "https://api-qa.aspose.cloud"
       run: rspec -t pipeline spec
