@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 
 ## Example
 ```ruby
-request = EmailConfigDiscoverRequest.new()
+request = EmailConfigDiscoverRequest.new(
+    address: 'address@gmail.com')
 ```

@@ -24,7 +24,8 @@ See parameter model documentation at [EmailConfigDiscoverRequest](EmailConfigDis
     <summary>Parameter initialization example:</summary>
     
 ```ruby
-request = EmailConfigDiscoverRequest.new()
+request = EmailConfigDiscoverRequest.new(
+    address: 'address@gmail.com')
 ```
 
 </details>
@@ -91,7 +92,8 @@ result = EmailAccountConfigList.new(
 api = EmailCloud.new(app_key, app_sid)
 
 // Prepare parameters:
-request = EmailConfigDiscoverRequest.new()
+request = EmailConfigDiscoverRequest.new(
+    address: 'address@gmail.com')
 
 // Call method:
 result = api.email_config.discover(request)
