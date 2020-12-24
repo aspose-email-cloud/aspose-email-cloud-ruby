@@ -40,7 +40,7 @@ module AsposeEmailCloud
     # Email document (*.eml) operations.
     attr_reader :email
     
-    # Check email address is disposable operations
+    # Checks if an email is a disposable one
     attr_reader :disposable_email
     
     # Email server configuration discovery.

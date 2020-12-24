@@ -1,6 +1,6 @@
 # DisposableEmailApi (EmailCloud.disposable_email)
 
-Check email address is disposable operations
+Checks if an email is a disposable one
 
 <a name="is_disposable"></a>
 ## is_disposable

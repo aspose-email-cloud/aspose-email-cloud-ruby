@@ -46,7 +46,7 @@ module AsposeEmailCloud
       @api_invoker = api_invoker
     end
 
-    # Converts Email model to specified format and returns as file.             
+    # Converts Email model to a specified format and returns as a file.             
     # @param [EmailAsFileRequest] request Email model and format to convert.
     # @return [File]
     def as_file(request)

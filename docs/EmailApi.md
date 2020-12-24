@@ -5,7 +5,7 @@ Email document (*.eml) operations.
 <a name="as_file"></a>
 ## as_file
 
-Description: Converts Email model to specified format and returns as file.             
+Description: Converts Email model to a specified format and returns as a file.             
 
 Returns: File stream in specified format.
 
