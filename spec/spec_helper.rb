@@ -21,7 +21,7 @@ include AsposeEmailCloud
 RSpec.shared_context 'spec base', shared_context: :metadata do
   before(:all) do
     api_base_url = ENV['apiBaseUrl']
-    @api = EmailCloud.new(ENV['appKey'], ENV['appSid'], api_base_url)
+    @api = EmailCloud.new(ENV['clientSecret'], ENV['clientId'], api_base_url)
     auth_url = ENV['authUrl']
     if auth_url
       @api.api_invoker.api_client.config.scheme = 'http' if api_base_url.include? 'http:'

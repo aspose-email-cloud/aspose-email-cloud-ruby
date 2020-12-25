@@ -31,13 +31,13 @@ module AsposeEmailCloud
     attr_reader :api_invoker
 
     # Initializes a new instance of the EmailApi class.
-    # @param [String] app_key Key to access the server.
-    # @param [String] app_sid ID to access the server.
+    # @param [String] client_secret Key to access the server.
+    # @param [String] client_id ID to access the server.
     # @param [String] base_url Server URL.
     # @param [String] api_version Api version.
     # @param [Object] debug Debug switch [true, false].
-    # def initialize(app_key = nil, app_sid = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v4.0', debug = false)
-    #   @api_client = ApiClient.new(app_key, app_sid, base_url, api_version, debug)
+    # def initialize(client_secret = nil, client_id = nil, base_url = 'api-qa.aspose.cloud', api_version = 'v4.0', debug = false)
+    #   @api_client = ApiClient.new(client_secret, client_id, base_url, api_version, debug)
     # end
 
     # Initializes a new instance of the EmailApi class.
@@ -46,7 +46,7 @@ module AsposeEmailCloud
       @api_invoker = api_invoker
     end
 
-    # Converts Email model to specified format and returns as file.             
+    # Converts Email model to a specified format and returns as a file.             
     # @param [EmailAsFileRequest] request Email model and format to convert.
     # @return [File]
     def as_file(request)

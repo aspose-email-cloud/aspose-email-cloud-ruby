@@ -5,7 +5,7 @@ Email document (*.eml) operations.
 <a name="as_file"></a>
 ## as_file
 
-Description: Converts Email model to specified format and returns as file.             
+Description: Converts Email model to a specified format and returns as a file.             
 
 Returns: File stream in specified format.
 
@@ -62,7 +62,7 @@ Return type: **file**
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = EmailAsFileRequest.new(
@@ -189,7 +189,7 @@ result = MapiMessageDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 email_dto = EmailDto.new(
@@ -293,7 +293,7 @@ Return type: **file**
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = EmailConvertRequest.new(
@@ -377,7 +377,7 @@ result = EmailDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = EmailFromFileRequest.new(
@@ -485,7 +485,7 @@ result = EmailDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = EmailGetRequest.new(
@@ -567,7 +567,7 @@ Return type: **file**
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = EmailGetAsFileRequest.new(
@@ -662,7 +662,7 @@ result = EmailStorageList.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = EmailGetListRequest.new(
@@ -770,7 +770,7 @@ Return type: nil (empty response body)
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = EmailSaveRequest.new(

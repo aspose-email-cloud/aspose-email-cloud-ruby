@@ -1,13 +1,13 @@
 # Reference documentation for Aspose.Email Cloud API
 
 `EmailCloud` is the main API class. It provides an access to all of Aspose.Email Cloud functions.
-`app_key` and `app_sid` credentials should be obtained from [dashboard](https://dashboard.aspose.cloud/#/) to use `EmailCloud`:
+`client_secret` and `client_id` credentials should be obtained from [dashboard](https://dashboard.aspose.cloud/#/) to use `EmailCloud`:
 
 ```ruby
-app_key = 'Your App Key'
-app_sid = 'Your App SID'
+client_secret = 'Your Client secret'
+client_id = 'Your Client id'
 
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 ```
 
 All Aspose.Email Cloud functions are divided into groups and represented as `EmailCloud` fields:
@@ -21,7 +21,7 @@ API | Description
 [EmailCloud.**calendar**](CalendarApi_list.md) | iCalendar document operations.
 [EmailCloud.**contact**](ContactApi_list.md) | Contact document operations. Supported formats: VCard, MSG, WebDav
 [EmailCloud.**email**](EmailApi_list.md) | Email document (*.eml) operations.
-[EmailCloud.**disposable_email**](DisposableEmailApi_list.md) | Check email address is disposable operations
+[EmailCloud.**disposable_email**](DisposableEmailApi_list.md) | Checks if an email is a disposable one
 [EmailCloud.**email_config**](EmailConfigApi_list.md) | Email server configuration discovery.
 
 

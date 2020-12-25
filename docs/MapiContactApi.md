@@ -90,7 +90,7 @@ result = ContactDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 mapi_contact_dto = MapiContactDto.new(
@@ -199,7 +199,7 @@ Return type: **file**
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = MapiContactAsFileRequest.new(
@@ -286,7 +286,7 @@ result = MapiContactDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = MapiContactFromFileRequest.new(
@@ -378,7 +378,7 @@ result = MapiContactDto.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = MapiContactGetRequest.new(
@@ -462,7 +462,7 @@ Return type: nil (empty response body)
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = MapiContactSaveRequest.new(

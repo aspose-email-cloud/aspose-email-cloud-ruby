@@ -1,6 +1,6 @@
 # DisposableEmailApi (EmailCloud.disposable_email)
 
-Check email address is disposable operations
+Checks if an email is a disposable one
 
 <a name="is_disposable"></a>
 ## is_disposable
@@ -50,7 +50,7 @@ result =
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = DisposableEmailIsDisposableRequest.new(

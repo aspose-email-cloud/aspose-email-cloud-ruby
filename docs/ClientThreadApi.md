@@ -43,7 +43,7 @@ Return type: nil (empty response body)
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = ClientThreadDeleteRequest.new(
@@ -135,7 +135,7 @@ result = EmailThreadList.new(
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = ClientThreadGetListRequest.new(
@@ -229,7 +229,7 @@ result =
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = ClientThreadGetMessagesRequest.new(
@@ -290,7 +290,7 @@ Return type: nil (empty response body)
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = ClientThreadMoveRequest.new(
@@ -350,7 +350,7 @@ Return type: nil (empty response body)
     <summary>Method call example:</summary>
 
 ```ruby
-api = EmailCloud.new(app_key, app_sid)
+api = EmailCloud.new(client_secret, client_id)
 
 // Prepare parameters:
 request = ClientThreadSetIsReadRequest.new(

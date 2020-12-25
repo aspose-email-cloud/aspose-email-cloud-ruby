@@ -17,8 +17,8 @@ jobs:
         version: 2.6.x
     - name: Run tests for production
       env:
-        appSid: ${{secrets.appSidProd}}
-        appKey: ${{secrets.appKeyProd}}
+        clientId: ${{secrets.appSidProd}}
+        clientSecret: ${{secrets.appKeyProd}}
         apiBaseUrl: "https://api.aspose.cloud"
       run: |
         gem install -g
