@@ -37,12 +37,16 @@ module AsposeEmailCloud
     # Email account folder to move thread to.             
     # @return [String]
     attr_accessor :destination_folder
+    # Email account folder to move thread from.             
+    # @return [String]
+    attr_accessor :source_folder
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'account_location' => :'accountLocation',
         :'thread_id' => :'threadId',
-        :'destination_folder' => :'destinationFolder'
+        :'destination_folder' => :'destinationFolder',
+        :'source_folder' => :'sourceFolder'
       }
     end
 
@@ -51,7 +55,8 @@ module AsposeEmailCloud
       {
         :'account_location' => :'StorageFileLocation',
         :'thread_id' => :'String',
-        :'destination_folder' => :'String'
+        :'destination_folder' => :'String',
+        :'source_folder' => :'String'
       }
     end
 
@@ -59,13 +64,16 @@ module AsposeEmailCloud
     # @param [StorageFileLocation] account_location Email client account configuration location on storage.             
     # @param [String] thread_id Thread identifier.             
     # @param [String] destination_folder Email account folder to move thread to.             
+    # @param [String] source_folder Email account folder to move thread from.             
     def initialize(
       account_location: nil,
       thread_id: nil,
-      destination_folder: nil)
+      destination_folder: nil,
+      source_folder: nil)
       self.account_location = account_location if account_location
       self.thread_id = thread_id if thread_id
       self.destination_folder = destination_folder if destination_folder
+      self.source_folder = source_folder if source_folder
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -141,7 +149,8 @@ module AsposeEmailCloud
       self.class == o.class &&
           account_location == o.account_location &&
           thread_id == o.thread_id &&
-          destination_folder == o.destination_folder
+          destination_folder == o.destination_folder &&
+          source_folder == o.source_folder
     end
 
     # @see the `==` method
@@ -153,7 +162,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_location, thread_id, destination_folder].hash
+      [account_location, thread_id, destination_folder, source_folder].hash
     end
 
     # Builds the object from hash

@@ -271,6 +271,7 @@ See parameter model documentation at [ClientThreadMoveRequest](ClientThreadMoveR
 ```ruby
 request = ClientThreadMoveRequest.new(
   destination_folder: 'INBOX/SubFolder',
+  source_folder: 'INBOX',
   thread_id: '5',
   account_location: StorageFileLocation.new(
     file_name: 'email.account',
@@ -295,6 +296,7 @@ api = EmailCloud.new(client_secret, client_id)
 // Prepare parameters:
 request = ClientThreadMoveRequest.new(
   destination_folder: 'INBOX/SubFolder',
+  source_folder: 'INBOX',
   thread_id: '5',
   account_location: StorageFileLocation.new(
     file_name: 'email.account',

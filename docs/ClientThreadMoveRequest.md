@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **account_location** |[**StorageFileLocation**](StorageFileLocation.md) | Email client account configuration location on storage.              | 
 **thread_id** |**String** | Thread identifier.              | 
 **destination_folder** |**String** | Email account folder to move thread to.              | 
+**source_folder** |**String** | Email account folder to move thread from.              | [optional] 
 
 Parent class: [ClientThreadBaseRequest](ClientThreadBaseRequest.md)
 
@@ -16,6 +17,7 @@ Parent class: [ClientThreadBaseRequest](ClientThreadBaseRequest.md)
 ```ruby
 client_thread_move_request = ClientThreadMoveRequest.new(
   destination_folder: 'INBOX/SubFolder',
+  source_folder: 'INBOX',
   thread_id: '5',
   account_location: StorageFileLocation.new(
     file_name: 'email.account',
