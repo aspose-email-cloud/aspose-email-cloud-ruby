@@ -1,5 +1,6 @@
-# Manage Emails in Cloud via Ruby REST SDK
 [![Gem](https://img.shields.io/gem/v/aspose_email_cloud)](https://rubygems.org/gems/aspose_email_cloud) [![License](https://img.shields.io/github/license/aspose-email-cloud/aspose-email-cloud-ruby)](https://rubygems.org/gems/aspose_email_cloud) ![tests](https://github.com/aspose-email-cloud/aspose-email-cloud-ruby/workflows/tests/badge.svg)
+
+# Manage Emails in Cloud via Ruby REST SDK
 
 [Aspose.Email Cloud SDK for Ruby](https://products.aspose.cloud/email/ruby) is a REST API SDK for creating email applications that work with standard email file formats such as Outlook MSG, EML, iCalendar files and VCard.
 
@@ -22,12 +23,12 @@ Aspose.Email Cloud is a REST API for creating email applications that work with 
 - Email configuration discovery.
 - Disposable email address detection.
 
-## Enhancements in Version 21.3
+## Enhancements in Version 21.4
 
 - IMAP native threads support added to the built-in Email client.
 - New field ClientThreadMoveRequest.SourceFolder added to specify a folder to move a thread from.
 
-See [Release notes](https://docs.aspose.cloud/email/aspose-email-cloud-21-3-release-notes/).
+See [Release notes](https://docs.aspose.cloud/email/aspose-email-cloud-21-4-release-notes/).
 
 ## How to use the SDK?
 The complete source code is available in the [GIT repository](https://github.com/aspose-email-cloud/aspose-email-cloud-ruby/tree/master/lib/aspose-email-cloud).
@@ -56,5 +57,12 @@ image = File.new('path/to/image/to/parse.png')
 result = api.ai.bcr.parse(AiBcrParseRequest.new(file: image, is_single: true))
 contact = result.value[0]
 ```
+
+## Aspose.Email Cloud SDKs in Popular Languages
+
+| .NET | Java | PHP | Python | Ruby | Node.js |
+|------|------|-----|--------|------|---------|
+| [GitHub](https://github.com/aspose-email-cloud/aspose-email-cloud-dotnet) | [GitHub](https://github.com/aspose-email-cloud/aspose-email-cloud-java) | [GitHub](https://github.com/aspose-email-cloud/aspose-email-cloud-php) | [GitHub](https://github.com/aspose-email-cloud/aspose-email-cloud-python) | [GitHub](https://github.com/aspose-email-cloud/aspose-email-cloud-ruby)  | [GitHub](https://github.com/aspose-email-cloud/aspose-email-cloud-node) | [GitHub](https://github.com/aspose-email-cloud/aspose-email-cloud-android) | [GitHub](https://github.com/aspose-email-cloud/aspose-email-cloud-swift)|[GitHub](https://github.com/aspose-email-cloud/aspose-email-cloud-dart) |[GitHub](https://github.com/aspose-email-cloud/aspose-email-cloud-go) |
+| [NuGet](https://www.nuget.org/packages/Aspose.Email-Cloud/) | [Maven](https://repository.aspose.cloud/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-email-cloud) | [Composer](https://packagist.org/packages/aspose/aspose-email-cloud) | [PIP](https://pypi.org/project/aspose.email-cloud/) | [GEM](https://rubygems.org/gems/aspose_email_cloud)  | [NPM](https://www.npmjs.com/package/@asposecloud/aspose-email-cloud) |
 
 [Product Page](https://products.aspose.cloud/email/ruby) | [Documentation](https://docs.aspose.cloud/email/) | [Demo](https://products.aspose.app/email/family) | [Swagger UI](https://apireference.aspose.cloud/email/) | [Blog](https://blog.aspose.cloud/category/email/) | [Free support](https://forum.aspose.cloud/c/email) | [Free trial](https://dashboard.aspose.cloud/#/apps) | [SDK reference documentation](https://docs.aspose.cloud/email/reference-api)
