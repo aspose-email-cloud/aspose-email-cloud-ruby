@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 gem 'faraday', '~> 0.14.0'
 gem 'json', '~> 2.3'
-gem 'mimemagic', '~> 0.3.2'
+gem 'mimemagic', '~> 0.3.10'
 
 gem 'autotest', '~> 4.4', '>= 4.4.6'
 gem 'autotest-fsevent', '~> 0.2', '>= 0.2.12'

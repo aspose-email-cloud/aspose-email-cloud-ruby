@@ -11,6 +11,15 @@ module AiSpec
   # A set of autotests to check main SDK logic
   describe 'AI spec' do
     include_context 'spec base'
+    before(:all) do
+      # warm up AI
+      begin
+        @api.ai.name.genderize(AiNameGenderizeRequest.new(name: 'John Cane'))
+      rescue
+        # do nothing
+      end
+    end
+
     it 'Test AiName gender detection', :pipeline do
       result = @api.ai.name.genderize(
         AiNameGenderizeRequest.new(name: 'John Cane'))

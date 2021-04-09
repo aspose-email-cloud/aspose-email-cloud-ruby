@@ -51,7 +51,11 @@ result = EmailClientAccount.new(
     client_id: 'clientId',
     client_secret: 'clientSecret',
     refresh_token: 'refreshToken',
-    login: 'example@example.com'))
+    login: 'example@example.com'),
+  cache_file: StorageFileLocation.new(
+    file_name: 'account.cache',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'))
 ```
 </details>
 
@@ -82,7 +86,11 @@ result = EmailClientAccount.new(
     client_id: 'clientId',
     client_secret: 'clientSecret',
     refresh_token: 'refreshToken',
-    login: 'example@example.com'))
+    login: 'example@example.com'),
+  cache_file: StorageFileLocation.new(
+    file_name: 'account.cache',
+    storage: 'First Storage',
+    folder_path: 'file/location/folder/on/storage'))
 ```
 
 </details>
@@ -240,7 +248,11 @@ request = ClientAccountSaveRequest.new(
       client_id: 'clientId',
       client_secret: 'clientSecret',
       refresh_token: 'refreshToken',
-      login: 'example@example.com')))
+      login: 'example@example.com'),
+    cache_file: StorageFileLocation.new(
+      file_name: 'account.cache',
+      storage: 'First Storage',
+      folder_path: 'file/location/folder/on/storage')))
 ```
 
 </details>
@@ -272,7 +284,11 @@ request = ClientAccountSaveRequest.new(
       client_id: 'clientId',
       client_secret: 'clientSecret',
       refresh_token: 'refreshToken',
-      login: 'example@example.com')))
+      login: 'example@example.com'),
+    cache_file: StorageFileLocation.new(
+      file_name: 'account.cache',
+      storage: 'First Storage',
+      folder_path: 'file/location/folder/on/storage')))
 
 // Call method:
 api.client.account.save(request)
