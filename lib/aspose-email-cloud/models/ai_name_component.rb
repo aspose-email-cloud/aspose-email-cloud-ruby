@@ -88,8 +88,24 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "score", score cannot be nil.')
       end
 
+      if @score > 1.0
+        invalid_properties.push('invalid value for "score", must be smaller than or equal to 1.0.')
+      end
+
+      if @score < 0.0
+        invalid_properties.push('invalid value for "score", must be greater than or equal to 0.0.')
+      end
+
       if @position.nil?
         invalid_properties.push('invalid value for "position", position cannot be nil.')
+      end
+
+      if @position > 2147483647
+        invalid_properties.push('invalid value for "position", must be smaller than or equal to 2147483647.')
+      end
+
+      if @position < 0
+        invalid_properties.push('invalid value for "position", must be greater than or equal to 0.')
       end
 
       invalid_properties
@@ -100,8 +116,48 @@ module AsposeEmailCloud
     def valid?
       return false if @category.nil?
       return false if @score.nil?
+      return false if @score > 1.0
+      return false if @score < 0.0
       return false if @position.nil?
+      return false if @position > 2147483647
+      return false if @position < 0
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] score Value to be assigned
+    def score=(score)
+      if score.nil?
+        fail ArgumentError, 'score cannot be nil'
+      end
+
+      if score > 1.0
+        fail ArgumentError, 'invalid value for "score", must be smaller than or equal to 1.0.'
+      end
+
+      if score < 0.0
+        fail ArgumentError, 'invalid value for "score", must be greater than or equal to 0.0.'
+      end
+
+      @score = score
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] position Value to be assigned
+    def position=(position)
+      if position.nil?
+        fail ArgumentError, 'position cannot be nil'
+      end
+
+      if position > 2147483647
+        fail ArgumentError, 'invalid value for "position", must be smaller than or equal to 2147483647.'
+      end
+
+      if position < 0
+        fail ArgumentError, 'invalid value for "position", must be greater than or equal to 0.'
+      end
+
+      @position = position
     end
 
     # Checks equality by comparing each attribute.
