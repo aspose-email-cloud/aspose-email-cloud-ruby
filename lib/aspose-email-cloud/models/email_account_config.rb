@@ -31,7 +31,7 @@ module AsposeEmailCloud
     # Email account display name             
     # @return [String]
     attr_accessor :display_name
-    # Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+    # Type of connection protocol./nEnum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @return [String]
     attr_accessor :protocol_type
     # Email account host.             
@@ -40,10 +40,10 @@ module AsposeEmailCloud
     # Port.             
     # @return [Integer]
     attr_accessor :port
-    # Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # Email account security mode./nEnum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @return [String]
     attr_accessor :socket_type
-    # Supported authentication types.              Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
+    # Supported authentication types.              Items: Email account authentication types./nEnum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
     # @return [Array<String>]
     attr_accessor :authentication_types
     # Extra account information.             
@@ -82,11 +82,11 @@ module AsposeEmailCloud
 
     # Initializes the object
     # @param [String] display_name Email account display name             
-    # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+    # @param [String] protocol_type Type of connection protocol./nEnum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [String] host Email account host.             
     # @param [Integer] port Port.             
-    # @param [String] socket_type Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
-    # @param [Array<String>] authentication_types Supported authentication types.              Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
+    # @param [String] socket_type Email account security mode./nEnum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @param [Array<String>] authentication_types Supported authentication types.              Items: Email account authentication types./nEnum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
     # @param [Array<NameValuePair>] extra_info Extra account information.             
     # @param [BOOLEAN] is_validated Determines that configuration validated. Set to false if validation skipped.             
     def initialize(

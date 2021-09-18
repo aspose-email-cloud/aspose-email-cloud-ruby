@@ -43,7 +43,7 @@ module AsposeEmailCloud
     # RTF formatted message text.             
     # @return [String]
     attr_accessor :body_rtf
-    # The content type of message body. Enum, available values: PlainText, Html, Rtf
+    # The content type of message body./nEnum, available values: PlainText, Html, Rtf
     # @return [String]
     attr_accessor :body_type
     # Contains keywords or categories for the message object.             
@@ -64,7 +64,7 @@ module AsposeEmailCloud
     # Recipients of the message.             
     # @return [Array<MapiRecipientDto>]
     attr_accessor :recipients
-    # Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
+    # Contains values that indicate the message sensitivity./nEnum, available values: None, Personal, Private, CompanyConfidential
     # @return [String]
     attr_accessor :sensitivity
     # Subject of the message.             
@@ -110,7 +110,7 @@ module AsposeEmailCloud
     # List of the display names of the primary (To) message recipients, separated by semicolons (;).             
     # @return [String]
     attr_accessor :display_to
-    # Message flags.              Items: Mapi message flags. Enum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
+    # Message flags.              Items: Mapi message flags./nEnum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
     # @return [Array<String>]
     attr_accessor :flags
     # Transport message headers             
@@ -119,7 +119,7 @@ module AsposeEmailCloud
     # Internet message id of the message.             
     # @return [String]
     attr_accessor :internet_message_id
-    # Represents outlook message format. Enum, available values: Ascii, Unicode
+    # Represents outlook message format./nEnum, available values: Ascii, Unicode
     # @return [String]
     attr_accessor :message_format
     # Normalized subject of the message.             
@@ -260,14 +260,14 @@ module AsposeEmailCloud
     # @param [String] body Message text.             
     # @param [String] body_html Gets the BodyRtf of the message converted to HTML, if present, otherwise an empty string.             
     # @param [String] body_rtf RTF formatted message text.             
-    # @param [String] body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
+    # @param [String] body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
     # @param [Array<String>] categories Contains keywords or categories for the message object.             
     # @param [Array<String>] companies Contains the names of the companies that are associated with an item.             
     # @param [String] item_id The item id, uses with a server.             
     # @param [String] message_class Case-sensitive string that identifies the sender-defined message class, such as IPM.Note. The message class specifies the type, purpose, or content of the message.             
     # @param [String] mileage Contains the mileage information that is associated with an item.             
     # @param [Array<MapiRecipientDto>] recipients Recipients of the message.             
-    # @param [String] sensitivity Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
+    # @param [String] sensitivity Contains values that indicate the message sensitivity./nEnum, available values: None, Personal, Private, CompanyConfidential
     # @param [String] subject Subject of the message.             
     # @param [String] subject_prefix Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.             
     # @param [Array<MapiPropertyDto>] properties List of MAPI properties             
@@ -280,10 +280,10 @@ module AsposeEmailCloud
     # @param [String] display_name Display name for the message.             
     # @param [String] display_name_prefix Prefix of the display name.             
     # @param [String] display_to List of the display names of the primary (To) message recipients, separated by semicolons (;).             
-    # @param [Array<String>] flags Message flags.              Items: Mapi message flags. Enum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
+    # @param [Array<String>] flags Message flags.              Items: Mapi message flags./nEnum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
     # @param [Hash<String, String>] headers Transport message headers             
     # @param [String] internet_message_id Internet message id of the message.             
-    # @param [String] message_format Represents outlook message format. Enum, available values: Ascii, Unicode
+    # @param [String] message_format Represents outlook message format./nEnum, available values: Ascii, Unicode
     # @param [String] normalized_subject Normalized subject of the message.             
     # @param [BOOLEAN] read_receipt_requested Value indicating whether the read receipt is requested.
     # @param [String] reply_to Reply to names.

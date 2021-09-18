@@ -29,7 +29,7 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for contact_get operation.
   class ContactGetRequest < EmailRequest
-    # Contact document format. Enum, available values: VCard, WebDav, Msg
+    # Contact document format./nEnum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :format
     # Contact document file name.
@@ -43,7 +43,7 @@ module AsposeEmailCloud
     attr_accessor :storage
 
     # Get contact document from storage.             
-    # @param [String] format Contact document format. Enum, available values: VCard, WebDav, Msg
+    # @param [String] format Contact document format./nEnum, available values: VCard, WebDav, Msg
     # @param [String] file_name Contact document file name.
     # @param [String] folder Path to folder in storage.
     # @param [String] storage Storage name.

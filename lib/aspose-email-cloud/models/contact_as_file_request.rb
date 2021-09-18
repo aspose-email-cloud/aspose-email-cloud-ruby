@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Convert contact model to file request.             
   class ContactAsFileRequest
-    # Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
+    # Enumerates contact formats./nEnum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :format
     # Contact model.             
@@ -51,7 +51,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] format Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
+    # @param [String] format Enumerates contact formats./nEnum, available values: VCard, WebDav, Msg
     # @param [ContactDto] value Contact model.             
     def initialize(
       format: nil,

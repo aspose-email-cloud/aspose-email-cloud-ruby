@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   class EnumWithCustomOfEventCategory
-    # Event category. Enum, available values: Custom, Birthday, Anniversary
+    # Event category./nEnum, available values: Custom, Birthday, Anniversary
     # @return [String]
     attr_accessor :value
     
@@ -50,7 +50,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] value Event category. Enum, available values: Custom, Birthday, Anniversary
+    # @param [String] value Event category./nEnum, available values: Custom, Birthday, Anniversary
     # @param [String] description 
     def initialize(
       value: nil,

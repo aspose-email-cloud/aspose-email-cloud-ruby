@@ -34,7 +34,7 @@ module AsposeEmailCloud
     
     # @return [MapiContactDto]
     attr_accessor :value
-    # Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
+    # Enumerates contact formats./nEnum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :format
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -58,7 +58,7 @@ module AsposeEmailCloud
     # Initializes the object
     # @param [StorageFileLocation] storage_file 
     # @param [MapiContactDto] value 
-    # @param [String] format Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
+    # @param [String] format Enumerates contact formats./nEnum, available values: VCard, WebDav, Msg
     def initialize(
       storage_file: nil,
       value: nil,

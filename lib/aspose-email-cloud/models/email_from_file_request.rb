@@ -29,7 +29,7 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for email_from_file operation.
   class EmailFromFileRequest < EmailRequest
-    #  Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
     # File to convert
@@ -37,7 +37,7 @@ module AsposeEmailCloud
     attr_accessor :file
 
     # Converts email document to a model representation             
-    # @param [String] format  Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @param [File] file File to convert
     def initialize(format:, file:)
       self.format = format if format

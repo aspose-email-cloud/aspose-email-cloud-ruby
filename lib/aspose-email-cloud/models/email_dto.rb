@@ -43,7 +43,7 @@ module AsposeEmailCloud
     # Body encoding.             
     # @return [String]
     attr_accessor :body_encoding
-    # The content type of message body. Enum, available values: PlainText, Html, Rtf
+    # The content type of message body./nEnum, available values: PlainText, Html, Rtf
     # @return [String]
     attr_accessor :body_type
     # CC recipients.             
@@ -52,7 +52,7 @@ module AsposeEmailCloud
     # Message date.             
     # @return [DateTime]
     attr_accessor :date
-    # Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
+    # Delivery notifications. Items: Email delivery notification options./nEnum, available values: Delay, Never, None, OnFailure, OnSuccess
     # @return [Array<String>]
     attr_accessor :delivery_notification_options
     # From address.             
@@ -91,7 +91,7 @@ module AsposeEmailCloud
     # Preferred encoding.             
     # @return [String]
     attr_accessor :preferred_text_encoding
-    # Email priority status. Enum, available values: High, Low, Normal
+    # Email priority status./nEnum, available values: High, Low, Normal
     # @return [String]
     attr_accessor :priority
     # Read receipt addresses.             
@@ -106,7 +106,7 @@ module AsposeEmailCloud
     # Sender address.             
     # @return [MailAddress]
     attr_accessor :sender
-    # Specifies the sensitivity of a MailMessage. Enum, available values: None, Normal, Personal, Private, CompanyConfidential
+    # Specifies the sensitivity of a MailMessage./nEnum, available values: None, Normal, Personal, Private, CompanyConfidential
     # @return [String]
     attr_accessor :sensitivity
     # Message subject.             
@@ -124,6 +124,12 @@ module AsposeEmailCloud
     # The X-Mailer the software that created the e-mail message.             
     # @return [String]
     attr_accessor :x_mailer
+    # Gets or sets an epilogue text. It is located after the last boundary.
+    # @return [String]
+    attr_accessor :epilogue
+    # Gets or sets a preamble text. It is located before the first boundary and generally includes an explanatory note to non-MIME conformant readers.
+    # @return [String]
+    attr_accessor :preamble
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -158,7 +164,9 @@ module AsposeEmailCloud
         :'subject_encoding' => :'subjectEncoding',
         :'time_zone_offset' => :'timeZoneOffset',
         :'to' => :'to',
-        :'x_mailer' => :'xMailer'
+        :'x_mailer' => :'xMailer',
+        :'epilogue' => :'epilogue',
+        :'preamble' => :'preamble'
       }
     end
 
@@ -196,7 +204,9 @@ module AsposeEmailCloud
         :'subject_encoding' => :'String',
         :'time_zone_offset' => :'Integer',
         :'to' => :'Array<MailAddress>',
-        :'x_mailer' => :'String'
+        :'x_mailer' => :'String',
+        :'epilogue' => :'String',
+        :'preamble' => :'String'
       }
     end
 
@@ -206,10 +216,10 @@ module AsposeEmailCloud
     # @param [Array<MailAddress>] bcc BCC recipients.             
     # @param [String] body Email message body as plain text.             
     # @param [String] body_encoding Body encoding.             
-    # @param [String] body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
+    # @param [String] body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
     # @param [Array<MailAddress>] cc CC recipients.             
     # @param [DateTime] date Message date.             
-    # @param [Array<String>] delivery_notification_options Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
+    # @param [Array<String>] delivery_notification_options Delivery notifications. Items: Email delivery notification options./nEnum, available values: Delay, Never, None, OnFailure, OnSuccess
     # @param [MailAddress] from From address.             
     # @param [Hash<String, String>] headers Document headers.             
     # @param [String] html_body HTML body.             
@@ -222,17 +232,19 @@ module AsposeEmailCloud
     # @param [String] message_id Message id.             
     # @param [BOOLEAN] original_is_tnef Indicates whether original EML message is in TNEF format. Read only.             
     # @param [String] preferred_text_encoding Preferred encoding.             
-    # @param [String] priority Email priority status. Enum, available values: High, Low, Normal
+    # @param [String] priority Email priority status./nEnum, available values: High, Low, Normal
     # @param [Array<MailAddress>] read_receipt_to Read receipt addresses.             
     # @param [Array<MailAddress>] reply_to_list The list of addresses to reply to for the mail message.             
     # @param [MailAddress] reverse_path ReversePath address.             
     # @param [MailAddress] sender Sender address.             
-    # @param [String] sensitivity Specifies the sensitivity of a MailMessage. Enum, available values: None, Normal, Personal, Private, CompanyConfidential
+    # @param [String] sensitivity Specifies the sensitivity of a MailMessage./nEnum, available values: None, Normal, Personal, Private, CompanyConfidential
     # @param [String] subject Message subject.             
     # @param [String] subject_encoding Subject encoding.             
     # @param [Integer] time_zone_offset Coordinated Universal Time (UTC) offset for the message dates. This property defines the time zone difference, between the local time and UTC represented as count of ticks (10 000 per millisecond).             
     # @param [Array<MailAddress>] to The address collection that contains the recipients of message.             
     # @param [String] x_mailer The X-Mailer the software that created the e-mail message.             
+    # @param [String] epilogue Gets or sets an epilogue text. It is located after the last boundary.
+    # @param [String] preamble Gets or sets a preamble text. It is located before the first boundary and generally includes an explanatory note to non-MIME conformant readers.
     def initialize(
       alternate_views: nil,
       attachments: nil,
@@ -265,7 +277,9 @@ module AsposeEmailCloud
       subject_encoding: nil,
       time_zone_offset: nil,
       to: nil,
-      x_mailer: nil)
+      x_mailer: nil,
+      epilogue: nil,
+      preamble: nil)
       self.alternate_views = alternate_views if alternate_views
       self.attachments = attachments if attachments
       self.bcc = bcc if bcc
@@ -298,6 +312,8 @@ module AsposeEmailCloud
       self.time_zone_offset = time_zone_offset if time_zone_offset
       self.to = to if to
       self.x_mailer = x_mailer if x_mailer
+      self.epilogue = epilogue if epilogue
+      self.preamble = preamble if preamble
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -394,7 +410,9 @@ module AsposeEmailCloud
           subject_encoding == o.subject_encoding &&
           time_zone_offset == o.time_zone_offset &&
           to == o.to &&
-          x_mailer == o.x_mailer
+          x_mailer == o.x_mailer &&
+          epilogue == o.epilogue &&
+          preamble == o.preamble
     end
 
     # @see the `==` method
@@ -406,7 +424,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [alternate_views, attachments, bcc, body, body_encoding, body_type, cc, date, delivery_notification_options, from, headers, html_body, html_body_text, is_body_html, is_draft, is_encrypted, is_signed, linked_resources, message_id, original_is_tnef, preferred_text_encoding, priority, read_receipt_to, reply_to_list, reverse_path, sender, sensitivity, subject, subject_encoding, time_zone_offset, to, x_mailer].hash
+      [alternate_views, attachments, bcc, body, body_encoding, body_type, cc, date, delivery_notification_options, from, headers, html_body, html_body_text, is_body_html, is_draft, is_encrypted, is_signed, linked_resources, message_id, original_is_tnef, preferred_text_encoding, priority, read_receipt_to, reply_to_list, reverse_path, sender, sensitivity, subject, subject_encoding, time_zone_offset, to, x_mailer, epilogue, preamble].hash
     end
 
     # Builds the object from hash

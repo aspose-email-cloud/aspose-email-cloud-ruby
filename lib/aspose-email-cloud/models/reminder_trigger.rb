@@ -34,7 +34,7 @@ module AsposeEmailCloud
     # Specifies a relative time in ticks for the trigger of the alarm.             
     # @return [Integer]
     attr_accessor :duration
-    # Specify the relationship of the alarm trigger with respect to the start or end of the event. Enum, available values: Start, End
+    # Specify the relationship of the alarm trigger with respect to the start or end of the event./nEnum, available values: Start, End
     # @return [String]
     attr_accessor :related
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -58,7 +58,7 @@ module AsposeEmailCloud
     # Initializes the object
     # @param [DateTime] date_time A trigger set to an absolute date/time.
     # @param [Integer] duration Specifies a relative time in ticks for the trigger of the alarm.             
-    # @param [String] related Specify the relationship of the alarm trigger with respect to the start or end of the event. Enum, available values: Start, End
+    # @param [String] related Specify the relationship of the alarm trigger with respect to the start or end of the event./nEnum, available values: Start, End
     def initialize(
       date_time: nil,
       duration: nil,

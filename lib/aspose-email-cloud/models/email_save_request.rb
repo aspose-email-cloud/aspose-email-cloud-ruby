@@ -34,7 +34,7 @@ module AsposeEmailCloud
     
     # @return [EmailDto]
     attr_accessor :value
-    # Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -58,7 +58,7 @@ module AsposeEmailCloud
     # Initializes the object
     # @param [StorageFileLocation] storage_file 
     # @param [EmailDto] value 
-    # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] format Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     def initialize(
       storage_file: nil,
       value: nil,

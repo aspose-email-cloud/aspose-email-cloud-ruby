@@ -44,7 +44,7 @@ module AsposeEmailCloud
     # Folder in storage where account file located.
     # @return [String]
     attr_accessor :account_storage_folder
-    # Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # Fetched message file format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
 
@@ -54,7 +54,7 @@ module AsposeEmailCloud
     # @param [String] folder Account folder to fetch from (should be specified for some protocols such as IMAP)             
     # @param [String] storage Storage name where account file located.
     # @param [String] account_storage_folder Folder in storage where account file located.
-    # @param [String] format Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] format Fetched message file format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     def initialize(message_id:, account:, folder: nil, storage: nil, account_storage_folder: nil, format: nil)
       self.message_id = message_id if message_id
       self.account = account if account

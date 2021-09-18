@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   class EnumWithCustomOfAssociatedPersonCategory
-    # Associated person's category. Enum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
+    # Associated person's category./nEnum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
     # @return [String]
     attr_accessor :value
     
@@ -50,7 +50,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] value Associated person's category. Enum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
+    # @param [String] value Associated person's category./nEnum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
     # @param [String] description 
     def initialize(
       value: nil,

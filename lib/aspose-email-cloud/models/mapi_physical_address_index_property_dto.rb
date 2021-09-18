@@ -38,7 +38,7 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-    # Identifies the display types for physical addresses. Enum, available values: None, Home, Business, Other
+    # Identifies the display types for physical addresses./nEnum, available values: None, Home, Business, Other
     # @return [String]
     attr_accessor :value
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -61,7 +61,7 @@ module AsposeEmailCloud
 
     # Initializes the object
     # @param [MapiPropertyDescriptor] descriptor Property descriptor             
-    # @param [String] value Identifies the display types for physical addresses. Enum, available values: None, Home, Business, Other
+    # @param [String] value Identifies the display types for physical addresses./nEnum, available values: None, Home, Business, Other
     def initialize(
       descriptor: nil,
       value: nil)

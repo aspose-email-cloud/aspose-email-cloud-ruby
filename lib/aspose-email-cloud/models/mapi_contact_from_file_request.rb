@@ -29,7 +29,7 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for mapi_contact_from_file operation.
   class MapiContactFromFileRequest < EmailRequest
-    # File format Enum, available values: VCard, WebDav, Msg
+    # File format./nEnum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :format
     # File to convert
@@ -37,7 +37,7 @@ module AsposeEmailCloud
     attr_accessor :file
 
     # Converts contact file to a MAPI model representation.             
-    # @param [String] format File format Enum, available values: VCard, WebDav, Msg
+    # @param [String] format File format./nEnum, available values: VCard, WebDav, Msg
     # @param [File] file File to convert
     def initialize(format:, file:)
       self.format = format if format

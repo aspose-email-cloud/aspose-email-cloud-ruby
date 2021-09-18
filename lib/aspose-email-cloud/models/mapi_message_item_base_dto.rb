@@ -43,7 +43,7 @@ module AsposeEmailCloud
     # RTF formatted message text.             
     # @return [String]
     attr_accessor :body_rtf
-    # The content type of message body. Enum, available values: PlainText, Html, Rtf
+    # The content type of message body./nEnum, available values: PlainText, Html, Rtf
     # @return [String]
     attr_accessor :body_type
     # Contains keywords or categories for the message object.             
@@ -64,7 +64,7 @@ module AsposeEmailCloud
     # Recipients of the message.             
     # @return [Array<MapiRecipientDto>]
     attr_accessor :recipients
-    # Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
+    # Contains values that indicate the message sensitivity./nEnum, available values: None, Personal, Private, CompanyConfidential
     # @return [String]
     attr_accessor :sensitivity
     # Subject of the message.             
@@ -135,14 +135,14 @@ module AsposeEmailCloud
     # @param [String] body Message text.             
     # @param [String] body_html Gets the BodyRtf of the message converted to HTML, if present, otherwise an empty string.             
     # @param [String] body_rtf RTF formatted message text.             
-    # @param [String] body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
+    # @param [String] body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
     # @param [Array<String>] categories Contains keywords or categories for the message object.             
     # @param [Array<String>] companies Contains the names of the companies that are associated with an item.             
     # @param [String] item_id The item id, uses with a server.             
     # @param [String] message_class Case-sensitive string that identifies the sender-defined message class, such as IPM.Note. The message class specifies the type, purpose, or content of the message.             
     # @param [String] mileage Contains the mileage information that is associated with an item.             
     # @param [Array<MapiRecipientDto>] recipients Recipients of the message.             
-    # @param [String] sensitivity Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
+    # @param [String] sensitivity Contains values that indicate the message sensitivity./nEnum, available values: None, Personal, Private, CompanyConfidential
     # @param [String] subject Subject of the message.             
     # @param [String] subject_prefix Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.             
     # @param [Array<MapiPropertyDto>] properties List of MAPI properties             

@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Convert MapiCalendar to file request.             
   class MapiCalendarAsFileRequest
-    # Calendar file format Enum, available values: Ics, Msg
+    # Calendar file format./nEnum, available values: Ics, Msg
     # @return [String]
     attr_accessor :format
     # MAPI calendar model.             
@@ -51,7 +51,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] format Calendar file format Enum, available values: Ics, Msg
+    # @param [String] format Calendar file format./nEnum, available values: Ics, Msg
     # @param [MapiCalendarDto] value MAPI calendar model.             
     def initialize(
       format: nil,

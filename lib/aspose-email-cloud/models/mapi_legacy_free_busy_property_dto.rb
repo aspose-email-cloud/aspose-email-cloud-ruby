@@ -38,7 +38,7 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-    # Represents the free/busy status for a calendar event. Enum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
+    # Represents the free/busy status for a calendar event./nEnum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
     # @return [String]
     attr_accessor :value
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -61,7 +61,7 @@ module AsposeEmailCloud
 
     # Initializes the object
     # @param [MapiPropertyDescriptor] descriptor Property descriptor             
-    # @param [String] value Represents the free/busy status for a calendar event. Enum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
+    # @param [String] value Represents the free/busy status for a calendar event./nEnum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
     def initialize(
       descriptor: nil,
       value: nil)

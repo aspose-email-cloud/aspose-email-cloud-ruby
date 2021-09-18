@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   class EnumWithCustomOfPostalAddressCategory
-    # Address category. Enum, available values: Home, Work, Custom
+    # Address category./nEnum, available values: Home, Work, Custom
     # @return [String]
     attr_accessor :value
     
@@ -50,7 +50,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] value Address category. Enum, available values: Home, Work, Custom
+    # @param [String] value Address category./nEnum, available values: Home, Work, Custom
     # @param [String] description 
     def initialize(
       value: nil,

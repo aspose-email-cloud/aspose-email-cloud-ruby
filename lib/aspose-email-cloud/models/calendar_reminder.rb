@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Provides a grouping of component properties that define an alarm.             
   class CalendarReminder
-    # Defines the action to be invoked when an alarm is triggered. Enum, available values: Audio, Display, Email, Procedure, None
+    # Defines the action to be invoked when an alarm is triggered./nEnum, available values: Audio, Display, Email, Procedure, None
     # @return [String]
     attr_accessor :action
     # Collection of Reminder Attachments. Could be an absolute URI or Base64 string representation of attachment content             
@@ -81,7 +81,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] action Defines the action to be invoked when an alarm is triggered. Enum, available values: Audio, Display, Email, Procedure, None
+    # @param [String] action Defines the action to be invoked when an alarm is triggered./nEnum, available values: Audio, Display, Email, Procedure, None
     # @param [Array<String>] attachments Collection of Reminder Attachments. Could be an absolute URI or Base64 string representation of attachment content             
     # @param [Array<ReminderAttendee>] attendees Contains collection of ReminderAttendee objects.             
     # @param [String] description Provides a more complete description of the alarm.

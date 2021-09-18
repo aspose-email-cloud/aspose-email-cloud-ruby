@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Convert MapiContact to file request.             
   class MapiContactAsFileRequest
-    # Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
+    # Enumerates contact formats./nEnum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :format
     # MAPI contact model.             
@@ -51,7 +51,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] format Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
+    # @param [String] format Enumerates contact formats./nEnum, available values: VCard, WebDav, Msg
     # @param [MapiContactDto] value MAPI contact model.             
     def initialize(
       format: nil,
