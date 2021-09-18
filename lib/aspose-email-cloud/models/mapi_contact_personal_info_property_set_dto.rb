@@ -76,7 +76,7 @@ module AsposeEmailCloud
     # Specifies the name of the network to which the contact's computer is connected             
     # @return [String]
     attr_accessor :computer_network_name
-    # Gender of the contact./nEnum, available values: Unspecified, Female, Male
+    # Gender of the contact. Enum, available values: Unspecified, Female, Male
     # @return [String]
     attr_accessor :gender
     # Specifies the name of the person who referred this contact to the user             
@@ -152,7 +152,7 @@ module AsposeEmailCloud
     # @param [String] business_home_page Specifies the contact's business web page URL             
     # @param [String] ftp_site Specifies the contact's File Transfer Protocol (FTP) URL             
     # @param [String] computer_network_name Specifies the name of the network to which the contact's computer is connected             
-    # @param [String] gender Gender of the contact./nEnum, available values: Unspecified, Female, Male
+    # @param [String] gender Gender of the contact. Enum, available values: Unspecified, Female, Male
     # @param [String] referred_by_name Specifies the name of the person who referred this contact to the user             
     # @param [Array<String>] children Contains a list of names of children.             
     def initialize(

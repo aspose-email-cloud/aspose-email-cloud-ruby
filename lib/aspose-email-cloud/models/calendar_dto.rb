@@ -43,7 +43,7 @@ module AsposeEmailCloud
     # End time zone.
     # @return [String]
     attr_accessor :end_time_zone
-    # Appointment flags. Items: Enumerates iCalendar flags./nEnum, available values: None, AllDayEvent
+    # Appointment flags. Items: Enumerates iCalendar flags. Enum, available values: None, AllDayEvent
     # @return [Array<String>]
     attr_accessor :flags
     # Indicates if description is in HTML format.
@@ -52,13 +52,13 @@ module AsposeEmailCloud
     # Location.
     # @return [String]
     attr_accessor :location
-    # Defines the iCalendar object method type associated with the calendar document./nEnum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
+    # Defines the iCalendar object method type associated with the calendar document. Enum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
     # @return [String]
     attr_accessor :method
-    # Specifies the BUSY status./nEnum, available values: NotDefined, Free, Tentative, Busy, Oof
+    # Specifies the BUSY status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
     # @return [String]
     attr_accessor :microsoft_busy_status
-    # Specifies the INTENDED status./nEnum, available values: NotDefined, Free, Tentative, Busy, Oof
+    # Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
     # @return [String]
     attr_accessor :microsoft_intended_status
     # Optional attendees.             
@@ -85,19 +85,19 @@ module AsposeEmailCloud
     # Start time zone.
     # @return [String]
     attr_accessor :start_time_zone
-    # Defines the overall status or confirmation for the calendar document./nEnum, available values: NotDefined, Cancelled, Tentative, Confirmed
+    # Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
     # @return [String]
     attr_accessor :status
     # Summary.
     # @return [String]
     attr_accessor :summary
-    # Specifies whether or not this appointment is intended to be visible in availability searches./nEnum, available values: NotDefined, Transparent, Opaque
+    # Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
     # @return [String]
     attr_accessor :transparency
-    # Defines the access classification for the calendar./nEnum, available values: Public, Private, Confidential, NotDefined
+    # Defines the access classification for the calendar. Enum, available values: Public, Private, Confidential, NotDefined
     # @return [String]
     attr_accessor :_class
-    # Specifies the importance of a calendar object./nEnum, available values: Low, Normal, High, NotDefined
+    # Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
     # @return [String]
     attr_accessor :microsoft_importance
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -166,12 +166,12 @@ module AsposeEmailCloud
     # @param [String] description Description.
     # @param [DateTime] end_date End date.
     # @param [String] end_time_zone End time zone.
-    # @param [Array<String>] flags Appointment flags. Items: Enumerates iCalendar flags./nEnum, available values: None, AllDayEvent
+    # @param [Array<String>] flags Appointment flags. Items: Enumerates iCalendar flags. Enum, available values: None, AllDayEvent
     # @param [BOOLEAN] is_description_html Indicates if description is in HTML format.
     # @param [String] location Location.
-    # @param [String] method Defines the iCalendar object method type associated with the calendar document./nEnum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
-    # @param [String] microsoft_busy_status Specifies the BUSY status./nEnum, available values: NotDefined, Free, Tentative, Busy, Oof
-    # @param [String] microsoft_intended_status Specifies the INTENDED status./nEnum, available values: NotDefined, Free, Tentative, Busy, Oof
+    # @param [String] method Defines the iCalendar object method type associated with the calendar document. Enum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
+    # @param [String] microsoft_busy_status Specifies the BUSY status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
+    # @param [String] microsoft_intended_status Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
     # @param [Array<MailAddress>] optional_attendees Optional attendees.             
     # @param [MailAddress] organizer Event organizer.             
     # @param [String] recurrence_string Deprecated, use 'Recurrence' property. String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"                   
@@ -180,11 +180,11 @@ module AsposeEmailCloud
     # @param [String] sequence_id The sequence id. Read only.
     # @param [DateTime] start_date Start date.
     # @param [String] start_time_zone Start time zone.
-    # @param [String] status Defines the overall status or confirmation for the calendar document./nEnum, available values: NotDefined, Cancelled, Tentative, Confirmed
+    # @param [String] status Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
     # @param [String] summary Summary.
-    # @param [String] transparency Specifies whether or not this appointment is intended to be visible in availability searches./nEnum, available values: NotDefined, Transparent, Opaque
-    # @param [String] _class Defines the access classification for the calendar./nEnum, available values: Public, Private, Confidential, NotDefined
-    # @param [String] microsoft_importance Specifies the importance of a calendar object./nEnum, available values: Low, Normal, High, NotDefined
+    # @param [String] transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
+    # @param [String] _class Defines the access classification for the calendar. Enum, available values: Public, Private, Confidential, NotDefined
+    # @param [String] microsoft_importance Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
     def initialize(
       attachments: nil,
       attendees: nil,

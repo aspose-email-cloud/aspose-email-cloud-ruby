@@ -32,7 +32,7 @@ module AsposeEmailCloud
     # iCalendar file name in storage
     # @return [String]
     attr_accessor :file_name
-    # iCalendar method type./nEnum, available values: Create, Update, Cancel
+    # iCalendar method type. Enum, available values: Create, Update, Cancel
     # @return [String]
     attr_accessor :calendar_action
     # The sequence id
@@ -47,7 +47,7 @@ module AsposeEmailCloud
 
     # Get iCalendar from storage as AlternateView             
     # @param [String] file_name iCalendar file name in storage
-    # @param [String] calendar_action iCalendar method type./nEnum, available values: Create, Update, Cancel
+    # @param [String] calendar_action iCalendar method type. Enum, available values: Create, Update, Cancel
     # @param [String] sequence_id The sequence id
     # @param [String] folder Path to folder in storage
     # @param [String] storage Storage name

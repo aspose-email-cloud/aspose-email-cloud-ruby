@@ -34,7 +34,7 @@ module AsposeEmailCloud
     # Address             
     # @return [String]
     attr_accessor :address
-    # Identifies the participation status for the calendar user./nEnum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
+    # Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
     # @return [String]
     attr_accessor :participation_status
     # The original e-mail address string             
@@ -63,7 +63,7 @@ module AsposeEmailCloud
     # Initializes the object
     # @param [String] display_name Display name             
     # @param [String] address Address             
-    # @param [String] participation_status Identifies the participation status for the calendar user./nEnum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
+    # @param [String] participation_status Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
     # @param [String] original_address_string The original e-mail address string             
     def initialize(
       display_name: nil,

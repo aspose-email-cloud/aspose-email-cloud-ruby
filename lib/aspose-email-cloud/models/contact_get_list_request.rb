@@ -29,7 +29,7 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for contact_get_list operation.
   class ContactGetListRequest < EmailRequest
-    # Contact document format./nEnum, available values: VCard, WebDav, Msg
+    # Contact document format. Enum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :format
     # Path to folder in storage.
@@ -46,7 +46,7 @@ module AsposeEmailCloud
     attr_accessor :page_number
 
     # Get contact list from storage folder.             
-    # @param [String] format Contact document format./nEnum, available values: VCard, WebDav, Msg
+    # @param [String] format Contact document format. Enum, available values: VCard, WebDav, Msg
     # @param [String] folder Path to folder in storage.
     # @param [String] storage Storage name.
     # @param [Integer] items_per_page Count of items on page.

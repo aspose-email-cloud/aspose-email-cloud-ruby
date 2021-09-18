@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Names mismatch detailed description             
   class AiNameMismatch
-    # Mismatch type./nEnum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
+    # Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
     # @return [String]
     attr_accessor :category
     # Similarity score             
@@ -56,7 +56,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] category Mismatch type./nEnum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
+    # @param [String] category Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
     # @param [Float] similarity Similarity score             
     # @param [String] explanation Explanation or mismatch subtype             
     def initialize(

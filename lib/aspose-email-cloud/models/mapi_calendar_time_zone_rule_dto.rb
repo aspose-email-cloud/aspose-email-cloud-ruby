@@ -31,7 +31,7 @@ module AsposeEmailCloud
     # Date and time that indicate when to begin using the Standard/Daylight time.             
     # @return [DateTime]
     attr_accessor :date
-    # Day of week./nEnum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+    # Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     # @return [String]
     attr_accessor :day_of_week
     # Hour.             
@@ -46,7 +46,7 @@ module AsposeEmailCloud
     # Month.             
     # @return [Integer]
     attr_accessor :month
-    # Day positions, typically found in a month./nEnum, available values: None, First, Second, Third, Fourth, Last
+    # Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
     # @return [String]
     attr_accessor :position
     # Seconds.             
@@ -87,12 +87,12 @@ module AsposeEmailCloud
 
     # Initializes the object
     # @param [DateTime] date Date and time that indicate when to begin using the Standard/Daylight time.             
-    # @param [String] day_of_week Day of week./nEnum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+    # @param [String] day_of_week Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     # @param [Integer] hour Hour.             
     # @param [Integer] milliseconds Milliseconds.             
     # @param [Integer] minute Minute.             
     # @param [Integer] month Month.             
-    # @param [String] position Day positions, typically found in a month./nEnum, available values: None, First, Second, Third, Fourth, Last
+    # @param [String] position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
     # @param [Integer] seconds Seconds.             
     # @param [Integer] year Year.             
     def initialize(

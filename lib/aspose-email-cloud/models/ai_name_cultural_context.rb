@@ -40,7 +40,7 @@ module AsposeEmailCloud
     # A character encoding name             
     # @return [String]
     attr_accessor :encoding
-    # Name writing style./nEnum, available values: Formal, Informal, Legal, Academic
+    # Name writing style. Enum, available values: Formal, Informal, Legal, Academic
     # @return [String]
     attr_accessor :style
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -70,7 +70,7 @@ module AsposeEmailCloud
     # @param [String] location A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France             
     # @param [String] script A writing system code; starts with the ISO-15924 script name             
     # @param [String] encoding A character encoding name             
-    # @param [String] style Name writing style./nEnum, available values: Formal, Informal, Legal, Academic
+    # @param [String] style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
     def initialize(
       language: nil,
       location: nil,

@@ -43,7 +43,7 @@ module AsposeEmailCloud
     # Date and local time that indicate when to begin using the StandardBias.             
     # @return [MapiCalendarTimeZoneRuleDto]
     attr_accessor :standard_date
-    # Individual bit flags that specify information about this TimeZoneRule.              Items: Enumerates the individual bit flags that specify information about TimeZoneRule./nEnum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
+    # Individual bit flags that specify information about this TimeZoneRule.              Items: Enumerates the individual bit flags that specify information about TimeZoneRule. Enum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
     # @return [Array<String>]
     attr_accessor :time_zone_flags
     # Year in which this rule is scheduled to take effect.             
@@ -81,7 +81,7 @@ module AsposeEmailCloud
     # @param [MapiCalendarTimeZoneRuleDto] daylight_date Date and local time that indicate when to begin using the DaylightBias.             
     # @param [Integer] standard_bias Offset in minutes from lBias during standard time.             
     # @param [MapiCalendarTimeZoneRuleDto] standard_date Date and local time that indicate when to begin using the StandardBias.             
-    # @param [Array<String>] time_zone_flags Individual bit flags that specify information about this TimeZoneRule.              Items: Enumerates the individual bit flags that specify information about TimeZoneRule./nEnum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
+    # @param [Array<String>] time_zone_flags Individual bit flags that specify information about this TimeZoneRule.              Items: Enumerates the individual bit flags that specify information about TimeZoneRule. Enum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
     # @param [Integer] year Year in which this rule is scheduled to take effect.             
     def initialize(
       bias: nil,

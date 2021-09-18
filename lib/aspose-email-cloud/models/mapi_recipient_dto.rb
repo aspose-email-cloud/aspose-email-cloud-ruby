@@ -37,7 +37,7 @@ module AsposeEmailCloud
     # Display name of the message recipient or sender.             
     # @return [String]
     attr_accessor :display_name
-    # Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient./nEnum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
+    # Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient. Enum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
     # @return [String]
     attr_accessor :recipient_type
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -64,7 +64,7 @@ module AsposeEmailCloud
     # @param [String] email_address Email address of the message recipient or sender.             
     # @param [String] address_type Type of the address of the message recipient or sender.             
     # @param [String] display_name Display name of the message recipient or sender.             
-    # @param [String] recipient_type Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient./nEnum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
+    # @param [String] recipient_type Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient. Enum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
     def initialize(
       email_address: nil,
       address_type: nil,

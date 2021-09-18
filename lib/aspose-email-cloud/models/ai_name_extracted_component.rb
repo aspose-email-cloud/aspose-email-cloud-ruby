@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Extracted name component             
   class AiNameExtractedComponent
-    # Extracted from email address name component category./nEnum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
+    # Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
     # @return [String]
     attr_accessor :category
     # Extracted value             
@@ -51,7 +51,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] category Extracted from email address name component category./nEnum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
+    # @param [String] category Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
     # @param [String] value Extracted value             
     def initialize(
       category: nil,

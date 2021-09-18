@@ -32,7 +32,7 @@ module AsposeEmailCloud
     # Calendar document file name.
     # @return [String]
     attr_accessor :file_name
-    # File format./nEnum, available values: Ics, Msg
+    # File format. Enum, available values: Ics, Msg
     # @return [String]
     attr_accessor :format
     # Storage name.
@@ -44,7 +44,7 @@ module AsposeEmailCloud
 
     # Converts calendar document from storage to specified format and returns as file.             
     # @param [String] file_name Calendar document file name.
-    # @param [String] format File format./nEnum, available values: Ics, Msg
+    # @param [String] format File format. Enum, available values: Ics, Msg
     # @param [String] storage Storage name.
     # @param [String] folder Path to folder in storage.
     def initialize(file_name:, format:, storage: nil, folder: nil)

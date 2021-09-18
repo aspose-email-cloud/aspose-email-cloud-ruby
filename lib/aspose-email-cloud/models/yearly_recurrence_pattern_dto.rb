@@ -37,7 +37,7 @@ module AsposeEmailCloud
     # End date.             
     # @return [DateTime]
     attr_accessor :end_date
-    # Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+    # Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
     # @return [String]
     attr_accessor :week_start
     def discriminator #getter method
@@ -47,16 +47,16 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-    # Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+    # Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
     # @return [String]
     attr_accessor :start_day
-    # Represents a calendar month./nEnum, available values: None, January, February, March, April, May, June, July, August, September, October, November, December
+    # Represents a calendar month. Enum, available values: None, January, February, March, April, May, June, July, August, September, October, November, December
     # @return [String]
     attr_accessor :start_month
     # Start offset.             
     # @return [Integer]
     attr_accessor :start_offset
-    # Day positions, typically found in a month./nEnum, available values: None, First, Second, Third, Fourth, Last
+    # Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
     # @return [String]
     attr_accessor :start_position
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -93,11 +93,11 @@ module AsposeEmailCloud
     # @param [Integer] interval Number of recurrence units.             
     # @param [Integer] occurs Number of occurrences of the recurrence pattern.             
     # @param [DateTime] end_date End date.             
-    # @param [String] week_start Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
-    # @param [String] start_day Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
-    # @param [String] start_month Represents a calendar month./nEnum, available values: None, January, February, March, April, May, June, July, August, September, October, November, December
+    # @param [String] week_start Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+    # @param [String] start_day Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+    # @param [String] start_month Represents a calendar month. Enum, available values: None, January, February, March, April, May, June, July, August, September, October, November, December
     # @param [Integer] start_offset Start offset.             
-    # @param [String] start_position Day positions, typically found in a month./nEnum, available values: None, First, Second, Third, Fourth, Last
+    # @param [String] start_position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
     def initialize(
       interval: nil,
       occurs: nil,

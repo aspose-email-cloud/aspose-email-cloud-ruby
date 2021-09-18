@@ -41,7 +41,7 @@ module AsposeEmailCloud
     # Folder in storage where account file located.
     # @return [String]
     attr_accessor :account_storage_folder
-    # Email file format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
     # Path to folder on email server to append message to.
@@ -56,7 +56,7 @@ module AsposeEmailCloud
     # @param [File] file Message file to append.
     # @param [String] storage Storage name where account file located.
     # @param [String] account_storage_folder Folder in storage where account file located.
-    # @param [String] format Email file format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] format Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @param [String] folder Path to folder on email server to append message to.
     # @param [BOOLEAN] mark_as_sent Determines that appended message should be market as sent or not.
     def initialize(account:, file:, storage: nil, account_storage_folder: nil, format: nil, folder: nil, mark_as_sent: nil)

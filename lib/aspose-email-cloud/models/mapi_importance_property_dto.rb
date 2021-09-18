@@ -38,7 +38,7 @@ module AsposeEmailCloud
     def discriminator=(discriminator) #setter method, parameter ignored
       @discriminator = self.class.name.split('::').last
     end
-    # Levels of importance for an item./nEnum, available values: Low, Normal, High
+    # Levels of importance for an item. Enum, available values: Low, Normal, High
     # @return [String]
     attr_accessor :value
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -61,7 +61,7 @@ module AsposeEmailCloud
 
     # Initializes the object
     # @param [MapiPropertyDescriptor] descriptor Property descriptor             
-    # @param [String] value Levels of importance for an item./nEnum, available values: Low, Normal, High
+    # @param [String] value Levels of importance for an item. Enum, available values: Low, Normal, High
     def initialize(
       descriptor: nil,
       value: nil)

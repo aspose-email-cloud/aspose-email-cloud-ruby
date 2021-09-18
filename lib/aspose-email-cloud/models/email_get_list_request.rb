@@ -29,7 +29,7 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for email_get_list operation.
   class EmailGetListRequest < EmailRequest
-    # Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
     # Path to folder in storage.
@@ -46,7 +46,7 @@ module AsposeEmailCloud
     attr_accessor :page_number
 
     # Get email list from storage folder.             
-    # @param [String] format Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @param [String] folder Path to folder in storage.
     # @param [String] storage Storage name.
     # @param [Integer] items_per_page Count of items on page.

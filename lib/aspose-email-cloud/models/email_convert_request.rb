@@ -29,10 +29,10 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for email_convert operation.
   class EmailConvertRequest < EmailRequest
-    # File format to convert from./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # File format to convert from. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :from_format
-    # File format to convert to./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # File format to convert to. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :to_format
     # File to convert
@@ -40,8 +40,8 @@ module AsposeEmailCloud
     attr_accessor :file
 
     # Converts email document to specified format and returns as file             
-    # @param [String] from_format File format to convert from./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
-    # @param [String] to_format File format to convert to./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] from_format File format to convert from. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] to_format File format to convert to. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @param [File] file File to convert
     def initialize(from_format:, to_format:, file:)
       self.from_format = from_format if from_format

@@ -43,7 +43,7 @@ module AsposeEmailCloud
     # Body encoding.             
     # @return [String]
     attr_accessor :body_encoding
-    # The content type of message body./nEnum, available values: PlainText, Html, Rtf
+    # The content type of message body. Enum, available values: PlainText, Html, Rtf
     # @return [String]
     attr_accessor :body_type
     # CC recipients.             
@@ -52,7 +52,7 @@ module AsposeEmailCloud
     # Message date.             
     # @return [DateTime]
     attr_accessor :date
-    # Delivery notifications. Items: Email delivery notification options./nEnum, available values: Delay, Never, None, OnFailure, OnSuccess
+    # Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
     # @return [Array<String>]
     attr_accessor :delivery_notification_options
     # From address.             
@@ -91,7 +91,7 @@ module AsposeEmailCloud
     # Preferred encoding.             
     # @return [String]
     attr_accessor :preferred_text_encoding
-    # Email priority status./nEnum, available values: High, Low, Normal
+    # Email priority status. Enum, available values: High, Low, Normal
     # @return [String]
     attr_accessor :priority
     # Read receipt addresses.             
@@ -106,7 +106,7 @@ module AsposeEmailCloud
     # Sender address.             
     # @return [MailAddress]
     attr_accessor :sender
-    # Specifies the sensitivity of a MailMessage./nEnum, available values: None, Normal, Personal, Private, CompanyConfidential
+    # Specifies the sensitivity of a MailMessage. Enum, available values: None, Normal, Personal, Private, CompanyConfidential
     # @return [String]
     attr_accessor :sensitivity
     # Message subject.             
@@ -216,10 +216,10 @@ module AsposeEmailCloud
     # @param [Array<MailAddress>] bcc BCC recipients.             
     # @param [String] body Email message body as plain text.             
     # @param [String] body_encoding Body encoding.             
-    # @param [String] body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
+    # @param [String] body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
     # @param [Array<MailAddress>] cc CC recipients.             
     # @param [DateTime] date Message date.             
-    # @param [Array<String>] delivery_notification_options Delivery notifications. Items: Email delivery notification options./nEnum, available values: Delay, Never, None, OnFailure, OnSuccess
+    # @param [Array<String>] delivery_notification_options Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
     # @param [MailAddress] from From address.             
     # @param [Hash<String, String>] headers Document headers.             
     # @param [String] html_body HTML body.             
@@ -232,12 +232,12 @@ module AsposeEmailCloud
     # @param [String] message_id Message id.             
     # @param [BOOLEAN] original_is_tnef Indicates whether original EML message is in TNEF format. Read only.             
     # @param [String] preferred_text_encoding Preferred encoding.             
-    # @param [String] priority Email priority status./nEnum, available values: High, Low, Normal
+    # @param [String] priority Email priority status. Enum, available values: High, Low, Normal
     # @param [Array<MailAddress>] read_receipt_to Read receipt addresses.             
     # @param [Array<MailAddress>] reply_to_list The list of addresses to reply to for the mail message.             
     # @param [MailAddress] reverse_path ReversePath address.             
     # @param [MailAddress] sender Sender address.             
-    # @param [String] sensitivity Specifies the sensitivity of a MailMessage./nEnum, available values: None, Normal, Personal, Private, CompanyConfidential
+    # @param [String] sensitivity Specifies the sensitivity of a MailMessage. Enum, available values: None, Normal, Personal, Private, CompanyConfidential
     # @param [String] subject Message subject.             
     # @param [String] subject_encoding Subject encoding.             
     # @param [Integer] time_zone_offset Coordinated Universal Time (UTC) offset for the message dates. This property defines the time zone difference, between the local time and UTC represented as count of ticks (10 000 per millisecond).             

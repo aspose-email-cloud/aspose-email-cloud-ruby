@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Name gender hypothesis             
   class AiNameGenderHypothesis
-    # Recognized name gender./nEnum, available values: Male, Female, Unknown
+    # Recognized name gender. Enum, available values: Male, Female, Unknown
     # @return [String]
     attr_accessor :gender
     # Hypothesis score             
@@ -51,7 +51,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] gender Recognized name gender./nEnum, available values: Male, Female, Unknown
+    # @param [String] gender Recognized name gender. Enum, available values: Male, Female, Unknown
     # @param [Float] score Hypothesis score             
     def initialize(
       gender: nil,

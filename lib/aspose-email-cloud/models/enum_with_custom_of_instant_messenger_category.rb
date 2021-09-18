@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   class EnumWithCustomOfInstantMessengerCategory
-    # Instant messenger address category./nEnum, available values: GoogleTalk, Aim, Yahoo, Skype, Qq, Msn, Icq, Jabber, Custom, ImAddress1, ImAddress2, ImAddress3
+    # Instant messenger address category. Enum, available values: GoogleTalk, Aim, Yahoo, Skype, Qq, Msn, Icq, Jabber, Custom, ImAddress1, ImAddress2, ImAddress3
     # @return [String]
     attr_accessor :value
     
@@ -50,7 +50,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] value Instant messenger address category./nEnum, available values: GoogleTalk, Aim, Yahoo, Skype, Qq, Msn, Icq, Jabber, Custom, ImAddress1, ImAddress2, ImAddress3
+    # @param [String] value Instant messenger address category. Enum, available values: GoogleTalk, Aim, Yahoo, Skype, Qq, Msn, Icq, Jabber, Custom, ImAddress1, ImAddress2, ImAddress3
     # @param [String] description 
     def initialize(
       value: nil,

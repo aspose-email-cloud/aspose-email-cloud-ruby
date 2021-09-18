@@ -29,7 +29,7 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for calendar_convert operation.
   class CalendarConvertRequest < EmailRequest
-    # File format./nEnum, available values: Ics, Msg
+    # File format. Enum, available values: Ics, Msg
     # @return [String]
     attr_accessor :format
     # File to convert
@@ -37,7 +37,7 @@ module AsposeEmailCloud
     attr_accessor :file
 
     # Converts calendar document to specified format and returns as file.             
-    # @param [String] format File format./nEnum, available values: Ics, Msg
+    # @param [String] format File format. Enum, available values: Ics, Msg
     # @param [File] file File to convert
     def initialize(format:, file:)
       self.format = format if format

@@ -58,13 +58,13 @@ module AsposeEmailCloud
     # A name used for sorting.             
     # @return [String]
     attr_accessor :file_as
-    # Specifies how to generate and recompute the value of the dispidFileAs property when other contact name properties change. Coincides MS-OXPROPS revision 16.2 from 7/31/2014./nEnum, available values: Empty, DisplayName, FirstName, LastName, Organization, LastFirstMiddle, OrgLastFirstMiddle, LastFirstMiddleOrg, LastFirstMiddle2, LastFirstMiddle3, OrgLastFirstMiddle2, OrgLastFirstMiddle3, LastFirstMiddleOrg2, LastFirstMiddleOrg3, LastFirstMiddleGen, FirstMiddleLastGen, LastFirstMiddleGen2, BestMatch, AccordingToLocale, None
+    # Specifies how to generate and recompute the value of the dispidFileAs property when other contact name properties change. Coincides MS-OXPROPS revision 16.2 from 7/31/2014. Enum, available values: Empty, DisplayName, FirstName, LastName, Organization, LastFirstMiddle, OrgLastFirstMiddle, LastFirstMiddleOrg, LastFirstMiddle2, LastFirstMiddle3, OrgLastFirstMiddle2, OrgLastFirstMiddle3, LastFirstMiddleOrg2, LastFirstMiddleOrg3, LastFirstMiddleGen, FirstMiddleLastGen, LastFirstMiddleGen2, BestMatch, AccordingToLocale, None
     # @return [String]
     attr_accessor :file_as_mapping
     # URL path from which a client can retrieve free/busy information for the contact as an iCal file.             
     # @return [String]
     attr_accessor :free_busy_location
-    # Enum defines gender of a person./nEnum, available values: Unspecified, Female, Male
+    # Enum defines gender of a person. Enum, available values: Unspecified, Female, Male
     # @return [String]
     attr_accessor :gender
     # Person's given name.             
@@ -100,7 +100,7 @@ module AsposeEmailCloud
     # Notes.             
     # @return [String]
     attr_accessor :notes
-    # Defines format of a text./nEnum, available values: Text, Html
+    # Defines format of a text. Enum, available values: Text, Html
     # @return [String]
     attr_accessor :notes_format
     # Office location.             
@@ -231,9 +231,9 @@ module AsposeEmailCloud
     # @param [Array<EmailAddress>] email_addresses Person's email addresses.             
     # @param [Array<CustomerEvent>] events Person's events.             
     # @param [String] file_as A name used for sorting.             
-    # @param [String] file_as_mapping Specifies how to generate and recompute the value of the dispidFileAs property when other contact name properties change. Coincides MS-OXPROPS revision 16.2 from 7/31/2014./nEnum, available values: Empty, DisplayName, FirstName, LastName, Organization, LastFirstMiddle, OrgLastFirstMiddle, LastFirstMiddleOrg, LastFirstMiddle2, LastFirstMiddle3, OrgLastFirstMiddle2, OrgLastFirstMiddle3, LastFirstMiddleOrg2, LastFirstMiddleOrg3, LastFirstMiddleGen, FirstMiddleLastGen, LastFirstMiddleGen2, BestMatch, AccordingToLocale, None
+    # @param [String] file_as_mapping Specifies how to generate and recompute the value of the dispidFileAs property when other contact name properties change. Coincides MS-OXPROPS revision 16.2 from 7/31/2014. Enum, available values: Empty, DisplayName, FirstName, LastName, Organization, LastFirstMiddle, OrgLastFirstMiddle, LastFirstMiddleOrg, LastFirstMiddle2, LastFirstMiddle3, OrgLastFirstMiddle2, OrgLastFirstMiddle3, LastFirstMiddleOrg2, LastFirstMiddleOrg3, LastFirstMiddleGen, FirstMiddleLastGen, LastFirstMiddleGen2, BestMatch, AccordingToLocale, None
     # @param [String] free_busy_location URL path from which a client can retrieve free/busy information for the contact as an iCal file.             
-    # @param [String] gender Enum defines gender of a person./nEnum, available values: Unspecified, Female, Male
+    # @param [String] gender Enum defines gender of a person. Enum, available values: Unspecified, Female, Male
     # @param [String] given_name Person's given name.             
     # @param [String] government_id_number Government id number.             
     # @param [String] hobbies Person's hobbies.             
@@ -245,7 +245,7 @@ module AsposeEmailCloud
     # @param [String] middle_name Person's middle name.             
     # @param [String] nickname Person's nickname.             
     # @param [String] notes Notes.             
-    # @param [String] notes_format Defines format of a text./nEnum, available values: Text, Html
+    # @param [String] notes_format Defines format of a text. Enum, available values: Text, Html
     # @param [String] office_location Office location.             
     # @param [String] organizational_id_number Contains an identifier for the mail user used within the mail user's organization.             
     # @param [Array<PhoneNumber>] phone_numbers Person's phone numbers.             

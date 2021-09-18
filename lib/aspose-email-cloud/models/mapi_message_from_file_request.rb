@@ -29,7 +29,7 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for mapi_message_from_file operation.
   class MapiMessageFromFileRequest < EmailRequest
-    # File format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
     # File to convert
@@ -37,7 +37,7 @@ module AsposeEmailCloud
     attr_accessor :file
 
     # Converts email file to a MAPI model representation             
-    # @param [String] format File format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @param [File] file File to convert
     def initialize(format:, file:)
       self.format = format if format

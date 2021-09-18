@@ -27,7 +27,7 @@ require 'date'
 
 module AsposeEmailCloud
   class EnumWithCustomOfUrlCategory
-    # Url category./nEnum, available values: Profile, HomePage, Home, Work, Blog, Ftp, Custom
+    # Url category. Enum, available values: Profile, HomePage, Home, Work, Blog, Ftp, Custom
     # @return [String]
     attr_accessor :value
     
@@ -50,7 +50,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] value Url category./nEnum, available values: Profile, HomePage, Home, Work, Blog, Ftp, Custom
+    # @param [String] value Url category. Enum, available values: Profile, HomePage, Home, Work, Blog, Ftp, Custom
     # @param [String] description 
     def initialize(
       value: nil,

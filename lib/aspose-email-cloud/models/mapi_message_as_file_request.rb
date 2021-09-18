@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Convert MapiMessage to file request.             
   class MapiMessageAsFileRequest
-    # Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
     # MAPI message model.             
@@ -51,7 +51,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] format Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @param [MapiMessageDto] value MAPI message model.             
     def initialize(
       format: nil,

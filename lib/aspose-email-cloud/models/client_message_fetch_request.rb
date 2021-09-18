@@ -44,10 +44,10 @@ module AsposeEmailCloud
     # Folder in storage where account file located.
     # @return [String]
     attr_accessor :account_storage_folder
-    # MailMessageBase type. Using this property you can fetch message in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string)./nEnum, available values: Dto, Mapi, Base64
+    # MailMessageBase type. Using this property you can fetch message in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string). Enum, available values: Dto, Mapi, Base64
     # @return [String]
     attr_accessor :type
-    # Base64 data format. Used only if type is set to Base64./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
 
@@ -57,8 +57,8 @@ module AsposeEmailCloud
     # @param [String] folder Account folder to fetch from (should be specified for some protocols such as IMAP)             
     # @param [String] storage Storage name where account file located.
     # @param [String] account_storage_folder Folder in storage where account file located.
-    # @param [String] type MailMessageBase type. Using this property you can fetch message in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string)./nEnum, available values: Dto, Mapi, Base64
-    # @param [String] format Base64 data format. Used only if type is set to Base64./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] type MailMessageBase type. Using this property you can fetch message in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string). Enum, available values: Dto, Mapi, Base64
+    # @param [String] format Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     def initialize(message_id:, account:, folder: nil, storage: nil, account_storage_folder: nil, type: nil, format: nil)
       self.message_id = message_id if message_id
       self.account = account if account

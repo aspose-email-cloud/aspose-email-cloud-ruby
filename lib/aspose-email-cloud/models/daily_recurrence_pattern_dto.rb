@@ -37,7 +37,7 @@ module AsposeEmailCloud
     # End date.             
     # @return [DateTime]
     attr_accessor :end_date
-    # Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+    # Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
     # @return [String]
     attr_accessor :week_start
     def discriminator #getter method
@@ -73,7 +73,7 @@ module AsposeEmailCloud
     # @param [Integer] interval Number of recurrence units.             
     # @param [Integer] occurs Number of occurrences of the recurrence pattern.             
     # @param [DateTime] end_date End date.             
-    # @param [String] week_start Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+    # @param [String] week_start Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
     def initialize(
       interval: nil,
       occurs: nil,

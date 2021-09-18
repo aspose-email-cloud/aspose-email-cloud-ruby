@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Contains data and type of contact's photo.             
   class MapiContactPhotoDto < ContactPhoto
-    # MapiContact photo image format./nEnum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
+    # MapiContact photo image format. Enum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
     # @return [String]
     attr_accessor :photo_image_format
     # Photo serialized as base64 string.             
@@ -60,7 +60,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] photo_image_format MapiContact photo image format./nEnum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
+    # @param [String] photo_image_format MapiContact photo image format. Enum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
     # @param [String] base64_data Photo serialized as base64 string.             
     def initialize(
       photo_image_format: nil,

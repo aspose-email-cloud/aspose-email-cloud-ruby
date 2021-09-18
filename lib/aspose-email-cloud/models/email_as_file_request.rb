@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Convert email model to file request.             
   class EmailAsFileRequest
-    # Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
     # Email model.             
@@ -51,7 +51,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] format Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @param [EmailDto] value Email model.             
     def initialize(
       format: nil,

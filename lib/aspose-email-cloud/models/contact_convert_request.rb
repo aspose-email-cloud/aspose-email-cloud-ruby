@@ -29,10 +29,10 @@ require_relative './http_request'
 module AsposeEmailCloud
   # Request model for contact_convert operation.
   class ContactConvertRequest < EmailRequest
-    # File format to convert to./nEnum, available values: VCard, WebDav, Msg
+    # File format to convert to. Enum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :to_format
-    # File format to convert from./nEnum, available values: VCard, WebDav, Msg
+    # File format to convert from. Enum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :from_format
     # File to convert
@@ -40,8 +40,8 @@ module AsposeEmailCloud
     attr_accessor :file
 
     # Converts contact document to specified format and returns as file             
-    # @param [String] to_format File format to convert to./nEnum, available values: VCard, WebDav, Msg
-    # @param [String] from_format File format to convert from./nEnum, available values: VCard, WebDav, Msg
+    # @param [String] to_format File format to convert to. Enum, available values: VCard, WebDav, Msg
+    # @param [String] from_format File format to convert from. Enum, available values: VCard, WebDav, Msg
     # @param [File] file File to convert
     def initialize(to_format:, from_format:, file:)
       self.to_format = to_format if to_format

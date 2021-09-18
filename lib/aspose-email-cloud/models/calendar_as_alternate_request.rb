@@ -31,7 +31,7 @@ module AsposeEmailCloud
     # iCalendar document model             
     # @return [CalendarDto]
     attr_accessor :value
-    # iCalendar actions./nEnum, available values: Create, Update, Cancel
+    # iCalendar actions. Enum, available values: Create, Update, Cancel
     # @return [String]
     attr_accessor :action
     # iCalendar sequence id             
@@ -57,7 +57,7 @@ module AsposeEmailCloud
 
     # Initializes the object
     # @param [CalendarDto] value iCalendar document model             
-    # @param [String] action iCalendar actions./nEnum, available values: Create, Update, Cancel
+    # @param [String] action iCalendar actions. Enum, available values: Create, Update, Cancel
     # @param [String] sequence_id iCalendar sequence id             
     def initialize(
       value: nil,

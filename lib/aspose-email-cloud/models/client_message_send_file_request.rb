@@ -41,7 +41,7 @@ module AsposeEmailCloud
     # Folder in storage where account file located.
     # @return [String]
     attr_accessor :account_storage_folder
-    # Email file format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     # @return [String]
     attr_accessor :format
 
@@ -50,7 +50,7 @@ module AsposeEmailCloud
     # @param [File] file File to send
     # @param [String] storage Storage name where account file located.
     # @param [String] account_storage_folder Folder in storage where account file located.
-    # @param [String] format Email file format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+    # @param [String] format Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
     def initialize(account:, file:, storage: nil, account_storage_folder: nil, format: nil)
       self.account = account if account
       self.file = file if file
