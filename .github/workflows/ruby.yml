@@ -19,4 +19,4 @@ jobs:
         clientId: ${{secrets.appSid}}
         clientSecret: ${{secrets.appKey}}
         apiBaseUrl: "https://api-qa.aspose.cloud"
-      run: rspec -t pipeline spec
+      run: bundle exec rspec -t pipeline spec
