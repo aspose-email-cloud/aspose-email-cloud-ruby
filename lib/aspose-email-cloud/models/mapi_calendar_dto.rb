@@ -89,10 +89,10 @@ module AsposeEmailCloud
     # Attendees             
     # @return [MapiCalendarAttendeesDto]
     attr_accessor :attendees
-    # Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
+    # Enumerates the mapi calendar possible busy status. Enum, available values: Free, Tentative, Busy, OutOfOffice
     # @return [String]
     attr_accessor :busy_status
-    # Actions the user has taken on this Meeting object.              Items: Enumerates the actions the user can taken on the Meeting object Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
+    # Actions the user has taken on this Meeting object.              Items: Enumerates the actions the user can taken on the Meeting object. Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
     # @return [Array<String>]
     attr_accessor :client_intent
     # End date and time of the event. If the date is not set, default value for DateTime is returned.             
@@ -238,8 +238,8 @@ module AsposeEmailCloud
     # @param [Array<MapiPropertyDto>] properties List of MAPI properties             
     # @param [BOOLEAN] appointment_counter_proposal Value indicating whether a Meeting Response object is a counter proposal.             
     # @param [MapiCalendarAttendeesDto] attendees Attendees             
-    # @param [String] busy_status Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
-    # @param [Array<String>] client_intent Actions the user has taken on this Meeting object.              Items: Enumerates the actions the user can taken on the Meeting object Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
+    # @param [String] busy_status Enumerates the mapi calendar possible busy status. Enum, available values: Free, Tentative, Busy, OutOfOffice
+    # @param [Array<String>] client_intent Actions the user has taken on this Meeting object.              Items: Enumerates the actions the user can taken on the Meeting object. Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
     # @param [DateTime] end_date End date and time of the event. If the date is not set, default value for DateTime is returned.             
     # @param [MapiCalendarTimeZoneDto] end_date_time_zone Time zone information that indicates the time zone of the EndDate property.             
     # @param [BOOLEAN] is_all_day Value indicating whether the event is an all-day event.             

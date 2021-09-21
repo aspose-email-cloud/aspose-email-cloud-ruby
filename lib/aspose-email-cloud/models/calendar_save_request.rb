@@ -34,7 +34,7 @@ module AsposeEmailCloud
     
     # @return [CalendarDto]
     attr_accessor :value
-    # Calendar file format Enum, available values: Ics, Msg
+    # Calendar file format. Enum, available values: Ics, Msg
     # @return [String]
     attr_accessor :format
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -58,7 +58,7 @@ module AsposeEmailCloud
     # Initializes the object
     # @param [StorageFileLocation] storage_file 
     # @param [CalendarDto] value 
-    # @param [String] format Calendar file format Enum, available values: Ics, Msg
+    # @param [String] format Calendar file format. Enum, available values: Ics, Msg
     def initialize(
       storage_file: nil,
       value: nil,

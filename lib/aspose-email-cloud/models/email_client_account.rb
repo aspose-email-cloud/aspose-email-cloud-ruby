@@ -34,7 +34,7 @@ module AsposeEmailCloud
     # Mail server port             
     # @return [Integer]
     attr_accessor :port
-    # Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # Email account security mode. Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @return [String]
     attr_accessor :security_options
     # Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
@@ -73,7 +73,7 @@ module AsposeEmailCloud
     # Initializes the object
     # @param [String] host Mail server host name or IP address             
     # @param [Integer] port Mail server port             
-    # @param [String] security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+    # @param [String] security_options Email account security mode. Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
     # @param [String] protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
     # @param [EmailClientAccountCredentials] credentials Email client account credentials             
     # @param [StorageFileLocation] cache_file File with messages cache. Used to provide extra functions, which are not supported by account             

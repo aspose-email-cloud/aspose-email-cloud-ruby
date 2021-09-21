@@ -10,14 +10,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6.x
-    - name: Install dependencies
-      run: gem install -g
+        ruby-version: 2.6
+        bundler-cache: true
     - name: Test with Rspec
       env:
         clientId: ${{secrets.appSid}}
         clientSecret: ${{secrets.appKey}}
         apiBaseUrl: "https://api-qa.aspose.cloud"
-      run: rspec -t pipeline spec
+      run: bundle exec rspec -t pipeline spec

@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # Mapi recurrence pattern.             
   class MapiCalendarRecurrencePatternDto
-    # Enumerated the calendar type of the mapi recurrence Enum, available values: Default, CalGregorian, CalGregorianUs, CalJapan, CalTaiwan, CalKorea, CalHijri, CalThai, CalHebrew, CalGregorianMeFrench, CalGregorianArabic, CalGregorianXLitEnglish, CalGregorianXLitFrench, CalLunarJapanese, CalChineseLunar, CalSaka, CalLunarEtoChn, CalLunarEtoKor, CalLunarRokuyou, CalLunarKorean, CalUmAlQura
+    # Enumerated the calendar type of the mapi recurrence. Enum, available values: Default, CalGregorian, CalGregorianUs, CalJapan, CalTaiwan, CalKorea, CalHijri, CalThai, CalHebrew, CalGregorianMeFrench, CalGregorianArabic, CalGregorianXLitEnglish, CalGregorianXLitFrench, CalLunarJapanese, CalChineseLunar, CalSaka, CalLunarEtoChn, CalLunarEtoKor, CalLunarRokuyou, CalLunarKorean, CalUmAlQura
     # @return [String]
     attr_accessor :calendar_type
     # An array of dates, each of which is the original instance date of either a deleted instance or a modified instance for this recurrence.             
@@ -43,7 +43,7 @@ module AsposeEmailCloud
     # An exception specifies changes to an instance of a recurring series.             
     # @return [Array<MapiCalendarExceptionInfoDto>]
     attr_accessor :exceptions
-    # Enumerates mapi calendar recurrence frequency Enum, available values: None, Daily, Weekly, Monthly, Yearly
+    # Enumerates mapi calendar recurrence frequency. Enum, available values: None, Daily, Weekly, Monthly, Yearly
     # @return [String]
     attr_accessor :frequency
     # An array of dates, each of which is the date of a modified instance.             
@@ -52,7 +52,7 @@ module AsposeEmailCloud
     # Number of occurrences in a recurrence.             
     # @return [Integer]
     attr_accessor :occurrence_count
-    # Enumerates the mapi calendar recurrence pattern types Enum, available values: Day, Week, Month, MonthEnd, MonthNth, HjMonth, HjMonthNth, HjMonthEnd
+    # Enumerates the mapi calendar recurrence pattern types. Enum, available values: Day, Week, Month, MonthEnd, MonthNth, HjMonth, HjMonthNth, HjMonthEnd
     # @return [String]
     attr_accessor :pattern_type
     # Interval at which the meeting pattern repeats.             
@@ -115,15 +115,15 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] calendar_type Enumerated the calendar type of the mapi recurrence Enum, available values: Default, CalGregorian, CalGregorianUs, CalJapan, CalTaiwan, CalKorea, CalHijri, CalThai, CalHebrew, CalGregorianMeFrench, CalGregorianArabic, CalGregorianXLitEnglish, CalGregorianXLitFrench, CalLunarJapanese, CalChineseLunar, CalSaka, CalLunarEtoChn, CalLunarEtoKor, CalLunarRokuyou, CalLunarKorean, CalUmAlQura
+    # @param [String] calendar_type Enumerated the calendar type of the mapi recurrence. Enum, available values: Default, CalGregorian, CalGregorianUs, CalJapan, CalTaiwan, CalKorea, CalHijri, CalThai, CalHebrew, CalGregorianMeFrench, CalGregorianArabic, CalGregorianXLitEnglish, CalGregorianXLitFrench, CalLunarJapanese, CalChineseLunar, CalSaka, CalLunarEtoChn, CalLunarEtoKor, CalLunarRokuyou, CalLunarKorean, CalUmAlQura
     # @param [Array<DateTime>] deleted_instance_dates An array of dates, each of which is the original instance date of either a deleted instance or a modified instance for this recurrence.             
     # @param [DateTime] end_date End date of an item recurrence pattern.             
     # @param [String] end_type Enumerates the ending type for the recurrence. Enum, available values: None, EndAfterDate, EndAfterNOccurrences, NeverEnd
     # @param [Array<MapiCalendarExceptionInfoDto>] exceptions An exception specifies changes to an instance of a recurring series.             
-    # @param [String] frequency Enumerates mapi calendar recurrence frequency Enum, available values: None, Daily, Weekly, Monthly, Yearly
+    # @param [String] frequency Enumerates mapi calendar recurrence frequency. Enum, available values: None, Daily, Weekly, Monthly, Yearly
     # @param [Array<DateTime>] modified_instance_dates An array of dates, each of which is the date of a modified instance.             
     # @param [Integer] occurrence_count Number of occurrences in a recurrence.             
-    # @param [String] pattern_type Enumerates the mapi calendar recurrence pattern types Enum, available values: Day, Week, Month, MonthEnd, MonthNth, HjMonth, HjMonthNth, HjMonthEnd
+    # @param [String] pattern_type Enumerates the mapi calendar recurrence pattern types. Enum, available values: Day, Week, Month, MonthEnd, MonthNth, HjMonth, HjMonthNth, HjMonthEnd
     # @param [Integer] period Interval at which the meeting pattern repeats.             
     # @param [BOOLEAN] sliding_flag Defines whether pattern is sliding or not.             
     # @param [DateTime] start_date Start date of an item recurrence pattern.             

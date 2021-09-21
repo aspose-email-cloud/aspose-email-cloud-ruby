@@ -34,7 +34,7 @@ module AsposeEmailCloud
     # Body.             
     # @return [String]
     attr_accessor :body
-    # Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
+    # Enumerates the mapi calendar possible busy status. Enum, available values: Free, Tentative, Busy, OutOfOffice
     # @return [String]
     attr_accessor :busy_status
     # End date.             
@@ -46,7 +46,7 @@ module AsposeEmailCloud
     # Location.             
     # @return [String]
     attr_accessor :location
-    # Enumerates the appointment state Enum, available values: Meeting, Received, Canceled
+    # Enumerates the appointment state. Enum, available values: Meeting, Received, Canceled
     # @return [String]
     attr_accessor :meeting_type
     # Original start date.             
@@ -113,11 +113,11 @@ module AsposeEmailCloud
     # Initializes the object
     # @param [Array<MapiAttachmentDto>] attachments Attachments in the recurrence exception.             
     # @param [String] body Body.             
-    # @param [String] busy_status Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
+    # @param [String] busy_status Enumerates the mapi calendar possible busy status. Enum, available values: Free, Tentative, Busy, OutOfOffice
     # @param [DateTime] end_date_time End date.             
     # @param [BOOLEAN] has_attachment Value of this field specifies whether the Exception Embedded Message object contains attachments.             
     # @param [String] location Location.             
-    # @param [String] meeting_type Enumerates the appointment state Enum, available values: Meeting, Received, Canceled
+    # @param [String] meeting_type Enumerates the appointment state. Enum, available values: Meeting, Received, Canceled
     # @param [DateTime] original_start_date Original start date.             
     # @param [Array<String>] override_flags Override flags.              Items: Specifies what data in the MapiCalendarOverride structure has a value different from the recurring series. Enum, available values: Subject, MeetingType, ReminderDelta, Reminder, Location, BusyStatus, Attachment, Subtype, AppointmentColor, ExceptionalBody
     # @param [Integer] reminder_delta Reminder delta.             

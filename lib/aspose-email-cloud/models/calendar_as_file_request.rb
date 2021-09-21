@@ -28,7 +28,7 @@ require 'date'
 module AsposeEmailCloud
   # iCalendar model to file request.             
   class CalendarAsFileRequest
-    # Calendar file format Enum, available values: Ics, Msg
+    # Calendar file format. Enum, available values: Ics, Msg
     # @return [String]
     attr_accessor :format
     # iCalendar model             
@@ -51,7 +51,7 @@ module AsposeEmailCloud
     end
 
     # Initializes the object
-    # @param [String] format Calendar file format Enum, available values: Ics, Msg
+    # @param [String] format Calendar file format. Enum, available values: Ics, Msg
     # @param [CalendarDto] value iCalendar model             
     def initialize(
       format: nil,

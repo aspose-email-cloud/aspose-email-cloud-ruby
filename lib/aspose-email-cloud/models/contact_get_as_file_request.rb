@@ -32,10 +32,10 @@ module AsposeEmailCloud
     # Calendar document file name
     # @return [String]
     attr_accessor :file_name
-    # File format Enum, available values: VCard, WebDav, Msg
+    # File format. Enum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :to_format
-    # File format to convert from Enum, available values: VCard, WebDav, Msg
+    # File format to convert from. Enum, available values: VCard, WebDav, Msg
     # @return [String]
     attr_accessor :from_format
     # Storage name
@@ -47,8 +47,8 @@ module AsposeEmailCloud
 
     # Converts contact document from storage to specified format and returns as file             
     # @param [String] file_name Calendar document file name
-    # @param [String] to_format File format Enum, available values: VCard, WebDav, Msg
-    # @param [String] from_format File format to convert from Enum, available values: VCard, WebDav, Msg
+    # @param [String] to_format File format. Enum, available values: VCard, WebDav, Msg
+    # @param [String] from_format File format to convert from. Enum, available values: VCard, WebDav, Msg
     # @param [String] storage Storage name
     # @param [String] folder Path to folder in storage
     def initialize(file_name:, to_format:, from_format:, storage: nil, folder: nil)

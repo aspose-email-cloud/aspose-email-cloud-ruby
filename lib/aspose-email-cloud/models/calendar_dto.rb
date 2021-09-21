@@ -94,6 +94,12 @@ module AsposeEmailCloud
     # Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
     # @return [String]
     attr_accessor :transparency
+    # Defines the access classification for the calendar. Enum, available values: Public, Private, Confidential, NotDefined
+    # @return [String]
+    attr_accessor :_class
+    # Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
+    # @return [String]
+    attr_accessor :microsoft_importance
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -118,7 +124,9 @@ module AsposeEmailCloud
         :'start_time_zone' => :'startTimeZone',
         :'status' => :'status',
         :'summary' => :'summary',
-        :'transparency' => :'transparency'
+        :'transparency' => :'transparency',
+        :'_class' => :'class',
+        :'microsoft_importance' => :'microsoftImportance'
       }
     end
 
@@ -146,7 +154,9 @@ module AsposeEmailCloud
         :'start_time_zone' => :'String',
         :'status' => :'String',
         :'summary' => :'String',
-        :'transparency' => :'String'
+        :'transparency' => :'String',
+        :'_class' => :'String',
+        :'microsoft_importance' => :'String'
       }
     end
 
@@ -173,6 +183,8 @@ module AsposeEmailCloud
     # @param [String] status Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
     # @param [String] summary Summary.
     # @param [String] transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
+    # @param [String] _class Defines the access classification for the calendar. Enum, available values: Public, Private, Confidential, NotDefined
+    # @param [String] microsoft_importance Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
     def initialize(
       attachments: nil,
       attendees: nil,
@@ -195,7 +207,9 @@ module AsposeEmailCloud
       start_time_zone: nil,
       status: nil,
       summary: nil,
-      transparency: nil)
+      transparency: nil,
+      _class: nil,
+      microsoft_importance: nil)
       self.attachments = attachments if attachments
       self.attendees = attendees if attendees
       self.description = description if description
@@ -218,6 +232,8 @@ module AsposeEmailCloud
       self.status = status if status
       self.summary = summary if summary
       self.transparency = transparency if transparency
+      self._class = _class if _class
+      self.microsoft_importance = microsoft_importance if microsoft_importance
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -272,6 +288,14 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "transparency", transparency cannot be nil.')
       end
 
+      if @_class.nil?
+        invalid_properties.push('invalid value for "_class", _class cannot be nil.')
+      end
+
+      if @microsoft_importance.nil?
+        invalid_properties.push('invalid value for "microsoft_importance", microsoft_importance cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -290,6 +314,8 @@ module AsposeEmailCloud
       return false if @start_date.nil?
       return false if @status.nil?
       return false if @transparency.nil?
+      return false if @_class.nil?
+      return false if @microsoft_importance.nil?
       true
     end
 
@@ -333,7 +359,9 @@ module AsposeEmailCloud
           start_time_zone == o.start_time_zone &&
           status == o.status &&
           summary == o.summary &&
-          transparency == o.transparency
+          transparency == o.transparency &&
+          _class == o._class &&
+          microsoft_importance == o.microsoft_importance
     end
 
     # @see the `==` method
@@ -345,7 +373,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachments, attendees, description, end_date, end_time_zone, flags, is_description_html, location, method, microsoft_busy_status, microsoft_intended_status, optional_attendees, organizer, recurrence_string, recurrence, reminders, sequence_id, start_date, start_time_zone, status, summary, transparency].hash
+      [attachments, attendees, description, end_date, end_time_zone, flags, is_description_html, location, method, microsoft_busy_status, microsoft_intended_status, optional_attendees, organizer, recurrence_string, recurrence, reminders, sequence_id, start_date, start_time_zone, status, summary, transparency, _class, microsoft_importance].hash
     end
 
     # Builds the object from hash
