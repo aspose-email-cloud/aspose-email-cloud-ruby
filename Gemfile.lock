@@ -1,5 +1,5 @@
 GEM
-  remote: https://index.rubygems.org/
+  remote: https://rubygems.org/
   specs:
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
@@ -22,12 +22,16 @@ GEM
     mimemagic (0.4.3)
       nokogiri (~> 1)
       rake
+    mini_portile2 (2.8.4)
     minitest (5.19.0)
     minitest-autotest (1.1.1)
       minitest-server (~> 1.0)
       path_expander (~> 1.0)
     minitest-server (1.0.7)
       minitest (~> 5.16)
+    nokogiri (1.15.3)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.15.3-x86_64-linux)
       racc (~> 1.4)
     path_expander (1.1.1)
@@ -72,3 +76,6 @@ DEPENDENCIES
   rspec (~> 3.12.0)
   vcr (~> 6.2.0)
   webmock (~> 3.18.1)
+
+BUNDLED WITH
+   2.3.5
