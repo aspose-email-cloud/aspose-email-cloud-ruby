@@ -1,3 +1,4 @@
+source "https://rubygems.org"
 # frozen_string_literal: true
 gem 'faraday', '~> 2.7.10'
 gem 'json', '~> 2.6.3'
