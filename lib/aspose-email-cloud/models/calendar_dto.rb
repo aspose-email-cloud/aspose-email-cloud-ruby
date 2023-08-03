@@ -100,6 +100,12 @@ module AsposeEmailCloud
     # Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
     # @return [String]
     attr_accessor :microsoft_importance
+    # HTML representation of description.             
+    # @return [String]
+    attr_accessor :html_description
+    # Date/time that the instance of the iCalendar object was created.             
+    # @return [DateTime]
+    attr_accessor :date_time_stamp
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -126,7 +132,9 @@ module AsposeEmailCloud
         :'summary' => :'summary',
         :'transparency' => :'transparency',
         :'_class' => :'class',
-        :'microsoft_importance' => :'microsoftImportance'
+        :'microsoft_importance' => :'microsoftImportance',
+        :'html_description' => :'htmlDescription',
+        :'date_time_stamp' => :'dateTimeStamp'
       }
     end
 
@@ -156,7 +164,9 @@ module AsposeEmailCloud
         :'summary' => :'String',
         :'transparency' => :'String',
         :'_class' => :'String',
-        :'microsoft_importance' => :'String'
+        :'microsoft_importance' => :'String',
+        :'html_description' => :'String',
+        :'date_time_stamp' => :'DateTime'
       }
     end
 
@@ -185,6 +195,8 @@ module AsposeEmailCloud
     # @param [String] transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
     # @param [String] _class Defines the access classification for the calendar. Enum, available values: Public, Private, Confidential, NotDefined
     # @param [String] microsoft_importance Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
+    # @param [String] html_description HTML representation of description.             
+    # @param [DateTime] date_time_stamp Date/time that the instance of the iCalendar object was created.             
     def initialize(
       attachments: nil,
       attendees: nil,
@@ -209,7 +221,9 @@ module AsposeEmailCloud
       summary: nil,
       transparency: nil,
       _class: nil,
-      microsoft_importance: nil)
+      microsoft_importance: nil,
+      html_description: nil,
+      date_time_stamp: nil)
       self.attachments = attachments if attachments
       self.attendees = attendees if attendees
       self.description = description if description
@@ -234,6 +248,8 @@ module AsposeEmailCloud
       self.transparency = transparency if transparency
       self._class = _class if _class
       self.microsoft_importance = microsoft_importance if microsoft_importance
+      self.html_description = html_description if html_description
+      self.date_time_stamp = date_time_stamp if date_time_stamp
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -296,6 +312,10 @@ module AsposeEmailCloud
         invalid_properties.push('invalid value for "microsoft_importance", microsoft_importance cannot be nil.')
       end
 
+      if @date_time_stamp.nil?
+        invalid_properties.push('invalid value for "date_time_stamp", date_time_stamp cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -316,6 +336,7 @@ module AsposeEmailCloud
       return false if @transparency.nil?
       return false if @_class.nil?
       return false if @microsoft_importance.nil?
+      return false if @date_time_stamp.nil?
       true
     end
 
@@ -361,7 +382,9 @@ module AsposeEmailCloud
           summary == o.summary &&
           transparency == o.transparency &&
           _class == o._class &&
-          microsoft_importance == o.microsoft_importance
+          microsoft_importance == o.microsoft_importance &&
+          html_description == o.html_description &&
+          date_time_stamp == o.date_time_stamp
     end
 
     # @see the `==` method
@@ -373,7 +396,7 @@ module AsposeEmailCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [attachments, attendees, description, end_date, end_time_zone, flags, is_description_html, location, method, microsoft_busy_status, microsoft_intended_status, optional_attendees, organizer, recurrence_string, recurrence, reminders, sequence_id, start_date, start_time_zone, status, summary, transparency, _class, microsoft_importance].hash
+      [attachments, attendees, description, end_date, end_time_zone, flags, is_description_html, location, method, microsoft_busy_status, microsoft_intended_status, optional_attendees, organizer, recurrence_string, recurrence, reminders, sequence_id, start_date, start_time_zone, status, summary, transparency, _class, microsoft_importance, html_description, date_time_stamp].hash
     end
 
     # Builds the object from hash

@@ -2,3 +2,4 @@
 .vscode/
 gems/
 .run/
+vendor/

@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 # frozen_string_literal: true
 gem 'faraday', '~> 2.7.10'
+gem 'faraday-multipart', '~> 1.0', '>= 1.0.4'
 gem 'json', '~> 2.6.3'
 gem 'mimemagic', '~> 0.4.3'
 
@@ -11,3 +12,4 @@ gem 'autotest-rails-pure', '~> 4.1.2'
 gem 'rspec', '~> 3.12.0'
 gem 'vcr', '~> 6.2.0'
 gem 'webmock', '~> 3.18.1'
+gem 'ruby-debug-ide', '~> 0.7.3'

@@ -30,6 +30,7 @@ require 'json'
 require 'logger'
 require 'tempfile'
 require 'faraday'
+require 'faraday/multipart'
 require 'mimemagic'
 require 'uri'
 
@@ -128,7 +129,7 @@ module AsposeEmailCloud
       end
 
       conn = Faraday.new url, { :params => query_params, :headers => header_params } do |f|
-        f.request :multipart
+        f.request :multipart, req_opts
         f.request :url_encoded
         f.adapter Faraday.default_adapter
       end
@@ -282,7 +283,7 @@ module AsposeEmailCloud
     def build_request_url(path, host = nil)
       # Add leading and trailing slashes to path
       path = "/#{path}".gsub(%r{/+}, '/')
-      URI.encode((host || @config.base_url) + path)
+      URI::Parser.new.escape((host || @config.base_url) + path)
     end
 
     # Builds the HTTP request body
