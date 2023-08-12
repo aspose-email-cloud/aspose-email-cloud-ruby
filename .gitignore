@@ -3,3 +3,4 @@
 gems/
 .run/
 vendor/
+.bundle
